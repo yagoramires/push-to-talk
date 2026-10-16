@@ -4,7 +4,7 @@
   "order": 2,
   "title_pt": "Números e idade",
   "title_en": "Numbers and age",
-  "objective_pt": "Contar de 1 a 100, diferenciar números parecidos (13 e 30) e dizer e perguntar a idade.",
+  "objective_pt": "Dizer os números de 1 a 10, as dezenas até 50 e números compostos como 25, diferenciar 13/30 e 15/50, e dizer e perguntar a idade.",
   "blocks": [
     {
       "id": "a1-02-warmup",
@@ -50,7 +50,7 @@
       "kind": "vocabulary",
       "minutes": 5,
       "teacher": {
-        "goal_pt": "Aprender as dezenas (20, 30, 40, 50) e a expressão \"years old\".",
+        "goal_pt": "Aprender as dezenas (20, 30, 40, 50), um número composto (twenty-five) e a expressão \"years old\".",
         "prompts": [
           "How do you say 20 in English?",
           "Can you count by tens: ten, twenty, thirty...?",
@@ -77,6 +77,13 @@
           "example_en": "My brother is thirty."
         },
         {
+          "id": "a1-02-vocab-6",
+          "kind": "vocab",
+          "word_en": "twenty-five",
+          "meaning_pt": "vinte e cinco",
+          "example_en": "I am twenty-five years old."
+        },
+        {
           "id": "a1-02-vocab-3",
           "kind": "vocab",
           "word_en": "years old",
@@ -88,11 +95,26 @@
           "kind": "match",
           "instruction_pt": "Ligue cada número em inglês ao seu equivalente em português.",
           "pairs": [
-            { "en": "fifteen", "pt": "quinze" },
-            { "en": "twenty", "pt": "vinte" },
-            { "en": "thirty", "pt": "trinta" },
-            { "en": "forty", "pt": "quarenta" },
-            { "en": "fifty", "pt": "cinquenta" }
+            {
+              "en": "fifteen",
+              "pt": "quinze"
+            },
+            {
+              "en": "twenty",
+              "pt": "vinte"
+            },
+            {
+              "en": "thirty",
+              "pt": "trinta"
+            },
+            {
+              "en": "forty",
+              "pt": "quarenta"
+            },
+            {
+              "en": "fifty",
+              "pt": "cinquenta"
+            }
           ]
         },
         {
@@ -181,7 +203,11 @@
             "I'm 30 years old",
             "I am 30 years old",
             "I'm thirty years old",
-            "I am thirty years old"
+            "I am thirty years old",
+            "Thirty",
+            "30",
+            "Thirty years old",
+            "30 years old"
           ],
           "commonErrors": [
             {
@@ -197,7 +223,16 @@
           "kind": "listen_answer",
           "instruction_pt": "Ouça a conta e diga o resultado em inglês.",
           "listen": "What is seven plus three?",
-          "accepted": ["Ten", "10", "It's ten", "It is ten", "Seven plus three is ten"],
+          "accepted": [
+            "Ten",
+            "10",
+            "It's ten",
+            "It is ten",
+            "It equals ten",
+            "The answer is ten",
+            "Seven plus three is ten",
+            "Seven plus three equals ten"
+          ],
           "commonErrors": []
         }
       ]
@@ -232,7 +267,10 @@
             "I'm 25",
             "I'm 25 years old",
             "I am 25",
-            "I am 25 years old"
+            "I am 25 years old",
+            "Twenty-five",
+            "Twenty-five years old",
+            "25 years old"
           ],
           "commonErrors": [
             {
@@ -247,7 +285,7 @@
           "id": "a1-02-conv-1",
           "kind": "translate",
           "instruction_pt": "Pergunte a idade de alguém: \"Quantos anos você tem?\"",
-          "accepted": ["How old are you", "How old are you?", "How old are you now"],
+          "accepted": ["How old are you", "How old are you now"],
           "commonErrors": [
             {
               "id": "how-many-years",
@@ -294,7 +332,16 @@
           "kind": "repeat",
           "instruction_pt": "Repita a frase.",
           "prompt": "I am twenty years old.",
-          "accepted": ["I am twenty years old", "I'm twenty years old", "I'm 20 years old"],
+          "accepted": [
+            "I am twenty years old",
+            "I'm twenty years old",
+            "I am 20 years old",
+            "I'm 20 years old",
+            "I am twenty",
+            "I'm twenty",
+            "I am 20",
+            "I'm 20"
+          ],
           "commonErrors": []
         },
         {
@@ -309,7 +356,9 @@
             "He's 15",
             "He is 15",
             "He's 15 years old",
-            "He is 15 years old"
+            "He is 15 years old",
+            "Fifteen years old",
+            "Fifteen"
           ],
           "commonErrors": [
             {

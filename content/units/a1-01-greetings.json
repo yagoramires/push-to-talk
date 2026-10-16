@@ -24,7 +24,7 @@
           "kind": "repeat",
           "instruction_pt": "Repita em voz alta.",
           "prompt": "Hello! How are you?",
-          "accepted": ["Hello! How are you?", "Hello, how are you?", "Hi, how are you?"],
+          "accepted": ["Hello, how are you?", "Hi, how are you?"],
           "commonErrors": [
             {
               "id": "how-is-you",
@@ -51,7 +51,10 @@
             "Hi, how are you?",
             "Hello, how are you doing?",
             "Hi, how are you doing?",
-            "Hi, how's it going?"
+            "Hi, how's it going?",
+            "Hello, how is it going?",
+            "Hi, how are things?",
+            "Hi, what's up?"
           ],
           "commonErrors": [
             {
@@ -69,7 +72,7 @@
       "kind": "vocabulary",
       "minutes": 5,
       "teacher": {
-        "goal_pt": "Aprender cinco expressões de cumprimento e despedida que o aluno vai usar todo dia.",
+        "goal_pt": "Aprender expressões de cumprimento, agradecimento e despedida que o aluno vai usar todo dia (hello, thank you, nice to meet you, good morning, goodbye e outras).",
         "prompts": [
           "When do you say \"goodbye\"?",
           "How do you thank a friend?",
@@ -107,17 +110,36 @@
           "kind": "match",
           "instruction_pt": "Ligue cada expressão em inglês ao seu significado.",
           "pairs": [
-            { "en": "Good morning", "pt": "Bom dia" },
-            { "en": "Good night", "pt": "Boa noite (ao se despedir)" },
-            { "en": "See you later", "pt": "Até mais tarde" },
-            { "en": "Goodbye", "pt": "Tchau" }
+            {
+              "en": "Good morning",
+              "pt": "Bom dia"
+            },
+            {
+              "en": "Good night",
+              "pt": "Boa noite (ao se despedir)"
+            },
+            {
+              "en": "See you later",
+              "pt": "Até mais tarde"
+            },
+            {
+              "en": "Goodbye",
+              "pt": "Tchau"
+            }
           ]
         },
         {
           "id": "a1-01-vocab-5",
           "kind": "translate",
           "instruction_pt": "Diga em inglês: \"Obrigado.\"",
-          "accepted": ["Thank you", "Thanks", "Thank you very much", "Thanks a lot"],
+          "accepted": [
+            "Thank you",
+            "Thanks",
+            "Thank you very much",
+            "Thanks a lot",
+            "Thank you so much",
+            "Thanks so much"
+          ],
           "commonErrors": [
             {
               "id": "tank-you",
@@ -150,7 +172,7 @@
           "kind": "repeat",
           "instruction_pt": "Repita. Língua entre os dentes no \"th\".",
           "prompt": "Thank you very much.",
-          "accepted": ["Thank you very much", "Thank you very much."],
+          "accepted": ["Thank you very much"],
           "commonErrors": [
             {
               "id": "tank-you",
@@ -165,7 +187,7 @@
           "kind": "repeat",
           "instruction_pt": "Repita. Alongue o \"ee\" de \"meet\".",
           "prompt": "Nice to meet you.",
-          "accepted": ["Nice to meet you", "Nice to meet you."],
+          "accepted": ["Nice to meet you"],
           "commonErrors": [
             {
               "id": "nice-to-met-you",
@@ -221,12 +243,30 @@
             "I'm fine, thank you",
             "I am fine, thank you",
             "I'm fine, thanks",
+            "Fine, thank you",
+            "Fine, thanks",
             "I'm good",
             "I am good",
+            "I'm good, thanks",
+            "I'm good, thank you",
+            "Good, thank you",
+            "Good, thanks",
             "I'm great",
+            "I'm very well",
+            "I'm well, thank you",
+            "I'm doing well",
+            "I'm doing fine",
+            "I'm doing great",
             "I'm okay",
-            "Fine, thanks",
-            "Good, thank you"
+            "I'm very good",
+            "Pretty good",
+            "Not bad",
+            "I'm fine, thank you, and you?",
+            "I'm fine, thanks, and you?",
+            "I'm good, and you?",
+            "I'm fine, and you?",
+            "I'm great, thanks, and you?",
+            "I'm doing well, and you?"
           ],
           "commonErrors": [
             {
@@ -244,9 +284,15 @@
           "listen": "Nice to meet you.",
           "accepted": [
             "Nice to meet you too",
-            "Nice to meet you, too",
-            "Nice to meet you too.",
+            "Nice to meet you",
+            "Nice to meet you as well",
+            "It's nice to meet you too",
+            "Nice meeting you too",
+            "Great to meet you too",
+            "Pleased to meet you",
             "Pleased to meet you too",
+            "Glad to meet you too",
+            "Likewise",
             "Me too",
             "You too"
           ],
@@ -283,7 +329,17 @@
           "id": "a1-01-conv-1",
           "kind": "translate",
           "instruction_pt": "Diga em inglês: \"Meu nome é Carlos.\"",
-          "accepted": ["My name is Carlos", "I'm Carlos", "I am Carlos", "My name's Carlos"],
+          "accepted": [
+            "My name is Carlos",
+            "My name's Carlos",
+            "I'm Carlos",
+            "I am Carlos",
+            "Hello, my name is Carlos",
+            "Hi, my name is Carlos",
+            "Hello, I'm Carlos",
+            "Hi, I'm Carlos",
+            "Hi, I am Carlos"
+          ],
           "commonErrors": [
             {
               "id": "i-call-me",
@@ -308,7 +364,8 @@
             "I am from Brazil",
             "I come from Brazil",
             "I'm Brazilian",
-            "I am Brazilian"
+            "I am Brazilian",
+            "I'm a Brazilian"
           ],
           "commonErrors": [
             {
@@ -361,7 +418,7 @@
           "id": "a1-01-rev-1",
           "kind": "translate",
           "instruction_pt": "Diga em inglês: \"Bom dia.\"",
-          "accepted": ["Good morning", "Morning"],
+          "accepted": ["Good morning", "Morning", "Good morning to you"],
           "commonErrors": []
         },
         {
@@ -392,7 +449,7 @@
           "kind": "repeat",
           "instruction_pt": "Para terminar, repita a despedida.",
           "prompt": "See you later!",
-          "accepted": ["See you later", "See you later!", "See you"],
+          "accepted": ["See you later", "See you"],
           "commonErrors": []
         }
       ]

@@ -82,3 +82,27 @@ test('UnitSchema rejects invalid commonErrors regex and bad minutes', () => {
   u.blocks[0].minutes = 16
   expect(UnitSchema.safeParse(u).success).toBe(false)
 })
+
+test('UnitSchema requires prompt on repeat and listen on listen_answer', () => {
+  const repeat = {
+    id: 'r',
+    kind: 'repeat',
+    instruction_pt: 'x',
+    prompt: 'Hi',
+    accepted: ['hi'],
+    commonErrors: []
+  }
+  const listen = {
+    id: 'l',
+    kind: 'listen_answer',
+    instruction_pt: 'x',
+    listen: 'Hi',
+    accepted: ['hi'],
+    commonErrors: []
+  }
+  expect(withExercise(repeat).success).toBe(true)
+  expect(withExercise(listen).success).toBe(true)
+  expect(withExercise({ ...repeat, prompt: undefined }).success).toBe(false)
+  expect(withExercise({ ...listen, listen: undefined }).success).toBe(false)
+  expect(withExercise({ ...repeat, kind: 'translate', prompt: undefined }).success).toBe(true)
+})

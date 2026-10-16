@@ -2,7 +2,7 @@ import { mkdtemp, mkdir, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { expect, test } from 'vitest'
-import { loadCourse } from '../../src/main/content/load-course'
+import { ContentError, loadCourse } from '../../src/main/content/load-course'
 import { makeCourse } from '../fixtures/course'
 
 async function dirWith(files: Record<string, unknown>): Promise<string> {
@@ -29,6 +29,17 @@ test('loads, validates and sorts units by level then order', async () => {
 test('throws ContentError naming the file on invalid unit', async () => {
   const dir = await dirWith({ 'bad.json': { id: 'nope' } })
   await expect(loadCourse(dir)).rejects.toThrow(/bad\.json/)
+  await expect(loadCourse(dir)).rejects.toBeInstanceOf(ContentError)
+})
+
+test('ContentError message carries the zod issue path', async () => {
+  const u = structuredClone(makeCourse().units[0])
+  u.blocks[0].minutes = 99
+  const dir = await dirWith({ 'bad.json': u })
+  const err = await loadCourse(dir).catch((e) => e)
+  expect(err).toBeInstanceOf(ContentError)
+  expect(err.message).toMatch(/bad\.json/)
+  expect(err.message).toMatch(/blocks\.0\.minutes/)
 })
 
 test('throws ContentError naming the file on malformed JSON', async () => {
@@ -46,6 +57,7 @@ test('throws ContentError on duplicate exercise id across units', async () => {
   })
   const dir = await dirWith({ 'a.json': u1, 'b.json': clone })
   await expect(loadCourse(dir)).rejects.toThrow(/duplicate/i)
+  await expect(loadCourse(dir)).rejects.toBeInstanceOf(ContentError)
 })
 
 test('throws ContentError on duplicate unit id', async () => {

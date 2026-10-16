@@ -72,3 +72,17 @@ test('every commonErrors regex rejects the accepted answers of its own exercise'
         for (const a of e.accepted)
           expect(new RegExp(c.match).test(norm(a)), `${e.id}/${c.id} matches "${a}"`).toBe(false)
 })
+
+test('accepted lists have no duplicates after stripping punctuation and case', async () => {
+  const course = await loadCourse(join(__dirname, '..', 'content'))
+  const key = (s: string): string =>
+    s
+      .toLowerCase()
+      .replace(/[^a-z0-9' ]/g, '')
+      .trim()
+  for (const e of course.units.flatMap((u) => u.blocks.flatMap((b) => b.exercises)))
+    if ('accepted' in e) {
+      const keys = e.accepted.map(key)
+      expect(new Set(keys).size, `${e.id} has duplicate accepted`).toBe(keys.length)
+    }
+})

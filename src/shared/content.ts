@@ -31,16 +31,25 @@ export const CommonErrorSchema = z.object({
 })
 export type CommonError = z.infer<typeof CommonErrorSchema>
 
-export const SpokenExerciseSchema = z.object({
-  id: str,
-  kind: z.enum(['repeat', 'translate', 'listen_answer']),
-  instruction_pt: str,
-  prompt: str.optional(),
-  listen: str.optional(),
-  audio: str.optional(),
-  accepted: z.array(str).min(1),
-  commonErrors: z.array(CommonErrorSchema)
-})
+export const SpokenExerciseSchema = z
+  .object({
+    id: str,
+    kind: z.enum(['repeat', 'translate', 'listen_answer']),
+    instruction_pt: str,
+    prompt: str.optional(),
+    listen: str.optional(),
+    audio: str.optional(),
+    accepted: z.array(str).min(1),
+    commonErrors: z.array(CommonErrorSchema)
+  })
+  .refine((e) => e.kind !== 'repeat' || !!e.prompt, {
+    path: ['prompt'],
+    message: 'repeat requires prompt'
+  })
+  .refine((e) => e.kind !== 'listen_answer' || !!e.listen, {
+    path: ['listen'],
+    message: 'listen_answer requires listen'
+  })
 export type SpokenExercise = z.infer<typeof SpokenExerciseSchema>
 
 export const VocabCardSchema = z.object({
@@ -80,6 +89,7 @@ export const ChoiceExerciseSchema = z
   })
 export type ChoiceExercise = z.infer<typeof ChoiceExerciseSchema>
 
+// commonErrors[].match de um fill é testado contra a resposta digitada para a lacuna (normalizada), não contra a frase inteira.
 export const FillExerciseSchema = z
   .object({
     id: str,
