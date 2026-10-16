@@ -2,6 +2,7 @@ import { join } from 'node:path'
 import { expect, test } from 'vitest'
 import { loadCourse } from '../src/main/content/load-course'
 import { BLOCK_KINDS, SPOKEN_KINDS } from '../src/shared/content'
+import { checkAnswer, normalize } from '../src/shared/matcher'
 
 test('all units in content/ are valid', async () => {
   const course = await loadCourse(join(__dirname, '..', 'content'))
@@ -59,18 +60,13 @@ test('a1-02 teaches "Eu tenho 25 anos" with the have-years error', async () => {
 
 test('every commonErrors regex rejects the accepted answers of its own exercise', async () => {
   const course = await loadCourse(join(__dirname, '..', 'content'))
-  const norm = (s: string): string =>
-    s
-      .toLowerCase()
-      .replace(/'/g, '')
-      .replace(/-/g, ' ')
-      .replace(/[^a-z0-9 ]/g, '')
-      .trim()
   for (const e of course.units.flatMap((u) => u.blocks.flatMap((b) => b.exercises)))
     if ('commonErrors' in e)
       for (const c of e.commonErrors)
         for (const a of e.accepted)
-          expect(new RegExp(c.match).test(norm(a)), `${e.id}/${c.id} matches "${a}"`).toBe(false)
+          expect(new RegExp(c.match).test(normalize(a)), `${e.id}/${c.id} matches "${a}"`).toBe(
+            false
+          )
 })
 
 test('accepted lists have no duplicates after stripping punctuation and case', async () => {
@@ -85,4 +81,29 @@ test('accepted lists have no duplicates after stripping punctuation and case', a
       const keys = e.accepted.map(key)
       expect(new Set(keys).size, `${e.id} has duplicate accepted`).toBe(keys.length)
     }
+})
+
+test('checkAnswer on content: a1-02-age-translate flags have-years, accepts correct forms', async () => {
+  const course = await loadCourse(join(__dirname, '..', 'content'))
+  const ex = course.units[1].blocks
+    .flatMap((b) => b.exercises)
+    .find((e) => e.id === 'a1-02-age-translate')
+  if (ex?.kind !== 'translate') throw new Error('a1-02-age-translate missing')
+  const bad = checkAnswer('I have 25 years', ex)
+  expect(bad.verdict).toBe('error')
+  expect(bad.matchedError?.id).toBe('have-years')
+  expect(checkAnswer("I'm 25 years old", ex).verdict).toBe('correct')
+})
+
+test('every accepted answer of every spoken/fill exercise is correct through checkAnswer', async () => {
+  const course = await loadCourse(join(__dirname, '..', 'content'))
+  for (const e of course.units.flatMap((u) => u.blocks.flatMap((b) => b.exercises)))
+    if (
+      e.kind === 'repeat' ||
+      e.kind === 'translate' ||
+      e.kind === 'listen_answer' ||
+      e.kind === 'fill'
+    )
+      for (const a of e.accepted)
+        expect(checkAnswer(a, e).verdict, `${e.id} accepts "${a}"`).toBe('correct')
 })
