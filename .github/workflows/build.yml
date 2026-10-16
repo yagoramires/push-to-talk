@@ -3,21 +3,25 @@ name: build
 on:
   workflow_dispatch:
   push:
+    branches: [main]
     tags: ['v*']
+
+# A newer push to main replaces a build still running for an older one.
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref_type == 'branch' }}
 
 jobs:
   build:
     strategy:
       fail-fast: false
       matrix:
-        include:
-          - os: windows-latest
-            script: build:win
-            installer: dist/*.exe
-          - os: macos-latest
-            script: build:mac
-            installer: dist/*.dmg
+        # Push to main: Windows only (Mac runner minutes cost 10x); tags and manual runs: both.
+        os: ${{ fromJSON(github.event_name == 'push' && github.ref_type == 'branch' && '["windows-latest"]' || '["windows-latest","macos-latest"]') }}
     runs-on: ${{ matrix.os }}
+    env:
+      SCRIPT: ${{ matrix.os == 'windows-latest' && 'build:win' || 'build:mac' }}
+      INSTALLER: ${{ matrix.os == 'windows-latest' && 'dist/*.exe' || 'dist/*.dmg' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -26,7 +30,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm test
-      - run: npm run ${{ matrix.script }}
+      - run: npm run ${{ env.SCRIPT }}
 
       - name: Self-check (Windows)
         if: runner.os == 'Windows'
@@ -41,11 +45,11 @@ jobs:
 
       - name: Installer size
         shell: bash
-        run: ls -lh ${{ matrix.installer }}
+        run: ls -lh ${{ env.INSTALLER }}
       - uses: actions/upload-artifact@v4
         with:
           name: installer-${{ runner.os }}
-          path: ${{ matrix.installer }}
+          path: ${{ env.INSTALLER }}
           if-no-files-found: error
 
   release:

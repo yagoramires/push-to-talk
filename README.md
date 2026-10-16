@@ -41,4 +41,6 @@ O DMG fica em `dist/Ingles-<versão>-mac-arm64.dmg`. Na primeira abertura, o mac
 
 Também dá para rodar o workflow na mão ("Actions" → "build" → "Run workflow"); aí os instaladores ficam só nos artefatos da execução, sem release.
 
+Cada push no `main` roda só o build do Windows (testes, instalador e `--self-check`), para pegar cedo o que quebra lá; o `.exe` fica nos artefatos da execução. O Mac só entra com tag ou na mão, porque o minuto de máquina Mac custa 10x no GitHub.
+
 Para testar no Windows, siga o roteiro em [docs/teste-windows.md](docs/teste-windows.md).
