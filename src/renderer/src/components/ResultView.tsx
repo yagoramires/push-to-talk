@@ -20,6 +20,8 @@ type Props = {
   /** Assessment: only the verdict and moving on; the detailed correction comes at the end. */
   exam?: boolean
   onFinal(v: FinalVerdict): void
+  /** Spoken answers: record again instead of taking the error. */
+  onRetry?(): void
 }
 
 export default function ResultView({
@@ -28,7 +30,8 @@ export default function ResultView({
   mode,
   pronunciation,
   exam,
-  onFinal
+  onFinal,
+  onRetry
 }: Props): React.JSX.Element {
   const final = toFinalVerdict(result)
   const err = exam ? undefined : result.matchedError
@@ -95,6 +98,11 @@ export default function ResultView({
               onClick={() => onFinal(final)}
             >
               Continuar
+            </button>
+          )}
+          {final === 'error' && onRetry && (
+            <button type="button" className="btn btn-secondary" onClick={onRetry}>
+              Gravar de novo
             </button>
           )}
           {final === 'error' && (

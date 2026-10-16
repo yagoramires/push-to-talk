@@ -102,6 +102,7 @@ export function SpokenAnswer({
         mode={mode}
         pronunciation={state.pronunciation}
         exam={exam}
+        onRetry={exam ? undefined : () => setState({ kind: 'idle' })}
         onFinal={(verdict) => {
           const { transcript } = state
           if (wav.current)
