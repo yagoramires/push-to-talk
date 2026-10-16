@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest'
-import { chooseTier, pronunciationEnabled } from '../../src/main/ai/tiers'
+import { chooseTier, pronunciationEnabled, toGB } from '../../src/main/ai/tiers'
 import type { Hardware } from '../../src/shared/api'
 
 const hw = (o: Partial<Hardware>): Hardware => ({
@@ -33,4 +33,10 @@ test('pronunciation is off only above rtf 1.0', () => {
   expect(pronunciationEnabled(1.2)).toBe(false)
   expect(pronunciationEnabled(0.9)).toBe(true)
   expect(pronunciationEnabled(null)).toBe(true)
+})
+
+test('toGB rounds so a 15.7 GB-reported "16 GB" machine counts as 16 and picks medium', () => {
+  const gb = toGB(15.7 * 1024 ** 3)
+  expect(gb).toBe(16)
+  expect(chooseTier(hw({ totalMemGB: gb }), 0.5)).toBe('medium')
 })

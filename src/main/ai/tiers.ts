@@ -12,6 +12,9 @@ export const LLM_BY_TIER: Record<Tier, ModelFile> = {
   strong: { repo: 'unsloth/Qwen3.5-9B-GGUF', file: 'Qwen3.5-9B-Q4_K_M.gguf', bytes: 5681 * MB }
 }
 
+/** RAM reportada vem ~0.1-0.4 GB abaixo do nominal (reserva da iGPU/firmware): arredonda para o GB inteiro */
+export const toGB = (bytes: number): number => Math.round(bytes / 1024 ** 3)
+
 /** rtf null = sem benchmark ainda, tratado como 1.0 */
 export function chooseTier(hw: Hardware, rtf: number | null): Tier {
   if (hw.platform === 'darwin' && hw.arch === 'arm64') {

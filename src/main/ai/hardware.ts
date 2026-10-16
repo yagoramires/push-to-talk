@@ -1,6 +1,7 @@
 import { app } from 'electron'
 import { cpus, totalmem } from 'os'
 import type { Hardware } from '../../shared/api'
+import { toGB } from './tiers'
 
 const NVIDIA = 4318
 const AMD = 4098
@@ -21,7 +22,7 @@ export async function detectHardware(): Promise<Hardware> {
   return {
     platform: process.platform,
     arch: process.arch,
-    totalMemGB: totalmem() / 1024 ** 3,
+    totalMemGB: toGB(totalmem()),
     cpuModel: cpu[0]?.model ?? 'unknown',
     cores: cpu.length,
     hasDiscreteGpu
