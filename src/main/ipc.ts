@@ -6,6 +6,7 @@ import type { ProfileProgress } from '../shared/progress'
 import { decodeWav } from '../shared/wav'
 import { loadCourse } from './content/load-course'
 import { configureModels, createTranscriber } from './ai/stt'
+import { createPronunciationScorer } from './ai/pronunciation'
 import { createStore } from './store'
 
 export function registerIpc(): void {
@@ -16,6 +17,7 @@ export function registerIpc(): void {
   // shortcut: no download yet (Task 5); dev users pre-populate via INGLES_DOWNLOAD_MODELS=1 npm test.
   configureModels(join(app.getPath('userData'), 'models'), false)
   const transcriber = createTranscriber()
+  const pronunciation = createPronunciationScorer()
   let state: AppState | null = null
   const current = async (): Promise<AppState> => (state ??= (await store.load()).state)
 
@@ -48,11 +50,22 @@ export function registerIpc(): void {
         ? systemPreferences.askForMediaAccess('microphone')
         : true
     },
-    async transcribe(wav: Uint8Array) {
+    async transcribe(wav: Uint8Array, expected?: string) {
+      let samples: Float32Array
       try {
-        return await transcriber.transcribe(decodeWav(wav).samples)
+        samples = decodeWav(wav).samples
       } catch (e) {
         return { ok: false, reason: 'failed', message: String(e) }
+      }
+      const r = await transcriber.transcribe(samples)
+      // shortcut: always enabled until Task 5 exposes the pronunciation status.
+      if (!r.ok || !expected?.trim()) return r
+      try {
+        const p = await pronunciation.score(samples, expected)
+        return p ? { ...r, pronunciation: p } : r
+      } catch (e) {
+        console.warn('pronunciation failed', e) // guidance only: never fails the transcription
+        return r
       }
     }
   }

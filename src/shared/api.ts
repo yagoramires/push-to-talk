@@ -9,8 +9,12 @@ export type AppState = {
 }
 /** recoveredFrom: caminho do backup do arquivo corrompido */
 export type LoadResult = { state: AppState; recoveredFrom?: string }
+export type WordScore = { word: string; ok: boolean; expected: string; heard: string }
+/** score 0..100; orientação apenas, não muda o veredito */
+export type PronunciationResult = { score: number; words: WordScore[] }
 export type TranscribeResult =
-  { ok: true; text: string } | { ok: false; reason: 'no-model' | 'failed'; message: string }
+  | { ok: true; text: string; pronunciation?: PronunciationResult }
+  | { ok: false; reason: 'no-model' | 'failed'; message: string }
 
 export interface AppApi {
   loadCourse(): Promise<Course>
@@ -18,7 +22,7 @@ export interface AppApi {
   createProfile(name: string): Promise<Profile>
   saveProgress(progress: ProfileProgress): Promise<void>
   ensureMic(): Promise<boolean>
-  transcribe(wav: Uint8Array): Promise<TranscribeResult>
+  transcribe(wav: Uint8Array, expected?: string): Promise<TranscribeResult>
 }
 
 export type Tier = 'light' | 'medium' | 'strong'

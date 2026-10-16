@@ -11,6 +11,11 @@ export function configureModels(modelsDir: string, allowRemoteModels: boolean): 
   allowRemote = allowRemoteModels
 }
 
+export const modelsConfig = (): { cacheDir: string; allowRemote: boolean } => ({
+  cacheDir,
+  allowRemote
+})
+
 export function cleanTranscript(text: string): string {
   return text
     .replace(/\[[^\]]*\]|\([^)]*\)/g, ' ')
