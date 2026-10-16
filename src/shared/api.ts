@@ -37,6 +37,8 @@ export interface AppApi {
 export type AiStatus = {
   tier: Tier | null
   hardware: Hardware | null
+  /** chooseTier(hardware, rtf); null when the hardware could not be detected */
+  recommended: Tier | null
   rtf: number | null
   ready: { stt: boolean; pronunciation: boolean; llm: boolean }
   pronunciationEnabled: boolean

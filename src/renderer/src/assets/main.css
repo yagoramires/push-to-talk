@@ -355,6 +355,24 @@ select {
   text-decoration: line-through;
 }
 
+/* Pronunciation guidance: label "(treinar)" carries the meaning, the style only reinforces it */
+.pronunciation {
+  margin-top: 0.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.pron-practice {
+  color: var(--almost);
+  text-decoration: underline dotted;
+}
+
+/* AI setup */
+.setup-progress {
+  width: 100%;
+  height: 1rem;
+}
+
 /* Notices */
 .notice {
   margin: 0.75rem 0 0;

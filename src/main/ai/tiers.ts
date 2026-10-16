@@ -1,17 +1,9 @@
 import type { Hardware, Tier } from '../../shared/api'
 
-export type ModelFile = { repo: string; file: string; bytes: number }
+export { LLM_BY_TIER, type ModelFile } from '../../shared/models'
 
 export const STT_MODEL = 'onnx-community/whisper-base.en'
 export const PRON_MODEL = 'onnx-community/wav2vec2-lv-60-espeak-cv-ft-ONNX'
-
-// Hugging Face sizes are decimal MB (e.g. 2B file = 1_280_835_840 bytes); setup checks bytes ±1%.
-const MB = 1_000_000
-export const LLM_BY_TIER: Record<Tier, ModelFile> = {
-  light: { repo: 'unsloth/Qwen3.5-2B-GGUF', file: 'Qwen3.5-2B-Q4_K_M.gguf', bytes: 1281 * MB },
-  medium: { repo: 'unsloth/Qwen3.5-4B-GGUF', file: 'Qwen3.5-4B-Q4_K_M.gguf', bytes: 2741 * MB },
-  strong: { repo: 'unsloth/Qwen3.5-9B-GGUF', file: 'Qwen3.5-9B-Q4_K_M.gguf', bytes: 5681 * MB }
-}
 
 /** RAM reportada vem ~0.1-0.4 GB abaixo do nominal (reserva da iGPU/firmware): arredonda para o GB inteiro */
 export const toGB = (bytes: number): number => Math.round(bytes / 1024 ** 3)

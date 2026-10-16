@@ -75,11 +75,17 @@ const tmp = (): string => mkdtempSync(join(tmpdir(), 'ingles-setup-'))
 test('full run writes state and everything is ready', async () => {
   const dir = tmp()
   const setup = make(dir, fakeDownloader(dir))
-  expect((await setup.status()).ready).toEqual({ stt: false, pronunciation: false, llm: false })
+  expect(await setup.status()).toMatchObject({
+    tier: null,
+    hardware: hw, // detected before the first run so the setup screen can show it
+    recommended: 'light', // 16 GB x64, no benchmark yet
+    ready: { stt: false, pronunciation: false, llm: false }
+  })
   const s = await setup.run(undefined, () => {})
   expect(s).toMatchObject({
     tier: 'medium', // 16 GB + rtf 0.5
     hardware: hw,
+    recommended: 'medium',
     rtf: 0.5,
     ready: { stt: true, pronunciation: true, llm: true },
     pronunciationEnabled: true

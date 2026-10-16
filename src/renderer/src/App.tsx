@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import type { Profile } from '../../shared/api'
+import type { AiStatus, Profile } from '../../shared/api'
 import { availableLevels, type Course, type Level } from '../../shared/content'
 import {
   newProgress,
@@ -12,9 +12,11 @@ import type { Duration } from '../../shared/session'
 import HomeScreen from './screens/HomeScreen'
 import ProfilesScreen from './screens/ProfilesScreen'
 import SessionScreen from './screens/SessionScreen'
+import SetupScreen from './screens/SetupScreen'
 import SummaryScreen from './screens/SummaryScreen'
 
 type Screen =
+  | { name: 'setup' }
   | { name: 'profiles' }
   | { name: 'home' }
   | { name: 'session'; mode: Mode; minutes: Duration }
@@ -29,10 +31,18 @@ export default function App(): React.JSX.Element {
   const [saveError, setSaveError] = useState<string | null>(null)
   const [profileId, setProfileId] = useState<string | null>(null)
   const [screen, setScreen] = useState<Screen>({ name: 'profiles' })
+  const [ai, setAi] = useState<AiStatus | null>(null)
 
   useEffect(() => {
-    Promise.all([window.api.loadCourse(), window.api.loadState()]).then(
-      ([c, { state, recoveredFrom }]) => {
+    Promise.all([
+      window.api.loadCourse(),
+      window.api.loadState(),
+      // No AI status is not fatal: the app works with manual marking.
+      window.api.aiStatus().catch(() => null)
+    ]).then(
+      ([c, { state, recoveredFrom }, aiStatus]) => {
+        setAi(aiStatus)
+        if (aiStatus && !aiStatus.tier) setScreen({ name: 'setup' })
         setCourse(c)
         setProfiles(state.profiles)
         setProgress(state.progress)
@@ -93,7 +103,17 @@ export default function App(): React.JSX.Element {
   }
 
   let body: React.JSX.Element
-  if (!profile || !current || screen.name === 'profiles')
+  if (screen.name === 'setup' && ai)
+    body = (
+      <SetupScreen
+        status={ai}
+        onClose={(s) => {
+          if (s) setAi(s)
+          setScreen({ name: 'home' }) // falls back to the profiles screen when none is selected
+        }}
+      />
+    )
+  else if (!profile || !current || screen.name === 'profiles')
     body = (
       <ProfilesScreen
         profiles={profiles}
@@ -130,6 +150,16 @@ export default function App(): React.JSX.Element {
         progress={current}
         onStart={(mode, minutes) => setScreen({ name: 'session', mode, minutes })}
         onSwitchProfile={() => setScreen({ name: 'profiles' })}
+        onAiSettings={() =>
+          void window.api
+            .aiStatus()
+            .catch(() => ai)
+            .then((s) => {
+              if (!s) return
+              setAi(s)
+              setScreen({ name: 'setup' })
+            })
+        }
       />
     )
 

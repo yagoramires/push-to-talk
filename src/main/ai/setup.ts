@@ -39,10 +39,14 @@ export function createAiSetup(o: {
       .then(JSON.parse)
       .catch(() => null)) as AiState | null
     const gguf = s && LLM_BY_TIER[s.tier]
+    // Before the first run there is no saved state: detect now so the setup screen can show it.
+    const hardware = s?.hardware ?? (await o.detect().catch(() => null))
+    const rtf = s?.rtf ?? null
     return {
       tier: gguf ? s.tier : null,
-      hardware: s?.hardware ?? null,
-      rtf: s?.rtf ?? null,
+      hardware,
+      recommended: hardware && chooseTier(hardware, rtf),
+      rtf,
       ready: {
         stt: existsSync(sttModelFile(o.modelsDir)),
         pronunciation: pronunciationModelReady(o.modelsDir),

@@ -46,7 +46,12 @@ export default function ExerciseView({ exercise: ex, mode, onFinal }: Props): Re
           <div className="actions">
             <ListenButton text={`${ex.word_en}. ${ex.example_en}`} />
           </div>
-          <SpokenAnswer check={vocabAsRepeat(ex)} mode={mode} onFinal={onFinal} />
+          <SpokenAnswer
+            check={vocabAsRepeat(ex)}
+            expected={ex.example_en}
+            mode={mode}
+            onFinal={onFinal}
+          />
         </article>
       )
     case 'free_speak':
@@ -79,7 +84,12 @@ export default function ExerciseView({ exercise: ex, mode, onFinal }: Props): Re
               <ListenButton text={listenText} />
             </div>
           )}
-          <SpokenAnswer check={ex} mode={mode} onFinal={onFinal} />
+          <SpokenAnswer
+            check={ex}
+            expected={ex.kind === 'repeat' ? ex.prompt : undefined}
+            mode={mode}
+            onFinal={onFinal}
+          />
         </article>
       )
     }

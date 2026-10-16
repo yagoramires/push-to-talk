@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import type { FreeSpeakEval, PronunciationResult } from '../../../shared/api'
 import type { CommonError, FreeSpeak } from '../../../shared/content'
 import {
   checkAnswer,
@@ -41,7 +42,7 @@ type SpokenState =
   | { kind: 'idle' }
   | { kind: 'unclear' }
   | { kind: 'failed'; message: string }
-  | { kind: 'result'; result: CheckResult; transcript: string }
+  | { kind: 'result'; result: CheckResult; transcript: string; pronunciation?: PronunciationResult }
 
 /**
  * The answer part of a spoken exercise: record → transcribe → check → ResultView.
@@ -49,10 +50,13 @@ type SpokenState =
  */
 export function SpokenAnswer({
   check,
+  expected,
   mode,
   onFinal
 }: {
   check: { accepted: string[]; commonErrors: CommonError[] }
+  /** Sentence to score pronunciation against (repeat prompt, vocab example). */
+  expected?: string
   mode: Mode
   onFinal: OnFinal
 }): React.JSX.Element {
@@ -65,6 +69,7 @@ export function SpokenAnswer({
         result={state.result}
         transcript={state.transcript}
         mode={mode}
+        pronunciation={state.pronunciation}
         onFinal={(v) => onFinal(v, state.transcript)}
       />
     )
@@ -79,12 +84,13 @@ export function SpokenAnswer({
   return (
     <div className="answer">
       <RecordButton
-        onTranscript={(text) => {
+        expected={expected}
+        onTranscript={(text, pronunciation) => {
           const result = checkAnswer(text, check)
           setState(
             result.verdict === 'unclear'
               ? { kind: 'unclear' }
-              : { kind: 'result', result, transcript: text }
+              : { kind: 'result', result, transcript: text, pronunciation }
           )
         }}
         onFailure={(message) => setState({ kind: 'failed', message })}
@@ -100,9 +106,12 @@ type FreeState =
   | { kind: 'idle' }
   | { kind: 'unclear' }
   | { kind: 'failed'; message: string }
-  | { kind: 'done'; transcript: string }
+  | { kind: 'evaluating'; transcript: string }
+  | { kind: 'evaluated'; transcript: string; ev: Extract<FreeSpeakEval, { ok: true }> }
+  /** Self-assessment checklist; message says why the AI could not judge it. */
+  | { kind: 'done'; transcript: string; message?: string }
 
-// shortcut: self-assessment against the guidelines; Plan 2 brings the text model to judge it.
+/** Solo: the local text model judges the answer; without it, self-assessment against the guidelines. */
 export function FreeSpeakAnswer({
   exercise,
   mode,
@@ -114,6 +123,19 @@ export function FreeSpeakAnswer({
 }): React.JSX.Element {
   const [state, setState] = useState<FreeState>({ kind: 'idle' })
   const [checked, setChecked] = useState<boolean[]>(() => exercise.guidelines_pt.map(() => false))
+
+  async function evaluate(transcript: string): Promise<void> {
+    setState({ kind: 'evaluating', transcript })
+    const { prompt_en, guidelines_pt } = exercise
+    const ev: FreeSpeakEval = await window.api
+      .evaluateFreeSpeak({ prompt_en, guidelines_pt, transcript })
+      .catch((e: Error) => ({ ok: false, reason: 'failed', message: e.message }))
+    setState(
+      ev.ok
+        ? { kind: 'evaluated', transcript, ev }
+        : { kind: 'done', transcript, message: ev.message }
+    )
+  }
 
   if (mode === 'guided')
     return (
@@ -132,7 +154,7 @@ export function FreeSpeakAnswer({
       <div className="answer">
         <RecordButton
           onTranscript={(text) =>
-            setState(normalize(text) ? { kind: 'done', transcript: text } : { kind: 'unclear' })
+            normalize(text) ? void evaluate(text) : setState({ kind: 'unclear' })
           }
           onFailure={(message) => setState({ kind: 'failed', message })}
         />
@@ -142,14 +164,63 @@ export function FreeSpeakAnswer({
       </div>
     )
 
+  if (state.kind === 'evaluating')
+    return (
+      <p className="notice" aria-live="polite">
+        Analisando sua resposta…
+      </p>
+    )
+
+  if (state.kind === 'evaluated') {
+    const { transcript, ev } = state
+    return (
+      <section className={`result result-${ev.correct ? 'correct' : 'error'}`} aria-live="polite">
+        <p className="result-verdict">{ev.correct ? 'Correto!' : 'Ainda não.'}</p>
+        <p>
+          <span className="muted">Você disse: </span>
+          <span lang="en">{transcript}</span>
+        </p>
+        <p className="result-explanation">{ev.feedback_pt}</p>
+        <p>
+          <span className="muted">Forma corrigida: </span>
+          <strong lang="en">{ev.corrected_en}</strong>
+        </p>
+        <div className="actions">
+          <button
+            type="button"
+            className="btn btn-primary"
+            autoFocus
+            onClick={() => onFinal(ev.correct ? 'correct' : 'error', transcript)}
+          >
+            Continuar
+          </button>
+          {!ev.correct && (
+            <button
+              type="button"
+              className="btn btn-secondary"
+              onClick={() => onFinal('correct', transcript)}
+            >
+              Acho que acertei
+            </button>
+          )}
+        </div>
+      </section>
+    )
+  }
+
   const transcript = state.kind === 'done' ? state.transcript : ''
+  const warning =
+    state.kind === 'failed'
+      ? `${state.message} Fale em voz alta e avalie você mesmo.`
+      : state.message && `${state.message} Avalie você mesmo.`
   return (
     <section className="result" aria-live="polite">
-      {state.kind === 'failed' ? (
+      {warning && (
         <p className="notice notice-warn" role="alert">
-          {state.message} Fale em voz alta e avalie você mesmo.
+          {warning}
         </p>
-      ) : (
+      )}
+      {transcript && (
         <p>
           <span className="muted">Você disse: </span>
           <span lang="en">{transcript}</span>
