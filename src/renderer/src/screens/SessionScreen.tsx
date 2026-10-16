@@ -142,7 +142,7 @@ export default function SessionScreen({
         <>
           <ExerciseView key={index} exercise={item.exercise} mode={mode} onFinal={handleFinal} />
           {mode === 'guided' && (
-            <TeacherPanel key={index} block={item.block} exercise={item.exercise} />
+            <TeacherPanel key={`teacher-${index}`} block={item.block} exercise={item.exercise} />
           )}
         </>
       ) : (
