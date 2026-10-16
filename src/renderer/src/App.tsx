@@ -2,14 +2,19 @@ import { useEffect, useState } from 'react'
 import type { AiStatus, Profile } from '../../shared/api'
 import { availableLevels, type Course, type Level } from '../../shared/content'
 import {
+  migrateProgress,
   newProgress,
   recordSession,
+  type ExamRecord,
   type Mode,
   type ProfileProgress,
   type SessionRecord
 } from '../../shared/progress'
 import type { Duration } from '../../shared/session'
+import ExamResult from './components/ExamResult'
+import ExamScreen from './screens/ExamScreen'
 import HomeScreen from './screens/HomeScreen'
+import PlacementScreen from './screens/PlacementScreen'
 import ProfilesScreen from './screens/ProfilesScreen'
 import SessionScreen from './screens/SessionScreen'
 import SetupScreen from './screens/SetupScreen'
@@ -21,6 +26,9 @@ type Screen =
   | { name: 'home' }
   | { name: 'session'; mode: Mode; minutes: Duration }
   | { name: 'summary'; record: SessionRecord }
+  | { name: 'placement' }
+  | { name: 'exam'; mode: Mode; level: Level }
+  | { name: 'examResult'; record: ExamRecord }
 
 export default function App(): React.JSX.Element {
   const [course, setCourse] = useState<Course | null>(null)
@@ -45,7 +53,12 @@ export default function App(): React.JSX.Element {
         if (aiStatus && !aiStatus.tier) setScreen({ name: 'setup' })
         setCourse(c)
         setProfiles(state.profiles)
-        setProgress(state.progress)
+        // Progresso salvo antes das provas não tem level/exams; completa ao carregar.
+        setProgress(
+          Object.fromEntries(
+            Object.entries(state.progress).map(([id, p]) => [id, migrateProgress(p, c)])
+          )
+        )
         setRecoveredFrom(recoveredFrom)
       },
       (e: Error) => setLoadError(e.message)
@@ -90,6 +103,14 @@ export default function App(): React.JSX.Element {
     setScreen({ name: 'home' })
   }
 
+  /** The profile is created now, its progress only when the placement ends ("Começar"). */
+  async function createForPlacement(name: string): Promise<void> {
+    const created = await window.api.createProfile(name)
+    setProfiles((ps) => [...ps, created])
+    setProfileId(created.id)
+    setScreen({ name: 'placement' })
+  }
+
   function selectProfile(id: string): void {
     // A profile can exist without progress if the app closed right after creating it.
     if (!progress[id]) void saveProgress(newProgress(id, levels[0], course!))
@@ -113,6 +134,18 @@ export default function App(): React.JSX.Element {
         }}
       />
     )
+  else if (screen.name === 'placement' && profile && course.placement)
+    body = (
+      <PlacementScreen
+        placement={course.placement}
+        levels={levels}
+        onDone={(level) => {
+          void saveProgress(newProgress(profile.id, level, course))
+          setScreen({ name: 'home' })
+        }}
+        onQuit={() => setScreen({ name: 'profiles' })}
+      />
+    )
   else if (!profile || !current || screen.name === 'profiles')
     body = (
       <ProfilesScreen
@@ -120,6 +153,7 @@ export default function App(): React.JSX.Element {
         levels={levels}
         onSelect={selectProfile}
         onCreate={createProfile}
+        onPlacement={course.placement && createForPlacement}
       />
     )
   else if (screen.name === 'session')
@@ -131,6 +165,29 @@ export default function App(): React.JSX.Element {
         minutes={screen.minutes}
         onProgress={(p) => void saveProgress(p)}
         onEnd={endSession}
+      />
+    )
+  else if (screen.name === 'exam' && course.exams?.[screen.level])
+    body = (
+      <ExamScreen
+        mode={screen.mode}
+        course={course}
+        exam={course.exams[screen.level]!}
+        progress={current}
+        onDone={(p, record) => {
+          void saveProgress(p)
+          setScreen({ name: 'examResult', record })
+        }}
+        onQuit={() => setScreen({ name: 'home' })}
+      />
+    )
+  else if (screen.name === 'examResult')
+    body = (
+      <ExamResult
+        course={course}
+        record={screen.record}
+        weakUnits={current.weakUnits}
+        onHome={() => setScreen({ name: 'home' })}
       />
     )
   else if (screen.name === 'summary')
@@ -149,6 +206,7 @@ export default function App(): React.JSX.Element {
         course={course}
         progress={current}
         onStart={(mode, minutes) => setScreen({ name: 'session', mode, minutes })}
+        onExam={(mode, level) => setScreen({ name: 'exam', mode, level })}
         onSwitchProfile={() => setScreen({ name: 'profiles' })}
         onAiSettings={() =>
           void window.api
@@ -165,7 +223,7 @@ export default function App(): React.JSX.Element {
 
   return (
     <>
-      {recoveredFrom && screen.name !== 'session' && (
+      {recoveredFrom && !['session', 'exam', 'placement'].includes(screen.name) && (
         <div className="notice notice-warn banner" role="alert">
           O arquivo de progresso estava corrompido e não pôde ser lido. Guardei uma cópia dele em{' '}
           <code>{recoveredFrom}</code> e comecei com um progresso novo.

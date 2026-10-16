@@ -1,6 +1,16 @@
-import { BLOCK_KINDS, type Block, type Course, type Unit } from '../../src/shared/content'
+import {
+  BLOCK_KINDS,
+  LEVELS,
+  SKILLS,
+  type AssessmentItem,
+  type Block,
+  type Course,
+  type Level,
+  type Skill,
+  type Unit
+} from '../../src/shared/content'
 
-function makeUnit(id: string, order: number): Unit {
+function makeUnit(id: string, order: number, level: Level = 'A1'): Unit {
   const blocks: Block[] = BLOCK_KINDS.map((kind) => ({
     id: `${id}-${kind}`,
     kind,
@@ -30,7 +40,7 @@ function makeUnit(id: string, order: number): Unit {
   }))
   return {
     id,
-    level: 'A1',
+    level,
     order,
     title_pt: id,
     title_en: id,
@@ -39,6 +49,52 @@ function makeUnit(id: string, order: number): Unit {
   }
 }
 
-export function makeCourse(): Course {
-  return { units: [makeUnit('u1', 1), makeUnit('u2', 2)] }
+function makeItem(id: string, skill: Skill, unitId?: string): AssessmentItem {
+  return {
+    skill,
+    ...(unitId && { unitId }),
+    exercise: {
+      id,
+      kind: 'repeat',
+      instruction_pt: 'Repita',
+      prompt: 'Hello',
+      accepted: ['hello'],
+      commonErrors: []
+    }
+  }
+}
+
+const PLACEMENT_SKILLS: Skill[] = [
+  'listening',
+  'listening',
+  'speaking',
+  'speaking',
+  'vocabulary',
+  'structure'
+]
+
+/** withA2 adds u3 at level A2, after the A1 units. */
+export function makeCourse({ withA2 = false } = {}): Course {
+  return {
+    units: [makeUnit('u1', 1), makeUnit('u2', 2), ...(withA2 ? [makeUnit('u3', 1, 'A2')] : [])],
+    placement: {
+      levels: LEVELS.map((level) => ({
+        level,
+        items: PLACEMENT_SKILLS.map((skill, i) => makeItem(`p-${level}-${i}`, skill))
+      }))
+    },
+    exams: {
+      A1: {
+        level: 'A1',
+        minutes: 25,
+        // Itens de listening apontam para u1; os demais ficam sem unitId.
+        parts: SKILLS.map((skill) => ({
+          skill,
+          items: [0, 1, 2, 3].map((i) =>
+            makeItem(`x-a1-${skill}-${i}`, skill, skill === 'listening' ? 'u1' : undefined)
+          )
+        }))
+      }
+    }
+  }
 }

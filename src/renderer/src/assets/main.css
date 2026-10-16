@@ -374,6 +374,10 @@ select {
 }
 
 /* Notices */
+.panel-highlight {
+  border: 2px solid var(--primary);
+}
+
 .notice {
   margin: 0.75rem 0 0;
 }

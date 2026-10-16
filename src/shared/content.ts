@@ -162,7 +162,74 @@ export const UnitSchema = z.object({
 })
 export type Unit = z.infer<typeof UnitSchema>
 
-export type Course = { units: Unit[] } // ordenado por nível e depois por order
+export const SKILLS = ['listening', 'speaking', 'vocabulary', 'structure'] as const
+export type Skill = (typeof SKILLS)[number]
+
+export const AssessmentItemSchema = z
+  .object({ skill: z.enum(SKILLS), unitId: str.optional(), exercise: ExerciseSchema })
+  .refine(
+    (i) =>
+      i.skill === 'speaking'
+        ? (SPOKEN_KINDS as readonly string[]).includes(i.exercise.kind)
+        : i.exercise.kind !== 'free_speak',
+    {
+      path: ['exercise', 'kind'],
+      message: 'speaking needs a spoken exercise; free_speak only in speaking'
+    }
+  )
+export type AssessmentItem = z.infer<typeof AssessmentItemSchema>
+
+const countSkill = (items: AssessmentItem[], s: Skill): number =>
+  items.filter((i) => i.skill === s).length
+const PLACEMENT_MIX: Record<Skill, number> = {
+  listening: 2,
+  speaking: 2,
+  vocabulary: 1,
+  structure: 1
+}
+
+export const PlacementSchema = z.object({
+  levels: z
+    .array(
+      z
+        .object({ level: z.enum(LEVELS), items: z.array(AssessmentItemSchema) })
+        .refine((l) => SKILLS.every((s) => countSkill(l.items, s) === PLACEMENT_MIX[s]), {
+          path: ['items'],
+          message: 'each level needs exactly 2 listening, 2 speaking, 1 vocabulary, 1 structure'
+        })
+    )
+    .refine((ls) => ls.map((l) => l.level).join() === LEVELS.join(), {
+      message: `levels must be ${LEVELS.join(', ')}, in order`
+    })
+})
+export type Placement = z.infer<typeof PlacementSchema>
+
+export const LevelExamSchema = z.object({
+  level: z.enum(LEVELS),
+  minutes: z.number().int().min(20).max(30),
+  parts: z
+    .array(
+      z
+        .object({ skill: z.enum(SKILLS), items: z.array(AssessmentItemSchema).min(4) })
+        .refine((p) => p.items.every((i) => i.skill === p.skill), {
+          path: ['items'],
+          message: 'every item must have the part skill'
+        })
+    )
+    .refine(
+      (ps) => ps.length === SKILLS.length && SKILLS.every((s) => ps.some((p) => p.skill === s)),
+      {
+        message: `needs exactly one part per skill (${SKILLS.join(', ')})`
+      }
+    )
+})
+export type LevelExam = z.infer<typeof LevelExamSchema>
+
+export type Course = {
+  units: Unit[] // ordenado por nível e depois por order
+  placement?: Placement
+  exams?: Partial<Record<Level, LevelExam>>
+}
 export type Position = { unitId: string; blockIndex: number }
 
 /** Próxima posição na trilha; null = fim do curso. */
@@ -175,16 +242,35 @@ export function nextPosition(course: Course, pos: Position): Position | null {
   return next ? { unitId: next.id, blockIndex: 0 } : null
 }
 
+/** Itens das avaliações com o nível de cada um. */
+function assessmentItems(course: Course): { level: Level; item: AssessmentItem }[] {
+  return [
+    ...(course.placement?.levels ?? []).flatMap((l) =>
+      l.items.map((item) => ({ level: l.level, item }))
+    ),
+    ...Object.values(course.exams ?? {}).flatMap((x) =>
+      x.parts.flatMap((p) => p.items.map((item) => ({ level: x.level, item })))
+    )
+  ]
+}
+
+/** Exercícios das avaliações não têm bloco; a unidade vem do unitId ou é a primeira do nível. */
 export function findExercise(
   course: Course,
   exerciseId: string
-): { unit: Unit; block: Block; exercise: Exercise } | undefined {
+): { unit: Unit; block?: Block; exercise: Exercise } | undefined {
   for (const unit of course.units)
     for (const block of unit.blocks) {
       const exercise = block.exercises.find((e) => e.id === exerciseId)
       if (exercise) return { unit, block, exercise }
     }
-  return undefined
+  const found = assessmentItems(course).find(({ item }) => item.exercise.id === exerciseId)
+  const unit =
+    found &&
+    (found.item.unitId
+      ? course.units.find((u) => u.id === found.item.unitId)
+      : course.units.find((u) => u.level === found.level))
+  return found && unit ? { unit, exercise: found.item.exercise } : undefined
 }
 
 export function availableLevels(course: Course): Level[] {

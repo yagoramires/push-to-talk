@@ -118,6 +118,11 @@ export default function SessionScreen({
           Encerrar sessão
         </button>
       </header>
+      {plan.examDue && (
+        <p className="notice notice-warn">
+          Sessão de reforço — a prova do {plan.examDue} está liberada no início
+        </p>
+      )}
 
       {!recapSeen && recap ? (
         <SoloRecap

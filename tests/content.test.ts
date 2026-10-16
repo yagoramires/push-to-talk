@@ -1,7 +1,7 @@
 import { join } from 'node:path'
 import { expect, test } from 'vitest'
 import { loadCourse } from '../src/main/content/load-course'
-import { BLOCK_KINDS, SPOKEN_KINDS } from '../src/shared/content'
+import { BLOCK_KINDS, LEVELS, SPOKEN_KINDS, type Exercise } from '../src/shared/content'
 import { checkAnswer, normalize } from '../src/shared/matcher'
 
 test('all units in content/ are valid', async () => {
@@ -106,4 +106,42 @@ test('every accepted answer of every spoken/fill exercise is correct through che
     )
       for (const a of e.accepted)
         expect(checkAnswer(a, e).verdict, `${e.id} accepts "${a}"`).toBe('correct')
+})
+
+const assessmentExercises = (course: Awaited<ReturnType<typeof loadCourse>>): Exercise[] => [
+  ...(course.placement?.levels ?? []).flatMap((l) => l.items.map((i) => i.exercise)),
+  ...Object.values(course.exams ?? {}).flatMap((x) =>
+    x.parts.flatMap((p) => p.items.map((i) => i.exercise))
+  )
+]
+
+test('real course loads the placement (A1-C1) and the A1 exam', async () => {
+  const course = await loadCourse(join(__dirname, '..', 'content'))
+  expect(course.placement?.levels.map((l) => l.level)).toEqual([...LEVELS])
+  const exam = course.exams?.A1
+  expect(exam?.minutes).toBe(25)
+  expect(exam?.parts.map((p) => p.items.length)).toEqual([5, 5, 5, 5])
+  for (const l of course.placement!.levels)
+    expect(new Set(l.items.map((i) => i.exercise.kind)).size).toBeGreaterThanOrEqual(2)
+  for (const e of assessmentExercises(course)) expect(e.id).toMatch(/^(pl|ex-a1)-/)
+})
+
+test('assessments: accepted answers pass checkAnswer and no commonError rejects them', async () => {
+  const course = await loadCourse(join(__dirname, '..', 'content'))
+  for (const e of assessmentExercises(course)) {
+    if (
+      e.kind === 'repeat' ||
+      e.kind === 'translate' ||
+      e.kind === 'listen_answer' ||
+      e.kind === 'fill'
+    )
+      for (const a of e.accepted)
+        expect(checkAnswer(a, e).verdict, `${e.id} accepts "${a}"`).toBe('correct')
+    if ('commonErrors' in e)
+      for (const c of e.commonErrors)
+        for (const a of e.accepted)
+          expect(new RegExp(c.match).test(normalize(a)), `${e.id}/${c.id} matches "${a}"`).toBe(
+            false
+          )
+  }
 })

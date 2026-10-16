@@ -17,6 +17,8 @@ type Props = {
   transcript: string
   mode: Mode
   pronunciation?: PronunciationResult
+  /** Assessment: only the verdict and moving on; the detailed correction comes at the end. */
+  exam?: boolean
   onFinal(v: FinalVerdict): void
 }
 
@@ -25,10 +27,12 @@ export default function ResultView({
   transcript,
   mode,
   pronunciation,
+  exam,
   onFinal
 }: Props): React.JSX.Element {
   const final = toFinalVerdict(result)
-  const err = result.matchedError
+  const err = exam ? undefined : result.matchedError
+  const details = !exam
   return (
     <section className={`result result-${result.verdict}`} aria-live="polite">
       <p className="result-verdict">{LABELS[result.verdict]}</p>
@@ -45,13 +49,13 @@ export default function ResultView({
           <strong lang="en">{err.correction_en}</strong>
         </p>
       )}
-      {!err && result.closest && result.verdict !== 'correct' && (
+      {details && !err && result.closest && result.verdict !== 'correct' && (
         <p>
           <span className="muted">Resposta esperada: </span>
           <strong lang="en">{result.closest}</strong>
         </p>
       )}
-      {result.diff && result.verdict !== 'correct' && (
+      {details && result.diff && result.verdict !== 'correct' && (
         <p className="diff" lang="en">
           {result.diff.map((d, i) => (
             <span key={i} className={`diff-${d.status}`}>
@@ -61,7 +65,7 @@ export default function ResultView({
           ))}
         </p>
       )}
-      {pronunciation && <PronunciationView result={pronunciation} />}
+      {details && pronunciation && <PronunciationView result={pronunciation} />}
       {mode === 'guided' ? (
         <div className="actions">
           <button

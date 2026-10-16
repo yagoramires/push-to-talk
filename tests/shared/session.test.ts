@@ -71,18 +71,52 @@ describe('buildSession', () => {
   })
 
   test('finished course: only review, courseComplete', () => {
-    const s = buildSession(course, { ...withError(), position: null }, 20)
+    const s = buildSession(course, { ...withError(), position: null, courseComplete: true }, 20)
     expect(kinds(s)).toEqual(['review'])
     expect(s.courseComplete).toBe(true)
   })
 
   test('finished course with no open errors: empty plan, courseComplete', () => {
-    const s = buildSession(course, { ...fresh(), position: null }, 20)
+    const s = buildSession(course, { ...fresh(), position: null, courseComplete: true }, 20)
     expect(s.steps).toEqual([])
     expect(s.courseComplete).toBe(true)
   })
 
   test('no open errors: no review step', () => {
     expect(kinds(buildSession(course, fresh(), 20))[0]).toBe('block')
+  })
+})
+
+describe('buildSession with level gating', () => {
+  const a2 = makeCourse({ withA2: true })
+  const at = (unitId: string, blockIndex = 0): ReturnType<typeof newProgress> => ({
+    ...newProgress('p1', 'A1', a2),
+    position: { unitId, blockIndex }
+  })
+  const blockUnits = (s: SessionPlan): string[] =>
+    s.steps.flatMap((x) => (x.kind === 'block' ? [x.unitId] : []))
+
+  test('stops at the end of the level, even with time left', () => {
+    const s = buildSession(a2, at('u2', 4), 60)
+    expect(blockUnits(s)).toEqual(['u2', 'u2'])
+    expect(s.examDue).toBeNull()
+    expect(s.courseComplete).toBe(false)
+  })
+
+  test('exam due: reinforces the last unit of the level, no next-level blocks', () => {
+    const s = buildSession(a2, at('u3'), 30)
+    expect(s.examDue).toBe('A1')
+    expect(new Set(blockUnits(s))).toEqual(new Set(['u2']))
+    expect(s.steps.at(-1)).toMatchObject({ kind: 'wrapup', unitId: 'u2' })
+    expect(s.courseComplete).toBe(false)
+  })
+
+  test('exam due with weak units: reinforces those units', () => {
+    const s = buildSession(a2, { ...at('u3'), weakUnits: ['u1'] }, 30)
+    expect(new Set(blockUnits(s))).toEqual(new Set(['u1']))
+  })
+
+  test('reached level A2: crosses into u3', () => {
+    expect(blockUnits(buildSession(a2, { ...at('u2', 4), level: 'A2' }, 60))).toContain('u3')
   })
 })
