@@ -11,6 +11,7 @@ type Props = {
   progress: ProfileProgress
   onStart(mode: Mode, minutes: Duration): void
   onSwitchProfile(): void
+  onAiSettings(): void
 }
 
 export default function HomeScreen({
@@ -18,7 +19,8 @@ export default function HomeScreen({
   course,
   progress,
   onStart,
-  onSwitchProfile
+  onSwitchProfile,
+  onAiSettings
 }: Props): React.JSX.Element {
   const [mode, setMode] = useState<Mode>('solo')
   const where = describePosition(course, progress.position)
@@ -70,6 +72,9 @@ export default function HomeScreen({
           ))}
         </div>
       </section>
+      <button type="button" className="btn btn-secondary" onClick={onAiSettings}>
+        Configurações da IA
+      </button>
     </main>
   )
 }

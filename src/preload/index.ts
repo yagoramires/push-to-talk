@@ -1,6 +1,6 @@
-import { contextBridge, ipcRenderer } from 'electron'
+import { contextBridge, ipcRenderer, type IpcRendererEvent } from 'electron'
 import { electronAPI } from '@electron-toolkit/preload'
-import type { AppApi } from '../shared/api'
+import type { AiProgress, AppApi } from '../shared/api'
 
 const api: AppApi = {
   loadCourse: () => ipcRenderer.invoke('loadCourse'),
@@ -8,7 +8,15 @@ const api: AppApi = {
   createProfile: (name) => ipcRenderer.invoke('createProfile', name),
   saveProgress: (progress) => ipcRenderer.invoke('saveProgress', progress),
   ensureMic: () => ipcRenderer.invoke('ensureMic'),
-  transcribe: (wav) => ipcRenderer.invoke('transcribe', wav)
+  transcribe: (wav, expected) => ipcRenderer.invoke('transcribe', wav, expected),
+  evaluateFreeSpeak: (input) => ipcRenderer.invoke('evaluateFreeSpeak', input),
+  aiStatus: () => ipcRenderer.invoke('aiStatus'),
+  setupAi: (tier) => ipcRenderer.invoke('setupAi', tier),
+  onAiProgress(cb) {
+    const listener = (_e: IpcRendererEvent, p: AiProgress): void => cb(p)
+    ipcRenderer.on('ai-progress', listener)
+    return () => void ipcRenderer.off('ai-progress', listener)
+  }
 }
 
 if (process.contextIsolated) {

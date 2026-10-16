@@ -1,13 +1,16 @@
 import { describe, expect, test } from 'vitest'
 import { makeCourse } from '../fixtures/course'
 import {
+  describeHardware,
   describePosition,
   flattenPlan,
   formatClock,
+  formatSize,
   shuffled,
   vocabAsRepeat
 } from '../../src/renderer/src/flow'
 import { checkAnswer } from '../../src/shared/matcher'
+import { downloadBytes } from '../../src/shared/models'
 import { newProgress, recordAttempt } from '../../src/shared/progress'
 import { buildSession } from '../../src/shared/session'
 
@@ -129,5 +132,30 @@ describe('describePosition', () => {
     expect(describePosition(course, { unitId: 'u2', blockIndex: 1 })).toBe('Vocabulário · u2 (A1)')
     expect(describePosition(course, null)).toBeNull()
     expect(describePosition(course, { unitId: 'nope', blockIndex: 0 })).toBeNull()
+  })
+})
+
+describe('AI setup texts', () => {
+  test('describeHardware lists processor, RAM and GPU in Portuguese', () => {
+    const hw = {
+      platform: 'darwin',
+      arch: 'arm64',
+      totalMemGB: 16,
+      cpuModel: 'Apple M2',
+      cores: 8,
+      hasDiscreteGpu: false
+    }
+    expect(describeHardware(hw)).toEqual([
+      'Processador: Apple M2 (8 núcleos)',
+      'Memória: 16 GB de RAM',
+      'Placa de vídeo dedicada: não'
+    ])
+  })
+
+  test('download size per tier adds speech, pronunciation and text model', () => {
+    expect(downloadBytes('light')).toBe((77 + 318 + 1281) * 1e6)
+    expect(formatSize(downloadBytes('light'))).toBe('1,7 GB')
+    expect(formatSize(downloadBytes('strong'))).toBe('6,1 GB')
+    expect(formatSize(395e6)).toBe('395 MB')
   })
 })

@@ -8,6 +8,7 @@ import {
   type Position,
   type VocabCard
 } from '../../shared/content'
+import type { Hardware, Tier } from '../../shared/api'
 import type { SessionPlan } from '../../shared/session'
 
 export const BLOCK_LABELS: Record<BlockKind, string> = {
@@ -117,4 +118,24 @@ export function describePosition(course: Course, pos: Position | null): string |
   const unit = course.units.find((u) => u.id === pos.unitId)
   const block = unit?.blocks[pos.blockIndex]
   return unit && block ? `${BLOCK_LABELS[block.kind]} · ${unit.title_pt} (${unit.level})` : null
+}
+
+export const TIERS: Tier[] = ['light', 'medium', 'strong']
+export const TIER_LABELS: Record<Tier, string> = { light: 'Leve', medium: 'Médio', strong: 'Forte' }
+
+/** Detected hardware as short Portuguese lines for the setup screen. */
+export function describeHardware(hw: Hardware): string[] {
+  return [
+    `Processador: ${hw.cpuModel} (${hw.cores} núcleos)`,
+    `Memória: ${hw.totalMemGB} GB de RAM`,
+    `Placa de vídeo dedicada: ${hw.hasDiscreteGpu ? 'sim' : 'não'}`
+  ]
+}
+
+/** Decimal units, like the sizes Hugging Face shows: "1,7 GB", "395 MB". */
+export function formatSize(bytes: number): string {
+  const gb = bytes / 1e9
+  return gb >= 1
+    ? `${gb.toLocaleString('pt-BR', { maximumFractionDigits: 1 })} GB`
+    : `${Math.round(bytes / 1e6)} MB`
 }

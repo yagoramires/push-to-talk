@@ -1,5 +1,7 @@
+import type { PronunciationResult } from '../../../shared/api'
 import type { Mode } from '../../../shared/progress'
 import { toFinalVerdict, type CheckResult, type FinalVerdict } from '../../../shared/matcher'
+import PronunciationView from './PronunciationView'
 
 const LABELS = {
   correct: 'Correto!',
@@ -14,6 +16,7 @@ type Props = {
   result: CheckResult
   transcript: string
   mode: Mode
+  pronunciation?: PronunciationResult
   onFinal(v: FinalVerdict): void
 }
 
@@ -21,6 +24,7 @@ export default function ResultView({
   result,
   transcript,
   mode,
+  pronunciation,
   onFinal
 }: Props): React.JSX.Element {
   const final = toFinalVerdict(result)
@@ -57,6 +61,7 @@ export default function ResultView({
           ))}
         </p>
       )}
+      {pronunciation && <PronunciationView result={pronunciation} />}
       {mode === 'guided' ? (
         <div className="actions">
           <button

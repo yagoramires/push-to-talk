@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import type { PronunciationResult } from '../../../shared/api'
 import { encodeWav } from '../../../shared/wav'
 import { SAMPLE_RATE, startRecording, type Recorder } from '../audio/recorder'
 
@@ -7,12 +8,18 @@ const MIC_ERROR =
   'Não consegui acessar o microfone. Verifique em Ajustes do Sistema → Privacidade e Segurança → Microfone.'
 
 type Props = {
-  onTranscript(text: string): void
+  /** Text the learner should say; enables pronunciation scoring when the AI has it. */
+  expected?: string
+  onTranscript(text: string, pronunciation?: PronunciationResult): void
   /** Mic or transcription unavailable; the message is in Portuguese, ready to show. */
   onFailure(message: string): void
 }
 
-export default function RecordButton({ onTranscript, onFailure }: Props): React.JSX.Element {
+export default function RecordButton({
+  expected,
+  onTranscript,
+  onFailure
+}: Props): React.JSX.Element {
   const [status, setStatus] = useState<'idle' | 'recording' | 'transcribing'>('idle')
   const recorder = useRef<Recorder | null>(null)
   const autoStop = useRef<ReturnType<typeof setTimeout>>(undefined)
@@ -45,9 +52,9 @@ export default function RecordButton({ onTranscript, onFailure }: Props): React.
     recorder.current = null
     setStatus('transcribing')
     try {
-      const r = await window.api.transcribe(encodeWav(await rec.stop(), SAMPLE_RATE))
+      const r = await window.api.transcribe(encodeWav(await rec.stop(), SAMPLE_RATE), expected)
       setStatus('idle')
-      if (r.ok) onTranscript(r.text)
+      if (r.ok) onTranscript(r.text, r.pronunciation)
       else onFailure(`A transcrição não está disponível (${r.message}).`)
     } catch (e) {
       setStatus('idle')
