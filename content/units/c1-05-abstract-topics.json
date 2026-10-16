@@ -112,10 +112,22 @@
           "kind": "match",
           "instruction_pt": "Match each expression with its meaning.",
           "pairs": [
-            { "en": "a double-edged sword", "pt": "uma faca de dois gumes" },
-            { "en": "subjective", "pt": "subjetivo" },
-            { "en": "a paradox", "pt": "um paradoxo" },
-            { "en": "to take for granted", "pt": "dar como certo, não dar valor" }
+            {
+              "en": "a double-edged sword",
+              "pt": "uma faca de dois gumes"
+            },
+            {
+              "en": "subjective",
+              "pt": "subjetivo"
+            },
+            {
+              "en": "a paradox",
+              "pt": "um paradoxo"
+            },
+            {
+              "en": "to take for granted",
+              "pt": "dar como certo, não dar valor"
+            }
           ]
         },
         {
@@ -460,6 +472,510 @@
             "Ultimately, it is a matter of perspective"
           ],
           "commonErrors": []
+        }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "id": "c1-05-prac-1",
+      "kind": "vocab",
+      "word_en": "intrinsic",
+      "meaning_pt": "intrínseco",
+      "example_en": "Curiosity has an intrinsic value, regardless of the outcome."
+    },
+    {
+      "id": "c1-05-prac-2",
+      "kind": "vocab",
+      "word_en": "a trade-off",
+      "meaning_pt": "uma troca (ganhar algo e perder outra coisa)",
+      "example_en": "There's always a trade-off between comfort and adventure."
+    },
+    {
+      "id": "c1-05-prac-3",
+      "kind": "vocab",
+      "word_en": "to stem from",
+      "meaning_pt": "originar-se de, vir de",
+      "example_en": "Most conflicts stem from poor communication."
+    },
+    {
+      "id": "c1-05-prac-4",
+      "kind": "vocab",
+      "word_en": "well-being",
+      "meaning_pt": "bem-estar",
+      "example_en": "Sleep is essential to our well-being."
+    },
+    {
+      "id": "c1-05-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "Success means different things to different people.",
+      "accepted": ["Success means different things to different people"],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-05-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "Trust takes years to build and seconds to destroy.",
+      "accepted": [
+        "Trust takes years to build and seconds to destroy",
+        "Trust takes years to build and only seconds to destroy"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-05-prac-7",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "There's always a trade-off between freedom and security.",
+      "accepted": [
+        "There's always a trade-off between freedom and security",
+        "There is always a trade-off between freedom and security"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-05-prac-8",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "Much of our unhappiness stems from comparing ourselves to others.",
+      "accepted": [
+        "Much of our unhappiness stems from comparing ourselves to others",
+        "Much of our unhappiness stems from comparing ourselves with others"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-05-prac-9",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "It's hard to put into words, but it's a sense of belonging.",
+      "accepted": [
+        "It's hard to put into words, but it's a sense of belonging",
+        "It is hard to put into words, but it is a sense of belonging"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-05-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"A felicidade depende mais das relações do que do dinheiro.\"",
+      "accepted": [
+        "Happiness depends more on relationships than on money",
+        "Happiness depends more on relationships than money",
+        "Happiness depends on relationships more than on money",
+        "Happiness depends on relationships more than money",
+        "Happiness has more to do with relationships than money",
+        "Happiness has more to do with relationships than with money",
+        "Relationships matter more for happiness than money"
+      ],
+      "commonErrors": [
+        {
+          "id": "the-happiness",
+          "match": "^the happiness\\b",
+          "explanation_pt": "Abstract nouns used in a general sense take no article: \"Happiness ...\", not \"The happiness ...\".",
+          "correction_en": "Happiness ..."
+        },
+        {
+          "id": "depends-of",
+          "match": "\\bdepends? (more )?of\\b",
+          "explanation_pt": "\"Depend\" takes \"on\", not \"of\".",
+          "correction_en": "It depends on how you see it."
+        }
+      ]
+    },
+    {
+      "id": "c1-05-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"O sucesso não se mede só pelo dinheiro.\"",
+      "accepted": [
+        "Success isn't measured only by money",
+        "Success isn't measured just by money",
+        "Success isn't measured by money alone",
+        "Success can't be measured only by money",
+        "Success can't be measured just in money",
+        "You can't measure success by money alone",
+        "Success isn't only measured by money",
+        "Success is not measured only by money",
+        "Success is about more than money"
+      ],
+      "commonErrors": [
+        {
+          "id": "the-success",
+          "match": "^the success\\b",
+          "explanation_pt": "Abstract nouns used in a general sense take no article: \"Success ...\", not \"The success ...\".",
+          "correction_en": "Success ..."
+        }
+      ]
+    },
+    {
+      "id": "c1-05-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Liberdade não significa fazer o que se quer.\"",
+      "accepted": [
+        "Freedom doesn't mean doing whatever you want",
+        "Freedom doesn't mean doing what you want",
+        "Freedom doesn't mean doing whatever you like",
+        "Freedom isn't about doing whatever you want",
+        "Freedom does not mean doing whatever you want",
+        "Being free doesn't mean doing whatever you want",
+        "Freedom doesn't mean you can do whatever you want"
+      ],
+      "commonErrors": [
+        {
+          "id": "the-freedom",
+          "match": "^the freedom\\b",
+          "explanation_pt": "Abstract nouns used in a general sense take no article: \"Freedom ...\", not \"The freedom ...\".",
+          "correction_en": "Freedom ..."
+        },
+        {
+          "id": "mean-to-do",
+          "match": "\\bmean to do\\b",
+          "explanation_pt": "Here \"mean\" (significar) is followed by -ing: \"mean doing\".",
+          "correction_en": "Freedom doesn't mean doing whatever you want."
+        }
+      ]
+    },
+    {
+      "id": "c1-05-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Tudo depende de como você define sucesso.\"",
+      "accepted": [
+        "It all depends on how you define success",
+        "Everything depends on how you define success",
+        "It all comes down to how you define success",
+        "It depends on how you define success",
+        "It all boils down to how you define success",
+        "It all depends on what you mean by success"
+      ],
+      "commonErrors": [
+        {
+          "id": "depends-of",
+          "match": "\\bdepends? (more )?of\\b",
+          "explanation_pt": "\"Depend\" takes \"on\", not \"of\".",
+          "correction_en": "It depends on how you see it."
+        },
+        {
+          "id": "define-the-success",
+          "match": "\\bdefine the success\\b",
+          "explanation_pt": "Used in a general sense, \"success\" takes no article.",
+          "correction_en": "It all depends on how you define success."
+        }
+      ]
+    },
+    {
+      "id": "c1-05-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"A tecnologia é uma faca de dois gumes.\"",
+      "accepted": [
+        "Technology is a double-edged sword",
+        "Technology is something of a double-edged sword",
+        "Technology can be a double-edged sword",
+        "Technology is really a double-edged sword",
+        "Technology is a bit of a double-edged sword"
+      ],
+      "commonErrors": [
+        {
+          "id": "knife",
+          "match": "\\bknife\\b",
+          "explanation_pt": "The English idiom is \"a double-edged sword\", not \"knife\".",
+          "correction_en": "Technology is a double-edged sword."
+        },
+        {
+          "id": "the-technology",
+          "match": "^the technology\\b",
+          "explanation_pt": "Abstract nouns used in a general sense take no article: \"Technology ...\", not \"The technology ...\".",
+          "correction_en": "Technology ..."
+        }
+      ]
+    },
+    {
+      "id": "c1-05-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and give a short definition of success in your own words.",
+      "listen": "What does success mean to you?",
+      "accepted": [
+        "Success means being happy with what you do",
+        "To me, success means being happy with what you do",
+        "For me, success is doing something I enjoy",
+        "Success means having time for the people I love",
+        "To me, success is about having freedom",
+        "For me, success is about balance",
+        "Success is being proud of what you do",
+        "To me, success means peace of mind",
+        "For me, it's about doing meaningful work",
+        "I'd say success is feeling fulfilled"
+      ],
+      "commonErrors": [
+        {
+          "id": "the-success",
+          "match": "\\bthe success\\b",
+          "explanation_pt": "Used in a general sense, \"success\" takes no article.",
+          "correction_en": "For me, success is about balance."
+        }
+      ]
+    },
+    {
+      "id": "c1-05-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and answer with a nuanced view.",
+      "listen": "Is it possible to be completely free?",
+      "accepted": [
+        "Not completely, I'd say",
+        "Not entirely, because we all have responsibilities",
+        "I don't think so, not completely",
+        "To some extent, but never completely",
+        "In a sense, yes, but not in practice",
+        "Probably not, since we all have obligations",
+        "Not really. Freedom always has limits",
+        "Only up to a point",
+        "I doubt anyone is completely free",
+        "Not completely. There's always a trade-off"
+      ],
+      "commonErrors": [
+        {
+          "id": "in-some-extent",
+          "match": "\\bin (some|a certain) extent\\b",
+          "explanation_pt": "The preposition is \"to\": \"to some extent\".",
+          "correction_en": "To some extent, but never completely."
+        }
+      ]
+    },
+    {
+      "id": "c1-05-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and suggest one reason, using an abstract noun.",
+      "listen": "Why do people find it so hard to be happy?",
+      "accepted": [
+        "Because of constant comparison with others",
+        "Because they compare themselves to others",
+        "Because they compare themselves with others",
+        "Probably because of pressure to succeed",
+        "I think it's down to unrealistic expectations",
+        "Because of unrealistic expectations",
+        "Maybe because of fear of missing out",
+        "Because of a lack of time",
+        "I'd say it's anxiety about the future",
+        "Perhaps because happiness is often confused with success"
+      ],
+      "commonErrors": [
+        {
+          "id": "the-others",
+          "match": "\\b(with|to) the others\\b",
+          "explanation_pt": "Talking about other people in general, say \"others\", without \"the\".",
+          "correction_en": "They compare themselves to others."
+        }
+      ]
+    },
+    {
+      "id": "c1-05-prac-18",
+      "kind": "free_speak",
+      "instruction_pt": "Discuss an abstract question for about a minute.",
+      "prompt_en": "Is it better to be free or to be secure?",
+      "guidelines_pt": [
+        "Define both ideas in your own words first.",
+        "Use abstract nouns without \"the\": freedom, security, happiness.",
+        "Mention a trade-off: \"The trade-off is that...\"",
+        "Conclude with \"Ultimately, ...\""
+      ]
+    },
+    {
+      "id": "c1-05-prac-19",
+      "kind": "dialogue",
+      "instruction_pt": "Role-play: discuss an abstract idea with a friend, defining and qualifying your view.",
+      "scene_pt": "Late at night, a friend starts a deep conversation about money and happiness.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Do you really think money can't buy happiness?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Say it can't buy happiness, but it can buy security, which matters.",
+          "accepted": [
+            "It can't buy happiness, but it can buy security, which matters",
+            "It can't buy happiness, but it can buy security, and that matters",
+            "It can't buy happiness, but it can buy security, which does matter",
+            "Money can't buy happiness, but it can buy security, which matters",
+            "It can't buy happiness, but it can buy security, and that counts for a lot",
+            "It can't buy happiness, but it buys security, which matters"
+          ],
+          "commonErrors": [
+            {
+              "id": "buy-the-happiness",
+              "match": "\\bbuy the happiness\\b",
+              "explanation_pt": "Used in a general sense, \"happiness\" takes no article.",
+              "correction_en": "It can't buy happiness."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "So where does happiness come from, then?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Say you'd argue it stems from relationships and a sense of purpose.",
+          "accepted": [
+            "I'd argue it stems from relationships and a sense of purpose",
+            "I'd argue that it stems from relationships and a sense of purpose",
+            "I'd say it stems from relationships and a sense of purpose",
+            "I'd argue it comes from relationships and a sense of purpose",
+            "I would argue it stems from relationships and a sense of purpose",
+            "I'd argue it stems from our relationships and a sense of purpose"
+          ],
+          "commonErrors": [
+            {
+              "id": "stems-of",
+              "match": "\\bstems? of\\b",
+              "explanation_pt": "The verb is \"stem from\".",
+              "correction_en": "It stems from relationships."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "That sounds a bit idealistic, don't you think?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Admit it might be, but say it's a matter of perspective.",
+          "accepted": [
+            "It might be, but it's a matter of perspective",
+            "Maybe, but it's a matter of perspective",
+            "It might be, but ultimately it's a matter of perspective",
+            "Perhaps, but it's all a matter of perspective",
+            "It may be, but it's a question of perspective",
+            "Possibly, but it's a matter of perspective"
+          ],
+          "commonErrors": [
+            {
+              "id": "depends-of",
+              "match": "\\bdepends? (more )?of\\b",
+              "explanation_pt": "\"Depend\" takes \"on\", not \"of\".",
+              "correction_en": "It depends on how you see it."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Fair enough. I suppose we all define it differently."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Agree and say that's what makes it such an interesting question.",
+          "accepted": [
+            "Exactly, and that's what makes it such an interesting question",
+            "Absolutely. That's what makes it such an interesting question",
+            "True, and that's what makes it such an interesting question",
+            "Exactly. That's what makes it so interesting",
+            "I agree, and that's what makes it such an interesting question",
+            "Yes, and that's what makes it such a fascinating question"
+          ],
+          "commonErrors": [
+            {
+              "id": "so-an",
+              "match": "\\bso an\\b",
+              "explanation_pt": "Before \"a/an + adjective + noun\", use \"such\": \"such an interesting question\".",
+              "correction_en": "That's what makes it such an interesting question."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-05-prac-20",
+      "kind": "choice",
+      "instruction_pt": "Which sentence is correct?",
+      "options": [
+        "The love is the most important thing.",
+        "Love is the most important thing.",
+        "A love is the most important thing."
+      ],
+      "answer": 1,
+      "explanation_pt": "Abstract nouns used in a general sense take no article in English."
+    },
+    {
+      "id": "c1-05-prac-21",
+      "kind": "choice",
+      "instruction_pt": "What does \"a trade-off\" mean?",
+      "options": [
+        "Gaining one thing means losing another",
+        "A business agreement",
+        "An exchange of gifts"
+      ],
+      "answer": 0,
+      "explanation_pt": "A trade-off is a balance between two things you cannot have at the same time."
+    },
+    {
+      "id": "c1-05-prac-22",
+      "kind": "choice",
+      "instruction_pt": "Which word is the noun form of \"free\"?",
+      "options": ["freely", "freedom", "freeness"],
+      "answer": 1,
+      "explanation_pt": "\"Freedom\" is the noun; \"freely\" is the adverb."
+    },
+    {
+      "id": "c1-05-prac-23",
+      "kind": "fill",
+      "instruction_pt": "Complete with one word.",
+      "sentence": "Our unhappiness often stems ___ unrealistic expectations.",
+      "accepted": ["from"],
+      "commonErrors": [
+        {
+          "id": "stems-of",
+          "match": "^(of|in)$",
+          "explanation_pt": "The verb is \"stem from\".",
+          "correction_en": "Our unhappiness often stems from unrealistic expectations."
+        }
+      ]
+    },
+    {
+      "id": "c1-05-prac-24",
+      "kind": "fill",
+      "instruction_pt": "Complete with one word.",
+      "sentence": "In the end, it all boils ___ to trust.",
+      "accepted": ["down"],
+      "commonErrors": [
+        {
+          "id": "boils-up",
+          "match": "^(up|out)$",
+          "explanation_pt": "The phrasal verb is \"boil down to\".",
+          "correction_en": "It all boils down to trust."
+        }
+      ]
+    },
+    {
+      "id": "c1-05-prac-25",
+      "kind": "order",
+      "instruction_pt": "Put the words in order to make an abstract statement.",
+      "accepted": ["Wisdom comes with experience rather than age"]
+    },
+    {
+      "id": "c1-05-prac-26",
+      "kind": "match",
+      "instruction_pt": "Match each abstract word with its meaning.",
+      "pairs": [
+        {
+          "en": "well-being",
+          "pt": "bem-estar"
+        },
+        {
+          "en": "intrinsic",
+          "pt": "intrínseco"
+        },
+        {
+          "en": "a trade-off",
+          "pt": "um meio-termo, uma troca"
+        },
+        {
+          "en": "to stem from",
+          "pt": "originar-se de"
+        },
+        {
+          "en": "fulfilment",
+          "pt": "realização pessoal"
         }
       ]
     }

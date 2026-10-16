@@ -377,10 +377,85 @@
           ]
         },
         {
-          "id": "c1-10-conv-3",
-          "kind": "order",
-          "instruction_pt": "Put the words in order to ask an icebreaker question.",
-          "accepted": ["So what brings you to this conference"]
+          "id": "c1-10-conv-dialogue",
+          "kind": "dialogue",
+          "instruction_pt": "Role-play: start a conversation with a stranger at a networking lunch. You are Sam.",
+          "scene_pt": "At a networking lunch, someone asks to share your table.",
+          "turns": [
+            {
+              "speaker": "partner",
+              "text": "Mind if I sit here? All the other tables are full."
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Say not at all, please go ahead.",
+              "accepted": [
+                "Not at all, please go ahead",
+                "Not at all. Go ahead",
+                "Of course not, please go ahead",
+                "Not at all, please take a seat",
+                "Please, go ahead",
+                "Not at all, be my guest",
+                "Of course not. Please sit down"
+              ],
+              "commonErrors": [
+                {
+                  "id": "yes-mind",
+                  "match": "^yes\\b",
+                  "explanation_pt": "Answering \"yes\" to \"Mind if...?\" means you DO mind. Say \"Not at all\" or \"Of course not\".",
+                  "correction_en": "Not at all, please go ahead."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Thanks. I'm Rachel, by the way. I work in recruitment."
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Introduce yourself (you're Sam) and say you're a data analyst at a bank.",
+              "accepted": [
+                "Nice to meet you, Rachel. I'm Sam, and I'm a data analyst at a bank",
+                "Nice to meet you. I'm Sam. I'm a data analyst at a bank",
+                "Hi Rachel, I'm Sam. I work as a data analyst at a bank",
+                "I'm Sam. I'm a data analyst at a bank",
+                "Nice to meet you, Rachel. I'm Sam. I work as a data analyst for a bank",
+                "Hi, I'm Sam. I'm a data analyst at a bank"
+              ],
+              "commonErrors": [
+                {
+                  "id": "no-article",
+                  "match": "\\b(i am|as) data analyst\\b",
+                  "explanation_pt": "Jobs need an article: \"a data analyst\".",
+                  "correction_en": "I'm a data analyst at a bank."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Oh, data! That's a hot area right now. How did you get into it?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Say you studied economics and ended up falling in love with numbers.",
+              "accepted": [
+                "I studied economics and ended up falling in love with numbers",
+                "I studied economics, and I ended up falling in love with numbers",
+                "I did a degree in economics and ended up falling in love with numbers",
+                "I studied economics and just ended up falling in love with numbers",
+                "Well, I studied economics and ended up falling in love with numbers",
+                "I studied economics and ended up loving numbers"
+              ],
+              "commonErrors": [
+                {
+                  "id": "ended-up-to",
+                  "match": "\\bended up (to|fall in)\\b",
+                  "explanation_pt": "\"End up\" is followed by -ing: \"ended up falling\".",
+                  "correction_en": "I ended up falling in love with numbers."
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "c1-10-conv-free",
@@ -466,6 +541,536 @@
             "It was great chatting, I will drop you a line next week"
           ],
           "commonErrors": []
+        }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "id": "c1-10-prac-1",
+      "kind": "vocab",
+      "word_en": "to hit it off",
+      "meaning_pt": "se dar bem logo de cara",
+      "example_en": "We hit it off straight away and ended up working together."
+    },
+    {
+      "id": "c1-10-prac-2",
+      "kind": "vocab",
+      "word_en": "a mutual acquaintance",
+      "meaning_pt": "um conhecido em comum",
+      "example_en": "We were introduced by a mutual acquaintance."
+    },
+    {
+      "id": "c1-10-prac-3",
+      "kind": "vocab",
+      "word_en": "to pick someone's brain",
+      "meaning_pt": "consultar alguém, aproveitar o conhecimento de alguém",
+      "example_en": "Could I pick your brain about moving into consulting?"
+    },
+    {
+      "id": "c1-10-prac-4",
+      "kind": "vocab",
+      "word_en": "to reach out",
+      "meaning_pt": "entrar em contato, procurar alguém",
+      "example_en": "Feel free to reach out if you ever need anything."
+    },
+    {
+      "id": "c1-10-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repeat in a warm, curious tone.",
+      "prompt": "So, what brings you to this conference?",
+      "accepted": ["So, what brings you to this conference", "What brings you to this conference"],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-10-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "I think we have a mutual friend, actually.",
+      "accepted": [
+        "I think we have a mutual friend, actually",
+        "I think we've got a mutual friend, actually",
+        "Actually, I think we have a mutual friend"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-10-prac-7",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "Would you mind if I picked your brain about that sometime?",
+      "accepted": [
+        "Would you mind if I picked your brain about that sometime",
+        "Would you mind if I picked your brains about that sometime"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-10-prac-8",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "Here's my card. Feel free to reach out any time.",
+      "accepted": [
+        "Here's my card. Feel free to reach out any time",
+        "Here is my card. Feel free to reach out anytime"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-10-prac-9",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "It's been a pleasure. Enjoy the rest of the event.",
+      "accepted": [
+        "It's been a pleasure. Enjoy the rest of the event",
+        "It has been a pleasure. Enjoy the rest of the event"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-10-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Prazer em te conhecer, já ouvi falar muito de você.\"",
+      "accepted": [
+        "Nice to meet you, I've heard a lot about you",
+        "Nice to meet you. I've heard so much about you",
+        "Pleased to meet you. I've heard a lot about you",
+        "Great to meet you, I've heard a lot about you",
+        "Lovely to meet you. I've heard a lot about you",
+        "It's a pleasure to meet you. I've heard a lot about you",
+        "Nice to finally meet you. I've heard a lot about you"
+      ],
+      "commonErrors": [
+        {
+          "id": "already-heard",
+          "match": "\\balready heard (a lot|much|so much)\\b",
+          "explanation_pt": "English doesn't need \"already\" here: \"I've heard a lot about you\".",
+          "correction_en": "Nice to meet you. I've heard a lot about you."
+        },
+        {
+          "id": "heard-speak",
+          "match": "\\bheard (to )?speak\\b",
+          "explanation_pt": "\"Ouvir falar de\" is \"hear about\".",
+          "correction_en": "I've heard a lot about you."
+        }
+      ]
+    },
+    {
+      "id": "c1-10-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Como você entrou nessa área?\"",
+      "accepted": [
+        "How did you get into this field",
+        "How did you get into this area",
+        "How did you end up in this field",
+        "How did you get started in this field",
+        "What got you into this field",
+        "How did you get into this line of work",
+        "How did you end up working in this field",
+        "How did you get into that field"
+      ],
+      "commonErrors": [
+        {
+          "id": "entered",
+          "match": "\\bhow (did )?you enter(ed)?\\b",
+          "explanation_pt": "Starting a career is \"get into\" a field.",
+          "correction_en": "How did you get into this field?"
+        }
+      ]
+    },
+    {
+      "id": "c1-10-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"A gente se conheceu num evento ano passado, não foi?\"",
+      "accepted": [
+        "We met at an event last year, didn't we",
+        "We met at a conference last year, didn't we",
+        "Didn't we meet at an event last year",
+        "We met at an event last year, right",
+        "I think we met at an event last year, didn't we",
+        "We've met before, at an event last year, haven't we"
+      ],
+      "commonErrors": [
+        {
+          "id": "knew-each-other",
+          "match": "\\bwe knew each other\\b",
+          "explanation_pt": "Meeting someone for the first time is \"meet\", not \"know\".",
+          "correction_en": "We met at an event last year, didn't we?"
+        },
+        {
+          "id": "met-in-event",
+          "match": "\\bmet in an event\\b",
+          "explanation_pt": "We meet \"at\" an event.",
+          "correction_en": "We met at an event last year."
+        }
+      ]
+    },
+    {
+      "id": "c1-10-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"O que você acha de a gente tomar um café semana que vem?\"",
+      "accepted": [
+        "How about grabbing a coffee next week",
+        "How about getting a coffee next week",
+        "Would you like to grab a coffee next week",
+        "Shall we grab a coffee next week",
+        "Why don't we grab a coffee next week",
+        "Do you fancy grabbing a coffee next week",
+        "Would you be up for a coffee next week",
+        "How about we grab a coffee next week",
+        "Would you like to meet for coffee next week"
+      ],
+      "commonErrors": [
+        {
+          "id": "take-coffee",
+          "match": "\\btake a coffee\\b",
+          "explanation_pt": "\"Tomar um café\" is \"grab/have a coffee\".",
+          "correction_en": "How about grabbing a coffee next week?"
+        }
+      ]
+    },
+    {
+      "id": "c1-10-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Eu sou responsável pela parte de vendas.\"",
+      "accepted": [
+        "I'm responsible for sales",
+        "I'm in charge of sales",
+        "I look after the sales side",
+        "I'm responsible for the sales side",
+        "I'm in charge of the sales side of things",
+        "I head up sales",
+        "I handle sales",
+        "I run the sales side",
+        "I'm responsible for the sales side of the business"
+      ],
+      "commonErrors": [
+        {
+          "id": "responsible-of",
+          "match": "\\bresponsible (of|by)\\b",
+          "explanation_pt": "The preposition is \"responsible for\".",
+          "correction_en": "I'm responsible for sales."
+        }
+      ]
+    },
+    {
+      "id": "c1-10-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and describe what you do in one concise sentence.",
+      "listen": "So, what do you do?",
+      "accepted": [
+        "I'm a software developer at a fintech company",
+        "I work in marketing for a tech company",
+        "I'm a project manager in the energy sector",
+        "I'm an accountant, mostly working with small businesses",
+        "I run a small design studio",
+        "I work in HR at a logistics company",
+        "I'm a teacher, but I'm moving into training",
+        "I'm a lawyer specialising in contracts",
+        "I'm a lawyer specializing in contracts",
+        "Basically, I help companies manage their data",
+        "I'm a consultant in the health sector"
+      ],
+      "commonErrors": [
+        {
+          "id": "work-with-field",
+          "match": "\\bi work with (marketing|sales|hr|finance|logistics)\\b",
+          "explanation_pt": "\"Trabalhar com\" a field is \"work in\": \"I work in marketing\".",
+          "correction_en": "I work in marketing."
+        },
+        {
+          "id": "no-article",
+          "match": "\\bi am (engineer|lawyer|teacher|accountant|developer|consultant)\\b",
+          "explanation_pt": "Jobs need an article: \"I'm an engineer\".",
+          "correction_en": "I'm an engineer."
+        }
+      ]
+    },
+    {
+      "id": "c1-10-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and find common ground: show interest and ask which startup.",
+      "listen": "Oh, you're in fintech? My cousin works at a payments startup.",
+      "accepted": [
+        "Oh, really? Which startup",
+        "Really? Which one",
+        "Oh, interesting. Which startup does he work for",
+        "Small world! Which startup is it",
+        "Oh, I'd love to hear more. Which startup",
+        "Really? Which company does he work for",
+        "That's interesting. Which startup does she work for",
+        "Small world. Which one is it"
+      ],
+      "commonErrors": [
+        {
+          "id": "which-he-works",
+          "match": "\\bwhich (startup|company|one) (he|she) works\\b",
+          "explanation_pt": "Direct questions need an auxiliary: \"Which startup does he work for?\"",
+          "correction_en": "Which startup does he work for?"
+        }
+      ]
+    },
+    {
+      "id": "c1-10-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and close the conversation politely, suggesting you keep in touch.",
+      "listen": "Anyway, I should probably mingle a bit more.",
+      "accepted": [
+        "Of course. It was great talking to you. Let's keep in touch",
+        "Sure. Great chatting. Let's stay in touch",
+        "Of course. Let's keep in touch",
+        "Absolutely. Let's stay in touch",
+        "No problem. It was lovely meeting you. Let's keep in touch",
+        "Sure, it was great to meet you. Let's connect on LinkedIn",
+        "Of course. Here's my card. Let's keep in touch",
+        "Same here. Let's stay in touch"
+      ],
+      "commonErrors": [
+        {
+          "id": "maintain-contact",
+          "match": "\\bmaintain (the )?contact\\b",
+          "explanation_pt": "\"Manter contato\" is \"keep in touch\" or \"stay in touch\".",
+          "correction_en": "Let's keep in touch."
+        }
+      ]
+    },
+    {
+      "id": "c1-10-prac-18",
+      "kind": "free_speak",
+      "instruction_pt": "Introduce yourself at a networking event, in about a minute.",
+      "prompt_en": "You've just joined someone at the coffee station at an industry conference. Introduce yourself and keep the conversation going.",
+      "guidelines_pt": [
+        "Break the ice with a comment about the event.",
+        "Say what you do in one or two sentences.",
+        "Ask an open question to find common ground.",
+        "Suggest a follow-up: \"Shall we swap details?\""
+      ]
+    },
+    {
+      "id": "c1-10-prac-19",
+      "kind": "dialogue",
+      "instruction_pt": "Role-play: network at a conference and set up a follow-up. You are Sam.",
+      "scene_pt": "At a conference coffee break, a speaker introduces himself to you.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Hi, I don't think we've been introduced. I'm Daniel."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Say it's nice to meet him and give your name (you're Sam).",
+          "accepted": [
+            "Hi Daniel, I'm Sam. Nice to meet you",
+            "Nice to meet you, Daniel. I'm Sam",
+            "Hi, I'm Sam. Nice to meet you",
+            "Hi Daniel, I'm Sam. Pleased to meet you",
+            "Nice to meet you. I'm Sam",
+            "Hi Daniel, nice to meet you. I'm Sam"
+          ],
+          "commonErrors": [
+            {
+              "id": "nice-to-know",
+              "match": "\\bnice to know you\\b",
+              "explanation_pt": "\"Prazer em conhecer\" is \"Nice to meet you\".",
+              "correction_en": "Nice to meet you, Daniel. I'm Sam."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "So, how are you finding the conference so far?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Say it's been really useful, especially the talk on AI this morning.",
+          "accepted": [
+            "It's been really useful, especially the talk on AI this morning",
+            "It's been really useful, especially this morning's talk on AI",
+            "Really useful, especially the talk on AI this morning",
+            "It's been really helpful, especially the AI talk this morning",
+            "It's been really useful, particularly the talk on AI this morning",
+            "So far it's been really useful, especially the talk on AI this morning"
+          ],
+          "commonErrors": [
+            {
+              "id": "talk-of",
+              "match": "\\b(talk|lecture) of ai\\b",
+              "explanation_pt": "A talk is \"on\" or \"about\" a subject.",
+              "correction_en": "The talk on AI this morning."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Oh, I gave that talk, actually!"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Say what a coincidence, and that you really enjoyed it.",
+          "accepted": [
+            "What a coincidence! I really enjoyed it",
+            "Oh, what a coincidence! I really enjoyed it",
+            "No way! I really enjoyed it",
+            "What a small world! I really enjoyed it",
+            "What a coincidence! I thoroughly enjoyed it",
+            "Really? What a coincidence. I really enjoyed your talk"
+          ],
+          "commonErrors": [
+            {
+              "id": "what-coincidence",
+              "match": "^(oh )?what coincidence\\b",
+              "explanation_pt": "Exclamations with a countable noun need \"a\": \"What a coincidence!\"",
+              "correction_en": "What a coincidence!"
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Thank you! What line of work are you in?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Say you work in logistics, and you're looking at ways to use AI in your team.",
+          "accepted": [
+            "I work in logistics, and I'm looking at ways to use AI in my team",
+            "I'm in logistics, and I'm looking at ways to use AI in my team",
+            "I work in logistics, and we're looking at ways to use AI in our team",
+            "I work in logistics. I'm looking at ways to use AI in my team",
+            "I work in logistics, and I'm exploring ways to use AI in my team",
+            "I'm in logistics, and I'm looking into ways to use AI in my team"
+          ],
+          "commonErrors": [
+            {
+              "id": "work-with-logistics",
+              "match": "\\bwork with logistics\\b",
+              "explanation_pt": "\"Trabalhar com\" a field is \"work in\".",
+              "correction_en": "I work in logistics."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Interesting. We should talk more. Here's my card."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Thank him and say you'll drop him an email next week.",
+          "accepted": [
+            "Thanks. I'll drop you an email next week",
+            "Thank you. I'll drop you an email next week",
+            "Thanks, I'll drop you a line next week",
+            "Great, thanks. I'll send you an email next week",
+            "Thanks so much. I'll drop you an email next week",
+            "Thanks. I'll be in touch next week"
+          ],
+          "commonErrors": [
+            {
+              "id": "email-for-you",
+              "match": "\\b(email|line) for you\\b",
+              "explanation_pt": "Say \"drop/send you an email\", not \"send an email for you\".",
+              "correction_en": "I'll drop you an email next week."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-10-prac-20",
+      "kind": "choice",
+      "instruction_pt": "Which is the best way to join a group at a networking event?",
+      "options": [
+        "\"Who are you?\"",
+        "\"Mind if I join you? I'm Sam, from Brightlane.\"",
+        "\"I'm here. Talk to me.\""
+      ],
+      "answer": 1,
+      "explanation_pt": "A polite question plus a short introduction makes it easy for others to include you."
+    },
+    {
+      "id": "c1-10-prac-21",
+      "kind": "choice",
+      "instruction_pt": "What does \"we hit it off\" mean?",
+      "options": [
+        "We had an argument.",
+        "We liked each other immediately.",
+        "We hit each other by accident."
+      ],
+      "answer": 1,
+      "explanation_pt": "If you hit it off with someone, you get on well with them straight away."
+    },
+    {
+      "id": "c1-10-prac-22",
+      "kind": "choice",
+      "instruction_pt": "Listen. What does the speaker want?",
+      "listen": "I'd love to pick your brain about the Asian market sometime, if you're up for it.",
+      "options": [
+        "To sell something right now",
+        "To get advice from the listener later",
+        "To end the conversation"
+      ],
+      "answer": 1,
+      "explanation_pt": "\"Pick your brain\" means asking someone for advice or ideas based on what they know."
+    },
+    {
+      "id": "c1-10-prac-23",
+      "kind": "fill",
+      "instruction_pt": "Complete with one word.",
+      "sentence": "Let's keep in ___. Here's my card.",
+      "accepted": ["touch"],
+      "commonErrors": [
+        {
+          "id": "keep-contact",
+          "match": "^(contact|contacts)$",
+          "explanation_pt": "The fixed phrase is \"keep in touch\".",
+          "correction_en": "Let's keep in touch."
+        }
+      ]
+    },
+    {
+      "id": "c1-10-prac-24",
+      "kind": "fill",
+      "instruction_pt": "Complete with one word.",
+      "sentence": "We were introduced ___ a mutual acquaintance.",
+      "accepted": ["by", "through"],
+      "commonErrors": [
+        {
+          "id": "introduced-for",
+          "match": "^(for|of|from)$",
+          "explanation_pt": "We are introduced \"by\" or \"through\" someone.",
+          "correction_en": "We were introduced by a mutual acquaintance."
+        }
+      ]
+    },
+    {
+      "id": "c1-10-prac-25",
+      "kind": "order",
+      "instruction_pt": "Put the words in order to suggest a follow-up.",
+      "accepted": ["Shall we set up a call next week"]
+    },
+    {
+      "id": "c1-10-prac-26",
+      "kind": "match",
+      "instruction_pt": "Match each networking expression with its meaning.",
+      "pairs": [
+        {
+          "en": "to hit it off",
+          "pt": "se dar bem de cara"
+        },
+        {
+          "en": "a mutual acquaintance",
+          "pt": "um conhecido em comum"
+        },
+        {
+          "en": "to pick someone's brain",
+          "pt": "consultar alguém"
+        },
+        {
+          "en": "to reach out",
+          "pt": "entrar em contato"
+        },
+        {
+          "en": "to mingle",
+          "pt": "circular e conversar com várias pessoas"
         }
       ]
     }

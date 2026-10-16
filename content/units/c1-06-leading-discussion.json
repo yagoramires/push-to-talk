@@ -443,5 +443,507 @@
         }
       ]
     }
+  ],
+  "practice": [
+    {
+      "id": "c1-06-prac-1",
+      "kind": "vocab",
+      "word_en": "to chair (a meeting)",
+      "meaning_pt": "conduzir, presidir (uma reunião)",
+      "example_en": "Would you mind chairing tomorrow's meeting?"
+    },
+    {
+      "id": "c1-06-prac-2",
+      "kind": "vocab",
+      "word_en": "to touch on",
+      "meaning_pt": "mencionar brevemente, tocar em",
+      "example_en": "I'd like to briefly touch on the budget before we finish."
+    },
+    {
+      "id": "c1-06-prac-3",
+      "kind": "vocab",
+      "word_en": "to run over (time)",
+      "meaning_pt": "passar do horário",
+      "example_en": "Sorry, we've run over by ten minutes."
+    },
+    {
+      "id": "c1-06-prac-4",
+      "kind": "vocab",
+      "word_en": "a show of hands",
+      "meaning_pt": "votação com as mãos levantadas",
+      "example_en": "Let's decide by a show of hands."
+    },
+    {
+      "id": "c1-06-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "Let's hear from someone who hasn't spoken yet.",
+      "accepted": [
+        "Let's hear from someone who hasn't spoken yet",
+        "Let us hear from someone who has not spoken yet"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-06-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "I'm conscious of the time, so let's keep this brief.",
+      "accepted": [
+        "I'm conscious of the time, so let's keep this brief",
+        "I'm conscious of time, so let's keep this brief"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-06-prac-7",
+      "kind": "repeat",
+      "instruction_pt": "Repeat in a friendly, inviting tone.",
+      "prompt": "Can I just bring Priya in here?",
+      "accepted": ["Can I just bring Priya in here", "Can I just bring in Priya here"],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-06-prac-8",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "That's a good point, but let's come back to it later.",
+      "accepted": [
+        "That's a good point, but let's come back to it later",
+        "That's a good point, but let's come back to that later"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-06-prac-9",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "We're running over time, so let's wrap up.",
+      "accepted": [
+        "We're running over time, so let's wrap up",
+        "We're running over time, so let's wrap things up"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-06-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Alguém tem mais alguma coisa a acrescentar?\"",
+      "accepted": [
+        "Does anyone have anything else to add",
+        "Does anybody have anything else to add",
+        "Has anyone got anything else to add",
+        "Anyone have anything else to add",
+        "Does anyone have anything to add",
+        "Is there anything else anyone would like to add",
+        "Anything else anyone would like to add",
+        "Would anyone like to add anything else"
+      ],
+      "commonErrors": [
+        {
+          "id": "something-more",
+          "match": "\\bsomething more\\b",
+          "explanation_pt": "In open questions use \"anything else\", not \"something more\".",
+          "correction_en": "Does anyone have anything else to add?"
+        }
+      ]
+    },
+    {
+      "id": "c1-06-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Vamos deixar isso para a próxima reunião.\"",
+      "accepted": [
+        "Let's leave that for the next meeting",
+        "Let's leave this for the next meeting",
+        "Let's save that for the next meeting",
+        "Let's park that until the next meeting",
+        "Let's park this until the next meeting",
+        "Let's put that off until the next meeting",
+        "Let's come back to that at the next meeting",
+        "Let's hold that over until the next meeting",
+        "Let's discuss that at the next meeting"
+      ],
+      "commonErrors": [
+        {
+          "id": "reunion",
+          "match": "\\breunion\\b",
+          "explanation_pt": "\"Reunion\" is a get-together of old friends. \"Reunião\" at work is \"meeting\".",
+          "correction_en": "Let's leave that for the next meeting."
+        }
+      ]
+    },
+    {
+      "id": "c1-06-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Quanto tempo temos para isso?\"",
+      "accepted": [
+        "How much time do we have for this",
+        "How much time have we got for this",
+        "How long do we have for this",
+        "How long have we got for this",
+        "How much time do we have for that",
+        "How long have we got for that",
+        "How much time have we got for that"
+      ],
+      "commonErrors": [
+        {
+          "id": "no-aux",
+          "match": "^how (much time|long) we (have|got)\\b",
+          "explanation_pt": "Questions need an auxiliary: \"How much time do we have?\"",
+          "correction_en": "How much time do we have for this?"
+        }
+      ]
+    },
+    {
+      "id": "c1-06-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Vamos fazer uma votação.\"",
+      "accepted": [
+        "Let's take a vote",
+        "Let's have a vote",
+        "Let's put it to a vote",
+        "Let's vote on it",
+        "Shall we take a vote",
+        "Let's put it to the vote",
+        "Shall we put it to a vote",
+        "Let's have a show of hands"
+      ],
+      "commonErrors": [
+        {
+          "id": "make-vote",
+          "match": "\\bmake a vot(e|ing)\\b",
+          "explanation_pt": "We \"take\" or \"have\" a vote, not \"make\" one.",
+          "correction_en": "Let's take a vote."
+        }
+      ]
+    },
+    {
+      "id": "c1-06-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Desculpa interromper, mas precisamos seguir em frente.\"",
+      "accepted": [
+        "Sorry to interrupt, but we need to move on",
+        "Sorry to interrupt, but we have to move on",
+        "Sorry to cut in, but we need to move on",
+        "Sorry to interrupt, but we really need to move on",
+        "I'm sorry to interrupt, but we need to move on",
+        "Sorry to jump in, but we need to move on",
+        "Sorry for interrupting, but we need to move on",
+        "Sorry to interrupt, but we've got to move on"
+      ],
+      "commonErrors": [
+        {
+          "id": "follow-front",
+          "match": "\\bfollow (in )?front\\b",
+          "explanation_pt": "\"Seguir em frente\" in a meeting is \"move on\".",
+          "correction_en": "We need to move on."
+        },
+        {
+          "id": "sorry-for-interrupt",
+          "match": "\\bsorry for interrupt\\b",
+          "explanation_pt": "Say \"sorry to interrupt\" or \"sorry for interrupting\".",
+          "correction_en": "Sorry to interrupt."
+        }
+      ]
+    },
+    {
+      "id": "c1-06-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen. A participant is getting sidetracked. As the chair, politely bring the discussion back on track.",
+      "listen": "And another thing about the marketing budget, which, by the way, nobody ever asks me about...",
+      "accepted": [
+        "Sorry, can we get back to the main point",
+        "Let's get back to the main point, shall we",
+        "That's a fair point, but let's get back to the agenda",
+        "I'm going to stop you there, if I may",
+        "Sorry, but we're getting a bit sidetracked",
+        "I think we're getting a bit sidetracked",
+        "Let's stick to the agenda, if we can",
+        "Can we park that for now",
+        "Let's park that for now and get back to the main issue",
+        "Good point, but let's stay on track",
+        "Let's try to stay on track"
+      ],
+      "commonErrors": [
+        {
+          "id": "escaping-subject",
+          "match": "\\bescap(e|ing) (from )?the (subject|topic)\\b",
+          "explanation_pt": "\"Fugir do assunto\" is \"get sidetracked\" or \"go off topic\".",
+          "correction_en": "We're getting a bit sidetracked."
+        }
+      ]
+    },
+    {
+      "id": "c1-06-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and answer as the chair: say you'll give it two more minutes, then start.",
+      "listen": "Shall we start, or are we still waiting for someone?",
+      "accepted": [
+        "Let's give it two more minutes, then start",
+        "Let's give it two more minutes and then start",
+        "Let's give it another two minutes, then we'll start",
+        "We'll give it two more minutes and then get started",
+        "Let's wait two more minutes, then start",
+        "Let's give it a couple more minutes, then start",
+        "Let's give them two more minutes, then we'll get started",
+        "We'll wait two more minutes and then get going"
+      ],
+      "commonErrors": [
+        {
+          "id": "more-two",
+          "match": "\\bmore two minutes\\b",
+          "explanation_pt": "The number comes first: \"two more minutes\" (or \"another two minutes\").",
+          "correction_en": "Let's give it two more minutes."
+        }
+      ]
+    },
+    {
+      "id": "c1-06-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and wrap up as the chair: say you'll circulate a summary and set up a follow-up meeting.",
+      "listen": "I think we've covered everything. What happens next?",
+      "accepted": [
+        "I'll circulate a summary and set up a follow-up meeting",
+        "I'll send round a summary and set up a follow-up meeting",
+        "I'll circulate a summary and schedule a follow-up meeting",
+        "I'll send out a summary and arrange a follow-up meeting",
+        "I'll circulate a summary and we'll set a follow-up meeting",
+        "I'll send everyone a summary and set up a follow-up",
+        "I'll circulate the minutes and schedule a follow-up meeting"
+      ],
+      "commonErrors": [
+        {
+          "id": "mark-meeting",
+          "match": "\\bmark a (follow up )?meeting\\b",
+          "explanation_pt": "\"Marcar uma reunião\" is \"set up\", \"schedule\" or \"arrange\" a meeting.",
+          "correction_en": "I'll schedule a follow-up meeting."
+        }
+      ]
+    },
+    {
+      "id": "c1-06-prac-18",
+      "kind": "free_speak",
+      "instruction_pt": "Open a meeting as the chair, in about a minute.",
+      "prompt_en": "You're chairing a team meeting to plan the end-of-year event. Open the meeting.",
+      "guidelines_pt": [
+        "Welcome everyone and thank them for coming.",
+        "State the aim: \"The aim of today's meeting is...\"",
+        "Outline the agenda in two or three items.",
+        "Bring someone in to start: \"Ana, would you like to kick us off?\""
+      ]
+    },
+    {
+      "id": "c1-06-prac-19",
+      "kind": "dialogue",
+      "instruction_pt": "Role-play: chair the meeting. Keep it on track and bring people in.",
+      "scene_pt": "You're chairing a short project meeting. A colleague arrives late and tries to change the subject.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Morning, everyone. Sorry I'm late, the traffic was awful."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Say no problem, and that you were just about to start.",
+          "accepted": [
+            "No problem, we were just about to start",
+            "No worries, we were just about to start",
+            "Not a problem, we were just about to get started",
+            "No problem. We were just about to get started",
+            "That's fine, we were just about to start",
+            "No problem at all, we were about to start"
+          ],
+          "commonErrors": [
+            {
+              "id": "about-of",
+              "match": "\\babout of\\b",
+              "explanation_pt": "\"Prestes a\" is \"about to + verb\".",
+              "correction_en": "We were just about to start."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Great. So what's on the agenda today?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Say the aim is to agree on a date for the product launch.",
+          "accepted": [
+            "The aim is to agree on a date for the product launch",
+            "The aim today is to agree on a date for the product launch",
+            "The aim of today's meeting is to agree on a date for the product launch",
+            "We need to agree on a date for the product launch",
+            "The goal is to agree on a date for the product launch",
+            "The main aim is to agree on a launch date",
+            "Today we're aiming to agree on a launch date"
+          ],
+          "commonErrors": [
+            {
+              "id": "agree-in",
+              "match": "\\bagree in\\b",
+              "explanation_pt": "We \"agree on\" a date or a decision.",
+              "correction_en": "The aim is to agree on a date."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Before we get into that, can I just mention the issue with the website?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Say it's important, but suggest parking it until the end.",
+          "accepted": [
+            "That's important, but let's park it until the end",
+            "It's important, but can we park it until the end",
+            "Good point, but let's park that until the end",
+            "That's important, but I'd suggest parking it until the end",
+            "It's an important issue, but let's park it until the end",
+            "That's important, but shall we park it until the end",
+            "That's important, but let's leave it until the end"
+          ],
+          "commonErrors": [
+            {
+              "id": "suggest-to",
+              "match": "\\bsuggest to\\b",
+              "explanation_pt": "\"Suggest\" takes -ing or a that-clause.",
+              "correction_en": "I'd suggest parking it until the end."
+            },
+            {
+              "id": "until-final",
+              "match": "\\buntil the final\\b",
+              "explanation_pt": "\"Até o final\" is \"until the end\".",
+              "correction_en": "Let's park it until the end."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Sure. Well, I think we should launch in March."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Thank him and bring in Ana to hear her view.",
+          "accepted": [
+            "Thanks. Ana, what's your take on that",
+            "Thanks. Ana, what do you think",
+            "Thank you. Ana, what's your view",
+            "Thanks. Let's hear from Ana. What do you think",
+            "Thanks for that. Ana, how do you feel about March",
+            "Thanks. Ana, would you like to come in here",
+            "Thank you. Ana, what are your thoughts"
+          ],
+          "commonErrors": [
+            {
+              "id": "what-you-think",
+              "match": "\\bwhat you think\\b",
+              "explanation_pt": "Questions need an auxiliary: \"What do you think?\"",
+              "correction_en": "Ana, what do you think?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-06-prac-20",
+      "kind": "choice",
+      "instruction_pt": "Which phrase is best for bringing a quiet person into the discussion?",
+      "options": [
+        "Be quiet, please.",
+        "Tom, we haven't heard from you yet. What do you think?",
+        "Tom, why aren't you talking?"
+      ],
+      "answer": 1,
+      "explanation_pt": "Inviting someone by name, with an open question, brings them in without putting them on the spot."
+    },
+    {
+      "id": "c1-06-prac-21",
+      "kind": "choice",
+      "instruction_pt": "What does \"Let's take this offline\" mean in a meeting?",
+      "options": [
+        "Let's discuss it later, outside this meeting.",
+        "Let's turn off the internet.",
+        "Let's cancel the project."
+      ],
+      "answer": 0,
+      "explanation_pt": "\"Take something offline\" means to discuss it separately, usually with fewer people."
+    },
+    {
+      "id": "c1-06-prac-22",
+      "kind": "choice",
+      "instruction_pt": "Listen. What is the chair doing?",
+      "listen": "Okay, so to sum up: Maria will contact the supplier, and we'll meet again on the fifteenth.",
+      "options": [
+        "Opening the meeting",
+        "Summarising the action points",
+        "Introducing a new topic"
+      ],
+      "answer": 1,
+      "explanation_pt": "\"To sum up\" plus who does what next are the action points at the end of a meeting."
+    },
+    {
+      "id": "c1-06-prac-23",
+      "kind": "fill",
+      "instruction_pt": "Complete with one word.",
+      "sentence": "Let's move ___ to the next item on the agenda.",
+      "accepted": ["on"],
+      "commonErrors": [
+        {
+          "id": "move-to",
+          "match": "^(to|for|in)$",
+          "explanation_pt": "The phrasal verb is \"move on to\".",
+          "correction_en": "Let's move on to the next item."
+        }
+      ]
+    },
+    {
+      "id": "c1-06-prac-24",
+      "kind": "fill",
+      "instruction_pt": "Complete with one word.",
+      "sentence": "Thanks for coming, everyone. Let's get the ball ___.",
+      "accepted": ["rolling"],
+      "commonErrors": [
+        {
+          "id": "ball-running",
+          "match": "^(running|going|moving)$",
+          "explanation_pt": "The idiom is \"get the ball rolling\".",
+          "correction_en": "Let's get the ball rolling."
+        }
+      ]
+    },
+    {
+      "id": "c1-06-prac-25",
+      "kind": "order",
+      "instruction_pt": "Put the words in order to keep the discussion on track.",
+      "accepted": ["Could we try to stick to the agenda"]
+    },
+    {
+      "id": "c1-06-prac-26",
+      "kind": "match",
+      "instruction_pt": "Match each meeting expression with its meaning.",
+      "pairs": [
+        {
+          "en": "to chair",
+          "pt": "conduzir uma reunião"
+        },
+        {
+          "en": "to touch on",
+          "pt": "mencionar brevemente"
+        },
+        {
+          "en": "to run over",
+          "pt": "passar do horário"
+        },
+        {
+          "en": "a show of hands",
+          "pt": "votação com as mãos"
+        },
+        {
+          "en": "to take something offline",
+          "pt": "discutir algo fora da reunião"
+        }
+      ]
+    }
   ]
 }

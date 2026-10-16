@@ -470,5 +470,491 @@
         }
       ]
     }
+  ],
+  "practice": [
+    {
+      "id": "c1-11-prac-1",
+      "kind": "vocab",
+      "word_en": "to be on the right track",
+      "meaning_pt": "estar no caminho certo",
+      "example_en": "Don't worry, you're on the right track."
+    },
+    {
+      "id": "c1-11-prac-2",
+      "kind": "vocab",
+      "word_en": "to tighten up",
+      "meaning_pt": "enxugar, deixar mais conciso",
+      "example_en": "You could tighten up the conclusion a little."
+    },
+    {
+      "id": "c1-11-prac-3",
+      "kind": "vocab",
+      "word_en": "food for thought",
+      "meaning_pt": "algo para refletir",
+      "example_en": "Your comments gave me a lot of food for thought."
+    },
+    {
+      "id": "c1-11-prac-4",
+      "kind": "vocab",
+      "word_en": "to flesh out",
+      "meaning_pt": "desenvolver, detalhar (uma ideia)",
+      "example_en": "The idea is great, but it needs fleshing out."
+    },
+    {
+      "id": "c1-11-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repeat in an encouraging tone.",
+      "prompt": "You're definitely on the right track.",
+      "accepted": ["You're definitely on the right track", "You are definitely on the right track"],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-11-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "The ending could be tightened up a little.",
+      "accepted": [
+        "The ending could be tightened up a little",
+        "The ending could be tightened up a bit"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-11-prac-7",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "Thanks, that's really useful food for thought.",
+      "accepted": [
+        "Thanks, that's really useful food for thought",
+        "Thanks, that's really good food for thought"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-11-prac-8",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "It might be worth fleshing out the second section.",
+      "accepted": [
+        "It might be worth fleshing out the second section",
+        "It may be worth fleshing out the second section"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-11-prac-9",
+      "kind": "repeat",
+      "instruction_pt": "Repeat. Stress \"particularly\" and \"handled\".",
+      "prompt": "What I particularly liked was how you handled the questions.",
+      "accepted": [
+        "What I particularly liked was how you handled the questions",
+        "What I particularly liked was the way you handled the questions"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-11-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Você está no caminho certo.\"",
+      "accepted": [
+        "You're on the right track",
+        "You're on the right lines",
+        "You're heading in the right direction",
+        "You're going in the right direction",
+        "You are on the right track",
+        "I think you're on the right track"
+      ],
+      "commonErrors": [
+        {
+          "id": "right-path",
+          "match": "\\b(in|on) the (right|certain) (path|way)\\b",
+          "explanation_pt": "\"Estar no caminho certo\" is \"be on the right track\".",
+          "correction_en": "You're on the right track."
+        }
+      ]
+    },
+    {
+      "id": "c1-11-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Obrigado pelo feedback, vou levar isso em conta.\"",
+      "accepted": [
+        "Thanks for the feedback, I'll take that on board",
+        "Thanks for the feedback. I'll take it on board",
+        "Thanks for the feedback, I'll bear that in mind",
+        "Thanks for the feedback, I'll keep that in mind",
+        "Thanks for the feedback. I'll take that into account",
+        "Thank you for the feedback. I'll take it into account",
+        "Thanks for the feedback, I'll take it into consideration"
+      ],
+      "commonErrors": [
+        {
+          "id": "in-count",
+          "match": "\\b(take|taking) (it|that|this) (in|into) count\\b",
+          "explanation_pt": "\"Levar em conta\" is \"take into account\".",
+          "correction_en": "I'll take that into account."
+        },
+        {
+          "id": "thanks-by",
+          "match": "\\bthank(s| you) by\\b",
+          "explanation_pt": "\"Obrigado pelo\" is \"thanks for\".",
+          "correction_en": "Thanks for the feedback."
+        }
+      ]
+    },
+    {
+      "id": "c1-11-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Os slides estavam um pouco carregados.\"",
+      "accepted": [
+        "The slides were a bit cluttered",
+        "The slides were a little cluttered",
+        "The slides were a bit busy",
+        "The slides were a bit too busy",
+        "The slides were slightly cluttered",
+        "The slides had a bit too much on them",
+        "The slides were a bit crowded",
+        "There was a bit too much on the slides"
+      ],
+      "commonErrors": [
+        {
+          "id": "charged",
+          "match": "\\b(charged|loaded)\\b",
+          "explanation_pt": "\"Carregado\" (visually) is \"cluttered\" or \"busy\".",
+          "correction_en": "The slides were a bit cluttered."
+        }
+      ]
+    },
+    {
+      "id": "c1-11-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Uma sugestão: talvez você pudesse falar um pouco mais devagar.\"",
+      "accepted": [
+        "One suggestion: maybe you could speak a bit more slowly",
+        "One suggestion: perhaps you could speak a little more slowly",
+        "Just a suggestion: maybe you could slow down a bit",
+        "One suggestion would be to speak a bit more slowly",
+        "One thing I'd suggest is speaking a bit more slowly",
+        "One suggestion: it might be worth slowing down a bit",
+        "My one suggestion would be to slow down a little",
+        "One suggestion: maybe you could talk a bit more slowly",
+        "One suggestion: maybe you could speak a bit slower"
+      ],
+      "commonErrors": [
+        {
+          "id": "more-slow",
+          "match": "\\bmore slow\\b",
+          "explanation_pt": "Use the adverb: \"more slowly\" (or informally \"slower\").",
+          "correction_en": "Maybe you could speak a bit more slowly."
+        }
+      ]
+    },
+    {
+      "id": "c1-11-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Não leve para o lado pessoal.\"",
+      "accepted": [
+        "Don't take it personally",
+        "Please don't take it personally",
+        "Try not to take it personally",
+        "Don't take this personally",
+        "Do not take it personally",
+        "I hope you don't take it personally"
+      ],
+      "commonErrors": [
+        {
+          "id": "personal-side",
+          "match": "\\b(personal side|to the personal)\\b",
+          "explanation_pt": "\"Levar para o lado pessoal\" is \"take it personally\".",
+          "correction_en": "Don't take it personally."
+        }
+      ]
+    },
+    {
+      "id": "c1-11-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen. Give balanced feedback: one strength, then one suggestion.",
+      "listen": "So, what did you think of my report? Be honest.",
+      "accepted": [
+        "It was really clear, but it might be worth adding more data",
+        "The structure was great, but the conclusion could be stronger",
+        "I liked the examples, but it might be worth cutting the introduction",
+        "It's very well written, though the summary could be shorter",
+        "Overall it's strong, but I'd tighten up the second part",
+        "The analysis was spot on, but the charts could be clearer",
+        "It's well researched, but it might be worth adding a summary at the start",
+        "I really liked the structure. Maybe the ending could be a bit stronger"
+      ],
+      "commonErrors": [
+        {
+          "id": "might-worth",
+          "match": "\\bmight worth\\b",
+          "explanation_pt": "The phrase is \"it might BE worth...\".",
+          "correction_en": "It might be worth adding more data."
+        }
+      ]
+    },
+    {
+      "id": "c1-11-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen. Respond calmly and invite them to explain their view.",
+      "listen": "I don't really agree with your comments about my presentation.",
+      "accepted": [
+        "That's fair. Can you tell me which part you disagree with",
+        "Okay, I'd like to understand your view. What did you disagree with",
+        "Fair enough. Which part don't you agree with",
+        "I appreciate that. Could you tell me more",
+        "That's fine. What's your take on it",
+        "I'm open to that. Can you explain your view",
+        "Okay. Talk me through what you'd do differently",
+        "Sure. Which comments in particular"
+      ],
+      "commonErrors": [
+        {
+          "id": "explain-me",
+          "match": "\\bexplain me\\b",
+          "explanation_pt": "\"Explain\" needs \"to\" before the person: \"explain to me\".",
+          "correction_en": "Can you explain your view to me?"
+        }
+      ]
+    },
+    {
+      "id": "c1-11-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen. Praise something specific about their work.",
+      "listen": "Do you have any feedback for me after my first month?",
+      "accepted": [
+        "You've settled in really quickly",
+        "You've picked things up really quickly",
+        "Your reports have been really thorough",
+        "The way you handled the client last week was impressive",
+        "You've been really proactive, which is great",
+        "Your attention to detail has been excellent",
+        "You've fitted in really well with the team",
+        "You've fit in really well with the team",
+        "Your presentations have been really clear"
+      ],
+      "commonErrors": [
+        {
+          "id": "adapted-yourself",
+          "match": "\\badapted yourself\\b",
+          "explanation_pt": "\"Se adaptar\" is \"settle in\" or \"adapt\", with no \"yourself\".",
+          "correction_en": "You've settled in really quickly."
+        }
+      ]
+    },
+    {
+      "id": "c1-11-prac-18",
+      "kind": "free_speak",
+      "instruction_pt": "Give feedback on a colleague's work in about a minute.",
+      "prompt_en": "A colleague asks for your opinion on a project proposal. It has good ideas, but it's too long and unclear. Give your feedback.",
+      "guidelines_pt": [
+        "Start with a specific strength: \"What I really liked was...\"",
+        "Frame criticism as a suggestion: \"It might be worth...\"",
+        "Give one concrete example of what to change.",
+        "Finish positively: \"Overall, you're on the right track.\""
+      ]
+    },
+    {
+      "id": "c1-11-prac-19",
+      "kind": "dialogue",
+      "instruction_pt": "Role-play: give balanced, specific feedback on a colleague's draft.",
+      "scene_pt": "A junior colleague asks for your feedback on an article she has written.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Hi! Have you had a chance to read my article draft?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Say yes, and that overall it's really engaging.",
+          "accepted": [
+            "Yes, I have. Overall, it's really engaging",
+            "Yes, and overall it's really engaging",
+            "Yes, I have, and overall it's really engaging",
+            "I have, yes. On the whole, it's really engaging",
+            "Yes. Overall, I found it really engaging",
+            "Yes, I read it. Overall, it's really engaging"
+          ],
+          "commonErrors": [
+            {
+              "id": "engaged",
+              "match": "\\breally engaged\\b",
+              "explanation_pt": "\"Engaged\" describes people. A text that holds your attention is \"engaging\".",
+              "correction_en": "Overall, it's really engaging."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Oh, great! Anything you think I should change?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Say the introduction is a bit long, so it might be worth tightening it up.",
+          "accepted": [
+            "The introduction is a bit long, so it might be worth tightening it up",
+            "The intro is a bit long, so it might be worth tightening it up",
+            "The introduction is a little long, so it might be worth tightening it up",
+            "The introduction's a bit long, so it might be worth tightening it up",
+            "The introduction is a bit long, so you might want to tighten it up"
+          ],
+          "commonErrors": [
+            {
+              "id": "worth-to",
+              "match": "\\bworth to\\b",
+              "explanation_pt": "\"Worth\" is followed by -ing: \"worth tightening\".",
+              "correction_en": "It might be worth tightening it up."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Okay, that makes sense. Anything else?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Say the examples in the middle are spot on, so you'd build on those.",
+          "accepted": [
+            "The examples in the middle are spot on, so I'd build on those",
+            "The examples in the middle are spot on, so I'd build on them",
+            "The examples in the middle section are spot on, so I'd build on those",
+            "The middle examples are spot on, so I'd build on those",
+            "The examples in the middle are really spot on, so I'd build on those"
+          ],
+          "commonErrors": [
+            {
+              "id": "build-in",
+              "match": "\\bbuild (in|over) (those|them)\\b",
+              "explanation_pt": "The phrasal verb is \"build on\".",
+              "correction_en": "I'd build on those."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Thanks, that's really helpful. I was worried it was all terrible!"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Reassure her: not at all, it's a really strong first draft.",
+          "accepted": [
+            "Not at all, it's a really strong first draft",
+            "Not at all! It's a very strong first draft",
+            "Not at all. It's a really good first draft",
+            "Far from it. It's a really strong first draft",
+            "Not at all, it's a really solid first draft",
+            "Not in the slightest. It's a really strong first draft"
+          ],
+          "commonErrors": [
+            {
+              "id": "first-sketch",
+              "match": "\\bfirst sketch\\b",
+              "explanation_pt": "A first version of a text is a \"draft\". A \"sketch\" is a drawing.",
+              "correction_en": "It's a really strong first draft."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-11-prac-20",
+      "kind": "choice",
+      "instruction_pt": "Which is the most constructive way to criticise?",
+      "options": [
+        "This is bad.",
+        "It might be worth adding a few examples to make it clearer.",
+        "Why didn't you add any examples?"
+      ],
+      "answer": 1,
+      "explanation_pt": "A suggestion with \"it might be worth\" focuses on improvement, not blame."
+    },
+    {
+      "id": "c1-11-prac-21",
+      "kind": "choice",
+      "instruction_pt": "What does \"food for thought\" mean?",
+      "options": [
+        "Something to think about",
+        "A snack during a meeting",
+        "A question nobody can answer"
+      ],
+      "answer": 0,
+      "explanation_pt": "Food for thought is an idea that makes you think carefully."
+    },
+    {
+      "id": "c1-11-prac-22",
+      "kind": "choice",
+      "instruction_pt": "Listen. What is the main criticism?",
+      "listen": "Your analysis was excellent. The only thing I'd say is that the slides were a bit text-heavy.",
+      "options": [
+        "The analysis was weak.",
+        "There was too much text on the slides.",
+        "The presentation was too short."
+      ],
+      "answer": 1,
+      "explanation_pt": "\"Text-heavy\" means the slides had too much text; the analysis was praised."
+    },
+    {
+      "id": "c1-11-prac-23",
+      "kind": "fill",
+      "instruction_pt": "Complete with one word.",
+      "sentence": "I'd like to build ___ what you said in the meeting.",
+      "accepted": ["on", "upon"],
+      "commonErrors": [
+        {
+          "id": "build-in",
+          "match": "^(in|over|from)$",
+          "explanation_pt": "The phrasal verb is \"build on\".",
+          "correction_en": "I'd like to build on what you said."
+        }
+      ]
+    },
+    {
+      "id": "c1-11-prac-24",
+      "kind": "fill",
+      "instruction_pt": "Complete with one word.",
+      "sentence": "Thanks, I'll definitely take that ___ board.",
+      "accepted": ["on"],
+      "commonErrors": [
+        {
+          "id": "in-board",
+          "match": "^(in|to|at)$",
+          "explanation_pt": "The expression is \"take something on board\".",
+          "correction_en": "I'll take that on board."
+        }
+      ]
+    },
+    {
+      "id": "c1-11-prac-25",
+      "kind": "order",
+      "instruction_pt": "Put the words in order to give positive feedback.",
+      "accepted": ["Overall it was a really solid piece of work"]
+    },
+    {
+      "id": "c1-11-prac-26",
+      "kind": "match",
+      "instruction_pt": "Match each feedback expression with its meaning.",
+      "pairs": [
+        {
+          "en": "to be on the right track",
+          "pt": "estar no caminho certo"
+        },
+        {
+          "en": "to tighten up",
+          "pt": "enxugar, deixar mais conciso"
+        },
+        {
+          "en": "food for thought",
+          "pt": "algo para refletir"
+        },
+        {
+          "en": "to flesh out",
+          "pt": "desenvolver, detalhar"
+        },
+        {
+          "en": "cluttered",
+          "pt": "carregado (visualmente)"
+        }
+      ]
+    }
   ]
 }

@@ -452,5 +452,473 @@
         }
       ]
     }
+  ],
+  "practice": [
+    {
+      "id": "c1-09-prac-1",
+      "kind": "vocab",
+      "word_en": "to get round to",
+      "meaning_pt": "finalmente arrumar tempo para (fazer algo)",
+      "example_en": "I finally got round to fixing the bike."
+    },
+    {
+      "id": "c1-09-prac-2",
+      "kind": "vocab",
+      "word_en": "to back out",
+      "meaning_pt": "desistir (de um compromisso)",
+      "example_en": "They backed out of the deal at the last moment."
+    },
+    {
+      "id": "c1-09-prac-3",
+      "kind": "vocab",
+      "word_en": "to catch up on",
+      "meaning_pt": "pôr em dia",
+      "example_en": "I spent Sunday catching up on my reading."
+    },
+    {
+      "id": "c1-09-prac-4",
+      "kind": "vocab",
+      "word_en": "to talk someone into",
+      "meaning_pt": "convencer alguém a",
+      "example_en": "My sister talked me into going to the party."
+    },
+    {
+      "id": "c1-09-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "I keep meaning to call her, but I never get round to it.",
+      "accepted": [
+        "I keep meaning to call her, but I never get round to it",
+        "I keep meaning to call her, but I never get around to it"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-09-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "He backed out at the last minute.",
+      "accepted": ["He backed out at the last minute", "He backed out at the very last minute"],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-09-prac-7",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "I need a weekend to catch up on sleep.",
+      "accepted": [
+        "I need a weekend to catch up on sleep",
+        "I need a weekend to catch up on some sleep"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-09-prac-8",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "She talked me into signing up for a marathon.",
+      "accepted": [
+        "She talked me into signing up for a marathon",
+        "She talked me into signing up for the marathon"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-09-prac-9",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "Let's not rule anything out just yet.",
+      "accepted": ["Let's not rule anything out just yet", "Let's not rule anything out yet"],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-09-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English, with a phrasal verb: \"Eu dei de cara com meu ex no mercado.\"",
+      "accepted": [
+        "I bumped into my ex at the supermarket",
+        "I ran into my ex at the supermarket",
+        "I bumped into my ex at the market",
+        "I ran into my ex at the market",
+        "I bumped into my ex in the supermarket",
+        "I ran into my ex in the supermarket",
+        "I came across my ex at the supermarket",
+        "I ran into my ex at the grocery store",
+        "I bumped into my ex at the grocery store"
+      ],
+      "commonErrors": [
+        {
+          "id": "found-ex",
+          "match": "\\b(found|encountered) my ex\\b",
+          "explanation_pt": "For meeting someone by chance, use \"bump into\" or \"run into\".",
+          "correction_en": "I bumped into my ex at the supermarket."
+        }
+      ]
+    },
+    {
+      "id": "c1-09-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English, with a phrasal verb: \"Preciso pôr em dia meus e-mails.\"",
+      "accepted": [
+        "I need to catch up on my emails",
+        "I have to catch up on my emails",
+        "I've got to catch up on my emails",
+        "I need to catch up with my emails",
+        "I need to get through my emails",
+        "I need to get on top of my emails"
+      ],
+      "commonErrors": [
+        {
+          "id": "in-day",
+          "match": "\\b(in|on) day\\b",
+          "explanation_pt": "\"Pôr em dia\" is \"catch up on\", not a literal \"put in day\".",
+          "correction_en": "I need to catch up on my emails."
+        }
+      ]
+    },
+    {
+      "id": "c1-09-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English, with a phrasal verb: \"Ela desistiu do curso no meio.\"",
+      "accepted": [
+        "She dropped out of the course halfway through",
+        "She dropped out of the course in the middle",
+        "She dropped out halfway through the course",
+        "She gave up the course halfway through",
+        "She quit the course halfway through",
+        "She gave up on the course halfway through",
+        "She dropped out of the course midway through"
+      ],
+      "commonErrors": [
+        {
+          "id": "desisted",
+          "match": "\\bdesist(ed)?\\b",
+          "explanation_pt": "\"Desistir\" is \"give up\" or \"drop out\". \"Desist\" is formal and means to stop doing something.",
+          "correction_en": "She dropped out of the course halfway through."
+        }
+      ]
+    },
+    {
+      "id": "c1-09-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English, with a phrasal verb: \"Vamos ter que cancelar a festa.\"",
+      "accepted": [
+        "We'll have to call off the party",
+        "We'll have to call the party off",
+        "We're going to have to call off the party",
+        "We're going to have to call the party off",
+        "We'll have to cancel the party",
+        "We will have to call off the party",
+        "We're gonna have to call off the party"
+      ],
+      "commonErrors": [
+        {
+          "id": "call-out",
+          "match": "\\bcall (out|the party out)\\b",
+          "explanation_pt": "\"Call out\" means to criticise publicly. To cancel is \"call off\".",
+          "correction_en": "We'll have to call off the party."
+        }
+      ]
+    },
+    {
+      "id": "c1-09-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English, with a phrasal verb: \"Eu não consigo entender o que ele quer.\"",
+      "accepted": [
+        "I can't figure out what he wants",
+        "I can't work out what he wants",
+        "I can't make out what he wants",
+        "I just can't figure out what he wants",
+        "I can't figure out what he's after",
+        "I can't work out what he's after",
+        "I cannot figure out what he wants",
+        "I can't understand what he wants"
+      ],
+      "commonErrors": [
+        {
+          "id": "what-does-he-want",
+          "match": "\\bwhat does he want\\b",
+          "explanation_pt": "In an indirect question, use statement order: \"what he wants\".",
+          "correction_en": "I can't figure out what he wants."
+        }
+      ]
+    },
+    {
+      "id": "c1-09-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and answer with a phrasal verb: you decided not to accept it.",
+      "listen": "What happened with the job offer in Lisbon?",
+      "accepted": [
+        "I turned it down",
+        "I ended up turning it down",
+        "I decided to turn it down",
+        "In the end, I turned it down",
+        "I turned the offer down",
+        "I turned down the offer",
+        "I ended up turning down the offer",
+        "Actually, I turned it down"
+      ],
+      "commonErrors": [
+        {
+          "id": "turned-down-it",
+          "match": "\\bturned down (it|them)\\b",
+          "explanation_pt": "With a pronoun, it goes in the middle: \"turned it down\".",
+          "correction_en": "I turned it down."
+        }
+      ]
+    },
+    {
+      "id": "c1-09-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and explain with a phrasal verb: your car broke down on the motorway.",
+      "listen": "Why are you so late?",
+      "accepted": [
+        "My car broke down on the motorway",
+        "My car broke down on the highway",
+        "The car broke down on the motorway",
+        "Sorry, my car broke down on the motorway",
+        "Sorry, my car broke down on the highway",
+        "My car broke down on the way here",
+        "My car broke down on the freeway"
+      ],
+      "commonErrors": [
+        {
+          "id": "car-broke",
+          "match": "\\bcar broke (on|in)\\b",
+          "explanation_pt": "A car \"breaks down\". Without \"down\", \"break\" means to smash.",
+          "correction_en": "My car broke down on the motorway."
+        }
+      ]
+    },
+    {
+      "id": "c1-09-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and answer with a phrasal verb: you've come up with a couple of ideas.",
+      "listen": "Have you thought about how to fund the project?",
+      "accepted": [
+        "Yes, I've come up with a couple of ideas",
+        "I've come up with a couple of ideas",
+        "Yes, I've come up with a few ideas",
+        "Yes, I came up with a couple of ideas",
+        "I've come up with a couple of options",
+        "Yes, I've come up with a couple of possibilities",
+        "I have come up with a couple of ideas"
+      ],
+      "commonErrors": [
+        {
+          "id": "come-with",
+          "match": "\\b(come|came) with (a|some)\\b",
+          "explanation_pt": "\"Ter uma ideia\" is \"come up with\" an idea. Don't drop \"up\".",
+          "correction_en": "I've come up with a couple of ideas."
+        }
+      ]
+    },
+    {
+      "id": "c1-09-prac-18",
+      "kind": "free_speak",
+      "instruction_pt": "Talk for about a minute, using at least five phrasal verbs.",
+      "prompt_en": "Tell me about a plan that didn't work out the way you expected.",
+      "guidelines_pt": [
+        "Use phrasal verbs for the plan: \"We set out to...\", \"We'd been looking forward to...\".",
+        "Explain what went wrong: \"...fell through\", \"...broke down\", \"...ran out of...\".",
+        "Say how it ended: \"We ended up...\".",
+        "Reflect: \"In the end, it all worked out.\""
+      ]
+    },
+    {
+      "id": "c1-09-prac-19",
+      "kind": "dialogue",
+      "instruction_pt": "Role-play: make plans with a friend, using phrasal verbs naturally.",
+      "scene_pt": "You and a friend planned a camping trip, but the weather forecast is bad.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "So, are we still going camping this weekend?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Say you're not sure, because it might rain, so you might have to put it off.",
+          "accepted": [
+            "I'm not sure. The forecast says it might rain, so we might have to put it off",
+            "I'm not sure, because the forecast says it might rain, so we might have to put it off",
+            "Not sure. It might rain, so we might have to put it off",
+            "I'm not sure. It might rain, so we may have to put it off",
+            "I'm not sure. The forecast says it might rain, so we might have to put it back",
+            "I'm not sure. It looks like rain, so we might have to put it off"
+          ],
+          "commonErrors": [
+            {
+              "id": "put-off-it",
+              "match": "\\bput off it\\b",
+              "explanation_pt": "With a pronoun, it goes in the middle: \"put it off\".",
+              "correction_en": "We might have to put it off."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Oh no. Tom's really looking forward to it."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Say you know, and you don't want to let him down.",
+          "accepted": [
+            "I know, and I don't want to let him down",
+            "I know. I don't want to let him down",
+            "I know, I really don't want to let him down",
+            "I know, and I'd hate to let him down",
+            "I know, and I don't want to disappoint him",
+            "I know, we don't want to let him down"
+          ],
+          "commonErrors": [
+            {
+              "id": "let-down-him",
+              "match": "\\blet down him\\b",
+              "explanation_pt": "With a pronoun, it goes in the middle: \"let him down\".",
+              "correction_en": "I don't want to let him down."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Maybe we could find somewhere indoors instead?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Say good idea, you'll look into it tonight.",
+          "accepted": [
+            "Good idea. I'll look into it tonight",
+            "That's a good idea. I'll look into it tonight",
+            "Great idea. I'll look into it this evening",
+            "Good idea. I'll look into some options tonight",
+            "Good thinking. I'll look into it tonight"
+          ],
+          "commonErrors": [
+            {
+              "id": "look-in-it",
+              "match": "\\blook (in|after) it\\b",
+              "explanation_pt": "\"Investigar / verificar\" is \"look into\". \"Look after\" means \"cuidar de\".",
+              "correction_en": "I'll look into it tonight."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Perfect. Let me know what you come up with."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Say you will, and you'll get back to her tomorrow.",
+          "accepted": [
+            "I will. I'll get back to you tomorrow",
+            "Will do. I'll get back to you tomorrow",
+            "Sure, I'll get back to you tomorrow",
+            "I will, and I'll get back to you tomorrow",
+            "Of course. I'll get back to you tomorrow",
+            "Sure thing. I'll get back to you tomorrow"
+          ],
+          "commonErrors": [
+            {
+              "id": "return-you",
+              "match": "\\breturn (to )?you\\b",
+              "explanation_pt": "\"Te dar um retorno\" is \"get back to you\".",
+              "correction_en": "I'll get back to you tomorrow."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-09-prac-20",
+      "kind": "choice",
+      "instruction_pt": "Which sentence is correct?",
+      "options": [
+        "I'll pick up you at eight.",
+        "I'll pick you up at eight.",
+        "I'll you pick up at eight."
+      ],
+      "answer": 1,
+      "explanation_pt": "With a pronoun object, separable phrasal verbs put it in the middle: \"pick you up\"."
+    },
+    {
+      "id": "c1-09-prac-21",
+      "kind": "choice",
+      "instruction_pt": "What does \"to get round to something\" mean?",
+      "options": ["To finally find time to do it", "To avoid it completely", "To travel around it"],
+      "answer": 0,
+      "explanation_pt": "If you get round to something, you finally do it after delaying it."
+    },
+    {
+      "id": "c1-09-prac-22",
+      "kind": "choice",
+      "instruction_pt": "Listen. What did they do in the end?",
+      "listen": "We were supposed to go to the beach, but we ended up staying in and watching films.",
+      "options": ["They went to the beach.", "They stayed at home.", "They went to the cinema."],
+      "answer": 1,
+      "explanation_pt": "\"We ended up staying in\" means they stayed at home, even though it wasn't the plan."
+    },
+    {
+      "id": "c1-09-prac-23",
+      "kind": "fill",
+      "instruction_pt": "Complete with one word.",
+      "sentence": "We've run ___ of milk. Can you get some?",
+      "accepted": ["out"],
+      "commonErrors": [
+        {
+          "id": "run-off",
+          "match": "^(off|away)$",
+          "explanation_pt": "\"Ficar sem\" is \"run out of\".",
+          "correction_en": "We've run out of milk."
+        }
+      ]
+    },
+    {
+      "id": "c1-09-prac-24",
+      "kind": "fill",
+      "instruction_pt": "Complete with one word.",
+      "sentence": "How do you put ___ with his constant complaining?",
+      "accepted": ["up"],
+      "commonErrors": [
+        {
+          "id": "put-on",
+          "match": "^(on|in|off)$",
+          "explanation_pt": "\"Aguentar, tolerar\" is \"put up with\".",
+          "correction_en": "How do you put up with it?"
+        }
+      ]
+    },
+    {
+      "id": "c1-09-prac-25",
+      "kind": "order",
+      "instruction_pt": "Put the words in order to make a sentence with two phrasal verbs.",
+      "accepted": ["I'll look into it and get back to you"]
+    },
+    {
+      "id": "c1-09-prac-26",
+      "kind": "match",
+      "instruction_pt": "Match each phrasal verb with its meaning.",
+      "pairs": [
+        {
+          "en": "to get round to",
+          "pt": "finalmente arrumar tempo para"
+        },
+        {
+          "en": "to back out",
+          "pt": "desistir de um compromisso"
+        },
+        {
+          "en": "to catch up on",
+          "pt": "pôr em dia"
+        },
+        {
+          "en": "to talk someone into",
+          "pt": "convencer alguém a"
+        },
+        {
+          "en": "to call off",
+          "pt": "cancelar"
+        }
+      ]
+    }
   ]
 }

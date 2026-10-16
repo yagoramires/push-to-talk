@@ -112,10 +112,22 @@
           "kind": "match",
           "instruction_pt": "Match each debating expression with its meaning.",
           "pairs": [
-            { "en": "counterargument", "pt": "contra-argumento" },
-            { "en": "the burden of proof", "pt": "o ônus da prova" },
-            { "en": "a slippery slope", "pt": "um efeito dominó perigoso" },
-            { "en": "to play devil's advocate", "pt": "bancar o advogado do diabo" }
+            {
+              "en": "counterargument",
+              "pt": "contra-argumento"
+            },
+            {
+              "en": "the burden of proof",
+              "pt": "o ônus da prova"
+            },
+            {
+              "en": "a slippery slope",
+              "pt": "um efeito dominó perigoso"
+            },
+            {
+              "en": "to play devil's advocate",
+              "pt": "bancar o advogado do diabo"
+            }
           ]
         },
         {
@@ -358,10 +370,84 @@
           ]
         },
         {
-          "id": "c1-02-conv-3",
-          "kind": "order",
-          "instruction_pt": "Put the words in order to concede a point.",
-          "accepted": ["I'll grant you that it's expensive"]
+          "id": "c1-02-conv-dialogue",
+          "kind": "dialogue",
+          "instruction_pt": "Role-play: challenge your friend's view and propose an alternative.",
+          "scene_pt": "A friend has strong views about phones in schools.",
+          "turns": [
+            {
+              "speaker": "partner",
+              "text": "Phones should be banned in schools, full stop."
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Say you'd take issue with that, at least for older students.",
+              "accepted": [
+                "I'd take issue with that, at least for older students",
+                "I'd take issue with that, at least when it comes to older students",
+                "I'd disagree with that, at least for older students",
+                "I'd take issue with that, at least for older kids",
+                "I'm not sure I agree, at least for older students",
+                "I'd question that, at least for older students"
+              ],
+              "commonErrors": [
+                {
+                  "id": "issue-on",
+                  "match": "\\btake issue (on|about|to)\\b",
+                  "explanation_pt": "The expression is \"take issue with\".",
+                  "correction_en": "I'd take issue with that."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Why? They're just a distraction."
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Say they can be, but they're also a useful learning tool.",
+              "accepted": [
+                "They can be, but they're also a useful learning tool",
+                "They can be, but they're also a useful tool for learning",
+                "They can be a distraction, but they're also a useful learning tool",
+                "Sometimes, but they're also a useful learning tool",
+                "They can be, but they can also be a useful learning tool",
+                "True, but they're also a useful learning tool"
+              ],
+              "commonErrors": [
+                {
+                  "id": "for-learn",
+                  "match": "\\bfor learn\\b",
+                  "explanation_pt": "After \"for\" use -ing: \"a tool for learning\".",
+                  "correction_en": "They're also a useful tool for learning."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Fine, I'll concede that. But who's going to control how they use them?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Say teachers could set clear rules, rather than ban them outright.",
+              "accepted": [
+                "Teachers could set clear rules, rather than ban them outright",
+                "Teachers could set clear rules rather than banning them outright",
+                "Teachers could set clear rules instead of banning them outright",
+                "Teachers could set clear rules instead of banning them completely",
+                "Teachers could just set clear rules rather than ban them outright",
+                "Schools could set clear rules rather than ban them outright"
+              ],
+              "commonErrors": [
+                {
+                  "id": "instead-of-ban",
+                  "match": "\\binstead of ban\\b",
+                  "explanation_pt": "After \"instead of\" use -ing: \"instead of banning\".",
+                  "correction_en": "Instead of banning them outright."
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "c1-02-conv-free",
@@ -446,6 +532,514 @@
           "prompt": "All things considered, I stand by what I said.",
           "accepted": ["All things considered, I stand by what I said"],
           "commonErrors": []
+        }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "id": "c1-02-prac-1",
+      "kind": "vocab",
+      "word_en": "to rebut",
+      "meaning_pt": "refutar, rebater (um argumento)",
+      "example_en": "She calmly rebutted every point he made."
+    },
+    {
+      "id": "c1-02-prac-2",
+      "kind": "vocab",
+      "word_en": "a straw man",
+      "meaning_pt": "espantalho: uma versão distorcida do argumento do outro",
+      "example_en": "That's a straw man. I never said we should cut all funding."
+    },
+    {
+      "id": "c1-02-prac-3",
+      "kind": "vocab",
+      "word_en": "to back up (a claim)",
+      "meaning_pt": "sustentar, comprovar (uma afirmação)",
+      "example_en": "Can you back that up with any data?"
+    },
+    {
+      "id": "c1-02-prac-4",
+      "kind": "vocab",
+      "word_en": "compelling",
+      "meaning_pt": "convincente, forte",
+      "example_en": "She made a compelling case for changing the policy."
+    },
+    {
+      "id": "c1-02-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "I take your point, but the figures tell a different story.",
+      "accepted": [
+        "I take your point, but the figures tell a different story",
+        "I take your point, but the figures tell another story"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-02-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "That's a bit of a sweeping generalisation.",
+      "accepted": [
+        "That's a bit of a sweeping generalisation",
+        "That's a bit of a sweeping generalization",
+        "That is a bit of a sweeping generalisation"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-02-prac-7",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "Where's the evidence to back that up?",
+      "accepted": ["Where's the evidence to back that up", "Where is the evidence to back that up"],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-02-prac-8",
+      "kind": "repeat",
+      "instruction_pt": "Repeat in a calm, firm tone.",
+      "prompt": "Let me finish my point, if I may.",
+      "accepted": ["Let me finish my point, if I may", "Let me just finish my point, if I may"],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-02-prac-9",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "I'm afraid I can't agree with you on that one.",
+      "accepted": [
+        "I'm afraid I can't agree with you on that one",
+        "I'm afraid I can't agree with you on that",
+        "I am afraid I cannot agree with you on that one"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-02-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Você tem um ponto, mas isso não prova nada.\"",
+      "accepted": [
+        "You have a point, but that doesn't prove anything",
+        "You've got a point, but that doesn't prove anything",
+        "You have a point, but it doesn't prove anything",
+        "That's a fair point, but it doesn't prove anything",
+        "Fair point, but that doesn't prove anything",
+        "You have a point, but that proves nothing",
+        "You've got a point, but it doesn't prove anything",
+        "I take your point, but that doesn't prove anything"
+      ],
+      "commonErrors": [
+        {
+          "id": "prove-nothing",
+          "match": "\\bnot prove nothing\\b",
+          "explanation_pt": "English avoids double negatives: \"doesn't prove anything\" or \"proves nothing\".",
+          "correction_en": "That doesn't prove anything."
+        }
+      ]
+    },
+    {
+      "id": "c1-02-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Isso é exatamente o que eu quero dizer.\"",
+      "accepted": [
+        "That's exactly what I mean",
+        "That's exactly my point",
+        "That is exactly what I mean",
+        "That's exactly what I'm saying",
+        "That's exactly what I'm trying to say",
+        "Exactly my point",
+        "That's precisely my point",
+        "That's precisely what I mean"
+      ],
+      "commonErrors": [
+        {
+          "id": "want-to-say",
+          "match": "\\bwhat i want to say\\b",
+          "explanation_pt": "\"Quero dizer\" here means \"I mean\", not \"I want to say\".",
+          "correction_en": "That's exactly what I mean."
+        }
+      ]
+    },
+    {
+      "id": "c1-02-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Com todo o respeito, os números não confirmam isso.\"",
+      "accepted": [
+        "With all due respect, the numbers don't support that",
+        "With all due respect, the figures don't support that",
+        "With respect, the numbers don't back that up",
+        "With all due respect, the numbers don't back that up",
+        "With all due respect, the figures don't back that up",
+        "With all due respect, the numbers don't confirm that",
+        "With respect, the figures don't support that",
+        "With all due respect, the data doesn't support that",
+        "With all due respect, the data don't support that"
+      ],
+      "commonErrors": [
+        {
+          "id": "all-the-respect",
+          "match": "\\bwith all the respect\\b",
+          "explanation_pt": "The fixed phrase is \"with all due respect\" or simply \"with respect\".",
+          "correction_en": "With all due respect, the numbers don't support that."
+        }
+      ]
+    },
+    {
+      "id": "c1-02-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Eu admito que você tem razão nesse ponto.\"",
+      "accepted": [
+        "I admit you're right on that point",
+        "I admit that you're right on that point",
+        "I'll admit you're right on that point",
+        "I concede you're right on that point",
+        "I'll concede that point",
+        "I concede that point",
+        "I'll grant you that",
+        "I'll give you that",
+        "Okay, you're right on that point",
+        "I admit you're right about that"
+      ],
+      "commonErrors": [
+        {
+          "id": "have-reason",
+          "match": "\\byou have (the )?reason\\b",
+          "explanation_pt": "\"Ter razão\" is \"to be right\", not \"to have reason\".",
+          "correction_en": "I admit you're right on that point."
+        }
+      ]
+    },
+    {
+      "id": "c1-02-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Isso não tem nada a ver com o que estamos discutindo.\"",
+      "accepted": [
+        "That has nothing to do with what we're discussing",
+        "That's got nothing to do with what we're discussing",
+        "That has nothing to do with what we're talking about",
+        "That's nothing to do with what we're discussing",
+        "That has nothing to do with the issue we're discussing",
+        "That's irrelevant to what we're discussing",
+        "That has nothing to do with what we are discussing"
+      ],
+      "commonErrors": [
+        {
+          "id": "nothing-to-see",
+          "match": "\\bnothing to see with\\b",
+          "explanation_pt": "\"Não tem nada a ver\" is \"has nothing to do with\".",
+          "correction_en": "That has nothing to do with what we're discussing."
+        },
+        {
+          "id": "discuss-about",
+          "match": "\\bdiscussing about\\b",
+          "explanation_pt": "\"Discuss\" takes a direct object: \"discuss something\", not \"discuss about\".",
+          "correction_en": "What we're discussing."
+        }
+      ]
+    },
+    {
+      "id": "c1-02-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and challenge the claim politely, offering another view.",
+      "listen": "Surely a ban on cars in the city centre is the only solution?",
+      "accepted": [
+        "Not necessarily",
+        "I'm not sure it's the only solution",
+        "I wouldn't say it's the only solution",
+        "I'd question whether it's the only solution",
+        "I'd take issue with the idea that it's the only solution",
+        "It's one solution, but not the only one",
+        "That's one option, but there are others",
+        "I don't think it's the only option",
+        "I'm not convinced it's the only solution",
+        "There are other options, surely",
+        "Not necessarily. Better public transport could help too"
+      ],
+      "commonErrors": [
+        {
+          "id": "not-necessary",
+          "match": "^not necessary\\b",
+          "explanation_pt": "The adverb is \"not necessarily\".",
+          "correction_en": "Not necessarily."
+        },
+        {
+          "id": "unique-solution",
+          "match": "\\bunique (solution|option)\\b",
+          "explanation_pt": "\"A única solução\" is \"the only solution\". \"Unique\" means \"one of a kind\".",
+          "correction_en": "It's not the only solution."
+        }
+      ]
+    },
+    {
+      "id": "c1-02-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and give a qualified answer: partly agree, but add a counterpoint.",
+      "listen": "But don't you agree that experience matters more than qualifications?",
+      "accepted": [
+        "Up to a point, but qualifications matter too",
+        "To some extent, but qualifications matter too",
+        "I'd agree to some extent, but qualifications still matter",
+        "Partly, but qualifications count for something too",
+        "It matters, but so do qualifications",
+        "I take your point, but qualifications matter too",
+        "In some cases, yes, but not always",
+        "Not always. It depends on the job",
+        "It depends on the job, really",
+        "Both matter, I'd say",
+        "I'd say both matter"
+      ],
+      "commonErrors": [
+        {
+          "id": "depends-of",
+          "match": "\\bdepends? of\\b",
+          "explanation_pt": "\"Depend\" takes \"on\", not \"of\".",
+          "correction_en": "It depends on the job."
+        },
+        {
+          "id": "in-some-extent",
+          "match": "\\bin (some|a certain) extent\\b",
+          "explanation_pt": "The preposition is \"to\": \"to some extent\".",
+          "correction_en": "To some extent, yes."
+        }
+      ]
+    },
+    {
+      "id": "c1-02-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and answer: say yes and point to a source.",
+      "listen": "Can you back that up with any evidence?",
+      "accepted": [
+        "Yes, there's a recent study that shows it",
+        "Yes, a recent study backs it up",
+        "Yes, there's a study that backs it up",
+        "Yes, the latest report backs it up",
+        "Sure, there's plenty of research on it",
+        "Yes, the figures from last year back it up",
+        "Absolutely, there's a recent report on it",
+        "Yes, I can send you the study",
+        "Sure, I can send you the data"
+      ],
+      "commonErrors": [
+        {
+          "id": "a-research",
+          "match": "\\ba research\\b",
+          "explanation_pt": "\"Research\" is uncountable: say \"some research\", \"a study\" or \"a piece of research\".",
+          "correction_en": "There's a recent study that shows it."
+        }
+      ]
+    },
+    {
+      "id": "c1-02-prac-18",
+      "kind": "free_speak",
+      "instruction_pt": "Argue a position for about a minute, then rebut one objection.",
+      "prompt_en": "Should university education be free for everyone?",
+      "guidelines_pt": [
+        "State your position clearly in the first sentence.",
+        "Back it up with one reason and one example.",
+        "Raise an objection yourself: \"Some would argue that...\" and rebut it.",
+        "Finish with \"All things considered, ...\""
+      ]
+    },
+    {
+      "id": "c1-02-prac-19",
+      "kind": "dialogue",
+      "instruction_pt": "Role-play: disagree with your manager politely but firmly.",
+      "scene_pt": "Your manager wants to move the office out of the city. You see problems with the idea.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "I think moving the office out of the city is the obvious choice. The rent is half the price."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Acknowledge the point, but say you see it differently.",
+          "accepted": [
+            "I take your point, but I see it differently",
+            "Fair point, but I see things differently",
+            "I see what you mean, but I see it differently",
+            "That's true, but I see it a bit differently",
+            "I take your point, but I don't quite see it that way",
+            "I hear you, but I see it differently"
+          ],
+          "commonErrors": [
+            {
+              "id": "see-different",
+              "match": "\\bsee (it|things)( a bit)? different\\b",
+              "explanation_pt": "Use the adverb: \"I see it differently\".",
+              "correction_en": "I see it differently."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Go on, then. What's the problem?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Say the commute would be much longer for most of the team.",
+          "accepted": [
+            "The commute would be much longer for most of the team",
+            "The commute would be a lot longer for most of the team",
+            "Most of the team would have a much longer commute",
+            "For most of the team, the commute would be much longer",
+            "Most of us would have a much longer commute",
+            "It would mean a much longer commute for most of the team"
+          ],
+          "commonErrors": [
+            {
+              "id": "more-long",
+              "match": "\\bmore long\\b",
+              "explanation_pt": "Short adjectives take -er: \"longer\", not \"more long\".",
+              "correction_en": "A much longer commute."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "People can work from home a couple of days a week. It evens out."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Say that argument doesn't quite hold water, because some roles need people on site.",
+          "accepted": [
+            "That argument doesn't quite hold water, because some roles need people on site",
+            "I don't think that quite holds water, because some roles need people on site",
+            "That doesn't quite hold water, because some roles need people on site",
+            "That argument doesn't really hold water, since some roles need people on site",
+            "That doesn't really hold water, because some jobs need people on site",
+            "I'm not sure that holds water, because some roles need people on site"
+          ],
+          "commonErrors": [
+            {
+              "id": "hold-the-water",
+              "match": "\\bhold the water\\b",
+              "explanation_pt": "The idiom is \"hold water\", with no article.",
+              "correction_en": "That argument doesn't hold water."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Hmm. So where does that leave us?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Suggest looking at the figures in more detail before deciding.",
+          "accepted": [
+            "Let's look at the figures in more detail before we decide",
+            "Let's look at the figures in more detail before deciding",
+            "I'd suggest looking at the figures in more detail before deciding",
+            "I suggest we look at the figures in more detail before we decide",
+            "Why don't we look at the numbers in more detail before deciding",
+            "Let's look at the numbers in more detail before we decide",
+            "Maybe we should look at the figures in more detail before deciding"
+          ],
+          "commonErrors": [
+            {
+              "id": "suggest-to",
+              "match": "\\bsuggest to\\b",
+              "explanation_pt": "\"Suggest\" takes -ing or a that-clause, not \"to + verb\".",
+              "correction_en": "I'd suggest looking at the figures first."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-02-prac-20",
+      "kind": "choice",
+      "instruction_pt": "Which phrase introduces a counterargument?",
+      "options": ["On top of that, ...", "Having said that, ...", "Not to mention ..."],
+      "answer": 1,
+      "explanation_pt": "\"Having said that\" signals a contrast with what came before. The others add more of the same."
+    },
+    {
+      "id": "c1-02-prac-21",
+      "kind": "choice",
+      "instruction_pt": "What is a \"straw man\" argument?",
+      "options": [
+        "Misrepresenting someone's view so it's easier to attack",
+        "An argument based only on statistics",
+        "An exceptionally strong argument"
+      ],
+      "answer": 0,
+      "explanation_pt": "A straw man distorts the other side's position and then attacks the distorted version."
+    },
+    {
+      "id": "c1-02-prac-22",
+      "kind": "choice",
+      "instruction_pt": "Listen. What does the speaker do?",
+      "listen": "I'll grant you that the costs are high, but the long-term benefits far outweigh them.",
+      "options": [
+        "She rejects the point about costs.",
+        "She concedes a point, then defends her position.",
+        "She changes her mind completely."
+      ],
+      "answer": 1,
+      "explanation_pt": "\"I'll grant you that...\" concedes; \"but the benefits far outweigh them\" defends her view."
+    },
+    {
+      "id": "c1-02-prac-23",
+      "kind": "fill",
+      "instruction_pt": "Complete with one word.",
+      "sentence": "The burden of proof lies ___ the person making the claim.",
+      "accepted": ["with", "on", "upon"],
+      "commonErrors": [
+        {
+          "id": "lies-in",
+          "match": "^(in|at|of)$",
+          "explanation_pt": "We say the burden of proof lies \"with\" or \"on\" someone.",
+          "correction_en": "The burden of proof lies with the person making the claim."
+        }
+      ]
+    },
+    {
+      "id": "c1-02-prac-24",
+      "kind": "fill",
+      "instruction_pt": "Complete with one word.",
+      "sentence": "I'd take issue ___ that claim.",
+      "accepted": ["with"],
+      "commonErrors": [
+        {
+          "id": "issue-on",
+          "match": "^(on|about|to)$",
+          "explanation_pt": "The expression is \"take issue with something\".",
+          "correction_en": "I'd take issue with that claim."
+        }
+      ]
+    },
+    {
+      "id": "c1-02-prac-25",
+      "kind": "order",
+      "instruction_pt": "Put the words in order to make a rebuttal.",
+      "accepted": ["The evidence points in the opposite direction"]
+    },
+    {
+      "id": "c1-02-prac-26",
+      "kind": "match",
+      "instruction_pt": "Match each debating term with its meaning.",
+      "pairs": [
+        {
+          "en": "to rebut",
+          "pt": "refutar"
+        },
+        {
+          "en": "compelling",
+          "pt": "convincente"
+        },
+        {
+          "en": "a sweeping generalisation",
+          "pt": "uma generalização exagerada"
+        },
+        {
+          "en": "to back up",
+          "pt": "sustentar, comprovar"
+        },
+        {
+          "en": "a valid point",
+          "pt": "um argumento válido"
         }
       ]
     }

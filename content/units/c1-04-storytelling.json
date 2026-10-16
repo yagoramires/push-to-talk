@@ -119,11 +119,26 @@
           "kind": "match",
           "instruction_pt": "Match each storytelling verb with its meaning.",
           "pairs": [
-            { "en": "to stare", "pt": "encarar, olhar fixamente" },
-            { "en": "to rush", "pt": "ir às pressas" },
-            { "en": "to whisper", "pt": "sussurrar" },
-            { "en": "to burst into tears", "pt": "cair no choro" },
-            { "en": "to freeze", "pt": "ficar paralisado" }
+            {
+              "en": "to stare",
+              "pt": "encarar, olhar fixamente"
+            },
+            {
+              "en": "to rush",
+              "pt": "ir às pressas"
+            },
+            {
+              "en": "to whisper",
+              "pt": "sussurrar"
+            },
+            {
+              "en": "to burst into tears",
+              "pt": "cair no choro"
+            },
+            {
+              "en": "to freeze",
+              "pt": "ficar paralisado"
+            }
           ]
         },
         {
@@ -446,6 +461,497 @@
           "prompt": "Looking back, it was one of the best things that ever happened to me.",
           "accepted": ["Looking back, it was one of the best things that ever happened to me"],
           "commonErrors": []
+        }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "id": "c1-04-prac-1",
+      "kind": "vocab",
+      "word_en": "to dawn on someone",
+      "meaning_pt": "cair a ficha, alguém perceber de repente",
+      "example_en": "It slowly dawned on me that nobody was coming."
+    },
+    {
+      "id": "c1-04-prac-2",
+      "kind": "vocab",
+      "word_en": "to gasp",
+      "meaning_pt": "perder o fôlego (de susto ou surpresa)",
+      "example_en": "Everyone gasped when the curtain fell."
+    },
+    {
+      "id": "c1-04-prac-3",
+      "kind": "vocab",
+      "word_en": "to stagger",
+      "meaning_pt": "cambalear",
+      "example_en": "He staggered out of the taxi, half asleep."
+    },
+    {
+      "id": "c1-04-prac-4",
+      "kind": "vocab",
+      "word_en": "out of the blue",
+      "meaning_pt": "do nada, de repente",
+      "example_en": "Out of the blue, my cousin called from Japan."
+    },
+    {
+      "id": "c1-04-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repeat. Stress \"dawned\" and \"oven\".",
+      "prompt": "It suddenly dawned on me that I'd left the oven on.",
+      "accepted": [
+        "It suddenly dawned on me that I'd left the oven on",
+        "It suddenly dawned on me that I had left the oven on"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-04-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repeat. Slow down on \"when the lights went out\" to build suspense.",
+      "prompt": "We'd barely sat down when the lights went out.",
+      "accepted": [
+        "We'd barely sat down when the lights went out",
+        "We had barely sat down when the lights went out"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-04-prac-7",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "Out of the blue, a stranger tapped me on the shoulder.",
+      "accepted": [
+        "Out of the blue, a stranger tapped me on the shoulder",
+        "Out of the blue, a stranger tapped me on my shoulder"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-04-prac-8",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "I was halfway through my speech when my mind went blank.",
+      "accepted": [
+        "I was halfway through my speech when my mind went blank",
+        "I was halfway through my speech when my mind went completely blank"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-04-prac-9",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "To cut a long story short, we missed the flight.",
+      "accepted": [
+        "To cut a long story short, we missed the flight",
+        "To cut a long story short, we missed our flight",
+        "Long story short, we missed the flight"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-04-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Eu já tinha saído quando ele ligou.\"",
+      "accepted": [
+        "I'd already left when he called",
+        "I had already left when he called",
+        "I'd already gone when he called",
+        "I'd already left by the time he called",
+        "I had already left by the time he called",
+        "I'd already left when he rang",
+        "When he called, I'd already left",
+        "When he called, I had already left"
+      ],
+      "commonErrors": [
+        {
+          "id": "simple-past",
+          "match": "\\bi (already left|left already) when\\b",
+          "explanation_pt": "For the earlier of two past actions, use the past perfect: \"I'd already left when he called\".",
+          "correction_en": "I'd already left when he called."
+        }
+      ]
+    },
+    {
+      "id": "c1-04-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"De repente, todo mundo ficou em silêncio.\"",
+      "accepted": [
+        "Suddenly, everyone went quiet",
+        "Suddenly, everybody went quiet",
+        "Suddenly, everyone went silent",
+        "All of a sudden, everyone went quiet",
+        "All of a sudden, everybody went silent",
+        "Suddenly, everyone fell silent",
+        "All of a sudden, everyone fell silent",
+        "Suddenly the whole room went quiet"
+      ],
+      "commonErrors": [
+        {
+          "id": "all-the-world",
+          "match": "\\ball the world\\b",
+          "explanation_pt": "\"Todo mundo\" is \"everyone\" or \"everybody\".",
+          "correction_en": "Suddenly, everyone went quiet."
+        },
+        {
+          "id": "stayed-silent",
+          "match": "\\bstay(ed)? (in )?silen(t|ce)\\b",
+          "explanation_pt": "\"Ficar em silêncio\" (suddenly) is \"go quiet\" or \"fall silent\".",
+          "correction_en": "Everyone fell silent."
+        }
+      ]
+    },
+    {
+      "id": "c1-04-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Eu mal podia acreditar no que estava vendo.\"",
+      "accepted": [
+        "I could hardly believe what I was seeing",
+        "I could barely believe what I was seeing",
+        "I could hardly believe my eyes",
+        "I could barely believe my eyes",
+        "I could scarcely believe what I was seeing",
+        "I couldn't believe what I was seeing",
+        "I could hardly believe what I was looking at",
+        "I could hardly believe what I saw"
+      ],
+      "commonErrors": [
+        {
+          "id": "believe-in-what",
+          "match": "\\bbelieve in what\\b",
+          "explanation_pt": "\"Acreditar no que\" is \"believe what\". \"Believe in\" means having faith in something.",
+          "correction_en": "I could hardly believe what I was seeing."
+        }
+      ]
+    },
+    {
+      "id": "c1-04-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Enquanto a gente jantava, alguém bateu na porta.\"",
+      "accepted": [
+        "While we were having dinner, someone knocked on the door",
+        "While we were having dinner, somebody knocked on the door",
+        "While we were eating dinner, someone knocked on the door",
+        "While we were having dinner, someone knocked at the door",
+        "We were having dinner when someone knocked on the door",
+        "We were having dinner when somebody knocked at the door",
+        "While we were having dinner, there was a knock at the door",
+        "While we were having supper, someone knocked on the door"
+      ],
+      "commonErrors": [
+        {
+          "id": "beat-door",
+          "match": "\\bbeat (on |at )?the door\\b",
+          "explanation_pt": "\"Bater na porta\" is \"knock on/at the door\". \"Beat\" means to hit hard repeatedly.",
+          "correction_en": "Someone knocked on the door."
+        }
+      ]
+    },
+    {
+      "id": "c1-04-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Ele ficou parado na porta, olhando para mim.\"",
+      "accepted": [
+        "He stood in the doorway, staring at me",
+        "He stood in the doorway, looking at me",
+        "He was standing in the doorway, staring at me",
+        "He was standing in the doorway, looking at me",
+        "He stood at the door, staring at me",
+        "He was standing at the door, staring at me",
+        "He stood in the doorway and stared at me",
+        "He stood frozen in the doorway, staring at me"
+      ],
+      "commonErrors": [
+        {
+          "id": "stayed-stopped",
+          "match": "\\bstay(ed)? stopped\\b",
+          "explanation_pt": "\"Ficar parado\" is \"stand (still)\", not \"stay stopped\".",
+          "correction_en": "He stood in the doorway, staring at me."
+        }
+      ]
+    },
+    {
+      "id": "c1-04-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and continue the story: say you realised your passport had expired.",
+      "listen": "So what happened when you got to the airport?",
+      "accepted": [
+        "I realised my passport had expired",
+        "I realized my passport had expired",
+        "I found out my passport had expired",
+        "That's when I realised my passport had expired",
+        "That's when I realized my passport had expired",
+        "It turned out my passport had expired",
+        "I discovered that my passport had expired",
+        "I realised that my passport had expired",
+        "I realized that my passport had expired",
+        "Well, it turned out my passport had expired"
+      ],
+      "commonErrors": [
+        {
+          "id": "passport-was-expired",
+          "match": "\\bpassport was expired\\b",
+          "explanation_pt": "Say the passport \"had expired\" or \"was out of date\".",
+          "correction_en": "I realised my passport had expired."
+        }
+      ]
+    },
+    {
+      "id": "c1-04-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and describe your reaction vividly in one sentence.",
+      "listen": "How did you feel when you saw him standing there?",
+      "accepted": [
+        "I froze",
+        "I just froze",
+        "I was speechless",
+        "I was completely speechless",
+        "I couldn't believe my eyes",
+        "My heart was pounding",
+        "My heart skipped a beat",
+        "I was lost for words",
+        "I nearly burst into tears",
+        "I was absolutely stunned",
+        "I stood there, completely stunned"
+      ],
+      "commonErrors": [
+        {
+          "id": "without-words",
+          "match": "\\bwithout words\\b",
+          "explanation_pt": "\"Fiquei sem palavras\" is \"I was speechless\" or \"I was lost for words\".",
+          "correction_en": "I was speechless."
+        }
+      ]
+    },
+    {
+      "id": "c1-04-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and continue the story: say you grabbed your bag and rushed out of the house.",
+      "listen": "And then what did you do?",
+      "accepted": [
+        "I grabbed my bag and rushed out of the house",
+        "I grabbed my bag and ran out of the house",
+        "I grabbed my bag and dashed out of the house",
+        "I grabbed my bag and rushed out",
+        "I picked up my bag and rushed out of the house",
+        "I just grabbed my bag and rushed out of the house",
+        "Then I grabbed my bag and rushed out of the house"
+      ],
+      "commonErrors": [
+        {
+          "id": "picked-my-bag",
+          "match": "\\bpicked my bag\\b",
+          "explanation_pt": "\"Pegar\" an object is \"pick up\" (or \"grab\"): \"I picked up my bag\".",
+          "correction_en": "I grabbed my bag and rushed out of the house."
+        }
+      ]
+    },
+    {
+      "id": "c1-04-prac-18",
+      "kind": "free_speak",
+      "instruction_pt": "Tell a short anecdote in about a minute.",
+      "prompt_en": "Tell me about a time when something didn't go according to plan.",
+      "guidelines_pt": [
+        "Set the scene with the past continuous: \"I was ... when ...\".",
+        "Use the past perfect for background: \"I'd forgotten...\"",
+        "Use at least two precise verbs (glance, rush, freeze, mutter).",
+        "End with a reflection: \"Looking back, ...\""
+      ]
+    },
+    {
+      "id": "c1-04-prac-19",
+      "kind": "dialogue",
+      "instruction_pt": "Role-play: tell your friend what happened, adding detail and suspense.",
+      "scene_pt": "You meet a friend for dinner after a very strange day.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "You look exhausted! What happened?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Say you've had the strangest day.",
+          "accepted": [
+            "I've had the strangest day",
+            "I've had the weirdest day",
+            "I've had the strangest day ever",
+            "I've had such a strange day",
+            "I've just had the strangest day",
+            "You won't believe the day I've had",
+            "I have had the strangest day"
+          ],
+          "commonErrors": [
+            {
+              "id": "more-strange",
+              "match": "\\bmore strange\\b",
+              "explanation_pt": "\"Strange\" forms \"stranger / the strangest\".",
+              "correction_en": "I've had the strangest day."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Go on, tell me."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Say you were driving to a meeting when your car broke down in the middle of nowhere.",
+          "accepted": [
+            "I was driving to a meeting when my car broke down in the middle of nowhere",
+            "I was on my way to a meeting when my car broke down in the middle of nowhere",
+            "I was driving to a meeting and my car broke down in the middle of nowhere",
+            "My car broke down in the middle of nowhere while I was driving to a meeting",
+            "I was driving to a meeting when the car broke down in the middle of nowhere"
+          ],
+          "commonErrors": [
+            {
+              "id": "car-broke",
+              "match": "\\bcar broke (in|on)\\b",
+              "explanation_pt": "A car \"breaks down\" (quebra). \"Break\" alone means to smash into pieces.",
+              "correction_en": "My car broke down in the middle of nowhere."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Oh no! What did you do?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Say your phone had died, so you had to walk to the nearest village.",
+          "accepted": [
+            "My phone had died, so I had to walk to the nearest village",
+            "My phone was dead, so I had to walk to the nearest village",
+            "My phone had run out of battery, so I had to walk to the nearest village",
+            "My phone had died, so I had to walk to the closest village",
+            "My phone had died, so I ended up walking to the nearest village",
+            "My battery had died, so I had to walk to the nearest village"
+          ],
+          "commonErrors": [
+            {
+              "id": "without-battery",
+              "match": "\\bwithout battery\\b",
+              "explanation_pt": "\"Sem bateria\" is \"dead\" or \"out of battery\".",
+              "correction_en": "My phone had died."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "You're kidding! And did you make it to the meeting?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Say that, believe it or not, the meeting had been cancelled anyway.",
+          "accepted": [
+            "Believe it or not, the meeting had been cancelled anyway",
+            "Believe it or not, the meeting had been canceled anyway",
+            "Believe it or not, it had been cancelled anyway",
+            "Believe it or not, they'd cancelled the meeting anyway",
+            "Believe it or not, the meeting had been called off anyway",
+            "Believe it or not, the meeting had already been cancelled"
+          ],
+          "commonErrors": [
+            {
+              "id": "believe-or-not",
+              "match": "\\bbelieve or not\\b",
+              "explanation_pt": "The fixed phrase is \"believe it or not\".",
+              "correction_en": "Believe it or not, the meeting had been cancelled anyway."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-04-prac-20",
+      "kind": "choice",
+      "instruction_pt": "Choose the best verb form: \"By the time we arrived, the film ___.\"",
+      "options": ["started", "had started", "has started"],
+      "answer": 1,
+      "explanation_pt": "The film started before we arrived, so we use the past perfect: \"had started\"."
+    },
+    {
+      "id": "c1-04-prac-21",
+      "kind": "choice",
+      "instruction_pt": "Which verb describes walking unsteadily, almost falling?",
+      "options": ["to stagger", "to stroll", "to march"],
+      "answer": 0,
+      "explanation_pt": "\"Stagger\" is walking unsteadily; \"stroll\" is a relaxed walk; \"march\" is walking with firm steps."
+    },
+    {
+      "id": "c1-04-prac-22",
+      "kind": "choice",
+      "instruction_pt": "Listen. What was already happening when the phone rang?",
+      "listen": "I was just about to leave when the phone rang, and everything changed.",
+      "options": [
+        "She was talking on the phone.",
+        "She was about to leave.",
+        "Everything had already changed."
+      ],
+      "answer": 1,
+      "explanation_pt": "\"I was just about to leave when...\" describes the situation that was in place when the phone rang."
+    },
+    {
+      "id": "c1-04-prac-23",
+      "kind": "fill",
+      "instruction_pt": "Complete with one word.",
+      "sentence": "I ___ walking home when I heard a scream.",
+      "accepted": ["was"],
+      "commonErrors": [
+        {
+          "id": "were-am",
+          "match": "^(were|am|did)$",
+          "explanation_pt": "Past continuous with \"I\": \"I was walking\".",
+          "correction_en": "I was walking home when I heard a scream."
+        }
+      ]
+    },
+    {
+      "id": "c1-04-prac-24",
+      "kind": "fill",
+      "instruction_pt": "Complete with one word.",
+      "sentence": "Little did I know ___ my life was about to change.",
+      "accepted": ["that"],
+      "commonErrors": [
+        {
+          "id": "what-which",
+          "match": "^(what|which)$",
+          "explanation_pt": "The clause after \"know\" is introduced by \"that\".",
+          "correction_en": "Little did I know that my life was about to change."
+        }
+      ]
+    },
+    {
+      "id": "c1-04-prac-25",
+      "kind": "order",
+      "instruction_pt": "Put the words in order to make a dramatic sentence.",
+      "accepted": ["No sooner had I sat down than the phone rang"]
+    },
+    {
+      "id": "c1-04-prac-26",
+      "kind": "match",
+      "instruction_pt": "Match each storytelling expression with its meaning.",
+      "pairs": [
+        {
+          "en": "to dawn on",
+          "pt": "cair a ficha"
+        },
+        {
+          "en": "out of the blue",
+          "pt": "do nada"
+        },
+        {
+          "en": "to gasp",
+          "pt": "perder o fôlego de susto"
+        },
+        {
+          "en": "to stagger",
+          "pt": "cambalear"
+        },
+        {
+          "en": "to tiptoe",
+          "pt": "andar na ponta dos pés"
         }
       ]
     }
