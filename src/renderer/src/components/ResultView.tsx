@@ -2,6 +2,7 @@ import type { PronunciationResult } from '../../../shared/api'
 import type { Mode } from '../../../shared/progress'
 import { toFinalVerdict, type CheckResult, type FinalVerdict } from '../../../shared/matcher'
 import PronunciationView from './PronunciationView'
+import Icon from './Icon'
 
 const LABELS = {
   correct: 'Correto!',
@@ -77,7 +78,7 @@ export default function ResultView({
             autoFocus={final === 'correct'}
             onClick={() => onFinal('correct')}
           >
-            ✓ Professor: certo
+            <Icon name="check" /> Professor: certo
           </button>
           <button
             type="button"
@@ -85,7 +86,7 @@ export default function ResultView({
             autoFocus={final === 'error'}
             onClick={() => onFinal('error')}
           >
-            ✗ Professor: errado
+            <Icon name="x" /> Professor: errado
           </button>
         </div>
       ) : (

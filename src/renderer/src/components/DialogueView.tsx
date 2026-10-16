@@ -5,6 +5,7 @@ import { showAccepted, type FinalVerdict } from '../../../shared/matcher'
 import type { Mode } from '../../../shared/progress'
 import ListenButton from './ListenButton'
 import { SpokenAnswer } from './SpokenExercise'
+import Icon from './Icon'
 
 type Said = { verdict: FinalVerdict; transcript: string }
 
@@ -51,8 +52,8 @@ export default function DialogueView({
               <p className="prompt">
                 {answer ? (
                   <>
-                    <span aria-label={answer.verdict === 'correct' ? 'certo' : 'errado'}>
-                      {answer.verdict === 'correct' ? '✓' : '✗'}
+                    <span role="img" aria-label={answer.verdict === 'correct' ? 'certo' : 'errado'}>
+                      <Icon name={answer.verdict === 'correct' ? 'check' : 'x'} />
                     </span>{' '}
                     <span lang="en">{answer.transcript || showAccepted(t.accepted[0])}</span>
                   </>

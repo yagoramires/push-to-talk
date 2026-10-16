@@ -12,6 +12,7 @@ import {
 import type { Mode } from '../../../shared/progress'
 import RecordButton from './RecordButton'
 import ResultView from './ResultView'
+import Icon from './Icon'
 
 type OnFinal = (v: FinalVerdict, transcript: string) => void
 
@@ -46,10 +47,10 @@ function ManualMark({
   return (
     <div className="actions">
       <button type="button" className="btn btn-correct" onClick={() => onFinal('correct')}>
-        ✓ {correctLabel}
+        <Icon name="check" /> {correctLabel}
       </button>
       <button type="button" className="btn btn-error" onClick={() => onFinal('error')}>
-        ✗ {errorLabel}
+        <Icon name="x" /> {errorLabel}
       </button>
     </div>
   )

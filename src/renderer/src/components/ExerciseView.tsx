@@ -22,6 +22,7 @@ import DialogueView from './DialogueView'
 import ListenButton from './ListenButton'
 import ResultView from './ResultView'
 import { FreeSpeakAnswer, SpokenAnswer } from './SpokenExercise'
+import Icon from './Icon'
 
 type Props = {
   exercise: Exercise
@@ -259,7 +260,7 @@ function OrderView({ ex, locked, onCheck }: ViewProps<OrderExercise>): React.JSX
           disabled={locked || !picked.length}
           onClick={() => setPicked(picked.slice(0, -1))}
         >
-          ↶ Desfazer
+          <Icon name="undo" /> Desfazer
         </button>
         <button
           type="button"

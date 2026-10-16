@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import { AudioIndexContext, speak } from '../audio/speak'
+import Icon from './Icon'
 
 // One player for the whole app: a second click restarts instead of playing two copies at once.
 const player = new Audio()
@@ -15,7 +16,7 @@ export default function ListenButton({ text }: { text: string }): React.JSX.Elem
   }
   return (
     <button type="button" className="btn btn-secondary" onClick={listen}>
-      🔊 Ouvir
+      <Icon name="speaker" /> Ouvir
     </button>
   )
 }
