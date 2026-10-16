@@ -1,0 +1,412 @@
+{
+  "level": "A1",
+  "minutes": 25,
+  "parts": [
+    {
+      "skill": "listening",
+      "items": [
+        {
+          "skill": "listening",
+          "unitId": "a1-01-greetings",
+          "exercise": {
+            "id": "ex-a1-listen-1",
+            "kind": "choice",
+            "instruction_pt": "Ouça e responda: quem é a Maria?",
+            "listen": "Good afternoon! I'm Lucas, and this is my friend Maria.",
+            "options": ["A amiga do Lucas", "A irmã do Lucas", "A professora do Lucas"],
+            "answer": 0,
+            "explanation_pt": "\"This is my friend Maria\" quer dizer \"Esta é minha amiga Maria\"."
+          }
+        },
+        {
+          "skill": "listening",
+          "unitId": "a1-02-numbers-age",
+          "exercise": {
+            "id": "ex-a1-listen-2",
+            "kind": "choice",
+            "instruction_pt": "Ouça e responda: quantos anos a irmã tem?",
+            "listen": "My brother is fifteen, and my sister is fifty.",
+            "options": ["15", "50", "5"],
+            "answer": 1,
+            "explanation_pt": "\"Fifty\" (50) tem a força no começo: FIF-ty. \"Fifteen\" (15) tem a força no fim: fif-TEEN."
+          }
+        },
+        {
+          "skill": "listening",
+          "exercise": {
+            "id": "ex-a1-listen-3",
+            "kind": "choice",
+            "instruction_pt": "Ouça e responda: que horas são?",
+            "listen": "It's half past seven. The class starts at eight.",
+            "options": ["7:30", "7:15", "8:30"],
+            "answer": 0,
+            "explanation_pt": "\"Half past seven\" é sete e meia. A aula começa às oito (\"at eight\")."
+          }
+        },
+        {
+          "skill": "listening",
+          "unitId": "a1-02-numbers-age",
+          "exercise": {
+            "id": "ex-a1-listen-4",
+            "kind": "listen_answer",
+            "instruction_pt": "Ouça a pergunta e responda que você tem 30 anos.",
+            "listen": "How old are you?",
+            "accepted": [
+              "I'm 30",
+              "I am 30",
+              "I'm 30 years old",
+              "I am 30 years old",
+              "30",
+              "30 years old",
+              "I'm 30, and you?"
+            ],
+            "commonErrors": [
+              {
+                "id": "have-years",
+                "match": "\\bi (have|has) thirty\\b",
+                "explanation_pt": "Em inglês a idade usa o verbo \"to be\": \"I am 30\", e não \"I have 30 years\".",
+                "correction_en": "I'm 30 years old."
+              },
+              {
+                "id": "missing-be",
+                "match": "^i thirty\\b",
+                "explanation_pt": "Falta o verbo \"to be\": \"I am 30\" (ou \"I'm 30\").",
+                "correction_en": "I'm 30."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "listening",
+          "exercise": {
+            "id": "ex-a1-listen-5",
+            "kind": "listen_answer",
+            "instruction_pt": "Ouça a pergunta e responda que sim, você gosta.",
+            "listen": "Do you like coffee?",
+            "accepted": [
+              "Yes, I do",
+              "Yes",
+              "Yeah, I do",
+              "Yes, I like it",
+              "Yes, I like coffee",
+              "Yes, I love it",
+              "Yes, I love coffee",
+              "I like coffee",
+              "I love coffee",
+              "Yes, I do. I love coffee",
+              "Yes, very much"
+            ],
+            "commonErrors": [
+              {
+                "id": "like-no-object",
+                "match": "^(yes )?i (like|love)$",
+                "explanation_pt": "Em inglês \"like\" precisa de complemento: \"Yes, I like it\" ou a resposta curta \"Yes, I do\".",
+                "correction_en": "Yes, I do."
+              },
+              {
+                "id": "yes-i-am",
+                "match": "^yes i am\\b",
+                "explanation_pt": "A pergunta começa com \"Do you...\", então a resposta curta é \"Yes, I do\", e não \"Yes, I am\".",
+                "correction_en": "Yes, I do."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "skill": "speaking",
+      "items": [
+        {
+          "skill": "speaking",
+          "unitId": "a1-01-greetings",
+          "exercise": {
+            "id": "ex-a1-speak-1",
+            "kind": "translate",
+            "instruction_pt": "Diga em inglês: \"Meu nome é Júlia e eu sou de Recife.\"",
+            "accepted": [
+              "My name is Julia and I'm from Recife",
+              "My name is Julia and I am from Recife",
+              "My name's Julia and I'm from Recife",
+              "My name is Julia, I'm from Recife",
+              "I'm Julia and I'm from Recife",
+              "I'm Julia and I come from Recife",
+              "Hi, my name is Julia and I'm from Recife",
+              "Hello, I'm Julia and I'm from Recife"
+            ],
+            "commonErrors": [
+              {
+                "id": "am-of",
+                "match": "\\bi am of recife\\b",
+                "explanation_pt": "Para dizer de onde você é, use \"from\", e não \"of\": \"I'm from Recife\".",
+                "correction_en": "My name is Julia and I'm from Recife."
+              },
+              {
+                "id": "missing-be",
+                "match": "\\band i from\\b",
+                "explanation_pt": "Falta o verbo \"to be\": \"and I am from Recife\" (ou \"I'm from\").",
+                "correction_en": "My name is Julia and I'm from Recife."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "speaking",
+          "exercise": {
+            "id": "ex-a1-speak-2",
+            "kind": "translate",
+            "instruction_pt": "Diga em inglês: \"Eu tenho dois irmãos.\" (dois meninos)",
+            "accepted": [
+              "I have two brothers",
+              "I've got two brothers",
+              "I have got two brothers",
+              "I have 2 brothers"
+            ],
+            "commonErrors": [
+              {
+                "id": "plural-s",
+                "match": "\\btwo brother\\b",
+                "explanation_pt": "Depois de \"two\" o substantivo vai para o plural: \"two brothers\".",
+                "correction_en": "I have two brothers."
+              },
+              {
+                "id": "i-has",
+                "match": "^i has\\b",
+                "explanation_pt": "Com \"I\" o verbo é \"have\". \"Has\" é só para he, she e it.",
+                "correction_en": "I have two brothers."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "speaking",
+          "exercise": {
+            "id": "ex-a1-speak-3",
+            "kind": "translate",
+            "instruction_pt": "Diga em inglês: \"Que horas são?\"",
+            "accepted": [
+              "What time is it?",
+              "What's the time?",
+              "Excuse me, what time is it?",
+              "Do you know what time it is?",
+              "Do you have the time?"
+            ],
+            "commonErrors": [
+              {
+                "id": "what-hours",
+                "match": "\\bwhat hours?\\b",
+                "explanation_pt": "\"Que horas\" não é \"what hours\". Em inglês perguntamos \"What time is it?\".",
+                "correction_en": "What time is it?"
+              }
+            ]
+          }
+        },
+        {
+          "skill": "speaking",
+          "exercise": {
+            "id": "ex-a1-speak-4",
+            "kind": "translate",
+            "instruction_pt": "Diga em inglês: \"Ela trabalha em um banco.\"",
+            "accepted": ["She works in a bank", "She works at a bank", "She works for a bank"],
+            "commonErrors": [
+              {
+                "id": "third-person-s",
+                "match": "\\bshe work\\b",
+                "explanation_pt": "No presente, com he, she e it o verbo ganha \"-s\": \"She works\".",
+                "correction_en": "She works in a bank."
+              },
+              {
+                "id": "is-work",
+                "match": "\\bshe is work\\b",
+                "explanation_pt": "Não use \"is\" junto do verbo no presente simples: \"She works in a bank\".",
+                "correction_en": "She works in a bank."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "speaking",
+          "exercise": {
+            "id": "ex-a1-speak-5",
+            "kind": "translate",
+            "instruction_pt": "Diga em inglês: \"Eu não gosto de peixe.\"",
+            "accepted": [
+              "I don't like fish",
+              "I do not like fish",
+              "I don't really like fish",
+              "I don't like fish very much",
+              "I don't like fish at all"
+            ],
+            "commonErrors": [
+              {
+                "id": "no-like",
+                "match": "\\bi (no|not) like\\b",
+                "explanation_pt": "A negação no presente usa \"don't\": \"I don't like fish\".",
+                "correction_en": "I don't like fish."
+              },
+              {
+                "id": "like-of",
+                "match": "\\blike of\\b",
+                "explanation_pt": "Em inglês \"like\" não leva \"of\": \"I don't like fish\".",
+                "correction_en": "I don't like fish."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "skill": "vocabulary",
+      "items": [
+        {
+          "skill": "vocabulary",
+          "exercise": {
+            "id": "ex-a1-vocab-1",
+            "kind": "match",
+            "instruction_pt": "Ligue cada palavra da família ao significado.",
+            "pairs": [
+              { "en": "father", "pt": "pai" },
+              { "en": "sister", "pt": "irmã" },
+              { "en": "son", "pt": "filho" },
+              { "en": "grandmother", "pt": "avó" },
+              { "en": "wife", "pt": "esposa" }
+            ]
+          }
+        },
+        {
+          "skill": "vocabulary",
+          "unitId": "a1-02-numbers-age",
+          "exercise": {
+            "id": "ex-a1-vocab-2",
+            "kind": "choice",
+            "instruction_pt": "Como se escreve \"quarenta\" em inglês?",
+            "options": ["fourteen", "forty", "fourty"],
+            "answer": 1,
+            "explanation_pt": "Quarenta é \"forty\", sem o \"u\" de \"four\". \"Fourteen\" é 14."
+          }
+        },
+        {
+          "skill": "vocabulary",
+          "exercise": {
+            "id": "ex-a1-vocab-3",
+            "kind": "match",
+            "instruction_pt": "Ligue cada comida ao significado.",
+            "pairs": [
+              { "en": "bread", "pt": "pão" },
+              { "en": "cheese", "pt": "queijo" },
+              { "en": "chicken", "pt": "frango" },
+              { "en": "rice", "pt": "arroz" },
+              { "en": "beans", "pt": "feijão" }
+            ]
+          }
+        },
+        {
+          "skill": "vocabulary",
+          "unitId": "a1-01-greetings",
+          "exercise": {
+            "id": "ex-a1-vocab-4",
+            "kind": "choice",
+            "instruction_pt": "Você está indo embora de uma festa às 23h. O que você diz?",
+            "options": ["Good night!", "Good evening!", "Good afternoon!"],
+            "answer": 0,
+            "explanation_pt": "\"Good night\" é para se despedir à noite ou antes de dormir. \"Good evening\" é para cumprimentar quando você chega."
+          }
+        },
+        {
+          "skill": "vocabulary",
+          "exercise": {
+            "id": "ex-a1-vocab-5",
+            "kind": "match",
+            "instruction_pt": "Ligue cada lugar ao significado.",
+            "pairs": [
+              { "en": "library", "pt": "biblioteca" },
+              { "en": "bakery", "pt": "padaria" },
+              { "en": "drugstore", "pt": "farmácia" },
+              { "en": "school", "pt": "escola" },
+              { "en": "bookstore", "pt": "livraria" }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "skill": "structure",
+      "items": [
+        {
+          "skill": "structure",
+          "unitId": "a1-01-greetings",
+          "exercise": {
+            "id": "ex-a1-struct-1",
+            "kind": "fill",
+            "instruction_pt": "Complete a frase.",
+            "sentence": "They ___ from Argentina.",
+            "accepted": ["are"],
+            "commonErrors": [
+              {
+                "id": "they-is",
+                "match": "^(is|am|be)$",
+                "explanation_pt": "Com \"they\" (e também we e you) o verbo \"to be\" é \"are\": \"They are from Argentina\".",
+                "correction_en": "They are from Argentina."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "structure",
+          "exercise": {
+            "id": "ex-a1-struct-2",
+            "kind": "fill",
+            "instruction_pt": "Complete com o verbo \"drink\" no presente.",
+            "sentence": "He ___ coffee every morning.",
+            "accepted": ["drinks"],
+            "commonErrors": [
+              {
+                "id": "third-person-s",
+                "match": "^(drink|is drink|is drinking|drinking)$",
+                "explanation_pt": "Para um hábito com he, she ou it, o verbo ganha \"-s\": \"He drinks coffee every morning\".",
+                "correction_en": "He drinks coffee every morning."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "structure",
+          "exercise": {
+            "id": "ex-a1-struct-3",
+            "kind": "fill",
+            "instruction_pt": "Complete a frase (ela sabe falar três línguas).",
+            "sentence": "My sister ___ speak three languages.",
+            "accepted": ["can"],
+            "commonErrors": [
+              {
+                "id": "cans-know",
+                "match": "^(cans|can to|know|knows|knows how)$",
+                "explanation_pt": "Para habilidade usamos \"can\" + verbo, sem \"to\" e sem \"-s\": \"My sister can speak three languages\".",
+                "correction_en": "My sister can speak three languages."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "structure",
+          "exercise": {
+            "id": "ex-a1-struct-4",
+            "kind": "order",
+            "instruction_pt": "Coloque as palavras na ordem certa.",
+            "accepted": ["There are two bedrooms in my house."]
+          }
+        },
+        {
+          "skill": "structure",
+          "unitId": "a1-02-numbers-age",
+          "exercise": {
+            "id": "ex-a1-struct-5",
+            "kind": "order",
+            "instruction_pt": "Coloque as palavras na ordem certa.",
+            "accepted": ["How old is your father?"]
+          }
+        }
+      ]
+    }
+  ]
+}

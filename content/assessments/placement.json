@@ -1,0 +1,700 @@
+{
+  "levels": [
+    {
+      "level": "A1",
+      "items": [
+        {
+          "skill": "listening",
+          "exercise": {
+            "id": "pl-a1-listen-1",
+            "kind": "choice",
+            "instruction_pt": "Ouça e responda: quantos anos o Tom tem?",
+            "listen": "Hi, I'm Tom. I'm twenty-two and I'm from Canada.",
+            "options": ["12", "22", "20"],
+            "answer": 1,
+            "explanation_pt": "Ele disse \"twenty-two\", que é 22. \"Twelve\" seria 12 e \"twenty\" seria 20."
+          }
+        },
+        {
+          "skill": "listening",
+          "exercise": {
+            "id": "pl-a1-listen-2",
+            "kind": "listen_answer",
+            "instruction_pt": "Ouça a pergunta e responda que você é do Brasil.",
+            "listen": "Where are you from?",
+            "accepted": [
+              "I'm from Brazil",
+              "I am from Brazil",
+              "I come from Brazil",
+              "From Brazil",
+              "Brazil",
+              "I'm Brazilian",
+              "I am Brazilian",
+              "I'm from Brazil, and you?"
+            ],
+            "commonErrors": [
+              {
+                "id": "am-of",
+                "match": "\\b(i am|i) of brazil\\b",
+                "explanation_pt": "Para dizer de onde você é, use \"from\", e não \"of\": \"I'm from Brazil\".",
+                "correction_en": "I'm from Brazil."
+              },
+              {
+                "id": "missing-be",
+                "match": "^i from\\b",
+                "explanation_pt": "Falta o verbo \"to be\": \"I am from Brazil\" (ou \"I'm from Brazil\").",
+                "correction_en": "I'm from Brazil."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "speaking",
+          "exercise": {
+            "id": "pl-a1-speak-1",
+            "kind": "translate",
+            "instruction_pt": "Diga em inglês: \"Eu tenho 30 anos.\"",
+            "accepted": [
+              "I'm 30",
+              "I am 30",
+              "I'm 30 years old",
+              "I am 30 years old",
+              "I'm 30 years of age"
+            ],
+            "commonErrors": [
+              {
+                "id": "have-years",
+                "match": "\\bi (have|has) thirty\\b",
+                "explanation_pt": "Em inglês a idade usa o verbo \"to be\", não \"have\": \"I am 30\" ou \"I'm 30 years old\".",
+                "correction_en": "I'm 30 years old."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "speaking",
+          "exercise": {
+            "id": "pl-a1-speak-2",
+            "kind": "translate",
+            "instruction_pt": "Diga em inglês: \"Qual é o seu nome?\"",
+            "accepted": [
+              "What's your name?",
+              "What is your name?",
+              "May I have your name?",
+              "Can I have your name?",
+              "Sorry, what's your name?"
+            ],
+            "commonErrors": [
+              {
+                "id": "which-name",
+                "match": "^which (is )?your name\\b",
+                "explanation_pt": "Para perguntar o nome usamos \"What\", não \"Which\": \"What's your name?\".",
+                "correction_en": "What's your name?"
+              },
+              {
+                "id": "how-name",
+                "match": "^how (is )?your name\\b",
+                "explanation_pt": "\"How is your name?\" é tradução de \"Como é seu nome?\", mas em inglês a pergunta é \"What's your name?\".",
+                "correction_en": "What's your name?"
+              }
+            ]
+          }
+        },
+        {
+          "skill": "vocabulary",
+          "exercise": {
+            "id": "pl-a1-vocab",
+            "kind": "match",
+            "instruction_pt": "Ligue cada palavra ao significado.",
+            "pairs": [
+              { "en": "mother", "pt": "mãe" },
+              { "en": "brother", "pt": "irmão" },
+              { "en": "daughter", "pt": "filha" },
+              { "en": "husband", "pt": "marido" }
+            ]
+          }
+        },
+        {
+          "skill": "structure",
+          "exercise": {
+            "id": "pl-a1-struct",
+            "kind": "fill",
+            "instruction_pt": "Complete a frase.",
+            "sentence": "She ___ a teacher.",
+            "accepted": ["is"],
+            "commonErrors": [
+              {
+                "id": "she-are",
+                "match": "^(are|am|be)$",
+                "explanation_pt": "Com \"she\" (e também he e it) o verbo \"to be\" é \"is\": \"She is a teacher\".",
+                "correction_en": "She is a teacher."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "level": "A2",
+      "items": [
+        {
+          "skill": "listening",
+          "exercise": {
+            "id": "pl-a2-listen-1",
+            "kind": "choice",
+            "instruction_pt": "Ouça e responda: como a pessoa foi ao trabalho ontem?",
+            "listen": "I usually take the bus to work, but yesterday I walked because it was sunny.",
+            "options": ["De ônibus", "A pé", "De carro"],
+            "answer": 1,
+            "explanation_pt": "\"Usually take the bus\" é o costume, mas \"yesterday I walked\" diz que ontem a pessoa foi a pé."
+          }
+        },
+        {
+          "skill": "listening",
+          "exercise": {
+            "id": "pl-a2-listen-2",
+            "kind": "listen_answer",
+            "instruction_pt": "Ouça a pergunta e responda que você visitou seus pais.",
+            "listen": "What did you do last weekend?",
+            "accepted": [
+              "I visited my parents",
+              "I visited my parents last weekend",
+              "Last weekend I visited my parents",
+              "I went to visit my parents",
+              "I went to see my parents",
+              "I saw my parents",
+              "I visited my mom and dad",
+              "Visited my parents"
+            ],
+            "commonErrors": [
+              {
+                "id": "present-for-past",
+                "match": "\\bi visit my\\b",
+                "explanation_pt": "A pergunta é sobre o passado (\"did\"), então o verbo vai para o passado: \"I visited my parents\".",
+                "correction_en": "I visited my parents."
+              },
+              {
+                "id": "did-visit",
+                "match": "\\bi did visit(ed)? my\\b",
+                "explanation_pt": "Na resposta afirmativa não usamos \"did\": basta o verbo no passado, \"I visited my parents\".",
+                "correction_en": "I visited my parents."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "speaking",
+          "exercise": {
+            "id": "pl-a2-speak-1",
+            "kind": "translate",
+            "instruction_pt": "Diga em inglês: \"Eu fui ao cinema ontem.\"",
+            "accepted": [
+              "I went to the cinema yesterday",
+              "I went to the movies yesterday",
+              "Yesterday I went to the cinema",
+              "Yesterday I went to the movies",
+              "I went to the movie theater yesterday",
+              "I went to see a movie yesterday",
+              "I went to see a film yesterday"
+            ],
+            "commonErrors": [
+              {
+                "id": "goed",
+                "match": "\\bi goed\\b",
+                "explanation_pt": "\"Go\" é irregular: o passado é \"went\", não \"goed\".",
+                "correction_en": "I went to the cinema yesterday."
+              },
+              {
+                "id": "present-yesterday",
+                "match": "\\bi (go|going) to the (cinema|movies)\\b",
+                "explanation_pt": "Com \"yesterday\" o verbo fica no passado: \"I went\", e não \"I go\".",
+                "correction_en": "I went to the cinema yesterday."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "speaking",
+          "exercise": {
+            "id": "pl-a2-speak-2",
+            "kind": "translate",
+            "instruction_pt": "Diga em inglês: \"Ela é mais alta que o irmão dela.\"",
+            "accepted": [
+              "She's taller than her brother",
+              "She is taller than her brother",
+              "She's taller than her brother is"
+            ],
+            "commonErrors": [
+              {
+                "id": "more-tall",
+                "match": "\\bmore (tall|taller)\\b",
+                "explanation_pt": "Adjetivos curtos fazem o comparativo com \"-er\": \"taller\", e não \"more tall\".",
+                "correction_en": "She's taller than her brother."
+              },
+              {
+                "id": "taller-that",
+                "match": "\\btaller (that|of|then)\\b",
+                "explanation_pt": "No comparativo, o \"que\" é \"than\": \"taller than\". \"That\" e \"then\" são outras palavras.",
+                "correction_en": "She's taller than her brother."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "vocabulary",
+          "exercise": {
+            "id": "pl-a2-vocab",
+            "kind": "choice",
+            "instruction_pt": "Numa loja de roupas, alguém pergunta \"Can I try it on?\". O que a pessoa quer?",
+            "options": ["Experimentar a roupa", "Tentar um desconto", "Devolver a roupa"],
+            "answer": 0,
+            "explanation_pt": "\"Try on\" é experimentar uma roupa ou um sapato. \"Try\" sozinho é tentar ou provar."
+          }
+        },
+        {
+          "skill": "structure",
+          "exercise": {
+            "id": "pl-a2-struct",
+            "kind": "order",
+            "instruction_pt": "Coloque as palavras na ordem certa.",
+            "accepted": ["Are you going to travel next month?"]
+          }
+        }
+      ]
+    },
+    {
+      "level": "B1",
+      "items": [
+        {
+          "skill": "listening",
+          "exercise": {
+            "id": "pl-b1-listen-1",
+            "kind": "choice",
+            "instruction_pt": "Ouça e escolha o que a pessoa disse.",
+            "listen": "I've been working here for three years, but I'm thinking of moving to a company closer to home.",
+            "options": [
+              "Trabalha lá há três anos e pensa em mudar de empresa.",
+              "Trabalhou lá por três anos e já saiu da empresa.",
+              "Vai começar a trabalhar lá daqui a três anos."
+            ],
+            "answer": 0,
+            "explanation_pt": "\"I've been working here for three years\" é o present perfect: a pessoa ainda trabalha lá, há três anos. \"I'm thinking of moving\" mostra que ela pensa em mudar."
+          }
+        },
+        {
+          "skill": "listening",
+          "exercise": {
+            "id": "pl-b1-listen-2",
+            "kind": "listen_answer",
+            "instruction_pt": "Ouça a pergunta e responda que você nunca foi a Londres.",
+            "listen": "Have you ever been to London?",
+            "accepted": [
+              "No, I haven't",
+              "No, I haven't been to London",
+              "No, I have never been to London",
+              "No, I've never been to London",
+              "No, I've never been there",
+              "I've never been to London",
+              "I have never been to London",
+              "No, never",
+              "Never",
+              "No, I never went to London",
+              "No, I haven't, but I'd like to go",
+              "No, I've never been, but I'd love to go"
+            ],
+            "commonErrors": [
+              {
+                "id": "have-went",
+                "match": "\\b(have|had) never (go|went)\\b",
+                "explanation_pt": "No present perfect usamos o particípio: \"I have never been\" (ou \"gone\"), e não \"have never went\".",
+                "correction_en": "No, I've never been to London."
+              },
+              {
+                "id": "no-i-am-not",
+                "match": "^no i (am|was) not\\b",
+                "explanation_pt": "A pergunta começa com \"Have you...\", então a resposta curta é \"No, I haven't\".",
+                "correction_en": "No, I haven't."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "speaking",
+          "exercise": {
+            "id": "pl-b1-speak-1",
+            "kind": "translate",
+            "instruction_pt": "Diga em inglês: \"Eu moro aqui há cinco anos.\"",
+            "accepted": [
+              "I've lived here for five years",
+              "I have lived here for five years",
+              "I've been living here for five years",
+              "I have been living here for five years",
+              "I've lived here for 5 years now",
+              "I've been living here for five years now"
+            ],
+            "commonErrors": [
+              {
+                "id": "present-for-duration",
+                "match": "^i (live|am living) here\\b",
+                "explanation_pt": "Para algo que começou no passado e continua até agora, o inglês usa o present perfect: \"I've lived here for five years\".",
+                "correction_en": "I've lived here for five years."
+              },
+              {
+                "id": "since-years",
+                "match": "\\bsince five years\\b",
+                "explanation_pt": "Com um período de tempo (cinco anos) usamos \"for\". \"Since\" vem com um ponto de partida, como \"since 2020\".",
+                "correction_en": "I've lived here for five years."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "speaking",
+          "exercise": {
+            "id": "pl-b1-speak-2",
+            "kind": "translate",
+            "instruction_pt": "Diga em inglês: \"Se eu tivesse mais tempo, eu viajaria mais.\"",
+            "accepted": [
+              "If I had more time, I would travel more",
+              "If I had more time, I'd travel more",
+              "I would travel more if I had more time",
+              "I'd travel more if I had more time",
+              "If I had more free time, I would travel more"
+            ],
+            "commonErrors": [
+              {
+                "id": "if-would-have",
+                "match": "\\bif i would have\\b",
+                "explanation_pt": "Depois de \"if\" não usamos \"would\". A hipótese vai no passado: \"If I had more time\".",
+                "correction_en": "If I had more time, I would travel more."
+              },
+              {
+                "id": "if-have-will",
+                "match": "\\bif i have more time\\b",
+                "explanation_pt": "\"Se eu tivesse\" é uma hipótese, então o verbo vai para o passado: \"If I had more time, I would...\".",
+                "correction_en": "If I had more time, I would travel more."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "vocabulary",
+          "exercise": {
+            "id": "pl-b1-vocab",
+            "kind": "choice",
+            "instruction_pt": "O que significa \"Actually, I live in Rio\"?",
+            "options": [
+              "Na verdade, eu moro no Rio.",
+              "Atualmente, eu moro no Rio.",
+              "Eu moro no Rio de vez em quando."
+            ],
+            "answer": 0,
+            "explanation_pt": "\"Actually\" é um falso cognato: quer dizer \"na verdade\". \"Atualmente\" em inglês é \"currently\" ou \"nowadays\"."
+          }
+        },
+        {
+          "skill": "structure",
+          "exercise": {
+            "id": "pl-b1-struct",
+            "kind": "fill",
+            "instruction_pt": "Complete a frase (um hábito do passado que não existe mais).",
+            "sentence": "When I was a kid, I ___ to play football every weekend.",
+            "accepted": ["used"],
+            "commonErrors": [
+              {
+                "id": "use-to",
+                "match": "^(use|was used|am used|usually)$",
+                "explanation_pt": "Para hábitos do passado usamos \"used to\" + verbo: \"I used to play\". \"Be used to\" é outra coisa (estar acostumado).",
+                "correction_en": "When I was a kid, I used to play football every weekend."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "level": "B2",
+      "items": [
+        {
+          "skill": "listening",
+          "exercise": {
+            "id": "pl-b2-listen-1",
+            "kind": "choice",
+            "instruction_pt": "Ouça e escolha o que aconteceu.",
+            "listen": "The meeting has been postponed until next Thursday, so you won't need to have the slides ready by tomorrow after all.",
+            "options": [
+              "A reunião foi adiada, e os slides não precisam ficar prontos amanhã.",
+              "A reunião foi cancelada, mas os slides precisam ficar prontos amanhã.",
+              "A reunião foi antecipada para amanhã, então os slides são urgentes."
+            ],
+            "answer": 0,
+            "explanation_pt": "\"Postponed until next Thursday\" é adiada para a próxima quinta. \"After all\" aqui quer dizer \"no fim das contas\": os slides não são mais para amanhã."
+          }
+        },
+        {
+          "skill": "listening",
+          "exercise": {
+            "id": "pl-b2-listen-2",
+            "kind": "listen_answer",
+            "instruction_pt": "Ouça a pergunta e responda que você teria saído mais cedo.",
+            "listen": "If you had known about the traffic, what would you have done?",
+            "accepted": [
+              "I would have left earlier",
+              "I'd have left earlier",
+              "I would've left earlier",
+              "I would have left home earlier",
+              "I would have left the house earlier",
+              "I'd have left home earlier",
+              "If I had known, I would have left earlier",
+              "If I'd known, I'd have left earlier"
+            ],
+            "commonErrors": [
+              {
+                "id": "would-left",
+                "match": "\\bi would (leave|left|leaved)\\b",
+                "explanation_pt": "Para falar de algo que não aconteceu no passado usamos \"would have\" + particípio: \"I would have left earlier\".",
+                "correction_en": "I would have left earlier."
+              },
+              {
+                "id": "have-leaved",
+                "match": "\\bwould have (leave|leaved)\\b",
+                "explanation_pt": "Depois de \"would have\" vem o particípio. O de \"leave\" é irregular: \"left\".",
+                "correction_en": "I would have left earlier."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "speaking",
+          "exercise": {
+            "id": "pl-b2-speak-1",
+            "kind": "translate",
+            "instruction_pt": "Diga em inglês: \"Eu mandei consertar meu carro ontem.\" (outra pessoa consertou)",
+            "accepted": [
+              "I had my car fixed yesterday",
+              "I had my car repaired yesterday",
+              "I got my car fixed yesterday",
+              "I got my car repaired yesterday",
+              "Yesterday I had my car fixed",
+              "Yesterday I got my car fixed",
+              "I took my car to be fixed yesterday",
+              "I sent my car to be fixed yesterday",
+              "I had my car fixed at the mechanic's yesterday"
+            ],
+            "commonErrors": [
+              {
+                "id": "sent-to-fix",
+                "match": "\\b(sent|send|ordered|mandei) (my|the) car to (fix|repair)\\b",
+                "explanation_pt": "\"Mandar fazer\" algo se diz com \"have\" ou \"get\" + objeto + particípio: \"I had my car fixed\".",
+                "correction_en": "I had my car fixed yesterday."
+              },
+              {
+                "id": "fixed-myself",
+                "match": "^(yesterday )?i fixed my car\\b",
+                "explanation_pt": "\"I fixed my car\" quer dizer que você mesmo consertou. Quando outra pessoa faz o serviço: \"I had my car fixed\".",
+                "correction_en": "I had my car fixed yesterday."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "speaking",
+          "exercise": {
+            "id": "pl-b2-speak-2",
+            "kind": "translate",
+            "instruction_pt": "Diga em inglês: \"Eu queria ter estudado mais para a prova.\" (arrependimento)",
+            "accepted": [
+              "I wish I had studied more for the exam",
+              "I wish I'd studied more for the exam",
+              "I wish I had studied more for the test",
+              "I wish I'd studied more for the test",
+              "I should have studied more for the exam",
+              "I should have studied more for the test",
+              "I regret not studying more for the exam"
+            ],
+            "commonErrors": [
+              {
+                "id": "wish-past-simple",
+                "match": "\\bi wish i (studied|study|would study|have studied)\\b",
+                "explanation_pt": "Arrependimento sobre o passado: \"I wish\" + past perfect, \"I wish I had studied\".",
+                "correction_en": "I wish I had studied more for the exam."
+              },
+              {
+                "id": "wanted-to-have",
+                "match": "\\bi wanted to have studied\\b",
+                "explanation_pt": "\"Eu queria ter...\" não se traduz palavra por palavra. Para arrependimento use \"I wish I had...\" ou \"I should have...\".",
+                "correction_en": "I wish I had studied more for the exam."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "vocabulary",
+          "exercise": {
+            "id": "pl-b2-vocab",
+            "kind": "match",
+            "instruction_pt": "Ligue cada phrasal verb ao significado.",
+            "pairs": [
+              { "en": "put off", "pt": "adiar" },
+              { "en": "turn down", "pt": "recusar" },
+              { "en": "come up with", "pt": "ter (uma ideia), inventar" },
+              { "en": "figure out", "pt": "descobrir, entender" },
+              { "en": "carry out", "pt": "realizar, executar" }
+            ]
+          }
+        },
+        {
+          "skill": "structure",
+          "exercise": {
+            "id": "pl-b2-struct",
+            "kind": "order",
+            "instruction_pt": "Coloque as palavras na ordem certa (pergunta indireta).",
+            "accepted": ["She asked me where I was going."]
+          }
+        }
+      ]
+    },
+    {
+      "level": "C1",
+      "items": [
+        {
+          "skill": "listening",
+          "exercise": {
+            "id": "pl-c1-listen-1",
+            "kind": "choice",
+            "instruction_pt": "Ouça e escolha o que a pessoa sente sobre o cargo.",
+            "listen": "Had I known how demanding the role would be, I'd never have taken it on. That said, I've learned more in this job than anywhere else.",
+            "options": [
+              "Em parte se arrepende de ter aceitado, mas reconhece que aprendeu muito.",
+              "Sabia que o cargo seria exigente e por isso aceitou.",
+              "Recusou o cargo porque achou que seria exigente demais."
+            ],
+            "answer": 0,
+            "explanation_pt": "\"Had I known...\" é uma inversão que significa \"se eu soubesse\": ela não teria aceitado. \"That said\" (dito isso) introduz o lado bom: aprendeu muito."
+          }
+        },
+        {
+          "skill": "listening",
+          "exercise": {
+            "id": "pl-c1-listen-2",
+            "kind": "choice",
+            "instruction_pt": "Ouça e escolha o que a pessoa quer dizer.",
+            "listen": "I know the new project sounds exciting, but let's not get ahead of ourselves. The budget hasn't even been signed off yet.",
+            "options": [
+              "Vamos com calma: o orçamento ainda nem foi aprovado.",
+              "Vamos nos adiantar e começar o projeto logo.",
+              "O orçamento foi cortado, então o projeto foi cancelado."
+            ],
+            "answer": 0,
+            "explanation_pt": "\"Let's not get ahead of ourselves\" é \"não vamos nos precipitar\". \"Signed off\" é aprovado oficialmente."
+          }
+        },
+        {
+          "skill": "speaking",
+          "exercise": {
+            "id": "pl-c1-speak-1",
+            "kind": "translate",
+            "instruction_pt": "Diga em inglês: \"Mal eu tinha chegado, começou a chover.\"",
+            "accepted": [
+              "Hardly had I arrived when it started to rain",
+              "Hardly had I arrived when it started raining",
+              "Hardly had I arrived when it began to rain",
+              "No sooner had I arrived than it started to rain",
+              "No sooner had I arrived than it started raining",
+              "No sooner had I arrived than it began to rain",
+              "Scarcely had I arrived when it started to rain",
+              "Barely had I arrived when it started to rain",
+              "I had hardly arrived when it started to rain",
+              "I had hardly arrived when it started raining",
+              "I had barely arrived when it started to rain",
+              "I'd barely arrived when it started raining",
+              "I'd just arrived when it started to rain",
+              "As soon as I arrived, it started to rain",
+              "As soon as I arrived, it started raining"
+            ],
+            "commonErrors": [
+              {
+                "id": "hardly-no-inversion",
+                "match": "^(hardly|scarcely|barely) i had\\b",
+                "explanation_pt": "Quando a frase começa com \"Hardly\", \"Scarcely\" ou \"Barely\", há inversão: \"Hardly had I arrived...\".",
+                "correction_en": "Hardly had I arrived when it started to rain."
+              },
+              {
+                "id": "no-sooner-when",
+                "match": "\\bno sooner had i arrived (when|that)\\b",
+                "explanation_pt": "\"No sooner\" combina com \"than\": \"No sooner had I arrived than it started to rain\". \"When\" vai com \"hardly\".",
+                "correction_en": "No sooner had I arrived than it started to rain."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "speaking",
+          "exercise": {
+            "id": "pl-c1-speak-2",
+            "kind": "translate",
+            "instruction_pt": "Diga em inglês, no tom formal de um e-mail: \"Fico no aguardo do seu retorno.\"",
+            "accepted": [
+              "I look forward to hearing from you",
+              "I look forward to your reply",
+              "I look forward to your response",
+              "I look forward to hearing back from you",
+              "I am looking forward to hearing from you",
+              "I'm looking forward to hearing from you",
+              "Looking forward to hearing from you",
+              "I look forward to receiving your reply",
+              "I await your reply"
+            ],
+            "commonErrors": [
+              {
+                "id": "forward-to-hear",
+                "match": "\\bforward to (hear|receive|answer)\\b",
+                "explanation_pt": "Em \"look forward to\", o \"to\" é preposição, então vem verbo com -ing: \"I look forward to hearing from you\".",
+                "correction_en": "I look forward to hearing from you."
+              },
+              {
+                "id": "waiting-return",
+                "match": "\\b(stay|am|keep|remain) waiting (for )?your (return|answer)\\b",
+                "explanation_pt": "\"Fico no aguardo do seu retorno\" é tradução literal e soa estranha. No e-mail formal, o natural é \"I look forward to hearing from you\".",
+                "correction_en": "I look forward to hearing from you."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "vocabulary",
+          "exercise": {
+            "id": "pl-c1-vocab",
+            "kind": "choice",
+            "instruction_pt": "O que significa \"She's still sitting on the fence about the job offer\"?",
+            "options": [
+              "Ela ainda está em cima do muro, indecisa sobre a proposta.",
+              "Ela já recusou a proposta de emprego.",
+              "Ela está esperando a proposta chegar."
+            ],
+            "answer": 0,
+            "explanation_pt": "\"Sit on the fence\" é ficar em cima do muro, sem tomar partido ou sem decidir."
+          }
+        },
+        {
+          "skill": "structure",
+          "exercise": {
+            "id": "pl-c1-struct",
+            "kind": "fill",
+            "instruction_pt": "Complete a frase.",
+            "sentence": "It's high time we ___ a decision.",
+            "accepted": ["made", "took"],
+            "commonErrors": [
+              {
+                "id": "high-time-present",
+                "match": "^(make|take|will make|to make|have made|makes|should make)$",
+                "explanation_pt": "Depois de \"It's high time\" + sujeito, o verbo vai para o passado, mesmo falando do presente: \"It's high time we made a decision\".",
+                "correction_en": "It's high time we made a decision."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
