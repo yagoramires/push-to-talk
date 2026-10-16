@@ -31,7 +31,7 @@
   - acima de 120 → `irreal`: "Essa meta pede mais de 2 horas por dia." A tela sugere o menor prazo da lista que caiba em 60 min por dia, ou "nenhum prazo da lista" quando nem 12 meses cabem.
 - **Honestidade:** o app tem muito menos horas de aula do que as horas da meta. A tela diz, com estas palavras: "As aulas do app cobrem parte disso. O resto vem da prática extra, da revisão e do inglês fora do app: séries, música, conversas." O texto não promete fluência.
 - **Tempo estudado:** é a soma de `SessionRecord.minutes`, contando as aulas, a prática, as provas e o nivelamento. Os registros de prova e de nivelamento também passam a gravar `minutes`. O dia é a data local do `at`.
-- **Prática extra por unidade:** de 16 a 24 exercícios em `practice`, com pelo menos 60% falados. Cada unidade tem pelo menos 1 `dialogue`, que pode estar nos blocos ou na prática, com 3 a 6 turnos da pessoa.
+- **Prática extra por unidade:** de 24 a 32 exercícios em `practice`, com pelo menos 60% falados. Cada unidade tem pelo menos 1 `dialogue`, que pode estar nos blocos ou na prática, com 3 a 6 turnos da pessoa.
 - **Repetição espaçada:** caixas de Leitner de 1 a 5, com intervalos em dias de 0, 1, 3, 7 e 14.
   - Acerto: sobe uma caixa, até a 5.
   - "Quase": continua na mesma caixa.
@@ -90,7 +90,7 @@
     - mostra ao vivo os minutos por dia, a faixa, o texto de honestidade das Global Constraints e a sugestão de prazo quando a meta for `irreal`;
     - tem os botões "Salvar meta" e "Agora não".
   - `TodayGoal`, no topo do Home:
-    - "Hoje: X de Y min", com barra de progresso;
+    - "Hoje: X de Y min" e "Semana: X de Y min" (Y semanal = minutesPerDay × daysPerWeek), cada um com barra de progresso; quando a semana já fechou a meta, "Meta da semana cumprida!";
     - a sequência de dias;
     - "No seu ritmo, você chega ao <alvo> em <mês/ano>" (ou "Estude alguns dias para ver a previsão");
     - quando `minutesPerDay` > 60, a frase "Faça duas sessões hoje".
@@ -158,12 +158,12 @@ Um subagente por nível (A1, A2, B1, B2, C1), cada um só com os arquivos do seu
 **Files:** `content/units/<nível>-*.json` (só acrescentar `practice` e diálogos; os blocos não mudam, a não ser trocar 1 exercício do bloco `conversation` por um `dialogue` em pelo menos 4 unidades por nível) e `content/audio/*` (gerado depois)
 
 - [ ] **Step 1:** Em cada uma das 12 unidades do nível:
-  - acrescentar `practice` com 16 a 24 exercícios, com pelo menos 60% falados e pelo menos 1 `dialogue`;
+  - acrescentar `practice` com 24 a 32 exercícios, com pelo menos 60% falados e pelo menos 1 `dialogue`;
   - reaproveitar o vocabulário e a gramática da unidade, com frases novas (não repetir as dos blocos);
   - seguir as regras de respostas aceitas e erros comuns do Plano 5.
 - [ ] **Step 2:** Rodar `npx prettier --write` nos arquivos e `npx vitest run tests/content/real-content.test.ts tests/main/load-course.test.ts`. Esperado: passa para o nível, sem contar o áudio.
 - [ ] **Step 3** (o controlador, depois dos 5 níveis):
-  1. apertar no teste de conteúdo real as regras de `practice` (16 a 24, ≥ 60% falados) e de diálogo (≥ 1 por unidade);
+  1. apertar no teste de conteúdo real as regras de `practice` (24 a 32, ≥ 60% falados) e de diálogo (≥ 1 por unidade);
   2. rodar `npm run audio`, `npm test`, `typecheck`, `lint` e `build`;
   3. gerar o pacote Mac e rodar o `--self-check`;
   4. commitar um commit por nível (`content: <NÍVEL> practice bank and dialogues`) e um com os áudios.
