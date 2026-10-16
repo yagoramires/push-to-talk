@@ -1,0 +1,491 @@
+{
+  "id": "a2-01-past-weekend",
+  "level": "A2",
+  "order": 1,
+  "title_pt": "O fim de semana passado",
+  "title_en": "Past weekend",
+  "objective_pt": "Contar o que você fez no fim de semana com o passado simples (verbos regulares e irregulares) e perguntar \"What did you do?\".",
+  "blocks": [
+    {
+      "id": "a2-01-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Ativar o passado simples com perguntas sobre o fim de semana e ver quais verbos o aluno já conhece.",
+        "prompts": ["How was your weekend?", "What did you do on Saturday?"],
+        "watchFor": [
+          "Responder no presente: \"I go to the beach\" em vez de \"I went to the beach\".",
+          "Dizer \"How was your weekend?\" como \"How is your weekend?\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-01-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita em voz alta.",
+          "prompt": "How was your weekend?",
+          "accepted": ["How was your weekend?"],
+          "commonErrors": [
+            {
+              "id": "how-is-weekend",
+              "match": "\\bhow is your weekend\\b",
+              "explanation_pt": "O fim de semana já passou, então o verbo vai para o passado: \"was\".",
+              "correction_en": "How was your weekend?"
+            }
+          ]
+        },
+        {
+          "id": "a2-01-warm-2",
+          "kind": "choice",
+          "instruction_pt": "Qual é o passado de \"go\"?",
+          "options": ["went", "goed", "gone"],
+          "answer": 0,
+          "explanation_pt": "\"Go\" é irregular: o passado é \"went\". \"Gone\" é o particípio (usado com \"have\")."
+        },
+        {
+          "id": "a2-01-warm-3",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Meu fim de semana foi ótimo.\"",
+          "accepted": [
+            "My weekend was great",
+            "My weekend was really good",
+            "My weekend was very good",
+            "My weekend was amazing",
+            "My weekend was excellent",
+            "I had a great weekend",
+            "I had a really good weekend",
+            "It was great"
+          ],
+          "commonErrors": [
+            {
+              "id": "weekend-is",
+              "match": "\\bmy weekend is\\b",
+              "explanation_pt": "O fim de semana já passou: use \"was\", o passado de \"is\".",
+              "correction_en": "My weekend was great."
+            },
+            {
+              "id": "end-of-week",
+              "match": "\\bend of (the )?week\\b",
+              "explanation_pt": "\"Fim de semana\" é uma palavra só em inglês: \"weekend\".",
+              "correction_en": "My weekend was great."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-01-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Aprender atividades de fim de semana no passado (went out, stayed at home, watched, visited, had a barbecue).",
+        "prompts": [
+          "Did you stay at home or go out?",
+          "Did you watch a movie last weekend?",
+          "Who did you visit?"
+        ],
+        "watchFor": [
+          "Dizer \"I stayed in home\"; o certo é \"at home\".",
+          "Esquecer o \"-ed\" dos verbos regulares: \"I watch a movie yesterday\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-01-vocab-1",
+          "kind": "vocab",
+          "word_en": "stayed at home",
+          "meaning_pt": "fiquei em casa",
+          "example_en": "On Sunday I stayed at home and relaxed."
+        },
+        {
+          "id": "a2-01-vocab-2",
+          "kind": "vocab",
+          "word_en": "went out",
+          "meaning_pt": "saí (para me divertir)",
+          "example_en": "We went out for dinner on Friday."
+        },
+        {
+          "id": "a2-01-vocab-3",
+          "kind": "vocab",
+          "word_en": "visited",
+          "meaning_pt": "visitei",
+          "example_en": "I visited my grandparents last weekend."
+        },
+        {
+          "id": "a2-01-vocab-4",
+          "kind": "match",
+          "instruction_pt": "Ligue cada verbo no passado ao seu significado.",
+          "pairs": [
+            {
+              "en": "watched",
+              "pt": "assisti"
+            },
+            {
+              "en": "had",
+              "pt": "tive, comi"
+            },
+            {
+              "en": "saw",
+              "pt": "vi"
+            },
+            {
+              "en": "bought",
+              "pt": "comprei"
+            },
+            {
+              "en": "slept",
+              "pt": "dormi"
+            }
+          ]
+        },
+        {
+          "id": "a2-01-vocab-5",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu fiquei em casa no domingo.\"",
+          "accepted": [
+            "I stayed at home on Sunday",
+            "I stayed home on Sunday",
+            "On Sunday I stayed at home",
+            "On Sunday I stayed home",
+            "I stayed in on Sunday"
+          ],
+          "commonErrors": [
+            {
+              "id": "in-home",
+              "match": "\\bstayed in (the )?home\\b",
+              "explanation_pt": "\"Em casa\" é \"at home\" (ou só \"home\"), e não \"in home\".",
+              "correction_en": "I stayed at home on Sunday."
+            },
+            {
+              "id": "in-sunday",
+              "match": "\\bin sunday\\b",
+              "explanation_pt": "Com dias da semana usamos \"on\": \"on Sunday\".",
+              "correction_en": "I stayed at home on Sunday."
+            },
+            {
+              "id": "stay-present",
+              "match": "^i stay\\b",
+              "explanation_pt": "A ação já aconteceu: o passado de \"stay\" é \"stayed\".",
+              "correction_en": "I stayed at home on Sunday."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-01-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Treinar as três pronúncias do \"-ed\": /t/ em \"watched\", /d/ em \"stayed\" e /id/ só depois de t ou d, como em \"visited\".",
+        "prompts": ["Say \"watched\". How many syllables?", "Say \"visited\". How many syllables?"],
+        "watchFor": [
+          "Pronunciar \"watched\" como \"wat-CHED\", com uma sílaba a mais.",
+          "Colocar vogal no fim: \"stayed-i\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-01-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita. \"Watched\" tem uma sílaba só: o \"-ed\" soa como \"t\".",
+          "prompt": "I watched a movie and cooked dinner.",
+          "accepted": ["I watched a movie and cooked dinner"],
+          "commonErrors": [
+            {
+              "id": "no-ed",
+              "match": "\\bi watch a movie\\b",
+              "explanation_pt": "Não esqueça o \"-ed\": \"watched\". Ele é curtinho, soa como um \"t\" no fim.",
+              "correction_en": "I watched a movie and cooked dinner."
+            }
+          ]
+        },
+        {
+          "id": "a2-01-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repita. Em \"visited\" o \"-ed\" é uma sílaba a mais (\"VI-si-tid\"), porque o verbo termina em \"t\".",
+          "prompt": "We visited my aunt and played cards.",
+          "accepted": ["We visited my aunt and played cards"],
+          "commonErrors": []
+        },
+        {
+          "id": "a2-01-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Em qual verbo o \"-ed\" forma uma sílaba a mais?",
+          "options": ["wanted", "walked", "played"],
+          "answer": 0,
+          "explanation_pt": "O \"-ed\" só vira sílaba (/id/) depois de \"t\" ou \"d\": \"wan-ted\". \"Walked\" e \"played\" têm uma sílaba só."
+        }
+      ]
+    },
+    {
+      "id": "a2-01-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Entender um relato curto no passado e responder perguntas com \"did\".",
+        "prompts": ["Did you go out on Saturday?", "What did you have for lunch on Sunday?"],
+        "watchFor": [
+          "Responder \"Yes, I went\" a \"Did you go...?\"; a resposta curta é \"Yes, I did\".",
+          "Usar o passado depois de \"did\": \"Did you went?\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-01-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Ouça e escolha o que a Júlia fez no sábado.",
+          "listen": "On Saturday I went to the beach with my friends, and on Sunday I stayed at home.",
+          "options": [
+            "Ela foi à praia com amigos.",
+            "Ela ficou em casa.",
+            "Ela visitou a família."
+          ],
+          "answer": 0,
+          "explanation_pt": "\"On Saturday I went to the beach\": no sábado ela foi à praia. Ela ficou em casa no domingo."
+        },
+        {
+          "id": "a2-01-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça a pergunta e responda que sim, você saiu.",
+          "listen": "Did you go out last weekend?",
+          "accepted": [
+            "Yes, I did",
+            "Yeah, I did",
+            "Yes",
+            "Yes, I went out",
+            "Yes, I did. I went out",
+            "Yes, I went out on Saturday",
+            "Yes, I went out with my friends",
+            "Yes, I went out last weekend"
+          ],
+          "commonErrors": [
+            {
+              "id": "yes-i-go",
+              "match": "\\bi (go|goed) out\\b",
+              "explanation_pt": "A pergunta está no passado: responda com \"went\" (passado de \"go\"), ou só \"Yes, I did\".",
+              "correction_en": "Yes, I did. I went out."
+            },
+            {
+              "id": "yes-i-went-short",
+              "match": "^yes i went$",
+              "explanation_pt": "A resposta curta para \"Did you...?\" usa \"did\": \"Yes, I did\".",
+              "correction_en": "Yes, I did."
+            }
+          ]
+        },
+        {
+          "id": "a2-01-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e diga que você assistiu a um filme.",
+          "listen": "What did you do on Sunday?",
+          "accepted": [
+            "I watched a movie",
+            "I watched a film",
+            "On Sunday I watched a movie",
+            "I watched a movie on Sunday",
+            "I watched a movie at home",
+            "I stayed at home and watched a movie",
+            "I stayed home and watched a movie",
+            "Watched a movie"
+          ],
+          "commonErrors": [
+            {
+              "id": "watch-present",
+              "match": "^i watch a\\b",
+              "explanation_pt": "Fale no passado: \"watched\", com o \"-ed\" soando como \"t\".",
+              "correction_en": "I watched a movie."
+            },
+            {
+              "id": "attended-movie",
+              "match": "\\bi (attended|assisted)\\b",
+              "explanation_pt": "\"Assistir\" a um filme é \"watch\". \"Assist\" é ajudar e \"attend\" é comparecer.",
+              "correction_en": "I watched a movie."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-01-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Contar o fim de semana em 3 ou 4 frases no passado e fazer uma pergunta de volta.",
+        "prompts": [
+          "Tell me about your weekend.",
+          "Where did you go? Who did you go with?",
+          "Did you have a good time?"
+        ],
+        "watchFor": [
+          "\"Did you went?\": depois de \"did\" o verbo volta à forma base.",
+          "Dizer \"I didn't went\" em vez de \"I didn't go\".",
+          "Falar \"in the last weekend\"; é só \"last weekend\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-01-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"O que você fez no fim de semana passado?\"",
+          "accepted": [
+            "What did you do last weekend?",
+            "What did you do on the weekend?",
+            "What did you do at the weekend?",
+            "What did you do over the weekend?",
+            "What did you do this weekend?",
+            "What did you do on the last weekend?"
+          ],
+          "commonErrors": [
+            {
+              "id": "what-you-did",
+              "match": "^what you did\\b",
+              "explanation_pt": "Na pergunta no passado o \"did\" vem antes do sujeito: \"What did you do...?\".",
+              "correction_en": "What did you do last weekend?"
+            },
+            {
+              "id": "did-you-did",
+              "match": "\\bdid you did\\b",
+              "explanation_pt": "Depois de \"did\" o verbo fica na forma base: \"did you do\".",
+              "correction_en": "What did you do last weekend?"
+            },
+            {
+              "id": "in-last-weekend",
+              "match": "\\bin (the )?last weekend\\b",
+              "explanation_pt": "Com \"last\" não usamos preposição: \"last weekend\".",
+              "correction_en": "What did you do last weekend?"
+            }
+          ]
+        },
+        {
+          "id": "a2-01-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu não saí. Eu estava cansado.\"",
+          "accepted": [
+            "I didn't go out. I was tired",
+            "I did not go out. I was tired",
+            "I didn't go out because I was tired",
+            "I stayed in. I was tired",
+            "I didn't go out. I was really tired",
+            "I didn't go out. I was very tired"
+          ],
+          "commonErrors": [
+            {
+              "id": "didnt-went",
+              "match": "\\bdid not went\\b",
+              "explanation_pt": "Depois de \"didn't\" o verbo volta à forma base: \"I didn't go\", e não \"didn't went\".",
+              "correction_en": "I didn't go out. I was tired."
+            },
+            {
+              "id": "no-go-out",
+              "match": "^i no\\b",
+              "explanation_pt": "A negação no passado usa \"didn't\": \"I didn't go out\".",
+              "correction_en": "I didn't go out. I was tired."
+            },
+            {
+              "id": "stay-tired",
+              "match": "\\bi (stayed|stay) tired\\b",
+              "explanation_pt": "\"Eu estava cansado\" é \"I was tired\". \"Stay\" é ficar num lugar.",
+              "correction_en": "I didn't go out. I was tired."
+            }
+          ]
+        },
+        {
+          "id": "a2-01-conv-3",
+          "kind": "order",
+          "instruction_pt": "Coloque as palavras na ordem certa para formar a pergunta.",
+          "accepted": ["Where did you go on Saturday"]
+        },
+        {
+          "id": "a2-01-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Conte para a Sam como foi o seu fim de semana passado.",
+          "prompt_en": "Hi! I had a quiet weekend. I stayed at home and read a book. How about you? What did you do last weekend?",
+          "guidelines_pt": [
+            "Diga como foi: \"My weekend was great / OK / boring\".",
+            "Conte 2 ou 3 coisas que você fez, no passado: \"I went...\", \"I watched...\", \"I visited...\".",
+            "Termine com uma pergunta: \"Did you do anything fun?\"."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-01-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Revisar verbos no passado e a pergunta com \"did\".",
+        "prompts": ["What did you do yesterday?", "Did you sleep well last night?"],
+        "watchFor": [
+          "\"Did you slept?\" em vez de \"Did you sleep?\".",
+          "\"-ed\" com sílaba extra em \"walked\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-01-rev-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu visitei meus avós.\"",
+          "accepted": [
+            "I visited my grandparents",
+            "I went to see my grandparents",
+            "I visited my grandma and grandpa",
+            "I visited my grandmother and grandfather"
+          ],
+          "commonErrors": [
+            {
+              "id": "visit-present",
+              "match": "^i visit my\\b",
+              "explanation_pt": "Use o passado: \"visited\". Como \"visit\" termina em \"t\", o \"-ed\" vira uma sílaba: \"VI-si-tid\".",
+              "correction_en": "I visited my grandparents."
+            },
+            {
+              "id": "grandfathers",
+              "match": "\\bmy (grandfathers|grandparent)\\b",
+              "explanation_pt": "\"Avós\" (avô e avó juntos) é \"grandparents\". \"Grandfathers\" seriam só os avôs.",
+              "correction_en": "I visited my grandparents."
+            }
+          ]
+        },
+        {
+          "id": "a2-01-rev-2",
+          "kind": "fill",
+          "instruction_pt": "Complete a pergunta com o verbo auxiliar.",
+          "sentence": "___ you have a good time?",
+          "accepted": ["did"],
+          "commonErrors": [
+            {
+              "id": "do-for-did",
+              "match": "^(do|does|was|were)$",
+              "explanation_pt": "Pergunta no passado com verbo comum usa \"Did\": \"Did you have a good time?\".",
+              "correction_en": "Did you have a good time?"
+            }
+          ]
+        },
+        {
+          "id": "a2-01-rev-3",
+          "kind": "choice",
+          "instruction_pt": "Qual frase está certa?",
+          "options": ["I didn't see him.", "I didn't saw him.", "I no saw him."],
+          "answer": 0,
+          "explanation_pt": "Depois de \"didn't\" o verbo fica na forma base: \"see\", e não \"saw\"."
+        },
+        {
+          "id": "a2-01-rev-4",
+          "kind": "repeat",
+          "instruction_pt": "Para terminar, repita.",
+          "prompt": "It was a great weekend. I really enjoyed it.",
+          "accepted": ["It was a great weekend. I really enjoyed it"],
+          "commonErrors": [
+            {
+              "id": "enjoyed-no-it",
+              "match": "\\bi really enjoyed$",
+              "explanation_pt": "\"Enjoy\" precisa de um objeto: \"I enjoyed it\".",
+              "correction_en": "I really enjoyed it."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

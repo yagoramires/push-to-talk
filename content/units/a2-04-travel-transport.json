@@ -1,0 +1,479 @@
+{
+  "id": "a2-04-travel-transport",
+  "level": "A2",
+  "order": 4,
+  "title_pt": "Viagens e transporte",
+  "title_en": "Travel and transport",
+  "objective_pt": "Comprar uma passagem, perguntar horários e quanto tempo leva uma viagem, e dizer como você se locomove (\"by bus\", \"take the train\").",
+  "blocks": [
+    {
+      "id": "a2-04-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Falar de como o aluno vai ao trabalho e das viagens que ele fez.",
+        "prompts": ["How do you get to work?", "Do you prefer traveling by plane or by bus?"],
+        "watchFor": [
+          "Dizer \"I go of car\" ou \"with the car\"; o certo é \"by car\".",
+          "\"I pick the bus\" (do \"pegar o ônibus\"); o certo é \"take\" ou \"catch the bus\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-04-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita em voz alta.",
+          "prompt": "I usually go to work by bus.",
+          "accepted": ["I usually go to work by bus"],
+          "commonErrors": [
+            {
+              "id": "of-bus",
+              "match": "\\b(of|with the|in) bus\\b",
+              "explanation_pt": "Meio de transporte usa \"by\": \"by bus\", \"by car\", \"by train\".",
+              "correction_en": "I usually go to work by bus."
+            }
+          ]
+        },
+        {
+          "id": "a2-04-warm-2",
+          "kind": "choice",
+          "instruction_pt": "Como se diz \"pegar o ônibus\"?",
+          "options": ["take the bus", "pick the bus", "get the bus in"],
+          "answer": 0,
+          "explanation_pt": "\"Take the bus\" (ou \"catch the bus\"). \"Pick\" é escolher ou colher, não serve aqui."
+        },
+        {
+          "id": "a2-04-warm-3",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu vou para o trabalho de metrô.\"",
+          "accepted": [
+            "I go to work by subway",
+            "I go to work by metro",
+            "I go to work by underground",
+            "I take the subway to work",
+            "I take the metro to work",
+            "I get to work by subway",
+            "I go to work on the subway",
+            "I go to work on the metro"
+          ],
+          "commonErrors": [
+            {
+              "id": "of-subway",
+              "match": "\\b(of|with the|in the) (subway|metro)\\b",
+              "explanation_pt": "Meio de transporte usa \"by\": \"by subway\". Ou diga \"I take the subway\".",
+              "correction_en": "I go to work by subway."
+            },
+            {
+              "id": "go-to-the-work",
+              "match": "\\bto the work\\b",
+              "explanation_pt": "\"Para o trabalho\" é \"to work\", sem \"the\".",
+              "correction_en": "I go to work by subway."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-04-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Aprender as palavras da viagem: ticket, single/return (one-way/round-trip), platform, delayed, miss, catch.",
+        "prompts": [
+          "Did you ever miss a flight?",
+          "Is your bus often delayed?",
+          "Do you buy tickets online?"
+        ],
+        "watchFor": [
+          "Dizer \"I lost the train\" (do \"perdi o trem\"); o certo é \"I missed the train\".",
+          "Confundir \"travel\" (verbo, viajar) com \"trip\" (a viagem)."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-04-vocab-1",
+          "kind": "vocab",
+          "word_en": "miss",
+          "meaning_pt": "perder (o ônibus, o voo)",
+          "example_en": "Hurry up, or we'll miss the train!"
+        },
+        {
+          "id": "a2-04-vocab-2",
+          "kind": "vocab",
+          "word_en": "round-trip ticket",
+          "meaning_pt": "passagem de ida e volta",
+          "example_en": "A round-trip ticket to Boston, please."
+        },
+        {
+          "id": "a2-04-vocab-3",
+          "kind": "vocab",
+          "word_en": "delayed",
+          "meaning_pt": "atrasado (voo, trem)",
+          "example_en": "Our flight is delayed by two hours."
+        },
+        {
+          "id": "a2-04-vocab-4",
+          "kind": "match",
+          "instruction_pt": "Ligue cada palavra ao seu significado.",
+          "pairs": [
+            { "en": "platform", "pt": "plataforma" },
+            { "en": "trip", "pt": "viagem" },
+            { "en": "one-way ticket", "pt": "passagem só de ida" },
+            { "en": "gate", "pt": "portão de embarque" },
+            { "en": "luggage", "pt": "bagagem" }
+          ]
+        },
+        {
+          "id": "a2-04-vocab-5",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu perdi o ônibus hoje de manhã.\"",
+          "accepted": [
+            "I missed the bus this morning",
+            "This morning I missed the bus",
+            "I missed my bus this morning",
+            "I missed the bus today in the morning"
+          ],
+          "commonErrors": [
+            {
+              "id": "lost-bus",
+              "match": "\\blost (the|my) bus\\b",
+              "explanation_pt": "\"Perder\" o transporte é \"miss\". \"Lose\" é perder algo que some, como as chaves.",
+              "correction_en": "I missed the bus this morning."
+            },
+            {
+              "id": "today-morning",
+              "match": "\\btoday morning\\b",
+              "explanation_pt": "\"Hoje de manhã\" é \"this morning\".",
+              "correction_en": "I missed the bus this morning."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-04-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Treinar o som de \"-ed\" depois de \"s\" (\"missed\" soa \"mist\") e o \"v\" de \"travel\".",
+        "prompts": ["Say \"missed\". One syllable or two?", "Say \"travel\" and \"trouble\"."],
+        "watchFor": [
+          "\"Mis-sed\" com duas sílabas.",
+          "\"Ticket\" com vogal extra no fim: \"tiketchi\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-04-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita. \"Missed\" tem uma sílaba só: \"mist\".",
+          "prompt": "We missed the last train.",
+          "accepted": ["We missed the last train"],
+          "commonErrors": []
+        },
+        {
+          "id": "a2-04-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repita sem colocar \"i\" no fim de \"ticket\" e \"flight\".",
+          "prompt": "I need a ticket for the next flight.",
+          "accepted": ["I need a ticket for the next flight"],
+          "commonErrors": []
+        },
+        {
+          "id": "a2-04-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Como soa o \"-ed\" de \"missed\"?",
+          "options": ["Como \"t\": mist", "Como \"id\": mis-sid", "Como \"d\": misd"],
+          "answer": 0,
+          "explanation_pt": "Depois de sons surdos como \"s\", \"k\", \"p\", \"sh\" e \"ch\", o \"-ed\" soa como \"t\"."
+        }
+      ]
+    },
+    {
+      "id": "a2-04-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Entender anúncios e informações de horário e responder perguntas sobre a viagem.",
+        "prompts": [
+          "How long does it take to get to the airport?",
+          "What time does your train leave?"
+        ],
+        "watchFor": [
+          "Responder \"How long...?\" com o horário em vez da duração.",
+          "\"It takes two hours\" dito como \"It has two hours\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-04-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Ouça o anúncio e escolha a informação certa.",
+          "listen": "The ten fifteen train to Oxford is delayed by twenty minutes. It will leave from platform four.",
+          "options": [
+            "O trem das 10h15 vai sair 20 minutos atrasado, da plataforma 4.",
+            "O trem das 10h50 foi cancelado.",
+            "O trem das 10h15 sai da plataforma 2, no horário."
+          ],
+          "answer": 0,
+          "explanation_pt": "\"Delayed by twenty minutes\" é atrasado 20 minutos, e \"platform four\" é a plataforma 4."
+        },
+        {
+          "id": "a2-04-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e responda que leva mais ou menos uma hora.",
+          "listen": "How long does it take to get to the airport?",
+          "accepted": [
+            "It takes about an hour",
+            "It takes about one hour",
+            "About an hour",
+            "About one hour",
+            "It takes around an hour",
+            "Around an hour",
+            "It takes more or less an hour",
+            "It takes an hour or so",
+            "An hour, more or less",
+            "Roughly an hour"
+          ],
+          "commonErrors": [
+            {
+              "id": "has-one-hour",
+              "match": "\\b(it )?(has|have|is) (about )?(one|an) hour\\b",
+              "explanation_pt": "Para duração de trajeto usamos \"take\": \"It takes about an hour\".",
+              "correction_en": "It takes about an hour."
+            },
+            {
+              "id": "a-hour",
+              "match": "\\ba hour\\b",
+              "explanation_pt": "O \"h\" de \"hour\" é mudo, então começa com som de vogal: \"an hour\".",
+              "correction_en": "It takes about an hour."
+            }
+          ]
+        },
+        {
+          "id": "a2-04-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e peça uma passagem de ida e volta para Londres.",
+          "listen": "Hello, where are you traveling to today?",
+          "accepted": [
+            "A round-trip ticket to London, please",
+            "A return ticket to London, please",
+            "A round trip to London, please",
+            "A return to London, please",
+            "I'd like a round-trip ticket to London, please",
+            "I'd like a return ticket to London, please",
+            "To London. A round-trip ticket, please",
+            "To London. A return ticket, please",
+            "London, round trip, please",
+            "Can I have a return ticket to London, please?",
+            "Can I have a round-trip ticket to London, please?"
+          ],
+          "commonErrors": [
+            {
+              "id": "go-and-back",
+              "match": "\\b(go and (back|return)|going and coming)\\b",
+              "explanation_pt": "\"Ida e volta\" é \"round-trip\" (EUA) ou \"return\" (Reino Unido).",
+              "correction_en": "A round-trip ticket to London, please."
+            },
+            {
+              "id": "passage",
+              "match": "\\bpassage\\b",
+              "explanation_pt": "\"Passagem\" é \"ticket\". \"Passage\" é um corredor ou um trecho de texto.",
+              "correction_en": "A round-trip ticket to London, please."
+            },
+            {
+              "id": "for-london",
+              "match": "\\bticket for london\\b",
+              "explanation_pt": "O destino da passagem vai com \"to\": \"a ticket to London\".",
+              "correction_en": "A round-trip ticket to London, please."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-04-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Falar de uma viagem: como foi, quanto tempo levou e qual transporte usou.",
+        "prompts": [
+          "Tell me about your last trip.",
+          "How did you get there?",
+          "How long did it take?"
+        ],
+        "watchFor": [
+          "\"How much time does it take?\"; o mais natural é \"How long does it take?\".",
+          "\"I made a trip\"; o natural é \"I took / went on a trip\".",
+          "\"In the bus\" em vez de \"on the bus\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-04-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Que horas sai o próximo trem?\"",
+          "accepted": [
+            "What time does the next train leave?",
+            "When does the next train leave?",
+            "What time is the next train?",
+            "When is the next train?",
+            "What time does the next train depart?",
+            "What time's the next train?"
+          ],
+          "commonErrors": [
+            {
+              "id": "what-hours",
+              "match": "^what hours?\\b",
+              "explanation_pt": "\"Que horas\" é \"What time\", e não \"What hour\".",
+              "correction_en": "What time does the next train leave?"
+            },
+            {
+              "id": "train-leaves-question",
+              "match": "^what time (the|next) train (leave|leaves)\\b",
+              "explanation_pt": "Falta o \"does\" na pergunta: \"What time does the next train leave?\".",
+              "correction_en": "What time does the next train leave?"
+            },
+            {
+              "id": "train-exit",
+              "match": "\\b(exit|exits|go out|goes out)\\b",
+              "explanation_pt": "\"Sair\" (partir) é \"leave\" ou \"depart\". \"Exit\" é sair de dentro de um lugar.",
+              "correction_en": "What time does the next train leave?"
+            }
+          ]
+        },
+        {
+          "id": "a2-04-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Nós fizemos uma viagem para o Chile no ano passado.\"",
+          "accepted": [
+            "We took a trip to Chile last year",
+            "We went on a trip to Chile last year",
+            "We traveled to Chile last year",
+            "We travelled to Chile last year",
+            "We went to Chile last year",
+            "Last year we took a trip to Chile",
+            "Last year we went to Chile",
+            "Last year we traveled to Chile"
+          ],
+          "commonErrors": [
+            {
+              "id": "made-a-trip",
+              "match": "\\b(made|did) a (trip|travel)\\b",
+              "explanation_pt": "\"Fazer uma viagem\" é \"take a trip\" ou \"go on a trip\". Também dá para dizer só \"We traveled to Chile\".",
+              "correction_en": "We took a trip to Chile last year."
+            },
+            {
+              "id": "a-travel",
+              "match": "\\ba travel\\b",
+              "explanation_pt": "\"Travel\" é o verbo (viajar). \"Uma viagem\" é \"a trip\".",
+              "correction_en": "We took a trip to Chile last year."
+            },
+            {
+              "id": "in-the-last-year",
+              "match": "\\b(in the|on the) last year\\b",
+              "explanation_pt": "Com \"last\" não usamos preposição nem \"the\": \"last year\".",
+              "correction_en": "We went to Chile last year."
+            }
+          ]
+        },
+        {
+          "id": "a2-04-conv-3",
+          "kind": "order",
+          "instruction_pt": "Coloque as palavras na ordem certa para formar a pergunta.",
+          "accepted": ["How long does it take by train"]
+        },
+        {
+          "id": "a2-04-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Conte sobre uma viagem que você fez: para onde, como e quanto tempo levou.",
+          "prompt_en": "I love traveling! Last month I went to the mountains by car. It took four hours. Tell me about a trip you took. Where did you go, and how did you get there?",
+          "guidelines_pt": [
+            "Diga para onde foi e quando: \"Last year I went to...\".",
+            "Diga o transporte e o tempo: \"We went by plane. It took three hours.\"",
+            "Diga se gostou e faça uma pergunta: \"Have you ever been there?\" ou \"Do you like traveling?\"."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-04-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Revisar transporte, horários e duração.",
+        "prompts": ["How long does it take you to get to work?", "When was your last trip?"],
+        "watchFor": [
+          "\"Lost the bus\" em vez de \"missed the bus\".",
+          "\"By foot\" em vez de \"on foot\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-04-rev-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"O voo está atrasado.\"",
+          "accepted": [
+            "The flight is delayed",
+            "The flight's delayed",
+            "The flight is late",
+            "Our flight is delayed",
+            "The flight has been delayed"
+          ],
+          "commonErrors": [
+            {
+              "id": "flight-is-late-delayed",
+              "match": "\\b(fly|flying) is\\b",
+              "explanation_pt": "\"Voo\" é \"flight\". \"Fly\" é o verbo voar (ou mosca).",
+              "correction_en": "The flight is delayed."
+            },
+            {
+              "id": "is-delay",
+              "match": "\\bis delay\\b",
+              "explanation_pt": "\"Atrasado\" é \"delayed\", com \"-ed\". \"Delay\" é o atraso (substantivo).",
+              "correction_en": "The flight is delayed."
+            }
+          ]
+        },
+        {
+          "id": "a2-04-rev-2",
+          "kind": "fill",
+          "instruction_pt": "Complete com a preposição certa.",
+          "sentence": "I read a book ___ the train every morning.",
+          "accepted": ["on"],
+          "commonErrors": [
+            {
+              "id": "in-the-train",
+              "match": "^(in|at|inside)$",
+              "explanation_pt": "Em trem, ônibus e avião usamos \"on\": \"on the train\", \"on the bus\". Em carro e táxi, \"in\".",
+              "correction_en": "I read a book on the train every morning."
+            }
+          ]
+        },
+        {
+          "id": "a2-04-rev-3",
+          "kind": "choice",
+          "instruction_pt": "Qual pergunta é sobre a duração da viagem?",
+          "options": ["How long does it take?", "What time does it leave?", "How far is it?"],
+          "answer": 0,
+          "explanation_pt": "\"How long\" pergunta quanto tempo. \"What time\" é o horário, e \"How far\" é a distância."
+        },
+        {
+          "id": "a2-04-rev-4",
+          "kind": "repeat",
+          "instruction_pt": "Para terminar, repita.",
+          "prompt": "Have a nice trip!",
+          "accepted": ["Have a nice trip", "Have a good trip"],
+          "commonErrors": [
+            {
+              "id": "good-travel",
+              "match": "\\b(good|nice) travel\\b",
+              "explanation_pt": "\"Boa viagem\" é \"Have a nice trip\". \"Travel\" aqui não funciona como substantivo.",
+              "correction_en": "Have a nice trip!"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,487 @@
+{
+  "id": "a2-07-future-plans",
+  "level": "A2",
+  "order": 7,
+  "title_pt": "Planos para o futuro",
+  "title_en": "Plans for the future",
+  "objective_pt": "Falar dos seus planos com \"going to\" e de compromissos marcados com o presente contínuo (\"I'm meeting Ana on Friday\"), e perguntar \"What are you going to do?\".",
+  "blocks": [
+    {
+      "id": "a2-07-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Ativar \"going to\" com planos para o fim de semana e as férias.",
+        "prompts": [
+          "What are you going to do this weekend?",
+          "Do you have any plans for the holidays?"
+        ],
+        "watchFor": [
+          "\"I go to travel\" (do \"eu vou viajar\"); o certo é \"I'm going to travel\".",
+          "Esquecer o \"be\": \"I going to...\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-07-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita em voz alta.",
+          "prompt": "What are you going to do this weekend?",
+          "accepted": ["What are you going to do this weekend?"],
+          "commonErrors": [
+            {
+              "id": "what-you-going",
+              "match": "^what you (are )?going\\b",
+              "explanation_pt": "Na pergunta, \"are\" vem antes de \"you\": \"What are you going to do?\".",
+              "correction_en": "What are you going to do this weekend?"
+            }
+          ]
+        },
+        {
+          "id": "a2-07-warm-2",
+          "kind": "choice",
+          "instruction_pt": "Como se diz \"Eu vou viajar\" (um plano)?",
+          "options": ["I'm going to travel.", "I go to travel.", "I going travel."],
+          "answer": 0,
+          "explanation_pt": "Plano para o futuro: \"I'm going to\" + verbo. \"I go to travel\" é tradução palavra por palavra."
+        },
+        {
+          "id": "a2-07-warm-3",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu vou visitar minha mãe no sábado.\"",
+          "accepted": [
+            "I'm going to visit my mother on Saturday",
+            "I am going to visit my mother on Saturday",
+            "I'm going to visit my mom on Saturday",
+            "I'm going to visit my mum on Saturday",
+            "I'm visiting my mother on Saturday",
+            "I'm visiting my mom on Saturday",
+            "On Saturday I'm going to visit my mother",
+            "On Saturday I'm going to visit my mom",
+            "I'll visit my mom on Saturday",
+            "I will visit my mother on Saturday",
+            "I'm going to see my mom on Saturday"
+          ],
+          "commonErrors": [
+            {
+              "id": "go-to-visit",
+              "match": "^i go to visit\\b",
+              "explanation_pt": "\"Eu vou visitar\" (futuro) é \"I'm going to visit\". \"I go to visit\" fica no presente.",
+              "correction_en": "I'm going to visit my mother on Saturday."
+            },
+            {
+              "id": "in-saturday",
+              "match": "\\b(in|at) saturday\\b",
+              "explanation_pt": "Dias da semana usam \"on\": \"on Saturday\".",
+              "correction_en": "I'm going to visit my mother on Saturday."
+            },
+            {
+              "id": "missing-am",
+              "match": "^i going\\b",
+              "explanation_pt": "Falta o \"am\": \"I am going to\" (ou \"I'm going to\").",
+              "correction_en": "I'm going to visit my mother on Saturday."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-07-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Aprender expressões de planos: plan, hope, next year, someday, save money, look forward to.",
+        "prompts": [
+          "What are you saving money for?",
+          "What do you hope to do next year?",
+          "What are you looking forward to?"
+        ],
+        "watchFor": [
+          "\"In the next year\" em vez de \"next year\".",
+          "\"I'm looking forward to see you\"; depois de \"to\" aqui vem \"-ing\": \"to seeing you\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-07-vocab-1",
+          "kind": "vocab",
+          "word_en": "save money",
+          "meaning_pt": "economizar dinheiro",
+          "example_en": "I'm saving money for a trip to Europe."
+        },
+        {
+          "id": "a2-07-vocab-2",
+          "kind": "vocab",
+          "word_en": "hope",
+          "meaning_pt": "esperar (desejar), ter esperança",
+          "example_en": "I hope to find a new job next year."
+        },
+        {
+          "id": "a2-07-vocab-3",
+          "kind": "vocab",
+          "word_en": "look forward to",
+          "meaning_pt": "estar ansioso por (coisa boa)",
+          "example_en": "I'm looking forward to the holidays."
+        },
+        {
+          "id": "a2-07-vocab-4",
+          "kind": "match",
+          "instruction_pt": "Ligue cada expressão ao seu significado.",
+          "pairs": [
+            { "en": "next month", "pt": "mês que vem" },
+            { "en": "someday", "pt": "algum dia" },
+            { "en": "the day after tomorrow", "pt": "depois de amanhã" },
+            { "en": "move house", "pt": "mudar de casa" },
+            { "en": "get married", "pt": "casar" }
+          ]
+        },
+        {
+          "id": "a2-07-vocab-5",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu estou economizando dinheiro para comprar um carro.\"",
+          "accepted": [
+            "I'm saving money to buy a car",
+            "I am saving money to buy a car",
+            "I'm saving up to buy a car",
+            "I'm saving money for a car",
+            "I'm saving up for a car",
+            "I'm saving to buy a car"
+          ],
+          "commonErrors": [
+            {
+              "id": "economize",
+              "match": "\\beconomi[zs]ing\\b",
+              "explanation_pt": "\"Economizar dinheiro\" é \"save money\". \"Economize\" existe, mas quase não se usa assim.",
+              "correction_en": "I'm saving money to buy a car."
+            },
+            {
+              "id": "for-buy",
+              "match": "\\bfor (to )?buy\\b",
+              "explanation_pt": "\"Para comprar\" (finalidade) é \"to buy\", e não \"for buy\".",
+              "correction_en": "I'm saving money to buy a car."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-07-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Treinar o \"going to\" rápido (\"gonna\") na fala informal e a contração \"I'll\".",
+        "prompts": ["Say \"I'm going to\" fast. What do you hear?", "Say \"I will\" and \"I'll\"."],
+        "watchFor": [
+          "Escrever ou falar \"gonna\" em situação formal; na fala informal ele é natural.",
+          "Pronunciar \"I'll\" como \"ai-iu\" com duas vogais separadas."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-07-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita. Na fala rápida, \"going to\" soa como \"gonna\".",
+          "prompt": "I'm going to start a new course next month.",
+          "accepted": [
+            "I'm going to start a new course next month",
+            "I'm gonna start a new course next month"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "a2-07-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repita. \"I'll\" é uma sílaba só: \"aul\".",
+          "prompt": "I'll call you tomorrow.",
+          "accepted": ["I'll call you tomorrow", "I will call you tomorrow"],
+          "commonErrors": []
+        },
+        {
+          "id": "a2-07-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Na fala informal, \"I'm going to eat\" costuma soar como:",
+          "options": ["I'm gonna eat", "I'm go eat", "I'm going eat"],
+          "answer": 0,
+          "explanation_pt": "\"Going to\" + verbo vira \"gonna\" na fala rápida. Só não vale para \"going to\" + lugar: \"I'm going to Rio\"."
+        }
+      ]
+    },
+    {
+      "id": "a2-07-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Entender os planos de outra pessoa e responder perguntas sobre os seus.",
+        "prompts": ["Are you doing anything on Friday night?", "Where are you going on vacation?"],
+        "watchFor": [
+          "Responder \"Are you doing anything...?\" com \"Yes, I do\"; aqui é \"Yes, I am\".",
+          "\"I don't have plans\" está certo, mas \"Nothing special\" é mais natural."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-07-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Ouça e escolha o plano da Laura.",
+          "listen": "Next summer I'm going to take a cooking course in Italy. I'm already saving money for it.",
+          "options": [
+            "Fazer um curso de culinária na Itália no próximo verão.",
+            "Trabalhar num restaurante na Itália neste inverno.",
+            "Economizar para comprar uma casa na Itália."
+          ],
+          "answer": 0,
+          "explanation_pt": "\"Take a cooking course\" é fazer um curso de culinária, e \"next summer\" é no próximo verão."
+        },
+        {
+          "id": "a2-07-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e responda que sim: você vai jantar com uns amigos.",
+          "listen": "Are you doing anything on Friday night?",
+          "accepted": [
+            "Yes, I'm having dinner with some friends",
+            "Yes, I am. I'm having dinner with some friends",
+            "Yes, I'm having dinner with friends",
+            "Yes, I'm going to have dinner with some friends",
+            "Yes, I'm going to have dinner with friends",
+            "Yes, I'm going out for dinner with some friends",
+            "Yeah, I'm having dinner with some friends",
+            "I'm having dinner with some friends",
+            "I'm going to have dinner with some friends",
+            "Yes, I'm meeting some friends for dinner",
+            "Yes, I'm going out to dinner with some friends"
+          ],
+          "commonErrors": [
+            {
+              "id": "yes-i-do",
+              "match": "^yes i do\\b",
+              "explanation_pt": "A pergunta usa \"Are you...?\", então a resposta curta é \"Yes, I am\".",
+              "correction_en": "Yes, I am. I'm having dinner with some friends."
+            },
+            {
+              "id": "go-to-dinner-with",
+              "match": "^(yes )?i go to (have )?dinner\\b",
+              "explanation_pt": "Para um plano, use \"I'm having dinner\" ou \"I'm going to have dinner\".",
+              "correction_en": "Yes, I'm having dinner with some friends."
+            },
+            {
+              "id": "make-dinner-out",
+              "match": "\\b(eat|eating) a dinner\\b",
+              "explanation_pt": "Com refeições usamos \"have\" e sem artigo: \"have dinner\".",
+              "correction_en": "Yes, I'm having dinner with some friends."
+            }
+          ]
+        },
+        {
+          "id": "a2-07-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e responda que você vai para a praia.",
+          "listen": "Where are you going on vacation this year?",
+          "accepted": [
+            "I'm going to the beach",
+            "I am going to the beach",
+            "I'm going to go to the beach",
+            "To the beach",
+            "We're going to the beach",
+            "I'm going to the beach this year",
+            "I'm going to the coast",
+            "I'm going to the beach with my family"
+          ],
+          "commonErrors": [
+            {
+              "id": "go-beach",
+              "match": "^i go to the beach\\b",
+              "explanation_pt": "Para um plano futuro use \"I'm going\": \"I'm going to the beach\".",
+              "correction_en": "I'm going to the beach."
+            },
+            {
+              "id": "to-beach-no-the",
+              "match": "\\bgoing to beach\\b",
+              "explanation_pt": "Falta o artigo: \"to the beach\".",
+              "correction_en": "I'm going to the beach."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-07-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Falar de planos de curto e longo prazo e perguntar os planos do outro.",
+        "prompts": [
+          "What are your plans for next year?",
+          "Are you going to study anything new?",
+          "Where do you see yourself in five years?"
+        ],
+        "watchFor": [
+          "\"In the next year\" em vez de \"next year\".",
+          "\"I pretend to\" querendo dizer \"pretendo\"; o certo é \"I plan to\" ou \"I intend to\".",
+          "Misturar \"will\" e \"going to\" o tempo todo; para planos já decididos, \"going to\" é o mais natural."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-07-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu pretendo mudar de casa no ano que vem.\"",
+          "accepted": [
+            "I plan to move next year",
+            "I'm planning to move next year",
+            "I intend to move next year",
+            "I'm going to move next year",
+            "I plan to move house next year",
+            "I'm planning to move house next year",
+            "I'm planning on moving next year",
+            "I plan to move to a new house next year",
+            "Next year I'm going to move"
+          ],
+          "commonErrors": [
+            {
+              "id": "pretend",
+              "match": "\\bpretend\\b",
+              "explanation_pt": "Falso cognato: \"pretend\" é fingir. \"Pretender\" é \"plan to\" ou \"intend to\".",
+              "correction_en": "I'm planning to move next year."
+            },
+            {
+              "id": "change-house",
+              "match": "\\bchange (of )?(house|home)\\b",
+              "explanation_pt": "\"Mudar de casa\" é \"move\" (ou \"move house\"), e não \"change house\".",
+              "correction_en": "I'm planning to move next year."
+            },
+            {
+              "id": "in-the-next-year",
+              "match": "\\b(in the|in) next year\\b",
+              "explanation_pt": "\"No ano que vem\" é só \"next year\", sem \"in the\".",
+              "correction_en": "I'm planning to move next year."
+            }
+          ]
+        },
+        {
+          "id": "a2-07-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Estou ansioso para as férias.\"",
+          "accepted": [
+            "I'm looking forward to the holidays",
+            "I am looking forward to the holidays",
+            "I'm looking forward to my vacation",
+            "I'm looking forward to the vacation",
+            "I'm really looking forward to the holidays",
+            "I can't wait for the holidays",
+            "I can't wait for my vacation",
+            "I'm excited about the holidays",
+            "I'm excited about my vacation"
+          ],
+          "commonErrors": [
+            {
+              "id": "anxious",
+              "match": "\\banxious\\b",
+              "explanation_pt": "\"Anxious\" é preocupado, nervoso. Para algo bom que vai chegar, diga \"I'm looking forward to...\" ou \"I can't wait for...\".",
+              "correction_en": "I'm looking forward to the holidays."
+            },
+            {
+              "id": "looking-forward-for",
+              "match": "\\blooking forward for\\b",
+              "explanation_pt": "A expressão é \"look forward to\", com \"to\".",
+              "correction_en": "I'm looking forward to the holidays."
+            }
+          ]
+        },
+        {
+          "id": "a2-07-conv-3",
+          "kind": "order",
+          "instruction_pt": "Coloque as palavras na ordem certa para formar a frase.",
+          "accepted": [
+            "We are going to get married next year",
+            "Next year we are going to get married"
+          ]
+        },
+        {
+          "id": "a2-07-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Conte para a Sam os seus planos para o próximo ano.",
+          "prompt_en": "Next year is going to be a big year for me. I'm going to start a new job, and I'm planning to learn the guitar. What about you? What are your plans for next year?",
+          "guidelines_pt": [
+            "Diga 2 planos com \"I'm going to...\" ou \"I'm planning to...\".",
+            "Diga algo que você espera: \"I hope to...\".",
+            "Pergunte de volta: \"Are you going to...?\" ou \"What are you looking forward to?\"."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-07-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Revisar \"going to\", presente contínuo para compromissos e expressões de tempo futuro.",
+        "prompts": ["What are you doing tomorrow?", "What are you going to do after this class?"],
+        "watchFor": ["\"I go to travel\".", "\"In the next week\"."]
+      },
+      "exercises": [
+        {
+          "id": "a2-07-rev-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"O que você vai fazer amanhã?\"",
+          "accepted": [
+            "What are you going to do tomorrow?",
+            "What are you doing tomorrow?",
+            "What will you do tomorrow?",
+            "What are your plans for tomorrow?",
+            "What're you doing tomorrow?",
+            "What are you gonna do tomorrow?"
+          ],
+          "commonErrors": [
+            {
+              "id": "what-you-go",
+              "match": "^what you (go|going|will)\\b",
+              "explanation_pt": "Na pergunta o verbo auxiliar vem antes de \"you\": \"What are you going to do?\".",
+              "correction_en": "What are you going to do tomorrow?"
+            },
+            {
+              "id": "what-go-you",
+              "match": "^what (do )?you go to do\\b",
+              "explanation_pt": "\"Vai fazer\" é \"are going to do\", e não \"go to do\".",
+              "correction_en": "What are you going to do tomorrow?"
+            }
+          ]
+        },
+        {
+          "id": "a2-07-rev-2",
+          "kind": "fill",
+          "instruction_pt": "Complete com a forma certa de \"be\".",
+          "sentence": "They ___ going to buy a new house.",
+          "accepted": ["are"],
+          "commonErrors": [
+            {
+              "id": "is-they",
+              "match": "^(is|am|go)$",
+              "explanation_pt": "Com \"they\" usamos \"are\": \"They are going to...\".",
+              "correction_en": "They are going to buy a new house."
+            }
+          ]
+        },
+        {
+          "id": "a2-07-rev-3",
+          "kind": "choice",
+          "instruction_pt": "Qual frase fala de um compromisso já marcado?",
+          "options": [
+            "I'm meeting the dentist at three tomorrow.",
+            "I meet the dentist yesterday.",
+            "I met the dentist tomorrow."
+          ],
+          "answer": 0,
+          "explanation_pt": "O presente contínuo (\"I'm meeting\") com um horário marcado fala do futuro próximo."
+        },
+        {
+          "id": "a2-07-rev-4",
+          "kind": "repeat",
+          "instruction_pt": "Para terminar, repita.",
+          "prompt": "I'm really looking forward to it!",
+          "accepted": ["I'm really looking forward to it", "I am really looking forward to it"],
+          "commonErrors": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,499 @@
+{
+  "id": "a2-08-phone-calls",
+  "level": "A2",
+  "order": 8,
+  "title_pt": "Ligações telefônicas",
+  "title_en": "Phone calls",
+  "objective_pt": "Atender e fazer uma ligação (\"This is...\", \"Can I speak to...?\"), deixar e anotar um recado e combinar de ligar de volta.",
+  "blocks": [
+    {
+      "id": "a2-08-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Introduzir o jeito de se identificar ao telefone com \"This is...\".",
+        "prompts": ["Do you prefer calling or texting?", "Who do you call most often?"],
+        "watchFor": [
+          "\"Here is Carlos\" ou \"I am Carlos\" ao telefone (do \"aqui é o Carlos\"); o natural é \"This is Carlos\".",
+          "\"Who speaks?\" (do \"quem fala?\"); o certo é \"Who's calling?\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-08-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita em voz alta.",
+          "prompt": "Hello, this is Marina. Can I speak to Paul, please?",
+          "accepted": [
+            "Hello, this is Marina. Can I speak to Paul, please?",
+            "Hello, this is Marina. Could I speak to Paul, please?"
+          ],
+          "commonErrors": [
+            {
+              "id": "here-is",
+              "match": "\\bhere is marina\\b",
+              "explanation_pt": "Ao telefone, \"aqui é\" vira \"this is\": \"This is Marina\".",
+              "correction_en": "Hello, this is Marina."
+            }
+          ]
+        },
+        {
+          "id": "a2-08-warm-2",
+          "kind": "choice",
+          "instruction_pt": "Você atende o telefone no trabalho e quer saber quem está ligando. O que você diz?",
+          "options": ["Who's calling, please?", "Who speaks?", "Who are you?"],
+          "answer": 0,
+          "explanation_pt": "\"Who's calling, please?\" é o jeito educado. \"Who speaks?\" é tradução literal de \"quem fala?\", e \"Who are you?\" soa rude."
+        },
+        {
+          "id": "a2-08-warm-3",
+          "kind": "translate",
+          "instruction_pt": "Ao telefone, diga em inglês: \"Oi, aqui é o Pedro.\"",
+          "accepted": [
+            "Hi, this is Pedro",
+            "Hello, this is Pedro",
+            "Hi, it's Pedro",
+            "Hello, it's Pedro",
+            "Hi, Pedro here",
+            "Hi, this is Pedro speaking",
+            "Hello, Pedro speaking"
+          ],
+          "commonErrors": [
+            {
+              "id": "here-is-pedro",
+              "match": "\\bhere is pedro\\b",
+              "explanation_pt": "\"Aqui é\" ao telefone é \"This is\" ou \"It's\": \"Hi, this is Pedro\".",
+              "correction_en": "Hi, this is Pedro."
+            },
+            {
+              "id": "i-am-pedro-phone",
+              "match": "\\bi am pedro\\b",
+              "explanation_pt": "\"I'm Pedro\" é para se apresentar pessoalmente. Ao telefone dizemos \"This is Pedro\".",
+              "correction_en": "Hi, this is Pedro."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-08-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Aprender as expressões do telefone: hold on, call back, hang up, take a message, the line is busy.",
+        "prompts": [
+          "What do you say when you need a moment?",
+          "Do you leave voice messages?",
+          "What do you do when the line is busy?"
+        ],
+        "watchFor": [
+          "\"Turn off\" para \"desligar a ligação\"; \"turn off\" é desligar o aparelho. Encerrar a ligação é \"hang up\".",
+          "\"I'll call to you\" com \"to\"; o certo é \"I'll call you\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-08-vocab-1",
+          "kind": "vocab",
+          "word_en": "hold on",
+          "meaning_pt": "aguarde, espere um momento",
+          "example_en": "Hold on a second, I'll get her."
+        },
+        {
+          "id": "a2-08-vocab-2",
+          "kind": "vocab",
+          "word_en": "call back",
+          "meaning_pt": "ligar de volta, retornar a ligação",
+          "example_en": "Can you call me back in ten minutes?"
+        },
+        {
+          "id": "a2-08-vocab-3",
+          "kind": "vocab",
+          "word_en": "hang up",
+          "meaning_pt": "desligar (encerrar a ligação)",
+          "example_en": "Please don't hang up. I'm transferring you now."
+        },
+        {
+          "id": "a2-08-vocab-4",
+          "kind": "match",
+          "instruction_pt": "Ligue cada expressão ao seu significado.",
+          "pairs": [
+            { "en": "take a message", "pt": "anotar um recado" },
+            { "en": "the line is busy", "pt": "a linha está ocupada" },
+            { "en": "voicemail", "pt": "caixa postal" },
+            { "en": "missed call", "pt": "chamada perdida" },
+            { "en": "speak up", "pt": "falar mais alto" }
+          ]
+        },
+        {
+          "id": "a2-08-vocab-5",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu te ligo de volta mais tarde.\"",
+          "accepted": [
+            "I'll call you back later",
+            "I will call you back later",
+            "I'll call you later",
+            "I'll call back later",
+            "I'll give you a call later",
+            "I'll ring you back later",
+            "Let me call you back later"
+          ],
+          "commonErrors": [
+            {
+              "id": "call-to-you",
+              "match": "\\bcall to you\\b",
+              "explanation_pt": "\"Call\" vai direto com a pessoa, sem \"to\": \"I'll call you\".",
+              "correction_en": "I'll call you back later."
+            },
+            {
+              "id": "connect",
+              "match": "\\bconnect (to )?you\\b",
+              "explanation_pt": "\"Ligar\" para alguém é \"call\". \"Connect\" é conectar.",
+              "correction_en": "I'll call you back later."
+            },
+            {
+              "id": "call-present",
+              "match": "^i call you back\\b",
+              "explanation_pt": "Para uma decisão na hora, use \"I'll\": \"I'll call you back later\".",
+              "correction_en": "I'll call you back later."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-08-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Soletrar nomes e e-mails com clareza: as letras que brasileiros confundem (e/i, g/j, a/e) e o \"at\" e \"dot\".",
+        "prompts": ["Can you spell your name, please?", "What's your email address?"],
+        "watchFor": [
+          "Dizer \"i\" (português) para a letra E; em inglês E soa \"ii\" e I soa \"ai\".",
+          "Trocar G (\"dji\") e J (\"djei\")."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-08-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita. Em inglês, \"@\" é \"at\" e \".\" é \"dot\".",
+          "prompt": "My email is ana at mail dot com.",
+          "accepted": [
+            "My email is ana at mail dot com",
+            "My email address is ana at mail dot com"
+          ],
+          "commonErrors": [
+            {
+              "id": "arroba",
+              "match": "\\barroba\\b",
+              "explanation_pt": "O \"@\" em inglês é \"at\".",
+              "correction_en": "My email is ana at mail dot com."
+            },
+            {
+              "id": "point-com",
+              "match": "\\bpoint com\\b",
+              "explanation_pt": "O ponto do e-mail é \"dot\", e não \"point\".",
+              "correction_en": "My email is ana at mail dot com."
+            }
+          ]
+        },
+        {
+          "id": "a2-08-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repita devagar. Hold on é \"rôuld-ón\", com o \"h\" soprado.",
+          "prompt": "Hold on, please. I'll put you through.",
+          "accepted": [
+            "Hold on, please. I'll put you through",
+            "Hold on, please. I will put you through"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "a2-08-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Como soa a letra \"E\" quando você soletra em inglês?",
+          "options": ["ii (como em \"see\")", "é (como em \"pé\")", "ai (como em \"my\")"],
+          "answer": 0,
+          "explanation_pt": "A letra E soa \"ii\". A letra I é que soa \"ai\". É fácil trocar as duas ao soletrar."
+        }
+      ]
+    },
+    {
+      "id": "a2-08-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Entender uma ligação curta e responder às frases mais comuns do telefone.",
+        "prompts": ["Can I take a message?", "Sorry, could you speak up?"],
+        "watchFor": [
+          "Responder \"Can I take a message?\" com \"Yes\" sem dar o recado.",
+          "\"Say him to call me\"; o certo é \"Tell him to call me\" ou \"Ask him to call me\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-08-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Ouça a mensagem de voz e escolha o recado.",
+          "listen": "Hi Tom, it's Julia. I'm calling about the meeting tomorrow. It's at ten, not at nine. Call me back when you can. Bye!",
+          "options": [
+            "A reunião de amanhã é às dez, não às nove.",
+            "A reunião de amanhã foi cancelada.",
+            "A reunião é hoje às nove."
+          ],
+          "answer": 0,
+          "explanation_pt": "\"It's at ten, not at nine\": a reunião é às dez. Ela pede \"Call me back\": me ligue de volta."
+        },
+        {
+          "id": "a2-08-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e deixe um recado: peça para ele te ligar de volta.",
+          "listen": "I'm sorry, Mr. Smith isn't here right now. Can I take a message?",
+          "accepted": [
+            "Yes, please ask him to call me back",
+            "Yes, can you ask him to call me back?",
+            "Yes, could you ask him to call me back?",
+            "Can you ask him to call me back?",
+            "Could you ask him to call me back, please?",
+            "Please ask him to call me back",
+            "Yes, please tell him to call me back",
+            "Can you tell him to call me back?",
+            "Yes, please. Could you ask him to call me back?",
+            "Yes, please ask him to call me",
+            "Yes, ask him to call me back, please"
+          ],
+          "commonErrors": [
+            {
+              "id": "say-him",
+              "match": "\\bsay (him|to him)\\b",
+              "explanation_pt": "\"Diga a ele\" é \"tell him\" (ou \"ask him\"). \"Say\" não vem com a pessoa logo depois.",
+              "correction_en": "Could you ask him to call me back?"
+            },
+            {
+              "id": "him-call-me",
+              "match": "\\bask him call\\b",
+              "explanation_pt": "Depois de \"ask him\" vem \"to\": \"ask him to call me back\".",
+              "correction_en": "Could you ask him to call me back?"
+            },
+            {
+              "id": "connect-me",
+              "match": "\\bconnect (me|to me|for me)\\b",
+              "explanation_pt": "\"Me ligar\" é \"call me\". \"Connect\" é conectar.",
+              "correction_en": "Could you ask him to call me back?"
+            }
+          ]
+        },
+        {
+          "id": "a2-08-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "A ligação está ruim. Peça para a pessoa repetir, de forma educada.",
+          "listen": "So the delivery will arrive at around three o'clock on Thursday.",
+          "accepted": [
+            "Sorry, could you repeat that, please?",
+            "Sorry, can you repeat that, please?",
+            "Could you repeat that, please?",
+            "Can you repeat that, please?",
+            "Sorry, could you say that again?",
+            "Sorry, can you say that again, please?",
+            "Sorry, I didn't catch that. Could you repeat it?",
+            "Sorry, the line is bad. Could you repeat that?",
+            "Pardon?",
+            "Sorry?",
+            "Could you say that again, please?",
+            "Sorry, could you repeat, please?"
+          ],
+          "commonErrors": [
+            {
+              "id": "repeat-again",
+              "match": "\\brepeat (that |it )?again\\b",
+              "explanation_pt": "\"Repeat\" já quer dizer de novo, então não precisa de \"again\". Diga \"repeat that\" ou \"say that again\".",
+              "correction_en": "Sorry, could you repeat that, please?"
+            },
+            {
+              "id": "what-alone",
+              "match": "^what$",
+              "explanation_pt": "Só \"What?\" soa rude. Prefira \"Sorry?\" ou \"Could you repeat that, please?\".",
+              "correction_en": "Sorry, could you repeat that, please?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-08-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Fazer uma ligação completa: se identificar, pedir para falar com alguém, deixar recado e se despedir.",
+        "prompts": [
+          "Good morning, ABC Company. How can I help you?",
+          "I'm afraid she's in a meeting. Would you like to leave a message?",
+          "Can I have your number, please?"
+        ],
+        "watchFor": [
+          "\"I want to talk with Mr. Brown\"; o mais educado é \"Could I speak to Mr. Brown, please?\".",
+          "Dizer o telefone número por número sem pausas; agrupar ajuda: \"five five five, two one, three four\".",
+          "\"I'm calling for to ask\" em vez de \"I'm calling to ask\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-08-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu poderia falar com a Sra. Brown, por favor?\"",
+          "accepted": [
+            "Could I speak to Mrs. Brown, please?",
+            "Can I speak to Mrs. Brown, please?",
+            "May I speak to Mrs. Brown, please?",
+            "Could I speak with Mrs. Brown, please?",
+            "Can I speak with Mrs. Brown, please?",
+            "Could I talk to Mrs. Brown, please?",
+            "Could I speak to Ms. Brown, please?",
+            "I'd like to speak to Mrs. Brown, please"
+          ],
+          "commonErrors": [
+            {
+              "id": "talk-with-want",
+              "match": "^i want to (talk|speak)\\b",
+              "explanation_pt": "\"I want\" soa seco ao telefone. Prefira \"Could I speak to...?\".",
+              "correction_en": "Could I speak to Mrs. Brown, please?"
+            },
+            {
+              "id": "speak-mrs",
+              "match": "\\bspeak (mrs|ms|mister)\\b",
+              "explanation_pt": "Falta a preposição: \"speak to\" ou \"speak with\".",
+              "correction_en": "Could I speak to Mrs. Brown, please?"
+            }
+          ]
+        },
+        {
+          "id": "a2-08-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Estou ligando para confirmar a reserva.\"",
+          "accepted": [
+            "I'm calling to confirm the reservation",
+            "I am calling to confirm the reservation",
+            "I'm calling to confirm my reservation",
+            "I'm calling to confirm the booking",
+            "I'm calling to confirm my booking",
+            "I'm phoning to confirm the reservation",
+            "I'm calling about my reservation. I want to confirm it"
+          ],
+          "commonErrors": [
+            {
+              "id": "for-to-confirm",
+              "match": "\\b(for to|for) confirm\\b",
+              "explanation_pt": "Finalidade em inglês é \"to\" + verbo: \"I'm calling to confirm\".",
+              "correction_en": "I'm calling to confirm the reservation."
+            },
+            {
+              "id": "connecting",
+              "match": "\\bconnecting\\b",
+              "explanation_pt": "\"Ligando\" (telefonando) é \"calling\".",
+              "correction_en": "I'm calling to confirm the reservation."
+            }
+          ]
+        },
+        {
+          "id": "a2-08-conv-3",
+          "kind": "order",
+          "instruction_pt": "Coloque as palavras na ordem certa para formar a pergunta.",
+          "accepted": ["Would you like to leave a message"]
+        },
+        {
+          "id": "a2-08-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Você liga para um consultório, mas a recepcionista diz que o Dr. Lee não pode atender. Deixe um recado completo.",
+          "prompt_en": "Good afternoon, City Clinic. I'm sorry, Dr. Lee is with a patient right now. Would you like to leave a message?",
+          "guidelines_pt": [
+            "Diga quem é: \"Yes, please. This is...\".",
+            "Diga o motivo: \"I'm calling about / to...\".",
+            "Peça para retornarem e dê o seu número: \"Could he call me back? My number is...\"."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-08-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Revisar as frases do telefone e o vocabulário de ligação.",
+        "prompts": ["How do you answer the phone at work?", "What do you say before you hang up?"],
+        "watchFor": [
+          "\"Here is...\" em vez de \"This is...\".",
+          "\"Turn off\" em vez de \"hang up\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-08-rev-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Não desligue, por favor.\"",
+          "accepted": [
+            "Please don't hang up",
+            "Please do not hang up",
+            "Don't hang up, please",
+            "Please hold on",
+            "Hold on, please",
+            "Please stay on the line",
+            "Please hold"
+          ],
+          "commonErrors": [
+            {
+              "id": "turn-off",
+              "match": "\\b(turn off|switch off|disconnect)\\b",
+              "explanation_pt": "\"Desligar\" a ligação é \"hang up\". \"Turn off\" é desligar o aparelho.",
+              "correction_en": "Please don't hang up."
+            },
+            {
+              "id": "no-hang-up",
+              "match": "^(please )?no hang up\\b",
+              "explanation_pt": "Ordem negativa começa com \"Don't\": \"Don't hang up\".",
+              "correction_en": "Please don't hang up."
+            }
+          ]
+        },
+        {
+          "id": "a2-08-rev-2",
+          "kind": "fill",
+          "instruction_pt": "Complete com a palavra que falta.",
+          "sentence": "Sorry, the line is ___. Please call again later.",
+          "accepted": ["busy", "engaged"],
+          "commonErrors": [
+            {
+              "id": "occupied",
+              "match": "^(occupied|full)$",
+              "explanation_pt": "\"A linha está ocupada\" é \"the line is busy\" (ou \"engaged\", no Reino Unido).",
+              "correction_en": "The line is busy."
+            }
+          ]
+        },
+        {
+          "id": "a2-08-rev-3",
+          "kind": "choice",
+          "instruction_pt": "Ao telefone, alguém diz \"Speaking!\". O que isso quer dizer?",
+          "options": [
+            "Sou eu, é ele/ela mesmo quem está falando.",
+            "Fale mais alto.",
+            "Espere um momento."
+          ],
+          "answer": 0,
+          "explanation_pt": "Quando perguntam \"Can I speak to Ana?\" e é a própria Ana, ela responde \"Speaking!\": \"é ela\"."
+        },
+        {
+          "id": "a2-08-rev-4",
+          "kind": "repeat",
+          "instruction_pt": "Para terminar, repita a despedida.",
+          "prompt": "Thanks for calling. Talk to you soon!",
+          "accepted": [
+            "Thanks for calling. Talk to you soon",
+            "Thank you for calling. Talk to you soon"
+          ],
+          "commonErrors": []
+        }
+      ]
+    }
+  ]
+}

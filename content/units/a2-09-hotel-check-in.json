@@ -1,0 +1,502 @@
+{
+  "id": "a2-09-hotel-check-in",
+  "level": "A2",
+  "order": 9,
+  "title_pt": "Check-in no hotel",
+  "title_en": "Hotel check-in",
+  "objective_pt": "Fazer o check-in com uma reserva, perguntar sobre café da manhã, Wi-Fi e horário de saída, e reclamar de um problema simples no quarto.",
+  "blocks": [
+    {
+      "id": "a2-09-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Abrir o tema com experiências em hotéis e a frase de chegada na recepção.",
+        "prompts": ["Do you like staying in hotels?", "What's important for you in a hotel?"],
+        "watchFor": [
+          "\"I have a reserve\" (do \"tenho uma reserva\"); o certo é \"reservation\" ou \"booking\".",
+          "\"Breakfast is included?\" sem inverter a pergunta."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-09-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita em voz alta.",
+          "prompt": "Hi, I have a reservation under the name Silva.",
+          "accepted": [
+            "Hi, I have a reservation under the name Silva",
+            "Hi, I have a reservation in the name of Silva",
+            "Hello, I have a reservation under the name Silva"
+          ],
+          "commonErrors": [
+            {
+              "id": "a-reserve",
+              "match": "\\b(a|one) reserve\\b",
+              "explanation_pt": "\"Reserva\" de hotel é \"reservation\" ou \"booking\". \"Reserve\" é verbo (reservar).",
+              "correction_en": "I have a reservation under the name Silva."
+            }
+          ]
+        },
+        {
+          "id": "a2-09-warm-2",
+          "kind": "choice",
+          "instruction_pt": "Você quer um quarto para você e seu marido, com uma cama de casal. Qual você pede?",
+          "options": ["A double room", "A single room", "A couple room"],
+          "answer": 0,
+          "explanation_pt": "\"Double room\" tem cama de casal. \"Single\" é para uma pessoa, e \"couple room\" não se usa."
+        },
+        {
+          "id": "a2-09-warm-3",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu tenho uma reserva para três noites.\"",
+          "accepted": [
+            "I have a reservation for three nights",
+            "I've got a reservation for three nights",
+            "I have a booking for three nights",
+            "I've got a booking for three nights",
+            "I booked a room for three nights",
+            "I have a reservation for 3 nights",
+            "I made a reservation for three nights"
+          ],
+          "commonErrors": [
+            {
+              "id": "reserve-noun",
+              "match": "\\b(a|one) reserve\\b",
+              "explanation_pt": "O substantivo é \"reservation\" (ou \"booking\"). \"Reserve\" é o verbo.",
+              "correction_en": "I have a reservation for three nights."
+            },
+            {
+              "id": "by-three-nights",
+              "match": "\\b(by|to|during) three nights\\b",
+              "explanation_pt": "Duração da reserva vai com \"for\": \"for three nights\".",
+              "correction_en": "I have a reservation for three nights."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-09-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Aprender as palavras do hotel: front desk, key card, included, check out, towel, wake-up call.",
+        "prompts": [
+          "Is breakfast usually included in hotels in Brazil?",
+          "What time do you usually check out?",
+          "Do you ask for extra towels?"
+        ],
+        "watchFor": [
+          "\"Reception\" está certo, mas nos EUA é mais comum \"front desk\".",
+          "\"The breakfast is incluse?\"; a palavra é \"included\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-09-vocab-1",
+          "kind": "vocab",
+          "word_en": "front desk",
+          "meaning_pt": "recepção (do hotel)",
+          "example_en": "If you need anything, call the front desk."
+        },
+        {
+          "id": "a2-09-vocab-2",
+          "kind": "vocab",
+          "word_en": "included",
+          "meaning_pt": "incluído",
+          "example_en": "Breakfast is included in the price."
+        },
+        {
+          "id": "a2-09-vocab-3",
+          "kind": "vocab",
+          "word_en": "check out",
+          "meaning_pt": "fazer o check-out, sair do hotel",
+          "example_en": "We need to check out before eleven."
+        },
+        {
+          "id": "a2-09-vocab-4",
+          "kind": "match",
+          "instruction_pt": "Ligue cada palavra ao seu significado.",
+          "pairs": [
+            {
+              "en": "key card",
+              "pt": "cartão-chave"
+            },
+            {
+              "en": "towel",
+              "pt": "toalha"
+            },
+            {
+              "en": "pillow",
+              "pt": "travesseiro"
+            },
+            {
+              "en": "floor",
+              "pt": "andar"
+            },
+            {
+              "en": "elevator",
+              "pt": "elevador"
+            }
+          ]
+        },
+        {
+          "id": "a2-09-vocab-5",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"O café da manhã está incluído?\"",
+          "accepted": [
+            "Is breakfast included?",
+            "Is the breakfast included?",
+            "Is breakfast included in the price?",
+            "Does the price include breakfast?",
+            "Does it include breakfast?",
+            "Is breakfast included in the room rate?"
+          ],
+          "commonErrors": [
+            {
+              "id": "no-inversion",
+              "match": "^(the )?breakfast is included\\b",
+              "explanation_pt": "Na pergunta com \"to be\", o \"is\" vem primeiro: \"Is breakfast included?\".",
+              "correction_en": "Is breakfast included?"
+            },
+            {
+              "id": "coffee-of-morning",
+              "match": "\\bcoffee (of|in) the morning\\b",
+              "explanation_pt": "\"Café da manhã\" é uma palavra só: \"breakfast\".",
+              "correction_en": "Is breakfast included?"
+            },
+            {
+              "id": "include-no-ed",
+              "match": "\\bis (the )?breakfast include\\b",
+              "explanation_pt": "\"Incluído\" é \"included\", com \"-ed\".",
+              "correction_en": "Is breakfast included?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-09-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Treinar as palavras \"suite\" (\"suit\": suíte), \"towel\" (\"TAU-ol\") e o \"-ed\" de \"included\" (sílaba a mais).",
+        "prompts": ["Say \"towel\". How many syllables?", "Say \"included\"."],
+        "watchFor": [
+          "\"Suite\" pronunciado \"su-í-te\"; em inglês é \"suít\", igual a \"sweet\".",
+          "\"Hotel\" com a força no começo; em inglês é \"ho-TEL\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-09-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita. \"Included\" termina em \"d\", então o \"-ed\" vira sílaba: \"in-CLU-did\".",
+          "prompt": "Is breakfast included? And is there free Wi-Fi?",
+          "accepted": [
+            "Is breakfast included? And is there free Wi-Fi?",
+            "Is breakfast included? Is there free Wi-Fi?"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "a2-09-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repita. \"Towels\" soa \"TAU-olz\".",
+          "prompt": "Could I have two more towels, please?",
+          "accepted": [
+            "Could I have two more towels, please?",
+            "Can I have two more towels, please?"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "a2-09-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Onde fica a força em \"hotel\" em inglês?",
+          "options": ["ho-TEL", "HO-tel"],
+          "answer": 0,
+          "explanation_pt": "\"Hotel\" tem a força no fim, como em português: \"ho-TEL\". O \"h\" é um sopro suave."
+        }
+      ]
+    },
+    {
+      "id": "a2-09-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Entender as informações da recepção e responder às perguntas do check-in.",
+        "prompts": ["Can I see your passport, please?", "How many nights are you staying?"],
+        "watchFor": [
+          "Confundir \"floor\" (andar) com \"flower\".",
+          "Não entender os números do quarto ditos separados: \"four oh two\" = 402."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-09-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Ouça a recepcionista e escolha a informação certa.",
+          "listen": "Your room is four oh two, on the fourth floor. Breakfast is from seven to ten, and check-out is at eleven.",
+          "options": [
+            "Quarto 402, 4º andar; café das 7 às 10; check-out às 11.",
+            "Quarto 420, 2º andar; café das 7 às 11; check-out às 10.",
+            "Quarto 402, 4º andar; café das 8 às 10; check-out às 12."
+          ],
+          "answer": 0,
+          "explanation_pt": "\"Four oh two\" é 402 (\"oh\" é o zero). \"Fourth floor\" é o 4º andar."
+        },
+        {
+          "id": "a2-09-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e responda que você vai ficar duas noites.",
+          "listen": "How many nights are you staying with us?",
+          "accepted": [
+            "Two nights",
+            "2 nights",
+            "For two nights",
+            "I'm staying for two nights",
+            "I'm staying two nights",
+            "I am staying for two nights",
+            "We're staying for two nights",
+            "Just two nights",
+            "Two nights, please"
+          ],
+          "commonErrors": [
+            {
+              "id": "stay-by",
+              "match": "\\b(by|during|to) two nights\\b",
+              "explanation_pt": "Duração vai com \"for\": \"for two nights\".",
+              "correction_en": "I'm staying for two nights."
+            },
+            {
+              "id": "two-night",
+              "match": "\\btwo night$",
+              "explanation_pt": "Plural: \"two nights\", com \"s\".",
+              "correction_en": "Two nights."
+            }
+          ]
+        },
+        {
+          "id": "a2-09-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e diga que o ar-condicionado não está funcionando.",
+          "listen": "Front desk, how can I help you?",
+          "accepted": [
+            "The air conditioning isn't working",
+            "The air conditioning is not working",
+            "The air conditioning doesn't work",
+            "The air conditioner isn't working",
+            "The air conditioner doesn't work",
+            "The AC isn't working",
+            "The AC doesn't work",
+            "Hi, the air conditioning in my room isn't working",
+            "Hello, the air conditioning isn't working",
+            "The air conditioning in my room doesn't work",
+            "There's a problem with the air conditioning. It isn't working"
+          ],
+          "commonErrors": [
+            {
+              "id": "not-functioning",
+              "match": "\\b(functioning|function)\\b",
+              "explanation_pt": "Para aparelho, \"funcionar\" no dia a dia é \"work\": \"It isn't working\".",
+              "correction_en": "The air conditioning isn't working."
+            },
+            {
+              "id": "air-conditioned",
+              "match": "\\bthe air conditioned\\b",
+              "explanation_pt": "O aparelho é \"air conditioning\" ou \"air conditioner\". \"Air-conditioned\" é um adjetivo (climatizado).",
+              "correction_en": "The air conditioning isn't working."
+            },
+            {
+              "id": "no-working",
+              "match": "\\bno (is )?working\\b",
+              "explanation_pt": "A negação é \"isn't working\" ou \"doesn't work\".",
+              "correction_en": "The air conditioning isn't working."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-09-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Fazer o check-in completo e resolver um pedido ou um problema na recepção.",
+        "prompts": [
+          "Good evening, welcome to the Grand Hotel. Do you have a reservation?",
+          "Could you fill in this form, please?",
+          "Is there anything else I can help you with?"
+        ],
+        "watchFor": [
+          "\"What time is the check-out?\" está certo, mas \"What time is check-out?\" é mais natural.",
+          "\"Can you wake me up at seven?\" está ok; \"Could I have a wake-up call at seven?\" é o padrão de hotel.",
+          "\"Is possible to...?\" sem o \"it\": \"Is it possible to...?\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-09-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"A que horas é o check-out?\"",
+          "accepted": [
+            "What time is check-out?",
+            "What time is the check-out?",
+            "When is check-out?",
+            "What time do we have to check out?",
+            "What time do I have to check out?",
+            "What time do I need to check out?"
+          ],
+          "commonErrors": [
+            {
+              "id": "what-hour",
+              "match": "^(at )?what hours?\\b",
+              "explanation_pt": "\"A que horas\" é \"What time\".",
+              "correction_en": "What time is check-out?"
+            },
+            {
+              "id": "check-out-is",
+              "match": "^what time (the )?check ?out is\\b",
+              "explanation_pt": "Na pergunta, o \"is\" vem antes: \"What time is check-out?\".",
+              "correction_en": "What time is check-out?"
+            }
+          ]
+        },
+        {
+          "id": "a2-09-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"É possível deixar as malas aqui depois do check-out?\"",
+          "accepted": [
+            "Is it possible to leave our bags here after check-out?",
+            "Is it possible to leave my bags here after check-out?",
+            "Is it possible to leave the bags here after check-out?",
+            "Can I leave my bags here after check-out?",
+            "Can we leave our bags here after check-out?",
+            "Could I leave my luggage here after check-out?",
+            "Can I leave my luggage here after I check out?",
+            "Is it possible to leave our luggage here after check-out?"
+          ],
+          "commonErrors": [
+            {
+              "id": "is-possible",
+              "match": "^is possible\\b",
+              "explanation_pt": "Em inglês a frase precisa do sujeito \"it\": \"Is it possible to...?\".",
+              "correction_en": "Is it possible to leave our bags here after check-out?"
+            },
+            {
+              "id": "luggages",
+              "match": "\\bluggages\\b",
+              "explanation_pt": "\"Luggage\" não tem plural. Diga \"my luggage\" ou \"my bags\".",
+              "correction_en": "Can I leave my luggage here after check-out?"
+            },
+            {
+              "id": "malls",
+              "match": "\\b(malls|mails)\\b",
+              "explanation_pt": "\"Malas\" são \"bags\" ou \"suitcases\". \"Mall\" é shopping.",
+              "correction_en": "Can I leave my bags here after check-out?"
+            }
+          ]
+        },
+        {
+          "id": "a2-09-conv-3",
+          "kind": "order",
+          "instruction_pt": "Coloque as palavras na ordem certa para formar a pergunta.",
+          "accepted": ["Could I have a wake up call at seven"]
+        },
+        {
+          "id": "a2-09-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Você chega ao hotel. Faça o check-in e tire duas dúvidas com a recepcionista.",
+          "prompt_en": "Good evening and welcome to the Ocean View Hotel! Do you have a reservation with us? And how can I help you?",
+          "guidelines_pt": [
+            "Diga que tem reserva e em nome de quem: \"Yes, I have a reservation under the name...\".",
+            "Diga quantas noites vai ficar: \"for... nights\".",
+            "Faça 2 perguntas: café da manhã, Wi-Fi, horário do check-out ou onde fica o elevador."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-09-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Revisar as perguntas de hotel e o vocabulário de quarto.",
+        "prompts": [
+          "What do you ask when you arrive at a hotel?",
+          "What do you say if something in the room is broken?"
+        ],
+        "watchFor": ["\"A reserve\" em vez de \"a reservation\".", "\"Is possible\" sem \"it\"."]
+      },
+      "exercises": [
+        {
+          "id": "a2-09-rev-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Tem Wi-Fi no quarto?\"",
+          "accepted": [
+            "Is there Wi-Fi in the room?",
+            "Is there Wi-Fi in the rooms?",
+            "Does the room have Wi-Fi?",
+            "Is there free Wi-Fi in the room?",
+            "Do you have Wi-Fi in the rooms?"
+          ],
+          "commonErrors": [
+            {
+              "id": "have-wifi",
+              "match": "^(has|have) (wi fi|wifi)\\b",
+              "explanation_pt": "\"Tem...?\" (existe) é \"Is there...?\". Ou use \"Does the room have...?\".",
+              "correction_en": "Is there Wi-Fi in the room?"
+            },
+            {
+              "id": "the-room-has",
+              "match": "^the room has\\b",
+              "explanation_pt": "Para perguntar, comece com \"Does\": \"Does the room have Wi-Fi?\".",
+              "correction_en": "Does the room have Wi-Fi?"
+            }
+          ]
+        },
+        {
+          "id": "a2-09-rev-2",
+          "kind": "fill",
+          "instruction_pt": "Complete com a preposição certa.",
+          "sentence": "Your room is ___ the third floor.",
+          "accepted": ["on"],
+          "commonErrors": [
+            {
+              "id": "in-floor",
+              "match": "^(in|at)$",
+              "explanation_pt": "Andar de prédio vai com \"on\": \"on the third floor\".",
+              "correction_en": "Your room is on the third floor."
+            }
+          ]
+        },
+        {
+          "id": "a2-09-rev-3",
+          "kind": "choice",
+          "instruction_pt": "O que é um \"wake-up call\" no hotel?",
+          "options": [
+            "Uma ligação para te acordar.",
+            "Uma ligação de reclamação.",
+            "O despertador do celular."
+          ],
+          "answer": 0,
+          "explanation_pt": "A recepção liga para o quarto no horário pedido para te acordar."
+        },
+        {
+          "id": "a2-09-rev-4",
+          "kind": "repeat",
+          "instruction_pt": "Para terminar, repita.",
+          "prompt": "Thank you. Have a nice evening!",
+          "accepted": [
+            "Thank you. Have a nice evening",
+            "Thanks. Have a nice evening",
+            "Thank you. Have a good evening"
+          ],
+          "commonErrors": []
+        }
+      ]
+    }
+  ]
+}

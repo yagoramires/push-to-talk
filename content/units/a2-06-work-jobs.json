@@ -1,0 +1,460 @@
+{
+  "id": "a2-06-work-jobs",
+  "level": "A2",
+  "order": 6,
+  "title_pt": "Trabalho e profissões",
+  "title_en": "Work and jobs",
+  "objective_pt": "Dizer qual é o seu trabalho e onde trabalha (\"I'm a nurse\", \"I work in marketing\"), descrever o que você faz no dia a dia e perguntar \"What do you do?\".",
+  "blocks": [
+    {
+      "id": "a2-06-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Perguntar e responder sobre profissão, com o artigo \"a/an\".",
+        "prompts": ["What do you do?", "Do you like your job?"],
+        "watchFor": [
+          "\"I am engineer\" sem o artigo; em inglês a profissão leva \"a/an\".",
+          "Responder \"What do you do?\" com \"I do...\"; a resposta é a profissão: \"I'm a...\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-06-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita a pergunta e a resposta.",
+          "prompt": "What do you do? I'm an engineer.",
+          "accepted": ["What do you do? I'm an engineer", "What do you do? I am an engineer"],
+          "commonErrors": [
+            {
+              "id": "no-article",
+              "match": "\\bi am engineer\\b",
+              "explanation_pt": "Profissão em inglês leva artigo: \"I'm an engineer\".",
+              "correction_en": "I'm an engineer."
+            }
+          ]
+        },
+        {
+          "id": "a2-06-warm-2",
+          "kind": "choice",
+          "instruction_pt": "Alguém pergunta \"What do you do?\". O que a pessoa quer saber?",
+          "options": [
+            "Qual é a sua profissão.",
+            "O que você está fazendo agora.",
+            "O que você faz no fim de semana."
+          ],
+          "answer": 0,
+          "explanation_pt": "\"What do you do?\" é o jeito comum de perguntar a profissão. \"What are you doing?\" é o que você está fazendo agora."
+        },
+        {
+          "id": "a2-06-warm-3",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu sou professora.\"",
+          "accepted": [
+            "I'm a teacher",
+            "I am a teacher",
+            "I work as a teacher",
+            "I'm a teacher by profession"
+          ],
+          "commonErrors": [
+            {
+              "id": "no-article-teacher",
+              "match": "^i am teacher\\b",
+              "explanation_pt": "Falta o artigo: em inglês a profissão leva \"a/an\": \"I'm a teacher\".",
+              "correction_en": "I'm a teacher."
+            },
+            {
+              "id": "professor",
+              "match": "\\bprofessor\\b",
+              "explanation_pt": "\"Professor\" em inglês é professor universitário. Para escola, use \"teacher\".",
+              "correction_en": "I'm a teacher."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-06-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Aprender palavras de trabalho: colleague, boss, full-time, shift, work from home, in charge of.",
+        "prompts": [
+          "Do you work full-time or part-time?",
+          "Do you work from home?",
+          "What's your boss like?"
+        ],
+        "watchFor": [
+          "\"I work in home\" em vez de \"I work from home\".",
+          "Usar \"pretend\" achando que é \"pretender\"; \"pretend\" é fingir, e \"pretender\" é \"intend\" ou \"plan\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-06-vocab-1",
+          "kind": "vocab",
+          "word_en": "colleague",
+          "meaning_pt": "colega de trabalho",
+          "example_en": "I have lunch with my colleagues every day."
+        },
+        {
+          "id": "a2-06-vocab-2",
+          "kind": "vocab",
+          "word_en": "work from home",
+          "meaning_pt": "trabalhar de casa",
+          "example_en": "I work from home on Mondays and Fridays."
+        },
+        {
+          "id": "a2-06-vocab-3",
+          "kind": "vocab",
+          "word_en": "in charge of",
+          "meaning_pt": "responsável por",
+          "example_en": "She's in charge of the sales team."
+        },
+        {
+          "id": "a2-06-vocab-4",
+          "kind": "match",
+          "instruction_pt": "Ligue cada palavra ao seu significado.",
+          "pairs": [
+            { "en": "boss", "pt": "chefe" },
+            { "en": "salary", "pt": "salário" },
+            { "en": "shift", "pt": "turno" },
+            { "en": "full-time", "pt": "tempo integral" },
+            { "en": "meeting", "pt": "reunião" }
+          ]
+        },
+        {
+          "id": "a2-06-vocab-5",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu trabalho de casa duas vezes por semana.\"",
+          "accepted": [
+            "I work from home twice a week",
+            "I work from home two times a week",
+            "I work from home two days a week",
+            "Twice a week I work from home",
+            "I work at home twice a week",
+            "I work remotely twice a week"
+          ],
+          "commonErrors": [
+            {
+              "id": "in-home",
+              "match": "\\bwork (in|of) home\\b",
+              "explanation_pt": "\"Trabalhar de casa\" é \"work from home\".",
+              "correction_en": "I work from home twice a week."
+            },
+            {
+              "id": "per-week",
+              "match": "\\b(two times|twice) (for|by) week\\b",
+              "explanation_pt": "\"Por semana\" é \"a week\": \"twice a week\".",
+              "correction_en": "I work from home twice a week."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-06-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Treinar palavras de trabalho que brasileiros costumam pronunciar errado: \"colleague\" (\"KÓ-lig\"), \"company\" (\"KÂM-pa-ni\") e \"engineer\" (força no fim).",
+        "prompts": ["Say \"colleague\". Where is the stress?", "Say \"engineer\" slowly."],
+        "watchFor": [
+          "\"Colleague\" como \"co-LÉ-gue\".",
+          "\"Engineer\" com a força no começo: \"EN-gi-neer\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-06-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita. \"Colleague\" tem duas sílabas e a força no começo: \"KÓ-lig\".",
+          "prompt": "My colleagues are really friendly.",
+          "accepted": ["My colleagues are really friendly"],
+          "commonErrors": []
+        },
+        {
+          "id": "a2-06-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repita. A força de \"engineer\" fica no fim: \"en-gi-NEER\".",
+          "prompt": "She's an engineer at a big company.",
+          "accepted": ["She's an engineer at a big company", "She is an engineer at a big company"],
+          "commonErrors": []
+        },
+        {
+          "id": "a2-06-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Em qual sílaba fica a força de \"engineer\"?",
+          "options": ["Na última: en-gi-NEER", "Na primeira: EN-gi-neer", "Na do meio: en-GI-neer"],
+          "answer": 0,
+          "explanation_pt": "Palavras terminadas em \"-eer\" têm a força no fim: \"engiNEER\", \"volunTEER\", \"caREER\"."
+        }
+      ]
+    },
+    {
+      "id": "a2-06-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Entender alguém descrevendo o próprio trabalho e responder perguntas sobre a rotina de trabalho.",
+        "prompts": ["Where do you work?", "What time do you start work?"],
+        "watchFor": [
+          "\"I work in a company of software\"; o natural é \"a software company\".",
+          "\"I enter at eight\" (do \"eu entro às oito\"); o certo é \"I start at eight\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-06-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Ouça e escolha o trabalho do Mark.",
+          "listen": "I'm a nurse. I work at a big hospital downtown. I usually work the night shift, from eight p.m. to six a.m.",
+          "options": [
+            "Enfermeiro, no turno da noite num hospital.",
+            "Médico, de manhã numa clínica.",
+            "Enfermeiro, no turno da manhã numa escola."
+          ],
+          "answer": 0,
+          "explanation_pt": "\"Nurse\" é enfermeiro e \"night shift\" é o turno da noite."
+        },
+        {
+          "id": "a2-06-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e responda que você trabalha numa empresa de software.",
+          "listen": "Where do you work?",
+          "accepted": [
+            "I work for a software company",
+            "I work at a software company",
+            "I work in a software company",
+            "At a software company",
+            "For a software company",
+            "I work for a software company downtown",
+            "I work in software"
+          ],
+          "commonErrors": [
+            {
+              "id": "company-of-software",
+              "match": "\\bcompany of software\\b",
+              "explanation_pt": "Em inglês o tipo vem antes: \"a software company\".",
+              "correction_en": "I work for a software company."
+            },
+            {
+              "id": "enterprise",
+              "match": "\\benterprise\\b",
+              "explanation_pt": "\"Empresa\" no dia a dia é \"company\". \"Enterprise\" soa formal ou de grande corporação.",
+              "correction_en": "I work for a software company."
+            }
+          ]
+        },
+        {
+          "id": "a2-06-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e responda que você começa às nove e termina às seis.",
+          "listen": "What are your working hours?",
+          "accepted": [
+            "I start at nine and finish at six",
+            "I start at 9 and finish at 6",
+            "I start at nine and I finish at six",
+            "I work from nine to six",
+            "I work from 9 to 6",
+            "From nine to six",
+            "Nine to six",
+            "I start work at nine and finish at six",
+            "I start at nine and leave at six",
+            "I start at nine and end at six",
+            "I work nine to six"
+          ],
+          "commonErrors": [
+            {
+              "id": "enter-at",
+              "match": "\\bi enter\\b",
+              "explanation_pt": "\"Entrar\" no trabalho é \"start\" (começar). \"Enter\" é entrar fisicamente num lugar.",
+              "correction_en": "I start at nine and finish at six."
+            },
+            {
+              "id": "in-nine",
+              "match": "\\b(in|on) nine\\b",
+              "explanation_pt": "Horário leva \"at\": \"at nine\".",
+              "correction_en": "I start at nine and finish at six."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-06-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Descrever o próprio trabalho: o que faz, onde, com quem e do que gosta.",
+        "prompts": [
+          "What do you do, and where do you work?",
+          "What do you do on a typical day at work?",
+          "What do you like most about your job?"
+        ],
+        "watchFor": [
+          "\"I work with marketing\" (do \"trabalho com marketing\"); o natural é \"I work in marketing\".",
+          "\"I work here since 2020\"; o certo é \"I've worked here since 2020\".",
+          "Esquecer o \"-s\" na 3ª pessoa: \"My boss work...\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-06-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu trabalho com marketing.\"",
+          "accepted": [
+            "I work in marketing",
+            "I work in the marketing department",
+            "I'm in marketing",
+            "I work in the marketing area",
+            "I work in the marketing field"
+          ],
+          "commonErrors": [
+            {
+              "id": "work-with-area",
+              "match": "\\bi work with marketing\\b",
+              "explanation_pt": "Para área de atuação usamos \"in\": \"I work in marketing\". \"Work with\" é trabalhar junto com algo ou alguém.",
+              "correction_en": "I work in marketing."
+            }
+          ]
+        },
+        {
+          "id": "a2-06-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Minha chefe é responsável pela equipe de vendas.\"",
+          "accepted": [
+            "My boss is in charge of the sales team",
+            "My boss is responsible for the sales team",
+            "My boss manages the sales team",
+            "My boss runs the sales team",
+            "My boss leads the sales team",
+            "My manager is in charge of the sales team",
+            "My manager is responsible for the sales team"
+          ],
+          "commonErrors": [
+            {
+              "id": "responsible-by",
+              "match": "\\bresponsible (by|of|about)\\b",
+              "explanation_pt": "\"Responsável por\" é \"responsible for\".",
+              "correction_en": "My boss is responsible for the sales team."
+            },
+            {
+              "id": "team-of-sales",
+              "match": "\\bteam of sales\\b",
+              "explanation_pt": "O tipo vem antes: \"the sales team\".",
+              "correction_en": "My boss is in charge of the sales team."
+            },
+            {
+              "id": "chef",
+              "match": "\\bmy chef\\b",
+              "explanation_pt": "\"Chef\" é o cozinheiro-chefe. \"Chefe\" no trabalho é \"boss\" ou \"manager\".",
+              "correction_en": "My boss is in charge of the sales team."
+            }
+          ]
+        },
+        {
+          "id": "a2-06-conv-3",
+          "kind": "order",
+          "instruction_pt": "Coloque as palavras na ordem certa para formar a frase.",
+          "accepted": ["I have worked here for three years", "I have worked for three years here"]
+        },
+        {
+          "id": "a2-06-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Você está num evento e conheceu alguém. Fale sobre o seu trabalho (ou estudo).",
+          "prompt_en": "Hi, nice to meet you! I'm a graphic designer. I work for a small agency. So, what do you do? Do you like your job?",
+          "guidelines_pt": [
+            "Diga a profissão e onde trabalha: \"I'm a... I work for / at...\".",
+            "Conte 2 coisas que você faz no dia a dia: \"I answer emails, I have meetings...\".",
+            "Diga do que gosta ou não: \"I like... but...\" e pergunte algo de volta."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-06-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Revisar profissões com artigo, \"work in/for/at\" e falsos cognatos do trabalho.",
+        "prompts": ["What does your best friend do?", "Who is in charge at your work?"],
+        "watchFor": ["\"She is doctor\" sem artigo.", "\"She work\" sem \"-s\"."]
+      },
+      "exercises": [
+        {
+          "id": "a2-06-rev-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Minha irmã é advogada e trabalha num escritório grande.\"",
+          "accepted": [
+            "My sister is a lawyer and works in a big office",
+            "My sister is a lawyer and she works in a big office",
+            "My sister is a lawyer and works at a big office",
+            "My sister's a lawyer and she works in a big office",
+            "My sister is a lawyer and works for a big firm",
+            "My sister is a lawyer and works at a big law firm",
+            "My sister is a lawyer and she works at a big law firm"
+          ],
+          "commonErrors": [
+            {
+              "id": "sister-is-lawyer",
+              "match": "\\bis lawyer\\b",
+              "explanation_pt": "Profissão leva artigo: \"She is a lawyer\".",
+              "correction_en": "My sister is a lawyer and works in a big office."
+            },
+            {
+              "id": "she-work",
+              "match": "\\b(and|she) work in\\b",
+              "explanation_pt": "Com \"she\" o verbo no presente leva \"-s\": \"she works\".",
+              "correction_en": "My sister is a lawyer and she works in a big office."
+            },
+            {
+              "id": "advocate",
+              "match": "\\badvocate\\b",
+              "explanation_pt": "\"Advogado\" é \"lawyer\" (ou \"attorney\"). \"Advocate\" é defensor de uma causa.",
+              "correction_en": "My sister is a lawyer."
+            }
+          ]
+        },
+        {
+          "id": "a2-06-rev-2",
+          "kind": "fill",
+          "instruction_pt": "Complete com o artigo certo.",
+          "sentence": "He's ___ architect.",
+          "accepted": ["an"],
+          "commonErrors": [
+            {
+              "id": "a-architect",
+              "match": "^a$",
+              "explanation_pt": "Antes de som de vogal usamos \"an\": \"an architect\".",
+              "correction_en": "He's an architect."
+            }
+          ]
+        },
+        {
+          "id": "a2-06-rev-3",
+          "kind": "choice",
+          "instruction_pt": "Qual frase quer dizer \"Eu pretendo mudar de emprego\"?",
+          "options": [
+            "I'm planning to change jobs.",
+            "I pretend to change jobs.",
+            "I'm pretending to change jobs."
+          ],
+          "answer": 0,
+          "explanation_pt": "Falso cognato: \"pretend\" é fingir. \"Pretender\" é \"plan\" ou \"intend\"."
+        },
+        {
+          "id": "a2-06-rev-4",
+          "kind": "repeat",
+          "instruction_pt": "Para terminar, repita.",
+          "prompt": "I really enjoy my job, but it's very busy.",
+          "accepted": [
+            "I really enjoy my job, but it's very busy",
+            "I really enjoy my job, but it is very busy"
+          ],
+          "commonErrors": []
+        }
+      ]
+    }
+  ]
+}

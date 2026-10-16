@@ -1,0 +1,534 @@
+{
+  "id": "a2-11-comparing-things",
+  "level": "A2",
+  "order": 11,
+  "title_pt": "Comparando coisas",
+  "title_en": "Comparing things",
+  "objective_pt": "Comparar produtos, lugares e opções com comparativos e superlativos (\"cheaper than\", \"more comfortable\", \"the best\") e dizer qual você prefere e por quê.",
+  "blocks": [
+    {
+      "id": "a2-11-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Comparar duas coisas do dia a dia e introduzir \"-er than\".",
+        "prompts": ["Which is better, coffee or tea?", "Is your city bigger or smaller than Rio?"],
+        "watchFor": [
+          "\"More big\" em vez de \"bigger\".",
+          "\"Bigger that\" ou \"bigger of\"; depois do comparativo vem \"than\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-11-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita em voz alta.",
+          "prompt": "The train is faster than the bus.",
+          "accepted": ["The train is faster than the bus", "The train's faster than the bus"],
+          "commonErrors": [
+            {
+              "id": "more-fast",
+              "match": "\\bmore fast\\b",
+              "explanation_pt": "Adjetivo curto ganha \"-er\": \"faster\", e não \"more fast\".",
+              "correction_en": "The train is faster than the bus."
+            }
+          ]
+        },
+        {
+          "id": "a2-11-warm-2",
+          "kind": "choice",
+          "instruction_pt": "Qual é o comparativo de \"good\"?",
+          "options": ["better", "gooder", "more good"],
+          "answer": 0,
+          "explanation_pt": "\"Good\" é irregular: \"good, better, the best\". O mesmo com \"bad, worse, the worst\"."
+        },
+        {
+          "id": "a2-11-warm-3",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"São Paulo é maior do que o Rio.\"",
+          "accepted": [
+            "São Paulo is bigger than Rio",
+            "Sao Paulo is bigger than Rio",
+            "São Paulo is larger than Rio",
+            "Sao Paulo is larger than Rio",
+            "São Paulo's bigger than Rio",
+            "São Paulo is bigger than Rio de Janeiro",
+            "Sao Paulo is bigger than Rio de Janeiro"
+          ],
+          "commonErrors": [
+            {
+              "id": "more-big",
+              "match": "\\bmore (big|bigger|large)\\b",
+              "explanation_pt": "\"Big\" é curto: o comparativo é \"bigger\" (dobra o \"g\"), sem \"more\".",
+              "correction_en": "São Paulo is bigger than Rio."
+            },
+            {
+              "id": "than-that",
+              "match": "\\bbigger (that|of|of what|than what)\\b",
+              "explanation_pt": "\"Do que\" no comparativo é só \"than\".",
+              "correction_en": "São Paulo is bigger than Rio."
+            },
+            {
+              "id": "major",
+              "match": "\\bmajor\\b",
+              "explanation_pt": "\"Maior\" (tamanho) é \"bigger\". \"Major\" é principal, importante.",
+              "correction_en": "São Paulo is bigger than Rio."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-11-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Aprender adjetivos para comparar: cheap, expensive, comfortable, crowded, quiet, worse, as... as.",
+        "prompts": [
+          "Is it cheaper to eat at home or at a restaurant?",
+          "Which is more comfortable, a bus or a car?",
+          "What's the most crowded place in your city?"
+        ],
+        "watchFor": [
+          "\"Comfortable\" com quatro sílabas fortes (\"com-for-TÁ-bol\"); em inglês é \"KUMF-ta-bol\".",
+          "\"More cheap\" em vez de \"cheaper\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-11-vocab-1",
+          "kind": "vocab",
+          "word_en": "cheaper",
+          "meaning_pt": "mais barato",
+          "example_en": "This phone is cheaper than that one."
+        },
+        {
+          "id": "a2-11-vocab-2",
+          "kind": "vocab",
+          "word_en": "crowded",
+          "meaning_pt": "lotado, cheio de gente",
+          "example_en": "The beach is more crowded on weekends."
+        },
+        {
+          "id": "a2-11-vocab-3",
+          "kind": "vocab",
+          "word_en": "as... as",
+          "meaning_pt": "tão... quanto",
+          "example_en": "My new apartment isn't as big as my old one."
+        },
+        {
+          "id": "a2-11-vocab-4",
+          "kind": "match",
+          "instruction_pt": "Ligue cada palavra ao seu significado.",
+          "pairs": [
+            {
+              "en": "worse",
+              "pt": "pior"
+            },
+            {
+              "en": "quieter",
+              "pt": "mais tranquilo"
+            },
+            {
+              "en": "more expensive",
+              "pt": "mais caro"
+            },
+            {
+              "en": "the cheapest",
+              "pt": "o mais barato"
+            },
+            {
+              "en": "the best",
+              "pt": "o melhor"
+            }
+          ]
+        },
+        {
+          "id": "a2-11-vocab-5",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Este hotel é mais caro do que aquele.\"",
+          "accepted": [
+            "This hotel is more expensive than that one",
+            "This hotel is more expensive than that hotel",
+            "This hotel is more expensive than that",
+            "This hotel's more expensive than that one",
+            "This hotel costs more than that one"
+          ],
+          "commonErrors": [
+            {
+              "id": "expensiver",
+              "match": "\\bexpensiver\\b",
+              "explanation_pt": "Adjetivo longo usa \"more\": \"more expensive\".",
+              "correction_en": "This hotel is more expensive than that one."
+            },
+            {
+              "id": "more-expensive-that",
+              "match": "\\bexpensive (that|of|of what)\\b",
+              "explanation_pt": "\"Do que\" é \"than\": \"more expensive than\".",
+              "correction_en": "This hotel is more expensive than that one."
+            },
+            {
+              "id": "more-caro",
+              "match": "\\bmore (dear|costly)\\b",
+              "explanation_pt": "No dia a dia, \"caro\" é \"expensive\".",
+              "correction_en": "This hotel is more expensive than that one."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-11-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Treinar o \"than\" fraco (\"dhan\", com a língua entre os dentes) e a pronúncia curta de \"comfortable\".",
+        "prompts": [
+          "Say \"bigger than\" fast.",
+          "Say \"comfortable\". How many syllables do you hear?"
+        ],
+        "watchFor": [
+          "Dizer \"than\" como \"dan\" ou \"zan\"; o \"th\" aqui é sonoro, com a língua entre os dentes.",
+          "\"Comfortable\" com o \"or\" forte; o natural é \"KUMF-ta-bol\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-11-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita. O \"th\" de \"than\" é sonoro: língua entre os dentes e a garganta vibrando.",
+          "prompt": "My sister is older than me.",
+          "accepted": [
+            "My sister is older than me",
+            "My sister is older than I am",
+            "My sister's older than me"
+          ],
+          "commonErrors": [
+            {
+              "id": "more-old",
+              "match": "\\bmore old\\b",
+              "explanation_pt": "\"Old\" é curto: \"older\".",
+              "correction_en": "My sister is older than me."
+            }
+          ]
+        },
+        {
+          "id": "a2-11-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repita. \"Comfortable\" soa \"KUMF-ta-bol\": três sílabas, força no começo.",
+          "prompt": "This sofa is more comfortable than the old one.",
+          "accepted": [
+            "This sofa is more comfortable than the old one",
+            "This sofa's more comfortable than the old one"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "a2-11-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Em qual sílaba fica a força de \"comfortable\"?",
+          "options": [
+            "Na primeira: KUMF-ta-bol",
+            "Na terceira: com-for-TA-ble",
+            "Na última: com-for-ta-BLE"
+          ],
+          "answer": 0,
+          "explanation_pt": "\"Comfortable\" tem a força no começo e, na fala, o \"or\" quase some: \"KUMF-ta-bol\"."
+        }
+      ]
+    },
+    {
+      "id": "a2-11-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Entender uma comparação entre opções e responder qual você prefere e por quê.",
+        "prompts": [
+          "Which do you prefer, the city or the countryside?",
+          "What's the best restaurant you know?"
+        ],
+        "watchFor": [
+          "\"I prefer the city than the countryside\"; com \"prefer\" usamos \"to\": \"I prefer the city to the countryside\".",
+          "\"The best of the city\"; com lugar usamos \"in\": \"the best in the city\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-11-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Ouça e escolha qual apartamento o Leo prefere e por quê.",
+          "listen": "The first apartment is bigger, but the second one is cheaper and closer to my office. So I prefer the second one.",
+          "options": [
+            "O segundo, porque é mais barato e mais perto do escritório.",
+            "O primeiro, porque é maior.",
+            "O segundo, porque é maior e mais novo."
+          ],
+          "answer": 0,
+          "explanation_pt": "\"Cheaper and closer to my office\": mais barato e mais perto do escritório. O primeiro é maior, mas ele prefere o segundo."
+        },
+        {
+          "id": "a2-11-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e responda que você prefere o trem, porque é mais rápido.",
+          "listen": "Which do you prefer, the bus or the train?",
+          "accepted": [
+            "I prefer the train because it's faster",
+            "I prefer the train because it is faster",
+            "I prefer the train. It's faster",
+            "The train, because it's faster",
+            "The train. It's faster",
+            "I'd prefer the train because it's faster",
+            "I prefer the train because it's quicker",
+            "The train, because it's quicker",
+            "I like the train better because it's faster"
+          ],
+          "commonErrors": [
+            {
+              "id": "more-fast",
+              "match": "\\bmore (fast|quick)\\b",
+              "explanation_pt": "\"Fast\" é curto: \"faster\", sem \"more\".",
+              "correction_en": "I prefer the train because it's faster."
+            },
+            {
+              "id": "because-is",
+              "match": "\\bbecause is\\b",
+              "explanation_pt": "Falta o sujeito: \"because it is faster\" (ou \"because it's faster\").",
+              "correction_en": "I prefer the train because it's faster."
+            }
+          ]
+        },
+        {
+          "id": "a2-11-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e responda que é o mais bonito do mundo (use \"the most beautiful\").",
+          "listen": "What do you think of Rio de Janeiro?",
+          "accepted": [
+            "I think it's the most beautiful city in the world",
+            "It's the most beautiful city in the world",
+            "I think it is the most beautiful city in the world",
+            "It's the most beautiful place in the world",
+            "I think it's the most beautiful place in the world",
+            "In my opinion, it's the most beautiful city in the world",
+            "It's the most beautiful city in the world, I think"
+          ],
+          "commonErrors": [
+            {
+              "id": "of-the-world",
+              "match": "\\bof the world\\b",
+              "explanation_pt": "No superlativo, \"do mundo\" vira \"in the world\".",
+              "correction_en": "It's the most beautiful city in the world."
+            },
+            {
+              "id": "beautifulest",
+              "match": "\\b(beautifulest|more beautiful city)\\b",
+              "explanation_pt": "Adjetivo longo: \"the most beautiful\" no superlativo.",
+              "correction_en": "It's the most beautiful city in the world."
+            },
+            {
+              "id": "is-the-most-no-it",
+              "match": "^(i think )?is the most\\b",
+              "explanation_pt": "Falta o sujeito: \"It's the most beautiful...\".",
+              "correction_en": "It's the most beautiful city in the world."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-11-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Comparar duas opções reais (dois celulares, duas cidades, dois empregos) e justificar a escolha.",
+        "prompts": [
+          "Which is better, living in a house or in an apartment? Why?",
+          "Compare your city with another city you know.",
+          "What's the best thing you bought this year?"
+        ],
+        "watchFor": [
+          "\"More better\" ou \"most best\" (comparativo duplo).",
+          "\"I prefer X than Y\" em vez de \"I prefer X to Y\".",
+          "\"The same of\" em vez de \"the same as\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-11-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Este é o melhor restaurante da cidade.\"",
+          "accepted": [
+            "This is the best restaurant in the city",
+            "This is the best restaurant in town",
+            "This is the best restaurant in the town",
+            "This is the best restaurant in this city",
+            "It's the best restaurant in the city",
+            "This restaurant is the best in the city",
+            "This restaurant is the best in town"
+          ],
+          "commonErrors": [
+            {
+              "id": "of-the-city",
+              "match": "\\bbest (restaurant )?of the (city|town)\\b",
+              "explanation_pt": "No superlativo com lugar usamos \"in\": \"the best restaurant in the city\".",
+              "correction_en": "This is the best restaurant in the city."
+            },
+            {
+              "id": "most-good",
+              "match": "\\b(most good|more good|most better|more better)\\b",
+              "explanation_pt": "\"Good\" é irregular: \"better\" e \"the best\".",
+              "correction_en": "This is the best restaurant in the city."
+            },
+            {
+              "id": "better-restaurant",
+              "match": "\\bthe better restaurant\\b",
+              "explanation_pt": "\"O melhor\" de todos é o superlativo \"the best\". \"Better\" compara só dois.",
+              "correction_en": "This is the best restaurant in the city."
+            }
+          ]
+        },
+        {
+          "id": "a2-11-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Meu celular novo não é tão bom quanto o antigo.\"",
+          "accepted": [
+            "My new phone isn't as good as my old one",
+            "My new phone is not as good as my old one",
+            "My new phone isn't as good as the old one",
+            "My new cell phone isn't as good as my old one",
+            "My new phone isn't as good as my old phone",
+            "My new mobile isn't as good as my old one",
+            "My new phone is worse than my old one",
+            "My new phone's not as good as my old one"
+          ],
+          "commonErrors": [
+            {
+              "id": "so-good-as",
+              "match": "\\b(so|too) good (as|than|like)\\b",
+              "explanation_pt": "\"Tão... quanto\" é \"as... as\": \"not as good as\".",
+              "correction_en": "My new phone isn't as good as my old one."
+            },
+            {
+              "id": "as-good-than",
+              "match": "\\bas good (than|like|that)\\b",
+              "explanation_pt": "A estrutura é \"as... as\", com \"as\" nos dois lados.",
+              "correction_en": "My new phone isn't as good as my old one."
+            },
+            {
+              "id": "celular",
+              "match": "\\b(celular|cellular)\\b",
+              "explanation_pt": "\"Celular\" é \"phone\", \"cell phone\" (EUA) ou \"mobile\" (Reino Unido).",
+              "correction_en": "My new phone isn't as good as my old one."
+            }
+          ]
+        },
+        {
+          "id": "a2-11-conv-3",
+          "kind": "order",
+          "instruction_pt": "Coloque as palavras na ordem certa para formar a frase.",
+          "accepted": [
+            "I prefer tea to coffee in the morning",
+            "In the morning I prefer tea to coffee"
+          ]
+        },
+        {
+          "id": "a2-11-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "A Sam está em dúvida entre duas cidades para as férias. Compare duas opções e dê a sua recomendação.",
+          "prompt_en": "I can't decide where to go on vacation: a big city or a small town on the beach. Which one is better, in your opinion? Why?",
+          "guidelines_pt": [
+            "Compare as duas com pelo menos 2 comparativos: \"The city is more exciting, but the beach town is cheaper.\"",
+            "Use um superlativo: \"The best thing about... is...\".",
+            "Dê a sua recomendação: \"I think you should go to... because...\"."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-11-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Revisar as regras do comparativo e do superlativo, incluindo os irregulares.",
+        "prompts": [
+          "What's the worst food you ever tried?",
+          "Who is the tallest person in your family?"
+        ],
+        "watchFor": ["\"More better\".", "\"The most big\" em vez de \"the biggest\"."]
+      },
+      "exercises": [
+        {
+          "id": "a2-11-rev-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"O trânsito hoje está pior do que ontem.\"",
+          "accepted": [
+            "The traffic is worse today than yesterday",
+            "Traffic is worse today than yesterday",
+            "The traffic today is worse than yesterday",
+            "Today the traffic is worse than yesterday",
+            "The traffic is worse today than it was yesterday",
+            "Today's traffic is worse than yesterday's"
+          ],
+          "commonErrors": [
+            {
+              "id": "more-bad",
+              "match": "\\b(more bad|more worse|badder)\\b",
+              "explanation_pt": "\"Bad\" é irregular: \"worse\" (pior) e \"the worst\" (o pior).",
+              "correction_en": "The traffic is worse today than yesterday."
+            },
+            {
+              "id": "transit",
+              "match": "\\btransit\\b",
+              "explanation_pt": "\"Trânsito\" (carros na rua) é \"traffic\".",
+              "correction_en": "The traffic is worse today than yesterday."
+            },
+            {
+              "id": "worse-that",
+              "match": "\\bworse (that|of)\\b",
+              "explanation_pt": "\"Do que\" é \"than\".",
+              "correction_en": "The traffic is worse today than yesterday."
+            }
+          ]
+        },
+        {
+          "id": "a2-11-rev-2",
+          "kind": "fill",
+          "instruction_pt": "Complete com o superlativo de \"cheap\".",
+          "sentence": "This is the ___ shop in the mall.",
+          "accepted": ["cheapest"],
+          "commonErrors": [
+            {
+              "id": "most-cheap",
+              "match": "^(most cheap|more cheap|cheaper)$",
+              "explanation_pt": "\"Cheap\" é curto: o superlativo é \"the cheapest\".",
+              "correction_en": "This is the cheapest shop in the mall."
+            }
+          ]
+        },
+        {
+          "id": "a2-11-rev-3",
+          "kind": "choice",
+          "instruction_pt": "Qual frase está certa?",
+          "options": [
+            "Today is hotter than yesterday.",
+            "Today is more hot than yesterday.",
+            "Today is hoter that yesterday."
+          ],
+          "answer": 0,
+          "explanation_pt": "\"Hot\" é curto e termina em consoante-vogal-consoante: dobra o \"t\" e ganha \"-er\": \"hotter than\"."
+        },
+        {
+          "id": "a2-11-rev-4",
+          "kind": "repeat",
+          "instruction_pt": "Para terminar, repita.",
+          "prompt": "It's not the cheapest, but it's the best.",
+          "accepted": [
+            "It's not the cheapest, but it's the best",
+            "It isn't the cheapest, but it's the best",
+            "It is not the cheapest, but it is the best"
+          ],
+          "commonErrors": []
+        }
+      ]
+    }
+  ]
+}

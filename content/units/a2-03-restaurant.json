@@ -1,0 +1,487 @@
+{
+  "id": "a2-03-restaurant",
+  "level": "A2",
+  "order": 3,
+  "title_pt": "No restaurante",
+  "title_en": "At the restaurant",
+  "objective_pt": "Reservar uma mesa, pedir um prato e uma bebida com \"I'd like...\" e \"Could I have...?\" e pedir a conta.",
+  "blocks": [
+    {
+      "id": "a2-03-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Conversar sobre restaurantes e introduzir o pedido educado com \"I'd like\".",
+        "prompts": ["Do you like eating out?", "What's your favorite restaurant?"],
+        "watchFor": [
+          "Pedir com \"I want...\", que soa seco para um garçom.",
+          "Dizer \"a table for two persons\"; o natural é \"a table for two\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-03-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita em voz alta.",
+          "prompt": "Hi, a table for two, please.",
+          "accepted": ["Hi, a table for two, please", "A table for two, please"],
+          "commonErrors": [
+            {
+              "id": "two-persons",
+              "match": "\\bfor two (persons|people)\\b",
+              "explanation_pt": "O mais natural é só \"a table for two\". \"Persons\" soa formal demais.",
+              "correction_en": "A table for two, please."
+            }
+          ]
+        },
+        {
+          "id": "a2-03-warm-2",
+          "kind": "choice",
+          "instruction_pt": "Qual é a forma mais educada de pedir no restaurante?",
+          "options": [
+            "I'd like the chicken, please.",
+            "I want the chicken.",
+            "Give me the chicken."
+          ],
+          "answer": 0,
+          "explanation_pt": "\"I'd like\" (I would like) é o jeito educado de pedir. \"I want\" e \"Give me\" soam secos."
+        },
+        {
+          "id": "a2-03-warm-3",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu gostaria de um suco de laranja, por favor.\"",
+          "accepted": [
+            "I'd like an orange juice, please",
+            "I would like an orange juice, please",
+            "I'd like orange juice, please",
+            "I'd like a glass of orange juice, please",
+            "Could I have an orange juice, please?",
+            "Can I have an orange juice, please?",
+            "Can I get an orange juice, please?",
+            "An orange juice, please"
+          ],
+          "commonErrors": [
+            {
+              "id": "juice-of-orange",
+              "match": "\\bjuice of orange\\b",
+              "explanation_pt": "Em inglês o sabor vem antes: \"orange juice\", e não \"juice of orange\".",
+              "correction_en": "I'd like an orange juice, please."
+            },
+            {
+              "id": "a-orange",
+              "match": "\\ba orange\\b",
+              "explanation_pt": "Antes de som de vogal usamos \"an\": \"an orange juice\".",
+              "correction_en": "I'd like an orange juice, please."
+            },
+            {
+              "id": "like-without-would",
+              "match": "^i like (an|a) orange\\b",
+              "explanation_pt": "\"I like\" é \"eu gosto\". Para pedir, use \"I'd like\" (eu gostaria).",
+              "correction_en": "I'd like an orange juice, please."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-03-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Aprender as palavras do restaurante: menu, starter, main course, dessert, the bill, tip, waiter.",
+        "prompts": [
+          "What do you usually order as a main course?",
+          "Do you always have dessert?",
+          "Do people tip in Brazil?"
+        ],
+        "watchFor": [
+          "Pedir \"the count\" (tradução de \"a conta\"); o certo é \"the bill\" ou \"the check\".",
+          "Usar \"plate\" para prato de comida; o prato pedido é \"dish\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-03-vocab-1",
+          "kind": "vocab",
+          "word_en": "the bill",
+          "meaning_pt": "a conta (no restaurante)",
+          "example_en": "Could we have the bill, please?"
+        },
+        {
+          "id": "a2-03-vocab-2",
+          "kind": "vocab",
+          "word_en": "main course",
+          "meaning_pt": "prato principal",
+          "example_en": "For my main course, I'd like the fish."
+        },
+        {
+          "id": "a2-03-vocab-3",
+          "kind": "vocab",
+          "word_en": "dish",
+          "meaning_pt": "prato (a comida)",
+          "example_en": "What's the most popular dish here?"
+        },
+        {
+          "id": "a2-03-vocab-4",
+          "kind": "match",
+          "instruction_pt": "Ligue cada palavra ao seu significado.",
+          "pairs": [
+            { "en": "starter", "pt": "entrada" },
+            { "en": "dessert", "pt": "sobremesa" },
+            { "en": "waiter", "pt": "garçom" },
+            { "en": "tip", "pt": "gorjeta" },
+            { "en": "still water", "pt": "água sem gás" }
+          ]
+        },
+        {
+          "id": "a2-03-vocab-5",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"A conta, por favor.\"",
+          "accepted": [
+            "The bill, please",
+            "The check, please",
+            "Could we have the bill, please?",
+            "Could I have the bill, please?",
+            "Can we have the bill, please?",
+            "Can I have the bill, please?",
+            "Can I get the check, please?",
+            "Could we get the check, please?"
+          ],
+          "commonErrors": [
+            {
+              "id": "the-count",
+              "match": "\\b(the|a) (count|account)\\b",
+              "explanation_pt": "\"A conta\" do restaurante é \"the bill\" (ou \"the check\", nos EUA). \"Count\" e \"account\" são outras coisas.",
+              "correction_en": "The bill, please."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-03-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Treinar a contração \"I'd like\" e o \"t\" suave de \"water\" (\"wóder\" no inglês americano).",
+        "prompts": ["Say \"I would like\" fast. What happens?", "Say \"a glass of water\"."],
+        "watchFor": [
+          "Separar \"I would like\" em três batidas fortes em vez de \"aid-laik\".",
+          "Falar \"dessert\" (sobremesa) igual a \"desert\" (deserto); em \"dessert\" a força é no fim."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-03-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita. Junte \"I'd like\" num som só: \"aid-laik\".",
+          "prompt": "I'd like a glass of water, please.",
+          "accepted": [
+            "I'd like a glass of water, please",
+            "I would like a glass of water, please"
+          ],
+          "commonErrors": [
+            {
+              "id": "cup-of-water",
+              "match": "\\b(cup|copy) of water\\b",
+              "explanation_pt": "\"Copo\" é \"glass\". \"Cup\" é xícara, e \"copy\" é cópia.",
+              "correction_en": "I'd like a glass of water, please."
+            }
+          ]
+        },
+        {
+          "id": "a2-03-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repita. Em \"dessert\" a força vai no fim: \"de-SSERT\".",
+          "prompt": "Could we see the dessert menu?",
+          "accepted": ["Could we see the dessert menu", "Can we see the dessert menu"],
+          "commonErrors": []
+        },
+        {
+          "id": "a2-03-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Em qual sílaba fica a força de \"dessert\" (sobremesa)?",
+          "options": ["Na segunda: de-SSERT", "Na primeira: DE-ssert"],
+          "answer": 0,
+          "explanation_pt": "\"Dessert\" (sobremesa) tem a força no fim. \"DEsert\" (deserto) tem a força no começo."
+        }
+      ]
+    },
+    {
+      "id": "a2-03-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Entender as perguntas do garçom e responder de forma curta e educada.",
+        "prompts": ["Are you ready to order?", "Anything to drink?", "How was everything?"],
+        "watchFor": [
+          "Responder \"Yes\" e ficar em silêncio, sem fazer o pedido.",
+          "Dizer \"It was very delicious\"; com \"delicious\" não se usa \"very\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-03-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Ouça o pedido e escolha o que a cliente pediu.",
+          "listen": "For my main course I'd like the grilled fish, and a sparkling water, please. No dessert, thanks.",
+          "options": [
+            "Peixe grelhado e água com gás, sem sobremesa.",
+            "Frango grelhado e água sem gás, com sobremesa.",
+            "Peixe frito e suco, sem entrada."
+          ],
+          "answer": 0,
+          "explanation_pt": "\"Grilled fish\" é peixe grelhado e \"sparkling water\" é água com gás. \"No dessert\": sem sobremesa."
+        },
+        {
+          "id": "a2-03-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça o garçom e peça o frango, de forma educada.",
+          "listen": "Are you ready to order?",
+          "accepted": [
+            "Yes, I'd like the chicken, please",
+            "Yes, I would like the chicken, please",
+            "I'd like the chicken, please",
+            "Yes, could I have the chicken, please?",
+            "Yes, can I have the chicken, please?",
+            "Yes, can I get the chicken, please?",
+            "Could I have the chicken, please?",
+            "Yes, I'll have the chicken, please",
+            "I'll have the chicken, please",
+            "Yes, the chicken, please",
+            "The chicken, please"
+          ],
+          "commonErrors": [
+            {
+              "id": "i-want",
+              "match": "\\bi want\\b",
+              "explanation_pt": "\"I want\" é correto, mas soa seco para um garçom. Prefira \"I'd like\" ou \"Could I have\".",
+              "correction_en": "Yes, I'd like the chicken, please."
+            },
+            {
+              "id": "for-me",
+              "match": "^(yes )?for me (a|the)\\b",
+              "explanation_pt": "\"Para mim um frango\" não funciona palavra por palavra. Diga \"I'd like the chicken\" ou \"I'll have the chicken\".",
+              "correction_en": "I'd like the chicken, please."
+            }
+          ]
+        },
+        {
+          "id": "a2-03-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e diga que estava tudo delicioso.",
+          "listen": "How was everything?",
+          "accepted": [
+            "It was delicious",
+            "It was delicious, thank you",
+            "It was delicious, thanks",
+            "Everything was delicious",
+            "Everything was delicious, thank you",
+            "It was really good, thanks",
+            "It was great, thank you",
+            "Everything was great, thanks",
+            "Delicious, thank you",
+            "It was really delicious"
+          ],
+          "commonErrors": [
+            {
+              "id": "very-delicious",
+              "match": "\\bvery delicious\\b",
+              "explanation_pt": "\"Delicious\" já é muito forte, então não usamos \"very\". Diga \"really delicious\" ou só \"delicious\".",
+              "correction_en": "It was delicious, thank you."
+            },
+            {
+              "id": "is-delicious",
+              "match": "^(it|everything) is\\b",
+              "explanation_pt": "A refeição já acabou: use o passado \"was\".",
+              "correction_en": "Everything was delicious."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-03-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Fazer um pedido completo: entrada ou prato, bebida, uma pergunta sobre o prato e a conta.",
+        "prompts": [
+          "Good evening! Do you have a reservation?",
+          "What would you like to drink?",
+          "Would you like a dessert?"
+        ],
+        "watchFor": [
+          "\"What do you recommend me?\"; o natural é \"What do you recommend?\".",
+          "\"Has chicken?\" em vez de \"Is there chicken in it?\" ou \"Does it have chicken?\".",
+          "Esquecer o \"please\" no fim do pedido."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-03-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"O que você recomenda?\"",
+          "accepted": [
+            "What do you recommend?",
+            "What would you recommend?",
+            "What do you suggest?",
+            "What would you suggest?",
+            "What's good here?",
+            "Do you have any recommendations?",
+            "What can you recommend?"
+          ],
+          "commonErrors": [
+            {
+              "id": "recommend-me",
+              "match": "\\brecommend (me|to me)\\b",
+              "explanation_pt": "\"Recommend\" não leva \"me\" logo depois. Diga só \"What do you recommend?\".",
+              "correction_en": "What do you recommend?"
+            },
+            {
+              "id": "what-you-recommend",
+              "match": "^what you recommend\\b",
+              "explanation_pt": "Na pergunta falta o \"do\": \"What do you recommend?\".",
+              "correction_en": "What do you recommend?"
+            }
+          ]
+        },
+        {
+          "id": "a2-03-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Esse prato tem carne?\"",
+          "accepted": [
+            "Does this dish have meat?",
+            "Does this dish have meat in it?",
+            "Is there meat in this dish?",
+            "Is there any meat in this dish?",
+            "Does it have meat?",
+            "Does this have meat in it?",
+            "Does this dish contain meat?"
+          ],
+          "commonErrors": [
+            {
+              "id": "this-plate",
+              "match": "\\bthis plate\\b",
+              "explanation_pt": "\"Prato\" como comida é \"dish\". \"Plate\" é o objeto onde a comida vai.",
+              "correction_en": "Does this dish have meat?"
+            },
+            {
+              "id": "has-meat-question",
+              "match": "^(this dish )?has meat\\b",
+              "explanation_pt": "Pergunta com \"have\" precisa de \"does\": \"Does this dish have meat?\".",
+              "correction_en": "Does this dish have meat?"
+            },
+            {
+              "id": "carne-flesh",
+              "match": "\\b(flesh|beef meat)\\b",
+              "explanation_pt": "\"Carne\" (comida) é \"meat\". \"Flesh\" é carne do corpo, não se usa no cardápio.",
+              "correction_en": "Does this dish have meat?"
+            }
+          ]
+        },
+        {
+          "id": "a2-03-conv-3",
+          "kind": "order",
+          "instruction_pt": "Coloque as palavras na ordem certa para formar o pedido.",
+          "accepted": ["Could I have the soup as a starter"]
+        },
+        {
+          "id": "a2-03-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Você está num restaurante. Responda ao garçom e faça o seu pedido completo.",
+          "prompt_en": "Good evening! Here's the menu. Today's special is grilled salmon with vegetables. What would you like to eat, and anything to drink?",
+          "guidelines_pt": [
+            "Peça um prato com \"I'd like...\" ou \"Could I have...?\".",
+            "Peça uma bebida e faça uma pergunta sobre a comida: \"Does it come with rice?\".",
+            "Agradeça: \"That's all, thank you.\""
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-03-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Revisar os pedidos educados e o vocabulário do restaurante.",
+        "prompts": ["What do you say to order a drink?", "How do you ask for the bill?"],
+        "watchFor": ["\"The count, please\".", "\"I like\" no lugar de \"I'd like\" no pedido."]
+      },
+      "exercises": [
+        {
+          "id": "a2-03-rev-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu vou querer a salada.\"",
+          "accepted": [
+            "I'll have the salad",
+            "I will have the salad",
+            "I'll have the salad, please",
+            "I'd like the salad",
+            "I'd like the salad, please",
+            "I would like the salad",
+            "Can I have the salad, please?",
+            "Could I have the salad, please?",
+            "The salad, please"
+          ],
+          "commonErrors": [
+            {
+              "id": "will-want",
+              "match": "\\bi will want\\b",
+              "explanation_pt": "\"Vou querer\" não é \"will want\". No pedido dizemos \"I'll have...\" ou \"I'd like...\".",
+              "correction_en": "I'll have the salad, please."
+            },
+            {
+              "id": "go-to-want",
+              "match": "\\bgoing to want\\b",
+              "explanation_pt": "Para pedir, o natural é \"I'll have the salad\". \"Going to want\" é tradução literal.",
+              "correction_en": "I'll have the salad, please."
+            }
+          ]
+        },
+        {
+          "id": "a2-03-rev-2",
+          "kind": "fill",
+          "instruction_pt": "Complete o pedido educado.",
+          "sentence": "___ I have some more bread, please?",
+          "accepted": ["could", "can", "may"],
+          "commonErrors": [
+            {
+              "id": "do-i-have",
+              "match": "^(do|does|would|will)$",
+              "explanation_pt": "Para pedir algo usamos \"Could I have...?\" ou \"Can I have...?\".",
+              "correction_en": "Could I have some more bread, please?"
+            }
+          ]
+        },
+        {
+          "id": "a2-03-rev-3",
+          "kind": "choice",
+          "instruction_pt": "O garçom pergunta: \"Still or sparkling?\". Do que ele está falando?",
+          "options": [
+            "Da água: sem gás ou com gás.",
+            "Do vinho: tinto ou branco.",
+            "Da carne: mal ou bem passada."
+          ],
+          "answer": 0,
+          "explanation_pt": "\"Still water\" é água sem gás e \"sparkling water\" é água com gás."
+        },
+        {
+          "id": "a2-03-rev-4",
+          "kind": "repeat",
+          "instruction_pt": "Para terminar, repita.",
+          "prompt": "Could we have the bill, please? Everything was delicious.",
+          "accepted": ["Could we have the bill, please? Everything was delicious"],
+          "commonErrors": [
+            {
+              "id": "the-count",
+              "match": "\\bthe count\\b",
+              "explanation_pt": "\"A conta\" é \"the bill\" ou \"the check\".",
+              "correction_en": "Could we have the bill, please?"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

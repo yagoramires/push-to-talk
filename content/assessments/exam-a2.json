@@ -1,0 +1,496 @@
+{
+  "level": "A2",
+  "minutes": 25,
+  "parts": [
+    {
+      "skill": "listening",
+      "items": [
+        {
+          "skill": "listening",
+          "unitId": "a2-01-past-weekend",
+          "exercise": {
+            "id": "ex-a2-listen-1",
+            "kind": "choice",
+            "instruction_pt": "Ouça e responda: o que o Ben fez no domingo?",
+            "listen": "On Saturday I worked all day, but on Sunday I slept late and visited my parents.",
+            "options": [
+              "Dormiu até tarde e visitou os pais.",
+              "Trabalhou o dia todo.",
+              "Foi à praia com os pais."
+            ],
+            "answer": 0,
+            "explanation_pt": "\"On Sunday I slept late and visited my parents\": no domingo ele dormiu até tarde e visitou os pais. Ele trabalhou no sábado."
+          }
+        },
+        {
+          "skill": "listening",
+          "unitId": "a2-02-directions",
+          "exercise": {
+            "id": "ex-a2-listen-2",
+            "kind": "choice",
+            "instruction_pt": "Ouça e responda: onde fica a farmácia?",
+            "listen": "Go straight on and turn right at the traffic lights. The pharmacy is next to the bakery.",
+            "options": [
+              "Virando à direita no semáforo, ao lado da padaria.",
+              "Virando à esquerda no semáforo, em frente à padaria.",
+              "Seguindo em frente, atrás da padaria."
+            ],
+            "answer": 0,
+            "explanation_pt": "\"Turn right at the traffic lights\" é virar à direita no semáforo, e \"next to the bakery\" é ao lado da padaria."
+          }
+        },
+        {
+          "skill": "listening",
+          "unitId": "a2-09-hotel-check-in",
+          "exercise": {
+            "id": "ex-a2-listen-3",
+            "kind": "choice",
+            "instruction_pt": "Ouça a recepcionista e responda: o café da manhã está incluído?",
+            "listen": "Your room is on the second floor. Breakfast isn't included, but you can buy it at the restaurant for fifteen dollars.",
+            "options": [
+              "Não. Custa quinze dólares no restaurante.",
+              "Sim, está incluído no preço.",
+              "Não. Custa cinquenta dólares no quarto."
+            ],
+            "answer": 0,
+            "explanation_pt": "\"Breakfast isn't included\": não está incluído. \"Fifteen\" (15) tem a força no fim: fif-TEEN."
+          }
+        },
+        {
+          "skill": "listening",
+          "unitId": "a2-04-travel-transport",
+          "exercise": {
+            "id": "ex-a2-listen-4",
+            "kind": "listen_answer",
+            "instruction_pt": "Ouça e responda que você vai de ônibus.",
+            "listen": "How do you usually get to work?",
+            "accepted": [
+              "By bus",
+              "I go by bus",
+              "I usually go by bus",
+              "I go to work by bus",
+              "I usually go to work by bus",
+              "I take the bus",
+              "I usually take the bus",
+              "I get there by bus",
+              "I catch the bus"
+            ],
+            "commonErrors": [
+              {
+                "id": "of-bus",
+                "match": "\\b(of|with the|in) bus\\b",
+                "explanation_pt": "Meio de transporte usa \"by\": \"by bus\". Ou diga \"I take the bus\".",
+                "correction_en": "I usually go to work by bus."
+              },
+              {
+                "id": "pick-bus",
+                "match": "\\bpick (the|a) bus\\b",
+                "explanation_pt": "\"Pegar o ônibus\" é \"take the bus\" ou \"catch the bus\".",
+                "correction_en": "I take the bus."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "listening",
+          "unitId": "a2-12-invitations",
+          "exercise": {
+            "id": "ex-a2-listen-5",
+            "kind": "listen_answer",
+            "instruction_pt": "Ouça o convite e recuse com educação: você não pode, já tem um compromisso.",
+            "listen": "Would you like to have dinner with us tonight?",
+            "accepted": [
+              "Sorry, I can't. I have plans",
+              "Sorry, I can't. I've got plans",
+              "I'm sorry, I can't. I already have plans",
+              "I'm afraid I can't. I have plans",
+              "Thanks, but I can't. I have plans",
+              "Thanks for asking, but I'm afraid I can't. I have plans",
+              "I'd love to, but I can't. I have plans",
+              "I'd love to, but I have plans",
+              "Sorry, I can't tonight. I have other plans",
+              "Sorry, I'm busy tonight"
+            ],
+            "commonErrors": [
+              {
+                "id": "compromise",
+                "match": "\\bcompromise\\b",
+                "explanation_pt": "Falso cognato: \"compromise\" é um acordo. \"Compromisso\" é \"plans\".",
+                "correction_en": "Sorry, I can't. I have plans."
+              },
+              {
+                "id": "no-can",
+                "match": "\\bi (no|not) can\\b",
+                "explanation_pt": "A negação de \"can\" é \"can't\".",
+                "correction_en": "Sorry, I can't. I have plans."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "skill": "speaking",
+      "items": [
+        {
+          "skill": "speaking",
+          "unitId": "a2-01-past-weekend",
+          "exercise": {
+            "id": "ex-a2-speak-1",
+            "kind": "translate",
+            "instruction_pt": "Diga em inglês: \"Eu não fui à festa. Eu fiquei em casa.\"",
+            "accepted": [
+              "I didn't go to the party. I stayed at home",
+              "I did not go to the party. I stayed at home",
+              "I didn't go to the party. I stayed home",
+              "I didn't go to the party because I stayed at home"
+            ],
+            "commonErrors": [
+              {
+                "id": "didnt-went",
+                "match": "\\bdid not went\\b",
+                "explanation_pt": "Depois de \"didn't\" o verbo volta à forma base: \"didn't go\".",
+                "correction_en": "I didn't go to the party. I stayed at home."
+              },
+              {
+                "id": "stayed-in-home",
+                "match": "\\bstayed in (the )?home\\b",
+                "explanation_pt": "\"Em casa\" é \"at home\" (ou só \"home\").",
+                "correction_en": "I didn't go to the party. I stayed at home."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "speaking",
+          "unitId": "a2-03-restaurant",
+          "exercise": {
+            "id": "ex-a2-speak-2",
+            "kind": "translate",
+            "instruction_pt": "No restaurante, diga em inglês: \"Eu gostaria do peixe, por favor.\"",
+            "accepted": [
+              "I'd like the fish, please",
+              "I would like the fish, please",
+              "Could I have the fish, please?",
+              "Can I have the fish, please?",
+              "I'll have the fish, please",
+              "Can I get the fish, please?",
+              "The fish, please"
+            ],
+            "commonErrors": [
+              {
+                "id": "i-like",
+                "match": "^i like the fish\\b",
+                "explanation_pt": "\"I like\" é \"eu gosto\". Para pedir, use \"I'd like\" (eu gostaria).",
+                "correction_en": "I'd like the fish, please."
+              },
+              {
+                "id": "i-want",
+                "match": "^i want\\b",
+                "explanation_pt": "\"I want\" soa seco para o garçom. Prefira \"I'd like\" ou \"Could I have\".",
+                "correction_en": "I'd like the fish, please."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "speaking",
+          "unitId": "a2-05-health-doctor",
+          "exercise": {
+            "id": "ex-a2-speak-3",
+            "kind": "translate",
+            "instruction_pt": "Diga em inglês: \"Eu estou com dor de garganta há dois dias.\"",
+            "accepted": [
+              "I've had a sore throat for two days",
+              "I have had a sore throat for two days",
+              "I've had a sore throat for 2 days",
+              "I've got a sore throat. It started two days ago",
+              "I have a sore throat. It started two days ago",
+              "My throat has been hurting for two days",
+              "My throat has hurt for two days"
+            ],
+            "commonErrors": [
+              {
+                "id": "with-sore-throat",
+                "match": "\\bi am with\\b",
+                "explanation_pt": "\"Estou com\" (sintoma) vira \"I have\" em inglês.",
+                "correction_en": "I've had a sore throat for two days."
+              },
+              {
+                "id": "since-two-days",
+                "match": "\\bsince two days\\b",
+                "explanation_pt": "Para quantidade de tempo usamos \"for\": \"for two days\".",
+                "correction_en": "I've had a sore throat for two days."
+              },
+              {
+                "id": "have-present-for",
+                "match": "^i have a sore throat for two days\\b",
+                "explanation_pt": "Algo que começou no passado e continua usa \"I've had... for\": \"I've had a sore throat for two days\".",
+                "correction_en": "I've had a sore throat for two days."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "speaking",
+          "unitId": "a2-07-future-plans",
+          "exercise": {
+            "id": "ex-a2-speak-4",
+            "kind": "translate",
+            "instruction_pt": "Diga em inglês: \"No ano que vem eu vou estudar na Irlanda.\"",
+            "accepted": [
+              "Next year I'm going to study in Ireland",
+              "Next year I am going to study in Ireland",
+              "I'm going to study in Ireland next year",
+              "I am going to study in Ireland next year",
+              "I'm studying in Ireland next year",
+              "Next year I'll study in Ireland",
+              "I'm planning to study in Ireland next year"
+            ],
+            "commonErrors": [
+              {
+                "id": "go-to-study",
+                "match": "\\bi go to study\\b",
+                "explanation_pt": "\"Vou estudar\" (plano) é \"I'm going to study\".",
+                "correction_en": "Next year I'm going to study in Ireland."
+              },
+              {
+                "id": "in-the-next-year",
+                "match": "\\b(in the|in) next year\\b",
+                "explanation_pt": "\"No ano que vem\" é só \"next year\".",
+                "correction_en": "Next year I'm going to study in Ireland."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "speaking",
+          "unitId": "a2-11-comparing-things",
+          "exercise": {
+            "id": "ex-a2-speak-5",
+            "kind": "translate",
+            "instruction_pt": "Diga em inglês: \"Este celular é mais barato, mas aquele é melhor.\"",
+            "accepted": [
+              "This phone is cheaper, but that one is better",
+              "This phone is cheaper, but that one's better",
+              "This phone is cheaper but that phone is better",
+              "This cell phone is cheaper, but that one is better",
+              "This mobile is cheaper, but that one is better",
+              "This one is cheaper, but that one is better"
+            ],
+            "commonErrors": [
+              {
+                "id": "more-cheap",
+                "match": "\\bmore (cheap|good|better)\\b",
+                "explanation_pt": "\"Cheap\" e \"good\" fazem \"cheaper\" e \"better\", sem \"more\".",
+                "correction_en": "This phone is cheaper, but that one is better."
+              },
+              {
+                "id": "celular",
+                "match": "\\b(celular|cellular)\\b",
+                "explanation_pt": "\"Celular\" é \"phone\", \"cell phone\" ou \"mobile\".",
+                "correction_en": "This phone is cheaper, but that one is better."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "skill": "vocabulary",
+      "items": [
+        {
+          "skill": "vocabulary",
+          "unitId": "a2-04-travel-transport",
+          "exercise": {
+            "id": "ex-a2-vocab-1",
+            "kind": "match",
+            "instruction_pt": "Ligue cada palavra de viagem ao seu significado.",
+            "pairs": [
+              {
+                "en": "miss the train",
+                "pt": "perder o trem"
+              },
+              {
+                "en": "delayed",
+                "pt": "atrasado"
+              },
+              {
+                "en": "luggage",
+                "pt": "bagagem"
+              },
+              {
+                "en": "round-trip ticket",
+                "pt": "passagem de ida e volta"
+              }
+            ]
+          }
+        },
+        {
+          "skill": "vocabulary",
+          "unitId": "a2-05-health-doctor",
+          "exercise": {
+            "id": "ex-a2-vocab-2",
+            "kind": "choice",
+            "instruction_pt": "O médico te dá um papel para comprar o remédio na farmácia. Como se chama esse papel em inglês?",
+            "options": ["prescription", "recipe", "receipt"],
+            "answer": 0,
+            "explanation_pt": "Receita médica é \"prescription\". \"Recipe\" é receita de comida e \"receipt\" é recibo."
+          }
+        },
+        {
+          "skill": "vocabulary",
+          "unitId": "a2-10-describing-people",
+          "exercise": {
+            "id": "ex-a2-vocab-3",
+            "kind": "match",
+            "instruction_pt": "Ligue cada adjetivo ao seu significado.",
+            "pairs": [
+              {
+                "en": "nice",
+                "pt": "simpático"
+              },
+              {
+                "en": "polite",
+                "pt": "educado"
+              },
+              {
+                "en": "shy",
+                "pt": "tímido"
+              },
+              {
+                "en": "outgoing",
+                "pt": "extrovertido"
+              }
+            ]
+          }
+        },
+        {
+          "skill": "vocabulary",
+          "unitId": "a2-06-work-jobs",
+          "exercise": {
+            "id": "ex-a2-vocab-4",
+            "kind": "choice",
+            "instruction_pt": "Qual frase quer dizer \"Eu pretendo mudar de emprego\"?",
+            "options": [
+              "I intend to change jobs.",
+              "I pretend to change jobs.",
+              "I attend to change jobs."
+            ],
+            "answer": 0,
+            "explanation_pt": "Falso cognato: \"pretend\" é fingir. \"Pretender\" é \"intend\" ou \"plan\"."
+          }
+        },
+        {
+          "skill": "vocabulary",
+          "unitId": "a2-08-phone-calls",
+          "exercise": {
+            "id": "ex-a2-vocab-5",
+            "kind": "match",
+            "instruction_pt": "Ligue cada expressão de telefone ao seu significado.",
+            "pairs": [
+              {
+                "en": "hang up",
+                "pt": "desligar (a ligação)"
+              },
+              {
+                "en": "hold on",
+                "pt": "aguardar"
+              },
+              {
+                "en": "call back",
+                "pt": "retornar a ligação"
+              },
+              {
+                "en": "take a message",
+                "pt": "anotar um recado"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "skill": "structure",
+      "items": [
+        {
+          "skill": "structure",
+          "unitId": "a2-01-past-weekend",
+          "exercise": {
+            "id": "ex-a2-struct-1",
+            "kind": "fill",
+            "instruction_pt": "Complete com o passado de \"buy\".",
+            "sentence": "Last weekend I ___ a new jacket.",
+            "accepted": ["bought"],
+            "commonErrors": [
+              {
+                "id": "buyed",
+                "match": "^(buyed|buy|brought|buys)$",
+                "explanation_pt": "\"Buy\" é irregular: o passado é \"bought\". Cuidado: \"brought\" é o passado de \"bring\" (trazer).",
+                "correction_en": "Last weekend I bought a new jacket."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "structure",
+          "unitId": "a2-11-comparing-things",
+          "exercise": {
+            "id": "ex-a2-struct-2",
+            "kind": "fill",
+            "instruction_pt": "Complete a comparação.",
+            "sentence": "My new apartment is bigger ___ my old one.",
+            "accepted": ["than"],
+            "commonErrors": [
+              {
+                "id": "that-of",
+                "match": "^(that|of|then|as)$",
+                "explanation_pt": "Depois do comparativo vem \"than\" (do que). Cuidado com \"then\", que é \"então\".",
+                "correction_en": "My new apartment is bigger than my old one."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "structure",
+          "unitId": "a2-05-health-doctor",
+          "exercise": {
+            "id": "ex-a2-struct-3",
+            "kind": "fill",
+            "instruction_pt": "Complete o conselho.",
+            "sentence": "You ___ see a doctor about that cough.",
+            "accepted": ["should", "ought to", "need to", "must"],
+            "commonErrors": [
+              {
+                "id": "should-to",
+                "match": "^(should to|shoulds)$",
+                "explanation_pt": "Depois de \"should\" o verbo vem sem \"to\": \"You should see a doctor\".",
+                "correction_en": "You should see a doctor about that cough."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "structure",
+          "unitId": "a2-07-future-plans",
+          "exercise": {
+            "id": "ex-a2-struct-4",
+            "kind": "order",
+            "instruction_pt": "Coloque as palavras na ordem certa para formar a pergunta.",
+            "accepted": ["What are you going to do on Sunday"]
+          }
+        },
+        {
+          "skill": "structure",
+          "unitId": "a2-12-invitations",
+          "exercise": {
+            "id": "ex-a2-struct-5",
+            "kind": "order",
+            "instruction_pt": "Coloque as palavras na ordem certa para formar o convite.",
+            "accepted": ["Would you like to come to the beach with us"]
+          }
+        }
+      ]
+    }
+  ]
+}
