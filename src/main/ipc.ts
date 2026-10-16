@@ -1,9 +1,12 @@
 import { randomUUID } from 'node:crypto'
+import { rm, writeFile } from 'node:fs/promises'
+import { homedir, tmpdir } from 'node:os'
 import { join } from 'node:path'
-import { app, ipcMain } from 'electron'
+import { app, ipcMain, systemPreferences } from 'electron'
 import type { AppApi, AppState } from '../shared/api'
 import type { ProfileProgress } from '../shared/progress'
 import { loadCourse } from './content/load-course'
+import { createWhisperTranscriber } from './speech/whisper'
 import { createStore } from './store'
 
 export function registerIpc(): void {
@@ -11,6 +14,11 @@ export function registerIpc(): void {
   const contentDir = app.isPackaged
     ? join(process.resourcesPath, 'content')
     : join(app.getAppPath(), 'content')
+  // shortcut: dev-Mac defaults only; Plan 2 replaces this with managed models.
+  const whisper = createWhisperTranscriber({
+    bin: process.env.WHISPER_BIN ?? 'whisper-cli',
+    model: process.env.WHISPER_MODEL ?? join(homedir(), '.cache/whisper/ggml-small.bin')
+  })
   let state: AppState | null = null
   const current = async (): Promise<AppState> => (state ??= (await store.load()).state)
 
@@ -39,10 +47,18 @@ export function registerIpc(): void {
       await store.save(s)
     },
     async ensureMic() {
-      throw new Error('not implemented')
+      return process.platform === 'darwin'
+        ? systemPreferences.askForMediaAccess('microphone')
+        : true
     },
-    async transcribe() {
-      throw new Error('not implemented')
+    async transcribe(wav: Uint8Array) {
+      const path = join(tmpdir(), `ingles-${randomUUID()}.wav`)
+      await writeFile(path, wav)
+      try {
+        return await whisper.transcribe(path)
+      } finally {
+        await rm(path, { force: true })
+      }
     }
   }
 
