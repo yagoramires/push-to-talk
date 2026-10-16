@@ -1,5 +1,8 @@
-appId: com.electron.app
-productName: ingles-scaffold
+appId: br.ingles.app
+# ASCII on purpose: with "ê" the macOS helper apps ("Inglês Helper") make Electron crash on launch.
+# People still see "Inglês" (CFBundleDisplayName, NSIS shortcut, package.json name). Electron derives
+# the helper path from CFBundleName, so that one must stay ASCII too.
+productName: Ingles
 directories:
   buildResources: build
 files:
@@ -9,35 +12,52 @@ files:
   - '!{.eslintcache,eslint.config.mjs,.prettierignore,.prettierrc.yaml,dev-app-update.yml,CHANGELOG.md,README.md}'
   - '!{.env,.env.*,.npmrc,pnpm-lock.yaml}'
   - '!{tsconfig.json,tsconfig.node.json,tsconfig.web.json}'
+  - '!content/**'
+  - '!dist/**'
+  # transformers.node.cjs inlines the ort-web bundle it needs and loads onnxruntime-node for inference
+  - '!node_modules/onnxruntime-web/**'
+extraResources:
+  - from: content
+    to: content
+  - from: resources/benchmark.wav
+    to: benchmark.wav
 asarUnpack:
   - resources/**
+  - '**/*.node'
+  - node_modules/onnxruntime-node/**
+  - node_modules/node-llama-cpp/**
+  - node_modules/@node-llama-cpp/**
+  - node_modules/sharp/**
+  - node_modules/@img/**
 win:
-  executableName: ingles-scaffold
+  executableName: Ingles
+  target:
+    - target: nsis
+      arch: x64
+  files:
+    - '!node_modules/onnxruntime-node/bin/napi-v6/{darwin,linux}/**'
+    - '!node_modules/@node-llama-cpp/*cuda*/**'
 nsis:
-  artifactName: ${name}-${version}-setup.${ext}
-  shortcutName: ${productName}
-  uninstallDisplayName: ${productName}
+  artifactName: Ingles-${version}-setup.${ext}
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  shortcutName: Inglês
+  uninstallDisplayName: Inglês
   createDesktopShortcut: always
 mac:
+  target:
+    - target: dmg
+      arch: arm64
+  files:
+    - '!node_modules/onnxruntime-node/bin/napi-v6/{linux,win32}/**'
+  # ad-hoc signature: without one, arm64 macOS kills the unsigned app on launch
+  identity: '-'
+  entitlements: build/entitlements.mac.plist
   entitlementsInherit: build/entitlements.mac.plist
   extendInfo:
-    - NSCameraUsageDescription: Application requests access to the device's camera.
-    - NSMicrophoneUsageDescription: Application requests access to the device's microphone.
-    - NSDocumentsFolderUsageDescription: Application requests access to the user's Documents folder.
-    - NSDownloadsFolderUsageDescription: Application requests access to the user's Downloads folder.
+    CFBundleDisplayName: Inglês
+    NSMicrophoneUsageDescription: O app usa o microfone para ouvir e corrigir a sua fala. Nada do que você fala sai do computador.
   notarize: false
 dmg:
-  artifactName: ${name}-${version}.${ext}
-linux:
-  target:
-    - AppImage
-    - snap
-    - deb
-  maintainer: electronjs.org
-  category: Utility
-appImage:
-  artifactName: ${name}-${version}.${ext}
+  artifactName: Ingles-${version}-mac-arm64.${ext}
 npmRebuild: false
-publish:
-  provider: generic
-  url: https://example.com/auto-updates

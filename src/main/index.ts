@@ -1,8 +1,11 @@
 import { app, shell, session, BrowserWindow } from 'electron'
 import { join } from 'path'
+import { totalmem } from 'node:os'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
 import { registerIpc } from './ipc'
+import { initLog } from './log'
+import { resourcePaths, selfCheck } from './self-check'
 
 function createWindow(): void {
   // Create the browser window.
@@ -36,25 +39,55 @@ function createWindow(): void {
   }
 }
 
+const logPath = initLog(join(app.getPath('userData'), 'logs'))
+console.info(
+  `start v${app.getVersion()} electron ${process.versions.electron} ${process.platform}-${process.arch}`,
+  `ram ${Math.round(totalmem() / 1024 ** 3)} GB packaged=${app.isPackaged}`
+)
+app.on('render-process-gone', (_e, _wc, d) =>
+  console.error('render-process-gone', d.reason, d.exitCode)
+)
+app.on('child-process-gone', (_e, d) =>
+  console.error('child-process-gone', d.type, d.reason, d.exitCode)
+)
+
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.whenReady().then(() => {
+app.whenReady().then(async () => {
+  // Package smoke test: no window, no IPC, exit code says whether the bundle is whole.
+  if (process.argv.includes('--self-check')) {
+    const { ok, lines } = await selfCheck(
+      resourcePaths({
+        packaged: app.isPackaged,
+        resourcesPath: process.resourcesPath,
+        appPath: app.getAppPath()
+      })
+    )
+    process.stdout.write(lines.join('\n') + '\n')
+    app.exit(ok ? 0 : 1)
+    return
+  }
+
   // Set app user model id for windows
-  electronApp.setAppUserModelId('com.electron')
+  electronApp.setAppUserModelId('br.ingles.app')
 
   // Default open or close DevTools by F12 in development
   // and ignore CommandOrControl + R in production.
   // see https://github.com/alex8088/electron-toolkit/tree/master/packages/utils
   app.on('browser-window-created', (_, window) => {
     optimizer.watchWindowShortcuts(window)
+    window.webContents.on('console-message', (e) => {
+      if (e.level === 'warning' || e.level === 'error')
+        console.warn(`renderer ${e.level}: ${e.message} (${e.sourceId}:${e.lineNumber})`)
+    })
   })
 
   session.defaultSession.setPermissionRequestHandler((_wc, permission, callback) =>
     callback(permission === 'media')
   )
 
-  registerIpc()
+  registerIpc(logPath)
 
   createWindow()
 

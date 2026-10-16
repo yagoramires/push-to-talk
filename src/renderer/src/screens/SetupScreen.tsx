@@ -133,6 +133,13 @@ export default function SetupScreen({ status, onClose }: Props): React.JSX.Eleme
             <button type="button" className="btn btn-secondary" onClick={() => onClose()}>
               {changing ? 'Voltar' : 'Agora não'}
             </button>
+            <button
+              type="button"
+              className="btn btn-secondary"
+              onClick={() => void window.api.openLogs()}
+            >
+              Abrir pasta de logs
+            </button>
           </div>
           {!changing && (
             <p className="muted">

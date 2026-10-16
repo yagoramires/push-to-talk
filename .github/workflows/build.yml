@@ -1,0 +1,67 @@
+name: build
+
+on:
+  workflow_dispatch:
+  push:
+    tags: ['v*']
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            script: build:win
+            installer: dist/*.exe
+          - os: macos-latest
+            script: build:mac
+            installer: dist/*.dmg
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run ${{ matrix.script }}
+
+      - name: Self-check (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        # piping makes PowerShell wait for the GUI-subsystem exe and show its stdout
+        run: |
+          & "dist/win-unpacked/Ingles.exe" --self-check | Out-Host
+          if ($LASTEXITCODE -ne 0) { exit 1 }
+      - name: Self-check (Mac)
+        if: runner.os == 'macOS'
+        run: dist/mac-arm64/Ingles.app/Contents/MacOS/Ingles --self-check
+
+      - name: Installer size
+        shell: bash
+        run: ls -lh ${{ matrix.installer }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: installer-${{ runner.os }}
+          path: ${{ matrix.installer }}
+          if-no-files-found: error
+
+  release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: installers
+          merge-multiple: true
+      - uses: softprops/action-gh-release@v2
+        with:
+          draft: true
+          files: |
+            installers/*.exe
+            installers/*.dmg
