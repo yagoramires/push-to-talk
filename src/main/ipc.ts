@@ -12,21 +12,20 @@ import { createFreeSpeakEvaluator } from './ai/freeSpeak'
 import { detectHardware } from './ai/hardware'
 import { createAiSetup, createDownloader } from './ai/setup'
 import { LLM_BY_TIER } from './ai/tiers'
+import { resourcePaths } from './self-check'
 import { createStore } from './store'
 
 export function registerIpc(): void {
   const store = createStore(app.getPath('userData'))
-  const contentDir = app.isPackaged
-    ? join(process.resourcesPath, 'content')
-    : join(app.getAppPath(), 'content')
+  const { content: contentDir, benchmarkWav } = resourcePaths({
+    packaged: app.isPackaged,
+    resourcesPath: process.resourcesPath,
+    appPath: app.getAppPath()
+  })
   const modelsDir = join(app.getPath('userData'), 'models')
   configureModels(modelsDir, false)
   const transcriber = createTranscriber()
   const pronunciation = createPronunciationScorer()
-  // Plan 3 adds benchmark.wav to extraResources for the packaged app.
-  const benchmarkWav = app.isPackaged
-    ? join(process.resourcesPath, 'benchmark.wav')
-    : join(app.getAppPath(), 'resources/benchmark.wav')
   const setup = createAiSetup({
     modelsDir,
     downloader: createDownloader(),

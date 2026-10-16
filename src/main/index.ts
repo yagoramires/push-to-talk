@@ -3,6 +3,7 @@ import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
 import { registerIpc } from './ipc'
+import { resourcePaths, selfCheck } from './self-check'
 
 function createWindow(): void {
   // Create the browser window.
@@ -39,9 +40,23 @@ function createWindow(): void {
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.whenReady().then(() => {
+app.whenReady().then(async () => {
+  // Package smoke test: no window, no IPC, exit code says whether the bundle is whole.
+  if (process.argv.includes('--self-check')) {
+    const { ok, lines } = await selfCheck(
+      resourcePaths({
+        packaged: app.isPackaged,
+        resourcesPath: process.resourcesPath,
+        appPath: app.getAppPath()
+      })
+    )
+    process.stdout.write(lines.join('\n') + '\n')
+    app.exit(ok ? 0 : 1)
+    return
+  }
+
   // Set app user model id for windows
-  electronApp.setAppUserModelId('com.electron')
+  electronApp.setAppUserModelId('br.ingles.app')
 
   // Default open or close DevTools by F12 in development
   // and ignore CommandOrControl + R in production.
