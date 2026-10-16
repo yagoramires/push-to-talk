@@ -1,0 +1,467 @@
+{
+  "id": "c1-05-abstract-topics",
+  "level": "C1",
+  "order": 5,
+  "title_pt": "Temas abstratos",
+  "title_en": "Abstract topics",
+  "objective_pt": "Talk about abstract ideas such as freedom, success and happiness: define a concept, use abstract nouns accurately (without \"the\" for general ideas) and develop an argument beyond personal examples.",
+  "blocks": [
+    {
+      "id": "c1-05-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Get the learner to define an abstract concept in their own words.",
+        "prompts": ["What does success mean to you?", "Is it the same as happiness?"],
+        "watchFor": [
+          "\"The success is...\" / \"The happiness is...\": general abstract nouns take no article.",
+          "Only giving personal anecdotes, never generalising."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-05-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repeat. Note: no \"the\" before \"happiness\" and \"success\".",
+          "prompt": "Happiness isn't the same thing as success.",
+          "accepted": [
+            "Happiness isn't the same thing as success",
+            "Happiness is not the same thing as success",
+            "Happiness isn't the same as success"
+          ],
+          "commonErrors": [
+            {
+              "id": "the-happiness",
+              "match": "^the happiness\\b",
+              "explanation_pt": "Abstract nouns used in a general sense take no article: \"Happiness is...\", not \"The happiness is...\".",
+              "correction_en": "Happiness isn't the same thing as success."
+            }
+          ]
+        },
+        {
+          "id": "c1-05-warm-2",
+          "kind": "choice",
+          "instruction_pt": "Which sentence is correct?",
+          "options": [
+            "The freedom is the most important value.",
+            "Freedom is the most important value.",
+            "A freedom is the most important value."
+          ],
+          "answer": 1,
+          "explanation_pt": "In Portuguese we say \"a liberdade\", but in English a general abstract idea takes no article: \"Freedom is...\"."
+        },
+        {
+          "id": "c1-05-warm-3",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English: \"A educação é a base de tudo.\"",
+          "accepted": [
+            "Education is the foundation of everything",
+            "Education is the basis of everything",
+            "Education is the base of everything",
+            "Education is the key to everything",
+            "Education is at the root of everything",
+            "Education underpins everything"
+          ],
+          "commonErrors": [
+            {
+              "id": "the-education",
+              "match": "^the education\\b",
+              "explanation_pt": "\"A educação\" in a general sense is just \"Education\" in English, with no article.",
+              "correction_en": "Education is the foundation of everything."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-05-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Vocabulary for discussing ideas: notion, inherently, subjective, to boil down to, a double-edged sword.",
+        "prompts": ["Is beauty subjective?", "What does a good life boil down to?"],
+        "watchFor": [
+          "\"Subjective\" stressed on the wrong syllable (it's sub-JEC-tive).",
+          "\"Notion\" confused with \"notice\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-05-vocab-1",
+          "kind": "vocab",
+          "word_en": "notion",
+          "meaning_pt": "noção, ideia, conceito",
+          "example_en": "The notion of a job for life is disappearing."
+        },
+        {
+          "id": "c1-05-vocab-2",
+          "kind": "vocab",
+          "word_en": "to boil down to",
+          "meaning_pt": "resumir-se a, no fundo ser",
+          "example_en": "In the end, it all boils down to trust."
+        },
+        {
+          "id": "c1-05-vocab-3",
+          "kind": "vocab",
+          "word_en": "inherently",
+          "meaning_pt": "intrinsecamente, por natureza",
+          "example_en": "Technology isn't inherently good or bad."
+        },
+        {
+          "id": "c1-05-vocab-4",
+          "kind": "match",
+          "instruction_pt": "Match each expression with its meaning.",
+          "pairs": [
+            { "en": "a double-edged sword", "pt": "uma faca de dois gumes" },
+            { "en": "subjective", "pt": "subjetivo" },
+            { "en": "a paradox", "pt": "um paradoxo" },
+            { "en": "to take for granted", "pt": "dar como certo, não dar valor" }
+          ]
+        },
+        {
+          "id": "c1-05-vocab-5",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English: \"No fundo, tudo se resume a confiança.\"",
+          "accepted": [
+            "In the end, it all boils down to trust",
+            "Ultimately, it all boils down to trust",
+            "At the end of the day, it all comes down to trust",
+            "Deep down, it all comes down to trust",
+            "Basically, it all boils down to trust",
+            "In the end, it all comes down to trust",
+            "It all boils down to trust",
+            "It all comes down to trust"
+          ],
+          "commonErrors": [
+            {
+              "id": "resumes-to",
+              "match": "\\bresumes? (itself )?to\\b",
+              "explanation_pt": "\"Resumir-se a\" is \"boil down to\" or \"come down to\". \"Resume\" means \"recomeçar\" (false friend).",
+              "correction_en": "In the end, it all boils down to trust."
+            },
+            {
+              "id": "the-trust",
+              "match": "\\bto the (trust|confidence)\\b",
+              "explanation_pt": "\"Trust\" here is general and abstract, so no article. Also, \"confiança\" between people is usually \"trust\", not \"confidence\".",
+              "correction_en": "In the end, it all boils down to trust."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-05-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Word stress in long abstract nouns and adjectives (-ity, -ive, -ical).",
+        "prompts": [
+          "Say \"responsibility\", \"subjective\", \"philosophical\".",
+          "Where is the stress in \"-ity\" words?"
+        ],
+        "watchFor": [
+          "Stressing the last syllable as in Portuguese (\"responsabiliDADE\").",
+          "Pronouncing every vowel fully instead of reducing unstressed ones to schwa."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-05-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repeat. In \"-ity\" words, the stress falls just before \"-ity\": responsiBILity.",
+          "prompt": "Freedom comes with responsibility.",
+          "accepted": ["Freedom comes with responsibility"],
+          "commonErrors": []
+        },
+        {
+          "id": "c1-05-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repeat. Stress: sub-JEC-tive, phi-lo-SO-phi-cal.",
+          "prompt": "It's a subjective, almost philosophical question.",
+          "accepted": [
+            "It's a subjective, almost philosophical question",
+            "It is a subjective, almost philosophical question"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "c1-05-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Where is the stress in \"inequality\"?",
+          "options": ["IN-e-qual-i-ty", "in-e-QUAL-i-ty", "in-e-qual-i-TY"],
+          "answer": 1,
+          "explanation_pt": "Words ending in \"-ity\" are stressed on the syllable before it: in-e-QUAL-i-ty."
+        }
+      ]
+    },
+    {
+      "id": "c1-05-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Follow an abstract argument and identify the speaker's stance.",
+        "prompts": ["What is the speaker's view of freedom?", "Do you agree?"],
+        "watchFor": [
+          "Losing the thread when there are no concrete examples.",
+          "Answering with a story instead of an idea."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-05-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Listen. What is the speaker's main idea?",
+          "listen": "We tend to think of freedom as having more choices, but too many options can actually leave us paralysed and less satisfied.",
+          "options": [
+            "More choice always makes people happier.",
+            "Too much choice can reduce satisfaction.",
+            "Freedom is impossible to define."
+          ],
+          "answer": 1,
+          "explanation_pt": "The speaker presents the common view and then challenges it: too many options can paralyse us."
+        },
+        {
+          "id": "c1-05-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Listen and give a short, general definition (not a personal story).",
+          "listen": "How would you define success?",
+          "accepted": [
+            "Success is achieving what you set out to do",
+            "Success is achieving your goals",
+            "Success means achieving your goals",
+            "Success is reaching your goals",
+            "Success is doing what you love",
+            "Success is being happy with what you do",
+            "Success is having a life you're proud of",
+            "I'd define success as achieving your goals",
+            "I'd say success is being satisfied with your life",
+            "Success is feeling fulfilled",
+            "For me, success is being at peace with your choices"
+          ],
+          "commonErrors": [
+            {
+              "id": "the-success",
+              "match": "^(for me )?the success\\b",
+              "explanation_pt": "\"O sucesso\" in a general sense is just \"Success\" in English, without \"the\".",
+              "correction_en": "Success is achieving your goals."
+            },
+            {
+              "id": "realize-goals",
+              "match": "\\brealiz(e|ing) (your|my|the|our) (goals|dreams)\\b",
+              "explanation_pt": "\"Realizar\" goals is better as \"achieve\" or \"fulfil\". \"Realise\" usually means \"perceber\". (\"Realise your dreams\" exists, but \"achieve your goals\" is more natural.)",
+              "correction_en": "Success is achieving your goals."
+            }
+          ]
+        },
+        {
+          "id": "c1-05-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Listen and say whether you think technology is good or bad, with a nuance.",
+          "listen": "Is technology making us more isolated?",
+          "accepted": [
+            "It's a double-edged sword",
+            "It's a bit of a double-edged sword",
+            "In some ways, yes, but it also connects us",
+            "To some extent, but it also brings people together",
+            "It can, but it isn't inherently bad",
+            "Technology isn't inherently good or bad",
+            "It depends on how we use it",
+            "It depends on how you use it",
+            "Yes and no. It connects us, but it can also isolate us",
+            "Partly, but it also connects people"
+          ],
+          "commonErrors": [
+            {
+              "id": "the-technology",
+              "match": "^the technology\\b",
+              "explanation_pt": "\"A tecnologia\" in general is \"Technology\" in English, with no article.",
+              "correction_en": "Technology isn't inherently good or bad."
+            },
+            {
+              "id": "depends-of",
+              "match": "\\bdepends? of\\b",
+              "explanation_pt": "\"Depend on\", not \"depend of\".",
+              "correction_en": "It depends on how we use it."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-05-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Develop an abstract argument: define, generalise, give a counterexample, conclude.",
+        "prompts": [
+          "Can money buy happiness?",
+          "What's the difference between being free and feeling free?",
+          "Is there such a thing as a truly selfless act?"
+        ],
+        "watchFor": [
+          "Articles before general abstract nouns.",
+          "\"Resume\" for \"resumir\"; \"realise\" for \"realizar\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-05-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English: \"A gente costuma dar a liberdade como garantida.\"",
+          "accepted": [
+            "We tend to take freedom for granted",
+            "We usually take freedom for granted",
+            "We often take freedom for granted",
+            "People tend to take freedom for granted",
+            "We tend to take our freedom for granted",
+            "We generally take freedom for granted"
+          ],
+          "commonErrors": [
+            {
+              "id": "the-freedom",
+              "match": "\\btake the freedom\\b",
+              "explanation_pt": "General \"liberdade\" is \"freedom\", with no article (or \"our freedom\").",
+              "correction_en": "We tend to take freedom for granted."
+            },
+            {
+              "id": "as-guaranteed",
+              "match": "\\b(as|like) guaranteed\\b",
+              "explanation_pt": "\"Dar como garantido\" is the fixed expression \"take for granted\".",
+              "correction_en": "We tend to take freedom for granted."
+            },
+            {
+              "id": "costume",
+              "match": "\\bwe (use to|costume to)\\b",
+              "explanation_pt": "\"Costumar\" in the present is \"usually\" or \"tend to\". \"Used to\" is only for the past, and \"costume\" means \"fantasia\".",
+              "correction_en": "We tend to take freedom for granted."
+            }
+          ]
+        },
+        {
+          "id": "c1-05-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English: \"Isso levanta a questão do que realmente significa ser feliz.\"",
+          "accepted": [
+            "That raises the question of what it really means to be happy",
+            "This raises the question of what it really means to be happy",
+            "That raises the question of what being happy really means",
+            "It raises the question of what it really means to be happy",
+            "That begs the question of what it really means to be happy",
+            "That raises the question of what happiness really means"
+          ],
+          "commonErrors": [
+            {
+              "id": "rises-question",
+              "match": "\\brises the question\\b",
+              "explanation_pt": "\"Raise\" takes an object (raise a question); \"rise\" doesn't (prices rise).",
+              "correction_en": "That raises the question of what it really means to be happy."
+            },
+            {
+              "id": "what-means",
+              "match": "\\bof what really means\\b",
+              "explanation_pt": "English needs a subject: \"what it really means\" or \"what happiness really means\".",
+              "correction_en": "That raises the question of what it really means to be happy."
+            }
+          ]
+        },
+        {
+          "id": "c1-05-conv-3",
+          "kind": "order",
+          "instruction_pt": "Put the words in order to make a general statement.",
+          "accepted": ["Money can't buy happiness but it certainly helps"]
+        },
+        {
+          "id": "c1-05-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Answer in one or two minutes. Stay at the level of ideas, using examples only to support them.",
+          "prompt_en": "Many people say that the more we have, the less we appreciate. Do you think abundance makes us take things for granted?",
+          "guidelines_pt": [
+            "Define the key idea: \"By abundance, I mean...\".",
+            "Generalise: \"People tend to...\", \"In most societies...\".",
+            "Give one counterexample or a paradox.",
+            "Conclude: \"Ultimately, it boils down to...\"."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-05-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Recycle articles with abstract nouns and key abstract vocabulary.",
+        "prompts": [
+          "What does a good friendship boil down to?",
+          "What do people take for granted?"
+        ],
+        "watchFor": ["\"The life is...\"", "\"Resume to\""]
+      },
+      "exercises": [
+        {
+          "id": "c1-05-rev-1",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English: \"A vida é curta demais para isso.\"",
+          "accepted": [
+            "Life is too short for that",
+            "Life's too short for that",
+            "Life is too short for this",
+            "Life is way too short for that",
+            "Life is far too short for that"
+          ],
+          "commonErrors": [
+            {
+              "id": "the-life",
+              "match": "^the life\\b",
+              "explanation_pt": "\"A vida\" in general is \"Life\", with no article.",
+              "correction_en": "Life's too short for that."
+            },
+            {
+              "id": "short-demais",
+              "match": "\\bshort (too much|demais)\\b",
+              "explanation_pt": "\"Curta demais\" is \"too short\": \"too\" goes before the adjective.",
+              "correction_en": "Life's too short for that."
+            }
+          ]
+        },
+        {
+          "id": "c1-05-rev-2",
+          "kind": "fill",
+          "instruction_pt": "Complete with one word.",
+          "sentence": "In the end, it all boils down ___ communication.",
+          "accepted": ["to"],
+          "commonErrors": [
+            {
+              "id": "boils-down-in",
+              "match": "^(in|at|for|on)$",
+              "explanation_pt": "The phrasal verb is \"boil down to\".",
+              "correction_en": "In the end, it all boils down to communication."
+            }
+          ]
+        },
+        {
+          "id": "c1-05-rev-3",
+          "kind": "choice",
+          "instruction_pt": "Which sentence is correct?",
+          "options": [
+            "The nature is beautiful in Brazil.",
+            "Nature is beautiful in Brazil.",
+            "A nature is beautiful in Brazil."
+          ],
+          "answer": 1,
+          "explanation_pt": "\"Nature\", like \"life\", \"love\" and \"freedom\", takes no article in a general sense."
+        },
+        {
+          "id": "c1-05-rev-4",
+          "kind": "repeat",
+          "instruction_pt": "Repeat to finish the unit.",
+          "prompt": "Ultimately, it's a matter of perspective.",
+          "accepted": [
+            "Ultimately, it's a matter of perspective",
+            "Ultimately, it is a matter of perspective"
+          ],
+          "commonErrors": []
+        }
+      ]
+    }
+  ]
+}

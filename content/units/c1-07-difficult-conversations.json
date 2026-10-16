@@ -1,0 +1,470 @@
+{
+  "id": "c1-07-difficult-conversations",
+  "level": "C1",
+  "order": 7,
+  "title_pt": "Conversas difíceis",
+  "title_en": "Handling difficult conversations",
+  "objective_pt": "Deliver bad news, say no and defuse tension tactfully: acknowledge feelings (\"I can see why you're upset\"), use \"I\" statements and propose a way forward.",
+  "blocks": [
+    {
+      "id": "c1-07-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Discuss what makes a conversation difficult and how the learner usually reacts.",
+        "prompts": [
+          "When did you last have to give someone bad news?",
+          "Do you tend to avoid conflict or face it head-on?"
+        ],
+        "watchFor": [
+          "\"I'm sorry\" overused as the only softener.",
+          "\"Calm down!\" said to an upset person, which usually makes things worse."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-07-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repeat in a calm, empathetic tone.",
+          "prompt": "I can see why you're upset, and I want to sort this out.",
+          "accepted": [
+            "I can see why you're upset, and I want to sort this out",
+            "I can see why you are upset and I want to sort this out",
+            "I can see why you're upset and I'd like to sort this out"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "c1-07-warm-2",
+          "kind": "choice",
+          "instruction_pt": "Which response is most likely to calm an angry customer?",
+          "options": [
+            "Calm down, please.",
+            "That's not my problem.",
+            "I completely understand your frustration. Let's see what we can do."
+          ],
+          "answer": 2,
+          "explanation_pt": "Acknowledging the feeling and moving to a solution defuses tension. \"Calm down\" often has the opposite effect."
+        },
+        {
+          "id": "c1-07-warm-3",
+          "kind": "translate",
+          "instruction_pt": "Say this tactfully in English: \"Infelizmente, tenho más notícias.\"",
+          "accepted": [
+            "Unfortunately, I have some bad news",
+            "Unfortunately, I've got some bad news",
+            "I'm afraid I have some bad news",
+            "I'm afraid I've got some bad news",
+            "I'm afraid I have bad news",
+            "Unfortunately, I have bad news",
+            "I'm sorry, but I have some bad news",
+            "I'm afraid it's not good news"
+          ],
+          "commonErrors": [
+            {
+              "id": "a-bad-news",
+              "match": "\\b(a bad news|bad newses)\\b",
+              "explanation_pt": "\"News\" is uncountable: \"some bad news\" or \"a piece of bad news\", never \"a bad news\".",
+              "correction_en": "I'm afraid I have some bad news."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-07-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Tactful language: to defuse, to come across as, to acknowledge, a sensitive issue, to raise a concern.",
+        "prompts": [
+          "How do you raise a concern with your boss?",
+          "How do you want to come across in a hard conversation?"
+        ],
+        "watchFor": [
+          "\"Sensible\" for \"sensível\" (false friend: sensible = sensato).",
+          "\"Discussion\" used for a fight; \"discussão\" (briga) is \"argument\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-07-vocab-1",
+          "kind": "vocab",
+          "word_en": "to defuse",
+          "meaning_pt": "acalmar, desarmar (uma situação tensa)",
+          "example_en": "She managed to defuse the situation with a joke."
+        },
+        {
+          "id": "c1-07-vocab-2",
+          "kind": "vocab",
+          "word_en": "to raise a concern",
+          "meaning_pt": "levantar uma preocupação",
+          "example_en": "I'd like to raise a concern about the deadlines."
+        },
+        {
+          "id": "c1-07-vocab-3",
+          "kind": "vocab",
+          "word_en": "to come across as",
+          "meaning_pt": "passar a impressão de, parecer",
+          "example_en": "I don't want to come across as rude."
+        },
+        {
+          "id": "c1-07-vocab-4",
+          "kind": "match",
+          "instruction_pt": "Match the false friends with their real meanings.",
+          "pairs": [
+            {
+              "en": "sensitive",
+              "pt": "sensível"
+            },
+            {
+              "en": "sensible",
+              "pt": "sensato"
+            },
+            {
+              "en": "argument",
+              "pt": "discussão, briga"
+            },
+            {
+              "en": "pretend",
+              "pt": "fingir"
+            },
+            {
+              "en": "intend",
+              "pt": "pretender"
+            }
+          ]
+        },
+        {
+          "id": "c1-07-vocab-5",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English: \"É um assunto delicado.\"",
+          "accepted": [
+            "It's a sensitive issue",
+            "It's a sensitive subject",
+            "It's a sensitive topic",
+            "It's a delicate issue",
+            "It's a delicate matter",
+            "It's a delicate subject",
+            "It's a touchy subject",
+            "This is a sensitive issue",
+            "That's a sensitive topic"
+          ],
+          "commonErrors": [
+            {
+              "id": "sensible-issue",
+              "match": "\\bsensible\\b",
+              "explanation_pt": "\"Sensible\" means \"sensato\". For \"sensível\" or \"delicado\", use \"sensitive\" or \"delicate\".",
+              "correction_en": "It's a sensitive issue."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-07-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Use a lower, slower, steady voice to sound calm; avoid stressing \"you\" in accusing ways.",
+        "prompts": [
+          "Say \"YOU didn't send it\" and \"It didn't get sent\". Which sounds less accusing?",
+          "Say \"I understand\" slowly and warmly."
+        ],
+        "watchFor": [
+          "Stressing \"you\" heavily, which sounds like blame.",
+          "Speeding up when nervous."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-07-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repeat slowly. Stress \"feel\", not \"you\".",
+          "prompt": "I feel we need to talk about what happened.",
+          "accepted": [
+            "I feel we need to talk about what happened",
+            "I feel that we need to talk about what happened"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "c1-07-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repeat calmly, with a falling tone at the end.",
+          "prompt": "I hear what you're saying, and I'd like to find a solution.",
+          "accepted": [
+            "I hear what you're saying, and I'd like to find a solution",
+            "I hear what you are saying and I would like to find a solution"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "c1-07-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Which version sounds less accusing?",
+          "options": [
+            "YOU forgot the report.",
+            "The report didn't get sent.",
+            "You FORGOT the report!"
+          ],
+          "answer": 1,
+          "explanation_pt": "A passive-style sentence focuses on the problem, not the person, which keeps the tone neutral."
+        }
+      ]
+    },
+    {
+      "id": "c1-07-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Respond tactfully to complaints and hard requests.",
+        "prompts": ["What is the person feeling?", "What do they actually need?"],
+        "watchFor": [
+          "Jumping straight to a solution without acknowledging the feeling.",
+          "Getting defensive (\"It's not my fault\")."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-07-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Listen. What does the manager really mean?",
+          "listen": "Your presentation had some great ideas. I just think it might benefit from a bit more structure next time.",
+          "options": [
+            "The presentation was perfect.",
+            "The presentation was disorganised.",
+            "The manager didn't like the ideas."
+          ],
+          "answer": 1,
+          "explanation_pt": "\"It might benefit from a bit more structure\" is a polite way of saying it lacked organisation."
+        },
+        {
+          "id": "c1-07-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Listen. A colleague is angry. Acknowledge their feelings before anything else.",
+          "listen": "This is the third time my request has been ignored. I'm really fed up.",
+          "accepted": [
+            "I can see why you're frustrated",
+            "I completely understand your frustration",
+            "I understand why you're upset",
+            "I can understand why you're fed up",
+            "That must be really frustrating",
+            "I'm sorry, that must be really frustrating",
+            "I hear you. That's really frustrating",
+            "I can see why you're upset",
+            "I'm really sorry about that. I can see why you're frustrated",
+            "I totally understand why you're annoyed"
+          ],
+          "commonErrors": [
+            {
+              "id": "calm-down",
+              "match": "\\bcalm down\\b",
+              "explanation_pt": "\"Calm down\" tends to sound dismissive and escalate the conflict. Acknowledge the feeling first: \"I can see why you're frustrated.\"",
+              "correction_en": "I can see why you're frustrated."
+            },
+            {
+              "id": "understand-you-frustration",
+              "match": "\\bi understand you (are )?frustrat",
+              "explanation_pt": "Say \"I understand your frustration\" or \"I understand why you're frustrated\".",
+              "correction_en": "I completely understand your frustration."
+            }
+          ]
+        },
+        {
+          "id": "c1-07-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Listen. Say no to the request tactfully and offer an alternative.",
+          "listen": "Could you take on the Henderson project as well? We're really short-staffed.",
+          "accepted": [
+            "I'd love to help, but I'm afraid I don't have the capacity right now",
+            "I'm afraid I can't take it on right now, but I could help next month",
+            "I'd like to help, but my plate is full at the moment",
+            "Unfortunately, I can't take it on right now, but I could help with part of it",
+            "I'm afraid I'm stretched too thin right now",
+            "I wish I could, but I don't have the bandwidth at the moment",
+            "I'm afraid I can't, but maybe I could help with part of it",
+            "I'd rather not take it on right now, but I could support someone else"
+          ],
+          "commonErrors": [
+            {
+              "id": "i-cant-period",
+              "match": "^(no )?i cannot$",
+              "explanation_pt": "A bare \"I can't\" sounds abrupt. Soften it (\"I'm afraid...\") and offer an alternative.",
+              "correction_en": "I'm afraid I can't take it on right now, but I could help next month."
+            },
+            {
+              "id": "have-time-for",
+              "match": "\\bi (do not )?have (no )?time for to\\b",
+              "explanation_pt": "Use \"time to do\" or \"time for something\", not \"time for to\".",
+              "correction_en": "I'm afraid I don't have time to take it on right now."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-07-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Role-play a tough conversation: giving bad news to a team member.",
+        "prompts": [
+          "You have to tell me my holiday request is denied. Go.",
+          "(Teacher reacts angrily.) How do you respond?",
+          "What can you offer me instead?"
+        ],
+        "watchFor": [
+          "\"A bad news\", \"sensible\" for \"sensitive\".",
+          "Blaming language (\"You always...\")."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-07-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Say this tactfully in English: \"Eu entendo o seu lado, mas não posso aprovar isso agora.\"",
+          "accepted": [
+            "I understand where you're coming from, but I can't approve this right now",
+            "I see your point, but I can't approve this right now",
+            "I understand your position, but I can't approve this at the moment",
+            "I understand your side, but I can't approve this right now",
+            "I see where you're coming from, but I can't approve it right now",
+            "I understand your point of view, but I can't approve this right now",
+            "I can see your side, but I'm afraid I can't approve this right now"
+          ],
+          "commonErrors": [
+            {
+              "id": "approve-it-now-order",
+              "match": "\\bcannot approve now (this|it)\\b",
+              "explanation_pt": "The object goes right after the verb: \"approve this right now\", not \"approve now this\".",
+              "correction_en": "I understand where you're coming from, but I can't approve this right now."
+            },
+            {
+              "id": "understand-your-side-is",
+              "match": "\\bi am understanding\\b",
+              "explanation_pt": "\"Understand\" is a state verb, so it's rarely used in the continuous: \"I understand\".",
+              "correction_en": "I understand where you're coming from, but I can't approve this right now."
+            }
+          ]
+        },
+        {
+          "id": "c1-07-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English: \"Não quero parecer grosseiro, mas isso me incomodou.\"",
+          "accepted": [
+            "I don't want to come across as rude, but that bothered me",
+            "I don't want to sound rude, but that bothered me",
+            "I don't mean to be rude, but that bothered me",
+            "I don't want to seem rude, but that bothered me",
+            "I don't want to come across as rude, but that upset me",
+            "I don't mean to sound rude, but that really bothered me",
+            "Without wanting to be rude, that bothered me"
+          ],
+          "commonErrors": [
+            {
+              "id": "gross",
+              "match": "\\bgross\\b",
+              "explanation_pt": "\"Gross\" means \"nojento\". \"Grosseiro\" is \"rude\".",
+              "correction_en": "I don't want to come across as rude, but that bothered me."
+            },
+            {
+              "id": "incommoded",
+              "match": "\\bincommod",
+              "explanation_pt": "\"Incomodar\" is \"bother\" or \"upset\". \"Incommode\" exists but is very rare and formal.",
+              "correction_en": "I don't want to come across as rude, but that bothered me."
+            }
+          ]
+        },
+        {
+          "id": "c1-07-conv-3",
+          "kind": "order",
+          "instruction_pt": "Put the words in order to propose a way forward.",
+          "accepted": ["How about we find a solution that works for both of us"]
+        },
+        {
+          "id": "c1-07-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Respond to your colleague in about a minute, handling the situation tactfully.",
+          "prompt_en": "I've just heard I'm not getting the promotion, and honestly, I'm furious. I've worked harder than anyone here. What's going on?",
+          "guidelines_pt": [
+            "Acknowledge the feeling: \"I can see why you're upset.\"",
+            "Explain the situation honestly, with \"I\" statements.",
+            "Avoid \"Calm down\" and blaming language.",
+            "Propose a way forward: \"How about we...?\" or \"What I can do is...\"."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-07-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Recycle tactful phrases and the false friends from the unit.",
+        "prompts": ["Say no to me politely.", "Give me some bad news gently."],
+        "watchFor": [
+          "\"Sensible\", \"gross\", \"a bad news\".",
+          "Softening too much, so the message gets lost"
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-07-rev-1",
+          "kind": "translate",
+          "instruction_pt": "Make this more tactful and say it: \"You did this wrong.\"",
+          "accepted": [
+            "I think there might be a problem with this",
+            "I think there may be an issue here",
+            "There seems to be a problem with this",
+            "I'm not sure this is quite right",
+            "This doesn't seem quite right",
+            "I think something might have gone wrong here",
+            "It looks like there's a mistake here",
+            "I think there's a small mistake here",
+            "Could we take another look at this?"
+          ],
+          "commonErrors": [
+            {
+              "id": "still-blunt",
+              "match": "\\byou did (this|it) wrong\\b",
+              "explanation_pt": "That's still blunt and focuses on the person. Focus on the problem: \"There seems to be a problem with this.\"",
+              "correction_en": "There seems to be a problem with this."
+            }
+          ]
+        },
+        {
+          "id": "c1-07-rev-2",
+          "kind": "fill",
+          "instruction_pt": "Complete with one word.",
+          "sentence": "I'm afraid I have some bad ___ about the project.",
+          "accepted": ["news"],
+          "commonErrors": [
+            {
+              "id": "new",
+              "match": "^(new|newses|notices)$",
+              "explanation_pt": "\"News\" always ends in \"s\" and is uncountable. \"Notícias\" is never \"notices\".",
+              "correction_en": "I'm afraid I have some bad news about the project."
+            }
+          ]
+        },
+        {
+          "id": "c1-07-rev-3",
+          "kind": "choice",
+          "instruction_pt": "\"She's a very sensible person\" means she is...",
+          "options": ["sensível", "sensata", "sentimental"],
+          "answer": 1,
+          "explanation_pt": "\"Sensible\" = sensato. \"Sensível\" is \"sensitive\"."
+        },
+        {
+          "id": "c1-07-rev-4",
+          "kind": "repeat",
+          "instruction_pt": "Repeat to close the conversation on a positive note.",
+          "prompt": "Thanks for being so open about it. Let's keep talking.",
+          "accepted": ["Thanks for being so open about it. Let's keep talking"],
+          "commonErrors": []
+        }
+      ]
+    }
+  ]
+}

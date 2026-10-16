@@ -1,0 +1,474 @@
+{
+  "level": "C1",
+  "minutes": 30,
+  "parts": [
+    {
+      "skill": "listening",
+      "items": [
+        {
+          "skill": "listening",
+          "unitId": "c1-01-nuance-hedging",
+          "exercise": {
+            "id": "ex-c1-listen-1",
+            "kind": "choice",
+            "instruction_pt": "Listen. How certain is the speaker?",
+            "listen": "I wouldn't go so far as to say it's a failure, but the early numbers are, let's say, less than encouraging.",
+            "options": [
+              "She thinks it's a complete failure.",
+              "She thinks the results so far are disappointing.",
+              "She is very optimistic."
+            ],
+            "answer": 1,
+            "explanation_pt": "\"I wouldn't go so far as to say\" rejects the strongest claim, and \"less than encouraging\" is understatement for disappointing."
+          }
+        },
+        {
+          "skill": "listening",
+          "unitId": "c1-08-humor-irony",
+          "exercise": {
+            "id": "ex-c1-listen-2",
+            "kind": "choice",
+            "instruction_pt": "Listen. What does the speaker really think of the hotel?",
+            "listen": "Oh, the hotel was charming. Nothing says luxury like a cold shower and a view of the car park.",
+            "options": [
+              "He loved it.",
+              "He was disappointed with it.",
+              "He thought it was expensive but good."
+            ],
+            "answer": 1,
+            "explanation_pt": "\"Nothing says luxury like a cold shower\" is sarcasm: he means the opposite."
+          }
+        },
+        {
+          "skill": "listening",
+          "unitId": "c1-03-register",
+          "exercise": {
+            "id": "ex-c1-listen-3",
+            "kind": "choice",
+            "instruction_pt": "Listen. Who is most likely speaking to whom?",
+            "listen": "Further to our conversation earlier, I'd be grateful if you could confirm the revised figures at your earliest convenience.",
+            "options": [
+              "A teenager talking to a friend.",
+              "A professional writing or speaking to a client or partner.",
+              "A parent talking to a child."
+            ],
+            "answer": 1,
+            "explanation_pt": "\"Further to\", \"I'd be grateful if\" and \"at your earliest convenience\" are typical of formal business register."
+          }
+        },
+        {
+          "skill": "listening",
+          "unitId": "c1-12-summarizing",
+          "exercise": {
+            "id": "ex-c1-listen-4",
+            "kind": "listen_answer",
+            "instruction_pt": "Listen and sum up the speaker's point in one short sentence.",
+            "listen": "The flights are cheaper in March, the weather's milder, and the museums aren't packed with tourists. If you ask me, there's no contest.",
+            "accepted": [
+              "So March is the best time to go",
+              "In short, it's better to go in March",
+              "Basically, you should go in March",
+              "In a nutshell, March is the best option",
+              "So you think we should travel in March",
+              "So March is better in every way",
+              "The bottom line is that March is the best time to go",
+              "So it's best to go in March"
+            ],
+            "commonErrors": [
+              {
+                "id": "more-better",
+                "match": "\\bmore better\\b",
+                "explanation_pt": "\"Better\" is already comparative: never \"more better\".",
+                "correction_en": "So March is the best time to go."
+              },
+              {
+                "id": "in-march-preposition",
+                "match": "\\bon march\\b",
+                "explanation_pt": "Months take \"in\": \"in March\".",
+                "correction_en": "So it's best to go in March."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "listening",
+          "unitId": "c1-07-difficult-conversations",
+          "exercise": {
+            "id": "ex-c1-listen-5",
+            "kind": "listen_answer",
+            "instruction_pt": "Listen. Your colleague is upset. Acknowledge how they feel before anything else.",
+            "listen": "I stayed late every night this month, and nobody even said thank you.",
+            "accepted": [
+              "That must be really frustrating",
+              "I can see why you're upset",
+              "I can understand why you're frustrated",
+              "That sounds really frustrating",
+              "I'm sorry, that must be really disheartening",
+              "I can see why you feel unappreciated",
+              "I completely understand how you feel",
+              "That's not fair on you. I'd be upset too",
+              "I hear you. That must be frustrating"
+            ],
+            "commonErrors": [
+              {
+                "id": "calm-down",
+                "match": "\\bcalm down\\b",
+                "explanation_pt": "\"Calm down\" tends to sound dismissive. Acknowledge the feeling first.",
+                "correction_en": "That must be really frustrating."
+              },
+              {
+                "id": "understand-you-feel",
+                "match": "\\bi understand you feel\\b",
+                "explanation_pt": "Say \"I understand how you feel\" (with \"how\").",
+                "correction_en": "I completely understand how you feel."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "skill": "speaking",
+      "items": [
+        {
+          "skill": "speaking",
+          "unitId": "c1-01-nuance-hedging",
+          "exercise": {
+            "id": "ex-c1-speak-1",
+            "kind": "translate",
+            "instruction_pt": "Say this in natural English: \"Eu tendo a achar que a culpa não é só dele.\"",
+            "accepted": [
+              "I'm inclined to think it's not only his fault",
+              "I tend to think it's not just his fault",
+              "I'm inclined to think it isn't entirely his fault",
+              "I tend to think he's not the only one to blame",
+              "I'm inclined to think he's not solely to blame",
+              "I tend to think it's not all his fault",
+              "I'd be inclined to think it's not only his fault"
+            ],
+            "commonErrors": [
+              {
+                "id": "guilt",
+                "match": "\\bhis guilt\\b",
+                "explanation_pt": "\"A culpa é dele\" is \"it's his fault\". \"Guilt\" is the feeling of being guilty (culpa moral).",
+                "correction_en": "I'm inclined to think it's not only his fault."
+              },
+              {
+                "id": "tend-to-thinking",
+                "match": "\\btend to thinking\\b",
+                "explanation_pt": "\"Tend to\" is followed by the base form: \"tend to think\".",
+                "correction_en": "I tend to think it's not just his fault."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "speaking",
+          "unitId": "c1-09-phrasal-verbs",
+          "exercise": {
+            "id": "ex-c1-speak-2",
+            "kind": "translate",
+            "instruction_pt": "Say this in natural English, with phrasal verbs: \"Eles recusaram a proposta, então tivemos que bolar outra coisa.\"",
+            "accepted": [
+              "They turned down the proposal, so we had to come up with something else",
+              "They turned the proposal down, so we had to come up with something else",
+              "They turned it down, so we had to come up with something else",
+              "They turned down the offer, so we had to come up with something else",
+              "They turned down our proposal, so we had to come up with something different",
+              "They rejected the proposal, so we had to come up with something else"
+            ],
+            "commonErrors": [
+              {
+                "id": "turned-off",
+                "match": "\\bturned off\\b",
+                "explanation_pt": "To reject an offer is \"turn down\"; \"turn off\" is for switching off a device.",
+                "correction_en": "They turned down the proposal, so we had to come up with something else."
+              },
+              {
+                "id": "come-up-something",
+                "match": "\\bcome up something\\b",
+                "explanation_pt": "Don't drop \"with\": \"come up with something\".",
+                "correction_en": "They turned down the proposal, so we had to come up with something else."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "speaking",
+          "unitId": "c1-11-giving-feedback",
+          "exercise": {
+            "id": "ex-c1-speak-3",
+            "kind": "translate",
+            "instruction_pt": "Make this feedback more constructive and say it: \"Your report is too long.\"",
+            "accepted": [
+              "It might be worth making the report a bit shorter",
+              "It might be worth cutting the report down a little",
+              "Have you considered shortening the report?",
+              "The report could be a bit more concise",
+              "I think the report could be shorter",
+              "Maybe the report could be a little more concise",
+              "It might help to trim the report a bit",
+              "Perhaps you could make the report more concise"
+            ],
+            "commonErrors": [
+              {
+                "id": "still-blunt",
+                "match": "\\breport is too long\\b",
+                "explanation_pt": "That's still a blunt judgement. Turn it into a suggestion: \"It might be worth...\" or \"Have you considered...?\".",
+                "correction_en": "It might be worth making the report a bit shorter."
+              },
+              {
+                "id": "worth-to",
+                "match": "\\bworth to\\b",
+                "explanation_pt": "\"Worth\" is followed by -ing: \"worth making\".",
+                "correction_en": "It might be worth making the report a bit shorter."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "speaking",
+          "unitId": "c1-04-storytelling",
+          "exercise": {
+            "id": "ex-c1-speak-4",
+            "kind": "translate",
+            "instruction_pt": "Say this in natural English: \"Só quando o avião decolou é que percebi que tinha deixado as chaves em casa.\"",
+            "accepted": [
+              "It was only when the plane took off that I realised I'd left my keys at home",
+              "It was only when the plane took off that I realized I had left my keys at home",
+              "It wasn't until the plane took off that I realised I'd left my keys at home",
+              "Only when the plane took off did I realise I'd left my keys at home",
+              "I only realised I'd left my keys at home when the plane took off",
+              "It was only when the plane took off that I realised I'd left the keys at home"
+            ],
+            "commonErrors": [
+              {
+                "id": "forgot-keys-in-home",
+                "match": "\\b(in|at the) home\\b",
+                "explanation_pt": "\"Em casa\" is \"at home\", with no article.",
+                "correction_en": "It was only when the plane took off that I realised I'd left my keys at home."
+              },
+              {
+                "id": "perceived",
+                "match": "\\bperceived\\b",
+                "explanation_pt": "\"Perceber\" (become aware) is \"realise\", not \"perceive\".",
+                "correction_en": "It was only when the plane took off that I realised I'd left my keys at home."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "speaking",
+          "unitId": "c1-02-debating",
+          "exercise": {
+            "id": "ex-c1-speak-5",
+            "kind": "free_speak",
+            "instruction_pt": "Answer in one or two minutes, as if in a debate.",
+            "prompt_en": "Some people argue that working from home is killing company culture. To what extent do you agree?",
+            "guidelines_pt": [
+              "State a clear, hedged position: \"I'd argue that...\" or \"To some extent...\".",
+              "Support it with a reason and an example.",
+              "Concede a point: \"I'll grant you that...\".",
+              "Conclude: \"On balance, ...\" or \"In a nutshell, ...\"."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "skill": "vocabulary",
+      "items": [
+        {
+          "skill": "vocabulary",
+          "unitId": "c1-07-difficult-conversations",
+          "exercise": {
+            "id": "ex-c1-vocab-1",
+            "kind": "match",
+            "instruction_pt": "Match the false friends with their real meanings.",
+            "pairs": [
+              {
+                "en": "actually",
+                "pt": "na verdade"
+              },
+              {
+                "en": "eventually",
+                "pt": "no fim, finalmente"
+              },
+              {
+                "en": "pretend",
+                "pt": "fingir"
+              },
+              {
+                "en": "resume",
+                "pt": "retomar"
+              },
+              {
+                "en": "sensible",
+                "pt": "sensato"
+              }
+            ]
+          }
+        },
+        {
+          "skill": "vocabulary",
+          "unitId": "c1-06-leading-discussion",
+          "exercise": {
+            "id": "ex-c1-vocab-2",
+            "kind": "choice",
+            "instruction_pt": "You're chairing a meeting and someone raises an unrelated issue. What do you say?",
+            "options": [
+              "Let's park that for now and come back to it later.",
+              "Let's bring that forward.",
+              "Let's take that on board immediately."
+            ],
+            "answer": 0,
+            "explanation_pt": "\"Park\" an issue = leave it for later. \"Bring forward\" means to move something to an earlier time."
+          }
+        },
+        {
+          "skill": "vocabulary",
+          "unitId": "c1-05-abstract-topics",
+          "exercise": {
+            "id": "ex-c1-vocab-3",
+            "kind": "match",
+            "instruction_pt": "Match each expression with its meaning.",
+            "pairs": [
+              {
+                "en": "to boil down to",
+                "pt": "resumir-se a"
+              },
+              {
+                "en": "a double-edged sword",
+                "pt": "uma faca de dois gumes"
+              },
+              {
+                "en": "to take for granted",
+                "pt": "não dar valor, dar como certo"
+              },
+              {
+                "en": "to hold water",
+                "pt": "se sustentar (um argumento)"
+              }
+            ]
+          }
+        },
+        {
+          "skill": "vocabulary",
+          "unitId": "c1-10-networking",
+          "exercise": {
+            "id": "ex-c1-vocab-4",
+            "kind": "choice",
+            "instruction_pt": "\"Could you put me in touch with your sales director?\" means...",
+            "options": [
+              "Could you call your sales director for me right now?",
+              "Could you introduce me to your sales director?",
+              "Could you send me your sales director's CV?"
+            ],
+            "answer": 1,
+            "explanation_pt": "\"Put someone in touch with\" = connect them, introduce them."
+          }
+        },
+        {
+          "skill": "vocabulary",
+          "unitId": "c1-08-humor-irony",
+          "exercise": {
+            "id": "ex-c1-vocab-5",
+            "kind": "choice",
+            "instruction_pt": "Which word describes humour delivered with a completely serious face?",
+            "options": ["deadpan", "slapstick", "cheesy"],
+            "answer": 0,
+            "explanation_pt": "\"Deadpan\" = said with no expression. \"Slapstick\" is physical comedy; \"cheesy\" means corny (brega)."
+          }
+        }
+      ]
+    },
+    {
+      "skill": "structure",
+      "items": [
+        {
+          "skill": "structure",
+          "unitId": "c1-04-storytelling",
+          "exercise": {
+            "id": "ex-c1-struct-1",
+            "kind": "fill",
+            "instruction_pt": "Complete with one word.",
+            "sentence": "Only when I got home ___ I realise my wallet was missing.",
+            "accepted": ["did"],
+            "commonErrors": [
+              {
+                "id": "no-inversion",
+                "match": "^(i|had|was)$",
+                "explanation_pt": "After \"Only when...\" at the start, invert subject and auxiliary: \"did I realise\".",
+                "correction_en": "Only when I got home did I realise my wallet was missing."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "structure",
+          "unitId": "c1-11-giving-feedback",
+          "exercise": {
+            "id": "ex-c1-struct-2",
+            "kind": "fill",
+            "instruction_pt": "Complete with the correct form of \"add\".",
+            "sentence": "It might be worth ___ a short summary at the start.",
+            "accepted": ["adding"],
+            "commonErrors": [
+              {
+                "id": "worth-to",
+                "match": "^(to add|add|added)$",
+                "explanation_pt": "\"Worth\" is followed by the -ing form: \"worth adding\".",
+                "correction_en": "It might be worth adding a short summary at the start."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "structure",
+          "unitId": "c1-05-abstract-topics",
+          "exercise": {
+            "id": "ex-c1-struct-3",
+            "kind": "choice",
+            "instruction_pt": "Which sentence is correct?",
+            "options": [
+              "The honesty is the most important quality in a leader.",
+              "Honesty is the most important quality in a leader.",
+              "A honesty is the most important quality in a leader."
+            ],
+            "answer": 1,
+            "explanation_pt": "General abstract nouns take no article in English: \"Honesty is...\"."
+          }
+        },
+        {
+          "skill": "structure",
+          "unitId": "c1-09-phrasal-verbs",
+          "exercise": {
+            "id": "ex-c1-struct-4",
+            "kind": "order",
+            "instruction_pt": "Put the words in the correct order.",
+            "accepted": ["We'll have to put it off until next week"]
+          }
+        },
+        {
+          "skill": "structure",
+          "unitId": "c1-03-register",
+          "exercise": {
+            "id": "ex-c1-struct-5",
+            "kind": "fill",
+            "instruction_pt": "Complete the formal sentence with one word.",
+            "sentence": "We look forward to ___ with you on this project.",
+            "accepted": ["working"],
+            "commonErrors": [
+              {
+                "id": "look-forward-to-infinitive",
+                "match": "^(work|worked)$",
+                "explanation_pt": "In \"look forward to\", \"to\" is a preposition, so use -ing: \"working\".",
+                "correction_en": "We look forward to working with you on this project."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

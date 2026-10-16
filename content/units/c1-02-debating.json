@@ -1,0 +1,453 @@
+{
+  "id": "c1-02-debating",
+  "level": "C1",
+  "order": 2,
+  "title_pt": "Debatendo",
+  "title_en": "Debating",
+  "objective_pt": "Challenge an argument, rebut a point and defend your position politely but firmly (\"That's a fair point, but...\", \"I'd take issue with...\", \"The evidence suggests otherwise\").",
+  "blocks": [
+    {
+      "id": "c1-02-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Get the learner arguing about a light topic and notice how they disagree.",
+        "prompts": [
+          "Pineapple on pizza: yes or no? Convince me.",
+          "What's the strongest argument against your view?"
+        ],
+        "watchFor": [
+          "\"I don't agree with you\" as the only option; introduce \"I see it differently\".",
+          "\"I agree with you\" pronounced as \"I am agree\" (from \"eu concordo\")."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-02-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repeat with confident, falling intonation.",
+          "prompt": "That's a fair point, but I see it differently.",
+          "accepted": [
+            "That's a fair point, but I see it differently",
+            "That is a fair point but I see it differently"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "c1-02-warm-2",
+          "kind": "choice",
+          "instruction_pt": "Which is the most natural way to disagree in a formal debate?",
+          "options": [
+            "I am not agree with this.",
+            "With all due respect, I'd take issue with that claim.",
+            "You are not right, no."
+          ],
+          "answer": 1,
+          "explanation_pt": "\"With all due respect\" plus \"take issue with\" is firm but polite. \"I am not agree\" is a typical Brazilian error: \"agree\" is a verb, so \"I don't agree\"."
+        },
+        {
+          "id": "c1-02-warm-3",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English: \"Eu discordo totalmente.\"",
+          "accepted": [
+            "I totally disagree",
+            "I completely disagree",
+            "I strongly disagree",
+            "I disagree completely",
+            "I disagree entirely",
+            "I couldn't disagree more",
+            "I entirely disagree",
+            "I fully disagree"
+          ],
+          "commonErrors": [
+            {
+              "id": "am-disagree",
+              "match": "\\bi am (totally |completely )?(dis)?agree\\b",
+              "explanation_pt": "\"Agree\" and \"disagree\" are verbs, so don't use \"am\": \"I disagree\", not \"I am disagree\".",
+              "correction_en": "I totally disagree."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-02-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Language for rebuttal: take issue with, concede, counterargument, hold water, the burden of proof.",
+        "prompts": [
+          "Which popular belief do you think doesn't hold water?",
+          "Can you concede one point to someone you disagree with?"
+        ],
+        "watchFor": [
+          "\"Argument\" used to mean \"discussion\" only; in English it can also mean a fight.",
+          "\"Discuss about\" (from \"discutir sobre\"); \"discuss\" takes a direct object."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-02-vocab-1",
+          "kind": "vocab",
+          "word_en": "to take issue with",
+          "meaning_pt": "contestar, discordar de (algo específico)",
+          "example_en": "I'd take issue with the idea that money buys happiness."
+        },
+        {
+          "id": "c1-02-vocab-2",
+          "kind": "vocab",
+          "word_en": "to hold water",
+          "meaning_pt": "fazer sentido, se sustentar (um argumento)",
+          "example_en": "That theory doesn't really hold water."
+        },
+        {
+          "id": "c1-02-vocab-3",
+          "kind": "vocab",
+          "word_en": "to concede",
+          "meaning_pt": "admitir, reconhecer (um ponto do outro lado)",
+          "example_en": "I'll concede that the costs are high."
+        },
+        {
+          "id": "c1-02-vocab-4",
+          "kind": "match",
+          "instruction_pt": "Match each debating expression with its meaning.",
+          "pairs": [
+            { "en": "counterargument", "pt": "contra-argumento" },
+            { "en": "the burden of proof", "pt": "o ônus da prova" },
+            { "en": "a slippery slope", "pt": "um efeito dominó perigoso" },
+            { "en": "to play devil's advocate", "pt": "bancar o advogado do diabo" }
+          ]
+        },
+        {
+          "id": "c1-02-vocab-5",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English: \"Vamos discutir esse ponto.\"",
+          "accepted": [
+            "Let's discuss this point",
+            "Let's discuss that point",
+            "Let's talk about this point",
+            "Let's talk about that point",
+            "Let's go over this point",
+            "Let's look at this point",
+            "Let's discuss this"
+          ],
+          "commonErrors": [
+            {
+              "id": "discuss-about",
+              "match": "\\bdiscuss about\\b",
+              "explanation_pt": "\"Discuss\" takes a direct object: \"discuss this point\", never \"discuss about\". (\"Talk about\" does take \"about\".)",
+              "correction_en": "Let's discuss this point."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-02-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Use contrastive stress to highlight the point you are challenging.",
+        "prompts": [
+          "Say \"I didn't say it was EASY, I said it was POSSIBLE.\"",
+          "Which word would you stress to challenge the number in \"Most people agree\"?"
+        ],
+        "watchFor": [
+          "Even stress on every word, so the contrast disappears.",
+          "Adding a vowel to final consonants: \"issue-e\", \"point-chi\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-02-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repeat, stressing \"cause\" and \"symptom\" to contrast them.",
+          "prompt": "That's not the cause, it's a symptom.",
+          "accepted": [
+            "That's not the cause, it's a symptom",
+            "That is not the cause, it is a symptom"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "c1-02-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repeat. \"Doesn't\" is stressed; \"hold water\" links smoothly.",
+          "prompt": "With respect, that argument doesn't hold water.",
+          "accepted": [
+            "With respect, that argument doesn't hold water",
+            "With respect, that argument does not hold water"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "c1-02-pron-3",
+          "kind": "choice",
+          "instruction_pt": "In \"I said SOME people, not ALL people\", why are \"some\" and \"all\" stressed?",
+          "options": [
+            "Because they are long words.",
+            "To contrast the two ideas.",
+            "Because they are at the start of a phrase."
+          ],
+          "answer": 1,
+          "explanation_pt": "English uses stress to mark contrast. Stressing the words you are correcting makes your rebuttal clear."
+        }
+      ]
+    },
+    {
+      "id": "c1-02-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Follow the structure of an argument (claim, concession, rebuttal) and respond to it.",
+        "prompts": ["What did the speaker concede?", "What was their main point after \"but\"?"],
+        "watchFor": [
+          "Focusing on the concession and missing the real point after \"but\" or \"however\".",
+          "Replying \"I agree\" without saying with what."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-02-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Listen. What is the speaker's main point?",
+          "listen": "Admittedly, public transport is expensive to build. But in the long run, it saves cities far more than it costs.",
+          "options": [
+            "Public transport is too expensive.",
+            "Public transport pays off over time.",
+            "Cities should stop building public transport."
+          ],
+          "answer": 1,
+          "explanation_pt": "\"Admittedly\" introduces a concession; the main point comes after \"But\": it saves more than it costs."
+        },
+        {
+          "id": "c1-02-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Listen and rebut the claim politely, starting with a concession.",
+          "listen": "Social media has done more harm than good.",
+          "accepted": [
+            "That's a fair point, but it has also connected people",
+            "I see your point, but it has also brought people together",
+            "That may be true, but it has some real benefits",
+            "That's true to some extent, but it has benefits too",
+            "I take your point, but it also has benefits",
+            "You have a point, but it has helped a lot of people",
+            "Fair point, but it has also done a lot of good",
+            "I see what you mean, but it has also done a lot of good",
+            "Maybe, but it has also done a lot of good"
+          ],
+          "commonErrors": [
+            {
+              "id": "you-have-reason",
+              "match": "\\byou have (the )?reason\\b",
+              "explanation_pt": "\"Você tem razão\" is \"You're right\" or \"You have a point\", not \"you have reason\".",
+              "correction_en": "You have a point, but it has also done a lot of good."
+            },
+            {
+              "id": "am-agree",
+              "match": "\\bi am (not )?agree\\b",
+              "explanation_pt": "\"Agree\" is a verb: \"I agree\" / \"I don't agree\".",
+              "correction_en": "I don't entirely agree. It has also done a lot of good."
+            }
+          ]
+        },
+        {
+          "id": "c1-02-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Listen and ask the speaker to back up their claim.",
+          "listen": "Everyone knows that young people don't read anymore.",
+          "accepted": [
+            "What evidence do you have for that?",
+            "Where's the evidence for that?",
+            "Is there any evidence for that?",
+            "What makes you say that?",
+            "What's that based on?",
+            "Do you have any data to back that up?",
+            "Can you back that up?",
+            "How do you know that?",
+            "What's your evidence?",
+            "Says who?"
+          ],
+          "commonErrors": [
+            {
+              "id": "evidences-plural",
+              "match": "\\bevidences\\b",
+              "explanation_pt": "\"Evidence\" is uncountable in English: \"some evidence\", \"any evidence\", never \"evidences\".",
+              "correction_en": "What evidence do you have for that?"
+            },
+            {
+              "id": "proves",
+              "match": "\\bwhat (are )?(the|your) proves\\b",
+              "explanation_pt": "The noun is \"proof\" (uncountable) or \"evidence\"; \"proves\" is a verb form.",
+              "correction_en": "What evidence do you have for that?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-02-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Run a short structured debate: claim, support, concession, rebuttal, conclusion.",
+        "prompts": [
+          "Should university be free for everyone?",
+          "I'll play devil's advocate. What would you say to someone who says it's too expensive?",
+          "Can you sum up your position in one sentence?"
+        ],
+        "watchFor": [
+          "Personal attacks or overly direct language (\"You're wrong\").",
+          "\"Discuss about\", \"evidences\", \"I am agree\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-02-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English: \"Concordo em parte, mas acho que você está ignorando os custos.\"",
+          "accepted": [
+            "I partly agree, but I think you're ignoring the costs",
+            "I agree up to a point, but I think you're ignoring the costs",
+            "I agree to some extent, but I think you're ignoring the costs",
+            "I partially agree, but I think you're ignoring the costs",
+            "I partly agree, but I think you're overlooking the costs",
+            "I agree in part, but I think you're ignoring the costs",
+            "I agree with you in part, but I think you're overlooking the costs"
+          ],
+          "commonErrors": [
+            {
+              "id": "am-agree",
+              "match": "\\bi am (partly |partially )?agree\\b",
+              "explanation_pt": "\"Agree\" is a verb: \"I partly agree\", not \"I am partly agree\".",
+              "correction_en": "I partly agree, but I think you're ignoring the costs."
+            },
+            {
+              "id": "agree-in-parts",
+              "match": "\\bin parts\\b",
+              "explanation_pt": "\"Em parte\" is \"in part\" or \"partly\" (singular), not \"in parts\".",
+              "correction_en": "I partly agree, but I think you're ignoring the costs."
+            }
+          ]
+        },
+        {
+          "id": "c1-02-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English: \"Só para bancar o advogado do diabo: e se isso não funcionar?\"",
+          "accepted": [
+            "Just to play devil's advocate, what if it doesn't work?",
+            "Just to play devil's advocate, what if this doesn't work?",
+            "Just to play devil's advocate, what if that doesn't work?",
+            "To play devil's advocate, what if it doesn't work?",
+            "Playing devil's advocate, what if it doesn't work?",
+            "Let me play devil's advocate. What if it doesn't work?"
+          ],
+          "commonErrors": [
+            {
+              "id": "and-if",
+              "match": "\\band if (it|this|that) (does not|did not) work\\b",
+              "explanation_pt": "\"E se...?\" is \"What if...?\" in English. \"And if...\" sounds incomplete.",
+              "correction_en": "Just to play devil's advocate, what if it doesn't work?"
+            },
+            {
+              "id": "devil-lawyer",
+              "match": "\\bdevil s lawyer\\b",
+              "explanation_pt": "The fixed expression is \"devil's advocate\", not \"devil's lawyer\".",
+              "correction_en": "Just to play devil's advocate, what if it doesn't work?"
+            }
+          ]
+        },
+        {
+          "id": "c1-02-conv-3",
+          "kind": "order",
+          "instruction_pt": "Put the words in order to concede a point.",
+          "accepted": ["I'll grant you that it's expensive"]
+        },
+        {
+          "id": "c1-02-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Respond to the claim in about a minute, as if in a debate.",
+          "prompt_en": "Here's my position: university education should be completely free for everyone. Convince me I'm wrong, or tell me why I'm right.",
+          "guidelines_pt": [
+            "State your position clearly in the first sentence.",
+            "Concede one point: \"I'll grant you that...\".",
+            "Rebut with a reason and, if possible, evidence.",
+            "Conclude: \"So, all things considered, ...\"."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-02-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Recycle rebuttal language and the key grammar traps (agree, discuss, evidence).",
+        "prompts": [
+          "Disagree with me politely: \"Cats are better than dogs.\"",
+          "Ask me for evidence."
+        ],
+        "watchFor": ["\"I am agree\"", "\"Evidences\""]
+      },
+      "exercises": [
+        {
+          "id": "c1-02-rev-1",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English: \"Esse argumento não se sustenta.\"",
+          "accepted": [
+            "That argument doesn't hold water",
+            "This argument doesn't hold water",
+            "That argument doesn't stand up",
+            "That argument doesn't hold up",
+            "This argument doesn't hold up",
+            "That argument doesn't stand up to scrutiny",
+            "That argument is not convincing"
+          ],
+          "commonErrors": [
+            {
+              "id": "sustain",
+              "match": "\\b(does not|cannot) sustain( itself)?\\b",
+              "explanation_pt": "\"Sustentar-se\" (an argument) is \"hold water\" or \"hold up\". \"Sustain itself\" is a literal translation.",
+              "correction_en": "That argument doesn't hold water."
+            }
+          ]
+        },
+        {
+          "id": "c1-02-rev-2",
+          "kind": "fill",
+          "instruction_pt": "Complete with one word.",
+          "sentence": "There isn't enough ___ to support that claim.",
+          "accepted": ["evidence", "proof", "data"],
+          "commonErrors": [
+            {
+              "id": "evidences",
+              "match": "^(evidences|proves|proofs)$",
+              "explanation_pt": "\"Evidence\" and \"proof\" are uncountable here: no plural.",
+              "correction_en": "There isn't enough evidence to support that claim."
+            }
+          ]
+        },
+        {
+          "id": "c1-02-rev-3",
+          "kind": "choice",
+          "instruction_pt": "\"I'll grant you that\" means...",
+          "options": [
+            "I'll give you a present.",
+            "I admit you're right about that.",
+            "I refuse that idea."
+          ],
+          "answer": 1,
+          "explanation_pt": "\"I'll grant you that\" is a concession: you admit the other person has a point."
+        },
+        {
+          "id": "c1-02-rev-4",
+          "kind": "repeat",
+          "instruction_pt": "Repeat to close the debate.",
+          "prompt": "All things considered, I stand by what I said.",
+          "accepted": ["All things considered, I stand by what I said"],
+          "commonErrors": []
+        }
+      ]
+    }
+  ]
+}
