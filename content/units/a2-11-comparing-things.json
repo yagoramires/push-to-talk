@@ -530,5 +530,559 @@
         }
       ]
     }
+  ],
+  "practice": [
+    {
+      "id": "a2-11-prac-1",
+      "kind": "vocab",
+      "word_en": "worse",
+      "meaning_pt": "pior",
+      "example_en": "The traffic is worse on Fridays."
+    },
+    {
+      "id": "a2-11-prac-2",
+      "kind": "vocab",
+      "word_en": "the most",
+      "meaning_pt": "o mais (superlativo)",
+      "example_en": "This is the most beautiful beach in Brazil."
+    },
+    {
+      "id": "a2-11-prac-3",
+      "kind": "vocab",
+      "word_en": "quieter",
+      "meaning_pt": "mais tranquilo, mais silencioso",
+      "example_en": "I prefer small towns because they're quieter."
+    },
+    {
+      "id": "a2-11-prac-4",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "This phone is cheaper, but that one is better.",
+      "accepted": ["This phone is cheaper, but that one is better."],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-11-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "The weather in Curitiba is colder than in Recife.",
+      "accepted": ["The weather in Curitiba is colder than in Recife."],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-11-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "It's the most expensive restaurant in town.",
+      "accepted": ["It's the most expensive restaurant in town."],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-11-prac-7",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "My new job is not as stressful as my old one.",
+      "accepted": ["My new job is not as stressful as my old one."],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-11-prac-8",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "Which one do you prefer?",
+      "accepted": ["Which one do you prefer?"],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-11-prac-9",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"O metrô é mais rápido do que o ônibus.\"",
+      "accepted": [
+        "The subway is faster than the bus",
+        "The metro is faster than the bus",
+        "The subway's faster than the bus",
+        "The underground is faster than the bus",
+        "The subway is quicker than the bus",
+        "The metro is quicker than the bus"
+      ],
+      "commonErrors": [
+        {
+          "id": "more-er",
+          "match": "\\bmore (cheaper|bigger|faster|better|worse|smaller|older|bigger|quieter|easier|closer|nicer)\\b",
+          "explanation_pt": "Adjetivo curto já leva \"-er\": não use \"more\" junto.",
+          "correction_en": "The subway is faster than the bus."
+        },
+        {
+          "id": "more-short",
+          "match": "\\bmore (cheap|big|fast|small|old|quiet|easy|close|nice|good|bad)\\b",
+          "explanation_pt": "Adjetivos curtos fazem o comparativo com \"-er\": \"cheaper\", \"bigger\". \"Good\" vira \"better\" e \"bad\", \"worse\".",
+          "correction_en": "The subway is faster than the bus."
+        },
+        {
+          "id": "than-that",
+          "match": "\\b(\\w+er|more \\w+) (that|of|then|do que) (the|my|rio|sao|são)\\b",
+          "explanation_pt": "Para comparar use \"than\": \"faster than the bus\".",
+          "correction_en": "The subway is faster than the bus."
+        }
+      ]
+    },
+    {
+      "id": "a2-11-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Este é o celular mais barato da loja.\"",
+      "accepted": [
+        "This is the cheapest phone in the store",
+        "This is the cheapest cell phone in the store",
+        "This is the cheapest phone in the shop",
+        "This is the cheapest mobile in the shop",
+        "This phone is the cheapest in the store",
+        "This is the cheapest smartphone in the store"
+      ],
+      "commonErrors": [
+        {
+          "id": "most-cheap",
+          "match": "\\b(the )?most (cheap|cheapest)\\b",
+          "explanation_pt": "Superlativo de adjetivo curto: \"the cheapest\".",
+          "correction_en": "This is the cheapest phone in the store."
+        },
+        {
+          "id": "of-store",
+          "match": "\\b(cheapest|phone) of the (store|shop)\\b",
+          "explanation_pt": "Com lugar use \"in\": \"the cheapest in the store\".",
+          "correction_en": "This is the cheapest phone in the store."
+        }
+      ]
+    },
+    {
+      "id": "a2-11-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Minha cidade é mais tranquila do que São Paulo.\"",
+      "accepted": [
+        "My city is quieter than São Paulo",
+        "My city is quieter than Sao Paulo",
+        "My city is more peaceful than São Paulo",
+        "My city is calmer than São Paulo",
+        "My town is quieter than São Paulo",
+        "My city's quieter than São Paulo"
+      ],
+      "commonErrors": [
+        {
+          "id": "more-er",
+          "match": "\\bmore (cheaper|bigger|faster|better|worse|smaller|older|bigger|quieter|easier|closer|nicer)\\b",
+          "explanation_pt": "Adjetivo curto já leva \"-er\": não use \"more\" junto.",
+          "correction_en": "My city is quieter than São Paulo."
+        },
+        {
+          "id": "more-short",
+          "match": "\\bmore (cheap|big|fast|small|old|quiet|easy|close|nice|good|bad)\\b",
+          "explanation_pt": "Adjetivos curtos fazem o comparativo com \"-er\": \"cheaper\", \"bigger\". \"Good\" vira \"better\" e \"bad\", \"worse\".",
+          "correction_en": "My city is quieter than São Paulo."
+        },
+        {
+          "id": "tranquil",
+          "match": "\\btranquil\\b",
+          "explanation_pt": "O natural é \"quiet\", \"calm\" ou \"peaceful\".",
+          "correction_en": "My city is quieter than São Paulo."
+        }
+      ]
+    },
+    {
+      "id": "a2-11-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"O meu carro é tão rápido quanto o seu.\"",
+      "accepted": [
+        "My car is as fast as yours",
+        "My car's as fast as yours",
+        "My car is just as fast as yours",
+        "My car is as fast as your car",
+        "My car is as quick as yours"
+      ],
+      "commonErrors": [
+        {
+          "id": "so-as",
+          "match": "\\bso fast (as|than)\\b|\\bas fast than\\b",
+          "explanation_pt": "A comparação de igualdade é \"as fast as\".",
+          "correction_en": "My car is as fast as yours."
+        },
+        {
+          "id": "as-your",
+          "match": "\\bas fast as your$",
+          "explanation_pt": "Sem o substantivo, use \"yours\".",
+          "correction_en": "My car is as fast as yours."
+        }
+      ]
+    },
+    {
+      "id": "a2-11-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"O filme foi pior do que o livro.\"",
+      "accepted": [
+        "The movie was worse than the book",
+        "The film was worse than the book",
+        "The movie was not as good as the book",
+        "The movie wasn't as good as the book",
+        "The film wasn't as good as the book"
+      ],
+      "commonErrors": [
+        {
+          "id": "more-bad",
+          "match": "\\bmore (bad|worse)\\b|\\bbadder\\b",
+          "explanation_pt": "O comparativo de \"bad\" é \"worse\".",
+          "correction_en": "The movie was worse than the book."
+        }
+      ]
+    },
+    {
+      "id": "a2-11-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Qual é o melhor lugar para comer aqui?\"",
+      "accepted": [
+        "What's the best place to eat here?",
+        "What is the best place to eat here?",
+        "Where's the best place to eat here?",
+        "What's the best place to eat around here?",
+        "Where is the best place to eat around here?",
+        "Which is the best place to eat here?"
+      ],
+      "commonErrors": [
+        {
+          "id": "most-good",
+          "match": "\\b(most good|more good|the better place)\\b",
+          "explanation_pt": "O superlativo de \"good\" é \"the best\".",
+          "correction_en": "What's the best place to eat here?"
+        }
+      ]
+    },
+    {
+      "id": "a2-11-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que São Paulo é maior.",
+      "listen": "Which is bigger, Rio or São Paulo?",
+      "accepted": [
+        "São Paulo is bigger",
+        "Sao Paulo is bigger",
+        "São Paulo is bigger than Rio",
+        "Sao Paulo is bigger than Rio",
+        "São Paulo",
+        "São Paulo is much bigger"
+      ],
+      "commonErrors": [
+        {
+          "id": "more-er",
+          "match": "\\bmore (cheaper|bigger|faster|better|worse|smaller|older|bigger|quieter|easier|closer|nicer)\\b",
+          "explanation_pt": "Adjetivo curto já leva \"-er\": não use \"more\" junto.",
+          "correction_en": "São Paulo is bigger."
+        },
+        {
+          "id": "more-short",
+          "match": "\\bmore (cheap|big|fast|small|old|quiet|easy|close|nice|good|bad)\\b",
+          "explanation_pt": "Adjetivos curtos fazem o comparativo com \"-er\": \"cheaper\", \"bigger\". \"Good\" vira \"better\" e \"bad\", \"worse\".",
+          "correction_en": "São Paulo is bigger."
+        },
+        {
+          "id": "than-that",
+          "match": "\\b(\\w+er|more \\w+) (that|of|then|do que) (the|my|rio|sao|são)\\b",
+          "explanation_pt": "Para comparar use \"than\": \"faster than the bus\".",
+          "correction_en": "São Paulo is bigger."
+        }
+      ]
+    },
+    {
+      "id": "a2-11-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que prefere o campo porque é mais calmo.",
+      "listen": "Do you prefer the city or the countryside?",
+      "accepted": [
+        "I prefer the countryside because it's quieter",
+        "The countryside, because it's quieter",
+        "I prefer the countryside. It's quieter",
+        "I prefer the countryside because it's calmer",
+        "The countryside. It's more peaceful",
+        "I prefer the countryside because it's more peaceful"
+      ],
+      "commonErrors": [
+        {
+          "id": "more-short",
+          "match": "\\bmore (cheap|big|fast|small|old|quiet|easy|close|nice|good|bad)\\b",
+          "explanation_pt": "Adjetivos curtos fazem o comparativo com \"-er\": \"cheaper\", \"bigger\". \"Good\" vira \"better\" e \"bad\", \"worse\".",
+          "correction_en": "I prefer the countryside because it's quieter."
+        },
+        {
+          "id": "more-er",
+          "match": "\\bmore (cheaper|bigger|faster|better|worse|smaller|older|bigger|quieter|easier|closer|nicer)\\b",
+          "explanation_pt": "Adjetivo curto já leva \"-er\": não use \"more\" junto.",
+          "correction_en": "I prefer the countryside because it's quieter."
+        },
+        {
+          "id": "field",
+          "match": "\\bthe field\\b",
+          "explanation_pt": "\"O campo\" (zona rural) é \"the countryside\".",
+          "correction_en": "I prefer the countryside because it's quieter."
+        }
+      ]
+    },
+    {
+      "id": "a2-11-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que sim, é maior, mas mais caro.",
+      "listen": "Is your new apartment better than the old one?",
+      "accepted": [
+        "Yes, it's bigger, but more expensive",
+        "Yes, it's bigger but it's more expensive",
+        "Yeah, it's bigger but more expensive",
+        "Yes. It's bigger, but more expensive too"
+      ],
+      "commonErrors": [
+        {
+          "id": "more-er",
+          "match": "\\bmore (cheaper|bigger|faster|better|worse|smaller|older|bigger|quieter|easier|closer|nicer)\\b",
+          "explanation_pt": "Adjetivo curto já leva \"-er\": não use \"more\" junto.",
+          "correction_en": "Yes, it's bigger, but more expensive."
+        },
+        {
+          "id": "more-short",
+          "match": "\\bmore (cheap|big|fast|small|old|quiet|easy|close|nice|good|bad)\\b",
+          "explanation_pt": "Adjetivos curtos fazem o comparativo com \"-er\": \"cheaper\", \"bigger\". \"Good\" vira \"better\" e \"bad\", \"worse\".",
+          "correction_en": "Yes, it's bigger, but more expensive."
+        },
+        {
+          "id": "expensiver",
+          "match": "\\bexpensiver\\b",
+          "explanation_pt": "Adjetivo longo usa \"more\": \"more expensive\".",
+          "correction_en": "Yes, it's bigger, but more expensive."
+        }
+      ]
+    },
+    {
+      "id": "a2-11-prac-18",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que é Fernando de Noronha.",
+      "listen": "What's the most beautiful place you know?",
+      "accepted": [
+        "It's Fernando de Noronha",
+        "Fernando de Noronha",
+        "I think it's Fernando de Noronha",
+        "Probably Fernando de Noronha",
+        "The most beautiful place I know is Fernando de Noronha"
+      ],
+      "commonErrors": [
+        {
+          "id": "more-beautiful-place",
+          "match": "\\bthe more beautiful\\b",
+          "explanation_pt": "Superlativo: \"the most beautiful\".",
+          "correction_en": "It's Fernando de Noronha."
+        }
+      ]
+    },
+    {
+      "id": "a2-11-prac-19",
+      "kind": "fill",
+      "instruction_pt": "Complete com o comparativo de \"good\".",
+      "sentence": "This coffee is ___ than the one at home.",
+      "accepted": ["better"],
+      "commonErrors": [
+        {
+          "id": "more-good",
+          "match": "^(more good|gooder|best)$",
+          "explanation_pt": "O comparativo de \"good\" é \"better\".",
+          "correction_en": "better."
+        }
+      ]
+    },
+    {
+      "id": "a2-11-prac-20",
+      "kind": "fill",
+      "instruction_pt": "Complete com a palavra que falta.",
+      "sentence": "Lisbon is not as big ___ Madrid.",
+      "accepted": ["as"],
+      "commonErrors": [
+        {
+          "id": "than",
+          "match": "^(than|that|so|like)$",
+          "explanation_pt": "Na comparação de igualdade use \"as ... as\".",
+          "correction_en": "as."
+        }
+      ]
+    },
+    {
+      "id": "a2-11-prac-21",
+      "kind": "choice",
+      "instruction_pt": "Qual frase está certa?",
+      "options": [
+        "This hotel is more comfortable than that one.",
+        "This hotel is comfortabler than that one.",
+        "This hotel is more comfortable that that one."
+      ],
+      "answer": 0,
+      "explanation_pt": "Adjetivo longo: \"more comfortable\", seguido de \"than\"."
+    },
+    {
+      "id": "a2-11-prac-22",
+      "kind": "choice",
+      "instruction_pt": "Qual é o superlativo de \"bad\"?",
+      "options": ["the worst", "the baddest", "the most bad"],
+      "answer": 0,
+      "explanation_pt": "\"Bad\" é irregular: \"worse\" (comparativo) e \"the worst\" (superlativo)."
+    },
+    {
+      "id": "a2-11-prac-23",
+      "kind": "match",
+      "instruction_pt": "Ligue cada palavra ao seu significado.",
+      "pairs": [
+        {
+          "en": "better",
+          "pt": "melhor"
+        },
+        {
+          "en": "worse",
+          "pt": "pior"
+        },
+        {
+          "en": "the best",
+          "pt": "o melhor"
+        },
+        {
+          "en": "the worst",
+          "pt": "o pior"
+        },
+        {
+          "en": "as cheap as",
+          "pt": "tão barato quanto"
+        }
+      ]
+    },
+    {
+      "id": "a2-11-prac-24",
+      "kind": "order",
+      "instruction_pt": "Coloque as palavras na ordem certa para formar a frase.",
+      "accepted": ["Which city is the most expensive"]
+    },
+    {
+      "id": "a2-11-prac-25",
+      "kind": "dialogue",
+      "instruction_pt": "Converse: responda a cada fala seguindo a dica.",
+      "scene_pt": "Você está numa loja de eletrônicos comparando dois notebooks com o vendedor.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Hi! Can I help you?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que está procurando um notebook para trabalhar.",
+          "accepted": [
+            "Yes, I'm looking for a laptop for work",
+            "Yes, I'm looking for a laptop for my work",
+            "I'm looking for a laptop for work",
+            "Yes, I need a laptop for work",
+            "Yes, please. I'm looking for a laptop for work"
+          ],
+          "commonErrors": [
+            {
+              "id": "notebook",
+              "match": "\\bnotebook\\b",
+              "explanation_pt": "Em inglês, \"notebook\" costuma ser caderno. O computador é \"laptop\".",
+              "correction_en": "Yes, I'm looking for a laptop for work."
+            },
+            {
+              "id": "looking-a",
+              "match": "\\blooking a\\b",
+              "explanation_pt": "\"Procurar\" é \"look for\".",
+              "correction_en": "Yes, I'm looking for a laptop for work."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "OK. This one is lighter, but that one has a bigger screen."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Pergunte qual é mais barato.",
+          "accepted": [
+            "Which one is cheaper?",
+            "Which is cheaper?",
+            "Which one's cheaper?",
+            "Which one is less expensive?",
+            "And which one is cheaper?"
+          ],
+          "commonErrors": [
+            {
+              "id": "more-short",
+              "match": "\\bmore (cheap|big|fast|small|old|quiet|easy|close|nice|good|bad)\\b",
+              "explanation_pt": "Adjetivos curtos fazem o comparativo com \"-er\": \"cheaper\", \"bigger\". \"Good\" vira \"better\" e \"bad\", \"worse\".",
+              "correction_en": "Which one is cheaper?"
+            },
+            {
+              "id": "more-er",
+              "match": "\\bmore (cheaper|bigger|faster|better|worse|smaller|older|bigger|quieter|easier|closer|nicer)\\b",
+              "explanation_pt": "Adjetivo curto já leva \"-er\": não use \"more\" junto.",
+              "correction_en": "Which one is cheaper?"
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "The lighter one is cheaper. It's also faster."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que então ele é melhor para você, porque você viaja muito.",
+          "accepted": [
+            "So it's better for me, because I travel a lot",
+            "Then it's better for me. I travel a lot",
+            "So that one is better for me because I travel a lot",
+            "It's better for me then, because I travel a lot",
+            "So this one is better for me because I travel a lot"
+          ],
+          "commonErrors": [
+            {
+              "id": "more-good",
+              "match": "\\bmore good\\b",
+              "explanation_pt": "O comparativo de \"good\" é \"better\".",
+              "correction_en": "So it's better for me, because I travel a lot."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Good choice. Do you want to take it?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que sim, vai levar.",
+          "accepted": [
+            "Yes, I'll take it",
+            "Yes, I'll take it, thanks",
+            "Yes, please. I'll take it",
+            "Yes, I'll buy it",
+            "Sure, I'll take it"
+          ],
+          "commonErrors": [
+            {
+              "id": "take-present",
+              "match": "^yes i take it$",
+              "explanation_pt": "Para decidir na hora use \"I'll take it\".",
+              "correction_en": "Yes, I'll take it."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Great. Please come with me to the cashier."
+        }
+      ]
+    },
+    {
+      "id": "a2-11-prac-26",
+      "kind": "free_speak",
+      "instruction_pt": "A Sam vai se mudar e está em dúvida entre morar no centro ou num bairro afastado. Compare e aconselhe.",
+      "prompt_en": "I'm moving! Should I live downtown or in a quiet neighborhood far from the center? What do you think?",
+      "guidelines_pt": [
+        "Compare com \"-er than\" e \"more ... than\": \"Downtown is noisier, but it's more convenient\".",
+        "Use um superlativo: \"The best thing about... is...\".",
+        "Dê sua recomendação: \"I think you should...\""
+      ]
+    }
   ]
 }

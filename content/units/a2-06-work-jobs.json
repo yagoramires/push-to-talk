@@ -116,11 +116,26 @@
           "kind": "match",
           "instruction_pt": "Ligue cada palavra ao seu significado.",
           "pairs": [
-            { "en": "boss", "pt": "chefe" },
-            { "en": "salary", "pt": "salário" },
-            { "en": "shift", "pt": "turno" },
-            { "en": "full-time", "pt": "tempo integral" },
-            { "en": "meeting", "pt": "reunião" }
+            {
+              "en": "boss",
+              "pt": "chefe"
+            },
+            {
+              "en": "salary",
+              "pt": "salário"
+            },
+            {
+              "en": "shift",
+              "pt": "turno"
+            },
+            {
+              "en": "full-time",
+              "pt": "tempo integral"
+            },
+            {
+              "en": "meeting",
+              "pt": "reunião"
+            }
           ]
         },
         {
@@ -454,6 +469,511 @@
           ],
           "commonErrors": []
         }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "id": "a2-06-prac-1",
+      "kind": "vocab",
+      "word_en": "shift",
+      "meaning_pt": "turno",
+      "example_en": "I work the morning shift this week."
+    },
+    {
+      "id": "a2-06-prac-2",
+      "kind": "vocab",
+      "word_en": "boss",
+      "meaning_pt": "chefe",
+      "example_en": "My boss is very organized."
+    },
+    {
+      "id": "a2-06-prac-3",
+      "kind": "vocab",
+      "word_en": "full-time",
+      "meaning_pt": "em tempo integral",
+      "example_en": "She has a full-time job at a bank."
+    },
+    {
+      "id": "a2-06-prac-4",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "I work for a small software company.",
+      "accepted": ["I work for a small software company."],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-06-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "She's in charge of three new projects.",
+      "accepted": ["She's in charge of three new projects."],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-06-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "I usually have lunch with my colleagues.",
+      "accepted": ["I usually have lunch with my colleagues."],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-06-prac-7",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "My job is interesting, but the salary is low.",
+      "accepted": ["My job is interesting, but the salary is low."],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-06-prac-8",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "He works part-time in a bookshop.",
+      "accepted": ["He works part-time in a bookshop."],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-06-prac-9",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu sou enfermeira e trabalho num hospital.\"",
+      "accepted": [
+        "I'm a nurse and I work in a hospital",
+        "I'm a nurse and I work at a hospital",
+        "I am a nurse and I work in a hospital",
+        "I'm a nurse. I work in a hospital",
+        "I'm a nurse. I work at a hospital"
+      ],
+      "commonErrors": [
+        {
+          "id": "no-article",
+          "match": "^i am (nurse|engineer|teacher|doctor|lawyer|designer|developer|accountant|salesperson|manager)\\b",
+          "explanation_pt": "Com profissão use \"a/an\": \"I'm a nurse\", \"I'm an engineer\".",
+          "correction_en": "I'm a nurse and I work in a hospital."
+        }
+      ]
+    },
+    {
+      "id": "a2-06-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu trabalho com vendas.\"",
+      "accepted": [
+        "I work in sales",
+        "I work in the sales department",
+        "I'm in sales",
+        "I work in the sales area",
+        "My job is in sales"
+      ],
+      "commonErrors": [
+        {
+          "id": "work-with",
+          "match": "\\bwork with (marketing|sales|it|finance|education)\\b",
+          "explanation_pt": "Para área de trabalho use \"in\": \"I work in marketing\".",
+          "correction_en": "I work in sales."
+        }
+      ]
+    },
+    {
+      "id": "a2-06-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"O que você faz?\"",
+      "accepted": [
+        "What do you do?",
+        "What do you do for a living?",
+        "What's your job?",
+        "What is your job?",
+        "What do you do for work?",
+        "What's your profession?"
+      ],
+      "commonErrors": [
+        {
+          "id": "what-you-do",
+          "match": "^what you do\\b",
+          "explanation_pt": "Na pergunta use \"do\": \"What do you do?\".",
+          "correction_en": "What do you do?"
+        },
+        {
+          "id": "what-make",
+          "match": "\\bwhat do you make\\b",
+          "explanation_pt": "\"O que você faz\" (profissão) é \"What do you do?\". \"Make\" é fabricar.",
+          "correction_en": "What do you do?"
+        }
+      ]
+    },
+    {
+      "id": "a2-06-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu trabalho em turnos de doze horas.\"",
+      "accepted": [
+        "I work twelve-hour shifts",
+        "I work 12-hour shifts",
+        "I work in twelve-hour shifts",
+        "I work shifts of twelve hours",
+        "I do twelve-hour shifts"
+      ],
+      "commonErrors": [
+        {
+          "id": "turns",
+          "match": "\\bturns\\b",
+          "explanation_pt": "\"Turno\" de trabalho é \"shift\".",
+          "correction_en": "I work twelve-hour shifts."
+        },
+        {
+          "id": "hours-shifts",
+          "match": "\\btwelve hours shifts\\b",
+          "explanation_pt": "Antes do substantivo fica no singular: \"twelve-hour shifts\".",
+          "correction_en": "I work twelve-hour shifts."
+        }
+      ]
+    },
+    {
+      "id": "a2-06-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Meus colegas são muito legais.\"",
+      "accepted": [
+        "My colleagues are really nice",
+        "My colleagues are very nice",
+        "My coworkers are really nice",
+        "My co-workers are very nice",
+        "My colleagues are really friendly",
+        "My colleagues are very friendly",
+        "My coworkers are very friendly"
+      ],
+      "commonErrors": [
+        {
+          "id": "colleges",
+          "match": "\\bcolleges\\b",
+          "explanation_pt": "\"College\" é faculdade. Colega de trabalho é \"colleague\".",
+          "correction_en": "My colleagues are really nice."
+        },
+        {
+          "id": "is-nice",
+          "match": "\\bcolleagues is\\b",
+          "explanation_pt": "Plural pede \"are\".",
+          "correction_en": "My colleagues are really nice."
+        }
+      ]
+    },
+    {
+      "id": "a2-06-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu estou procurando um emprego novo.\"",
+      "accepted": [
+        "I'm looking for a new job",
+        "I am looking for a new job",
+        "I'm searching for a new job",
+        "I'm looking for a new position",
+        "I'm trying to find a new job"
+      ],
+      "commonErrors": [
+        {
+          "id": "looking-new",
+          "match": "\\blooking a new\\b",
+          "explanation_pt": "\"Procurar\" é \"look for\": \"looking for a new job\".",
+          "correction_en": "I'm looking for a new job."
+        },
+        {
+          "id": "employ",
+          "match": "\\b(a new employ|employment new)\\b",
+          "explanation_pt": "O natural é \"a new job\".",
+          "correction_en": "I'm looking for a new job."
+        }
+      ]
+    },
+    {
+      "id": "a2-06-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que você é engenheiro.",
+      "listen": "What do you do?",
+      "accepted": [
+        "I'm an engineer",
+        "I am an engineer",
+        "I work as an engineer",
+        "I'm an engineer at a construction company",
+        "I'm a civil engineer"
+      ],
+      "commonErrors": [
+        {
+          "id": "no-article",
+          "match": "^i am (nurse|engineer|teacher|doctor|lawyer|designer|developer|accountant|salesperson|manager)\\b",
+          "explanation_pt": "Com profissão use \"a/an\": \"I'm a nurse\", \"I'm an engineer\".",
+          "correction_en": "I'm an engineer."
+        },
+        {
+          "id": "a-engineer",
+          "match": "\\ba engineer\\b",
+          "explanation_pt": "Antes de som de vogal use \"an\": \"an engineer\".",
+          "correction_en": "I'm an engineer."
+        }
+      ]
+    },
+    {
+      "id": "a2-06-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que sim, mas que é muito puxado (corrido).",
+      "listen": "Do you like your job?",
+      "accepted": [
+        "Yes, but it's very busy",
+        "Yes, I do, but it's really busy",
+        "Yes, but it's very hard work",
+        "I do, but it's very busy",
+        "Yes, but it's really busy",
+        "Yes, I like it, but it's very busy"
+      ],
+      "commonErrors": [
+        {
+          "id": "pulled",
+          "match": "\\bpulled\\b",
+          "explanation_pt": "\"Puxado\" (trabalhoso) é \"busy\" ou \"hard work\".",
+          "correction_en": "Yes, but it's very busy."
+        }
+      ]
+    },
+    {
+      "id": "a2-06-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que trabalha para um banco.",
+      "listen": "Who do you work for?",
+      "accepted": [
+        "I work for a bank",
+        "For a bank",
+        "I work at a bank",
+        "A bank",
+        "I work for a big bank"
+      ],
+      "commonErrors": [
+        {
+          "id": "to-bank",
+          "match": "\\bwork to a bank\\b",
+          "explanation_pt": "Use \"work for\" ou \"work at\": \"I work for a bank\".",
+          "correction_en": "I work for a bank."
+        }
+      ]
+    },
+    {
+      "id": "a2-06-prac-18",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que sim, duas vezes por semana.",
+      "listen": "Do you work from home?",
+      "accepted": [
+        "Yes, twice a week",
+        "Yes, two days a week",
+        "Yes, two times a week",
+        "Twice a week",
+        "Yes, I work from home twice a week",
+        "Yes, I do. Twice a week"
+      ],
+      "commonErrors": [
+        {
+          "id": "of-home",
+          "match": "\\bwork (of|in) home\\b",
+          "explanation_pt": "Trabalhar de casa é \"work from home\".",
+          "correction_en": "Yes, twice a week."
+        },
+        {
+          "id": "per-weeks",
+          "match": "\\btwo times for week\\b",
+          "explanation_pt": "Frequência: \"twice a week\".",
+          "correction_en": "Yes, twice a week."
+        }
+      ]
+    },
+    {
+      "id": "a2-06-prac-19",
+      "kind": "fill",
+      "instruction_pt": "Complete com o artigo certo.",
+      "sentence": "My brother is ___ architect.",
+      "accepted": ["an"],
+      "commonErrors": [
+        {
+          "id": "a",
+          "match": "^(a|the)$",
+          "explanation_pt": "Antes de som de vogal use \"an\": \"an architect\".",
+          "correction_en": "an."
+        }
+      ]
+    },
+    {
+      "id": "a2-06-prac-20",
+      "kind": "fill",
+      "instruction_pt": "Complete com a preposição certa.",
+      "sentence": "I work ___ a big hospital downtown.",
+      "accepted": ["at", "in"],
+      "commonErrors": [
+        {
+          "id": "on-for",
+          "match": "^(on|to)$",
+          "explanation_pt": "Local de trabalho: \"work at/in a hospital\".",
+          "correction_en": "at."
+        }
+      ]
+    },
+    {
+      "id": "a2-06-prac-21",
+      "kind": "choice",
+      "instruction_pt": "\"I'm in charge of the team\" quer dizer:",
+      "options": ["Eu sou responsável pela equipe.", "Eu cobro a equipe.", "Eu estou na equipe."],
+      "answer": 0,
+      "explanation_pt": "\"In charge of\" é ser responsável por algo ou alguém."
+    },
+    {
+      "id": "a2-06-prac-22",
+      "kind": "choice",
+      "instruction_pt": "Qual frase está certa?",
+      "options": ["She works as a designer.", "She works like a designer.", "She is designer."],
+      "answer": 0,
+      "explanation_pt": "Para dizer a função use \"work as\" (e não \"like\"), com o artigo \"a\"."
+    },
+    {
+      "id": "a2-06-prac-23",
+      "kind": "match",
+      "instruction_pt": "Ligue cada palavra ao seu significado.",
+      "pairs": [
+        {
+          "en": "boss",
+          "pt": "chefe"
+        },
+        {
+          "en": "colleague",
+          "pt": "colega de trabalho"
+        },
+        {
+          "en": "salary",
+          "pt": "salário"
+        },
+        {
+          "en": "shift",
+          "pt": "turno"
+        },
+        {
+          "en": "part-time",
+          "pt": "meio período"
+        }
+      ]
+    },
+    {
+      "id": "a2-06-prac-24",
+      "kind": "order",
+      "instruction_pt": "Coloque as palavras na ordem certa para formar a frase.",
+      "accepted": ["What time do you start work"]
+    },
+    {
+      "id": "a2-06-prac-25",
+      "kind": "dialogue",
+      "instruction_pt": "Converse: responda a cada fala seguindo a dica.",
+      "scene_pt": "Num churrasco, alguém que você acabou de conhecer puxa conversa.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "So, what do you do?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que você é designer.",
+          "accepted": [
+            "I'm a designer",
+            "I am a designer",
+            "I work as a designer",
+            "I'm a graphic designer",
+            "I'm a designer, actually"
+          ],
+          "commonErrors": [
+            {
+              "id": "no-article",
+              "match": "^i am (nurse|engineer|teacher|doctor|lawyer|designer|developer|accountant|salesperson|manager)\\b",
+              "explanation_pt": "Com profissão use \"a/an\": \"I'm a nurse\", \"I'm an engineer\".",
+              "correction_en": "I'm a designer."
+            },
+            {
+              "id": "designer-no-a",
+              "match": "^i am designer\\b",
+              "explanation_pt": "Use \"a\": \"I'm a designer\".",
+              "correction_en": "I'm a designer."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Oh, cool! Where do you work?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que trabalha numa agência pequena, mas de casa na maioria dos dias.",
+          "accepted": [
+            "At a small agency, but I work from home most days",
+            "I work for a small agency, but I work from home most days",
+            "At a small agency, but from home most days",
+            "I work at a small agency, but I work from home most days",
+            "For a small agency, but I usually work from home"
+          ],
+          "commonErrors": [
+            {
+              "id": "of-home",
+              "match": "\\bwork (of|in) home\\b",
+              "explanation_pt": "Trabalhar de casa é \"work from home\".",
+              "correction_en": "At a small agency, but I work from home most days."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Nice. Do you like it?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que sim, é interessante, mas às vezes estressante.",
+          "accepted": [
+            "Yes, it's interesting, but sometimes it's stressful",
+            "Yes, it's interesting but sometimes stressful",
+            "I do. It's interesting, but it's stressful sometimes",
+            "Yes, it's interesting, but it can be stressful",
+            "Yeah, it's interesting, but sometimes it's stressful"
+          ],
+          "commonErrors": [
+            {
+              "id": "stressing",
+              "match": "\\bstressing\\b",
+              "explanation_pt": "\"Estressante\" é \"stressful\".",
+              "correction_en": "Yes, it's interesting, but sometimes it's stressful."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "I know what you mean!"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Pergunte o que ela faz.",
+          "accepted": [
+            "What about you? What do you do?",
+            "What do you do?",
+            "And you? What do you do?",
+            "How about you?",
+            "What about you?",
+            "And what do you do?"
+          ],
+          "commonErrors": [
+            {
+              "id": "what-you-do",
+              "match": "\\bwhat you do\\b",
+              "explanation_pt": "Na pergunta use \"do\": \"What do you do?\".",
+              "correction_en": "What about you? What do you do?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-06-prac-26",
+      "kind": "free_speak",
+      "instruction_pt": "Descreva um dia normal no seu trabalho (ou nos seus estudos).",
+      "prompt_en": "Tell me about a normal day at work. What time do you start, and what do you do?",
+      "guidelines_pt": [
+        "Diga o horário: \"I start at... and finish at...\".",
+        "Conte 2 ou 3 tarefas: \"I answer emails\", \"I have meetings\".",
+        "Diga do que você gosta ou não gosta no trabalho."
       ]
     }
   ]

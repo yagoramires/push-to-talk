@@ -126,11 +126,26 @@
           "kind": "match",
           "instruction_pt": "Ligue cada palavra ao seu significado.",
           "pairs": [
-            { "en": "starter", "pt": "entrada" },
-            { "en": "dessert", "pt": "sobremesa" },
-            { "en": "waiter", "pt": "garçom" },
-            { "en": "tip", "pt": "gorjeta" },
-            { "en": "still water", "pt": "água sem gás" }
+            {
+              "en": "starter",
+              "pt": "entrada"
+            },
+            {
+              "en": "dessert",
+              "pt": "sobremesa"
+            },
+            {
+              "en": "waiter",
+              "pt": "garçom"
+            },
+            {
+              "en": "tip",
+              "pt": "gorjeta"
+            },
+            {
+              "en": "still water",
+              "pt": "água sem gás"
+            }
           ]
         },
         {
@@ -381,10 +396,121 @@
           ]
         },
         {
-          "id": "a2-03-conv-3",
-          "kind": "order",
-          "instruction_pt": "Coloque as palavras na ordem certa para formar o pedido.",
-          "accepted": ["Could I have the soup as a starter"]
+          "id": "a2-03-conv-dialogue",
+          "kind": "dialogue",
+          "instruction_pt": "Converse: responda a cada fala seguindo a dica.",
+          "scene_pt": "Você e um amigo chegam a um restaurante. O garçom vem até a mesa.",
+          "turns": [
+            {
+              "speaker": "partner",
+              "text": "Good evening! Are you ready to order?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga que sim e peça o frango grelhado.",
+              "accepted": [
+                "Yes, I'd like the grilled chicken, please",
+                "Yes, could I have the grilled chicken, please?",
+                "Yes, I'll have the grilled chicken, please",
+                "Yes, the grilled chicken, please",
+                "Yes, can I have the grilled chicken, please?",
+                "Yes, I'd like the grilled chicken"
+              ],
+              "commonErrors": [
+                {
+                  "id": "i-want",
+                  "match": "^i want\\b",
+                  "explanation_pt": "\"I want\" soa direto demais para pedir. Prefira \"I'd like...\" ou \"Could I have...?\".",
+                  "correction_en": "Yes, I'd like the grilled chicken, please."
+                },
+                {
+                  "id": "chicken-grilled",
+                  "match": "\\bchicken grilled\\b",
+                  "explanation_pt": "Em inglês o adjetivo vem antes: \"grilled chicken\".",
+                  "correction_en": "Yes, I'd like the grilled chicken, please."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Good choice. And to drink?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Peça uma água com gás.",
+              "accepted": [
+                "A sparkling water, please",
+                "Sparkling water, please",
+                "I'd like a sparkling water, please",
+                "Could I have a sparkling water, please?",
+                "I'll have a sparkling water, please",
+                "A sparkling water"
+              ],
+              "commonErrors": [
+                {
+                  "id": "water-gas",
+                  "match": "\\bwater with gas\\b|\\bgas water\\b",
+                  "explanation_pt": "Água com gás é \"sparkling water\". Sem gás é \"still water\".",
+                  "correction_en": "A sparkling water, please."
+                },
+                {
+                  "id": "i-want",
+                  "match": "^i want\\b",
+                  "explanation_pt": "\"I want\" soa direto demais para pedir. Prefira \"I'd like...\" ou \"Could I have...?\".",
+                  "correction_en": "A sparkling water, please."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Anything else?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga que não, é só isso, obrigado.",
+              "accepted": [
+                "No, that's all, thanks",
+                "No, that's all, thank you",
+                "No, that's it, thanks",
+                "That's all, thank you",
+                "No, thank you. That's all",
+                "No, that's everything, thanks"
+              ],
+              "commonErrors": [
+                {
+                  "id": "only-this",
+                  "match": "\\bonly (this|that)\\b",
+                  "explanation_pt": "\"É só isso\" é \"That's all\" ou \"That's it\".",
+                  "correction_en": "No, that's all, thanks."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Here you are. Enjoy your meal!"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "No fim, peça a conta.",
+              "accepted": [
+                "Could we have the bill, please?",
+                "Can we have the bill, please?",
+                "The bill, please",
+                "Could I have the bill, please?",
+                "Can I have the check, please?",
+                "Could we have the check, please?",
+                "The check, please"
+              ],
+              "commonErrors": [
+                {
+                  "id": "account",
+                  "match": "\\b(the )?account\\b",
+                  "explanation_pt": "\"A conta\" no restaurante é \"the bill\" (ou \"the check\"). \"Account\" é conta de banco.",
+                  "correction_en": "Could we have the bill, please?"
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "a2-03-conv-free",
@@ -481,6 +607,526 @@
             }
           ]
         }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "id": "a2-03-prac-1",
+      "kind": "vocab",
+      "word_en": "starter",
+      "meaning_pt": "entrada",
+      "example_en": "For a starter I'd like the soup."
+    },
+    {
+      "id": "a2-03-prac-2",
+      "kind": "vocab",
+      "word_en": "tip",
+      "meaning_pt": "gorjeta",
+      "example_en": "The service was great, so we left a big tip."
+    },
+    {
+      "id": "a2-03-prac-3",
+      "kind": "vocab",
+      "word_en": "waiter",
+      "meaning_pt": "garçom",
+      "example_en": "The waiter brought us the menu."
+    },
+    {
+      "id": "a2-03-prac-4",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "Could I see the menu, please?",
+      "accepted": ["Could I see the menu, please?"],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-03-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "I'd like the chicken with rice, please.",
+      "accepted": ["I'd like the chicken with rice, please."],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-03-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "We'd like to book a table for Friday night.",
+      "accepted": ["We'd like to book a table for Friday night."],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-03-prac-7",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "Is service included?",
+      "accepted": ["Is service included?"],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-03-prac-8",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "Can I pay by card?",
+      "accepted": ["Can I pay by card?"],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-03-prac-9",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu gostaria de reservar uma mesa para quatro pessoas.\"",
+      "accepted": [
+        "I'd like to book a table for four people",
+        "I'd like to book a table for four",
+        "I would like to book a table for four people",
+        "I'd like to reserve a table for four",
+        "I'd like to reserve a table for four people",
+        "Could I book a table for four?",
+        "Can I book a table for four people?"
+      ],
+      "commonErrors": [
+        {
+          "id": "reserve-for-four-persons",
+          "match": "\\bfour persons\\b",
+          "explanation_pt": "O plural natural é \"four people\".",
+          "correction_en": "I'd like to book a table for four people."
+        },
+        {
+          "id": "i-want",
+          "match": "^i want\\b",
+          "explanation_pt": "\"I want\" soa direto demais para pedir. Prefira \"I'd like...\" ou \"Could I have...?\".",
+          "correction_en": "I'd like to book a table for four people."
+        }
+      ]
+    },
+    {
+      "id": "a2-03-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu sou vegetariano. Vocês têm algum prato sem carne?\"",
+      "accepted": [
+        "I'm vegetarian. Do you have any dishes without meat?",
+        "I'm a vegetarian. Do you have any dishes without meat?",
+        "I'm vegetarian. Do you have any vegetarian dishes?",
+        "I'm vegetarian. Do you have anything without meat?",
+        "I'm vegetarian. Do you have any meat-free dishes?",
+        "I am vegetarian. Do you have any dishes without meat?"
+      ],
+      "commonErrors": [
+        {
+          "id": "you-have",
+          "match": "\\bvegetarian you have\\b",
+          "explanation_pt": "Na pergunta use \"do\": \"Do you have...?\".",
+          "correction_en": "I'm vegetarian. Do you have any dishes without meat?"
+        },
+        {
+          "id": "plates",
+          "match": "\\bplates?\\b",
+          "explanation_pt": "\"Prato\" de comida é \"dish\". \"Plate\" é o prato físico.",
+          "correction_en": "I'm vegetarian. Do you have any dishes without meat?"
+        }
+      ]
+    },
+    {
+      "id": "a2-03-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Pode trazer mais pão, por favor?\"",
+      "accepted": [
+        "Could you bring some more bread, please?",
+        "Can you bring some more bread, please?",
+        "Could we have some more bread, please?",
+        "Can we have some more bread, please?",
+        "Could you bring more bread, please?",
+        "Can I have some more bread, please?",
+        "More bread, please"
+      ],
+      "commonErrors": [
+        {
+          "id": "more-breads",
+          "match": "\\bbreads\\b",
+          "explanation_pt": "\"Bread\" é incontável: \"some more bread\".",
+          "correction_en": "Could you bring some more bread, please?"
+        }
+      ]
+    },
+    {
+      "id": "a2-03-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"A comida estava deliciosa.\"",
+      "accepted": [
+        "The food was delicious",
+        "The food was really good",
+        "The food was great",
+        "Everything was delicious",
+        "It was delicious",
+        "The meal was delicious"
+      ],
+      "commonErrors": [
+        {
+          "id": "food-is",
+          "match": "^the food is\\b",
+          "explanation_pt": "Você já comeu: use \"was\".",
+          "correction_en": "The food was delicious."
+        },
+        {
+          "id": "very-delicious",
+          "match": "\\bvery delicious\\b",
+          "explanation_pt": "\"Delicious\" já é forte; prefira \"really delicious\" ou só \"delicious\".",
+          "correction_en": "The food was delicious."
+        }
+      ]
+    },
+    {
+      "id": "a2-03-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Posso pagar com cartão?\"",
+      "accepted": [
+        "Can I pay by card?",
+        "Could I pay by card?",
+        "Can I pay with a card?",
+        "Can I pay with my card?",
+        "Do you take cards?",
+        "Do you accept cards?",
+        "Can I pay by credit card?"
+      ],
+      "commonErrors": [
+        {
+          "id": "with-card",
+          "match": "\\bpay (in|on) card\\b",
+          "explanation_pt": "Diga \"pay by card\" ou \"pay with a card\".",
+          "correction_en": "Can I pay by card?"
+        }
+      ]
+    },
+    {
+      "id": "a2-03-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu vou querer o peixe.\"",
+      "accepted": [
+        "I'll have the fish",
+        "I will have the fish",
+        "I'd like the fish",
+        "The fish, please",
+        "I'll have the fish, please",
+        "I'll go for the fish",
+        "Could I have the fish?"
+      ],
+      "commonErrors": [
+        {
+          "id": "want-fish",
+          "match": "^i (want|go to want)\\b",
+          "explanation_pt": "Para pedir, use \"I'll have...\" ou \"I'd like...\".",
+          "correction_en": "I'll have the fish."
+        },
+        {
+          "id": "fishes",
+          "match": "\\bfishes\\b",
+          "explanation_pt": "Como prato é \"the fish\", sem plural.",
+          "correction_en": "I'll have the fish."
+        }
+      ]
+    },
+    {
+      "id": "a2-03-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e peça um suco de laranja.",
+      "listen": "Can I get you something to drink?",
+      "accepted": [
+        "An orange juice, please",
+        "Orange juice, please",
+        "I'd like an orange juice, please",
+        "Could I have an orange juice, please?",
+        "I'll have an orange juice, please",
+        "Can I have an orange juice, please?",
+        "Yes, an orange juice, please"
+      ],
+      "commonErrors": [
+        {
+          "id": "i-want",
+          "match": "^i want\\b",
+          "explanation_pt": "\"I want\" soa direto demais para pedir. Prefira \"I'd like...\" ou \"Could I have...?\".",
+          "correction_en": "An orange juice, please."
+        },
+        {
+          "id": "juice-of-orange",
+          "match": "\\bjuice of orange\\b",
+          "explanation_pt": "Em inglês: \"orange juice\".",
+          "correction_en": "An orange juice, please."
+        }
+      ]
+    },
+    {
+      "id": "a2-03-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que quer ao ponto (medium).",
+      "listen": "How would you like your steak?",
+      "accepted": [
+        "Medium, please",
+        "Medium",
+        "I'd like it medium, please",
+        "Medium, thanks",
+        "I'd like it medium",
+        "Medium, thank you"
+      ],
+      "commonErrors": [
+        {
+          "id": "to-the-point",
+          "match": "\\bto the point\\b",
+          "explanation_pt": "\"Ao ponto\" para carne é \"medium\". Mal passado é \"rare\" e bem passado, \"well done\".",
+          "correction_en": "Medium, please."
+        }
+      ]
+    },
+    {
+      "id": "a2-03-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e recuse com educação: você está satisfeito.",
+      "listen": "Would you like a dessert?",
+      "accepted": [
+        "No, thank you. I'm full",
+        "No, thanks. I'm full",
+        "No, I'm full, thanks",
+        "I'm full, thank you",
+        "No, thanks. I'm really full"
+      ],
+      "commonErrors": [
+        {
+          "id": "satisfied",
+          "match": "\\bsatisfied\\b",
+          "explanation_pt": "Satisfeito de comida é \"I'm full\". \"Satisfied\" é satisfeito com algo.",
+          "correction_en": "No, thank you. I'm full."
+        }
+      ]
+    },
+    {
+      "id": "a2-03-prac-18",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que sim, em nome de Costa.",
+      "listen": "Do you have a reservation?",
+      "accepted": [
+        "Yes, under the name Costa",
+        "Yes, it's under Costa",
+        "Yes, under Costa",
+        "Yes, the name is Costa",
+        "Yes, I do. It's under Costa",
+        "Yes, it's under the name Costa",
+        "Yes, for Costa"
+      ],
+      "commonErrors": [
+        {
+          "id": "in-name",
+          "match": "\\bin (the )?name of\\b",
+          "explanation_pt": "Para reserva: \"under the name Costa\" ou \"under Costa\".",
+          "correction_en": "Yes, under the name Costa."
+        }
+      ]
+    },
+    {
+      "id": "a2-03-prac-19",
+      "kind": "fill",
+      "instruction_pt": "Complete o pedido educado.",
+      "sentence": "Could I ___ the menu, please?",
+      "accepted": ["have", "see"],
+      "commonErrors": [
+        {
+          "id": "take",
+          "match": "^(take|get|bring)$",
+          "explanation_pt": "Para pedir: \"Could I have/see the menu?\".",
+          "correction_en": "have."
+        }
+      ]
+    },
+    {
+      "id": "a2-03-prac-20",
+      "kind": "fill",
+      "instruction_pt": "Complete com a palavra certa.",
+      "sentence": "We left a 10% ___ for the waiter.",
+      "accepted": ["tip"],
+      "commonErrors": [
+        {
+          "id": "gorjeta",
+          "match": "^(gift|propina|tips)$",
+          "explanation_pt": "\"Gorjeta\" é \"tip\".",
+          "correction_en": "tip."
+        }
+      ]
+    },
+    {
+      "id": "a2-03-prac-21",
+      "kind": "choice",
+      "instruction_pt": "O garçom pergunta \"Still or sparkling?\". O que você responde?",
+      "options": ["Still, please.", "Yes, please.", "Medium, please."],
+      "answer": 0,
+      "explanation_pt": "Ele quer saber se a água é sem gás (still) ou com gás (sparkling)."
+    },
+    {
+      "id": "a2-03-prac-22",
+      "kind": "choice",
+      "instruction_pt": "Qual frase pede a conta?",
+      "options": [
+        "Could we have the bill, please?",
+        "Could we have the account, please?",
+        "Could we pay the count?"
+      ],
+      "answer": 0,
+      "explanation_pt": "\"Conta\" de restaurante é \"the bill\" (ou \"the check\")."
+    },
+    {
+      "id": "a2-03-prac-23",
+      "kind": "match",
+      "instruction_pt": "Ligue cada palavra ao seu significado.",
+      "pairs": [
+        {
+          "en": "starter",
+          "pt": "entrada"
+        },
+        {
+          "en": "dessert",
+          "pt": "sobremesa"
+        },
+        {
+          "en": "tip",
+          "pt": "gorjeta"
+        },
+        {
+          "en": "waiter",
+          "pt": "garçom"
+        },
+        {
+          "en": "still water",
+          "pt": "água sem gás"
+        }
+      ]
+    },
+    {
+      "id": "a2-03-prac-24",
+      "kind": "order",
+      "instruction_pt": "Coloque as palavras na ordem certa para formar a frase.",
+      "accepted": ["Could I have a glass of red wine"]
+    },
+    {
+      "id": "a2-03-prac-25",
+      "kind": "dialogue",
+      "instruction_pt": "Converse: responda a cada fala seguindo a dica.",
+      "scene_pt": "Você liga para um restaurante para reservar uma mesa.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Hello, Bella Italia. How can I help you?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que quer reservar uma mesa para sábado.",
+          "accepted": [
+            "I'd like to book a table for Saturday",
+            "I'd like to reserve a table for Saturday",
+            "I would like to book a table for Saturday",
+            "Can I book a table for Saturday?",
+            "Could I book a table for Saturday?",
+            "I'd like to make a reservation for Saturday"
+          ],
+          "commonErrors": [
+            {
+              "id": "i-want",
+              "match": "^i want\\b",
+              "explanation_pt": "\"I want\" soa direto demais para pedir. Prefira \"I'd like...\" ou \"Could I have...?\".",
+              "correction_en": "I'd like to book a table for Saturday."
+            },
+            {
+              "id": "in-saturday",
+              "match": "\\bin saturday\\b",
+              "explanation_pt": "Com dias da semana use \"for\" ou \"on\": \"for Saturday\".",
+              "correction_en": "I'd like to book a table for Saturday."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Sure. For how many people?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que é para três pessoas.",
+          "accepted": [
+            "For three people",
+            "Three people",
+            "For three",
+            "Three, please",
+            "It's for three people",
+            "For three, please"
+          ],
+          "commonErrors": [
+            {
+              "id": "persons",
+              "match": "\\bpersons\\b",
+              "explanation_pt": "O natural é \"people\".",
+              "correction_en": "For three people."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "And what time?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga às oito da noite.",
+          "accepted": [
+            "At eight p.m.",
+            "At eight in the evening",
+            "At eight",
+            "Eight o'clock, please",
+            "At eight o'clock",
+            "At 8 p.m.",
+            "Around eight"
+          ],
+          "commonErrors": [
+            {
+              "id": "in-eight",
+              "match": "^(in|on) eight\\b",
+              "explanation_pt": "Para horas use \"at\": \"at eight\".",
+              "correction_en": "At eight p.m."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Perfect. Can I have your name, please?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga seu nome: Lucas Lima.",
+          "accepted": [
+            "It's Lucas Lima",
+            "Lucas Lima",
+            "My name is Lucas Lima",
+            "It's Lucas. Lucas Lima",
+            "Sure, it's Lucas Lima"
+          ],
+          "commonErrors": [
+            {
+              "id": "call-me",
+              "match": "^i call\\b|^i am called\\b",
+              "explanation_pt": "Para dar o nome: \"It's Lucas Lima\" ou \"My name is...\".",
+              "correction_en": "It's Lucas Lima."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Thank you, Lucas. See you on Saturday!"
+        }
+      ]
+    },
+    {
+      "id": "a2-03-prac-26",
+      "kind": "free_speak",
+      "instruction_pt": "Conte para a Sam sobre o último restaurante em que você foi.",
+      "prompt_en": "Tell me about the last time you ate at a restaurant. Where did you go, and what did you order?",
+      "guidelines_pt": [
+        "Diga onde foi e com quem: \"I went to... with...\".",
+        "Conte o que pediu: \"I had the... and a...\".",
+        "Dê sua opinião: \"The food was delicious, but it was a bit expensive\"."
       ]
     }
   ]

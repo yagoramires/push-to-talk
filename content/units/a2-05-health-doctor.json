@@ -120,11 +120,26 @@
           "kind": "match",
           "instruction_pt": "Ligue cada palavra ao seu significado.",
           "pairs": [
-            { "en": "fever", "pt": "febre" },
-            { "en": "cough", "pt": "tosse" },
-            { "en": "stomachache", "pt": "dor de barriga" },
-            { "en": "dizzy", "pt": "tonto" },
-            { "en": "appointment", "pt": "consulta (horário marcado)" }
+            {
+              "en": "fever",
+              "pt": "febre"
+            },
+            {
+              "en": "cough",
+              "pt": "tosse"
+            },
+            {
+              "en": "stomachache",
+              "pt": "dor de barriga"
+            },
+            {
+              "en": "dizzy",
+              "pt": "tonto"
+            },
+            {
+              "en": "appointment",
+              "pt": "consulta (horário marcado)"
+            }
           ]
         },
         {
@@ -373,10 +388,123 @@
           ]
         },
         {
-          "id": "a2-05-conv-3",
-          "kind": "order",
-          "instruction_pt": "Coloque as palavras na ordem certa para formar a frase.",
-          "accepted": ["I am allergic to penicillin"]
+          "id": "a2-05-conv-dialogue",
+          "kind": "dialogue",
+          "instruction_pt": "Converse: responda a cada fala seguindo a dica.",
+          "scene_pt": "Você está no consultório e o médico começa a consulta.",
+          "turns": [
+            {
+              "speaker": "partner",
+              "text": "Good morning. What seems to be the problem?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga que está com dor de garganta e tosse.",
+              "accepted": [
+                "I have a sore throat and a cough",
+                "I've got a sore throat and a cough",
+                "I have a sore throat and I'm coughing",
+                "My throat hurts and I have a cough",
+                "I have a sore throat and a bad cough"
+              ],
+              "commonErrors": [
+                {
+                  "id": "am-with",
+                  "match": "\\bi am with (a )?(headache|fever|cold|cough|sore|pain|stomach)",
+                  "explanation_pt": "\"Estou com dor/febre\" em inglês usa \"have\": \"I have a headache\", \"I have a fever\".",
+                  "correction_en": "I have a sore throat and a cough."
+                },
+                {
+                  "id": "pain-throat",
+                  "match": "\\bpain (of|in the) throat\\b",
+                  "explanation_pt": "Dor de garganta é \"a sore throat\".",
+                  "correction_en": "I have a sore throat and a cough."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "I see. How long have you felt like this?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga que há três dias.",
+              "accepted": [
+                "For three days",
+                "For about three days",
+                "Three days",
+                "About three days",
+                "For three days now"
+              ],
+              "commonErrors": [
+                {
+                  "id": "since-three",
+                  "match": "^since three days",
+                  "explanation_pt": "Para duração use \"for\": \"for three days\".",
+                  "correction_en": "For three days."
+                },
+                {
+                  "id": "there-is",
+                  "match": "\\b(there is|has|have) three days\\b",
+                  "explanation_pt": "\"Há três dias\" (duração) é \"for three days\".",
+                  "correction_en": "For three days."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Do you have a fever?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga que sim, um pouco ontem à noite.",
+              "accepted": [
+                "Yes, a little last night",
+                "Yes, a bit last night",
+                "Yes, I had a little fever last night",
+                "Yes, I had a slight fever last night",
+                "A little, last night",
+                "Yes, a small fever last night"
+              ],
+              "commonErrors": [
+                {
+                  "id": "yesterday-night",
+                  "match": "\\byesterday (at )?night\\b",
+                  "explanation_pt": "\"Ontem à noite\" é \"last night\".",
+                  "correction_en": "Yes, a little last night."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "OK. You should rest and drink lots of water. Here's a prescription."
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Pergunte quantas vezes por dia deve tomar o remédio.",
+              "accepted": [
+                "How many times a day should I take it?",
+                "How often should I take it?",
+                "How many times a day should I take the medicine?",
+                "How many times per day should I take it?",
+                "How often should I take the medicine?"
+              ],
+              "commonErrors": [
+                {
+                  "id": "drink-medicine",
+                  "match": "\\bdrink (the |it|this )",
+                  "explanation_pt": "Remédio a gente \"take\": \"take the medicine\".",
+                  "correction_en": "How many times a day should I take it?"
+                },
+                {
+                  "id": "should-to",
+                  "match": "\\bshould to\\b",
+                  "explanation_pt": "Depois de \"should\" o verbo vem sem \"to\": \"You should rest\".",
+                  "correction_en": "How many times a day should I take it?"
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "a2-05-conv-free",
@@ -474,6 +602,530 @@
             }
           ]
         }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "id": "a2-05-prac-1",
+      "kind": "vocab",
+      "word_en": "fever",
+      "meaning_pt": "febre",
+      "example_en": "She stayed home because she had a fever."
+    },
+    {
+      "id": "a2-05-prac-2",
+      "kind": "vocab",
+      "word_en": "cough",
+      "meaning_pt": "tosse; tossir",
+      "example_en": "I have a terrible cough at night."
+    },
+    {
+      "id": "a2-05-prac-3",
+      "kind": "vocab",
+      "word_en": "appointment",
+      "meaning_pt": "consulta marcada, horário",
+      "example_en": "I have a doctor's appointment at three."
+    },
+    {
+      "id": "a2-05-prac-4",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "My back hurts when I sit for a long time.",
+      "accepted": ["My back hurts when I sit for a long time."],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-05-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "You should go to bed early tonight.",
+      "accepted": ["You should go to bed early tonight."],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-05-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "I've got a cold and a runny nose.",
+      "accepted": ["I've got a cold and a runny nose."],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-05-prac-7",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "Take two tablets after breakfast.",
+      "accepted": ["Take two tablets after breakfast."],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-05-prac-8",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "I feel much better now, thanks.",
+      "accepted": ["I feel much better now, thanks."],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-05-prac-9",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu estou com dor de estômago.\"",
+      "accepted": [
+        "I have a stomachache",
+        "I've got a stomachache",
+        "I have a stomach ache",
+        "My stomach hurts",
+        "I have stomachache",
+        "I've got a stomach ache"
+      ],
+      "commonErrors": [
+        {
+          "id": "am-with",
+          "match": "\\bi am with (a )?(headache|fever|cold|cough|sore|pain|stomach)",
+          "explanation_pt": "\"Estou com dor/febre\" em inglês usa \"have\": \"I have a headache\", \"I have a fever\".",
+          "correction_en": "I have a stomachache."
+        },
+        {
+          "id": "pain-of",
+          "match": "\\bpain of\\b|\\bpain in the head\\b",
+          "explanation_pt": "Para dores comuns use \"-ache\": \"headache\", \"stomachache\", ou \"My ... hurts\".",
+          "correction_en": "I have a stomachache."
+        }
+      ]
+    },
+    {
+      "id": "a2-05-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Meu braço dói.\"",
+      "accepted": [
+        "My arm hurts",
+        "My arm is hurting",
+        "My arm is sore",
+        "I have a pain in my arm",
+        "My arm really hurts"
+      ],
+      "commonErrors": [
+        {
+          "id": "pain-arm",
+          "match": "^i (have )?pain (in )?arm\\b",
+          "explanation_pt": "O natural é \"My arm hurts\".",
+          "correction_en": "My arm hurts."
+        },
+        {
+          "id": "arm-pains",
+          "match": "\\barm (pains|dues|is pain)\\b",
+          "explanation_pt": "\"Doer\" é \"hurt\": \"My arm hurts\".",
+          "correction_en": "My arm hurts."
+        }
+      ]
+    },
+    {
+      "id": "a2-05-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Você deveria ir ao médico.\"",
+      "accepted": [
+        "You should go to the doctor",
+        "You should see a doctor",
+        "You should go to the doctor's",
+        "You should see the doctor",
+        "You ought to see a doctor",
+        "You should go and see a doctor"
+      ],
+      "commonErrors": [
+        {
+          "id": "should-to",
+          "match": "\\bshould to\\b",
+          "explanation_pt": "Depois de \"should\" o verbo vem sem \"to\": \"You should rest\".",
+          "correction_en": "You should go to the doctor."
+        },
+        {
+          "id": "in-doctor",
+          "match": "\\bgo (in|on) the doctor\\b",
+          "explanation_pt": "Ir ao médico é \"go to the doctor\" ou \"see a doctor\".",
+          "correction_en": "You should go to the doctor."
+        }
+      ]
+    },
+    {
+      "id": "a2-05-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Você não deveria trabalhar hoje.\"",
+      "accepted": [
+        "You shouldn't work today",
+        "You should not work today",
+        "You shouldn't go to work today",
+        "You shouldn't be working today",
+        "You shouldn't go to work today. Stay home"
+      ],
+      "commonErrors": [
+        {
+          "id": "no-should",
+          "match": "^you (no|not) should\\b|\\bdo not should\\b",
+          "explanation_pt": "A negação é \"shouldn't\" (should not).",
+          "correction_en": "You shouldn't work today."
+        },
+        {
+          "id": "should-to",
+          "match": "\\bshould to\\b",
+          "explanation_pt": "Depois de \"should\" o verbo vem sem \"to\": \"You should rest\".",
+          "correction_en": "You shouldn't work today."
+        }
+      ]
+    },
+    {
+      "id": "a2-05-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu preciso marcar uma consulta com o dentista.\"",
+      "accepted": [
+        "I need to make an appointment with the dentist",
+        "I need to book an appointment with the dentist",
+        "I need to make a dentist appointment",
+        "I need to see the dentist",
+        "I need to schedule an appointment with the dentist",
+        "I need a dentist appointment"
+      ],
+      "commonErrors": [
+        {
+          "id": "mark",
+          "match": "\\bmark (a|an) (appointment|consult)\\b",
+          "explanation_pt": "\"Marcar\" consulta é \"make\" ou \"book an appointment\".",
+          "correction_en": "I need to make an appointment with the dentist."
+        },
+        {
+          "id": "consult",
+          "match": "\\bconsultation with the dentist\\b",
+          "explanation_pt": "Consulta marcada é \"appointment\".",
+          "correction_en": "I need to make an appointment with the dentist."
+        }
+      ]
+    },
+    {
+      "id": "a2-05-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu estou resfriado.\"",
+      "accepted": [
+        "I have a cold",
+        "I've got a cold",
+        "I have a bad cold",
+        "I caught a cold",
+        "I've caught a cold"
+      ],
+      "commonErrors": [
+        {
+          "id": "am-cold",
+          "match": "^i am (cold|with a cold|resfriado)\\b",
+          "explanation_pt": "\"I'm cold\" é \"estou com frio\". Resfriado é \"I have a cold\".",
+          "correction_en": "I have a cold."
+        }
+      ]
+    },
+    {
+      "id": "a2-05-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que não se sente muito bem.",
+      "listen": "How are you feeling today?",
+      "accepted": [
+        "I don't feel very well",
+        "Not very well",
+        "I'm not feeling very well",
+        "Not so good",
+        "I don't feel well",
+        "Not great, actually",
+        "I'm not very well"
+      ],
+      "commonErrors": [
+        {
+          "id": "no-feel",
+          "match": "^i (no|not) feel\\b",
+          "explanation_pt": "A negação usa \"don't\": \"I don't feel well\".",
+          "correction_en": "I don't feel very well."
+        },
+        {
+          "id": "feel-good-not",
+          "match": "\\bi do not feel very good\\b",
+          "explanation_pt": "Prefira \"well\" para saúde: \"I don't feel very well\".",
+          "correction_en": "I don't feel very well."
+        }
+      ]
+    },
+    {
+      "id": "a2-05-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que está com febre.",
+      "listen": "What's the matter?",
+      "accepted": [
+        "I have a fever",
+        "I've got a fever",
+        "I have a temperature",
+        "I've got a temperature",
+        "I think I have a fever",
+        "I have a high fever"
+      ],
+      "commonErrors": [
+        {
+          "id": "am-with",
+          "match": "\\bi am with (a )?(headache|fever|cold|cough|sore|pain|stomach)",
+          "explanation_pt": "\"Estou com dor/febre\" em inglês usa \"have\": \"I have a headache\", \"I have a fever\".",
+          "correction_en": "I have a fever."
+        },
+        {
+          "id": "am-fever",
+          "match": "^i am (fever|feverish with)\\b",
+          "explanation_pt": "Febre: \"I have a fever\".",
+          "correction_en": "I have a fever."
+        }
+      ]
+    },
+    {
+      "id": "a2-05-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que é alérgico a penicilina.",
+      "listen": "Are you allergic to anything?",
+      "accepted": [
+        "Yes, I'm allergic to penicillin",
+        "I'm allergic to penicillin",
+        "Yes, to penicillin",
+        "Yes, penicillin",
+        "Yes, I am. To penicillin",
+        "Penicillin"
+      ],
+      "commonErrors": [
+        {
+          "id": "allergic-of",
+          "match": "\\ballergic (of|with|at)\\b",
+          "explanation_pt": "Alérgico \"a\" é \"allergic to\".",
+          "correction_en": "Yes, I'm allergic to penicillin."
+        }
+      ]
+    },
+    {
+      "id": "a2-05-prac-18",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e aconselhe a pessoa a descansar e tomar água.",
+      "listen": "What should I do for a headache?",
+      "accepted": [
+        "You should rest and drink water",
+        "You should rest and drink some water",
+        "You should rest and drink lots of water",
+        "Rest and drink water",
+        "You should get some rest and drink water",
+        "You should rest and drink a lot of water"
+      ],
+      "commonErrors": [
+        {
+          "id": "should-to",
+          "match": "\\bshould to\\b",
+          "explanation_pt": "Depois de \"should\" o verbo vem sem \"to\": \"You should rest\".",
+          "correction_en": "You should rest and drink water."
+        },
+        {
+          "id": "take-water",
+          "match": "\\btake (water|a lot of water)\\b",
+          "explanation_pt": "Beber água é \"drink water\".",
+          "correction_en": "You should rest and drink water."
+        }
+      ]
+    },
+    {
+      "id": "a2-05-prac-19",
+      "kind": "fill",
+      "instruction_pt": "Complete com o verbo certo.",
+      "sentence": "My feet ___ after the long walk.",
+      "accepted": ["hurt"],
+      "commonErrors": [
+        {
+          "id": "hurts",
+          "match": "^(hurts|pain|pains|ache)$",
+          "explanation_pt": "\"Feet\" é plural: \"My feet hurt\".",
+          "correction_en": "hurt."
+        }
+      ]
+    },
+    {
+      "id": "a2-05-prac-20",
+      "kind": "fill",
+      "instruction_pt": "Complete o conselho.",
+      "sentence": "You ___ drink more water.",
+      "accepted": ["should"],
+      "commonErrors": [
+        {
+          "id": "should-to",
+          "match": "^(should to|must to|need)$",
+          "explanation_pt": "Use \"should\" sem \"to\": \"You should drink...\".",
+          "correction_en": "should."
+        }
+      ]
+    },
+    {
+      "id": "a2-05-prac-21",
+      "kind": "choice",
+      "instruction_pt": "Qual frase diz \"Estou com dor de cabeça\"?",
+      "options": ["I have a headache.", "I am with headache.", "I have pain of head."],
+      "answer": 0,
+      "explanation_pt": "Em inglês a dor de cabeça é algo que você \"tem\": \"I have a headache\"."
+    },
+    {
+      "id": "a2-05-prac-22",
+      "kind": "choice",
+      "instruction_pt": "O médico diz \"Take this twice a day\". Quantas vezes por dia?",
+      "options": ["Duas vezes.", "Uma vez.", "Três vezes."],
+      "answer": 0,
+      "explanation_pt": "\"Twice\" é duas vezes. \"Once\" é uma vez."
+    },
+    {
+      "id": "a2-05-prac-23",
+      "kind": "match",
+      "instruction_pt": "Ligue cada palavra ao seu significado.",
+      "pairs": [
+        {
+          "en": "fever",
+          "pt": "febre"
+        },
+        {
+          "en": "cough",
+          "pt": "tosse"
+        },
+        {
+          "en": "cold",
+          "pt": "resfriado"
+        },
+        {
+          "en": "tablet",
+          "pt": "comprimido"
+        },
+        {
+          "en": "appointment",
+          "pt": "consulta marcada"
+        }
+      ]
+    },
+    {
+      "id": "a2-05-prac-24",
+      "kind": "order",
+      "instruction_pt": "Coloque as palavras na ordem certa para formar a frase.",
+      "accepted": ["You should stay in bed today"]
+    },
+    {
+      "id": "a2-05-prac-25",
+      "kind": "dialogue",
+      "instruction_pt": "Converse: responda a cada fala seguindo a dica.",
+      "scene_pt": "Uma colega de trabalho te vê na segunda-feira e percebe que você está doente.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Hey, are you OK? You look tired."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que não se sente bem: está resfriado.",
+          "accepted": [
+            "Not really. I have a cold",
+            "Not really. I've got a cold",
+            "No, I don't feel well. I have a cold",
+            "I'm not feeling well. I have a cold",
+            "No, I have a cold",
+            "Not really, I caught a cold"
+          ],
+          "commonErrors": [
+            {
+              "id": "am-cold",
+              "match": "\\bi am (cold|with a cold)\\b",
+              "explanation_pt": "Resfriado é \"I have a cold\". \"I'm cold\" é estar com frio.",
+              "correction_en": "Not really. I have a cold."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Oh no! Did you go to the doctor?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que não, você só tomou um remédio.",
+          "accepted": [
+            "No, I just took some medicine",
+            "No, I only took some medicine",
+            "No, I just took a pill",
+            "No, I just took some medication",
+            "No, I just took something for it"
+          ],
+          "commonErrors": [
+            {
+              "id": "drank-medicine",
+              "match": "\\bdrank (a |some )?(medicine|pill)\\b",
+              "explanation_pt": "Remédio a gente \"take\": \"I took some medicine\".",
+              "correction_en": "No, I just took some medicine."
+            },
+            {
+              "id": "take-present",
+              "match": "\\bi just take\\b",
+              "explanation_pt": "Use o passado: \"took\".",
+              "correction_en": "No, I just took some medicine."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "You should go home and rest."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que você tem uma reunião às três.",
+          "accepted": [
+            "I have a meeting at three",
+            "I've got a meeting at three",
+            "I have a meeting at three o'clock",
+            "But I have a meeting at three",
+            "I can't. I have a meeting at three"
+          ],
+          "commonErrors": [
+            {
+              "id": "in-three",
+              "match": "\\b(in|on) three\\b",
+              "explanation_pt": "Para horas use \"at\": \"at three\".",
+              "correction_en": "I have a meeting at three."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "I can do the meeting for you. Go home!"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Agradeça e diga que vai para casa.",
+          "accepted": [
+            "Thanks! I'll go home then",
+            "Thank you! I'm going home",
+            "Thanks, I'll go home",
+            "Thank you so much. I'll go home",
+            "Thanks a lot. I'll go home now"
+          ],
+          "commonErrors": [
+            {
+              "id": "go-to-home",
+              "match": "\\bgo(ing)? to home\\b",
+              "explanation_pt": "Com \"home\" não use \"to\": \"go home\".",
+              "correction_en": "Thanks! I'll go home then."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Feel better soon!"
+        }
+      ]
+    },
+    {
+      "id": "a2-05-prac-26",
+      "kind": "free_speak",
+      "instruction_pt": "Conte para a Sam sobre a última vez em que você ficou doente.",
+      "prompt_en": "When was the last time you were sick? What was wrong, and what did you do to feel better?",
+      "guidelines_pt": [
+        "Diga o que você tinha: \"I had a cold / a fever / a headache\".",
+        "Conte o que fez: \"I stayed in bed\", \"I took some medicine\".",
+        "Dê um conselho: \"You should...\""
       ]
     }
   ]
