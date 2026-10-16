@@ -8,14 +8,10 @@ const course = loadCourse(join(__dirname, '../../content'))
 const exercisesOf = (u: { blocks: { exercises: Exercise[] }[] }): Exercise[] =>
   u.blocks.flatMap((b) => b.exercises)
 
-// Levels without units are skipped until their content task lands.
-test.each(LEVELS)('%s: units numbered 1..n (at most 12) and an exam', async (level) => {
+test.each(LEVELS)('%s: units numbered 1..12 and an exam', async (level) => {
   const c = await course
   const units = c.units.filter((u) => u.level === level)
-  if (!units.length) return
-  // <= 12 while A1 is being written; Task 2 makes it exactly 12.
-  expect(units.length).toBeLessThanOrEqual(12)
-  expect(units.map((u) => u.order)).toEqual(units.map((_, i) => i + 1))
+  expect(units.map((u) => u.order)).toEqual(Array.from({ length: 12 }, (_, i) => i + 1))
   expect(c.exams?.[level], `exam-${level.toLowerCase()}.json`).toBeDefined()
 })
 
