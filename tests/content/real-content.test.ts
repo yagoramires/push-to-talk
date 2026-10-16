@@ -66,11 +66,10 @@ test('every listened text has bundled audio (run npm run audio)', async () => {
   expect(texts.filter((t) => !c.audio[t])).toEqual([])
 })
 
-// Task 4 fills `practice` and the dialogues; until then an empty bank passes and Task 4 tightens it.
-test('practice bank: empty or 24..32 items, at least 60% spoken', async () => {
+test('practice bank: 24..32 items, at least 60% spoken, at least one dialogue per unit', async () => {
   for (const u of (await course).units) {
     const n = u.practice.length
-    if (!n) continue
+    expect(withPractice(u).some((e) => e.kind === 'dialogue'), `${u.id} dialogue`).toBe(true)
     expect(n, u.id).toBeGreaterThanOrEqual(24)
     expect(n, u.id).toBeLessThanOrEqual(32)
     const spoken = u.practice.filter((e) => (SPOKEN_KINDS as readonly string[]).includes(e.kind))

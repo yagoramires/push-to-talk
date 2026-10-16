@@ -33,6 +33,7 @@ test('all units in content/ are valid', async () => {
   )
   expect([...kindsUsed].sort()).toEqual([
     'choice',
+    'dialogue',
     'fill',
     'free_speak',
     'listen_answer',
