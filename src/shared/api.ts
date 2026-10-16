@@ -32,6 +32,8 @@ export interface AppApi {
   aiStatus(): Promise<AiStatus>
   setupAi(tier?: Tier): Promise<AiStatus>
   onAiProgress(cb: (p: AiProgress) => void): () => void
+  /** Shows main.log in Finder/Explorer, to send back when something goes wrong. */
+  openLogs(): Promise<void>
 }
 
 export type AiStatus = {

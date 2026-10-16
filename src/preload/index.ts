@@ -12,6 +12,7 @@ const api: AppApi = {
   evaluateFreeSpeak: (input) => ipcRenderer.invoke('evaluateFreeSpeak', input),
   aiStatus: () => ipcRenderer.invoke('aiStatus'),
   setupAi: (tier) => ipcRenderer.invoke('setupAi', tier),
+  openLogs: () => ipcRenderer.invoke('openLogs'),
   onAiProgress(cb) {
     const listener = (_e: IpcRendererEvent, p: AiProgress): void => cb(p)
     ipcRenderer.on('ai-progress', listener)

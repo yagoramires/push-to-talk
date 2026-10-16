@@ -1,7 +1,7 @@
 import { randomUUID } from 'node:crypto'
 import { readFile } from 'node:fs/promises'
 import { join } from 'node:path'
-import { app, ipcMain, systemPreferences } from 'electron'
+import { app, ipcMain, shell, systemPreferences } from 'electron'
 import type { AiStatus, AppApi, AppState, Tier } from '../shared/api'
 import type { ProfileProgress } from '../shared/progress'
 import { decodeWav } from '../shared/wav'
@@ -15,7 +15,7 @@ import { LLM_BY_TIER } from './ai/tiers'
 import { resourcePaths } from './self-check'
 import { createStore } from './store'
 
-export function registerIpc(): void {
+export function registerIpc(logPath: string): void {
   const store = createStore(app.getPath('userData'))
   const { content: contentDir, benchmarkWav } = resourcePaths({
     packaged: app.isPackaged,
@@ -105,13 +105,26 @@ export function registerIpc(): void {
       }
       return freeSpeak.ev.evaluate(input)
     },
-    aiStatus: () => (aiStatus = setup.status())
+    aiStatus: () => (aiStatus = setup.status()),
+    async openLogs() {
+      shell.showItemInFolder(logPath)
+    }
   }
 
   for (const name of Object.keys(handlers) as (keyof typeof handlers)[]) {
-    ipcMain.handle(name, (_event, ...args: unknown[]) =>
-      (handlers[name] as (...a: unknown[]) => unknown)(...args)
-    )
+    // Logs name, time and outcome only: arguments carry what the person said.
+    ipcMain.handle(name, async (_event, ...args: unknown[]) => {
+      const t0 = performance.now()
+      try {
+        const r = await (handlers[name] as (...a: unknown[]) => unknown)(...args)
+        const fail = r && typeof r === 'object' && 'ok' in r && r.ok === false
+        console.info(`ipc ${name} ${Math.round(performance.now() - t0)} ms`, fail ? r : '')
+        return r
+      } catch (e) {
+        console.error(`ipc ${name} threw after ${Math.round(performance.now() - t0)} ms`, e)
+        throw e
+      }
+    })
   }
 
   // Separate from the generic loop: progress goes back to the window that asked.
@@ -122,7 +135,10 @@ export function registerIpc(): void {
         // Release the loaded GGUF first: switching tiers deletes the old file (locked on Windows).
         await freeSpeak?.ev.dispose()
         freeSpeak = null
+        console.info('setupAi start', tier ?? 'auto')
+        let phase = ''
         const s = await setup.run(tier, (p) => {
+          if (p.phase !== phase) console.info('setupAi phase', (phase = p.phase), p.message)
           if (!e.sender.isDestroyed()) e.sender.send('ai-progress', p)
         })
         aiStatus = Promise.resolve(s)
