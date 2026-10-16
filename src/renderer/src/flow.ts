@@ -26,8 +26,14 @@ export type SessionItem = {
   completesBlockId?: string
 }
 
-/** Flattens the plan into the exercises to run, in order. Review ids not found in the course are skipped. */
+/**
+ * Flattens the plan into the exercises to run, in order. Review ids not found in the course are skipped,
+ * and the wrapup is dropped when its exercise is already in one of the session's blocks.
+ */
 export function flattenPlan(course: Course, plan: SessionPlan): SessionItem[] {
+  const inBlocks = new Set(
+    plan.steps.flatMap((s) => (s.kind === 'block' ? s.block.exercises.map((e) => e.id) : []))
+  )
   return plan.steps.flatMap((step): SessionItem[] => {
     if (step.kind === 'review')
       return step.exerciseIds.flatMap((id) => {
@@ -37,7 +43,9 @@ export function flattenPlan(course: Course, plan: SessionPlan): SessionItem[] {
           : []
       })
     if (step.kind === 'wrapup')
-      return [{ exercise: step.exercise, unitId: step.unitId, label: 'Conversa final' }]
+      return inBlocks.has(step.exercise.id)
+        ? []
+        : [{ exercise: step.exercise, unitId: step.unitId, label: 'Conversa final' }]
     const last = step.block.exercises.length - 1
     return step.block.exercises.map((exercise, i) => ({
       exercise,

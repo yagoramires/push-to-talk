@@ -49,6 +49,27 @@ describe('flattenPlan', () => {
   })
 })
 
+describe('flattenPlan wrapup dedup', () => {
+  test('30 min covering the conversation block asks its free_speak once', () => {
+    const items = flattenPlan(course, buildSession(course, newProgress('p1', 'A1', course), 30))
+    expect(items.filter((i) => i.exercise.id === 'u1-conv-free')).toHaveLength(1)
+    expect(items.some((i) => i.label === 'Conversa final')).toBe(false)
+  })
+
+  test('10 min with an open error keeps the wrapup', () => {
+    const p = recordAttempt(newProgress('p1', 'A1', course), {
+      exerciseId: 'u1-warmup-ex',
+      unitId: 'u1',
+      transcript: 'x',
+      verdict: 'error',
+      at: '2026-10-15T10:00:00Z'
+    })
+    const items = flattenPlan(course, buildSession(course, p, 10))
+    expect(items.at(-1)).toMatchObject({ label: 'Conversa final' })
+    expect(items.filter((i) => i.exercise.id === 'u1-conv-free')).toHaveLength(1)
+  })
+})
+
 describe('shuffled', () => {
   test('is a permutation that differs from the input', () => {
     const words = ['Where', 'are', 'you', 'from']
