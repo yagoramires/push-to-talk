@@ -36,7 +36,7 @@ export default function ResultView({
   return (
     <section className={`result result-${result.verdict}`} aria-live="polite">
       <p className="result-verdict">{LABELS[result.verdict]}</p>
-      {details && transcript && (
+      {transcript && (
         <p>
           <span className="muted">Você disse: </span>
           <span lang="en">{transcript}</span>
@@ -97,7 +97,7 @@ export default function ResultView({
               Continuar
             </button>
           )}
-          {details && final === 'error' && (
+          {final === 'error' && (
             <button type="button" className="btn btn-secondary" onClick={() => onFinal('correct')}>
               Acho que acertei
             </button>

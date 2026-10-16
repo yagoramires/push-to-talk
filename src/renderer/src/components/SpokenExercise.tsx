@@ -203,7 +203,7 @@ export function FreeSpeakAnswer({
           >
             Continuar
           </button>
-          {!exam && !ev.correct && (
+          {!ev.correct && (
             <button
               type="button"
               className="btn btn-secondary"
