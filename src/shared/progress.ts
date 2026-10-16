@@ -1,4 +1,4 @@
-import { nextPosition, type Course, type Level, type Position } from './content'
+import { nextPosition, type Course, type Level, type Position, type Skill } from './content'
 import type { FinalVerdict } from './matcher'
 
 export type Mode = 'solo' | 'guided'
@@ -16,6 +16,14 @@ export type SessionRecord = {
   blocksDone: string[]
   errors: number
 }
+export type ExamRecord = {
+  level: Level
+  at: string
+  mode: Mode
+  scores: Record<Skill, number> // 0..1
+  total: number
+  passed: boolean
+}
 export type ProfileProgress = {
   profileId: string
   startLevel: Level
@@ -23,6 +31,12 @@ export type ProfileProgress = {
   completedBlocks: string[]
   errorLog: ErrorEntry[]
   sessions: SessionRecord[]
+  /** Nível atual: a trilha não passa dele até a prova desse nível ser aprovada. */
+  level: Level
+  exams: ExamRecord[]
+  /** Unidades a reforçar depois de uma prova reprovada. */
+  weakUnits: string[]
+  courseComplete: boolean
 }
 
 export function newProgress(profileId: string, startLevel: Level, course: Course): ProfileProgress {
@@ -34,9 +48,29 @@ export function newProgress(profileId: string, startLevel: Level, course: Course
     position: { unitId: unit.id, blockIndex: 0 },
     completedBlocks: [],
     errorLog: [],
-    sessions: []
+    sessions: [],
+    level: startLevel,
+    exams: [],
+    weakUnits: [],
+    courseComplete: false
   }
 }
+
+/** Preenche os campos que progresso salvo antes das provas não tem; level = nível da unidade da posição. */
+export function migrateProgress(
+  p: Omit<ProfileProgress, NewFields> & Partial<Pick<ProfileProgress, NewFields>>,
+  course: Course
+): ProfileProgress {
+  const unit = p.position && course.units.find((u) => u.id === p.position!.unitId)
+  return {
+    ...p,
+    level: p.level ?? (unit ? unit.level : p.startLevel),
+    exams: p.exams ?? [],
+    weakUnits: p.weakUnits ?? [],
+    courseComplete: p.courseComplete ?? false
+  }
+}
+type NewFields = 'level' | 'exams' | 'weakUnits' | 'courseComplete'
 
 export function recordAttempt(
   p: ProfileProgress,

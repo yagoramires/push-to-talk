@@ -2,6 +2,7 @@ import { describe, expect, test } from 'vitest'
 import { makeCourse } from '../fixtures/course'
 import {
   completeBlock,
+  migrateProgress,
   newProgress,
   recordAttempt,
   recordSession,
@@ -32,7 +33,11 @@ describe('progress', () => {
       position: { unitId: 'u1', blockIndex: 0 },
       completedBlocks: [],
       errorLog: [],
-      sessions: []
+      sessions: [],
+      level: 'A1',
+      exams: [],
+      weakUnits: [],
+      courseComplete: false
     })
     expect(() => newProgress('p1', 'B2', course)).toThrow()
   })
@@ -120,5 +125,32 @@ describe('progress', () => {
     const snap2 = structuredClone(withErr)
     recordAttempt(withErr, attempt('e1', 'correct'))
     expect(withErr).toEqual(snap2)
+  })
+})
+
+describe('migrateProgress', () => {
+  const a2 = makeCourse({ withA2: true })
+  const old = (
+    position: { unitId: string; blockIndex: number } | null
+  ): Parameters<typeof migrateProgress>[0] => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { level, exams, weakUnits, courseComplete, ...rest } = newProgress('p1', 'A1', a2)
+    return { ...rest, position }
+  }
+
+  test('fills missing fields; level comes from the unit at the position', () => {
+    expect(migrateProgress(old({ unitId: 'u3', blockIndex: 2 }), a2)).toMatchObject({
+      level: 'A2',
+      exams: [],
+      weakUnits: [],
+      courseComplete: false,
+      position: { unitId: 'u3', blockIndex: 2 }
+    })
+    expect(migrateProgress(old(null), a2).level).toBe('A1')
+  })
+
+  test('keeps fields already present', () => {
+    const p = { ...newProgress('p1', 'A1', a2), level: 'A2' as const, weakUnits: ['u1'] }
+    expect(migrateProgress(p, a2)).toEqual(p)
   })
 })

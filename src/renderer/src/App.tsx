@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import type { AiStatus, Profile } from '../../shared/api'
 import { availableLevels, type Course, type Level } from '../../shared/content'
 import {
+  migrateProgress,
   newProgress,
   recordSession,
   type Mode,
@@ -45,7 +46,12 @@ export default function App(): React.JSX.Element {
         if (aiStatus && !aiStatus.tier) setScreen({ name: 'setup' })
         setCourse(c)
         setProfiles(state.profiles)
-        setProgress(state.progress)
+        // Progresso salvo antes das provas não tem level/exams; completa ao carregar.
+        setProgress(
+          Object.fromEntries(
+            Object.entries(state.progress).map(([id, p]) => [id, migrateProgress(p, c)])
+          )
+        )
         setRecoveredFrom(recoveredFrom)
       },
       (e: Error) => setLoadError(e.message)

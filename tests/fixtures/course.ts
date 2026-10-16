@@ -5,11 +5,12 @@ import {
   type AssessmentItem,
   type Block,
   type Course,
+  type Level,
   type Skill,
   type Unit
 } from '../../src/shared/content'
 
-function makeUnit(id: string, order: number): Unit {
+function makeUnit(id: string, order: number, level: Level = 'A1'): Unit {
   const blocks: Block[] = BLOCK_KINDS.map((kind) => ({
     id: `${id}-${kind}`,
     kind,
@@ -39,7 +40,7 @@ function makeUnit(id: string, order: number): Unit {
   }))
   return {
     id,
-    level: 'A1',
+    level,
     order,
     title_pt: id,
     title_en: id,
@@ -72,9 +73,10 @@ const PLACEMENT_SKILLS: Skill[] = [
   'structure'
 ]
 
-export function makeCourse(): Course {
+/** withA2 adds u3 at level A2, after the A1 units. */
+export function makeCourse({ withA2 = false } = {}): Course {
   return {
-    units: [makeUnit('u1', 1), makeUnit('u2', 2)],
+    units: [makeUnit('u1', 1), makeUnit('u2', 2), ...(withA2 ? [makeUnit('u3', 1, 'A2')] : [])],
     placement: {
       levels: LEVELS.map((level) => ({
         level,
