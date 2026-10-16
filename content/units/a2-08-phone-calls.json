@@ -916,13 +916,14 @@
         },
         {
           "speaker": "you",
-          "cue_pt": "Diga quem é e que está ligando sobre o seu pedido.",
+          "cue_pt": "Diga seu nome e que está ligando sobre o seu pedido.",
           "accepted": [
-            "Hi, this is Ana Souza. I'm calling about my order",
-            "Hello, it's Ana Souza. I'm calling about my order",
-            "Hi, my name is Ana Souza. I'm calling about my order",
-            "Hi, this is Ana Souza. I'm calling about an order",
-            "This is Ana Souza. I'm calling about my order"
+            "Hi, this is *. I'm calling about my order",
+            "Hello, it's *. I'm calling about my order",
+            "Hi, my name is *. I'm calling about my order",
+            "Hi, this is *. I'm calling about an order",
+            "This is *. I'm calling about my order",
+            "Hello, this is *. I'm calling about my order"
           ],
           "commonErrors": [
             {

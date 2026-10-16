@@ -833,7 +833,7 @@
     {
       "id": "b2-02-prac-19",
       "kind": "listen_answer",
-      "instruction_pt": "Listen and say what your talk is about.",
+      "instruction_pt": "Listen and say your talk is about your new marketing strategy.",
       "listen": "Before you start, can you tell us what your presentation is about?",
       "accepted": [
         "It's about our new marketing strategy",

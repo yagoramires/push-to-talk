@@ -713,7 +713,11 @@
         "I was lost for words",
         "I nearly burst into tears",
         "I was absolutely stunned",
-        "I stood there, completely stunned"
+        "I stood there, completely stunned",
+        "I was *",
+        "I felt *",
+        "I just *",
+        "My heart *"
       ],
       "commonErrors": [
         {

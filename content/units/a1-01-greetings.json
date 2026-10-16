@@ -899,7 +899,8 @@
         "Pleased to meet you, Tom",
         "Nice to meet you",
         "Hi Tom, how are you?",
-        "Hi Tom! I'm Lucas"
+        "Hi Tom! I'm *",
+        "Nice to meet you, Tom. I'm *"
       ],
       "commonErrors": [
         {

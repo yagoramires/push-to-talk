@@ -266,22 +266,22 @@
         {
           "id": "b2-04-listen-2",
           "kind": "listen_answer",
-          "instruction_pt": "Listen and give advice with \"If I were you\".",
+          "instruction_pt": "Listen and advise them to talk to their boss. Use \"If I were you\".",
           "listen": "My boss keeps giving me extra work and I'm exhausted. What should I do?",
           "accepted": [
             "If I were you, I'd talk to my boss",
             "If I were you, I would talk to my boss",
             "If I were you, I'd talk to your boss",
+            "If I were you, I would talk to your boss",
             "If I were you, I'd talk to him",
             "If I were you, I'd talk to her",
-            "If I were you, I'd say no",
             "If I were you, I'd speak to my boss",
+            "If I were you, I'd speak to your boss",
             "If I were you, I'd have a talk with my boss",
             "If I was you, I'd talk to my boss",
             "If I were you, I'd tell my boss",
             "If I were you, I'd tell my boss I'm exhausted",
-            "If I were you, I'd look for another job",
-            "If I were you, I'd ask for help"
+            "If I were you, I'd tell your boss you're exhausted"
           ],
           "commonErrors": [
             {
@@ -757,7 +757,7 @@
     {
       "id": "b2-04-prac-16",
       "kind": "listen_answer",
-      "instruction_pt": "Listen and say what you would do. Use \"I would\".",
+      "instruction_pt": "Listen and say you would take it to the police or look for the owner. Use \"I would\".",
       "listen": "Imagine you found a wallet full of money in the street. What would you do?",
       "accepted": [
         "I would take it to the police",
@@ -784,14 +784,15 @@
     {
       "id": "b2-04-prac-17",
       "kind": "listen_answer",
-      "instruction_pt": "Listen and give advice. Start with \"If I were you\".",
+      "instruction_pt": "Listen and advise them to take it. Start with \"If I were you\".",
       "listen": "My boss offered me a promotion, but I'd have to move to another city.",
       "accepted": [
         "If I were you, I would take it",
+        "If I were you, I'd take it",
         "If I were you, I'd accept it",
-        "If I were you, I'd think about it carefully",
-        "If I were you, I'd talk to my family first",
+        "If I were you, I would accept it",
         "If I were you, I'd go for it",
+        "If I were you, I'd take the promotion",
         "If I was you, I'd take it"
       ],
       "commonErrors": [
@@ -812,16 +813,13 @@
     {
       "id": "b2-04-prac-18",
       "kind": "listen_answer",
-      "instruction_pt": "Listen and say one thing you wish were different. Start with \"I wish\".",
+      "instruction_pt": "Listen and say you wish you had more free time. Start with \"I wish\".",
       "listen": "Is there anything you'd change about your life right now?",
       "accepted": [
         "I wish I had more free time",
         "I wish I had more time",
-        "I wish I lived closer to the beach",
-        "I wish I could travel more",
-        "I wish I earned more money",
-        "I wish I spoke better English",
-        "I wish I could speak English better",
+        "I wish I had a bit more free time",
+        "I wish I had more time for myself",
         "I wish I had more time for my family"
       ],
       "commonErrors": [
@@ -836,15 +834,14 @@
     {
       "id": "b2-04-prac-19",
       "kind": "listen_answer",
-      "instruction_pt": "Listen and say what you regret. Use \"I should have\".",
+      "instruction_pt": "Listen and say you should have studied harder. Use \"I should have\".",
       "listen": "Looking back on your school years, is there anything you would do differently?",
       "accepted": [
         "I should have studied harder",
+        "I should've studied harder",
         "I should have studied more",
-        "I should have learned English earlier",
-        "I should have read more books",
-        "I should have studied English earlier",
-        "I should have paid more attention in class"
+        "I should have studied a lot harder",
+        "I think I should have studied harder"
       ],
       "commonErrors": [
         {

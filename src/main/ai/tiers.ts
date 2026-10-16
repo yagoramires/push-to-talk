@@ -1,8 +1,12 @@
 import type { Hardware, Tier } from '../../shared/api'
 
-export { LLM_BY_TIER, type ModelFile } from '../../shared/models'
+export {
+  LLM_BY_TIER,
+  STT_BY_TIER,
+  STT_BASE as STT_MODEL,
+  type ModelFile
+} from '../../shared/models'
 
-export const STT_MODEL = 'onnx-community/whisper-base.en'
 export const PRON_MODEL = 'onnx-community/wav2vec2-lv-60-espeak-cv-ft-ONNX'
 
 /** RAM reportada vem ~0.1-0.4 GB abaixo do nominal (reserva da iGPU/firmware): arredonda para o GB inteiro */

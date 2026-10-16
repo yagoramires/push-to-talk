@@ -903,11 +903,12 @@
           "speaker": "you",
           "cue_pt": "Diga seu nome, que é um prazer e dê as boas-vindas.",
           "accepted": [
-            "Nice to meet you, Laura. I'm Ana. Welcome to the team",
-            "Hi Laura, I'm Pedro. Nice to meet you, and welcome",
-            "Nice to meet you. I'm Carlos. Welcome aboard",
-            "Hi, I'm Ana. Nice to meet you. Welcome to the company",
-            "Nice to meet you, Laura. I'm Pedro. Welcome"
+            "Nice to meet you, Laura. I'm *. Welcome to the team",
+            "Hi Laura, I'm *. Nice to meet you, and welcome",
+            "Nice to meet you. I'm *. Welcome aboard",
+            "Hi, I'm *. Nice to meet you. Welcome to the company",
+            "Nice to meet you, Laura. I'm *. Welcome",
+            "Nice to meet you, Laura. My name is *. Welcome to the team"
           ],
           "commonErrors": [
             {

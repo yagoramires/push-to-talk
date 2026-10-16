@@ -95,6 +95,9 @@ test('checkAnswer on content: a1-02-age-translate flags have-years, accepts corr
   expect(checkAnswer("I'm 25 years old", ex).verdict).toBe('correct')
 })
 
+// A wildcard slot (*) needs a word to fill it.
+const fillSlot = (a: string): string => a.replaceAll('*', 'London')
+
 test('every accepted answer of every spoken/fill exercise is correct through checkAnswer', async () => {
   const course = await loadCourse(join(__dirname, '..', 'content'))
   for (const e of course.units.flatMap((u) => u.blocks.flatMap((b) => b.exercises))) {
@@ -102,7 +105,7 @@ test('every accepted answer of every spoken/fill exercise is correct through che
       for (const t of e.turns)
         if (t.speaker === 'you')
           for (const a of t.accepted)
-            expect(checkAnswer(a, t).verdict, `${e.id} accepts "${a}"`).toBe('correct')
+            expect(checkAnswer(fillSlot(a), t).verdict, `${e.id} accepts "${a}"`).toBe('correct')
     if (
       e.kind === 'repeat' ||
       e.kind === 'translate' ||
@@ -110,7 +113,7 @@ test('every accepted answer of every spoken/fill exercise is correct through che
       e.kind === 'fill'
     )
       for (const a of e.accepted)
-        expect(checkAnswer(a, e).verdict, `${e.id} accepts "${a}"`).toBe('correct')
+        expect(checkAnswer(fillSlot(a), e).verdict, `${e.id} accepts "${a}"`).toBe('correct')
   }
 })
 
@@ -142,7 +145,7 @@ test('assessments: accepted answers pass checkAnswer and no commonError rejects 
       e.kind === 'fill'
     )
       for (const a of e.accepted)
-        expect(checkAnswer(a, e).verdict, `${e.id} accepts "${a}"`).toBe('correct')
+        expect(checkAnswer(fillSlot(a), e).verdict, `${e.id} accepts "${a}"`).toBe('correct')
     if ('commonErrors' in e)
       for (const c of e.commonErrors)
         for (const a of e.accepted)

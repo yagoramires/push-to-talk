@@ -8,11 +8,16 @@ const api: AppApi = {
   createProfile: (name) => ipcRenderer.invoke('createProfile', name),
   saveProgress: (progress) => ipcRenderer.invoke('saveProgress', progress),
   ensureMic: () => ipcRenderer.invoke('ensureMic'),
-  transcribe: (wav, expected) => ipcRenderer.invoke('transcribe', wav, expected),
+  transcribe: (wav, expected, hint) => ipcRenderer.invoke('transcribe', wav, expected, hint),
   evaluateFreeSpeak: (input) => ipcRenderer.invoke('evaluateFreeSpeak', input),
   aiStatus: () => ipcRenderer.invoke('aiStatus'),
   setupAi: (tier) => ipcRenderer.invoke('setupAi', tier),
   openLogs: () => ipcRenderer.invoke('openLogs'),
+  getSettings: () => ipcRenderer.invoke('getSettings'),
+  setSaveSamples: (on) => ipcRenderer.invoke('setSaveSamples', on),
+  saveSample: (sample) => ipcRenderer.invoke('saveSample', sample),
+  openSamples: () => ipcRenderer.invoke('openSamples'),
+  deleteSamples: () => ipcRenderer.invoke('deleteSamples'),
   onAiProgress(cb) {
     const listener = (_e: IpcRendererEvent, p: AiProgress): void => cb(p)
     ipcRenderer.on('ai-progress', listener)

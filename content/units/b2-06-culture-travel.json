@@ -756,13 +756,11 @@
       "instruction_pt": "Listen and say what you found hard to get used to. Use \"get used to\".",
       "listen": "What was the hardest thing to get used to when you travelled abroad?",
       "accepted": [
-        "The hardest thing was getting used to the food",
-        "It was hard to get used to the food",
-        "It was hard to get used to the weather",
-        "The hardest thing was getting used to the weather",
-        "I found it hard to get used to the language",
-        "It was hard to get used to the language",
-        "The hardest thing was getting used to the time difference"
+        "The hardest thing was getting used to *",
+        "It was hard to get used to *",
+        "I found it hard to get used to *",
+        "It was difficult to get used to *",
+        "The hardest thing to get used to was *"
       ],
       "commonErrors": [
         {
@@ -782,7 +780,7 @@
     {
       "id": "b2-06-prac-17",
       "kind": "listen_answer",
-      "instruction_pt": "Listen and describe a custom from Brazil.",
+      "instruction_pt": "Listen and describe how people greet each other in Brazil.",
       "listen": "What's a custom in Brazil that surprises foreigners?",
       "accepted": [
         "People kiss on the cheek when they say hello",
@@ -791,7 +789,7 @@
         "Brazilians often kiss on the cheek when they meet",
         "People often hug when they meet",
         "We hug a lot, even people we don't know well",
-        "Brazilians are often late for parties"
+        "People usually hug or kiss on the cheek when they meet"
       ],
       "commonErrors": [
         {
@@ -814,11 +812,15 @@
       "instruction_pt": "Listen and give a tip to a visitor.",
       "listen": "I'm visiting Brazil next month. Any tips?",
       "accepted": [
-        "You should try the local food",
-        "You should try feijoada",
-        "Don't forget to try the local food",
+        "You should try *",
+        "You should *",
+        "Don't forget to try *",
+        "Don't forget to *",
+        "Make sure you try *",
         "Try to learn a few words in Portuguese",
         "You should learn some basic Portuguese",
+        "You should try the local food",
+        "Don't forget to try the local food",
         "Be ready for people to hug you",
         "You'll get used to people hugging you"
       ],
@@ -849,7 +851,10 @@
         "No, I'm still getting used to it",
         "I'm getting used to it",
         "Not at all. I'm used to hot weather",
-        "Yes, I'm used to it now"
+        "Yes, I'm used to it now",
+        "Yes, I'm used to it",
+        "Yes, I'm used to the cold",
+        "No, I'm not used to it"
       ],
       "commonErrors": [
         {

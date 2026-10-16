@@ -3,6 +3,7 @@ import {
   mkdirSync,
   mkdtempSync,
   readdirSync,
+  rmSync,
   truncateSync,
   writeFileSync
 } from 'node:fs'
@@ -11,7 +12,13 @@ import { dirname, join } from 'node:path'
 import { expect, test } from 'vitest'
 import type { AiProgress, Hardware } from '../../src/shared/api'
 import { createAiSetup, type Downloader } from '../../src/main/ai/setup'
-import { LLM_BY_TIER, PRON_MODEL, STT_MODEL, type ModelFile } from '../../src/main/ai/tiers'
+import {
+  LLM_BY_TIER,
+  PRON_MODEL,
+  STT_BY_TIER,
+  STT_MODEL,
+  type ModelFile
+} from '../../src/main/ai/tiers'
 
 const hw: Hardware = {
   platform: 'linux',
@@ -43,9 +50,8 @@ function fakeDownloader(
     async hf(repo, onPct) {
       hfCalls.push(repo)
       onPct(50)
-      if (repo === STT_MODEL)
-        touch(join(dir, STT_MODEL, 'onnx/decoder_model_merged_quantized.onnx'))
-      if (repo === PRON_MODEL) {
+      if (repo !== PRON_MODEL) touch(join(dir, repo, 'onnx/decoder_model_merged_quantized.onnx'))
+      else {
         touch(join(dir, PRON_MODEL, 'onnx/model_quantized.onnx'))
         touch(join(dir, PRON_MODEL, 'vocab.json'))
       }
@@ -71,10 +77,12 @@ const make = (dir: string, downloader: Downloader, rtf = 0.5): ReturnType<typeof
   })
 
 const tmp = (): string => mkdtempSync(join(tmpdir(), 'ingles-setup-'))
+const STT_SMALL = STT_BY_TIER.medium
 
 test('full run writes state and everything is ready', async () => {
   const dir = tmp()
-  const setup = make(dir, fakeDownloader(dir))
+  const d = fakeDownloader(dir)
+  const setup = make(dir, d)
   expect(await setup.status()).toMatchObject({
     tier: null,
     hardware: hw, // detected before the first run so the setup screen can show it
@@ -90,6 +98,8 @@ test('full run writes state and everything is ready', async () => {
     ready: { stt: true, pronunciation: true, llm: true },
     pronunciationEnabled: true
   })
+  // medium transcribes with whisper small; base is still fetched first for the benchmark
+  expect(d.hfCalls).toEqual([STT_MODEL, STT_SMALL, PRON_MODEL])
   expect(existsSync(join(dir, 'ai-state.json'))).toBe(true)
   expect(await make(dir, fakeDownloader(dir)).status()).toEqual(s)
 })
@@ -149,13 +159,36 @@ test('switching light → medium keeps light until medium is ready, then removes
   expect(s.ready.llm).toBe(true)
   expect(existsSync(lightPath)).toBe(false)
   expect(existsSync(join(dir, LLM_BY_TIER.medium.file))).toBe(true)
+  expect(existsSync(join(dir, STT_SMALL))).toBe(true)
 })
 
-test('phases are emitted in order stt → benchmark → pronunciation → llm → done', async () => {
+test('switching medium → light removes whisper small, keeps base', async () => {
+  const dir = tmp()
+  await make(dir, fakeDownloader(dir)).run('medium', () => {})
+  let smallDuringLight = false
+  const d = fakeDownloader(dir, {
+    onGguf: () => (smallDuringLight = existsSync(join(dir, STT_SMALL)))
+  })
+  const s = await make(dir, d).run('light', () => {})
+  expect(d.hfCalls).not.toContain(STT_SMALL)
+  expect(smallDuringLight).toBe(true)
+  expect(s.ready.stt).toBe(true)
+  expect(existsSync(join(dir, STT_SMALL))).toBe(false)
+  expect(existsSync(join(dir, STT_MODEL))).toBe(true)
+})
+
+test('tier saved but its speech model missing → stt not ready', async () => {
+  const dir = tmp()
+  await make(dir, fakeDownloader(dir)).run('strong', () => {})
+  rmSync(join(dir, STT_SMALL), { recursive: true })
+  expect((await make(dir, fakeDownloader(dir)).status()).ready.stt).toBe(false)
+})
+
+test('phases: stt → benchmark → stt (small, medium tier) → pronunciation → llm → done', async () => {
   const dir = tmp()
   const phases: string[] = []
   await make(dir, fakeDownloader(dir)).run(undefined, (p) => {
     if (phases.at(-1) !== p.phase) phases.push(p.phase)
   })
-  expect(phases).toEqual(['stt', 'benchmark', 'pronunciation', 'llm', 'done'])
+  expect(phases).toEqual(['stt', 'benchmark', 'stt', 'pronunciation', 'llm', 'done'])
 })

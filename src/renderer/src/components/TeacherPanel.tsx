@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import type { Block, Exercise, YouTurn } from '../../../shared/content'
+import { showAccepted } from '../../../shared/matcher'
 
 function Answers({ ex }: { ex: Exercise }): React.JSX.Element | null {
   const youTurns =
@@ -23,7 +24,7 @@ function Answers({ ex }: { ex: Exercise }): React.JSX.Element | null {
           <h4>Respostas aceitas</h4>
           <ul lang="en">
             {list.map((a, i) => (
-              <li key={i}>{a}</li>
+              <li key={i}>{showAccepted(a)}</li>
             ))}
           </ul>
         </>

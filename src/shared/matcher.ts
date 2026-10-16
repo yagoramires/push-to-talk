@@ -149,25 +149,49 @@ export function wordDiff(expected: string, actual: string): WordDiff[] {
   return out
 }
 
+// Slot `*` in an accepted answer = 1-3 free words (a country, a name). '…' never survives normalize(), so it is a safe token.
+const SLOT = '…'
+export const showAccepted = (a: string): string => a.replace(/\*/g, SLOT)
+/** Whisper prompt from an accepted answer: slots dropped, so the free words are not biased. */
+export const recognitionHint = (a: string): string =>
+  a.replace(/\*/g, ' ').replace(/\s+/g, ' ').trim()
+const normAccepted = (a: string): string => a.split('*').map(normalize).join(` ${SLOT} `).trim()
+const matchesSlots = (n: string, t: string): boolean =>
+  new RegExp(`^${n.replaceAll(SLOT, '\\S+(?: \\S+){0,2}')}$`).test(t)
+
+/** Fills each slot with the transcript span (1-3 words) that brings the answer closest to t. */
+function fillSlots(n: string, t: string): string {
+  if (!n.includes(SLOT)) return n
+  const tw = words(t)
+  let best = n
+  for (let i = 0; i < tw.length; i++)
+    for (let k = 1; k <= 3 && i + k <= tw.length; k++) {
+      const c = n.replace(SLOT, tw.slice(i, i + k).join(' '))
+      if (similarity(c, t) > similarity(best, t)) best = c
+    }
+  return best === n ? n : fillSlots(best, t)
+}
+
 export function checkAnswer(
   transcript: string,
   ex: { accepted: string[]; commonErrors: CommonError[] }
 ): CheckResult {
   const t = normalize(transcript)
   if (!t) return { verdict: 'unclear' }
-  const norms = ex.accepted.map(normalize)
-  if (norms.includes(t)) return { verdict: 'correct' }
+  const norms = ex.accepted.map(normAccepted)
+  if (norms.some((n) => matchesSlots(n, t))) return { verdict: 'correct' }
+  const filled = norms.map((n) => fillSlots(n, t))
   let best = 0
   let bestSim = -1
-  norms.forEach((n, i) => {
+  filled.forEach((n, i) => {
     const s = similarity(n, t)
     if (s > bestSim) {
       best = i
       bestSim = s
     }
   })
-  const closest = ex.accepted[best]
-  const diff = wordDiff(norms[best], t)
+  const closest = showAccepted(ex.accepted[best])
+  const diff = wordDiff(filled[best], t)
   const matchedError = ex.commonErrors.find((c) => new RegExp(c.match).test(t))
   if (matchedError) return { verdict: 'error', matchedError, closest, diff }
   return { verdict: bestSim >= ALMOST_THRESHOLD ? 'almost' : 'error', closest, diff }

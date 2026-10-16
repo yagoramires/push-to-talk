@@ -235,7 +235,7 @@
         {
           "id": "c1-05-listen-2",
           "kind": "listen_answer",
-          "instruction_pt": "Listen and give a short, general definition (not a personal story).",
+          "instruction_pt": "Listen and give a short, general definition in a few words (not a personal story).",
           "listen": "How would you define success?",
           "accepted": [
             "Success is achieving what you set out to do",
@@ -248,7 +248,12 @@
             "I'd define success as achieving your goals",
             "I'd say success is being satisfied with your life",
             "Success is feeling fulfilled",
-            "For me, success is being at peace with your choices"
+            "For me, success is being at peace with your choices",
+            "Success is *",
+            "Success means *",
+            "Success is about *",
+            "I'd define success as *",
+            "I'd say success is *"
           ],
           "commonErrors": [
             {
@@ -693,7 +698,7 @@
     {
       "id": "c1-05-prac-15",
       "kind": "listen_answer",
-      "instruction_pt": "Listen and give a short definition of success in your own words.",
+      "instruction_pt": "Listen and give a short definition of success in your own words (a few words).",
       "listen": "What does success mean to you?",
       "accepted": [
         "Success means being happy with what you do",
@@ -705,7 +710,17 @@
         "Success is being proud of what you do",
         "To me, success means peace of mind",
         "For me, it's about doing meaningful work",
-        "I'd say success is feeling fulfilled"
+        "I'd say success is feeling fulfilled",
+        "Success means *",
+        "Success is *",
+        "To me, success means *",
+        "To me, success is *",
+        "To me, success is about *",
+        "For me, success is *",
+        "For me, success means *",
+        "For me, success is about *",
+        "For me, it's about *",
+        "I'd say success is *"
       ],
       "commonErrors": [
         {
@@ -757,7 +772,14 @@
         "Maybe because of fear of missing out",
         "Because of a lack of time",
         "I'd say it's anxiety about the future",
-        "Perhaps because happiness is often confused with success"
+        "Perhaps because happiness is often confused with success",
+        "Because of *",
+        "Probably because of *",
+        "Maybe because of *",
+        "Perhaps because of *",
+        "I think it's down to *",
+        "I'd say it's down to *",
+        "I'd say it's *"
       ],
       "commonErrors": [
         {

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import type { Dialogue } from '../../../shared/content'
 import { dialogueVerdict } from '../../../shared/dialogue'
-import type { FinalVerdict } from '../../../shared/matcher'
+import { showAccepted, type FinalVerdict } from '../../../shared/matcher'
 import type { Mode } from '../../../shared/progress'
 import ListenButton from './ListenButton'
 import { SpokenAnswer } from './SpokenExercise'
@@ -54,15 +54,22 @@ export default function DialogueView({
                     <span aria-label={answer.verdict === 'correct' ? 'certo' : 'errado'}>
                       {answer.verdict === 'correct' ? '✓' : '✗'}
                     </span>{' '}
-                    <span lang="en">{answer.transcript || t.accepted[0]}</span>
+                    <span lang="en">{answer.transcript || showAccepted(t.accepted[0])}</span>
                   </>
                 ) : (
                   t.cue_pt
                 )}
               </p>
+              {answer?.verdict === 'error' && answer.transcript && !exam && (
+                <p>
+                  <span className="muted">Resposta esperada: </span>
+                  <strong lang="en">{showAccepted(t.accepted[0])}</strong>
+                </p>
+              )}
               {!answer && (
                 <SpokenAnswer
                   key={n}
+                  exerciseId={`${ex.id}#${n + 1}`}
                   check={t}
                   mode={mode}
                   exam={exam}

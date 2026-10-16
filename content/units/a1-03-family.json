@@ -958,7 +958,7 @@
         "Yes, she's married",
         "Yes, she is married",
         "Yes",
-        "Yes, she's married. Her husband is Pedro",
+        "Yes, she's married. Her husband is *",
         "Yes, my sister is married"
       ],
       "commonErrors": [

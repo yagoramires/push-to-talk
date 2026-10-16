@@ -833,7 +833,7 @@
     {
       "id": "b2-12-prac-19",
       "kind": "listen_answer",
-      "instruction_pt": "Listen and explain why it is a win-win.",
+      "instruction_pt": "Listen and say it's a win-win because both sides benefit.",
       "listen": "So why would the clients agree to this?",
       "accepted": [
         "Because it's a win-win. They pay less and we sell more",

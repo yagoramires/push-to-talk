@@ -244,19 +244,17 @@
         {
           "id": "c1-08-listen-2",
           "kind": "listen_answer",
-          "instruction_pt": "Listen. Your friend is joking about herself. Reply light-heartedly.",
+          "instruction_pt": "Listen. Your friend is joking about herself. Reply light-heartedly: joke that at least the alarm works.",
           "listen": "I tried to bake a cake yesterday and I set off the fire alarm. Twice.",
           "accepted": [
-            "Well, at least you tried!",
             "At least the alarm works!",
+            "Well, at least the alarm works!",
             "Well, at least you know the alarm works!",
-            "Sounds like a great success!",
-            "Master chef in the making!",
-            "Remind me never to eat your cake!",
-            "Practice makes perfect!",
-            "So it went well, then!",
-            "That sounds like my kind of cooking!",
-            "Twice? Impressive!"
+            "At least you know the alarm works!",
+            "At least the fire alarm works!",
+            "Well, at least you know the fire alarm works!",
+            "Well, at least the fire alarm works!",
+            "Look on the bright side, at least the alarm works!"
           ],
           "commonErrors": [
             {
@@ -680,20 +678,19 @@
     {
       "id": "c1-08-prac-16",
       "kind": "listen_answer",
-      "instruction_pt": "Listen and respond with self-deprecating humour.",
+      "instruction_pt": "Listen and respond with self-deprecating humour: say it's a talent.",
       "listen": "I heard you locked yourself out again!",
       "accepted": [
-        "Yes, I'm a genius, aren't I",
-        "Guilty as charged",
         "What can I say, it's a talent",
-        "Yep, my memory is legendary",
-        "I know. I should get a medal",
-        "Don't remind me",
+        "What can I say? It's a talent",
+        "It's a talent, really",
+        "It's a real talent",
+        "It's a talent of mine",
+        "Yes, it's a talent of mine",
+        "What can I say, it's a gift",
         "It's a gift, really",
-        "Yes, I'm clearly not the brightest",
-        "Yeah, I'm hopeless",
-        "What can I say? I'm a professional",
-        "Yes, I locked myself out again. Classic me"
+        "Guilty as charged. It's a talent",
+        "Yes, again. It's a talent"
       ],
       "commonErrors": [
         {
@@ -707,18 +704,17 @@
     {
       "id": "c1-08-prac-17",
       "kind": "listen_answer",
-      "instruction_pt": "Listen and answer sarcastically.",
+      "instruction_pt": "Listen and answer sarcastically: say you loved every minute of it.",
       "listen": "Did you enjoy the three-hour meeting?",
       "accepted": [
         "Oh, I loved every minute of it",
-        "Absolutely, best three hours of my life",
-        "Oh yes, it was thrilling",
-        "It was the highlight of my week",
-        "I couldn't get enough of it",
-        "Oh, it was riveting",
-        "What's not to love",
-        "Oh, I was on the edge of my seat",
-        "Loved it. Can't wait for the next one"
+        "I loved every minute of it",
+        "Oh yes, I loved every minute of it",
+        "Oh, I loved every single minute of it",
+        "Absolutely, I loved every minute of it",
+        "Loved every minute of it",
+        "Oh, I enjoyed every minute of it",
+        "Oh yes, loved every minute of it. Can't wait for the next one"
       ],
       "commonErrors": [
         {

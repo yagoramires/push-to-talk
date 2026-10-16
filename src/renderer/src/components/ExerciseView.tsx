@@ -56,6 +56,7 @@ export default function ExerciseView({
             <ListenButton text={listenTexts(ex)[0]} />
           </div>
           <SpokenAnswer
+            exerciseId={ex.id}
             check={vocabAsRepeat(ex)}
             expected={ex.example_en}
             mode={mode}
@@ -95,6 +96,7 @@ export default function ExerciseView({
             </div>
           )}
           <SpokenAnswer
+            exerciseId={ex.id}
             check={ex}
             expected={ex.kind === 'repeat' ? ex.prompt : undefined}
             mode={mode}
