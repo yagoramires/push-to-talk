@@ -1,6 +1,6 @@
 export type Recorder = { stop(): Promise<Float32Array> }
 
-const SAMPLE_RATE = 16000
+export const SAMPLE_RATE = 16000
 
 /** 16 kHz mono capture; auto-stops after maxSeconds. Releases the mic on stop. */
 export async function startRecording(maxSeconds = 30): Promise<Recorder> {
