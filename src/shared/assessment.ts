@@ -13,7 +13,11 @@ import { recordAttempt, type ExamRecord, type Mode, type ProfileProgress } from 
 export const PASS_TOTAL = 0.7
 export const PASS_EACH = 0.5
 
-/** Passa com acertos >= PASS_TOTAL no total e >= PASS_EACH em cada habilidade presente. */
+/**
+ * Passa com acertos >= PASS_TOTAL no total e >= PASS_EACH em cada habilidade presente.
+ * Habilidade com um item só (vocabulary/structure no nivelamento) conta só no total:
+ * senão um erro nela reprovaria um 5 de 6.
+ */
 export function passes(results: { skill: Skill; correct: boolean }[]): {
   passed: boolean
   scores: Partial<Record<Skill, number>>
@@ -21,12 +25,15 @@ export function passes(results: { skill: Skill; correct: boolean }[]): {
 } {
   const rate = (rs: typeof results): number => rs.filter((r) => r.correct).length / rs.length
   const scores: Partial<Record<Skill, number>> = {}
+  let eachOk = true
   for (const skill of SKILLS) {
     const rs = results.filter((r) => r.skill === skill)
-    if (rs.length) scores[skill] = rate(rs)
+    if (!rs.length) continue
+    scores[skill] = rate(rs)
+    if (rs.length > 1 && scores[skill] < PASS_EACH) eachOk = false
   }
   const total = results.length ? rate(results) : 0
-  const passed = total >= PASS_TOTAL && Object.values(scores).every((s) => s >= PASS_EACH)
+  const passed = total >= PASS_TOTAL && eachOk
   return { passed, scores, total }
 }
 

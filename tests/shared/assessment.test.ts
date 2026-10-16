@@ -55,6 +55,19 @@ describe('passes', () => {
     expect(res.passed).toBe(false)
   })
 
+  test('5/6 with the single vocabulary item wrong still passes', () => {
+    const res = passes([
+      r('listening', true),
+      r('listening', true),
+      r('speaking', true),
+      r('speaking', true),
+      r('vocabulary', false),
+      r('structure', true)
+    ])
+    expect(res.scores.vocabulary).toBe(0)
+    expect(res.passed).toBe(true)
+  })
+
   test('no results does not pass', () => {
     expect(passes([]).passed).toBe(false)
   })
