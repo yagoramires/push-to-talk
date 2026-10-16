@@ -10,8 +10,13 @@ import {
 
 const course = makeCourse()
 const at = '2026-10-15T10:00:00Z'
-const fresh = () => newProgress('p1', 'A1', course)
-const attempt = (exerciseId: string, verdict: 'correct' | 'error', t = at, transcript = 'x') => ({
+const fresh = (): ReturnType<typeof newProgress> => newProgress('p1', 'A1', course)
+const attempt = (
+  exerciseId: string,
+  verdict: 'correct' | 'error',
+  t = at,
+  transcript = 'x'
+): Parameters<typeof recordAttempt>[1] => ({
   exerciseId,
   unitId: 'u1',
   transcript,
@@ -73,7 +78,11 @@ describe('progress', () => {
   })
 
   test('soloSinceLastGuided returns only solo sessions after the last guided one, their blocks, and open errors', () => {
-    const s = (t: string, mode: 'solo' | 'guided', blocksDone: string[]) => ({
+    const s = (
+      t: string,
+      mode: 'solo' | 'guided',
+      blocksDone: string[]
+    ): Parameters<typeof recordSession>[1] => ({
       at: t,
       mode,
       minutes: 10,

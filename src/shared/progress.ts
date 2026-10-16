@@ -60,13 +60,19 @@ export function recordAttempt(
   }
 }
 
-export function completeBlock(p: ProfileProgress, course: Course, blockId: string): ProfileProgress {
+export function completeBlock(
+  p: ProfileProgress,
+  course: Course,
+  blockId: string
+): ProfileProgress {
   const current = p.position
     ? course.units.find((u) => u.id === p.position!.unitId)?.blocks[p.position.blockIndex]
     : undefined
   return {
     ...p,
-    completedBlocks: p.completedBlocks.includes(blockId) ? p.completedBlocks : [...p.completedBlocks, blockId],
+    completedBlocks: p.completedBlocks.includes(blockId)
+      ? p.completedBlocks
+      : [...p.completedBlocks, blockId],
     position: current?.id === blockId ? nextPosition(course, p.position!) : p.position
   }
 }

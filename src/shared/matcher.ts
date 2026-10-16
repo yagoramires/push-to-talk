@@ -123,9 +123,10 @@ export function wordDiff(expected: string, actual: string): WordDiff[] {
   let i = 0
   let j = 0
   while (i < e.length || j < a.length) {
-    if (i < e.length && j < a.length && e[i] === a[j])
-      (out.push({ word: e[i++], status: 'ok' }), j++)
-    else if (j >= a.length || (i < e.length && lcs[i + 1][j] >= lcs[i][j + 1]))
+    if (i < e.length && j < a.length && e[i] === a[j]) {
+      out.push({ word: e[i++], status: 'ok' })
+      j++
+    } else if (j >= a.length || (i < e.length && lcs[i + 1][j] >= lcs[i][j + 1]))
       out.push({ word: e[i++], status: 'missing' })
     else out.push({ word: a[j++], status: 'extra' })
   }
@@ -144,7 +145,10 @@ export function checkAnswer(
   let bestSim = -1
   norms.forEach((n, i) => {
     const s = similarity(n, t)
-    if (s > bestSim) ((best = i), (bestSim = s))
+    if (s > bestSim) {
+      best = i
+      bestSim = s
+    }
   })
   const closest = ex.accepted[best]
   const diff = wordDiff(norms[best], t)

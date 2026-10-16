@@ -39,7 +39,8 @@ export function buildSession(course: Course, p: ProfileProgress, minutes: Durati
         ?.blocks.find((b) => b.kind === 'conversation')
         ?.exercises.find((e): e is FreeSpeak => e.kind === 'free_speak')
     : undefined
-  if (last && free) steps.push({ kind: 'wrapup', minutes: convMin, unitId: last.unitId, exercise: free })
+  if (last && free)
+    steps.push({ kind: 'wrapup', minutes: convMin, unitId: last.unitId, exercise: free })
 
   return { steps, courseComplete: pos === null }
 }
