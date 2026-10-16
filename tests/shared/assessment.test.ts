@@ -1,6 +1,13 @@
 import { describe, expect, test } from 'vitest'
 import { makeCourse } from '../fixtures/course'
-import { applyExamResult, examDue, passes } from '../../src/shared/assessment'
+import {
+  applyExamResult,
+  currentPlacementItems,
+  examDue,
+  finishPlacementLevel,
+  passes,
+  startPlacement
+} from '../../src/shared/assessment'
 import { SKILLS, type Skill } from '../../src/shared/content'
 import { newProgress, type ProfileProgress } from '../../src/shared/progress'
 
@@ -149,5 +156,52 @@ describe('applyExamResult', () => {
     const c1 = { ...exam, level: 'C1' as const }
     const { progress } = applyExamResult({ ...p(), level: 'C1' }, a2, c1, answers(), at, 'solo')
     expect(progress).toMatchObject({ level: 'C1', courseComplete: true })
+  })
+})
+
+describe('placement engine', () => {
+  const placement = makeCourse().placement!
+  const level = (correct: number): { skill: Skill; correct: boolean }[] =>
+    (['listening', 'listening', 'speaking', 'speaking', 'vocabulary', 'structure'] as Skill[]).map(
+      (skill, i) => r(skill, i < correct)
+    )
+  const PASS = level(6)
+  const FAIL = level(4)
+
+  test('starts at A1 with its 6 items', () => {
+    const s = startPlacement()
+    expect(s).toEqual({ levelIndex: 0, answers: [], done: false, result: null })
+    expect(currentPlacementItems(placement, s).map((i) => i.exercise.id)).toEqual(
+      placement.levels[0].items.map((i) => i.exercise.id)
+    )
+  })
+
+  test('fails A1 → result A1', () => {
+    const s = finishPlacementLevel(startPlacement(), FAIL)
+    expect(s).toMatchObject({ done: true, result: 'A1', levelIndex: 0 })
+    expect(s.answers).toHaveLength(6)
+    expect(s.answers.every((a) => a.level === 'A1')).toBe(true)
+  })
+
+  test('passes A1 and A2, fails B1 → result B1', () => {
+    let s = finishPlacementLevel(startPlacement(), PASS)
+    expect(s).toMatchObject({ done: false, levelIndex: 1, result: null })
+    expect(currentPlacementItems(placement, s)).toBe(placement.levels[1].items)
+    // 5/6 missing one listening item still passes
+    s = finishPlacementLevel(s, [r('listening', false), ...PASS.slice(1)])
+    s = finishPlacementLevel(s, FAIL)
+    expect(s).toMatchObject({ done: true, result: 'B1' })
+    expect(s.answers.map((a) => a.level)).toEqual([
+      ...Array(6).fill('A1'),
+      ...Array(6).fill('A2'),
+      ...Array(6).fill('B1')
+    ])
+  })
+
+  test('passes everything → result C1 and done, without overflowing', () => {
+    let s = startPlacement()
+    for (let i = 0; i < 5; i++) s = finishPlacementLevel(s, PASS)
+    expect(s).toMatchObject({ done: true, result: 'C1', levelIndex: 4 })
+    expect(currentPlacementItems(placement, s)).toBe(placement.levels[4].items)
   })
 })

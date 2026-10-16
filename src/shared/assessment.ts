@@ -1,4 +1,13 @@
-import { LEVELS, SKILLS, type Course, type Level, type LevelExam, type Skill } from './content'
+import {
+  LEVELS,
+  SKILLS,
+  type AssessmentItem,
+  type Course,
+  type Level,
+  type LevelExam,
+  type Placement,
+  type Skill
+} from './content'
 import { recordAttempt, type ExamRecord, type Mode, type ProfileProgress } from './progress'
 
 export const PASS_TOTAL = 0.7
@@ -83,4 +92,33 @@ export function applyExamResult(
     progress = { ...progress, weakUnits: [...new Set(weak)].filter((u): u is string => !!u) }
   }
   return { progress, record }
+}
+
+export type PlacementState = {
+  levelIndex: number
+  answers: { level: Level; skill: Skill; correct: boolean }[]
+  done: boolean
+  result: Level | null
+}
+
+/** Começa no A1 e sobe enquanto a pessoa passa; o resultado é o primeiro nível não aprovado (no máximo C1). */
+export function startPlacement(): PlacementState {
+  return { levelIndex: 0, answers: [], done: false, result: null }
+}
+
+/** Os itens do nível atual; PlacementSchema garante os níveis na ordem de LEVELS. */
+export function currentPlacementItems(placement: Placement, s: PlacementState): AssessmentItem[] {
+  return placement.levels[s.levelIndex].items
+}
+
+export function finishPlacementLevel(
+  s: PlacementState,
+  answers: { skill: Skill; correct: boolean }[]
+): PlacementState {
+  const level = LEVELS[s.levelIndex]
+  const all = [...s.answers, ...answers.map((a) => ({ level, ...a }))]
+  const last = s.levelIndex === LEVELS.length - 1
+  if (passes(answers).passed && !last)
+    return { levelIndex: s.levelIndex + 1, answers: all, done: false, result: null }
+  return { levelIndex: s.levelIndex, answers: all, done: true, result: level }
 }
