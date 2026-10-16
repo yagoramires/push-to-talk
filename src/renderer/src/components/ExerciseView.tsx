@@ -59,7 +59,7 @@ export default function ExerciseView({ exercise: ex, mode, onFinal }: Props): Re
           <div className="actions">
             <ListenButton text={ex.prompt_en} />
           </div>
-          <FreeSpeakAnswer exercise={ex} onFinal={onFinal} />
+          <FreeSpeakAnswer exercise={ex} mode={mode} onFinal={onFinal} />
         </article>
       )
     case 'repeat':

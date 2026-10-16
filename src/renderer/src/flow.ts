@@ -1,5 +1,6 @@
 import {
   findExercise,
+  type Block,
   type BlockKind,
   type CommonError,
   type Course,
@@ -24,6 +25,11 @@ export type SessionItem = {
   label: string
   /** Set on the last exercise of a block: answering it completes the block. */
   completesBlockId?: string
+  /** Position of the plan step this exercise belongs to, and that step's minutes (for the phase timer). */
+  stepIndex: number
+  stepMinutes: number
+  /** The block holding the exercise, for the teacher's notes. */
+  block?: Block
 }
 
 /**
@@ -34,23 +40,42 @@ export function flattenPlan(course: Course, plan: SessionPlan): SessionItem[] {
   const inBlocks = new Set(
     plan.steps.flatMap((s) => (s.kind === 'block' ? s.block.exercises.map((e) => e.id) : []))
   )
-  return plan.steps.flatMap((step): SessionItem[] => {
+  return plan.steps.flatMap((step, stepIndex): SessionItem[] => {
+    const at = { stepIndex, stepMinutes: step.minutes }
     if (step.kind === 'review')
       return step.exerciseIds.flatMap((id) => {
         const found = findExercise(course, id)
         return found
-          ? [{ exercise: found.exercise, unitId: found.unit.id, label: 'Revisão dos erros' }]
+          ? [
+              {
+                exercise: found.exercise,
+                unitId: found.unit.id,
+                label: 'Revisão dos erros',
+                block: found.block,
+                ...at
+              }
+            ]
           : []
       })
     if (step.kind === 'wrapup')
       return inBlocks.has(step.exercise.id)
         ? []
-        : [{ exercise: step.exercise, unitId: step.unitId, label: 'Conversa final' }]
+        : [
+            {
+              exercise: step.exercise,
+              unitId: step.unitId,
+              label: 'Conversa final',
+              block: findExercise(course, step.exercise.id)?.block,
+              ...at
+            }
+          ]
     const last = step.block.exercises.length - 1
     return step.block.exercises.map((exercise, i) => ({
       exercise,
       unitId: step.unitId,
       label: BLOCK_LABELS[step.block.kind],
+      block: step.block,
+      ...at,
       ...(i === last ? { completesBlockId: step.block.id } : {})
     }))
   })

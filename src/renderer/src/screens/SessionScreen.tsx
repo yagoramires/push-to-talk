@@ -4,12 +4,16 @@ import type { FinalVerdict } from '../../../shared/matcher'
 import {
   completeBlock,
   recordAttempt,
+  soloSinceLastGuided,
   type Mode,
   type ProfileProgress,
   type SessionRecord
 } from '../../../shared/progress'
 import { buildSession, type Duration } from '../../../shared/session'
 import ExerciseView from '../components/ExerciseView'
+import PhaseTimer from '../components/PhaseTimer'
+import SoloRecap from '../components/SoloRecap'
+import TeacherPanel from '../components/TeacherPanel'
 import { flattenPlan, formatClock } from '../flow'
 
 type Props = {
@@ -37,6 +41,11 @@ export default function SessionScreen({
   const [index, setIndex] = useState(0)
   const [blocksDone, setBlocksDone] = useState<string[]>([])
   const [errors, setErrors] = useState(0)
+  // Computed once: the recap is about the time before this lesson.
+  const [recap] = useState(() => (mode === 'guided' ? soloSinceLastGuided(progress) : null))
+  const [recapSeen, setRecapSeen] = useState(
+    !recap || (!recap.sessions.length && !recap.blocksDone.length && !recap.openErrors.length)
+  )
 
   useEffect(() => {
     const t = setInterval(() => setNow(Date.now()), 1000)
@@ -90,18 +99,35 @@ export default function SessionScreen({
             <strong>Sessão {mode === 'solo' ? 'solo' : 'guiada'}</strong>
           )}
         </div>
-        <div className={`timer${remaining < 0 ? ' timer-over' : ''}`} role="timer">
-          {remaining >= 0
-            ? `Faltam ${formatClock(remaining)}`
-            : `Tempo esgotado (${formatClock(remaining)}) · encerre quando quiser`}
-        </div>
+        {mode === 'guided' && item && recapSeen ? (
+          <PhaseTimer
+            key={item.stepIndex}
+            phase={item.label}
+            phaseMinutes={item.stepMinutes}
+            now={now}
+            sessionRemaining={remaining}
+          />
+        ) : (
+          <div className={`timer${remaining < 0 ? ' timer-over' : ''}`} role="timer">
+            {remaining >= 0
+              ? `Faltam ${formatClock(remaining)}`
+              : `Tempo esgotado (${formatClock(remaining)}) · encerre quando quiser`}
+          </div>
+        )}
         <button type="button" className="btn btn-secondary" onClick={end}>
           Encerrar sessão
         </button>
       </header>
 
-      {item ? (
-        <ExerciseView key={index} exercise={item.exercise} mode={mode} onFinal={handleFinal} />
+      {!recapSeen && recap ? (
+        <SoloRecap recap={recap} onStart={() => setRecapSeen(true)} />
+      ) : item ? (
+        <>
+          <ExerciseView key={index} exercise={item.exercise} mode={mode} onFinal={handleFinal} />
+          {mode === 'guided' && (
+            <TeacherPanel key={index} block={item.block} exercise={item.exercise} />
+          )}
+        </>
       ) : (
         <section className="panel" aria-live="polite">
           <h2>

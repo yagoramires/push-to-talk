@@ -13,12 +13,16 @@ const DIFF_LABELS = { ok: '', missing: 'faltou', extra: 'a mais' } as const
 type Props = {
   result: CheckResult
   transcript: string
-  // Task 8 uses mode for the guided-mode verdict buttons.
   mode: Mode
   onFinal(v: FinalVerdict): void
 }
 
-export default function ResultView({ result, transcript, onFinal }: Props): React.JSX.Element {
+export default function ResultView({
+  result,
+  transcript,
+  mode,
+  onFinal
+}: Props): React.JSX.Element {
   const final = toFinalVerdict(result)
   const err = result.matchedError
   return (
@@ -53,23 +57,39 @@ export default function ResultView({ result, transcript, onFinal }: Props): Reac
           ))}
         </p>
       )}
-      <div className="actions">
-        {final && (
+      {mode === 'guided' ? (
+        <div className="actions">
           <button
             type="button"
-            className="btn btn-primary"
+            className="btn btn-correct"
             autoFocus
-            onClick={() => onFinal(final)}
+            onClick={() => onFinal('correct')}
           >
-            Continuar
+            ✓ Professor: certo
           </button>
-        )}
-        {final === 'error' && (
-          <button type="button" className="btn btn-secondary" onClick={() => onFinal('correct')}>
-            Acho que acertei
+          <button type="button" className="btn btn-error" onClick={() => onFinal('error')}>
+            ✗ Professor: errado
           </button>
-        )}
-      </div>
+        </div>
+      ) : (
+        <div className="actions">
+          {final && (
+            <button
+              type="button"
+              className="btn btn-primary"
+              autoFocus
+              onClick={() => onFinal(final)}
+            >
+              Continuar
+            </button>
+          )}
+          {final === 'error' && (
+            <button type="button" className="btn btn-secondary" onClick={() => onFinal('correct')}>
+              Acho que acertei
+            </button>
+          )}
+        </div>
+      )}
     </section>
   )
 }

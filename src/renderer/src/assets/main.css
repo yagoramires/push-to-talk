@@ -375,3 +375,16 @@ select {
   align-items: center;
   gap: 0.75rem;
 }
+
+/* Guided mode */
+.phase-timer {
+  text-align: right;
+}
+
+.teacher-panel {
+  margin-top: 1.5rem;
+}
+
+.teacher-panel h4 {
+  margin: 0.75rem 0 0.25rem;
+}

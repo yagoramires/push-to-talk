@@ -31,6 +31,17 @@ describe('flattenPlan', () => {
     expect(items.at(-1)!.exercise.kind).toBe('free_speak')
   })
 
+  test('items carry their step index, step minutes and block', () => {
+    const plan = buildSession(course, newProgress('p1', 'A1', course), 10)
+    const items = flattenPlan(course, plan)
+    for (const item of items) {
+      const step = plan.steps[item.stepIndex]
+      expect(item.stepMinutes).toBe(step.minutes)
+      if (step.kind === 'block') expect(item.block).toBe(step.block)
+    }
+    expect(new Set(items.map((i) => i.stepIndex)).size).toBeGreaterThan(1)
+  })
+
   test('skips review ids missing from the course', () => {
     const items = flattenPlan(course, {
       steps: [{ kind: 'review', minutes: 2, exerciseIds: ['gone', 'u2-review-ex'] }],

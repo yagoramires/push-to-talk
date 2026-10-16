@@ -14,6 +14,8 @@ type OnFinal = (v: FinalVerdict, transcript: string) => void
 
 const UNCLEAR = 'Não entendi, tente de novo.'
 
+const TEACHER_MARKS = { correctLabel: 'Professor: certo', errorLabel: 'Professor: errado' }
+
 function ManualMark({
   onFinal,
   correctLabel = 'Marcar como certo',
@@ -43,7 +45,7 @@ type SpokenState =
 
 /**
  * The answer part of a spoken exercise: record → transcribe → check → ResultView.
- * Task 8 swaps the RecordButton for teacher verdict buttons in guided mode.
+ * Guided mode has no mic or AI: the teacher's verdict is the final answer.
  */
 export function SpokenAnswer({
   check,
@@ -56,6 +58,7 @@ export function SpokenAnswer({
 }): React.JSX.Element {
   const [state, setState] = useState<SpokenState>({ kind: 'idle' })
 
+  if (mode === 'guided') return <ManualMark {...TEACHER_MARKS} onFinal={(v) => onFinal(v, '')} />
   if (state.kind === 'result')
     return (
       <ResultView
@@ -102,14 +105,28 @@ type FreeState =
 // shortcut: self-assessment against the guidelines; Plan 2 brings the text model to judge it.
 export function FreeSpeakAnswer({
   exercise,
+  mode,
   onFinal
 }: {
   exercise: FreeSpeak
+  mode: Mode
   onFinal: OnFinal
 }): React.JSX.Element {
   const [state, setState] = useState<FreeState>({ kind: 'idle' })
   const [checked, setChecked] = useState<boolean[]>(() => exercise.guidelines_pt.map(() => false))
 
+  if (mode === 'guided')
+    return (
+      <section className="result">
+        <p className="result-verdict">Para o professor avaliar:</p>
+        <ul>
+          {exercise.guidelines_pt.map((g, i) => (
+            <li key={i}>{g}</li>
+          ))}
+        </ul>
+        <ManualMark {...TEACHER_MARKS} onFinal={(v) => onFinal(v, '')} />
+      </section>
+    )
   if (state.kind === 'idle' || state.kind === 'unclear')
     return (
       <div className="answer">
