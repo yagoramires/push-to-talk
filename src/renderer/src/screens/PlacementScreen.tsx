@@ -84,6 +84,9 @@ export default function PlacementScreen({
           <div className="muted small">
             Exercício {index + 1} de {items.length}
           </div>
+          <div className="progress-bar" aria-hidden="true">
+            <span style={{ width: `${(index / items.length) * 100}%` }} />
+          </div>
         </div>
         <button
           type="button"
