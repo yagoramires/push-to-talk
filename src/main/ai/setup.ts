@@ -10,6 +10,7 @@ import { configureModels, modelsConfig, sttModelFile } from './stt'
 import {
   LLM_BY_TIER,
   PRON_MODEL,
+  STT_BY_TIER,
   STT_MODEL,
   chooseTier,
   pronunciationEnabled,
@@ -48,7 +49,7 @@ export function createAiSetup(o: {
       recommended: hardware && chooseTier(hardware, rtf),
       rtf,
       ready: {
-        stt: existsSync(sttModelFile(o.modelsDir)),
+        stt: existsSync(sttModelFile(o.modelsDir, gguf ? STT_BY_TIER[s.tier] : STT_MODEL)),
         pronunciation: pronunciationModelReady(o.modelsDir),
         llm: !!gguf && existsSync(join(o.modelsDir, gguf.file))
       },
@@ -80,6 +81,14 @@ export function createAiSetup(o: {
       step('benchmark', 'Medindo a velocidade do computador…')(0)
       const rtf = await o.benchmark()
 
+      const chosen = tier ?? chooseTier(hardware, rtf)
+      const sttRepo = STT_BY_TIER[chosen]
+      if (sttRepo !== STT_MODEL) {
+        const big = step('stt', 'Baixando o reconhecimento de fala mais preciso…')
+        big(0)
+        await o.downloader.hf(sttRepo, big)
+      }
+
       const pron = pronunciationEnabled(rtf)
       if (pron) {
         const p = step('pronunciation', 'Baixando a avaliação de pronúncia…')
@@ -87,7 +96,6 @@ export function createAiSetup(o: {
         await o.downloader.hf(PRON_MODEL, p)
       }
 
-      const chosen = tier ?? chooseTier(hardware, rtf)
       const m = LLM_BY_TIER[chosen]
       const dest = join(o.modelsDir, m.file)
       const llm = step('llm', 'Baixando o modelo de linguagem…')
@@ -113,6 +121,11 @@ export function createAiSetup(o: {
         for (const f of [LLM_BY_TIER[t].file, `${LLM_BY_TIER[t].file}.part`]) {
           // a leftover file only wastes disk; the new state is already saved
           await rm(join(o.modelsDir, f), { force: true }).catch(() => {})
+        }
+        // base stays: the benchmark always runs on it
+        const repo = STT_BY_TIER[t]
+        if (repo !== sttRepo && repo !== STT_MODEL) {
+          await rm(join(o.modelsDir, repo), { recursive: true, force: true }).catch(() => {})
         }
       }
       onProgress({ phase: 'done', percent: 100, message: 'IA pronta.' })

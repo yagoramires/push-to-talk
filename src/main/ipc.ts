@@ -11,7 +11,7 @@ import { createPronunciationScorer } from './ai/pronunciation'
 import { createFreeSpeakEvaluator } from './ai/freeSpeak'
 import { detectHardware } from './ai/hardware'
 import { createAiSetup, createDownloader } from './ai/setup'
-import { LLM_BY_TIER } from './ai/tiers'
+import { LLM_BY_TIER, STT_BY_TIER } from './ai/tiers'
 import { resourcePaths } from './self-check'
 import { createStore } from './store'
 
@@ -85,8 +85,13 @@ export function registerIpc(logPath: string): void {
       } catch (e) {
         return { ok: false, reason: 'failed', message: String(e) }
       }
-      const r = await transcriber.transcribe(samples)
-      if (!r.ok || !expected?.trim() || !(await aiStatus).pronunciationEnabled) return r
+      const { tier, pronunciationEnabled } = await aiStatus
+      // A biased transcript cannot hide mispronunciations: pronunciation is scored from the audio below.
+      const r = await transcriber.transcribe(samples, {
+        model: tier ? STT_BY_TIER[tier] : undefined,
+        expected
+      })
+      if (!r.ok || !expected?.trim() || !pronunciationEnabled) return r
       try {
         const p = await pronunciation.score(samples, expected)
         return p ? { ...r, pronunciation: p } : r
@@ -135,6 +140,8 @@ export function registerIpc(logPath: string): void {
         // Release the loaded GGUF first: switching tiers deletes the old file (locked on Windows).
         await freeSpeak?.ev.dispose()
         freeSpeak = null
+        await transcriber.dispose() // the benchmark needs base; a tier switch may delete small
+
         console.info('setupAi start', tier ?? 'auto')
         let phase = ''
         const s = await setup.run(tier, (p) => {

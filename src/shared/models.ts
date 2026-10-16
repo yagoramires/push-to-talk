@@ -9,9 +9,22 @@ export const LLM_BY_TIER: Record<Tier, ModelFile> = {
   medium: { repo: 'unsloth/Qwen3.5-4B-GGUF', file: 'Qwen3.5-4B-Q4_K_M.gguf', bytes: 2741 * MB },
   strong: { repo: 'unsloth/Qwen3.5-9B-GGUF', file: 'Qwen3.5-9B-Q4_K_M.gguf', bytes: 5681 * MB }
 }
+
+/** Every tier downloads whisper base (the benchmark measures it); medium/strong also get small, which mishears less. */
+export const STT_BASE = 'onnx-community/whisper-base.en'
+const STT_SMALL = 'onnx-community/whisper-small.en'
+export const STT_BY_TIER: Record<Tier, string> = {
+  light: STT_BASE,
+  medium: STT_SMALL,
+  strong: STT_SMALL
+}
 const STT_BYTES = 77 * MB
+const STT_SMALL_BYTES = 252 * MB // q8 encoder + merged decoder + tokenizer
 const PRON_BYTES = 318 * MB
 
 /** Everything a tier downloads: speech recognition + pronunciation + the text model. */
 export const downloadBytes = (tier: Tier): number =>
-  STT_BYTES + PRON_BYTES + LLM_BY_TIER[tier].bytes
+  STT_BYTES +
+  (STT_BY_TIER[tier] === STT_BASE ? 0 : STT_SMALL_BYTES) +
+  PRON_BYTES +
+  LLM_BY_TIER[tier].bytes

@@ -157,7 +157,9 @@ describe('AI setup texts', () => {
   test('download size per tier adds speech, pronunciation and text model', () => {
     expect(downloadBytes('light')).toBe((77 + 318 + 1281) * 1e6)
     expect(formatSize(downloadBytes('light'))).toBe('1,7 GB')
-    expect(formatSize(downloadBytes('strong'))).toBe('6,1 GB')
+    // medium/strong add whisper small (252 MB) to base
+    expect(downloadBytes('strong')).toBe((77 + 252 + 318 + 5681) * 1e6)
+    expect(formatSize(downloadBytes('strong'))).toBe('6,3 GB')
     expect(formatSize(395e6)).toBe('395 MB')
   })
 })
