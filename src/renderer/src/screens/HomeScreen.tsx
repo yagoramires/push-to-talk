@@ -2,8 +2,10 @@ import { useState } from 'react'
 import type { Profile } from '../../../shared/api'
 import { examDue } from '../../../shared/assessment'
 import { LEVELS, type Course, type Level } from '../../../shared/content'
+import { minutesSince, planGoal, studyStats } from '../../../shared/goal'
 import type { Mode, ProfileProgress } from '../../../shared/progress'
 import { DURATIONS, type Duration } from '../../../shared/session'
+import TodayGoal from '../components/TodayGoal'
 import { describePosition } from '../flow'
 
 type Props = {
@@ -12,6 +14,7 @@ type Props = {
   progress: ProfileProgress
   onStart(mode: Mode, minutes: Duration): void
   onExam(mode: Mode, level: Level): void
+  onGoal(): void
   onSwitchProfile(): void
   onAiSettings(): void
 }
@@ -22,6 +25,7 @@ export default function HomeScreen({
   progress,
   onStart,
   onExam,
+  onGoal,
   onSwitchProfile,
   onAiSettings
 }: Props): React.JSX.Element {
@@ -30,6 +34,24 @@ export default function HomeScreen({
   const pending = progress.errorLog.filter((e) => !e.resolved).length
   const due = examDue(progress, course)
   const next = due && LEVELS[LEVELS.indexOf(due) + 1]
+  const { goal } = progress
+  const now = new Date()
+  const stats = studyStats(progress.sessions, now)
+  const plan =
+    goal &&
+    planGoal({
+      level: progress.level,
+      target: goal.target,
+      months: goal.months,
+      daysPerWeek: goal.daysPerWeek,
+      studiedMinutes: minutesSince(progress.sessions, goal.createdAt)
+    })
+  // The duration closest to what is left for today, capped at 60 min.
+  const want = plan && Math.min(Math.max(plan.minutesPerDay - stats.todayMinutes, 0), 60)
+  const suggested =
+    plan && plan.feasibility !== 'alcancada'
+      ? DURATIONS.reduce((a, b) => (Math.abs(b - want!) < Math.abs(a - want!) ? b : a))
+      : null
   return (
     <main className="screen">
       <header className="row">
@@ -38,6 +60,9 @@ export default function HomeScreen({
           Trocar perfil
         </button>
       </header>
+      {goal && plan && (
+        <TodayGoal goal={goal} plan={plan} stats={stats} now={now} onEdit={onGoal} />
+      )}
       <section className="panel">
         <p className="muted">Você está em</p>
         <p className="big">{where ?? (due ? `Fim das unidades do ${due}` : 'Curso concluído')}</p>
@@ -84,12 +109,13 @@ export default function HomeScreen({
           ))}
         </div>
         <h2>Quanto tempo você tem?</h2>
+        {suggested && <p className="muted">Sugerido para a sua meta hoje: {suggested} min</p>}
         <div className="durations">
           {DURATIONS.map((d) => (
             <button
               key={d}
               type="button"
-              className="btn btn-primary"
+              className={`btn ${!suggested || d === suggested ? 'btn-primary' : 'btn-secondary'}`}
               onClick={() => onStart(mode, d)}
             >
               {d} min
@@ -97,9 +123,16 @@ export default function HomeScreen({
           ))}
         </div>
       </section>
-      <button type="button" className="btn btn-secondary" onClick={onAiSettings}>
-        Configurações da IA
-      </button>
+      <div className="actions">
+        {!goal && (
+          <button type="button" className="btn btn-secondary" onClick={onGoal}>
+            Minha meta
+          </button>
+        )}
+        <button type="button" className="btn btn-secondary" onClick={onAiSettings}>
+          Configurações da IA
+        </button>
+      </div>
     </main>
   )
 }

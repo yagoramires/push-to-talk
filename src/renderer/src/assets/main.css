@@ -722,6 +722,17 @@ input[type='checkbox'] {
   border-radius: 999px;
 }
 
+/* Study goal */
+.goal-line {
+  margin: 0.75rem 0 0;
+  font-weight: 600;
+}
+
+.goal-done {
+  color: var(--correct-ink);
+  font-weight: 600;
+}
+
 /* Notices */
 .panel-highlight {
   border-color: var(--brand);

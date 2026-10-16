@@ -13,7 +13,8 @@ type Props = {
   placement: Placement
   /** Levels that have units in the course. */
   levels: Level[]
-  onDone(level: Level): void
+  /** minutes = time spent on the placement; goal = go set a study goal next. */
+  onDone(level: Level, minutes: number, goal: boolean): void
   onQuit(): void
 }
 
@@ -25,12 +26,15 @@ export default function PlacementScreen({
   onQuit
 }: Props): React.JSX.Element {
   const [state, setState] = useState(startPlacement)
+  const [startedAt] = useState(() => Date.now())
   const [index, setIndex] = useState(0)
   const [levelAnswers, setLevelAnswers] = useState<{ skill: Skill; correct: boolean }[]>([])
 
   if (state.done && state.result) {
     const result = state.result
     const start = placementStartLevel(result, levels)
+    const finish = (goal: boolean): void =>
+      onDone(start, Math.round((Date.now() - startedAt) / 60000), goal)
     return (
       <main className="screen">
         <h1>Nivelamento concluído</h1>
@@ -51,9 +55,14 @@ export default function PlacementScreen({
             ))}
           </ul>
         </section>
-        <button type="button" className="btn btn-primary" autoFocus onClick={() => onDone(start)}>
-          Começar
-        </button>
+        <div className="actions">
+          <button type="button" className="btn btn-primary" autoFocus onClick={() => finish(false)}>
+            Começar
+          </button>
+          <button type="button" className="btn btn-secondary" onClick={() => finish(true)}>
+            Definir minha meta
+          </button>
+        </div>
       </main>
     )
   }

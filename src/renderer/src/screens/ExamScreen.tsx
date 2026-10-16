@@ -2,7 +2,12 @@ import { useEffect, useState } from 'react'
 import { applyExamResult } from '../../../shared/assessment'
 import type { Course, LevelExam, Skill } from '../../../shared/content'
 import type { FinalVerdict } from '../../../shared/matcher'
-import type { ExamRecord, Mode, ProfileProgress } from '../../../shared/progress'
+import {
+  recordSession,
+  type ExamRecord,
+  type Mode,
+  type ProfileProgress
+} from '../../../shared/progress'
 import ExerciseView from '../components/ExerciseView'
 import { formatClock, SKILL_LABELS } from '../flow'
 
@@ -66,7 +71,15 @@ export default function ExamScreen({
       return
     }
     const r = applyExamResult(progress, course, exam, all, new Date().toISOString(), mode)
-    onDone(r.progress, r.record)
+    // The exam time counts toward the study goal.
+    const session = {
+      at: new Date(startedAt).toISOString(),
+      mode,
+      minutes: Math.round((Date.now() - startedAt) / 60000),
+      blocksDone: [],
+      errors: all.filter((a) => !a.correct).length
+    }
+    onDone(recordSession(r.progress, session), r.record)
   }
 
   return (

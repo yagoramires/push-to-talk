@@ -14,6 +14,7 @@ import type { Duration } from '../../shared/session'
 import { AudioIndexContext } from './audio/speak'
 import ExamResult from './components/ExamResult'
 import ExamScreen from './screens/ExamScreen'
+import GoalScreen from './screens/GoalScreen'
 import HomeScreen from './screens/HomeScreen'
 import PlacementScreen from './screens/PlacementScreen'
 import ProfilesScreen from './screens/ProfilesScreen'
@@ -30,6 +31,7 @@ type Screen =
   | { name: 'placement' }
   | { name: 'exam'; mode: Mode; level: Level }
   | { name: 'examResult'; record: ExamRecord }
+  | { name: 'goal' }
 
 export default function App(): React.JSX.Element {
   const [course, setCourse] = useState<Course | null>(null)
@@ -140,9 +142,17 @@ export default function App(): React.JSX.Element {
       <PlacementScreen
         placement={course.placement}
         levels={levels}
-        onDone={(level) => {
-          void saveProgress(newProgress(profile.id, level, course))
-          setScreen({ name: 'home' })
+        onDone={(level, minutes, goal) => {
+          // The placement time counts toward the study goal.
+          const session: SessionRecord = {
+            at: new Date(Date.now() - minutes * 60000).toISOString(),
+            mode: 'solo',
+            minutes,
+            blocksDone: [],
+            errors: 0
+          }
+          void saveProgress(recordSession(newProgress(profile.id, level, course), session))
+          setScreen(goal ? { name: 'goal' } : { name: 'home' })
         }}
         onQuit={() => setScreen({ name: 'profiles' })}
       />
@@ -191,6 +201,18 @@ export default function App(): React.JSX.Element {
         onHome={() => setScreen({ name: 'home' })}
       />
     )
+  else if (screen.name === 'goal')
+    body = (
+      <GoalScreen
+        level={current.level}
+        goal={current.goal}
+        onSave={(goal) => {
+          void saveProgress({ ...current, goal })
+          setScreen({ name: 'home' })
+        }}
+        onCancel={() => setScreen({ name: 'home' })}
+      />
+    )
   else if (screen.name === 'summary')
     body = (
       <SummaryScreen
@@ -208,6 +230,7 @@ export default function App(): React.JSX.Element {
         progress={current}
         onStart={(mode, minutes) => setScreen({ name: 'session', mode, minutes })}
         onExam={(mode, level) => setScreen({ name: 'exam', mode, level })}
+        onGoal={() => setScreen({ name: 'goal' })}
         onSwitchProfile={() => setScreen({ name: 'profiles' })}
         onAiSettings={() =>
           void window.api

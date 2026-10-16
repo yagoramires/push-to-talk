@@ -37,7 +37,8 @@ describe('progress', () => {
       level: 'A1',
       exams: [],
       weakUnits: [],
-      courseComplete: false
+      courseComplete: false,
+      goal: null
     })
     expect(() => newProgress('p1', 'B2', course)).toThrow()
   })
@@ -134,7 +135,7 @@ describe('migrateProgress', () => {
     position: { unitId: string; blockIndex: number } | null
   ): Parameters<typeof migrateProgress>[0] => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { level, exams, weakUnits, courseComplete, ...rest } = newProgress('p1', 'A1', a2)
+    const { level, exams, weakUnits, courseComplete, goal, ...rest } = newProgress('p1', 'A1', a2)
     return { ...rest, position }
   }
 
@@ -144,6 +145,7 @@ describe('migrateProgress', () => {
       exams: [],
       weakUnits: [],
       courseComplete: false,
+      goal: null,
       position: { unitId: 'u3', blockIndex: 2 }
     })
     expect(migrateProgress(old(null), a2).level).toBe('A1')
