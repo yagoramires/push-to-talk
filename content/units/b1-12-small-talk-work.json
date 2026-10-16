@@ -1,0 +1,473 @@
+{
+  "id": "b1-12-small-talk-work",
+  "level": "B1",
+  "order": 12,
+  "title_pt": "Conversa informal no trabalho",
+  "title_en": "Small talk at work",
+  "objective_pt": "Puxar e manter conversa leve com colegas (fim de semana, projetos, planos), usar perguntas de acompanhamento e encerrar a conversa com naturalidade (\"Anyway, I'd better get back to work\").",
+  "blocks": [
+    {
+      "id": "b1-12-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Aquecer com as perguntas mais comuns de corredor e de começo de reunião.",
+        "prompts": ["How was your weekend?", "Busy week?"],
+        "watchFor": [
+          "Responder \"How are you?\" com um relato longo; no small talk a resposta é curta e devolve a pergunta.",
+          "Dizer \"How was your weekend? — Was good\"; falta o sujeito: \"It was good\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-12-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita a pergunta.",
+          "prompt": "Hey, how was your weekend? Did you do anything fun?",
+          "accepted": [
+            "Hey, how was your weekend? Did you do anything fun",
+            "How was your weekend? Did you do anything fun"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-12-warm-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e diga que foi tranquilo, que você descansou, e devolva a pergunta.",
+          "listen": "Morning! How was your weekend?",
+          "accepted": [
+            "It was quiet. I just relaxed. How about you",
+            "It was nice and quiet. I just relaxed. What about you",
+            "Pretty quiet. I just rested. How about yours",
+            "It was relaxing, thanks. How was yours",
+            "It was good, I just relaxed. And you",
+            "Quiet, I just stayed home and relaxed. How about you",
+            "It was pretty chill. I just relaxed. How was yours"
+          ],
+          "commonErrors": [
+            {
+              "id": "was-no-subject",
+              "match": "^was (good|quiet|nice|relaxing)\\b",
+              "explanation_pt": "Em inglês a frase precisa de sujeito: \"It was quiet\", e não só \"Was quiet\".",
+              "correction_en": "It was quiet. I just relaxed. How about you?"
+            },
+            {
+              "id": "rested-calm",
+              "match": "\\bit was (calm|tranquil)\\b",
+              "explanation_pt": "\"Tranquilo\" para um fim de semana fica natural como \"quiet\" ou \"relaxing\". \"Calm\" e \"tranquil\" soam estranhos aqui.",
+              "correction_en": "It was quiet. I just relaxed. How about you?"
+            }
+          ]
+        },
+        {
+          "id": "b1-12-warm-3",
+          "kind": "choice",
+          "instruction_pt": "Um colega pergunta \"How's it going?\". Qual é a resposta mais natural?",
+          "options": ["Pretty good, thanks. You?", "I'm going to the office.", "It goes."],
+          "answer": 0,
+          "explanation_pt": "\"How's it going?\" é um \"tudo bem?\". A resposta é curta, e você devolve: \"Pretty good, thanks. You?\"."
+        }
+      ]
+    },
+    {
+      "id": "b1-12-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Aprender expressões de small talk no trabalho.",
+        "prompts": ["How's that project going?", "Got any plans for the holiday?"],
+        "watchFor": [
+          "Usar \"I'm full of work\"; o natural é \"I'm swamped\" ou \"I'm really busy\".",
+          "Dizer \"Let's take a coffee\"; é \"Let's grab a coffee\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-12-vocab-1",
+          "kind": "vocab",
+          "word_en": "swamped",
+          "meaning_pt": "atolado (de trabalho)",
+          "example_en": "I'm completely swamped this week."
+        },
+        {
+          "id": "b1-12-vocab-2",
+          "kind": "vocab",
+          "word_en": "to catch up",
+          "meaning_pt": "colocar o papo em dia",
+          "example_en": "We should grab lunch and catch up sometime."
+        },
+        {
+          "id": "b1-12-vocab-3",
+          "kind": "vocab",
+          "word_en": "to grab a coffee",
+          "meaning_pt": "tomar um café rápido",
+          "example_en": "Do you want to grab a coffee after the meeting?"
+        },
+        {
+          "id": "b1-12-vocab-4",
+          "kind": "vocab",
+          "word_en": "Anyway",
+          "meaning_pt": "Enfim (para mudar de assunto ou encerrar)",
+          "example_en": "Anyway, I'd better get back to work. See you later!"
+        },
+        {
+          "id": "b1-12-vocab-5",
+          "kind": "match",
+          "instruction_pt": "Ligue cada expressão ao significado.",
+          "pairs": [
+            {
+              "en": "deadline",
+              "pt": "prazo"
+            },
+            {
+              "en": "day off",
+              "pt": "dia de folga"
+            },
+            {
+              "en": "coworker",
+              "pt": "colega de trabalho"
+            },
+            {
+              "en": "Thank God it's Friday!",
+              "pt": "Graças a Deus é sexta!"
+            },
+            {
+              "en": "Long time no see!",
+              "pt": "Quanto tempo!"
+            }
+          ]
+        },
+        {
+          "id": "b1-12-vocab-6",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Estou atolado de trabalho esta semana.\"",
+          "accepted": [
+            "I'm swamped this week",
+            "I am swamped this week",
+            "I'm swamped with work this week",
+            "I'm really busy this week",
+            "I've got a lot of work this week",
+            "I have a lot of work this week",
+            "I'm snowed under this week"
+          ],
+          "commonErrors": [
+            {
+              "id": "full-of-work",
+              "match": "\\bfull of work\\b",
+              "explanation_pt": "\"Cheio de trabalho\" é tradução literal. O natural é \"I'm swamped\" ou \"I'm really busy\".",
+              "correction_en": "I'm swamped this week."
+            },
+            {
+              "id": "in-this-week",
+              "match": "\\b(in|on) this week\\b",
+              "explanation_pt": "\"This week\" não leva preposição.",
+              "correction_en": "I'm swamped this week."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-12-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Pronunciar as reduções da fala informal: \"How's it going\", \"Did you\" (didja), \"Want to\" (wanna).",
+        "prompts": [
+          "Say \"Did you\" fast. Does it sound like \"didja\"?",
+          "Say \"How's it going?\" as one word."
+        ],
+        "watchFor": [
+          "Separar cada palavra com força igual; no inglês falado elas se ligam.",
+          "Usar \"wanna\" por escrito em e-mail formal; é só fala informal."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-12-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita ligando as palavras: \"didja\" e \"howzit\".",
+          "prompt": "Hey! How's it going? Did you have a good trip?",
+          "accepted": [
+            "Hey! How's it going? Did you have a good trip",
+            "Hey! How is it going? Did you have a good trip"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-12-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repita. \"Want to\" vira \"wanna\" na fala informal.",
+          "prompt": "Do you want to grab lunch later?",
+          "accepted": [
+            "Do you want to grab lunch later",
+            "Do you wanna grab lunch later",
+            "You wanna grab lunch later"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-12-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Como \"Did you\" costuma soar na fala rápida?",
+          "options": ["\"dide iu\"", "\"didja\"", "\"did iú\""],
+          "answer": 1,
+          "explanation_pt": "O \"d\" + \"y\" se juntam e viram \"dj\": \"Did you\" soa como \"didja\"."
+        }
+      ]
+    },
+    {
+      "id": "b1-12-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Entender comentários leves de colegas e responder mantendo a conversa.",
+        "prompts": ["Did you see the game last night?", "Any plans for the long weekend?"],
+        "watchFor": [
+          "Responder só \"Yes\" ou \"No\"; ensine a acrescentar um detalhe e uma pergunta.",
+          "Usar \"I will travel\" para plano já combinado; o natural é \"I'm going to\" ou \"I'm traveling\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-12-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Ouça e escolha por que a colega está cansada.",
+          "listen": "Sorry, I'm a bit slow today. We had a deadline yesterday, and I was here until ten.",
+          "options": [
+            "Ela foi a uma festa até as dez.",
+            "Ela ficou no trabalho até as dez por causa de um prazo.",
+            "Ela chegou atrasada às dez."
+          ],
+          "answer": 1,
+          "explanation_pt": "\"We had a deadline\" = tínhamos um prazo; \"I was here until ten\" = fiquei aqui até as dez."
+        },
+        {
+          "id": "b1-12-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e diga que vai visitar a família no interior.",
+          "listen": "Have you got any plans for the long weekend?",
+          "accepted": [
+            "I'm going to visit my family in the countryside",
+            "I'm visiting my family in the countryside",
+            "I'm going to see my family in the countryside",
+            "Yes, I'm going to visit my family in the countryside",
+            "I'm going to visit my family. They live in the countryside",
+            "Yeah, I'm visiting my parents in the countryside",
+            "I'm going to visit my family upstate"
+          ],
+          "commonErrors": [
+            {
+              "id": "interior",
+              "match": "\\bin the interior\\b",
+              "explanation_pt": "\"O interior\" (fora da capital) é \"the countryside\" ou \"a small town\". \"The interior\" soa como o lado de dentro de algo.",
+              "correction_en": "I'm going to visit my family in the countryside."
+            },
+            {
+              "id": "visit-to",
+              "match": "\\bvisit to my\\b",
+              "explanation_pt": "\"Visit\" não leva preposição: \"visit my family\".",
+              "correction_en": "I'm going to visit my family in the countryside."
+            }
+          ]
+        },
+        {
+          "id": "b1-12-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e encerre a conversa com educação: diga que precisa voltar ao trabalho.",
+          "listen": "And then we went to this amazing little restaurant by the beach...",
+          "accepted": [
+            "Sounds great! Anyway, I'd better get back to work",
+            "That sounds amazing. Anyway, I'd better get back to work",
+            "Sounds lovely! I'd better get back to work, though",
+            "Anyway, I should get back to work",
+            "Anyway, I'd better get back to work. Talk later",
+            "That sounds great. I need to get back to work now",
+            "Nice! Anyway, I'd better get going"
+          ],
+          "commonErrors": [
+            {
+              "id": "return-to-work",
+              "match": "\\b(return|come back) to the work\\b",
+              "explanation_pt": "\"Voltar ao trabalho\" é \"get back to work\", sem \"the\".",
+              "correction_en": "Anyway, I'd better get back to work."
+            },
+            {
+              "id": "need-go",
+              "match": "\\bi need go\\b|\\bi have go\\b",
+              "explanation_pt": "Falta o \"to\": \"I need to go\" ou \"I have to go\".",
+              "correction_en": "Anyway, I'd better get back to work."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-12-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Manter um small talk de 2 a 3 minutos: abrir, fazer perguntas de acompanhamento e encerrar.",
+        "prompts": [
+          "How's your week going so far?",
+          "What are you working on at the moment?",
+          "Have you been on vacation this year?"
+        ],
+        "watchFor": [
+          "Responder sem devolver a pergunta.",
+          "Encerrar de forma brusca (\"Bye\"); ensine \"Anyway, it was nice catching up!\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-12-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Em que você está trabalhando agora?\"",
+          "accepted": [
+            "What are you working on right now",
+            "What are you working on at the moment",
+            "What are you working on now",
+            "What are you working on these days",
+            "What're you working on right now",
+            "What projects are you working on right now"
+          ],
+          "commonErrors": [
+            {
+              "id": "in-what",
+              "match": "^(in|on) what are you working\\b",
+              "explanation_pt": "Em perguntas com \"what\", a preposição vai para o final: \"What are you working on?\".",
+              "correction_en": "What are you working on right now?"
+            },
+            {
+              "id": "working-in-project",
+              "match": "\\bworking in\\b",
+              "explanation_pt": "Para projetos e tarefas, use \"work on\": \"What are you working on?\".",
+              "correction_en": "What are you working on right now?"
+            }
+          ]
+        },
+        {
+          "id": "b1-12-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Foi bom colocar o papo em dia!\"",
+          "accepted": [
+            "It was nice catching up",
+            "It was good catching up",
+            "It was great catching up",
+            "It was nice to catch up",
+            "It was great to catch up",
+            "Nice catching up",
+            "Good catching up with you",
+            "It was nice catching up with you"
+          ],
+          "commonErrors": [
+            {
+              "id": "put-conversation-day",
+              "match": "\\b(put|putting) the (conversation|talk|chat)\\b",
+              "explanation_pt": "\"Colocar o papo em dia\" é \"catch up\". A tradução literal não funciona em inglês.",
+              "correction_en": "It was nice catching up!"
+            },
+            {
+              "id": "was-good-no-it",
+              "match": "^was (nice|good|great)\\b",
+              "explanation_pt": "Falta o sujeito: \"It was nice catching up\".",
+              "correction_en": "It was nice catching up!"
+            }
+          ]
+        },
+        {
+          "id": "b1-12-conv-3",
+          "kind": "order",
+          "instruction_pt": "Coloque as palavras na ordem certa.",
+          "accepted": ["How's your week going so far?"]
+        },
+        {
+          "id": "b1-12-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Faça um small talk com um colega na copa do escritório.",
+          "prompt_en": "You meet a coworker in the kitchen on Monday morning. Start a conversation, keep it going for a minute, and end it politely.",
+          "guidelines_pt": [
+            "Abra com uma pergunta leve: \"Hey! How was your weekend?\".",
+            "Faça pelo menos duas perguntas de acompanhamento: \"Oh really? Where did you go?\", \"How was it?\".",
+            "Encerre com naturalidade: \"Anyway, I'd better get back to work. Nice catching up!\"."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-12-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Fixar as perguntas de acompanhamento, \"work on\" e as formas de encerrar.",
+        "prompts": ["How was your weekend?", "What are you working on?"],
+        "watchFor": ["Esquecer de devolver a pergunta.", "\"working in\" um projeto."]
+      },
+      "exercises": [
+        {
+          "id": "b1-12-rev-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita a frase.",
+          "prompt": "Long time no see! What have you been up to?",
+          "accepted": ["Long time no see! What have you been up to"],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-12-rev-2",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Vamos tomar um café depois da reunião?\"",
+          "accepted": [
+            "Do you want to grab a coffee after the meeting",
+            "Want to grab a coffee after the meeting",
+            "Shall we grab a coffee after the meeting",
+            "Let's grab a coffee after the meeting",
+            "How about a coffee after the meeting",
+            "Do you want to get a coffee after the meeting",
+            "Should we grab a coffee after the meeting"
+          ],
+          "commonErrors": [
+            {
+              "id": "take-coffee",
+              "match": "\\btake a coffee\\b",
+              "explanation_pt": "\"Tomar um café\" é \"have a coffee\" ou \"grab a coffee\", e não \"take a coffee\".",
+              "correction_en": "Do you want to grab a coffee after the meeting?"
+            },
+            {
+              "id": "lets-we",
+              "match": "^let us we\\b|^we go\\b",
+              "explanation_pt": "\"Vamos...?\" como convite é \"Let's...\" ou \"Do you want to...?\".",
+              "correction_en": "Do you want to grab a coffee after the meeting?"
+            }
+          ]
+        },
+        {
+          "id": "b1-12-rev-3",
+          "kind": "choice",
+          "instruction_pt": "Qual é a melhor forma de encerrar uma conversa com um colega?",
+          "options": [
+            "Bye. I go now.",
+            "Anyway, I'd better get back to work. See you later!",
+            "Finish. Bye."
+          ],
+          "answer": 1,
+          "explanation_pt": "\"Anyway\" sinaliza que a conversa está acabando, e \"I'd better get back to work\" dá um motivo educado."
+        },
+        {
+          "id": "b1-12-rev-4",
+          "kind": "fill",
+          "instruction_pt": "Complete com a preposição.",
+          "sentence": "I'm working ___ a new project for a client in Chile.",
+          "accepted": ["on"],
+          "commonErrors": [
+            {
+              "id": "work-in",
+              "match": "^(in|at|with|for)$",
+              "explanation_pt": "Para projetos e tarefas, use \"work on\".",
+              "correction_en": "I'm working on a new project for a client in Chile."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

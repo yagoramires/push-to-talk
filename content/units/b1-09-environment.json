@@ -1,0 +1,472 @@
+{
+  "id": "b1-09-environment",
+  "level": "B1",
+  "order": 9,
+  "title_pt": "Meio ambiente",
+  "title_en": "Environment",
+  "objective_pt": "Falar de problemas ambientais e de atitudes do dia a dia (reciclar, economizar água), dar opinião e usar o primeiro condicional: \"If we don't..., we'll...\".",
+  "blocks": [
+    {
+      "id": "b1-09-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Aquecer falando do que a pessoa faz pelo meio ambiente.",
+        "prompts": ["What do you do to help the environment?", "Do you recycle at home?"],
+        "watchFor": [
+          "Dizer \"the nature\"; em geral, \"nature\" vai sem artigo.",
+          "Usar \"the environment\" sem o artigo; aqui ele é obrigatório: \"protect the environment\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-09-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita a pergunta.",
+          "prompt": "What do you do to protect the environment?",
+          "accepted": [
+            "What do you do to protect the environment",
+            "What do you do to help the environment"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-09-warm-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e diga que você recicla e tenta usar menos plástico.",
+          "listen": "Do you do anything to help the environment?",
+          "accepted": [
+            "I recycle and I try to use less plastic",
+            "Yes, I recycle and I try to use less plastic",
+            "I recycle and try to use less plastic",
+            "Yes, I recycle and try to use less plastic",
+            "I recycle, and I try not to use too much plastic",
+            "Yeah, I recycle and I avoid plastic"
+          ],
+          "commonErrors": [
+            {
+              "id": "less-plastics-fewer",
+              "match": "\\b(fewer|less) plastics\\b",
+              "explanation_pt": "\"Plastic\" como material é incontável: \"less plastic\".",
+              "correction_en": "I recycle and I try to use less plastic."
+            },
+            {
+              "id": "try-use",
+              "match": "\\btry use\\b",
+              "explanation_pt": "Depois de \"try\" vem \"to\" + verbo: \"try to use\".",
+              "correction_en": "I recycle and I try to use less plastic."
+            }
+          ]
+        },
+        {
+          "id": "b1-09-warm-3",
+          "kind": "choice",
+          "instruction_pt": "Qual frase está correta?",
+          "options": ["I love the nature.", "I love nature.", "I love a nature."],
+          "answer": 1,
+          "explanation_pt": "No sentido geral, \"nature\" vai sem artigo: \"I love nature\". O português usa \"a natureza\", o inglês não."
+        }
+      ]
+    },
+    {
+      "id": "b1-09-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Aprender vocabulário de problemas e soluções ambientais.",
+        "prompts": [
+          "What's the biggest environmental problem in Brazil?",
+          "Is pollution a problem in your city?"
+        ],
+        "watchFor": [
+          "Dizer \"garbage\" e \"trash\" está ok (EUA); \"rubbish\" é britânico; \"lixo\" não é \"lux\".",
+          "Confundir \"waste\" (desperdiçar, resíduo) com \"west\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-09-vocab-1",
+          "kind": "vocab",
+          "word_en": "pollution",
+          "meaning_pt": "poluição",
+          "example_en": "Air pollution is a serious problem in big cities."
+        },
+        {
+          "id": "b1-09-vocab-2",
+          "kind": "vocab",
+          "word_en": "to waste",
+          "meaning_pt": "desperdiçar",
+          "example_en": "We shouldn't waste so much water."
+        },
+        {
+          "id": "b1-09-vocab-3",
+          "kind": "vocab",
+          "word_en": "climate change",
+          "meaning_pt": "mudança climática",
+          "example_en": "Climate change is making summers hotter every year."
+        },
+        {
+          "id": "b1-09-vocab-4",
+          "kind": "vocab",
+          "word_en": "deforestation",
+          "meaning_pt": "desmatamento",
+          "example_en": "Deforestation in the Amazon affects the whole planet."
+        },
+        {
+          "id": "b1-09-vocab-5",
+          "kind": "match",
+          "instruction_pt": "Ligue cada palavra ao significado.",
+          "pairs": [
+            {
+              "en": "trash",
+              "pt": "lixo"
+            },
+            {
+              "en": "to recycle",
+              "pt": "reciclar"
+            },
+            {
+              "en": "drought",
+              "pt": "seca"
+            },
+            {
+              "en": "renewable energy",
+              "pt": "energia renovável"
+            },
+            {
+              "en": "wildlife",
+              "pt": "vida selvagem"
+            }
+          ]
+        },
+        {
+          "id": "b1-09-vocab-6",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"A gente desperdiça muita comida.\"",
+          "accepted": [
+            "We waste a lot of food",
+            "We waste so much food",
+            "We waste too much food",
+            "We waste lots of food",
+            "People waste a lot of food"
+          ],
+          "commonErrors": [
+            {
+              "id": "the-people",
+              "match": "^the (people|people we)\\b|\\bthe people waste\\b",
+              "explanation_pt": "\"A gente\" é \"we\". \"The people\" quer dizer \"o povo\" ou \"aquelas pessoas\".",
+              "correction_en": "We waste a lot of food."
+            },
+            {
+              "id": "many-food",
+              "match": "\\bmany food\\b",
+              "explanation_pt": "\"Food\" é incontável: \"a lot of food\" ou \"much food\", e não \"many food\".",
+              "correction_en": "We waste a lot of food."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-09-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Pronunciar \"environment\" (o \"n\" do meio aparece pouco), \"climate\" e \"recycle\".",
+        "prompts": [
+          "Say \"environment\" slowly, then fast.",
+          "Is it \"CLI-mate\" or \"cli-MATE\"?"
+        ],
+        "watchFor": [
+          "Pronunciar \"climate\" como \"climeit\"; é \"KLAI-mit\".",
+          "Pronunciar \"recycle\" como em português (\"reciclo\"); é \"ri-SAI-kəl\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-09-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita. A força está em en-VI-ron-ment e KLAI-mit.",
+          "prompt": "The environment and the climate are changing fast.",
+          "accepted": [
+            "The environment and the climate are changing fast",
+            "The environment and the climate are changing quickly"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-09-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repita. \"Recycle\" soa \"ri-SAI-kəl\".",
+          "prompt": "We recycle paper, glass, and plastic.",
+          "accepted": ["We recycle paper, glass, and plastic"],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-09-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Como soa \"climate\"?",
+          "options": ["KLAI-mit", "kli-MEIT", "KLI-ma-tchi"],
+          "answer": 0,
+          "explanation_pt": "\"Climate\" é KLAI-mit: força na primeira sílaba e o final bem curto."
+        }
+      ]
+    },
+    {
+      "id": "b1-09-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Entender opiniões sobre o meio ambiente e responder com o primeiro condicional.",
+        "prompts": [
+          "What will happen if we don't stop deforestation?",
+          "Should plastic bags be banned?"
+        ],
+        "watchFor": [
+          "Usar \"will\" nas duas partes: \"If we will recycle, we will...\"; depois de \"if\" vem o presente.",
+          "Dizer \"more hot\"; é \"hotter\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-09-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Ouça e escolha a opinião da pessoa.",
+          "listen": "I think banning plastic bags is a good start, but it won't solve the problem on its own.",
+          "options": [
+            "Proibir sacolas plásticas resolve o problema.",
+            "É um bom começo, mas sozinho não resolve.",
+            "Proibir sacolas é uma má ideia."
+          ],
+          "answer": 1,
+          "explanation_pt": "\"A good start\" = um bom começo; \"it won't solve the problem on its own\" = não vai resolver sozinho."
+        },
+        {
+          "id": "b1-09-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e responda com o primeiro condicional: o planeta vai ficar mais quente.",
+          "listen": "What will happen if we don't reduce pollution?",
+          "accepted": [
+            "The planet will get hotter",
+            "If we don't reduce pollution, the planet will get hotter",
+            "The planet will get warmer",
+            "It will get hotter",
+            "The planet's going to get hotter",
+            "The planet is going to get hotter",
+            "The Earth will get hotter"
+          ],
+          "commonErrors": [
+            {
+              "id": "more-hot",
+              "match": "\\bmore (hot|warm)\\b",
+              "explanation_pt": "Adjetivo curto faz comparativo com \"-er\": \"hotter\", \"warmer\".",
+              "correction_en": "The planet will get hotter."
+            },
+            {
+              "id": "if-will",
+              "match": "^if we will\\b",
+              "explanation_pt": "Depois de \"if\" use o presente: \"If we don't reduce pollution, the planet will get hotter\".",
+              "correction_en": "If we don't reduce pollution, the planet will get hotter."
+            }
+          ]
+        },
+        {
+          "id": "b1-09-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e diga que concorda, porque o plástico leva centenas de anos para se decompor.",
+          "listen": "Do you think we should ban single-use plastic?",
+          "accepted": [
+            "Yes, because plastic takes hundreds of years to break down",
+            "Yes, I do, because plastic takes hundreds of years to break down",
+            "Yes, because it takes hundreds of years to break down",
+            "I agree, because plastic takes hundreds of years to decompose",
+            "Yes, because plastic takes hundreds of years to decompose",
+            "Yes, I think so. Plastic takes hundreds of years to break down"
+          ],
+          "commonErrors": [
+            {
+              "id": "takes-hundreds-years",
+              "match": "\\bhundreds years\\b",
+              "explanation_pt": "Falta o \"of\": \"hundreds of years\".",
+              "correction_en": "Yes, because plastic takes hundreds of years to break down."
+            },
+            {
+              "id": "leaves-takes",
+              "match": "\\b(leaves|carries|brings) hundreds\\b",
+              "explanation_pt": "\"Levar tempo\" é \"take\": \"it takes hundreds of years\".",
+              "correction_en": "Yes, because plastic takes hundreds of years to break down."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-09-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Discutir problemas ambientais: causas, consequências e o que cada um pode fazer.",
+        "prompts": [
+          "Whose responsibility is it to protect the environment: governments or people?",
+          "What will your city be like in 2050?"
+        ],
+        "watchFor": [
+          "\"If it will rain\".",
+          "Falar só em termos gerais; incentive exemplos concretos da cidade da pessoa."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-09-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Se todo mundo reciclar, vai ter menos lixo nas ruas.\"",
+          "accepted": [
+            "If everyone recycles, there will be less trash on the streets",
+            "If everybody recycles, there will be less trash on the streets",
+            "If everyone recycles, there'll be less trash on the streets",
+            "If everyone recycles, there will be less garbage on the streets",
+            "If everyone recycles, there will be less rubbish in the streets",
+            "If everyone recycles, there will be less trash in the streets",
+            "If everyone recycles, there's going to be less trash on the streets"
+          ],
+          "commonErrors": [
+            {
+              "id": "everybody-recycle",
+              "match": "^if (everyone|everybody|all the world) (recycle|recycled|will recycle)\\b",
+              "explanation_pt": "\"Everyone\" é singular e, depois de \"if\", vai no presente: \"If everyone recycles\".",
+              "correction_en": "If everyone recycles, there will be less trash on the streets."
+            },
+            {
+              "id": "will-have-less",
+              "match": "\\bwill have less\\b",
+              "explanation_pt": "\"Vai ter\" no sentido de existir é \"there will be\", e não \"will have\".",
+              "correction_en": "If everyone recycles, there will be less trash on the streets."
+            }
+          ]
+        },
+        {
+          "id": "b1-09-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu tento tomar banhos mais curtos.\"",
+          "accepted": [
+            "I try to take shorter showers",
+            "I try to have shorter showers",
+            "I try to take short showers",
+            "I try to take quicker showers",
+            "I try to shower faster"
+          ],
+          "commonErrors": [
+            {
+              "id": "take-bath",
+              "match": "\\bshorter baths?\\b|\\btake (a )?bath\\b",
+              "explanation_pt": "Banho de chuveiro é \"shower\". \"Bath\" é banho de banheira.",
+              "correction_en": "I try to take shorter showers."
+            },
+            {
+              "id": "more-short",
+              "match": "\\bmore short\\b",
+              "explanation_pt": "\"Mais curto\" é \"shorter\".",
+              "correction_en": "I try to take shorter showers."
+            }
+          ]
+        },
+        {
+          "id": "b1-09-conv-3",
+          "kind": "order",
+          "instruction_pt": "Coloque as palavras na ordem certa.",
+          "accepted": ["We need to use more renewable energy."]
+        },
+        {
+          "id": "b1-09-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Dê a sua opinião sobre um problema ambiental.",
+          "prompt_en": "What do you think is the biggest environmental problem today, and what can ordinary people do about it?",
+          "guidelines_pt": [
+            "Diga qual é o problema e por quê: \"I think the biggest problem is... because...\".",
+            "Use o primeiro condicional: \"If we don't..., ...will...\".",
+            "Dê duas atitudes concretas do dia a dia: \"People could...\", \"I try to...\"."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-09-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Fixar o primeiro condicional, \"nature\" sem artigo e \"waste\".",
+        "prompts": [
+          "What will happen if it doesn't rain this month?",
+          "What do people waste the most?"
+        ],
+        "watchFor": ["\"If it will...\".", "\"the nature\"."]
+      },
+      "exercises": [
+        {
+          "id": "b1-09-rev-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita a frase.",
+          "prompt": "If we don't act now, it'll be too late.",
+          "accepted": [
+            "If we don't act now, it'll be too late",
+            "If we do not act now, it will be too late",
+            "If we don't act now, it will be too late"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-09-rev-2",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Não desperdice água.\"",
+          "accepted": [
+            "Don't waste water",
+            "Do not waste water",
+            "Please don't waste water",
+            "Try not to waste water"
+          ],
+          "commonErrors": [
+            {
+              "id": "no-waste",
+              "match": "^(no|not) waste\\b",
+              "explanation_pt": "O imperativo negativo usa \"Don't\": \"Don't waste water\".",
+              "correction_en": "Don't waste water."
+            },
+            {
+              "id": "the-water",
+              "match": "\\bwaste the water\\b",
+              "explanation_pt": "Água em geral vai sem artigo: \"Don't waste water\".",
+              "correction_en": "Don't waste water."
+            }
+          ]
+        },
+        {
+          "id": "b1-09-rev-3",
+          "kind": "choice",
+          "instruction_pt": "Qual frase está correta?",
+          "options": [
+            "If it will rain, we'll stay home.",
+            "If it rains, we'll stay home.",
+            "If it rains, we stay home tomorrow."
+          ],
+          "answer": 1,
+          "explanation_pt": "Primeiro condicional: \"if\" + presente, e \"will\" na outra parte."
+        },
+        {
+          "id": "b1-09-rev-4",
+          "kind": "fill",
+          "instruction_pt": "Complete com a forma certa de \"cut\".",
+          "sentence": "If they ___ down more trees, the animals will lose their homes.",
+          "accepted": ["cut"],
+          "commonErrors": [
+            {
+              "id": "will-cut",
+              "match": "^(will cut|cutted|cuts)$",
+              "explanation_pt": "Depois de \"if\" vem o presente, e \"they\" não leva \"s\": \"If they cut\".",
+              "correction_en": "If they cut down more trees, the animals will lose their homes."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

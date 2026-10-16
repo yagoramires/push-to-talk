@@ -1,0 +1,472 @@
+{
+  "id": "b1-07-technology",
+  "level": "B1",
+  "order": 7,
+  "title_pt": "Tecnologia no dia a dia",
+  "title_en": "Technology in daily life",
+  "objective_pt": "Falar de como você usa apps e aparelhos, explicar um problema técnico simples (\"It keeps crashing\") e dar opinião sobre o uso do celular com \"used to\" e comparações.",
+  "blocks": [
+    {
+      "id": "b1-07-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Aquecer falando dos apps e aparelhos que a pessoa usa.",
+        "prompts": [
+          "Which apps do you use the most?",
+          "Could you live without your phone for a week?"
+        ],
+        "watchFor": [
+          "Dizer \"I use much the phone\"; o natural é \"I use my phone a lot\".",
+          "Pronunciar \"app\" como \"api\"; é \"ép\", curto."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-07-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita a pergunta.",
+          "prompt": "How much time do you spend on your phone every day?",
+          "accepted": [
+            "How much time do you spend on your phone every day",
+            "How much time do you spend on your phone each day"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-07-warm-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e diga que você passa umas quatro horas por dia no celular.",
+          "listen": "How much time do you spend on your phone?",
+          "accepted": [
+            "About four hours a day",
+            "I spend about four hours a day on my phone",
+            "Around four hours a day",
+            "Probably four hours a day",
+            "I spend around four hours a day on it",
+            "About four hours a day, I think",
+            "Maybe four hours a day"
+          ],
+          "commonErrors": [
+            {
+              "id": "pass-time",
+              "match": "\\bi pass\\b",
+              "explanation_pt": "\"Passar tempo\" é \"spend time\", e não \"pass\".",
+              "correction_en": "I spend about four hours a day on my phone."
+            },
+            {
+              "id": "per-day-in",
+              "match": "\\b(in|at) (my|the) phone\\b|\\bhours for day\\b",
+              "explanation_pt": "Use \"on my phone\" e \"a day\" (ou \"per day\"): \"four hours a day on my phone\".",
+              "correction_en": "I spend about four hours a day on my phone."
+            }
+          ]
+        },
+        {
+          "id": "b1-07-warm-3",
+          "kind": "choice",
+          "instruction_pt": "Qual é a forma natural?",
+          "options": [
+            "I use very much my laptop.",
+            "I use my laptop a lot.",
+            "I use a lot my laptop."
+          ],
+          "answer": 1,
+          "explanation_pt": "Em inglês o objeto fica colado ao verbo e o \"a lot\" vai no fim: \"I use my laptop a lot\"."
+        }
+      ]
+    },
+    {
+      "id": "b1-07-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Aprender verbos e expressões de tecnologia do dia a dia.",
+        "prompts": [
+          "What do you do when your computer freezes?",
+          "How often do you update your apps?"
+        ],
+        "watchFor": [
+          "Usar \"I downloaded the photo to Instagram\"; postar é \"upload\" ou \"post\".",
+          "Dizer \"the internet fell\"; o natural é \"the internet is down\" ou \"went down\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-07-vocab-1",
+          "kind": "vocab",
+          "word_en": "to crash",
+          "meaning_pt": "travar e fechar (programa, app)",
+          "example_en": "This app keeps crashing every time I open it."
+        },
+        {
+          "id": "b1-07-vocab-2",
+          "kind": "vocab",
+          "word_en": "to charge",
+          "meaning_pt": "carregar (bateria)",
+          "example_en": "I forgot to charge my phone last night."
+        },
+        {
+          "id": "b1-07-vocab-3",
+          "kind": "vocab",
+          "word_en": "to be down",
+          "meaning_pt": "estar fora do ar",
+          "example_en": "The Wi-Fi is down again."
+        },
+        {
+          "id": "b1-07-vocab-4",
+          "kind": "vocab",
+          "word_en": "to keep + -ing",
+          "meaning_pt": "ficar fazendo, continuar fazendo (algo irritante)",
+          "example_en": "My laptop keeps turning off."
+        },
+        {
+          "id": "b1-07-vocab-5",
+          "kind": "match",
+          "instruction_pt": "Ligue cada palavra ao significado.",
+          "pairs": [
+            {
+              "en": "to download",
+              "pt": "baixar"
+            },
+            {
+              "en": "to upload",
+              "pt": "enviar, subir (arquivo)"
+            },
+            {
+              "en": "password",
+              "pt": "senha"
+            },
+            {
+              "en": "to log in",
+              "pt": "entrar (na conta)"
+            },
+            {
+              "en": "battery",
+              "pt": "bateria"
+            }
+          ]
+        },
+        {
+          "id": "b1-07-vocab-6",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"A internet caiu.\"",
+          "accepted": [
+            "The internet is down",
+            "The internet's down",
+            "The internet went down",
+            "The internet has gone down",
+            "The Wi-Fi is down",
+            "The internet stopped working",
+            "The internet isn't working"
+          ],
+          "commonErrors": [
+            {
+              "id": "internet-fell",
+              "match": "\\b(fell|fall|falled|dropped)\\b",
+              "explanation_pt": "\"Cair\" a internet não é \"fall\". Use \"is down\" ou \"went down\".",
+              "correction_en": "The internet is down."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-07-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Pronunciar palavras de tecnologia que brasileiros adaptam demais: \"Wi-Fi\", \"laptop\", \"download\", \"used to\".",
+        "prompts": [
+          "Say \"used to\". Is it \"iused tu\" or \"yoosta\"?",
+          "Say \"laptop\" without an extra vowel."
+        ],
+        "watchFor": [
+          "Pronunciar \"used to\" separado (\"iuzed tu\"); na fala vira \"YOOS-tuh\".",
+          "Colocar vogal no fim de \"laptop\" e \"chat\" (\"laptopi\", \"chati\")."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-07-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita. \"Used to\" soa como \"YOOS-tuh\".",
+          "prompt": "I used to read paper books, but now I read on my tablet.",
+          "accepted": ["I used to read paper books, but now I read on my tablet"],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-07-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repita sem vogal extra no fim de \"laptop\" e \"chat\".",
+          "prompt": "I use my laptop to chat with my team.",
+          "accepted": ["I use my laptop to chat with my team"],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-07-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Como \"used to\" soa na fala natural?",
+          "options": ["iu-zed tu", "YOOS-tuh", "iused-tchu"],
+          "answer": 1,
+          "explanation_pt": "Em \"used to\" (costumava), o \"d\" some e o \"s\" é surdo: \"YOOS-tuh\"."
+        }
+      ]
+    },
+    {
+      "id": "b1-07-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Entender um problema técnico e dar uma solução simples.",
+        "prompts": [
+          "Have you tried turning it off and on again?",
+          "What's the most annoying tech problem you've had?"
+        ],
+        "watchFor": [
+          "Usar \"Did you try to restart?\" está ok, mas \"Have you tried restarting it?\" é mais natural.",
+          "Esquecer o objeto: \"turn off and on\" sem \"it\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-07-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Ouça e escolha qual é o problema.",
+          "listen": "I can't log in to my account. It keeps saying my password is wrong, but I'm sure it's right.",
+          "options": [
+            "O celular não carrega.",
+            "Não consegue entrar na conta por causa da senha.",
+            "Esqueceu o nome de usuário."
+          ],
+          "answer": 1,
+          "explanation_pt": "\"I can't log in\" = não consigo entrar; \"it keeps saying my password is wrong\" = fica dizendo que a senha está errada."
+        },
+        {
+          "id": "b1-07-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e sugira que a pessoa desligue e ligue de novo.",
+          "listen": "My laptop is really slow today. I don't know what to do.",
+          "accepted": [
+            "Have you tried turning it off and on again",
+            "Have you tried restarting it",
+            "Try turning it off and on again",
+            "Try restarting it",
+            "Why don't you restart it",
+            "You should restart it",
+            "Did you try restarting it",
+            "Turn it off and on again"
+          ],
+          "commonErrors": [
+            {
+              "id": "connect-disconnect",
+              "match": "\\b(disconnect|connect) (it|and)\\b",
+              "explanation_pt": "Desligar e ligar um aparelho é \"turn off / turn on\" ou \"restart\".",
+              "correction_en": "Have you tried turning it off and on again?"
+            },
+            {
+              "id": "turn-off-it",
+              "match": "\\bturn(ing)? off it\\b",
+              "explanation_pt": "Com pronome, ele fica no meio do phrasal verb: \"turn it off\", e não \"turn off it\".",
+              "correction_en": "Have you tried turning it off and on again?"
+            }
+          ]
+        },
+        {
+          "id": "b1-07-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e diga que antigamente você jogava videogame, mas não joga mais.",
+          "listen": "Do you play video games?",
+          "accepted": [
+            "I used to, but I don't anymore",
+            "I used to, but not anymore",
+            "I used to play, but I don't anymore",
+            "I used to play video games, but I don't anymore",
+            "Not anymore, but I used to",
+            "I used to, but I stopped",
+            "I used to play a lot, but not anymore"
+          ],
+          "commonErrors": [
+            {
+              "id": "use-to-present",
+              "match": "^i use to\\b",
+              "explanation_pt": "Para um hábito do passado, use \"used to\" (no passado): \"I used to play\".",
+              "correction_en": "I used to, but I don't anymore."
+            },
+            {
+              "id": "no-more",
+              "match": "\\bno more\\b",
+              "explanation_pt": "\"Não mais\" é \"not anymore\" ou \"I don't anymore\". \"No more\" soa como uma ordem (\"chega!\").",
+              "correction_en": "I used to, but I don't anymore."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-07-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Discutir o papel da tecnologia: o que melhorou, o que piorou e como era antes.",
+        "prompts": [
+          "How was life different before smartphones?",
+          "Do you think kids spend too much time on screens?",
+          "What technology couldn't you live without?"
+        ],
+        "watchFor": [
+          "Usar \"before\" com presente: \"Before, I read more\" ok, mas incentive \"I used to read more\".",
+          "Dizer \"more easy\"; é \"easier\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-07-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu costumava ligar para os meus amigos, mas agora eu mando mensagem.\"",
+          "accepted": [
+            "I used to call my friends, but now I text them",
+            "I used to call my friends, but now I send them messages",
+            "I used to phone my friends, but now I text them",
+            "I used to call my friends, but now I just text them",
+            "I used to call my friends, but now I message them"
+          ],
+          "commonErrors": [
+            {
+              "id": "costume",
+              "match": "\\b(costume|accustomed)\\b",
+              "explanation_pt": "\"Costumava\" para hábitos do passado é \"used to\". \"Costume\" é fantasia.",
+              "correction_en": "I used to call my friends, but now I text them."
+            },
+            {
+              "id": "connect-friends",
+              "match": "\\bconnect (to|for) my friends\\b",
+              "explanation_pt": "\"Ligar para alguém\" é \"call\" ou \"phone\".",
+              "correction_en": "I used to call my friends, but now I text them."
+            }
+          ]
+        },
+        {
+          "id": "b1-07-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Hoje em dia é mais fácil trabalhar de casa.\"",
+          "accepted": [
+            "Nowadays it's easier to work from home",
+            "Nowadays it is easier to work from home",
+            "These days it's easier to work from home",
+            "Today it's easier to work from home",
+            "It's easier to work from home nowadays",
+            "Working from home is easier nowadays"
+          ],
+          "commonErrors": [
+            {
+              "id": "more-easy",
+              "match": "\\bmore easy\\b",
+              "explanation_pt": "Adjetivo curto faz comparativo com \"-er\": \"easier\", e não \"more easy\".",
+              "correction_en": "Nowadays it's easier to work from home."
+            },
+            {
+              "id": "today-in-day",
+              "match": "\\btoday in day\\b|\\bwork (of|in) home\\b",
+              "explanation_pt": "\"Hoje em dia\" é \"nowadays\" ou \"these days\", e trabalhar de casa é \"work from home\".",
+              "correction_en": "Nowadays it's easier to work from home."
+            }
+          ]
+        },
+        {
+          "id": "b1-07-conv-3",
+          "kind": "order",
+          "instruction_pt": "Coloque as palavras na ordem certa.",
+          "accepted": ["My phone keeps running out of battery."]
+        },
+        {
+          "id": "b1-07-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Dê a sua opinião sobre tecnologia na sua vida.",
+          "prompt_en": "How has technology changed your daily life? Is it mostly good or bad?",
+          "guidelines_pt": [
+            "Compare o antes e o agora: \"I used to..., but now I...\".",
+            "Dê um exemplo bom e um ruim, com comparativos (\"easier\", \"more stressful\").",
+            "Conclua com a sua opinião: \"Overall, I think...\"."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-07-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Fixar \"used to\", \"keep + -ing\" e os phrasal verbs \"turn on/off\".",
+        "prompts": [
+          "What did you use to do before you had a smartphone?",
+          "What keeps happening with your phone?"
+        ],
+        "watchFor": ["\"I use to\" no lugar de \"I used to\".", "\"turn off it\"."]
+      },
+      "exercises": [
+        {
+          "id": "b1-07-rev-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita a frase.",
+          "prompt": "My battery is about to die. Do you have a charger?",
+          "accepted": [
+            "My battery is about to die. Do you have a charger",
+            "My battery's about to die. Do you have a charger",
+            "My battery is about to die. Have you got a charger"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-07-rev-2",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Esqueci minha senha.\"",
+          "accepted": [
+            "I forgot my password",
+            "I've forgotten my password",
+            "I have forgotten my password",
+            "I forgot my password again",
+            "I can't remember my password"
+          ],
+          "commonErrors": [
+            {
+              "id": "forgot-of",
+              "match": "\\bforgot (of|about) my password\\b",
+              "explanation_pt": "\"Esquecer algo\" é \"forget something\", sem preposição.",
+              "correction_en": "I forgot my password."
+            },
+            {
+              "id": "forget-past",
+              "match": "^i forget my password\\b",
+              "explanation_pt": "\"Esqueci\" é passado: \"I forgot\" (ou \"I've forgotten\").",
+              "correction_en": "I forgot my password."
+            }
+          ]
+        },
+        {
+          "id": "b1-07-rev-3",
+          "kind": "choice",
+          "instruction_pt": "Qual frase está correta?",
+          "options": ["Please turn off it.", "Please turn it off.", "Please turn off."],
+          "answer": 1,
+          "explanation_pt": "Com pronome, ele fica no meio do phrasal verb: \"turn it off\"."
+        },
+        {
+          "id": "b1-07-rev-4",
+          "kind": "fill",
+          "instruction_pt": "Complete com a forma certa de \"use\".",
+          "sentence": "When I was a kid, I ___ to play outside every day.",
+          "accepted": ["used"],
+          "commonErrors": [
+            {
+              "id": "use-present",
+              "match": "^(use|uses|using)$",
+              "explanation_pt": "Hábito do passado: \"used to\", com \"-d\".",
+              "correction_en": "When I was a kid, I used to play outside every day."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

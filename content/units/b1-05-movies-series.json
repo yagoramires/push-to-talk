@@ -1,0 +1,475 @@
+{
+  "id": "b1-05-movies-series",
+  "level": "B1",
+  "order": 5,
+  "title_pt": "Filmes e séries",
+  "title_en": "Movies and series",
+  "objective_pt": "Recomendar um filme ou série, descrever o enredo sem spoilers (\"It's about...\", \"It's set in...\") e dar opinião com adjetivos como \"gripping\", \"boring\" e \"overrated\".",
+  "blocks": [
+    {
+      "id": "b1-05-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Aquecer falando do que a pessoa anda assistindo.",
+        "prompts": ["What are you watching at the moment?", "Do you prefer movies or series? Why?"],
+        "watchFor": [
+          "Dizer \"I'm assisting a series\"; \"assist\" é ajudar. Assistir é \"watch\".",
+          "Usar \"serie\" no singular; em inglês é \"a series\" (igual no singular e no plural)."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-05-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita a pergunta.",
+          "prompt": "Have you watched anything good lately?",
+          "accepted": [
+            "Have you watched anything good lately",
+            "Have you seen anything good lately"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-05-warm-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e diga que você está assistindo a uma série coreana.",
+          "listen": "What are you watching these days?",
+          "accepted": [
+            "I'm watching a Korean series",
+            "I am watching a Korean series",
+            "I'm watching a Korean drama",
+            "I'm watching a Korean show",
+            "A Korean series",
+            "I've been watching a Korean series",
+            "I'm into a Korean series right now"
+          ],
+          "commonErrors": [
+            {
+              "id": "assisting",
+              "match": "\\bassist(ing)?\\b",
+              "explanation_pt": "\"Assist\" é ajudar. Assistir a filmes e séries é \"watch\".",
+              "correction_en": "I'm watching a Korean series."
+            },
+            {
+              "id": "serie-singular",
+              "match": "\\bkorean serie\\b|\\bseries korean\\b",
+              "explanation_pt": "É \"a series\" (com \"s\" mesmo no singular) e o adjetivo vem antes: \"a Korean series\".",
+              "correction_en": "I'm watching a Korean series."
+            }
+          ]
+        },
+        {
+          "id": "b1-05-warm-3",
+          "kind": "choice",
+          "instruction_pt": "Como se diz \"Eu assisti a esse filme ontem\"?",
+          "options": [
+            "I assisted this movie yesterday.",
+            "I watched this movie yesterday.",
+            "I saw to this movie yesterday."
+          ],
+          "answer": 1,
+          "explanation_pt": "Assistir a algo é \"watch\" (ou \"see\", para filmes). \"Assist\" significa ajudar."
+        }
+      ]
+    },
+    {
+      "id": "b1-05-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Aprender palavras para descrever e avaliar filmes e séries.",
+        "prompts": [
+          "What's a movie everyone loves but you think is overrated?",
+          "Who's your favorite actor?"
+        ],
+        "watchFor": [
+          "Confundir \"plot\" (enredo) com \"history\"; use \"story\" ou \"plot\".",
+          "Dizer \"the movie passes in Rome\"; o natural é \"it's set in Rome\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-05-vocab-1",
+          "kind": "vocab",
+          "word_en": "plot",
+          "meaning_pt": "enredo, trama",
+          "example_en": "The plot is a bit confusing, but the acting is great."
+        },
+        {
+          "id": "b1-05-vocab-2",
+          "kind": "vocab",
+          "word_en": "to be set in",
+          "meaning_pt": "se passar em (lugar ou época)",
+          "example_en": "The series is set in London in the 1960s."
+        },
+        {
+          "id": "b1-05-vocab-3",
+          "kind": "vocab",
+          "word_en": "overrated",
+          "meaning_pt": "superestimado",
+          "example_en": "Honestly, I think that movie is overrated."
+        },
+        {
+          "id": "b1-05-vocab-4",
+          "kind": "vocab",
+          "word_en": "to binge-watch",
+          "meaning_pt": "maratonar",
+          "example_en": "I binge-watched the whole season in one weekend."
+        },
+        {
+          "id": "b1-05-vocab-5",
+          "kind": "match",
+          "instruction_pt": "Ligue cada palavra ao significado.",
+          "pairs": [
+            {
+              "en": "gripping",
+              "pt": "envolvente, que prende"
+            },
+            {
+              "en": "cast",
+              "pt": "elenco"
+            },
+            {
+              "en": "spoiler",
+              "pt": "revelação do final"
+            },
+            {
+              "en": "episode",
+              "pt": "episódio"
+            },
+            {
+              "en": "subtitles",
+              "pt": "legendas"
+            }
+          ]
+        },
+        {
+          "id": "b1-05-vocab-6",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"O filme se passa em Nova York.\"",
+          "accepted": [
+            "The movie is set in New York",
+            "The film is set in New York",
+            "The movie takes place in New York",
+            "The film takes place in New York",
+            "It's set in New York",
+            "It takes place in New York"
+          ],
+          "commonErrors": [
+            {
+              "id": "passes-in",
+              "match": "\\bpasses (in|at)\\b",
+              "explanation_pt": "\"Se passa em\" não é \"passes in\". Use \"is set in\" ou \"takes place in\".",
+              "correction_en": "The movie is set in New York."
+            },
+            {
+              "id": "happens-in",
+              "match": "\\bhappens in new york\\b",
+              "explanation_pt": "Para o cenário da história, o natural é \"is set in\" ou \"takes place in\".",
+              "correction_en": "The movie is set in New York."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-05-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Pronunciar \"series\", \"comedy\" e \"documentary\" com a sílaba forte certa.",
+        "prompts": [
+          "Say \"series\". Is it \"séri\" or \"SIR-eez\"?",
+          "Where is the stress in \"documentary\"?"
+        ],
+        "watchFor": [
+          "Pronunciar \"series\" como em português (\"séries\"); o som é \"SÍR-iz\".",
+          "Colocar a força no fim de \"comedy\" (\"comÉdi\"); é \"CÓ-me-di\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-05-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita. \"Series\" soa \"SÍR-iz\".",
+          "prompt": "It's my favorite series of all time.",
+          "accepted": [
+            "It's my favorite series of all time",
+            "It is my favorite series of all time",
+            "It's my favourite series of all time"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-05-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repita. A força está em CO-medy e docu-MEN-tary.",
+          "prompt": "I like comedies more than documentaries.",
+          "accepted": [
+            "I like comedies more than documentaries",
+            "I like comedies better than documentaries"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-05-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Onde está a sílaba forte de \"documentary\"?",
+          "options": ["DO-cu-men-ta-ry", "do-cu-MEN-ta-ry", "do-cu-men-TA-ry"],
+          "answer": 1,
+          "explanation_pt": "É do-cu-MEN-ta-ry. Em português a força cai no \"tá\" de \"documentário\", por isso a confusão."
+        }
+      ]
+    },
+    {
+      "id": "b1-05-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Entender uma recomendação e reagir dando opinião.",
+        "prompts": ["Have you seen it? What did you think?", "Would you recommend it?"],
+        "watchFor": [
+          "Dizer \"I didn't like so much\"; falta o objeto: \"I didn't like it much\".",
+          "Usar \"boring\" e \"bored\" trocados."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-05-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Ouça a opinião e escolha o resumo certo.",
+          "listen": "The first season was gripping, but the second one was so slow that I gave up halfway through.",
+          "options": [
+            "Gostou das duas temporadas.",
+            "Gostou da primeira e desistiu no meio da segunda.",
+            "Não viu a primeira temporada."
+          ],
+          "answer": 1,
+          "explanation_pt": "\"Gripping\" = envolvente; \"I gave up halfway through\" = desisti no meio."
+        },
+        {
+          "id": "b1-05-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e diga que você viu, mas não gostou muito.",
+          "listen": "Have you seen the new Batman movie?",
+          "accepted": [
+            "Yes, but I didn't like it much",
+            "Yes, I have, but I didn't like it much",
+            "Yeah, but I didn't really like it",
+            "Yes, but I didn't like it very much",
+            "Yes, I saw it, but I didn't like it much",
+            "I have, but I didn't love it",
+            "Yes, but it wasn't that good"
+          ],
+          "commonErrors": [
+            {
+              "id": "like-no-object",
+              "match": "\\bdid not like (so|very|that) much\\b|\\bdid not like much\\b",
+              "explanation_pt": "\"Like\" precisa de objeto: \"I didn't like it much\".",
+              "correction_en": "Yes, but I didn't like it much."
+            },
+            {
+              "id": "i-was-bored-it",
+              "match": "\\bit was (so )?bored\\b",
+              "explanation_pt": "O filme é \"boring\" (chato); você fica \"bored\" (entediado).",
+              "correction_en": "Yes, but it was a bit boring."
+            }
+          ]
+        },
+        {
+          "id": "b1-05-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e diga, em uma frase, sobre o que é o seu filme favorito (por exemplo, um homem perdido no espaço).",
+          "listen": "What's your favorite movie about?",
+          "accepted": [
+            "It's about a man who gets lost in space",
+            "It's about a man lost in space",
+            "It's about an astronaut who gets stuck on Mars",
+            "It's about a family that moves to a new city",
+            "It's about a woman who wants to become a singer",
+            "It's about two friends who travel around the world",
+            "It's about a boy who finds a magic book"
+          ],
+          "commonErrors": [
+            {
+              "id": "talks-about",
+              "match": "^(it )?(talks|speaks) (about|of)\\b",
+              "explanation_pt": "\"Fala sobre\" fica mais natural como \"It's about...\" para filmes e livros.",
+              "correction_en": "It's about a man who gets lost in space."
+            },
+            {
+              "id": "is-about-of",
+              "match": "\\babout of\\b",
+              "explanation_pt": "Não use \"of\" depois de \"about\": \"It's about a man...\".",
+              "correction_en": "It's about a man who gets lost in space."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-05-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Recomendar algo para ver: gênero, cenário, enredo sem spoiler, opinião e para quem é.",
+        "prompts": [
+          "What should I watch this weekend?",
+          "What's the worst movie you've ever seen?",
+          "Do you watch with subtitles?"
+        ],
+        "watchFor": [
+          "Contar o final; ensine \"I don't want to spoil it, but...\".",
+          "Usar \"interesting\" para tudo; incentive \"gripping\", \"hilarious\", \"moving\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-05-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu não quero dar spoiler, mas o final é incrível.\"",
+          "accepted": [
+            "I don't want to spoil it, but the ending is amazing",
+            "I don't want to spoil it, but the ending is incredible",
+            "I don't want to give anything away, but the ending is amazing",
+            "I don't want to spoil anything, but the ending is amazing",
+            "No spoilers, but the ending is amazing"
+          ],
+          "commonErrors": [
+            {
+              "id": "the-final",
+              "match": "\\bthe final is\\b",
+              "explanation_pt": "\"O final\" de um filme é \"the ending\". \"The final\" é a final de um campeonato.",
+              "correction_en": "I don't want to spoil it, but the ending is amazing."
+            },
+            {
+              "id": "give-spoiler",
+              "match": "\\bgive (a |any )?spoiler\\b",
+              "explanation_pt": "\"Dar spoiler\" é \"spoil it\" ou \"give anything away\".",
+              "correction_en": "I don't want to spoil it, but the ending is amazing."
+            }
+          ]
+        },
+        {
+          "id": "b1-05-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu maratonei a temporada inteira em dois dias.\"",
+          "accepted": [
+            "I binge-watched the whole season in two days",
+            "I binge watched the whole season in two days",
+            "I binge-watched the entire season in two days",
+            "I watched the whole season in two days",
+            "I binged the whole season in two days"
+          ],
+          "commonErrors": [
+            {
+              "id": "temporada-temporary",
+              "match": "\\btemporada\\b|\\btemporary\\b",
+              "explanation_pt": "Temporada de série é \"season\".",
+              "correction_en": "I binge-watched the whole season in two days."
+            },
+            {
+              "id": "all-the-season",
+              "match": "\\ball the season\\b",
+              "explanation_pt": "\"A temporada inteira\" fica natural como \"the whole season\" ou \"the entire season\".",
+              "correction_en": "I binge-watched the whole season in two days."
+            }
+          ]
+        },
+        {
+          "id": "b1-05-conv-3",
+          "kind": "order",
+          "instruction_pt": "Coloque as palavras na ordem certa.",
+          "accepted": ["You should definitely watch it."]
+        },
+        {
+          "id": "b1-05-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Recomende um filme ou série para alguém.",
+          "prompt_en": "Recommend a movie or series you love. Why should I watch it?",
+          "guidelines_pt": [
+            "Diga o gênero e onde se passa: \"It's a thriller set in...\".",
+            "Resuma o enredo sem spoiler: \"It's about...\".",
+            "Dê a sua opinião com dois adjetivos e diga para quem é: \"If you like..., you'll love it\"."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-05-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Fixar \"watch\", \"be set in\", \"ending\" e \"boring/bored\".",
+        "prompts": ["What was the last movie you watched?", "Where is it set?"],
+        "watchFor": [
+          "\"assist\" no lugar de \"watch\".",
+          "\"the final\" no lugar de \"the ending\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-05-rev-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita a frase.",
+          "prompt": "If you like thrillers, you'll love it.",
+          "accepted": [
+            "If you like thrillers, you'll love it",
+            "If you like thrillers, you will love it"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-05-rev-2",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu fiquei entediado no meio do filme.\"",
+          "accepted": [
+            "I got bored in the middle of the movie",
+            "I got bored halfway through the movie",
+            "I got bored in the middle of the film",
+            "I was bored in the middle of the movie",
+            "I got bored halfway through the film"
+          ],
+          "commonErrors": [
+            {
+              "id": "boring-person",
+              "match": "\\bi (got|was|stayed) boring\\b",
+              "explanation_pt": "Para o que você sente, use \"bored\". \"I was boring\" quer dizer \"eu era chato\".",
+              "correction_en": "I got bored in the middle of the movie."
+            },
+            {
+              "id": "stayed-bored",
+              "match": "\\bi stayed bored\\b",
+              "explanation_pt": "\"Ficar\" entediado é \"get bored\", e não \"stay bored\".",
+              "correction_en": "I got bored in the middle of the movie."
+            }
+          ]
+        },
+        {
+          "id": "b1-05-rev-3",
+          "kind": "choice",
+          "instruction_pt": "Qual frase descreve um filme cansativo?",
+          "options": ["The movie was bored.", "The movie was boring.", "The movie was boredom."],
+          "answer": 1,
+          "explanation_pt": "Coisas que causam tédio são \"boring\". Pessoas que sentem tédio ficam \"bored\"."
+        },
+        {
+          "id": "b1-05-rev-4",
+          "kind": "fill",
+          "instruction_pt": "Complete com a preposição.",
+          "sentence": "The story is set ___ Rio in the 1980s.",
+          "accepted": ["in"],
+          "commonErrors": [
+            {
+              "id": "set-on-at",
+              "match": "^(on|at|on the)$",
+              "explanation_pt": "Para cidades use \"in\": \"set in Rio\".",
+              "correction_en": "The story is set in Rio in the 1980s."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
