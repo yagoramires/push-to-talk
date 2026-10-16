@@ -931,7 +931,7 @@
     {
       "id": "b2-05-prac-18",
       "kind": "listen_answer",
-      "instruction_pt": "Listen and suggest a solution.",
+      "instruction_pt": "Listen and suggest dividing the tasks clearly, so everyone knows who does what.",
       "listen": "We keep arguing about who does what. What do you suggest?",
       "accepted": [
         "Why don't we write down who is responsible for each task?",

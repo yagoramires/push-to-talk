@@ -291,7 +291,8 @@
             "I see your point, but I don't think so",
             "I see your point, but it's never too late",
             "I see your point, but I'm not so sure",
-            "I see your point, but lots of people learn after thirty"
+            "I see your point, but lots of people learn after thirty",
+            "I see your point, but *"
           ],
           "commonErrors": [
             {
@@ -705,10 +706,10 @@
     {
       "id": "b1-11-prac-16",
       "kind": "listen_answer",
-      "instruction_pt": "Ouça e discorde com educação.",
+      "instruction_pt": "Ouça e discorde com educação, dizendo que pode ser útil.",
       "listen": "Social media is a complete waste of time.",
       "accepted": [
-        "I'm not so sure about that",
+        "I'm not so sure about that. It can be useful",
         "I see your point, but it can be useful too",
         "I don't really agree. It can be useful",
         "I'm not sure. It depends on how you use it",

@@ -37,14 +37,12 @@
           "listen": "Have you ever been abroad?",
           "accepted": [
             "Yes, I have",
-            "Yes, I have. I've been to Argentina",
-            "Yes, I've been to Argentina",
-            "Yes, I have been to Chile",
-            "Yes, I've been to Portugal",
-            "Yes, I've been to the United States",
-            "Yeah, I've been to Argentina",
-            "Yes, once. I went to Argentina",
-            "Yes, I went to Chile"
+            "Yes, I have. I've been to *",
+            "Yes, I've been to *",
+            "Yes, I have been to *",
+            "Yeah, I've been to *",
+            "Yes, once. I went to *",
+            "Yes, I went to *"
           ],
           "commonErrors": [
             {
@@ -781,13 +779,12 @@
       "instruction_pt": "Ouça e responda que sim, e diga quando foi (no passado simples).",
       "listen": "Have you ever been to a music festival?",
       "accepted": [
-        "Yes, I have. I went to one last summer",
-        "Yes, I went to one last year",
-        "Yes, I have. I went to Rock in Rio in 2019",
-        "Yes, I've been to Lollapalooza",
-        "Yes, I have, I went last year",
-        "Yes, I went to one two years ago",
-        "Yeah, I went to one last summer"
+        "Yes, I have. I went to one *",
+        "Yes, I went to one *",
+        "Yeah, I went to one *",
+        "Yes, I have, I went *",
+        "Yes, I went to * in *",
+        "Yes, I have. I went to * in *"
       ],
       "commonErrors": [
         {

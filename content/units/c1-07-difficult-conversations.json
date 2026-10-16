@@ -284,7 +284,11 @@
             "I'm afraid I'm stretched too thin right now",
             "I wish I could, but I don't have the bandwidth at the moment",
             "I'm afraid I can't, but maybe I could help with part of it",
-            "I'd rather not take it on right now, but I could support someone else"
+            "I'd rather not take it on right now, but I could support someone else",
+            "I'm afraid I can't take it on right now, but I could help *",
+            "Unfortunately, I can't take it on right now, but I could help *",
+            "I'd love to help, but I don't have the capacity right now. I could help *",
+            "I'd love to help, but I can't take it on right now. I could help *"
           ],
           "commonErrors": [
             {
@@ -780,7 +784,12 @@
         "I wish I could, but Friday's difficult. Could we look at another option",
         "I'm afraid I can't approve Friday, but let's see what we can do",
         "Unfortunately not, but you could leave early on Friday",
-        "I'm really sorry, but I can't say yes to Friday. Could you swap shifts with someone"
+        "I'm really sorry, but I can't say yes to Friday. Could you swap shifts with someone",
+        "I'm afraid Friday isn't possible, but could you take * instead",
+        "I'm afraid Friday isn't possible. How about *",
+        "I'm sorry, but Friday won't be possible. How about *",
+        "Unfortunately, I can't give you Friday off, but what about *",
+        "I'm sorry, but Friday won't be possible. Could you take * instead"
       ],
       "commonErrors": [
         {

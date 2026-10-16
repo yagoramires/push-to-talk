@@ -243,17 +243,18 @@
         {
           "id": "c1-10-listen-2",
           "kind": "listen_answer",
-          "instruction_pt": "Listen and respond with interest, then ask a follow-up question.",
+          "instruction_pt": "Listen and respond with interest, then ask how they're finding it so far.",
           "listen": "I've just moved to São Paulo from London to set up our new office.",
           "accepted": [
             "Oh, interesting! How are you finding it so far?",
             "That's exciting! How are you finding São Paulo?",
             "Really? How are you settling in?",
             "Wow, big move! How's it going so far?",
-            "Oh, nice! What made you choose São Paulo?",
             "That's a big change! How are you finding the city?",
             "Interesting! How are you settling in?",
-            "How are you finding it so far?"
+            "*! How are you finding it so far?",
+            "*! How are you finding São Paulo?",
+            "*! How are you settling in?"
           ],
           "commonErrors": [
             {
@@ -769,7 +770,20 @@
         "I'm a lawyer specialising in contracts",
         "I'm a lawyer specializing in contracts",
         "Basically, I help companies manage their data",
-        "I'm a consultant in the health sector"
+        "I'm a consultant in the health sector",
+        "I'm a *",
+        "I'm an *",
+        "I'm a * at a *",
+        "I'm an * at a *",
+        "I'm a * at *",
+        "I'm a * in the * sector",
+        "I work in *",
+        "I work in * at a *",
+        "I work in * for a *",
+        "I work as a *",
+        "I work as an *",
+        "I work as a * at a *",
+        "I work for *"
       ],
       "commonErrors": [
         {

@@ -290,14 +290,12 @@
           "instruction_pt": "Ouça e dê um conselho para economizar dinheiro (por exemplo, cozinhar em casa).",
           "listen": "I spend too much money every month. What should I do?",
           "accepted": [
-            "You should cook at home",
+            "You should *",
+            "Maybe you should *",
+            "I think you should *",
+            "Why don't you *",
             "You should cook at home more",
             "You should cook at home more often",
-            "Maybe you should cook at home",
-            "Why don't you cook at home",
-            "You should eat out less",
-            "You should make a budget",
-            "You should stop eating out",
             "I think you should cook at home more"
           ],
           "commonErrors": [

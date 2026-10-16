@@ -294,20 +294,17 @@
         {
           "id": "b2-07-listen-3",
           "kind": "listen_answer",
-          "instruction_pt": "Listen. Partly agree, then add a \"but\".",
+          "instruction_pt": "Listen. Partly agree, then add a \"but\": small towns are safer.",
           "listen": "Big cities are much better places to live than small towns.",
           "accepted": [
             "I agree to some extent, but small towns are safer",
-            "I agree to some extent, but they're more expensive",
-            "That's true to some extent, but small towns are calmer",
-            "I see your point, but small towns are quieter",
-            "I see your point, but life is more expensive in big cities",
-            "Up to a point, but small towns are safer",
-            "To some extent, but big cities are more stressful",
             "I partly agree, but small towns are safer",
-            "Maybe, but small towns have a better quality of life",
-            "That's true in some ways, but big cities are more stressful",
-            "I agree up to a point, but big cities are expensive"
+            "Up to a point, but small towns are safer",
+            "I agree up to a point, but small towns are safer",
+            "That's true to some extent, but small towns are safer",
+            "I see your point, but small towns are safer",
+            "To some extent, but small towns are safer",
+            "I agree to some extent, but small towns are much safer"
           ],
           "commonErrors": [
             {
@@ -759,7 +756,7 @@
     {
       "id": "b2-07-prac-16",
       "kind": "listen_answer",
-      "instruction_pt": "Listen and give a balanced opinion. Say one good thing and one bad thing.",
+      "instruction_pt": "Listen and give a balanced opinion: it saves time, but it can be lonely.",
       "listen": "What do you think about working from home?",
       "accepted": [
         "On the one hand, it saves time. On the other hand, it can be lonely",
@@ -787,7 +784,7 @@
     {
       "id": "b2-07-prac-17",
       "kind": "listen_answer",
-      "instruction_pt": "Listen and partly agree.",
+      "instruction_pt": "Listen and partly agree, but say a ban is not the answer.",
       "listen": "Social media is ruining young people. It should be banned for teenagers.",
       "accepted": [
         "I agree to some extent, but banning it is too extreme",
@@ -818,12 +815,14 @@
       "instruction_pt": "Listen and say it depends.",
       "listen": "Is it better to live in a big city or in a small town?",
       "accepted": [
+        "It depends",
+        "It depends on *",
+        "It really depends on *",
+        "That depends on *",
         "It depends on what you're looking for",
-        "It depends on your lifestyle",
         "It depends. Big cities have more jobs, but small towns are calmer",
-        "It depends on the person",
         "It really depends on your priorities",
-        "That depends on your situation"
+        "I think it depends on *"
       ],
       "commonErrors": [
         {

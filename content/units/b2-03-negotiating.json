@@ -928,7 +928,7 @@
     {
       "id": "b2-03-prac-18",
       "kind": "listen_answer",
-      "instruction_pt": "Listen and say no politely. Give a reason.",
+      "instruction_pt": "Listen and say no politely: you need at least two weeks.",
       "listen": "Can you deliver everything by next Monday?",
       "accepted": [
         "I'm afraid that's not possible. We need at least two weeks",
@@ -957,16 +957,18 @@
     {
       "id": "b2-03-prac-19",
       "kind": "listen_answer",
-      "instruction_pt": "Listen and ask for a discount for a bigger order.",
+      "instruction_pt": "Listen. Say about how many units you want and ask for a discount.",
       "listen": "So, how many units are you thinking of ordering?",
       "accepted": [
-        "About five hundred. Would you give us a discount for that?",
-        "Around five hundred. Can you offer a discount?",
-        "About five hundred, if you can give us a discount",
-        "Maybe five hundred. Is there a discount for that amount?",
-        "About five hundred. Could we get a discount?",
-        "Around five hundred units. Would you offer a discount?",
-        "About five hundred. What kind of discount can you offer?"
+        "About *. Would you give us a discount for that?",
+        "Around *. Can you offer a discount?",
+        "About *, if you can give us a discount",
+        "Maybe *. Is there a discount for that amount?",
+        "About *. Could we get a discount?",
+        "Around *. Would you offer a discount?",
+        "About *. What kind of discount can you offer?",
+        "About *. Can you give us a discount?",
+        "Around *. Could we get a discount?"
       ],
       "commonErrors": [
         {

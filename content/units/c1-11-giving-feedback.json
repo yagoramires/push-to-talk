@@ -672,7 +672,7 @@
     {
       "id": "c1-11-prac-15",
       "kind": "listen_answer",
-      "instruction_pt": "Listen. Give balanced feedback: one strength, then one suggestion.",
+      "instruction_pt": "Listen. Give balanced feedback: one strength, then one suggestion (e.g. \"it might be worth...\").",
       "listen": "So, what did you think of my report? Be honest.",
       "accepted": [
         "It was really clear, but it might be worth adding more data",
@@ -682,7 +682,16 @@
         "Overall it's strong, but I'd tighten up the second part",
         "The analysis was spot on, but the charts could be clearer",
         "It's well researched, but it might be worth adding a summary at the start",
-        "I really liked the structure. Maybe the ending could be a bit stronger"
+        "I really liked the structure. Maybe the ending could be a bit stronger",
+        "It was really *, but it might be worth *",
+        "It's really *, but it might be worth *",
+        "It was very *, but it might be worth *",
+        "It's very *, but it might be worth *",
+        "I liked the *, but it might be worth *",
+        "I really liked the *, but it might be worth *",
+        "The * was great, but the * could be *",
+        "The * was great, but it might be worth *",
+        "The * were great, but it might be worth *"
       ],
       "commonErrors": [
         {
@@ -731,7 +740,15 @@
         "Your attention to detail has been excellent",
         "You've fitted in really well with the team",
         "You've fit in really well with the team",
-        "Your presentations have been really clear"
+        "Your presentations have been really clear",
+        "You've been really *",
+        "Your * have been really *",
+        "Your * has been really *",
+        "Your * has been excellent",
+        "Your * have been excellent",
+        "You've * really quickly",
+        "The way you handled * was impressive",
+        "I've been really impressed by your *"
       ],
       "commonErrors": [
         {

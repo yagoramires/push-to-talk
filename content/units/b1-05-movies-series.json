@@ -280,16 +280,15 @@
         {
           "id": "b1-05-listen-3",
           "kind": "listen_answer",
-          "instruction_pt": "Ouça e diga, em uma frase, sobre o que é o seu filme favorito (por exemplo, um homem perdido no espaço).",
+          "instruction_pt": "Ouça e diga, em uma frase, que o seu filme favorito é sobre um homem perdido no espaço.",
           "listen": "What's your favorite movie about?",
           "accepted": [
             "It's about a man who gets lost in space",
             "It's about a man lost in space",
-            "It's about an astronaut who gets stuck on Mars",
-            "It's about a family that moves to a new city",
-            "It's about a woman who wants to become a singer",
-            "It's about two friends who travel around the world",
-            "It's about a boy who finds a magic book"
+            "It's about a man who is lost in space",
+            "It's about a guy who gets lost in space",
+            "It's about an astronaut who gets lost in space",
+            "My favorite movie is about a man who gets lost in space"
           ],
           "commonErrors": [
             {

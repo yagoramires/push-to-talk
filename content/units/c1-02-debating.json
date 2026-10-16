@@ -235,18 +235,20 @@
         {
           "id": "c1-02-listen-2",
           "kind": "listen_answer",
-          "instruction_pt": "Listen and rebut the claim politely, starting with a concession.",
+          "instruction_pt": "Listen and rebut the claim politely: make a concession, then say it has also done a lot of good.",
           "listen": "Social media has done more harm than good.",
           "accepted": [
-            "That's a fair point, but it has also connected people",
-            "I see your point, but it has also brought people together",
-            "That may be true, but it has some real benefits",
-            "That's true to some extent, but it has benefits too",
-            "I take your point, but it also has benefits",
-            "You have a point, but it has helped a lot of people",
+            "That's a fair point, but it has also done a lot of good",
+            "I see your point, but it has also done a lot of good",
+            "That may be true, but it has also done a lot of good",
+            "That's true to some extent, but it has also done a lot of good",
+            "I take your point, but it has also done a lot of good",
+            "You have a point, but it has also done a lot of good",
             "Fair point, but it has also done a lot of good",
             "I see what you mean, but it has also done a lot of good",
-            "Maybe, but it has also done a lot of good"
+            "Maybe, but it has also done a lot of good",
+            "*, but it has also done a lot of good",
+            "*, but it's also done a lot of good"
           ],
           "commonErrors": [
             {
@@ -742,7 +744,7 @@
     {
       "id": "c1-02-prac-15",
       "kind": "listen_answer",
-      "instruction_pt": "Listen and challenge the claim politely, offering another view.",
+      "instruction_pt": "Listen and politely challenge the idea that it's the only solution.",
       "listen": "Surely a ban on cars in the city centre is the only solution?",
       "accepted": [
         "Not necessarily",
@@ -775,7 +777,7 @@
     {
       "id": "c1-02-prac-16",
       "kind": "listen_answer",
-      "instruction_pt": "Listen and give a qualified answer: partly agree, but add a counterpoint.",
+      "instruction_pt": "Listen and give a qualified answer: partly agree, but say qualifications matter too.",
       "listen": "But don't you agree that experience matters more than qualifications?",
       "accepted": [
         "Up to a point, but qualifications matter too",
@@ -784,19 +786,12 @@
         "Partly, but qualifications count for something too",
         "It matters, but so do qualifications",
         "I take your point, but qualifications matter too",
-        "In some cases, yes, but not always",
-        "Not always. It depends on the job",
-        "It depends on the job, really",
         "Both matter, I'd say",
-        "I'd say both matter"
+        "I'd say both matter",
+        "*, but qualifications matter too",
+        "*, but qualifications still matter"
       ],
       "commonErrors": [
-        {
-          "id": "depends-of",
-          "match": "\\bdepends? of\\b",
-          "explanation_pt": "\"Depend\" takes \"on\", not \"of\".",
-          "correction_en": "It depends on the job."
-        },
         {
           "id": "in-some-extent",
           "match": "\\bin (some|a certain) extent\\b",
@@ -819,7 +814,12 @@
         "Yes, the figures from last year back it up",
         "Absolutely, there's a recent report on it",
         "Yes, I can send you the study",
-        "Sure, I can send you the data"
+        "Sure, I can send you the data",
+        "Yes, * backs it up",
+        "Yes, there's a * that backs it up",
+        "Yes, there's a * that shows it",
+        "Yes, the * back it up",
+        "Sure, * backs it up"
       ],
       "commonErrors": [
         {

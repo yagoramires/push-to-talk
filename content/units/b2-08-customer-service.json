@@ -911,7 +911,7 @@
     {
       "id": "b2-08-prac-17",
       "kind": "listen_answer",
-      "instruction_pt": "Listen. You are the customer. Explain the problem.",
+      "instruction_pt": "Listen. You are the customer. Explain that the phone you bought last week isn't working.",
       "listen": "Good afternoon, customer service. How can I help you?",
       "accepted": [
         "Hi, I bought a phone last week and it's not working",
@@ -967,7 +967,7 @@
     {
       "id": "b2-08-prac-19",
       "kind": "listen_answer",
-      "instruction_pt": "Listen. You are the agent. Offer a solution.",
+      "instruction_pt": "Listen. You are the agent. Offer a replacement or a refund.",
       "listen": "This is the second time the blender has broken. I'm really not happy.",
       "accepted": [
         "I completely understand. We can send you a new one or give you a refund",

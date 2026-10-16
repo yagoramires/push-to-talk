@@ -768,15 +768,15 @@
     {
       "id": "b2-09-prac-16",
       "kind": "listen_answer",
-      "instruction_pt": "Listen and explain the first step.",
+      "instruction_pt": "Listen and explain the first step: log in with your email.",
       "listen": "How do I start using the new system?",
       "accepted": [
         "First, you need to log in with your email",
+        "First, log in with your email",
         "First, log in with your company email",
-        "First of all, you need to create an account",
-        "First, you have to create a password",
+        "First of all, you need to log in with your email",
+        "First, you have to log in with your email",
         "The first step is to log in with your email",
-        "First, you need to download the app",
         "To start with, log in with your email"
       ],
       "commonErrors": [
@@ -784,7 +784,7 @@
           "id": "firstly-of-all",
           "match": "\\bfirstly of all\\b",
           "explanation_pt": "Use \"first of all\" ou só \"first\".",
-          "correction_en": "First of all, you need to create an account."
+          "correction_en": "First of all, you need to log in with your email."
         },
         {
           "id": "login-with",
@@ -797,7 +797,7 @@
     {
       "id": "b2-09-prac-17",
       "kind": "listen_answer",
-      "instruction_pt": "Listen and say what happens after the form is sent. Use the passive.",
+      "instruction_pt": "Listen and say the form is checked by our team. Use the passive.",
       "listen": "What happens after I send the application form?",
       "accepted": [
         "It's checked by our team",
@@ -805,8 +805,8 @@
         "The form is checked by our team",
         "Your application is reviewed by our team",
         "After that, it's checked by our team",
-        "It's checked, and then you get an email",
-        "It's sent to the HR team"
+        "It is checked by our team",
+        "Your form is checked by our team"
       ],
       "commonErrors": [
         {
@@ -826,15 +826,15 @@
     {
       "id": "b2-09-prac-18",
       "kind": "listen_answer",
-      "instruction_pt": "Listen and give a warning. Start with \"Make sure\".",
+      "instruction_pt": "Listen and warn them to save their files first. Start with \"Make sure\".",
       "listen": "I'm going to update the software on my laptop now.",
       "accepted": [
         "Make sure you save your files first",
         "Make sure you back up your files first",
-        "Make sure your laptop is plugged in",
-        "Make sure the battery is charged",
         "Make sure you have a backup",
-        "Make sure to save your work first"
+        "Make sure to save your work first",
+        "Make sure to save your files first",
+        "Make sure you save everything first"
       ],
       "commonErrors": [
         {
@@ -857,12 +857,14 @@
       "instruction_pt": "Listen and explain how long it takes.",
       "listen": "How long does it take to set up the new router?",
       "accepted": [
-        "It only takes about ten minutes",
-        "It takes about ten minutes",
-        "About ten minutes",
-        "It's quick, about ten minutes",
-        "It takes around ten minutes to set it up",
-        "Setting it up takes about ten minutes"
+        "It only takes about *",
+        "It takes about *",
+        "About *",
+        "It's quick, about *",
+        "It takes around * to set it up",
+        "Setting it up takes about *",
+        "It takes *",
+        "It only takes *"
       ],
       "commonErrors": [
         {
