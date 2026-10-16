@@ -15,8 +15,8 @@
     "build": "npm run typecheck && electron-vite build",
     "postinstall": "install-electron && electron-builder install-app-deps",
     "build:unpack": "npm run build && electron-builder --dir",
-    "build:win": "npm run build && electron-builder --win",
-    "build:mac": "npm run build && electron-builder --mac",
+    "build:win": "npm run build && electron-builder --win --publish never",
+    "build:mac": "npm run build && electron-builder --mac --publish never",
     "test": "vitest run",
     "audio": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/generate-audio.mjs"
   },
