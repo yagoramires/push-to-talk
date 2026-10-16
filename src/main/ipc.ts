@@ -1,8 +1,8 @@
 import { randomUUID } from 'node:crypto'
-import { readFile } from 'node:fs/promises'
+import { mkdir, readFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { app, ipcMain, shell, systemPreferences } from 'electron'
-import type { AiStatus, AppApi, AppState, Tier } from '../shared/api'
+import type { AiStatus, AppApi, AppState, Sample, Tier } from '../shared/api'
 import type { ProfileProgress } from '../shared/progress'
 import { decodeWav } from '../shared/wav'
 import { loadCourse } from './content/load-course'
@@ -13,10 +13,12 @@ import { detectHardware } from './ai/hardware'
 import { createAiSetup, createDownloader } from './ai/setup'
 import { LLM_BY_TIER, STT_BY_TIER } from './ai/tiers'
 import { resourcePaths } from './self-check'
+import { createSamples } from './samples'
 import { createStore } from './store'
 
 export function registerIpc(logPath: string): void {
   const store = createStore(app.getPath('userData'))
+  const samples = createSamples(app.getPath('userData'))
   const { content: contentDir, benchmarkWav } = resourcePaths({
     packaged: app.isPackaged,
     resourcesPath: process.resourcesPath,
@@ -78,7 +80,7 @@ export function registerIpc(logPath: string): void {
         ? systemPreferences.askForMediaAccess('microphone')
         : true
     },
-    async transcribe(wav: Uint8Array, expected?: string) {
+    async transcribe(wav: Uint8Array, expected?: string, hint?: string) {
       let samples: Float32Array
       try {
         samples = decodeWav(wav).samples
@@ -89,7 +91,7 @@ export function registerIpc(logPath: string): void {
       // A biased transcript cannot hide mispronunciations: pronunciation is scored from the audio below.
       const r = await transcriber.transcribe(samples, {
         model: tier ? STT_BY_TIER[tier] : undefined,
-        expected
+        prompt: expected?.trim() || hint
       })
       if (!r.ok || !expected?.trim() || !pronunciationEnabled) return r
       try {
@@ -113,7 +115,16 @@ export function registerIpc(logPath: string): void {
     aiStatus: () => (aiStatus = setup.status()),
     async openLogs() {
       shell.showItemInFolder(logPath)
-    }
+    },
+    getSettings: () => samples.getSettings(),
+    setSaveSamples: (on: boolean) => samples.setSaveSamples(on),
+    saveSample: (sample: Sample) => samples.save(sample),
+    async openSamples() {
+      await mkdir(samples.dir, { recursive: true })
+      const err = await shell.openPath(samples.dir)
+      if (err) throw new Error(err)
+    },
+    deleteSamples: () => samples.remove()
   }
 
   for (const name of Object.keys(handlers) as (keyof typeof handlers)[]) {

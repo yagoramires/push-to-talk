@@ -152,6 +152,9 @@ export function wordDiff(expected: string, actual: string): WordDiff[] {
 // Slot `*` in an accepted answer = 1-3 free words (a country, a name). '…' never survives normalize(), so it is a safe token.
 const SLOT = '…'
 export const showAccepted = (a: string): string => a.replace(/\*/g, SLOT)
+/** Whisper prompt from an accepted answer: slots dropped, so the free words are not biased. */
+export const recognitionHint = (a: string): string =>
+  a.replace(/\*/g, ' ').replace(/\s+/g, ' ').trim()
 const normAccepted = (a: string): string => a.split('*').map(normalize).join(` ${SLOT} `).trim()
 const matchesSlots = (n: string, t: string): boolean =>
   new RegExp(`^${n.replaceAll(SLOT, '\\S+(?: \\S+){0,2}')}$`).test(t)

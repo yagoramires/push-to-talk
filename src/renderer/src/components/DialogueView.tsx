@@ -60,9 +60,16 @@ export default function DialogueView({
                   t.cue_pt
                 )}
               </p>
+              {answer?.verdict === 'error' && answer.transcript && !exam && (
+                <p>
+                  <span className="muted">Resposta esperada: </span>
+                  <strong lang="en">{showAccepted(t.accepted[0])}</strong>
+                </p>
+              )}
               {!answer && (
                 <SpokenAnswer
                   key={n}
+                  exerciseId={`${ex.id}#${n + 1}`}
                   check={t}
                   mode={mode}
                   exam={exam}

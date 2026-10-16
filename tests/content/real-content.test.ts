@@ -69,7 +69,10 @@ test('every listened text has bundled audio (run npm run audio)', async () => {
 test('practice bank: 24..32 items, at least 60% spoken, at least one dialogue per unit', async () => {
   for (const u of (await course).units) {
     const n = u.practice.length
-    expect(withPractice(u).some((e) => e.kind === 'dialogue'), `${u.id} dialogue`).toBe(true)
+    expect(
+      withPractice(u).some((e) => e.kind === 'dialogue'),
+      `${u.id} dialogue`
+    ).toBe(true)
     expect(n, u.id).toBeGreaterThanOrEqual(24)
     expect(n, u.id).toBeLessThanOrEqual(32)
     const spoken = u.practice.filter((e) => (SPOKEN_KINDS as readonly string[]).includes(e.kind))

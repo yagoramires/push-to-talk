@@ -44,9 +44,9 @@ describe.each([STT_MODEL, STT_BY_TIER.strong])('real %s', (model) => {
       configureModels(cacheDir, download)
       const t = createTranscriber()
       const plain = await t.transcribe(age(), { model })
-      const prompted = await t.transcribe(age(), { model, expected: 'I am twenty-five years old.' })
+      const prompted = await t.transcribe(age(), { model, prompt: 'I am twenty-five years old.' })
       // a wrong expected sentence must not be echoed back: the audio still wins
-      const wrong = await t.transcribe(age(), { model, expected: 'I am thirty years old.' })
+      const wrong = await t.transcribe(age(), { model, prompt: 'I am thirty years old.' })
       await t.dispose()
       for (const r of [plain, prompted, wrong]) {
         expect(r.ok && checkAnswer(r.text, accepted).verdict).toBe('correct')

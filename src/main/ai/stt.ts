@@ -82,10 +82,10 @@ async function load(repo: string): Promise<Loaded> {
 }
 
 export function createTranscriber(): {
-  /** model falls back to base when absent; expected (the sentence the learner should say) biases decoding toward its words. */
+  /** model falls back to base when absent; prompt (the sentence the learner should say) biases decoding toward its words. */
   transcribe(
     samples: Float32Array,
-    o?: { model?: string; expected?: string }
+    o?: { model?: string; prompt?: string }
   ): Promise<TranscribeResult>
   dispose(): Promise<void>
 } {
@@ -113,7 +113,7 @@ export function createTranscriber(): {
           loaded = { repo, p }
         }
         const l = await loaded.p
-        return { ok: true, text: cleanTranscript(await l.run(samples, o.expected?.trim())) }
+        return { ok: true, text: cleanTranscript(await l.run(samples, o.prompt?.trim())) }
       } catch (e) {
         return { ok: false, reason: 'failed', message: String(e) }
       }

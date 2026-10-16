@@ -10,6 +10,7 @@ import {
   checkChoice,
   checkFill,
   checkMatch,
+  recognitionHint,
   checkOrder,
   normalize,
   showAccepted,
@@ -157,4 +158,10 @@ test('slot * still lets commonErrors flag the answer', () => {
 })
 test('showAccepted renders the slot as …', () => {
   expect(showAccepted('My name is *.')).toBe('My name is ….')
+})
+
+test('recognitionHint drops slots and collapses spaces', () => {
+  expect(recognitionHint("I'm from *.")).toBe("I'm from .")
+  expect(recognitionHint('My name is * and I live in *')).toBe('My name is and I live in')
+  expect(recognitionHint('  Nice   to meet you ')).toBe('Nice to meet you')
 })

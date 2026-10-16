@@ -18,6 +18,27 @@ export default function SetupScreen({ status, onClose }: Props): React.JSX.Eleme
   const [progress, setProgress] = useState<AiProgress | null>(null)
 
   const lastPhase = useRef<AiProgress['phase'] | null>(null)
+  const [saveSamples, setSaveSamples] = useState(false)
+
+  useEffect(() => {
+    window.api
+      .getSettings()
+      .then((s) => setSaveSamples(s.saveSamples))
+      .catch((e) => console.warn('getSettings failed', e))
+  }, [])
+
+  function toggleSamples(on: boolean): void {
+    setSaveSamples(on)
+    window.api.setSaveSamples(on).catch((e) => {
+      console.warn('setSaveSamples failed', e)
+      setSaveSamples(!on)
+    })
+  }
+
+  function deleteSamples(): void {
+    if (window.confirm('Apagar todas as gravações e textos guardados? Isso não pode ser desfeito.'))
+      window.api.deleteSamples().catch((e) => console.warn('deleteSamples failed', e))
+  }
 
   useEffect(
     () =>
@@ -139,6 +160,31 @@ export default function SetupScreen({ status, onClose }: Props): React.JSX.Eleme
               onClick={() => void window.api.openLogs()}
             >
               Abrir pasta de logs
+            </button>
+          </div>
+          <p>
+            <label>
+              <input
+                type="checkbox"
+                checked={saveSamples}
+                onChange={(e) => toggleSamples(e.target.checked)}
+              />{' '}
+              Guardar o que eu falo (áudio e texto) para melhorar o reconhecimento — fica só neste
+              computador
+            </label>
+          </p>
+          <div className="actions">
+            <button
+              type="button"
+              className="btn btn-secondary"
+              onClick={() =>
+                void window.api.openSamples().catch((e) => console.warn('openSamples failed', e))
+              }
+            >
+              Abrir amostras
+            </button>
+            <button type="button" className="btn btn-secondary" onClick={deleteSamples}>
+              Apagar amostras
             </button>
           </div>
           {!changing && (

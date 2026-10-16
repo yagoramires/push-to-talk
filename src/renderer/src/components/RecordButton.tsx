@@ -30,13 +30,17 @@ const STOP_ICON = (
 type Props = {
   /** Text the learner should say; enables pronunciation scoring when the AI has it. */
   expected?: string
-  onTranscript(text: string, pronunciation?: PronunciationResult): void
+  /** Prompt-only recognition hint, used when there is no expected sentence. */
+  hint?: string
+  /** wav: the recorded answer, for the opt-in voice samples. */
+  onTranscript(text: string, pronunciation: PronunciationResult | undefined, wav: Uint8Array): void
   /** Mic or transcription unavailable; the message is in Portuguese, ready to show. */
   onFailure(message: string): void
 }
 
 export default function RecordButton({
   expected,
+  hint,
   onTranscript,
   onFailure
 }: Props): React.JSX.Element {
@@ -72,9 +76,10 @@ export default function RecordButton({
     recorder.current = null
     setStatus('transcribing')
     try {
-      const r = await window.api.transcribe(encodeWav(await rec.stop(), SAMPLE_RATE), expected)
+      const wav = encodeWav(await rec.stop(), SAMPLE_RATE)
+      const r = await window.api.transcribe(wav, expected, hint)
       setStatus('idle')
-      if (r.ok) onTranscript(r.text, r.pronunciation)
+      if (r.ok) onTranscript(r.text, r.pronunciation, wav)
       else onFailure(`A transcrição não está disponível (${r.message}).`)
     } catch (e) {
       setStatus('idle')

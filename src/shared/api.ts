@@ -1,5 +1,6 @@
 import type { Course } from './content'
-import type { ProfileProgress } from './progress'
+import type { FinalVerdict } from './matcher'
+import type { Mode, ProfileProgress } from './progress'
 
 export type Profile = { id: string; name: string; createdAt: string }
 export type AppState = {
@@ -27,13 +28,32 @@ export interface AppApi {
   createProfile(name: string): Promise<Profile>
   saveProgress(progress: ProfileProgress): Promise<void>
   ensureMic(): Promise<boolean>
-  transcribe(wav: Uint8Array, expected?: string): Promise<TranscribeResult>
+  /** expected: prompt + pronunciation scoring; hint: prompt only (used when expected is absent). */
+  transcribe(wav: Uint8Array, expected?: string, hint?: string): Promise<TranscribeResult>
   evaluateFreeSpeak(input: FreeSpeakInput): Promise<FreeSpeakEval>
   aiStatus(): Promise<AiStatus>
   setupAi(tier?: Tier): Promise<AiStatus>
   onAiProgress(cb: (p: AiProgress) => void): () => void
   /** Shows main.log in Finder/Explorer, to send back when something goes wrong. */
   openLogs(): Promise<void>
+  getSettings(): Promise<Settings>
+  setSaveSamples(on: boolean): Promise<void>
+  /** Kept only when settings.saveSamples is on (checked in main); otherwise a no-op. */
+  saveSample(sample: Sample): Promise<void>
+  openSamples(): Promise<void>
+  deleteSamples(): Promise<void>
+}
+
+export type Settings = { saveSamples: boolean }
+/** One spoken answer with its final verdict, saved to improve recognition. */
+export type Sample = {
+  exerciseId: string
+  mode: Mode
+  wav: Uint8Array
+  expected?: string
+  hint?: string
+  transcript: string
+  verdict: FinalVerdict
 }
 
 export type AiStatus = {

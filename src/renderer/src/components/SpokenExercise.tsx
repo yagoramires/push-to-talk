@@ -1,9 +1,11 @@
-import { useState } from 'react'
-import type { FreeSpeakEval, PronunciationResult } from '../../../shared/api'
+import { useRef, useState } from 'react'
+import type { FreeSpeakEval, PronunciationResult, Sample } from '../../../shared/api'
 import type { CommonError, FreeSpeak } from '../../../shared/content'
 import {
   checkAnswer,
   normalize,
+  recognitionHint,
+  showAccepted,
   type CheckResult,
   type FinalVerdict
 } from '../../../shared/matcher'
@@ -16,6 +18,21 @@ type OnFinal = (v: FinalVerdict, transcript: string) => void
 const UNCLEAR = 'Não entendi, tente de novo.'
 
 const TEACHER_MARKS = { correctLabel: 'Professor: certo', errorLabel: 'Professor: errado' }
+
+/** Fire-and-forget: main keeps it only when the learner opted in; never blocks the exercise. */
+function saveSample(sample: Sample): void {
+  window.api.saveSample(sample).catch((e) => console.warn('saveSample failed', e))
+}
+
+/** Without a transcript (guided, mic failed) the learner or teacher still needs to see the answer. */
+function Expected({ accepted }: { accepted: string[] }): React.JSX.Element {
+  return (
+    <p>
+      <span className="muted">Resposta esperada: </span>
+      <strong lang="en">{showAccepted(accepted[0])}</strong>
+    </p>
+  )
+}
 
 function ManualMark({
   onFinal,
@@ -49,12 +66,15 @@ type SpokenState =
  * Guided mode has no mic or AI: the teacher's verdict is the final answer.
  */
 export function SpokenAnswer({
+  exerciseId,
   check,
   expected,
   mode,
   exam,
   onFinal
 }: {
+  /** Names the saved voice sample (opt-in). */
+  exerciseId: string
   check: { accepted: string[]; commonErrors: CommonError[] }
   /** Sentence to score pronunciation against (repeat prompt, vocab example). */
   expected?: string
@@ -63,8 +83,17 @@ export function SpokenAnswer({
   onFinal: OnFinal
 }): React.JSX.Element {
   const [state, setState] = useState<SpokenState>({ kind: 'idle' })
+  const wav = useRef<Uint8Array | null>(null)
+  // Without an expected sentence, the first accepted answer still steers recognition (prompt only).
+  const hint = expected ? undefined : recognitionHint(check.accepted[0])
 
-  if (mode === 'guided') return <ManualMark {...TEACHER_MARKS} onFinal={(v) => onFinal(v, '')} />
+  if (mode === 'guided')
+    return (
+      <>
+        {!exam && <Expected accepted={check.accepted} />}
+        <ManualMark {...TEACHER_MARKS} onFinal={(v) => onFinal(v, '')} />
+      </>
+    )
   if (state.kind === 'result')
     return (
       <ResultView
@@ -73,7 +102,12 @@ export function SpokenAnswer({
         mode={mode}
         pronunciation={state.pronunciation}
         exam={exam}
-        onFinal={(v) => onFinal(v, state.transcript)}
+        onFinal={(verdict) => {
+          const { transcript } = state
+          if (wav.current)
+            saveSample({ exerciseId, mode, wav: wav.current, expected, hint, transcript, verdict })
+          onFinal(verdict, transcript)
+        }}
       />
     )
   if (state.kind === 'failed')
@@ -81,6 +115,7 @@ export function SpokenAnswer({
       <div className="notice notice-warn" role="alert">
         <p>{state.message}</p>
         <p>Você pode marcar sozinho se acertou e seguir com a sessão.</p>
+        {!exam && <Expected accepted={check.accepted} />}
         <ManualMark onFinal={(v) => onFinal(v, '')} />
       </div>
     )
@@ -88,7 +123,9 @@ export function SpokenAnswer({
     <div className="answer">
       <RecordButton
         expected={expected}
-        onTranscript={(text, pronunciation) => {
+        hint={hint}
+        onTranscript={(text, pronunciation, audio) => {
+          wav.current = audio
           const result = checkAnswer(text, check)
           setState(
             result.verdict === 'unclear'
@@ -128,6 +165,12 @@ export function FreeSpeakAnswer({
 }): React.JSX.Element {
   const [state, setState] = useState<FreeState>({ kind: 'idle' })
   const [checked, setChecked] = useState<boolean[]>(() => exercise.guidelines_pt.map(() => false))
+  const wav = useRef<Uint8Array | null>(null)
+  const final: OnFinal = (verdict, transcript) => {
+    if (wav.current && transcript)
+      saveSample({ exerciseId: exercise.id, mode, wav: wav.current, transcript, verdict })
+    onFinal(verdict, transcript)
+  }
 
   async function evaluate(transcript: string): Promise<void> {
     setState({ kind: 'evaluating', transcript })
@@ -158,9 +201,11 @@ export function FreeSpeakAnswer({
     return (
       <div className="answer">
         <RecordButton
-          onTranscript={(text) =>
-            normalize(text) ? void evaluate(text) : setState({ kind: 'unclear' })
-          }
+          onTranscript={(text, _pronunciation, audio) => {
+            wav.current = audio
+            if (normalize(text)) void evaluate(text)
+            else setState({ kind: 'unclear' })
+          }}
           onFailure={(message) => setState({ kind: 'failed', message })}
         />
         <p className="notice" aria-live="polite">
@@ -199,7 +244,7 @@ export function FreeSpeakAnswer({
             type="button"
             className="btn btn-primary"
             autoFocus
-            onClick={() => onFinal(ev.correct ? 'correct' : 'error', transcript)}
+            onClick={() => final(ev.correct ? 'correct' : 'error', transcript)}
           >
             Continuar
           </button>
@@ -207,7 +252,7 @@ export function FreeSpeakAnswer({
             <button
               type="button"
               className="btn btn-secondary"
-              onClick={() => onFinal('correct', transcript)}
+              onClick={() => final('correct', transcript)}
             >
               Acho que acertei
             </button>
@@ -253,7 +298,7 @@ export function FreeSpeakAnswer({
       <ManualMark
         correctLabel="Consegui"
         errorLabel="Preciso praticar mais"
-        onFinal={(v) => onFinal(v, transcript)}
+        onFinal={(v) => final(v, transcript)}
       />
     </section>
   )
