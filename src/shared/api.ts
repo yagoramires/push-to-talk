@@ -21,3 +21,13 @@ export interface AppApi {
   ensureMic(): Promise<boolean>
   transcribe(wav: Uint8Array): Promise<TranscribeResult>
 }
+
+export type Tier = 'light' | 'medium' | 'strong'
+export type Hardware = {
+  platform: string
+  arch: string
+  totalMemGB: number
+  cpuModel: string
+  cores: number
+  hasDiscreteGpu: boolean
+}
