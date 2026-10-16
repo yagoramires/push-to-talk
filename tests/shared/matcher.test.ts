@@ -12,6 +12,7 @@ import {
   checkMatch,
   checkOrder,
   normalize,
+  showAccepted,
   toFinalVerdict,
   wordDiff
 } from '../../src/shared/matcher'
@@ -121,4 +122,39 @@ test('checkFill uses spoken normalization (contractions, case)', () => {
     commonErrors: []
   }
   expect(checkFill(f, ' IS ').verdict).toBe('correct')
+})
+
+const slot = {
+  accepted: ['Yes, I went to *', 'My name is *'],
+  commonErrors: [
+    {
+      id: 'go-past',
+      match: '\\bi go to\\b',
+      explanation_pt: 'Passado: went.',
+      correction_en: 'Yes, I went to Chile.'
+    }
+  ]
+}
+test('slot * accepts any 1-3 words (country, name)', () => {
+  expect(checkAnswer('Yes, I went to Paris', slot).verdict).toBe('correct')
+  expect(checkAnswer('yes i went to new york city', slot).verdict).toBe('correct')
+  expect(checkAnswer('My name is Yaggle', slot).verdict).toBe('correct')
+})
+test('slot * needs at least one word', () => {
+  expect(checkAnswer('yes i went to', slot).verdict).not.toBe('correct')
+})
+test('slot * with 4+ words falls back to similarity; filler words show as ok', () => {
+  const r = checkAnswer('yes i went to new york city usa', slot)
+  expect(r.verdict).toBe('almost')
+  expect(r.closest).toBe('Yes, I went to …')
+  expect(r.diff?.filter((d) => d.status !== 'ok')).toEqual([{ word: 'usa', status: 'extra' }])
+})
+test('slot * still lets commonErrors flag the answer', () => {
+  const r = checkAnswer('yes i go to paris', slot)
+  expect(r.verdict).toBe('error')
+  expect(r.matchedError?.id).toBe('go-past')
+  expect(r.closest).toBe('Yes, I went to …')
+})
+test('showAccepted renders the slot as …', () => {
+  expect(showAccepted('My name is *.')).toBe('My name is ….')
 })
