@@ -40,8 +40,8 @@ export function createAiSetup(o: {
       .then(JSON.parse)
       .catch(() => null)) as AiState | null
     const gguf = s && LLM_BY_TIER[s.tier]
-    // Before the first run there is no saved state: detect now so the setup screen can show it.
-    const hardware = s?.hardware ?? (await o.detect().catch(() => null))
+    // Detect fresh so a fix in detection (or a new GPU) shows up; the saved value is the fallback.
+    const hardware = (await o.detect().catch(() => null)) ?? s?.hardware ?? null
     const rtf = s?.rtf ?? null
     return {
       tier: gguf ? s.tier : null,
