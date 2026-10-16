@@ -80,6 +80,9 @@ export default function ExamScreen({
           <div className="muted small">
             Exercício {index + 1} de {items.length} · {mode === 'solo' ? 'solo' : 'guiada'}
           </div>
+          <div className="progress-bar" aria-hidden="true">
+            <span style={{ width: `${(index / items.length) * 100}%` }} />
+          </div>
         </div>
         {/* Informational only: the exam never ends by itself. */}
         <div className={`timer${remaining < 0 ? ' timer-over' : ''}`} role="timer">
