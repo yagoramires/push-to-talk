@@ -1,0 +1,520 @@
+{
+  "id": "b2-10-reported-speech",
+  "level": "B2",
+  "order": 10,
+  "title_pt": "Discurso indireto na conversa",
+  "title_en": "Reported speech in conversation",
+  "objective_pt": "Contar o que outra pessoa disse, pediu ou perguntou (\"She told me...\", \"He asked if...\") numa conversa natural.",
+  "blocks": [
+    {
+      "id": "b2-10-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Puxar fofocas leves e recados para ver como o aluno reporta falas.",
+        "prompts": [
+          "What did your boss say in your last meeting?",
+          "Has anyone given you good news recently? What did they say?"
+        ],
+        "watchFor": [
+          "Dizer \"she said me\"; com pessoa é \"she told me\" ou \"she said to me\".",
+          "Manter o tempo verbal original sem necessidade quando o contexto já é passado (aceitável na fala, mas observar)."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-10-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repeat out loud.",
+          "prompt": "She told me she was leaving the company next month.",
+          "accepted": [
+            "She told me she was leaving the company next month.",
+            "She told me that she was leaving the company next month."
+          ],
+          "commonErrors": [
+            {
+              "id": "said-me",
+              "match": "\\bshe said me\\b",
+              "explanation_pt": "\"Say\" não leva a pessoa direto. Use \"told me\" ou \"said to me\".",
+              "correction_en": "She told me she was leaving the company next month."
+            }
+          ]
+        },
+        {
+          "id": "b2-10-warm-2",
+          "kind": "choice",
+          "instruction_pt": "Which sentence is correct?",
+          "options": [
+            "He told me he was tired.",
+            "He said me he was tired.",
+            "He told that he was tired."
+          ],
+          "answer": 0,
+          "explanation_pt": "\"Tell\" precisa da pessoa (\"told me\"). \"Say\" funciona sem a pessoa (\"he said he was tired\")."
+        },
+        {
+          "id": "b2-10-warm-3",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Ele me disse que estava ocupado.\"",
+          "accepted": [
+            "He told me he was busy",
+            "He told me that he was busy",
+            "He said he was busy",
+            "He said that he was busy",
+            "He said to me that he was busy",
+            "He said to me he was busy"
+          ],
+          "commonErrors": [
+            {
+              "id": "said-me",
+              "match": "\\bhe said me\\b",
+              "explanation_pt": "\"Say\" não aceita a pessoa direto. Diga \"He told me\" ou \"He said\".",
+              "correction_en": "He told me he was busy."
+            },
+            {
+              "id": "told-that",
+              "match": "^he told that\\b",
+              "explanation_pt": "\"Tell\" precisa dizer para quem: \"He told me that...\". Sem a pessoa, use \"said\".",
+              "correction_en": "He told me he was busy."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-10-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Aprender verbos de relato além de \"say\" e \"tell\": mention, explain, ask, warn, admit, promise, suggest.",
+        "prompts": [
+          "Did anyone warn you about something recently?",
+          "What did your friend suggest last time you asked for advice?"
+        ],
+        "watchFor": [
+          "Dizer \"he suggested me to go\"; o natural é \"he suggested (that) I go\" ou \"he suggested going\".",
+          "Dizer \"she explained me\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-10-vocab-1",
+          "kind": "vocab",
+          "word_en": "to mention",
+          "meaning_pt": "mencionar, comentar",
+          "example_en": "She mentioned that the office would be closed on Friday."
+        },
+        {
+          "id": "b2-10-vocab-2",
+          "kind": "vocab",
+          "word_en": "to warn",
+          "meaning_pt": "avisar (de um perigo), alertar",
+          "example_en": "He warned me not to take the highway at rush hour."
+        },
+        {
+          "id": "b2-10-vocab-3",
+          "kind": "vocab",
+          "word_en": "to admit",
+          "meaning_pt": "admitir, reconhecer",
+          "example_en": "She admitted that she had forgotten the meeting."
+        },
+        {
+          "id": "b2-10-vocab-4",
+          "kind": "match",
+          "instruction_pt": "Match each verb to its meaning.",
+          "pairs": [
+            {
+              "en": "to suggest",
+              "pt": "sugerir"
+            },
+            {
+              "en": "to promise",
+              "pt": "prometer"
+            },
+            {
+              "en": "to deny",
+              "pt": "negar"
+            },
+            {
+              "en": "to remind",
+              "pt": "lembrar alguém de algo"
+            },
+            {
+              "en": "to complain",
+              "pt": "reclamar"
+            }
+          ]
+        },
+        {
+          "id": "b2-10-vocab-5",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Ela me lembrou de ligar para o cliente.\"",
+          "accepted": [
+            "She reminded me to call the client",
+            "She reminded me to call the customer",
+            "She reminded me to phone the client",
+            "She reminded me that I had to call the client",
+            "She reminded me I needed to call the client",
+            "She reminded me to give the client a call"
+          ],
+          "commonErrors": [
+            {
+              "id": "remembered-me",
+              "match": "\\bshe remembered me\\b",
+              "explanation_pt": "\"Remember\" é lembrar você mesmo. Para fazer outra pessoa lembrar, use \"remind\": \"She reminded me to...\".",
+              "correction_en": "She reminded me to call the client."
+            },
+            {
+              "id": "reminded-me-of-call",
+              "match": "\\breminded me (of|about) call",
+              "explanation_pt": "Para uma tarefa, use \"remind someone to do something\": \"reminded me to call\".",
+              "correction_en": "She reminded me to call the client."
+            },
+            {
+              "id": "call-to-client",
+              "match": "\\bcall (to|for) the (client|customer)\\b",
+              "explanation_pt": "\"Ligar para\" alguém é \"call someone\", sem preposição.",
+              "correction_en": "She reminded me to call the client."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-10-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Treinar a fala encadeada em \"told me\", \"asked if\" e \"said that\" (o \"that\" fraco).",
+        "prompts": [
+          "Say \"he asked if\" quickly. Does it sound like one word?",
+          "How do you say \"that\" in \"she said that\"?"
+        ],
+        "watchFor": [
+          "Pronunciar \"asked\" como \"ask-ed\"; soa \"askt\".",
+          "Pronunciar o \"that\" de relato com força; ele fica fraco (\"thət\")."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-10-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repeat. \"Asked if\" sounds like \"ask-tif\".",
+          "prompt": "She asked if I could stay a bit longer.",
+          "accepted": [
+            "She asked if I could stay a bit longer.",
+            "She asked whether I could stay a bit longer."
+          ],
+          "commonErrors": [
+            {
+              "id": "asked-if-could-i",
+              "match": "\\basked if could i\\b",
+              "explanation_pt": "Em pergunta reportada não há inversão: \"asked if I could\".",
+              "correction_en": "She asked if I could stay a bit longer."
+            }
+          ]
+        },
+        {
+          "id": "b2-10-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repeat. Keep \"that\" weak and quick.",
+          "prompt": "He said that the train had already left.",
+          "accepted": [
+            "He said that the train had already left.",
+            "He said the train had already left."
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b2-10-pron-3",
+          "kind": "choice",
+          "instruction_pt": "How does the \"-ed\" in \"asked\" sound?",
+          "options": ["like \"t\": askt", "like \"id\": ask-id", "like \"d\": askd"],
+          "answer": 0,
+          "explanation_pt": "Depois de som sem vibração, como \"k\", o \"-ed\" soa \"t\": \"askt\"."
+        }
+      ]
+    },
+    {
+      "id": "b2-10-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Ouvir uma fala direta e repassá-la para outra pessoa com discurso indireto.",
+        "prompts": [
+          "Your colleague left a message. What did she say?",
+          "What did the doctor ask you?"
+        ],
+        "watchFor": [
+          "Manter a ordem de pergunta no relato: \"he asked where was the station\".",
+          "Esquecer de trocar os pronomes (\"I\" vira \"she\")."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-10-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Listen to Mark. Then choose the correct report.",
+          "listen": "I'll send you the files tomorrow morning.",
+          "options": [
+            "Mark said he would send me the files the next morning.",
+            "Mark said I will send you the files tomorrow.",
+            "Mark told he sends the files."
+          ],
+          "answer": 0,
+          "explanation_pt": "No relato, \"I'll\" vira \"he would\", \"you\" vira \"me\", e \"tomorrow morning\" pode virar \"the next morning\"."
+        },
+        {
+          "id": "b2-10-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Listen to your colleague. Then tell your boss what she said, starting with \"She said...\".",
+          "listen": "I'm stuck in traffic, so I'll be about twenty minutes late.",
+          "accepted": [
+            "She said she was stuck in traffic and she would be about twenty minutes late",
+            "She said she was stuck in traffic, so she'd be about twenty minutes late",
+            "She said she was stuck in traffic and would be twenty minutes late",
+            "She said she's stuck in traffic and she'll be about twenty minutes late",
+            "She said she's stuck in traffic, so she'll be twenty minutes late",
+            "She said she'd be about twenty minutes late because she was stuck in traffic",
+            "She said she would be twenty minutes late because of the traffic",
+            "She said she was stuck in traffic",
+            "She said she'd be about twenty minutes late",
+            "She said she'll be twenty minutes late"
+          ],
+          "commonErrors": [
+            {
+              "id": "said-i-am",
+              "match": "\\bshe said i (am|will)\\b",
+              "explanation_pt": "Ao relatar, troque o pronome: o \"I\" dela vira \"she\": \"She said she was...\".",
+              "correction_en": "She said she was stuck in traffic and would be about twenty minutes late."
+            },
+            {
+              "id": "said-me",
+              "match": "\\bshe said me\\b",
+              "explanation_pt": "\"Say\" não leva a pessoa direto. Use \"She told me...\" ou \"She said...\".",
+              "correction_en": "She told me she was stuck in traffic."
+            },
+            {
+              "id": "in-the-traffic",
+              "match": "\\bstuck (on|in) the traffic\\b",
+              "explanation_pt": "A expressão é \"stuck in traffic\", sem \"the\".",
+              "correction_en": "She said she was stuck in traffic."
+            }
+          ]
+        },
+        {
+          "id": "b2-10-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Listen to the question. Then report it, starting with \"He asked me...\".",
+          "listen": "Where did you buy that jacket?",
+          "accepted": [
+            "He asked me where I had bought that jacket",
+            "He asked me where I bought that jacket",
+            "He asked me where I'd bought that jacket",
+            "He asked me where I bought my jacket",
+            "He asked me where I had bought my jacket",
+            "He asked me where I got that jacket",
+            "He asked me where I'd got my jacket",
+            "He asked me where I bought the jacket"
+          ],
+          "commonErrors": [
+            {
+              "id": "asked-where-did",
+              "match": "\\basked me where (did|had) i\\b",
+              "explanation_pt": "Na pergunta reportada não há inversão nem \"did\": \"He asked me where I bought...\".",
+              "correction_en": "He asked me where I had bought that jacket."
+            },
+            {
+              "id": "asked-me-where-you",
+              "match": "\\basked me where you\\b",
+              "explanation_pt": "Ele perguntou sobre você, então \"you\" vira \"I\": \"where I bought\".",
+              "correction_en": "He asked me where I bought that jacket."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-10-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Contar uma conversa que aconteceu (no trabalho, com um amigo, com o médico) usando vários verbos de relato.",
+        "prompts": [
+          "Tell me about a conversation that surprised you.",
+          "What exactly did they say? And what did you answer?",
+          "Did they ask you anything?"
+        ],
+        "watchFor": [
+          "Usar só \"said\"; incentivar \"told\", \"asked\", \"mentioned\", \"admitted\".",
+          "Dizer \"he asked me if I can\" quando o contexto pede \"could\" (aceitável na fala; comentar se repetir)."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-10-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Ela me perguntou se eu queria ir à festa.\"",
+          "accepted": [
+            "She asked me if I wanted to go to the party",
+            "She asked me whether I wanted to go to the party",
+            "She asked if I wanted to go to the party",
+            "She asked whether I wanted to go to the party",
+            "She asked me if I wanted to come to the party",
+            "She asked me if I'd like to go to the party",
+            "She asked me if I wanted to go to the party with her"
+          ],
+          "commonErrors": [
+            {
+              "id": "asked-did-i-want",
+              "match": "\\basked (me )?(if )?(did|do) i want\\b",
+              "explanation_pt": "Em pergunta reportada, a ordem é de afirmação e sem \"did\": \"asked me if I wanted\".",
+              "correction_en": "She asked me if I wanted to go to the party."
+            },
+            {
+              "id": "asked-me-want",
+              "match": "\\basked me (if )?i want to\\b",
+              "explanation_pt": "Com \"asked\" no passado, o verbo da pergunta normalmente também vai para o passado: \"if I wanted\".",
+              "correction_en": "She asked me if I wanted to go to the party."
+            },
+            {
+              "id": "asked-for-me",
+              "match": "\\basked for me if\\b",
+              "explanation_pt": "\"Ask for\" é pedir algo. Para perguntar, é \"asked me if\".",
+              "correction_en": "She asked me if I wanted to go to the party."
+            }
+          ]
+        },
+        {
+          "id": "b2-10-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Meu chefe me pediu para terminar o relatório até sexta.\"",
+          "accepted": [
+            "My boss asked me to finish the report by Friday",
+            "My boss told me to finish the report by Friday",
+            "My boss asked me to get the report done by Friday",
+            "My boss asked me to have the report finished by Friday",
+            "My manager asked me to finish the report by Friday",
+            "My boss asked me to finish the report before Friday",
+            "My boss wants me to finish the report by Friday"
+          ],
+          "commonErrors": [
+            {
+              "id": "asked-for-me",
+              "match": "\\basked for me to\\b",
+              "explanation_pt": "\"Pedir para alguém fazer algo\" é \"ask someone to do something\": \"asked me to finish\", sem \"for\".",
+              "correction_en": "My boss asked me to finish the report by Friday."
+            },
+            {
+              "id": "asked-me-finish",
+              "match": "\\basked me (finish|that i finish)\\b",
+              "explanation_pt": "Depois de \"asked me\" use \"to\" + verbo: \"asked me to finish\".",
+              "correction_en": "My boss asked me to finish the report by Friday."
+            },
+            {
+              "id": "until-friday",
+              "match": "\\buntil friday\\b",
+              "explanation_pt": "\"Até sexta\" como prazo é \"by Friday\". \"Until Friday\" é algo que continua até sexta.",
+              "correction_en": "My boss asked me to finish the report by Friday."
+            }
+          ]
+        },
+        {
+          "id": "b2-10-conv-3",
+          "kind": "order",
+          "instruction_pt": "Put the words in order.",
+          "accepted": ["He asked me what time the meeting started"]
+        },
+        {
+          "id": "b2-10-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Tell your friend about a conversation you had recently. Report what was said and asked.",
+          "prompt_en": "You look surprised. What happened? What did they tell you?",
+          "guidelines_pt": [
+            "Report statements: \"She told me that...\", \"He said...\"",
+            "Report a question: \"Then she asked me if...\" or \"...asked me where...\"",
+            "Use one more verb: \"mentioned\", \"admitted\", \"warned me\", \"promised\"."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-10-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Revisar \"say\" e \"tell\", perguntas reportadas e \"remind\" e \"remember\".",
+        "prompts": [
+          "What did you tell your family about this course?",
+          "What did your teacher ask you last time?"
+        ],
+        "watchFor": ["\"Said me\".", "Inversão em pergunta reportada."]
+      },
+      "exercises": [
+        {
+          "id": "b2-10-rev-1",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Ele prometeu que ia me ajudar.\"",
+          "accepted": [
+            "He promised he would help me",
+            "He promised that he would help me",
+            "He promised he'd help me",
+            "He promised to help me",
+            "He promised me he would help me",
+            "He promised me that he'd help me",
+            "He promised he was going to help me"
+          ],
+          "commonErrors": [
+            {
+              "id": "promised-will",
+              "match": "\\bpromised (that )?he will\\b",
+              "explanation_pt": "Como \"promised\" está no passado, \"will\" vira \"would\": \"He promised he would help me\".",
+              "correction_en": "He promised he would help me."
+            },
+            {
+              "id": "promised-me-help",
+              "match": "\\bpromised (me )?help me\\b",
+              "explanation_pt": "Use \"promised to help\" ou \"promised he would help\".",
+              "correction_en": "He promised to help me."
+            }
+          ]
+        },
+        {
+          "id": "b2-10-rev-2",
+          "kind": "fill",
+          "instruction_pt": "Complete with \"said\" or \"told\".",
+          "sentence": "She ___ us that the meeting was cancelled.",
+          "accepted": ["told"],
+          "commonErrors": [
+            {
+              "id": "said-us",
+              "match": "^said$",
+              "explanation_pt": "Com a pessoa logo depois (\"us\"), usamos \"told\": \"She told us\". Ou \"She said that...\" sem \"us\".",
+              "correction_en": "She told us that the meeting was cancelled."
+            }
+          ]
+        },
+        {
+          "id": "b2-10-rev-3",
+          "kind": "choice",
+          "instruction_pt": "Which report is correct for: \"Are you hungry?\"",
+          "options": [
+            "She asked if I was hungry.",
+            "She asked was I hungry if.",
+            "She asked am I hungry."
+          ],
+          "answer": 0,
+          "explanation_pt": "Perguntas de sim ou não são reportadas com \"if\" ou \"whether\" e ordem de afirmação: \"if I was hungry\"."
+        },
+        {
+          "id": "b2-10-rev-4",
+          "kind": "repeat",
+          "instruction_pt": "To finish, repeat.",
+          "prompt": "Apparently, she said it was the best trip of her life.",
+          "accepted": ["Apparently, she said it was the best trip of her life."],
+          "commonErrors": []
+        }
+      ]
+    }
+  ]
+}

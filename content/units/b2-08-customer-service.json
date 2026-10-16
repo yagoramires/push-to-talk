@@ -1,0 +1,503 @@
+{
+  "id": "b2-08-customer-service",
+  "level": "B2",
+  "order": 8,
+  "title_pt": "Atendimento ao cliente",
+  "title_en": "Customer service",
+  "objective_pt": "Fazer uma reclamação formal e pedir reembolso ou troca, e também atender um cliente insatisfeito com educação.",
+  "blocks": [
+    {
+      "id": "b2-08-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Contar experiências boas e ruins com atendimento e ver como o aluno fala de problemas com produtos.",
+        "prompts": [
+          "Tell me about a bad customer service experience.",
+          "Do you prefer to call or to chat online?"
+        ],
+        "watchFor": [
+          "Dizer \"reclamation\"; \"reclamação\" é \"complaint\".",
+          "Dizer \"devolution\" querendo dizer \"devolução\"; é \"return\" ou \"refund\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-08-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repeat out loud.",
+          "prompt": "Hi, I'm calling about an order I placed last week.",
+          "accepted": [
+            "Hi, I'm calling about an order I placed last week.",
+            "Hi, I am calling about an order I placed last week.",
+            "Hello, I'm calling about an order I placed last week."
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b2-08-warm-2",
+          "kind": "choice",
+          "instruction_pt": "Which word means \"reclamação\"?",
+          "options": ["complaint", "reclamation", "claim back"],
+          "answer": 0,
+          "explanation_pt": "\"Reclamation\" é recuperação (de terra, de material). \"Reclamação\" é \"complaint\", e \"reclamar\" é \"complain\"."
+        },
+        {
+          "id": "b2-08-warm-3",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Eu gostaria de fazer uma reclamação.\"",
+          "accepted": [
+            "I'd like to make a complaint",
+            "I would like to make a complaint",
+            "I want to make a complaint",
+            "I'd like to file a complaint",
+            "I'd like to complain about something",
+            "I'd like to complain",
+            "I'd like to make a formal complaint",
+            "I'd like to report a problem"
+          ],
+          "commonErrors": [
+            {
+              "id": "reclamation",
+              "match": "\\breclam(ation|e)\\b",
+              "explanation_pt": "\"Reclamação\" é \"complaint\". \"Reclamation\" tem outro sentido (recuperação).",
+              "correction_en": "I'd like to make a complaint."
+            },
+            {
+              "id": "do-complaint",
+              "match": "\\bdo a complaint\\b",
+              "explanation_pt": "\"Fazer uma reclamação\" é \"make a complaint\", não \"do\".",
+              "correction_en": "I'd like to make a complaint."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-08-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Aprender vocabulário de atendimento: refund, replacement, faulty, look into, escalate, on hold.",
+        "prompts": [
+          "Have you ever asked for a refund?",
+          "How long were you on hold the last time you called a company?"
+        ],
+        "watchFor": [
+          "Dizer \"the product came broken\"; o natural é \"it arrived damaged\" ou \"it's faulty\".",
+          "Pronunciar \"refund\" com tônica no fim quando é substantivo; o substantivo é RE-fund."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-08-vocab-1",
+          "kind": "vocab",
+          "word_en": "refund",
+          "meaning_pt": "reembolso",
+          "example_en": "I'd like a full refund, please."
+        },
+        {
+          "id": "b2-08-vocab-2",
+          "kind": "vocab",
+          "word_en": "faulty",
+          "meaning_pt": "com defeito",
+          "example_en": "The charger was faulty, so I sent it back."
+        },
+        {
+          "id": "b2-08-vocab-3",
+          "kind": "vocab",
+          "word_en": "to look into",
+          "meaning_pt": "investigar, verificar",
+          "example_en": "I'll look into it and call you back today."
+        },
+        {
+          "id": "b2-08-vocab-4",
+          "kind": "match",
+          "instruction_pt": "Match each expression to its meaning.",
+          "pairs": [
+            { "en": "replacement", "pt": "troca, substituto" },
+            { "en": "on hold", "pt": "esperando na linha" },
+            { "en": "receipt", "pt": "recibo, nota fiscal" },
+            { "en": "to escalate", "pt": "passar para um superior" },
+            { "en": "warranty", "pt": "garantia" }
+          ]
+        },
+        {
+          "id": "b2-08-vocab-5",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"O produto chegou com defeito e eu quero meu dinheiro de volta.\"",
+          "accepted": [
+            "The product arrived faulty and I'd like my money back",
+            "The product arrived damaged and I'd like a refund",
+            "The product was faulty and I'd like a refund",
+            "The product arrived faulty and I want my money back",
+            "The product arrived damaged and I want my money back",
+            "The product was defective and I'd like my money back",
+            "The product arrived defective and I'd like a refund",
+            "The product doesn't work and I'd like a refund",
+            "The item arrived damaged and I'd like a refund",
+            "It arrived faulty and I'd like a refund"
+          ],
+          "commonErrors": [
+            {
+              "id": "came-with-defect",
+              "match": "\\b(came|arrived) with (a )?defect\\b",
+              "explanation_pt": "\"Chegou com defeito\" fica mais natural como \"arrived faulty\", \"arrived damaged\" ou \"was defective\".",
+              "correction_en": "The product arrived faulty and I'd like a refund."
+            },
+            {
+              "id": "devolution",
+              "match": "\\bdevolution\\b",
+              "explanation_pt": "\"Devolução\" de dinheiro é \"refund\"; de produto, \"return\". \"Devolution\" é transferência de poder político.",
+              "correction_en": "I'd like a refund."
+            },
+            {
+              "id": "money-of-back",
+              "match": "\\bmy money of back\\b|\\bback my money\\b",
+              "explanation_pt": "A ordem é \"my money back\".",
+              "correction_en": "I want my money back."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-08-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Treinar o tom educado e firme e a pronúncia de \"receipt\" (o \"p\" é mudo).",
+        "prompts": [
+          "Say \"receipt\". Do you pronounce the \"p\"?",
+          "How do you sound polite but firm?"
+        ],
+        "watchFor": [
+          "Pronunciar o \"p\" de \"receipt\".",
+          "Terminar frases com o tom subindo, como se não tivesse certeza do pedido."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-08-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repeat. The \"p\" in \"receipt\" is silent: \"ri-SEET\".",
+          "prompt": "I still have the receipt, if you need it.",
+          "accepted": [
+            "I still have the receipt, if you need it.",
+            "I've still got the receipt, if you need it."
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b2-08-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repeat politely. Let your voice go down at the end.",
+          "prompt": "I was wondering if you could send me a replacement.",
+          "accepted": [
+            "I was wondering if you could send me a replacement.",
+            "I was wondering whether you could send me a replacement."
+          ],
+          "commonErrors": [
+            {
+              "id": "wondering-can",
+              "match": "\\bwondering if you can\\b",
+              "explanation_pt": "\"I was wondering if...\" combina com \"could\": é mais educado e soa natural.",
+              "correction_en": "I was wondering if you could send me a replacement."
+            }
+          ]
+        },
+        {
+          "id": "b2-08-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Which word also has a silent letter?",
+          "options": ["debt", "debit", "deal"],
+          "answer": 0,
+          "explanation_pt": "Em \"debt\" o \"b\" é mudo (\"dét\"), como o \"p\" de \"receipt\". Em \"debit\" o \"b\" é pronunciado."
+        }
+      ]
+    },
+    {
+      "id": "b2-08-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Entender o que o atendente oferece e responder como cliente, de forma clara.",
+        "prompts": [
+          "What would you say if they put you on hold for too long?",
+          "What information do they usually ask for?"
+        ],
+        "watchFor": [
+          "Responder o número do pedido letra por letra sem agrupar.",
+          "Não entender \"Can I put you on hold?\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-08-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Listen. What is the agent going to do?",
+          "listen": "I'm sorry to hear that. I'll arrange a replacement, and you'll get it within three working days.",
+          "options": ["Send a new product", "Give a full refund", "Transfer the call to a manager"],
+          "answer": 0,
+          "explanation_pt": "\"Arrange a replacement\" é providenciar a troca, um produto novo."
+        },
+        {
+          "id": "b2-08-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Listen. Ask for a refund instead of a replacement.",
+          "listen": "We can send you a new one, or is there anything else we can do for you?",
+          "accepted": [
+            "I'd prefer a refund, please",
+            "I'd rather have a refund",
+            "I'd rather get a refund",
+            "Actually, I'd prefer a refund",
+            "Actually, I'd like a refund",
+            "I'd like a refund instead",
+            "I'd like a refund, please",
+            "Could I get a refund instead?",
+            "Could I have a refund instead?",
+            "I'd prefer my money back",
+            "I'd rather have my money back",
+            "I'd like my money back, please"
+          ],
+          "commonErrors": [
+            {
+              "id": "prefer-to-receive-back",
+              "match": "\\b(prefer|want) (to )?receive (back )?my money\\b",
+              "explanation_pt": "\"Receber o dinheiro de volta\" é \"get my money back\" ou simplesmente \"a refund\".",
+              "correction_en": "I'd prefer a refund, please."
+            },
+            {
+              "id": "rather-to",
+              "match": "\\bwould rather to\\b",
+              "explanation_pt": "Depois de \"I'd rather\" o verbo vem sem \"to\": \"I'd rather have a refund\".",
+              "correction_en": "I'd rather have a refund."
+            }
+          ]
+        },
+        {
+          "id": "b2-08-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "You are the agent now. Listen and respond with empathy.",
+          "listen": "This is the third time I've called about this problem, and nobody has helped me!",
+          "accepted": [
+            "I'm really sorry to hear that. Let me look into it for you",
+            "I'm sorry to hear that. Let me look into it",
+            "I'm so sorry about that. I'll look into it right away",
+            "I completely understand. Let me see what I can do",
+            "I understand your frustration. Let me look into it",
+            "I'm sorry for the inconvenience. Let me check what happened",
+            "I apologize for that. I'll sort it out for you now",
+            "I'm really sorry. I'll make sure it gets solved today",
+            "I'm sorry about that. Let me see what I can do",
+            "I understand, and I'm sorry. I'll look into it now"
+          ],
+          "commonErrors": [
+            {
+              "id": "sorry-for-hear",
+              "match": "\\bsorry for hear\\b",
+              "explanation_pt": "A expressão é \"I'm sorry to hear that\", com \"to\".",
+              "correction_en": "I'm sorry to hear that. Let me look into it."
+            },
+            {
+              "id": "look-for-it",
+              "match": "\\blook (for|at) it for you\\b",
+              "explanation_pt": "\"Verificar\" um problema é \"look into it\". \"Look for\" é procurar algo perdido.",
+              "correction_en": "Let me look into it for you."
+            },
+            {
+              "id": "inconvenient",
+              "match": "\\bsorry for the inconvenient\\b",
+              "explanation_pt": "O substantivo é \"inconvenience\". \"Inconvenient\" é adjetivo.",
+              "correction_en": "I'm sorry for the inconvenience."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-08-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Simular uma ligação: o aluno explica o problema, responde às perguntas e negocia uma solução. Depois trocar os papéis.",
+        "prompts": [
+          "Thank you for calling. How can I help you today?",
+          "Could I have your order number, please?",
+          "Would you like a replacement or a refund?"
+        ],
+        "watchFor": [
+          "Usar \"attend\" para atender (\"the attendant didn't attend me\"); é \"help\", \"serve\" ou \"answer the phone\".",
+          "Ser direto demais (\"I want...\"); incentivar \"I'd like...\" e \"Could you...?\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-08-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Ninguém me atendeu na loja.\"",
+          "accepted": [
+            "Nobody helped me at the store",
+            "Nobody helped me in the store",
+            "No one helped me at the store",
+            "No one served me at the store",
+            "Nobody served me in the shop",
+            "Nobody served me at the shop",
+            "Nobody came to help me at the store",
+            "Nobody assisted me at the store",
+            "Nobody attended to me at the store"
+          ],
+          "commonErrors": [
+            {
+              "id": "attend-me",
+              "match": "\\battended me\\b",
+              "explanation_pt": "\"Atender\" um cliente é \"help\", \"serve\" ou \"attend to\". \"Attend me\" não funciona.",
+              "correction_en": "Nobody helped me at the store."
+            },
+            {
+              "id": "double-negative",
+              "match": "\\bnobody (did not|didnt) \\w+\\b|\\bnobody not\\b",
+              "explanation_pt": "Em inglês não usamos dupla negação: \"Nobody helped me\", e não \"Nobody didn't help me\".",
+              "correction_en": "Nobody helped me at the store."
+            }
+          ]
+        },
+        {
+          "id": "b2-08-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Eu vou verificar e te ligo de volta em uma hora.\"",
+          "accepted": [
+            "I'll look into it and call you back in an hour",
+            "I'll check and call you back in an hour",
+            "I'll look into it and get back to you in an hour",
+            "I'll check and get back to you in an hour",
+            "I'll check it and call you back within an hour",
+            "Let me look into it and I'll call you back in an hour",
+            "I'll look into this and call you back in an hour",
+            "I'm going to check and call you back in an hour",
+            "I'll check on it and call you back in an hour"
+          ],
+          "commonErrors": [
+            {
+              "id": "verify",
+              "match": "\\bverify\\b",
+              "explanation_pt": "\"Verify\" é confirmar se algo é verdade, mais formal. Para \"vou verificar\", o natural é \"I'll check\" ou \"I'll look into it\".",
+              "correction_en": "I'll look into it and call you back in an hour."
+            },
+            {
+              "id": "call-back-you",
+              "match": "\\bcall back you\\b|\\bcall you of back\\b",
+              "explanation_pt": "Com pronome, ele fica no meio: \"call you back\".",
+              "correction_en": "I'll call you back in an hour."
+            },
+            {
+              "id": "in-one-hour-after",
+              "match": "\\bafter (one|an) hour\\b",
+              "explanation_pt": "\"Daqui a uma hora\" é \"in an hour\". \"After an hour\" é \"depois de passar uma hora\" (num relato).",
+              "correction_en": "I'll call you back in an hour."
+            }
+          ]
+        },
+        {
+          "id": "b2-08-conv-3",
+          "kind": "order",
+          "instruction_pt": "Put the words in order to make a polite request.",
+          "accepted": ["Could you tell me when I can expect the refund"]
+        },
+        {
+          "id": "b2-08-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Call customer service. Your new headphones stopped working after a week. Explain and ask for a solution.",
+          "prompt_en": "Good afternoon, thanks for calling. My name is Alex. How can I help you today?",
+          "guidelines_pt": [
+            "Explain the problem: \"I bought... last week and...\"",
+            "Say what you want politely: \"I'd like a refund\" or \"Could you send me a replacement?\"",
+            "Ask about next steps: \"How long will it take?\""
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-08-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Revisar os pedidos educados e os falsos cognatos \"reclamation\", \"devolution\" e \"attend\".",
+        "prompts": [
+          "How do you ask for a refund politely?",
+          "What does a good agent say to an angry customer?"
+        ],
+        "watchFor": ["\"I want\" em vez de \"I'd like\".", "\"Attend\" no sentido de atender."]
+      },
+      "exercises": [
+        {
+          "id": "b2-08-rev-1",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Você poderia me transferir para um gerente?\"",
+          "accepted": [
+            "Could you transfer me to a manager?",
+            "Could you put me through to a manager?",
+            "Can you transfer me to a manager?",
+            "Can you put me through to a manager?",
+            "Could I speak to a manager?",
+            "Could I speak to a manager, please?",
+            "Could you transfer me to a manager, please?",
+            "Would you transfer me to a manager, please?"
+          ],
+          "commonErrors": [
+            {
+              "id": "transfer-for",
+              "match": "\\btransfer me (for|with)\\b",
+              "explanation_pt": "Transferimos alguém \"to\" uma pessoa: \"transfer me to a manager\".",
+              "correction_en": "Could you transfer me to a manager?"
+            },
+            {
+              "id": "gerent",
+              "match": "\\b(gerent|gerente)\\b",
+              "explanation_pt": "\"Gerente\" é \"manager\".",
+              "correction_en": "Could you transfer me to a manager?"
+            }
+          ]
+        },
+        {
+          "id": "b2-08-rev-2",
+          "kind": "fill",
+          "instruction_pt": "Complete the sentence.",
+          "sentence": "Thank you for your patience. I'll look ___ it right away.",
+          "accepted": ["into"],
+          "commonErrors": [
+            {
+              "id": "look-for",
+              "match": "^(for|at|after|in)$",
+              "explanation_pt": "Para investigar um problema, o phrasal verb é \"look into\".",
+              "correction_en": "I'll look into it right away."
+            }
+          ]
+        },
+        {
+          "id": "b2-08-rev-3",
+          "kind": "choice",
+          "instruction_pt": "Which is the most polite request?",
+          "options": [
+            "I was wondering if you could help me with my order.",
+            "Help me with my order.",
+            "You must help me with my order."
+          ],
+          "answer": 0,
+          "explanation_pt": "\"I was wondering if you could...\" é um pedido indireto e muito educado."
+        },
+        {
+          "id": "b2-08-rev-4",
+          "kind": "repeat",
+          "instruction_pt": "To finish, repeat.",
+          "prompt": "Is there anything else I can help you with today?",
+          "accepted": [
+            "Is there anything else I can help you with today?",
+            "Is there anything else I can help you with?"
+          ],
+          "commonErrors": []
+        }
+      ]
+    }
+  ]
+}

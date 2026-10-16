@@ -1,0 +1,493 @@
+{
+  "id": "b2-01-meetings",
+  "level": "B2",
+  "order": 1,
+  "title_pt": "Reuniões",
+  "title_en": "Meetings",
+  "objective_pt": "Abrir uma reunião, pedir a palavra, interromper com educação e fechar com os próximos passos.",
+  "blocks": [
+    {
+      "id": "b2-01-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Ativar o vocabulário de reuniões que o aluno já usa no trabalho e ver como ele abre uma conversa formal.",
+        "prompts": [
+          "How many meetings do you usually have a week?",
+          "What makes a meeting a waste of time?"
+        ],
+        "watchFor": [
+          "Dizer \"assist a meeting\" (falso cognato de \"assistir\"); o certo é \"attend a meeting\".",
+          "Dizer \"make a meeting\" em vez de \"have\" ou \"hold a meeting\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-01-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repeat out loud.",
+          "prompt": "Shall we get started? Everyone seems to be here.",
+          "accepted": [
+            "Shall we get started? Everyone seems to be here.",
+            "Shall we get started? Everyone seems to be here now."
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b2-01-warm-2",
+          "kind": "choice",
+          "instruction_pt": "Which sentence means \"participar de uma reunião\"?",
+          "options": ["attend a meeting", "assist a meeting", "watch a meeting"],
+          "answer": 0,
+          "explanation_pt": "\"Attend\" é participar, comparecer. \"Assist\" é um falso cognato: significa ajudar."
+        },
+        {
+          "id": "b2-01-warm-3",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Eu tenho uma reunião às três.\"",
+          "accepted": [
+            "I have a meeting at three",
+            "I've got a meeting at three",
+            "I have a meeting at 3",
+            "I have a meeting at three o'clock",
+            "I've got a meeting at three o'clock",
+            "I have a meeting at 3 pm"
+          ],
+          "commonErrors": [
+            {
+              "id": "make-meeting",
+              "match": "\\bi (make|do) a meeting\\b",
+              "explanation_pt": "Em inglês a gente \"has\" ou \"holds\" uma reunião, não \"makes\". \"Fazer uma reunião\" vira \"have a meeting\".",
+              "correction_en": "I have a meeting at three."
+            },
+            {
+              "id": "meeting-in-three",
+              "match": "\\bmeeting (in|on) (three|3)\\b",
+              "explanation_pt": "Para horário usamos \"at\": \"at three\". \"In three\" soaria como \"daqui a três (minutos/dias)\".",
+              "correction_en": "I have a meeting at three."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-01-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Aprender expressões para conduzir uma reunião: agenda, action items, follow up, postpone, wrap up.",
+        "prompts": [
+          "What's usually on the agenda of your team meetings?",
+          "Who follows up after a meeting at your company?"
+        ],
+        "watchFor": [
+          "Pronunciar \"agenda\" com a tônica no começo (A-gen-da); o certo é a-GEN-da.",
+          "Confundir \"postpone\" (adiar) com \"prorrogar\" (extend)."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-01-vocab-1",
+          "kind": "vocab",
+          "word_en": "agenda",
+          "meaning_pt": "pauta (da reunião)",
+          "example_en": "There are three items on the agenda today."
+        },
+        {
+          "id": "b2-01-vocab-2",
+          "kind": "vocab",
+          "word_en": "to follow up",
+          "meaning_pt": "dar seguimento, retomar depois",
+          "example_en": "I'll follow up with an email after the call."
+        },
+        {
+          "id": "b2-01-vocab-3",
+          "kind": "vocab",
+          "word_en": "to wrap up",
+          "meaning_pt": "encerrar, finalizar",
+          "example_en": "Let's wrap up, we're running out of time."
+        },
+        {
+          "id": "b2-01-vocab-4",
+          "kind": "match",
+          "instruction_pt": "Match each expression to its meaning.",
+          "pairs": [
+            { "en": "to postpone", "pt": "adiar" },
+            { "en": "action items", "pt": "tarefas definidas na reunião" },
+            { "en": "to chair a meeting", "pt": "conduzir uma reunião" },
+            { "en": "minutes", "pt": "ata" },
+            { "en": "any other business", "pt": "assuntos gerais" }
+          ]
+        },
+        {
+          "id": "b2-01-vocab-5",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Vamos adiar a reunião para sexta.\"",
+          "accepted": [
+            "Let's postpone the meeting to Friday",
+            "Let's postpone the meeting until Friday",
+            "Let's postpone the meeting till Friday",
+            "Let's push the meeting to Friday",
+            "Let's push the meeting back to Friday",
+            "Let's move the meeting to Friday",
+            "Let's reschedule the meeting for Friday",
+            "Let's put the meeting off until Friday",
+            "Let's put off the meeting until Friday",
+            "Let us postpone the meeting to Friday"
+          ],
+          "commonErrors": [
+            {
+              "id": "prorrogate",
+              "match": "\\b(prorrogate|prorogate|extend) the meeting\\b",
+              "explanation_pt": "\"Prorrogar\" em inglês é \"extend\" (fazer durar mais). Para mudar para depois, use \"postpone\" ou \"push back\".",
+              "correction_en": "Let's postpone the meeting to Friday."
+            },
+            {
+              "id": "postpone-for-friday",
+              "match": "\\bpostpone (the meeting )?for friday\\b",
+              "explanation_pt": "Com \"postpone\" o natural é \"to\" ou \"until Friday\". \"For\" combina com \"reschedule\".",
+              "correction_en": "Let's postpone the meeting to Friday."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-01-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Treinar a tônica de palavras de reunião (a-GEN-da, SCHED-ule) e a entonação educada de interrupção.",
+        "prompts": [
+          "Say \"agenda\" and \"schedule\". Where is the stress?",
+          "How do you interrupt politely in Portuguese? And in English?"
+        ],
+        "watchFor": [
+          "Colocar vogal extra no fim: \"schedule-i\", \"meeting-i\".",
+          "Entonação plana em \"Sorry to interrupt\", que soa ríspida; a voz deve subir um pouco."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-01-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repeat. Stress the second syllable: a-GEN-da.",
+          "prompt": "Let's stick to the agenda.",
+          "accepted": ["Let's stick to the agenda.", "Let us stick to the agenda."],
+          "commonErrors": []
+        },
+        {
+          "id": "b2-01-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repeat with a friendly, rising tone.",
+          "prompt": "Sorry to interrupt, but could I just add something?",
+          "accepted": [
+            "Sorry to interrupt, but could I just add something?",
+            "Sorry to interrupt, but can I just add something?",
+            "Sorry to interrupt, could I just add something?"
+          ],
+          "commonErrors": [
+            {
+              "id": "interrupt-you-but",
+              "match": "\\bsorry for interrupt\\b",
+              "explanation_pt": "Depois de \"sorry\" use \"to interrupt\" ou \"for interrupting\" (com -ing).",
+              "correction_en": "Sorry to interrupt, but could I just add something?"
+            }
+          ]
+        },
+        {
+          "id": "b2-01-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Where is the stress in \"schedule\"?",
+          "options": ["SCHED-ule", "sched-ULE", "Both are equally stressed"],
+          "answer": 0,
+          "explanation_pt": "A tônica é na primeira sílaba: SCHED-ule. No inglês americano soa \"SKÉ-djul\"; no britânico, \"CHÉ-djul\"."
+        }
+      ]
+    },
+    {
+      "id": "b2-01-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Entender frases típicas de quem conduz a reunião e reagir a elas.",
+        "prompts": [
+          "What does \"let's park that for now\" mean?",
+          "What do you say if you missed what someone said in a call?"
+        ],
+        "watchFor": [
+          "Responder \"I agree\" como \"I am agree\".",
+          "Dizer \"discuss about\"; \"discuss\" não leva preposição."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-01-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Listen and choose what the speaker wants.",
+          "listen": "That's a good point, but let's park it for now and come back to it at the end.",
+          "options": [
+            "To discuss the point later",
+            "To forget the point completely",
+            "To discuss the point right now"
+          ],
+          "answer": 0,
+          "explanation_pt": "\"Park it for now\" é deixar o assunto de lado por enquanto para voltar a ele depois (\"come back to it at the end\")."
+        },
+        {
+          "id": "b2-01-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Listen and say that you agree with the proposal.",
+          "listen": "So, does everyone agree with the new deadline?",
+          "accepted": [
+            "Yes, I agree",
+            "I agree",
+            "I agree with it",
+            "I agree with the new deadline",
+            "Yes, I agree with the new deadline",
+            "Yes, I'm fine with it",
+            "I'm fine with it",
+            "Yes, that works for me",
+            "That works for me",
+            "Sounds good to me",
+            "Yes, sounds good",
+            "Yes, it's fine by me",
+            "Fine by me",
+            "I'm on board",
+            "Yes, I'm on board with that",
+            "Absolutely",
+            "Yes, absolutely"
+          ],
+          "commonErrors": [
+            {
+              "id": "am-agree",
+              "match": "\\bi am (agree|agreed)\\b",
+              "explanation_pt": "\"Agree\" já é verbo: \"I agree\". \"I am agree\" é tradução literal de \"estou de acordo\".",
+              "correction_en": "Yes, I agree."
+            },
+            {
+              "id": "agree-with-it-the",
+              "match": "\\bi agree the new deadline\\b",
+              "explanation_pt": "Concordamos \"with\" alguma coisa: \"I agree with the new deadline\".",
+              "correction_en": "I agree with the new deadline."
+            }
+          ]
+        },
+        {
+          "id": "b2-01-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Listen. The connection was bad. Ask the person to repeat.",
+          "listen": "Sorry, you broke up a bit there. Could you repeat that?",
+          "accepted": [
+            "Sorry, could you repeat that?",
+            "Could you repeat that?",
+            "Could you say that again?",
+            "Sorry, could you say that again?",
+            "Sorry, can you repeat that?",
+            "Can you say that again?",
+            "Sorry, I didn't catch that",
+            "Sorry, I didn't catch that. Could you repeat it?",
+            "Sorry, I missed that. Could you repeat it?",
+            "Could you repeat that, please?",
+            "Sorry, could you repeat the last part?"
+          ],
+          "commonErrors": [
+            {
+              "id": "repeat-again",
+              "match": "\\brepeat (that |it )?again\\b",
+              "explanation_pt": "\"Repeat\" já significa \"dizer de novo\", então \"repeat again\" é redundante. Use \"repeat that\" ou \"say that again\".",
+              "correction_en": "Sorry, could you repeat that?"
+            },
+            {
+              "id": "didnt-understood",
+              "match": "\\bdid not (understood|understanded)\\b",
+              "explanation_pt": "Depois de \"didn't\" o verbo fica na forma base: \"I didn't understand\" ou \"I didn't catch that\".",
+              "correction_en": "Sorry, I didn't catch that."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-01-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Conduzir uma mini-reunião: abrir, passar para o próximo item e fechar com os próximos passos.",
+        "prompts": [
+          "Can you open our meeting for me?",
+          "How would you move on to the next item?",
+          "Who's doing what after this meeting?"
+        ],
+        "watchFor": [
+          "Dizer \"pass to the next topic\" (tradução de \"passar para o próximo\"); o natural é \"move on to\".",
+          "Dizer \"discuss about the budget\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-01-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Vamos passar para o próximo item da pauta.\"",
+          "accepted": [
+            "Let's move on to the next item on the agenda",
+            "Let's move on to the next item",
+            "Let's go on to the next item on the agenda",
+            "Let's move to the next item on the agenda",
+            "Let's move on to the next point on the agenda",
+            "Moving on to the next item on the agenda",
+            "Let us move on to the next item on the agenda",
+            "Shall we move on to the next item on the agenda?"
+          ],
+          "commonErrors": [
+            {
+              "id": "pass-to-next",
+              "match": "\\bpass (to|for) the next\\b",
+              "explanation_pt": "\"Passar para o próximo\" em reunião é \"move on to the next item\". \"Pass\" soa como passar a vez ou entregar algo.",
+              "correction_en": "Let's move on to the next item on the agenda."
+            },
+            {
+              "id": "item-of-agenda",
+              "match": "\\bitem (of|in) the agenda\\b",
+              "explanation_pt": "Itens ficam \"on the agenda\", com \"on\".",
+              "correction_en": "Let's move on to the next item on the agenda."
+            }
+          ]
+        },
+        {
+          "id": "b2-01-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Precisamos discutir o orçamento antes de decidir.\"",
+          "accepted": [
+            "We need to discuss the budget before deciding",
+            "We need to discuss the budget before we decide",
+            "We have to discuss the budget before deciding",
+            "We have to discuss the budget before we decide",
+            "We need to talk about the budget before deciding",
+            "We need to talk about the budget before we decide",
+            "We need to go over the budget before we decide",
+            "We should discuss the budget before we decide"
+          ],
+          "commonErrors": [
+            {
+              "id": "discuss-about",
+              "match": "\\bdiscuss about\\b",
+              "explanation_pt": "\"Discuss\" não leva \"about\": \"discuss the budget\". Se quiser \"about\", use \"talk about\".",
+              "correction_en": "We need to discuss the budget before we decide."
+            },
+            {
+              "id": "before-decide",
+              "match": "\\bbefore (to )?decide\\b",
+              "explanation_pt": "Depois de \"before\" use o verbo com -ing (\"before deciding\") ou uma frase completa (\"before we decide\").",
+              "correction_en": "We need to discuss the budget before deciding."
+            }
+          ]
+        },
+        {
+          "id": "b2-01-conv-3",
+          "kind": "order",
+          "instruction_pt": "Put the words in order to close the meeting.",
+          "accepted": ["Let's wrap up and go over the action items"]
+        },
+        {
+          "id": "b2-01-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "You are chairing a short team meeting. Open it, introduce the agenda and close with next steps.",
+          "prompt_en": "Okay, everyone's here. Could you open the meeting and tell us what we're going to cover today?",
+          "guidelines_pt": [
+            "Open the meeting: \"Thanks for joining. Shall we get started?\"",
+            "Present two or three items: \"First, we'll look at... Then...\"",
+            "Close with next steps: \"So, to wrap up, Ana will follow up on...\""
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-01-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Revisar as expressões de reunião e o falso cognato \"attend/assist\".",
+        "prompts": [
+          "How do you politely interrupt someone?",
+          "What do you say at the end of a meeting?"
+        ],
+        "watchFor": [
+          "Usar \"assist\" no sentido de participar.",
+          "Esquecer o \"up\" em \"follow up\" e \"wrap up\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-01-rev-1",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Eu não pude participar da reunião de ontem.\"",
+          "accepted": [
+            "I couldn't attend yesterday's meeting",
+            "I couldn't attend the meeting yesterday",
+            "I wasn't able to attend yesterday's meeting",
+            "I wasn't able to attend the meeting yesterday",
+            "I couldn't make it to yesterday's meeting",
+            "I couldn't make yesterday's meeting",
+            "I couldn't go to yesterday's meeting",
+            "I couldn't join yesterday's meeting",
+            "I couldn't be at yesterday's meeting"
+          ],
+          "commonErrors": [
+            {
+              "id": "assist-meeting",
+              "match": "\\bassist (to )?(the|yesterday)",
+              "explanation_pt": "\"Assist\" significa ajudar. Para participar ou comparecer, use \"attend\" (sem \"to\").",
+              "correction_en": "I couldn't attend yesterday's meeting."
+            },
+            {
+              "id": "attend-to",
+              "match": "\\battend to (the|yesterday)",
+              "explanation_pt": "\"Attend\" não leva \"to\" no sentido de comparecer: \"attend the meeting\". \"Attend to\" significa cuidar de algo.",
+              "correction_en": "I couldn't attend yesterday's meeting."
+            }
+          ]
+        },
+        {
+          "id": "b2-01-rev-2",
+          "kind": "fill",
+          "instruction_pt": "Complete the sentence.",
+          "sentence": "I'll follow ___ with an email this afternoon.",
+          "accepted": ["up"],
+          "commonErrors": [
+            {
+              "id": "follow-wrong-particle",
+              "match": "^(on|with|back|out)$",
+              "explanation_pt": "A expressão é \"follow up\" (dar seguimento): \"I'll follow up with an email\".",
+              "correction_en": "I'll follow up with an email this afternoon."
+            }
+          ]
+        },
+        {
+          "id": "b2-01-rev-3",
+          "kind": "choice",
+          "instruction_pt": "Which is the most natural way to end a meeting?",
+          "options": [
+            "Okay, I think that's everything. Thanks, everyone.",
+            "Okay, the meeting is finished now. Go.",
+            "Okay, we terminate the meeting."
+          ],
+          "answer": 0,
+          "explanation_pt": "\"I think that's everything. Thanks, everyone.\" é educado e natural. \"Terminate\" soa robótico, e \"Go\" soa rude."
+        },
+        {
+          "id": "b2-01-rev-4",
+          "kind": "repeat",
+          "instruction_pt": "To finish, repeat the closing line.",
+          "prompt": "Thanks, everyone. I'll send the minutes later today.",
+          "accepted": [
+            "Thanks, everyone. I'll send the minutes later today.",
+            "Thank you, everyone. I'll send the minutes later today.",
+            "Thanks, everyone. I will send the minutes later today."
+          ],
+          "commonErrors": []
+        }
+      ]
+    }
+  ]
+}

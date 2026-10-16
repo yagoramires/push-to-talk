@@ -1,0 +1,448 @@
+{
+  "level": "B2",
+  "minutes": 30,
+  "parts": [
+    {
+      "skill": "listening",
+      "items": [
+        {
+          "skill": "listening",
+          "unitId": "b2-01-meetings",
+          "exercise": {
+            "id": "ex-b2-listen-1",
+            "kind": "choice",
+            "instruction_pt": "Listen. What does the chair decide?",
+            "listen": "We're running out of time, so let's park the budget question and come back to it next week.",
+            "options": [
+              "To discuss the budget next week",
+              "To cancel the budget",
+              "To discuss the budget now"
+            ],
+            "answer": 0,
+            "explanation_pt": "\"Park the budget question and come back to it next week\" é deixar o assunto para a semana que vem."
+          }
+        },
+        {
+          "skill": "listening",
+          "unitId": "b2-04-hypotheticals",
+          "exercise": {
+            "id": "ex-b2-listen-2",
+            "kind": "choice",
+            "instruction_pt": "Listen. What is true?",
+            "listen": "If I'd seen your message earlier, I would have picked you up at the airport.",
+            "options": [
+              "The speaker didn't see the message in time.",
+              "The speaker picked the person up.",
+              "The speaker will go to the airport later."
+            ],
+            "answer": 0,
+            "explanation_pt": "O terceiro condicional fala de algo que não aconteceu: a pessoa não viu a mensagem a tempo e não foi ao aeroporto."
+          }
+        },
+        {
+          "skill": "listening",
+          "unitId": "b2-11-idioms",
+          "exercise": {
+            "id": "ex-b2-listen-3",
+            "kind": "choice",
+            "instruction_pt": "Listen. How often does the speaker eat out?",
+            "listen": "With two kids and a mortgage, we only eat out once in a blue moon.",
+            "options": ["Very rarely", "Every week", "Once a month"],
+            "answer": 0,
+            "explanation_pt": "\"Once in a blue moon\" significa muito raramente."
+          }
+        },
+        {
+          "skill": "listening",
+          "unitId": "b2-10-reported-speech",
+          "exercise": {
+            "id": "ex-b2-listen-4",
+            "kind": "listen_answer",
+            "instruction_pt": "Listen to your colleague. Then report it to your boss, starting with \"He said...\".",
+            "listen": "I can't come to the meeting because I'm seeing a client.",
+            "accepted": [
+              "He said he couldn't come to the meeting because he was seeing a client",
+              "He said that he couldn't come to the meeting because he was seeing a client",
+              "He said he couldn't come because he was seeing a client",
+              "He said he can't come to the meeting because he's seeing a client",
+              "He said he can't come because he's seeing a client",
+              "He said he couldn't make it to the meeting because he was seeing a client",
+              "He said he couldn't come to the meeting because he was meeting a client",
+              "He said he couldn't come to the meeting because he had a client"
+            ],
+            "commonErrors": [
+              {
+                "id": "said-i-cannot",
+                "match": "\\bhe said i (cannot|can|could)\\b",
+                "explanation_pt": "Ao relatar, troque o pronome: o \"I\" dele vira \"he\": \"He said he couldn't come\".",
+                "correction_en": "He said he couldn't come to the meeting because he was seeing a client."
+              },
+              {
+                "id": "said-me",
+                "match": "\\bhe said me\\b",
+                "explanation_pt": "\"Say\" não leva a pessoa direto. Use \"He told me...\" ou \"He said...\".",
+                "correction_en": "He said he couldn't come to the meeting."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "listening",
+          "unitId": "b2-08-customer-service",
+          "exercise": {
+            "id": "ex-b2-listen-5",
+            "kind": "listen_answer",
+            "instruction_pt": "You are the agent. Listen and respond with empathy.",
+            "listen": "I ordered a laptop two weeks ago and it still hasn't arrived!",
+            "accepted": [
+              "I'm sorry to hear that. Let me look into it",
+              "I'm really sorry to hear that. Let me look into it for you",
+              "I'm so sorry about that. I'll look into it right away",
+              "I understand your frustration. Let me check what happened",
+              "I'm sorry for the delay. Let me look into it",
+              "I apologize for the delay. Let me check your order",
+              "I'm sorry about that. Could I have your order number, please?",
+              "I'm sorry to hear that. Could I have your order number?",
+              "I completely understand. Let me see what I can do"
+            ],
+            "commonErrors": [
+              {
+                "id": "sorry-for-hear",
+                "match": "\\bsorry for hear\\b",
+                "explanation_pt": "A expressão é \"I'm sorry to hear that\", com \"to\".",
+                "correction_en": "I'm sorry to hear that. Let me look into it."
+              },
+              {
+                "id": "look-for-it",
+                "match": "\\blook for it\\b",
+                "explanation_pt": "\"Verificar\" um problema é \"look into it\". \"Look for\" é procurar algo perdido.",
+                "correction_en": "Let me look into it for you."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "skill": "speaking",
+      "items": [
+        {
+          "skill": "speaking",
+          "unitId": "b2-03-negotiating",
+          "exercise": {
+            "id": "ex-b2-speak-1",
+            "kind": "translate",
+            "instruction_pt": "Say it in English: \"Se vocês pagarem adiantado, a gente pode dar um desconto.\"",
+            "accepted": [
+              "If you pay upfront, we can give you a discount",
+              "If you pay upfront, we could give you a discount",
+              "If you pay in advance, we can give you a discount",
+              "If you pay in advance, we could give you a discount",
+              "If you pay up front, we can offer you a discount",
+              "If you pay upfront, we can offer a discount",
+              "If you pay in advance, we can offer you a discount",
+              "We can give you a discount if you pay upfront",
+              "We could give you a discount if you pay in advance"
+            ],
+            "commonErrors": [
+              {
+                "id": "if-will-pay",
+                "match": "\\bif you will pay\\b",
+                "explanation_pt": "Depois de \"if\" na condição, use o presente: \"If you pay upfront\".",
+                "correction_en": "If you pay upfront, we can give you a discount."
+              },
+              {
+                "id": "make-discount",
+                "match": "\\b(make|do) (you )?a discount\\b",
+                "explanation_pt": "\"Dar um desconto\" é \"give\" ou \"offer a discount\", não \"make\".",
+                "correction_en": "If you pay upfront, we can give you a discount."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "speaking",
+          "unitId": "b2-05-workplace-conflicts",
+          "exercise": {
+            "id": "ex-b2-speak-2",
+            "kind": "translate",
+            "instruction_pt": "Say it in English: \"Eu pretendo conversar com ele para resolver isso.\"",
+            "accepted": [
+              "I intend to talk to him to sort this out",
+              "I'm planning to talk to him to sort this out",
+              "I plan to talk to him to sort this out",
+              "I'm going to talk to him to sort this out",
+              "I'm going to talk to him to sort it out",
+              "I'm going to talk to him to solve this",
+              "I plan to talk to him to resolve this",
+              "I intend to speak to him to sort this out",
+              "I'm going to have a talk with him to sort this out"
+            ],
+            "commonErrors": [
+              {
+                "id": "pretend",
+                "match": "\\bi pretend\\b",
+                "explanation_pt": "\"Pretend\" significa fingir. \"Pretender\" é \"intend\", \"plan\" ou \"be going to\".",
+                "correction_en": "I intend to talk to him to sort this out."
+              },
+              {
+                "id": "for-solve",
+                "match": "\\bfor (sort|solve|resolve)\\b",
+                "explanation_pt": "Para indicar finalidade usamos \"to\": \"to sort this out\".",
+                "correction_en": "I'm going to talk to him to sort this out."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "speaking",
+          "unitId": "b2-07-opinions-society",
+          "exercise": {
+            "id": "ex-b2-speak-3",
+            "kind": "translate",
+            "instruction_pt": "Say it in English: \"Atualmente, as pessoas trabalham mais de casa.\"",
+            "accepted": [
+              "Nowadays, people work from home more",
+              "Nowadays, people work more from home",
+              "These days, people work from home more",
+              "These days, people work more from home",
+              "Currently, people work from home more",
+              "Nowadays, more people work from home",
+              "These days, more people work from home",
+              "People work from home more nowadays",
+              "People work more from home these days"
+            ],
+            "commonErrors": [
+              {
+                "id": "actually",
+                "match": "^actually\\b",
+                "explanation_pt": "\"Actually\" é \"na verdade\". \"Atualmente\" é \"nowadays\", \"these days\" ou \"currently\".",
+                "correction_en": "Nowadays, people work from home more."
+              },
+              {
+                "id": "the-people",
+                "match": "\\bthe people work\\b",
+                "explanation_pt": "Ao falar de pessoas em geral, não use \"the\": \"people work\".",
+                "correction_en": "Nowadays, people work from home more."
+              },
+              {
+                "id": "work-of-home",
+                "match": "\\bwork (of|in|at the) home\\b",
+                "explanation_pt": "\"Trabalhar de casa\" é \"work from home\".",
+                "correction_en": "Nowadays, people work from home more."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "speaking",
+          "unitId": "b2-09-explaining-processes",
+          "exercise": {
+            "id": "ex-b2-speak-4",
+            "kind": "translate",
+            "instruction_pt": "Say it in English: \"Você pode me explicar como funciona?\"",
+            "accepted": [
+              "Can you explain to me how it works?",
+              "Could you explain to me how it works?",
+              "Can you explain how it works?",
+              "Could you explain how it works?",
+              "Can you tell me how it works?",
+              "Could you tell me how it works?",
+              "Could you walk me through how it works?"
+            ],
+            "commonErrors": [
+              {
+                "id": "explain-me",
+                "match": "\\bexplain me\\b",
+                "explanation_pt": "\"Explain\" pede \"to\" antes da pessoa: \"explain to me\". Ou use \"tell me\".",
+                "correction_en": "Can you explain to me how it works?"
+              },
+              {
+                "id": "how-does-it-work",
+                "match": "\\bhow (does|do) it work\\b",
+                "explanation_pt": "Dentro de outra pergunta, a ordem é de afirmação: \"how it works\".",
+                "correction_en": "Can you explain how it works?"
+              }
+            ]
+          }
+        },
+        {
+          "skill": "speaking",
+          "unitId": "b2-12-persuasion",
+          "exercise": {
+            "id": "ex-b2-speak-5",
+            "kind": "free_speak",
+            "instruction_pt": "Convince your friend to join you on a weekend trip. Answer the objection.",
+            "prompt_en": "A weekend trip sounds nice, but it's too expensive and I'm really busy right now.",
+            "guidelines_pt": [
+              "Acknowledge the objection: \"I understand, but...\"",
+              "Give two benefits: \"Not only..., but also...\"",
+              "Close with a question: \"What have we got to lose?\""
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "skill": "vocabulary",
+      "items": [
+        {
+          "skill": "vocabulary",
+          "unitId": "b2-01-meetings",
+          "exercise": {
+            "id": "ex-b2-vocab-1",
+            "kind": "match",
+            "instruction_pt": "Match each expression to its meaning.",
+            "pairs": [
+              { "en": "to postpone", "pt": "adiar" },
+              { "en": "to follow up", "pt": "dar seguimento" },
+              { "en": "to wrap up", "pt": "encerrar" },
+              { "en": "agenda", "pt": "pauta" },
+              { "en": "to attend", "pt": "comparecer, participar" }
+            ]
+          }
+        },
+        {
+          "skill": "vocabulary",
+          "unitId": "b2-11-idioms",
+          "exercise": {
+            "id": "ex-b2-vocab-2",
+            "kind": "match",
+            "instruction_pt": "Match each idiom to its meaning.",
+            "pairs": [
+              { "en": "a piece of cake", "pt": "muito fácil" },
+              { "en": "under the weather", "pt": "meio doente" },
+              { "en": "on the fence", "pt": "indeciso" },
+              { "en": "cost an arm and a leg", "pt": "custar muito caro" },
+              { "en": "call it a day", "pt": "parar por hoje" }
+            ]
+          }
+        },
+        {
+          "skill": "vocabulary",
+          "unitId": "b2-06-culture-travel",
+          "exercise": {
+            "id": "ex-b2-vocab-3",
+            "kind": "choice",
+            "instruction_pt": "\"Na Itália é costume almoçar tarde.\" Which word means \"costume\" here?",
+            "options": ["custom", "costume", "consume"],
+            "answer": 0,
+            "explanation_pt": "\"Custom\" é costume, tradição. \"Costume\" em inglês é fantasia."
+          }
+        },
+        {
+          "skill": "vocabulary",
+          "unitId": "b2-08-customer-service",
+          "exercise": {
+            "id": "ex-b2-vocab-4",
+            "kind": "choice",
+            "instruction_pt": "You want your money back. What do you ask for?",
+            "options": ["a refund", "a devolution", "a reclamation"],
+            "answer": 0,
+            "explanation_pt": "Dinheiro de volta é \"refund\". \"Devolution\" e \"reclamation\" são falsos cognatos."
+          }
+        },
+        {
+          "skill": "vocabulary",
+          "unitId": "b2-02-presenting-ideas",
+          "exercise": {
+            "id": "ex-b2-vocab-5",
+            "kind": "choice",
+            "instruction_pt": "Sales stopped going up and stayed stable. Sales...",
+            "options": ["levelled off", "rose sharply", "dropped slightly"],
+            "answer": 0,
+            "explanation_pt": "\"Level off\" é estabilizar depois de subir ou cair."
+          }
+        }
+      ]
+    },
+    {
+      "skill": "structure",
+      "items": [
+        {
+          "skill": "structure",
+          "unitId": "b2-04-hypotheticals",
+          "exercise": {
+            "id": "ex-b2-struct-1",
+            "kind": "fill",
+            "instruction_pt": "Complete with the right form of \"be\".",
+            "sentence": "If I ___ you, I'd take the job.",
+            "accepted": ["were", "was"],
+            "commonErrors": [
+              {
+                "id": "am-would-be",
+                "match": "^(am|would be|will be|be)$",
+                "explanation_pt": "Para se imaginar no lugar de alguém: \"If I were you\" (ou \"was\", mais informal).",
+                "correction_en": "If I were you, I'd take the job."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "structure",
+          "unitId": "b2-06-culture-travel",
+          "exercise": {
+            "id": "ex-b2-struct-2",
+            "kind": "fill",
+            "instruction_pt": "Complete with the right form of \"wake\".",
+            "sentence": "I'm not used to ___ up so early.",
+            "accepted": ["waking"],
+            "commonErrors": [
+              {
+                "id": "wake-base",
+                "match": "^(wake|to wake|woke)$",
+                "explanation_pt": "Depois de \"be used to\" o verbo vai com -ing: \"used to waking up\".",
+                "correction_en": "I'm not used to waking up so early."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "structure",
+          "unitId": "b2-09-explaining-processes",
+          "exercise": {
+            "id": "ex-b2-struct-3",
+            "kind": "fill",
+            "instruction_pt": "Complete with the passive form of \"check\".",
+            "sentence": "All the documents are ___ before they are sent.",
+            "accepted": ["checked"],
+            "commonErrors": [
+              {
+                "id": "check-base",
+                "match": "^(check|checking|to check)$",
+                "explanation_pt": "Na voz passiva o verbo vai no particípio: \"are checked\".",
+                "correction_en": "All the documents are checked before they are sent."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "structure",
+          "unitId": "b2-10-reported-speech",
+          "exercise": {
+            "id": "ex-b2-struct-4",
+            "kind": "order",
+            "instruction_pt": "Put the words in order.",
+            "accepted": ["She asked me where I had parked the car"]
+          }
+        },
+        {
+          "skill": "structure",
+          "unitId": "b2-12-persuasion",
+          "exercise": {
+            "id": "ex-b2-struct-5",
+            "kind": "choice",
+            "instruction_pt": "Which sentence is correct?",
+            "options": [
+              "Not only is it cheaper, but it's also faster.",
+              "Not only it is cheaper, but it's also faster.",
+              "Not only cheaper is it, but also faster."
+            ],
+            "answer": 0,
+            "explanation_pt": "Quando a frase começa com \"Not only\", há inversão: \"Not only is it...\"."
+          }
+        }
+      ]
+    }
+  ]
+}

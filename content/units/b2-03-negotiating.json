@@ -1,0 +1,483 @@
+{
+  "id": "b2-03-negotiating",
+  "level": "B2",
+  "order": 3,
+  "title_pt": "Negociando",
+  "title_en": "Negotiating",
+  "objective_pt": "Fazer uma proposta, recusar com educação e oferecer uma contraproposta com \"if\" (\"If you can..., we could...\").",
+  "blocks": [
+    {
+      "id": "b2-03-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Conversar sobre negociações do dia a dia (salário, preço, prazo) e ver como o aluno pede algo.",
+        "prompts": ["Have you ever negotiated a price or a salary?", "Are you a good negotiator?"],
+        "watchFor": [
+          "Dizer \"make a discount\"; o natural é \"give a discount\".",
+          "Usar \"compromise\" pensando em \"compromisso\" (appointment ou commitment)."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-03-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repeat out loud.",
+          "prompt": "Is there any room for negotiation on the price?",
+          "accepted": [
+            "Is there any room for negotiation on the price?",
+            "Is there any room to negotiate on the price?"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b2-03-warm-2",
+          "kind": "choice",
+          "instruction_pt": "What does \"compromise\" mean in a negotiation?",
+          "options": [
+            "Each side gives up something to reach an agreement",
+            "An appointment in your calendar",
+            "A promise you must keep"
+          ],
+          "answer": 0,
+          "explanation_pt": "\"Compromise\" é um meio-termo, um acordo em que cada lado cede. \"Compromisso\" de agenda é \"appointment\"; compromisso no sentido de dedicação é \"commitment\"."
+        },
+        {
+          "id": "b2-03-warm-3",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Você pode me dar um desconto?\"",
+          "accepted": [
+            "Can you give me a discount?",
+            "Could you give me a discount?",
+            "Can I get a discount?",
+            "Could I get a discount?",
+            "Is there any chance of a discount?",
+            "Can you offer me a discount?",
+            "Could you offer me a discount?",
+            "Would you give me a discount?"
+          ],
+          "commonErrors": [
+            {
+              "id": "make-discount",
+              "match": "\\b(make|do) (me )?a discount\\b",
+              "explanation_pt": "\"Fazer um desconto\" em inglês é \"give a discount\" ou \"offer a discount\", não \"make\".",
+              "correction_en": "Could you give me a discount?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-03-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Aprender expressões de negociação: meet halfway, deal, counteroffer, bottom line, terms.",
+        "prompts": [
+          "What does \"meet halfway\" mean?",
+          "What's your bottom line when you buy a car?"
+        ],
+        "watchFor": [
+          "Pronunciar \"deal\" como \"dil\"; o \"ea\" é longo, e o \"l\" final é escuro.",
+          "Dizer \"close a deal\" como \"close an agreement\"; os dois existem, mas \"close a deal\" é mais natural."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-03-vocab-1",
+          "kind": "vocab",
+          "word_en": "to meet halfway",
+          "meaning_pt": "chegar a um meio-termo, cada um ceder um pouco",
+          "example_en": "Why don't we meet halfway and split the difference?"
+        },
+        {
+          "id": "b2-03-vocab-2",
+          "kind": "vocab",
+          "word_en": "counteroffer",
+          "meaning_pt": "contraproposta",
+          "example_en": "They rejected our price and made a counteroffer."
+        },
+        {
+          "id": "b2-03-vocab-3",
+          "kind": "vocab",
+          "word_en": "it's a deal",
+          "meaning_pt": "fechado, combinado",
+          "example_en": "Free delivery and a five percent discount? It's a deal."
+        },
+        {
+          "id": "b2-03-vocab-4",
+          "kind": "match",
+          "instruction_pt": "Match each expression to its meaning.",
+          "pairs": [
+            { "en": "bottom line", "pt": "limite, o mínimo aceitável" },
+            { "en": "terms", "pt": "condições" },
+            { "en": "to turn down", "pt": "recusar" },
+            { "en": "upfront", "pt": "adiantado, à vista" },
+            { "en": "to close a deal", "pt": "fechar um negócio" }
+          ]
+        },
+        {
+          "id": "b2-03-vocab-5",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Que tal a gente chegar a um meio-termo?\"",
+          "accepted": [
+            "How about we meet halfway?",
+            "How about meeting halfway?",
+            "Why don't we meet halfway?",
+            "What if we meet halfway?",
+            "Shall we meet halfway?",
+            "Let's meet halfway",
+            "Why don't we meet in the middle?",
+            "How about we meet in the middle?",
+            "How about a compromise?",
+            "Why don't we find a compromise?",
+            "Can we find a compromise?",
+            "Let's split the difference"
+          ],
+          "commonErrors": [
+            {
+              "id": "middle-term",
+              "match": "\\b(middle term|half term)\\b",
+              "explanation_pt": "\"Meio-termo\" não vira \"middle term\". Use \"meet halfway\", \"meet in the middle\" ou \"compromise\".",
+              "correction_en": "Why don't we meet halfway?"
+            },
+            {
+              "id": "how-about-arrive",
+              "match": "\\b(arrive|get) (at|to) a (middle|half)\\b",
+              "explanation_pt": "\"Chegar a um meio-termo\" é uma expressão fixa: \"meet halfway\" ou \"reach a compromise\".",
+              "correction_en": "How about we meet halfway?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-03-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Treinar a entonação firme mas educada e o \"l\" escuro de \"deal\" e \"deadline\".",
+        "prompts": [
+          "Say \"deal\" and \"deadline\". Do you hear the \"l\"?",
+          "How do you say no politely with your voice?"
+        ],
+        "watchFor": [
+          "Transformar o \"l\" final em \"u\" (\"deau\"), como no português.",
+          "Usar um tom de pergunta em uma recusa firme."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-03-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repeat. Keep the \"l\" in \"deal\" and \"still\": the tongue touches the top of the mouth.",
+          "prompt": "I'm afraid that's still not a good deal for us.",
+          "accepted": [
+            "I'm afraid that's still not a good deal for us.",
+            "I am afraid that is still not a good deal for us."
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b2-03-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repeat. Stress \"if\" and \"could\".",
+          "prompt": "If you can pay upfront, we could lower the price.",
+          "accepted": [
+            "If you can pay upfront, we could lower the price.",
+            "If you can pay up front, we could lower the price."
+          ],
+          "commonErrors": [
+            {
+              "id": "if-will",
+              "match": "\\bif you will pay\\b",
+              "explanation_pt": "Depois de \"if\" não usamos \"will\" para condição: \"If you can pay\" ou \"If you pay\".",
+              "correction_en": "If you can pay upfront, we could lower the price."
+            }
+          ]
+        },
+        {
+          "id": "b2-03-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Which word has the same vowel sound as \"deal\"?",
+          "options": ["meet", "did", "dell"],
+          "answer": 0,
+          "explanation_pt": "\"Deal\" e \"meet\" têm o \"i\" longo. \"Did\" tem o \"i\" curto, e \"dell\" tem o som de \"é\"."
+        }
+      ]
+    },
+    {
+      "id": "b2-03-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Entender propostas com condição e reagir com uma contraproposta.",
+        "prompts": [
+          "What would you say if a supplier asks for more money?",
+          "How do you say \"no\" without closing the door?"
+        ],
+        "watchFor": [
+          "Recusar com \"No, impossible\", que soa rude; preferir \"I'm afraid we can't...\".",
+          "Usar \"will\" depois de \"if\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-03-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Listen. What does the supplier offer?",
+          "listen": "If you order five hundred units, we can throw in free shipping.",
+          "options": [
+            "Free shipping for a big order",
+            "A discount on every order",
+            "Faster delivery for five units"
+          ],
+          "answer": 0,
+          "explanation_pt": "\"Throw in\" é incluir algo de brinde. A condição é encomendar 500 unidades."
+        },
+        {
+          "id": "b2-03-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Listen. Politely say you can't accept that price.",
+          "listen": "Our final price is fifty dollars per unit.",
+          "accepted": [
+            "I'm afraid that's too high for us",
+            "I'm afraid we can't accept that price",
+            "I'm afraid we can't go that high",
+            "I'm sorry, but that's too expensive for us",
+            "Unfortunately, that's too high for us",
+            "Unfortunately, we can't accept that",
+            "That's a bit too high for us",
+            "I'm afraid that's above our budget",
+            "That's more than we can pay",
+            "I'm afraid that doesn't work for us",
+            "I'm sorry, but we can't accept that price"
+          ],
+          "commonErrors": [
+            {
+              "id": "is-expensive-for-us",
+              "match": "\\bis (very|too) expensive for we\\b",
+              "explanation_pt": "Depois de preposição usamos \"us\", não \"we\": \"too expensive for us\".",
+              "correction_en": "I'm sorry, but that's too expensive for us."
+            },
+            {
+              "id": "we-cannot-to",
+              "match": "\\bcannot to\\b",
+              "explanation_pt": "Depois de \"can\" ou \"can't\" o verbo vem sem \"to\": \"we can't accept\".",
+              "correction_en": "I'm afraid we can't accept that price."
+            }
+          ]
+        },
+        {
+          "id": "b2-03-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Listen. Accept the offer.",
+          "listen": "Okay, forty-five dollars per unit and free shipping. What do you say?",
+          "accepted": [
+            "It's a deal",
+            "Deal",
+            "That's a deal",
+            "You've got a deal",
+            "Okay, it's a deal",
+            "Sounds good, it's a deal",
+            "That works for us",
+            "We accept",
+            "We can accept that",
+            "Yes, that works for us",
+            "Great, we have a deal",
+            "Agreed"
+          ],
+          "commonErrors": [
+            {
+              "id": "is-closed",
+              "match": "\\b(it is )?closed\\b",
+              "explanation_pt": "\"Fechado!\" no sentido de combinado é \"It's a deal\" ou \"Deal!\". \"Closed\" soa como uma loja fechada.",
+              "correction_en": "It's a deal."
+            },
+            {
+              "id": "combined",
+              "match": "\\bcombined\\b",
+              "explanation_pt": "\"Combinado\" não é \"combined\" (misturado). Diga \"Deal!\", \"Agreed\" ou \"Sounds good\".",
+              "correction_en": "Deal!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-03-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Negociar prazo ou preço em uma simulação, com proposta, recusa e contraproposta.",
+        "prompts": [
+          "I need this project done in two weeks. Can you do it?",
+          "What if I pay more?",
+          "What's your bottom line?"
+        ],
+        "watchFor": [
+          "Aceitar tudo sem negociar; incentivar o \"If you..., we could...\".",
+          "Dizer \"I'm agree with your proposal\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-03-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Se vocês aumentarem o prazo, a gente pode baixar o preço.\"",
+          "accepted": [
+            "If you extend the deadline, we can lower the price",
+            "If you extend the deadline, we could lower the price",
+            "If you give us more time, we can lower the price",
+            "If you give us more time, we could lower the price",
+            "If you push back the deadline, we can lower the price",
+            "If you push the deadline back, we could lower the price",
+            "If you extend the deadline, we can reduce the price",
+            "If you extend the deadline, we could bring the price down",
+            "If you can extend the deadline, we can lower the price"
+          ],
+          "commonErrors": [
+            {
+              "id": "if-will-extend",
+              "match": "\\bif you will (extend|give|push)\\b",
+              "explanation_pt": "Em frases com \"if\" sobre uma condição, não usamos \"will\" depois do \"if\": \"If you extend...\".",
+              "correction_en": "If you extend the deadline, we can lower the price."
+            },
+            {
+              "id": "increase-deadline",
+              "match": "\\b(increase|augment|raise) the deadline\\b",
+              "explanation_pt": "Prazo não \"aumenta\" em inglês: ele é \"extended\" ou \"pushed back\".",
+              "correction_en": "If you extend the deadline, we can lower the price."
+            }
+          ]
+        },
+        {
+          "id": "b2-03-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Infelizmente, isso é o máximo que podemos oferecer.\"",
+          "accepted": [
+            "Unfortunately, that's the best we can offer",
+            "Unfortunately, that's the most we can offer",
+            "Unfortunately, this is the best we can offer",
+            "Unfortunately, this is the most we can offer",
+            "I'm afraid that's the best we can offer",
+            "I'm afraid that's the most we can offer",
+            "Unfortunately, that's as far as we can go",
+            "I'm afraid that's as far as we can go",
+            "Unfortunately, that's our best offer",
+            "Unfortunately, that's our final offer"
+          ],
+          "commonErrors": [
+            {
+              "id": "infelizmente-literal",
+              "match": "\\b(unhappily|unfelicitously)\\b",
+              "explanation_pt": "\"Infelizmente\" é \"unfortunately\". \"Unhappily\" é \"de forma triste\".",
+              "correction_en": "Unfortunately, that's the best we can offer."
+            },
+            {
+              "id": "the-maximum-that",
+              "match": "\\bthe maximum (that )?we can offer\\b",
+              "explanation_pt": "\"The maximum we can offer\" se entende, mas o natural é \"the best\" ou \"the most we can offer\".",
+              "correction_en": "Unfortunately, that's the best we can offer."
+            }
+          ]
+        },
+        {
+          "id": "b2-03-conv-3",
+          "kind": "order",
+          "instruction_pt": "Put the words in order to make a counteroffer.",
+          "accepted": ["What if we split the difference"]
+        },
+        {
+          "id": "b2-03-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Negotiate. The client wants a lower price. Refuse politely and make a counteroffer.",
+          "prompt_en": "We love your proposal, but the price is too high. Can you do it for twenty percent less?",
+          "guidelines_pt": [
+            "Thank them and refuse politely: \"I'm afraid we can't go that low.\"",
+            "Make a counteroffer with \"if\": \"If you..., we could...\"",
+            "Try to close: \"Do we have a deal?\""
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-03-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Revisar as expressões de negociação e as frases com \"if\".",
+        "prompts": [
+          "How do you refuse an offer politely?",
+          "How do you say \"fechado\" in a negotiation?"
+        ],
+        "watchFor": ["\"Make a discount\".", "\"If\" seguido de \"will\" na condição."]
+      },
+      "exercises": [
+        {
+          "id": "b2-03-rev-1",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Eles recusaram a nossa proposta.\"",
+          "accepted": [
+            "They turned down our proposal",
+            "They turned our proposal down",
+            "They rejected our proposal",
+            "They refused our proposal",
+            "They said no to our proposal",
+            "They turned down our offer",
+            "They rejected our offer"
+          ],
+          "commonErrors": [
+            {
+              "id": "recused",
+              "match": "\\brecused\\b",
+              "explanation_pt": "\"Recuse\" em inglês é um juiz se declarar impedido. \"Recusar\" é \"turn down\", \"reject\" ou \"refuse\".",
+              "correction_en": "They turned down our proposal."
+            },
+            {
+              "id": "propose-noun",
+              "match": "\\bour (propose|proposition)\\b",
+              "explanation_pt": "O substantivo é \"proposal\" (ou \"offer\"). \"Propose\" é verbo.",
+              "correction_en": "They turned down our proposal."
+            }
+          ]
+        },
+        {
+          "id": "b2-03-rev-2",
+          "kind": "fill",
+          "instruction_pt": "Complete the sentence.",
+          "sentence": "If you ___ more units, we'll give you a discount.",
+          "accepted": ["order", "buy", "purchase"],
+          "commonErrors": [
+            {
+              "id": "will-order",
+              "match": "^will (order|buy|purchase)$",
+              "explanation_pt": "Depois de \"if\" na condição usamos o presente: \"If you order...\". O \"will\" fica na outra parte da frase.",
+              "correction_en": "If you order more units, we'll give you a discount."
+            }
+          ]
+        },
+        {
+          "id": "b2-03-rev-3",
+          "kind": "choice",
+          "instruction_pt": "Which sentence is the most polite way to say no?",
+          "options": [
+            "I'm afraid we can't accept that.",
+            "No, this is impossible.",
+            "We don't want that."
+          ],
+          "answer": 0,
+          "explanation_pt": "\"I'm afraid...\" suaviza a recusa e mantém a negociação aberta. As outras soam secas."
+        },
+        {
+          "id": "b2-03-rev-4",
+          "kind": "repeat",
+          "instruction_pt": "To finish, repeat.",
+          "prompt": "Great. I think we have a deal.",
+          "accepted": ["Great. I think we have a deal.", "Great, I think we've got a deal."],
+          "commonErrors": []
+        }
+      ]
+    }
+  ]
+}
