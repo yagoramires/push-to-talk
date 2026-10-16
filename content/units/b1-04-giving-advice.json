@@ -1,0 +1,484 @@
+{
+  "id": "b1-04-giving-advice",
+  "level": "B1",
+  "order": 4,
+  "title_pt": "Dando conselhos",
+  "title_en": "Giving advice",
+  "objective_pt": "Pedir e dar conselhos com \"should\", \"If I were you, I'd...\", \"Why don't you...?\" e \"You'd better\", e reagir a um conselho.",
+  "blocks": [
+    {
+      "id": "b1-04-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Aquecer pedindo e dando conselhos simples com \"should\".",
+        "prompts": [
+          "I can't sleep at night. What should I do?",
+          "What's the best advice you've ever received?"
+        ],
+        "watchFor": [
+          "Dizer \"You should to sleep\"; depois de \"should\" não vem \"to\".",
+          "Usar \"an advice\"; \"advice\" é incontável: \"some advice\" ou \"a piece of advice\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-04-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita o pedido de conselho.",
+          "prompt": "Can I ask you for some advice?",
+          "accepted": [
+            "Can I ask you for some advice",
+            "Can I ask you for advice",
+            "Could I ask you for some advice"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-04-warm-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e aconselhe a pessoa a ir ao médico.",
+          "listen": "I've had a headache for three days.",
+          "accepted": [
+            "You should see a doctor",
+            "You should go to the doctor",
+            "You should go see a doctor",
+            "Maybe you should see a doctor",
+            "I think you should see a doctor",
+            "Why don't you see a doctor",
+            "Why don't you go to the doctor",
+            "You'd better see a doctor",
+            "You should go to a doctor"
+          ],
+          "commonErrors": [
+            {
+              "id": "should-to",
+              "match": "\\bshould to\\b",
+              "explanation_pt": "Depois de \"should\" vem o verbo direto, sem \"to\": \"You should see a doctor\".",
+              "correction_en": "You should see a doctor."
+            },
+            {
+              "id": "go-in-doctor",
+              "match": "\\bgo (in|at) the doctor\\b",
+              "explanation_pt": "Ir ao médico é \"go to the doctor\" ou \"see a doctor\".",
+              "correction_en": "You should go to the doctor."
+            }
+          ]
+        },
+        {
+          "id": "b1-04-warm-3",
+          "kind": "choice",
+          "instruction_pt": "Qual frase está correta?",
+          "options": [
+            "Can you give me an advice?",
+            "Can you give me some advice?",
+            "Can you give me advices?"
+          ],
+          "answer": 1,
+          "explanation_pt": "\"Advice\" é incontável em inglês: \"some advice\" ou \"a piece of advice\". Nunca \"an advice\" ou \"advices\"."
+        }
+      ]
+    },
+    {
+      "id": "b1-04-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Aprender expressões para dar conselhos de forma mais ou menos forte.",
+        "prompts": [
+          "What's stronger: \"you should\" or \"you'd better\"?",
+          "Give me advice about learning English."
+        ],
+        "watchFor": [
+          "Usar \"You'd better to go\"; é \"You'd better go\".",
+          "Confundir \"advice\" (substantivo, \"ss\" no fim) com \"advise\" (verbo, \"z\" no fim)."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-04-vocab-1",
+          "kind": "vocab",
+          "word_en": "If I were you, I'd...",
+          "meaning_pt": "Se eu fosse você, eu...",
+          "example_en": "If I were you, I'd talk to your boss."
+        },
+        {
+          "id": "b1-04-vocab-2",
+          "kind": "vocab",
+          "word_en": "You'd better",
+          "meaning_pt": "É melhor você (conselho forte, quase aviso)",
+          "example_en": "You'd better leave now, or you'll miss the bus."
+        },
+        {
+          "id": "b1-04-vocab-3",
+          "kind": "vocab",
+          "word_en": "to be worth it",
+          "meaning_pt": "valer a pena",
+          "example_en": "The course is expensive, but it's worth it."
+        },
+        {
+          "id": "b1-04-vocab-4",
+          "kind": "vocab",
+          "word_en": "to take it easy",
+          "meaning_pt": "pegar leve, relaxar",
+          "example_en": "You've been working too hard. Take it easy this weekend."
+        },
+        {
+          "id": "b1-04-vocab-5",
+          "kind": "match",
+          "instruction_pt": "Ligue cada expressão ao significado.",
+          "pairs": [
+            {
+              "en": "Why don't you...?",
+              "pt": "Por que você não...?"
+            },
+            {
+              "en": "You ought to...",
+              "pt": "Você deveria..."
+            },
+            {
+              "en": "It might be a good idea to...",
+              "pt": "Talvez seja uma boa ideia..."
+            },
+            {
+              "en": "Have you thought about...?",
+              "pt": "Você já pensou em...?"
+            },
+            {
+              "en": "I wouldn't...",
+              "pt": "Eu não faria..."
+            }
+          ]
+        },
+        {
+          "id": "b1-04-vocab-6",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Se eu fosse você, eu aceitaria a oferta.\"",
+          "accepted": [
+            "If I were you, I'd accept the offer",
+            "If I were you, I would accept the offer",
+            "If I was you, I'd accept the offer",
+            "If I was you, I would accept the offer",
+            "If I were you, I'd take the offer",
+            "If I were you, I would take the offer",
+            "I'd accept the offer if I were you",
+            "I would take the offer if I were you"
+          ],
+          "commonErrors": [
+            {
+              "id": "if-i-am-you",
+              "match": "^if i (am|would be) you\\b",
+              "explanation_pt": "Situação imaginária usa o passado: \"If I were you\" (ou \"If I was you\", informal).",
+              "correction_en": "If I were you, I'd accept the offer."
+            },
+            {
+              "id": "will-accept",
+              "match": "\\bi will (accept|take)\\b",
+              "explanation_pt": "Depois de \"If I were you\" use \"would\" (\"I'd\"), e não \"will\".",
+              "correction_en": "If I were you, I'd accept the offer."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-04-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Pronunciar as formas reduzidas \"I'd\", \"you'd\" e o \"l\" mudo de \"should\".",
+        "prompts": [
+          "Say \"should\", \"could\" and \"would\". Do you hear the L?",
+          "Say \"You'd better\" quickly."
+        ],
+        "watchFor": [
+          "Pronunciar o \"l\" de \"should/could/would\"; ele é mudo: \"shud\", \"kud\", \"wud\".",
+          "Omitir o \"d\" de \"I'd\" e \"you'd\", que muda o sentido da frase."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-04-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita. O \"l\" de \"should\" e \"would\" é mudo.",
+          "prompt": "You should rest, and I would drink more water.",
+          "accepted": [
+            "You should rest, and I would drink more water",
+            "You should rest, and I'd drink more water"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-04-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repita. Marque o \"d\" de \"you'd\".",
+          "prompt": "You'd better hurry up.",
+          "accepted": ["You'd better hurry up", "You had better hurry up", "You'd better hurry"],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-04-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Em \"should\", qual letra não é pronunciada?",
+          "options": ["s", "l", "d"],
+          "answer": 1,
+          "explanation_pt": "O \"l\" de \"should\", \"could\" e \"would\" é mudo: \"shud\"."
+        }
+      ]
+    },
+    {
+      "id": "b1-04-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Entender um problema e responder com um conselho adequado.",
+        "prompts": [
+          "My neighbor plays loud music every night. What should I do?",
+          "I want to save money. Any advice?"
+        ],
+        "watchFor": [
+          "Responder só \"Yes\" ou \"Good idea\" sem dar um conselho.",
+          "Usar \"must\" para conselho leve; \"must\" soa como obrigação."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-04-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Ouça e escolha o conselho que a pessoa deu.",
+          "listen": "If I were you, I wouldn't quit your job until you find a new one.",
+          "options": [
+            "Pedir demissão agora.",
+            "Não pedir demissão antes de achar outro emprego.",
+            "Pedir um aumento ao chefe."
+          ],
+          "answer": 1,
+          "explanation_pt": "\"I wouldn't quit your job until you find a new one\" = eu não pediria demissão até achar outro."
+        },
+        {
+          "id": "b1-04-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e sugira, com \"Why don't you...\", que a pessoa converse com o vizinho.",
+          "listen": "My neighbor plays loud music every night, and I can't sleep.",
+          "accepted": [
+            "Why don't you talk to your neighbor",
+            "Why don't you talk to him",
+            "Why don't you talk to them",
+            "Why don't you speak to your neighbor",
+            "Why don't you talk with your neighbor",
+            "Why don't you have a chat with your neighbor",
+            "Why don't you go and talk to your neighbor"
+          ],
+          "commonErrors": [
+            {
+              "id": "why-you-dont",
+              "match": "^why you (do not|not)\\b",
+              "explanation_pt": "Na pergunta, o auxiliar vem antes do sujeito: \"Why don't you...?\".",
+              "correction_en": "Why don't you talk to your neighbor?"
+            },
+            {
+              "id": "why-dont-you-to",
+              "match": "\\bwhy do not you to\\b",
+              "explanation_pt": "Depois de \"Why don't you\" vem o verbo direto, sem \"to\".",
+              "correction_en": "Why don't you talk to your neighbor?"
+            }
+          ]
+        },
+        {
+          "id": "b1-04-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e dê um conselho para economizar dinheiro (por exemplo, cozinhar em casa).",
+          "listen": "I spend too much money every month. What should I do?",
+          "accepted": [
+            "You should cook at home",
+            "You should cook at home more",
+            "You should cook at home more often",
+            "Maybe you should cook at home",
+            "Why don't you cook at home",
+            "You should eat out less",
+            "You should make a budget",
+            "You should stop eating out",
+            "I think you should cook at home more"
+          ],
+          "commonErrors": [
+            {
+              "id": "cook-in-house",
+              "match": "\\b(in|at) (the )?house\\b",
+              "explanation_pt": "\"Em casa\" é \"at home\", sem artigo. \"In the house\" é dentro da construção.",
+              "correction_en": "You should cook at home more."
+            },
+            {
+              "id": "should-to",
+              "match": "\\bshould to\\b",
+              "explanation_pt": "Depois de \"should\" vem o verbo direto, sem \"to\".",
+              "correction_en": "You should cook at home more."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-04-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Trocar conselhos: ouvir um problema, sugerir duas opções e reagir ao conselho recebido.",
+        "prompts": [
+          "My friend always borrows money and never pays it back. What should I do?",
+          "What advice would you give to someone moving to Brazil?"
+        ],
+        "watchFor": [
+          "Usar sempre \"you should\"; incentive variar com \"Why don't you\" e \"If I were you\".",
+          "Reagir só com \"OK\"; ensine \"That's a good idea\", \"I'll try that\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-04-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Você não deveria trabalhar tanto.\"",
+          "accepted": [
+            "You shouldn't work so much",
+            "You should not work so much",
+            "You shouldn't work so hard",
+            "You should not work so hard",
+            "You shouldn't be working so much",
+            "You shouldn't work that much"
+          ],
+          "commonErrors": [
+            {
+              "id": "dont-should",
+              "match": "\\b(do not|does not) should\\b",
+              "explanation_pt": "\"Should\" já é auxiliar e faz a negação sozinho: \"You shouldn't\".",
+              "correction_en": "You shouldn't work so much."
+            },
+            {
+              "id": "so-many",
+              "match": "\\bwork so many\\b|\\bwork too many\\b",
+              "explanation_pt": "\"Tanto\" com verbo é \"so much\" ou \"so hard\". \"So many\" é para coisas contáveis no plural.",
+              "correction_en": "You shouldn't work so much."
+            }
+          ]
+        },
+        {
+          "id": "b1-04-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Vale a pena tentar.\"",
+          "accepted": [
+            "It's worth trying",
+            "It is worth trying",
+            "It's worth a try",
+            "It is worth a try",
+            "It's worth it to try",
+            "It's worth giving it a try"
+          ],
+          "commonErrors": [
+            {
+              "id": "worth-the-pain",
+              "match": "\\bworth the (pain|penalty|feather)\\b",
+              "explanation_pt": "\"Vale a pena\" não é \"worth the pain\". Em inglês é só \"worth it\" ou \"worth + -ing\".",
+              "correction_en": "It's worth trying."
+            },
+            {
+              "id": "worth-to-try",
+              "match": "\\bworth to try\\b",
+              "explanation_pt": "Depois de \"worth\" o verbo vai com \"-ing\": \"worth trying\".",
+              "correction_en": "It's worth trying."
+            }
+          ]
+        },
+        {
+          "id": "b1-04-conv-3",
+          "kind": "order",
+          "instruction_pt": "Coloque as palavras na ordem certa.",
+          "accepted": ["Have you thought about changing jobs?"]
+        },
+        {
+          "id": "b1-04-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Dê conselhos a um amigo com um problema.",
+          "prompt_en": "My friend wants to learn English fast, but he only has thirty minutes a day. What advice would you give him?",
+          "guidelines_pt": [
+            "Use pelo menos três formas diferentes: \"He should...\", \"Why doesn't he...?\", \"If I were him, I'd...\".",
+            "Dê um motivo para cada conselho: \"because...\".",
+            "Diga o que ele não deveria fazer: \"He shouldn't...\"."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-04-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Fixar \"should\" sem \"to\", \"advice\" incontável e \"If I were you\".",
+        "prompts": [
+          "What should I do this weekend?",
+          "Give me one piece of advice about your city."
+        ],
+        "watchFor": ["\"an advice\".", "\"should to\"."]
+      },
+      "exercises": [
+        {
+          "id": "b1-04-rev-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita a frase.",
+          "prompt": "That's a good idea. I'll give it a try.",
+          "accepted": [
+            "That's a good idea. I'll give it a try",
+            "That is a good idea. I will give it a try"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-04-rev-2",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Ela me deu um ótimo conselho.\"",
+          "accepted": [
+            "She gave me some great advice",
+            "She gave me great advice",
+            "She gave me a great piece of advice",
+            "She gave me some really good advice",
+            "She gave me really good advice",
+            "She gave me very good advice"
+          ],
+          "commonErrors": [
+            {
+              "id": "an-advice",
+              "match": "\\ba (great |good |very good )?advice\\b|\\badvices\\b",
+              "explanation_pt": "\"Advice\" é incontável: \"some great advice\" ou \"a great piece of advice\", nunca \"a great advice\".",
+              "correction_en": "She gave me some great advice."
+            }
+          ]
+        },
+        {
+          "id": "b1-04-rev-3",
+          "kind": "choice",
+          "instruction_pt": "Qual conselho é o mais forte (quase um aviso)?",
+          "options": [
+            "You could try yoga.",
+            "You'd better stop smoking.",
+            "Maybe you should rest."
+          ],
+          "answer": 1,
+          "explanation_pt": "\"You'd better\" é um conselho forte, com tom de aviso: senão, algo ruim pode acontecer."
+        },
+        {
+          "id": "b1-04-rev-4",
+          "kind": "fill",
+          "instruction_pt": "Complete com a forma certa de \"be\".",
+          "sentence": "If I ___ you, I'd call her today.",
+          "accepted": ["were", "was"],
+          "commonErrors": [
+            {
+              "id": "am-is",
+              "match": "^(am|is|be|are)$",
+              "explanation_pt": "Situação imaginária usa o passado: \"If I were you\".",
+              "correction_en": "If I were you, I'd call her today."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

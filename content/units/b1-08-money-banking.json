@@ -1,0 +1,457 @@
+{
+  "id": "b1-08-money-banking",
+  "level": "B1",
+  "order": 8,
+  "title_pt": "Dinheiro e banco",
+  "title_en": "Money and banking",
+  "objective_pt": "Resolver situações de banco e pagamento (abrir conta, sacar dinheiro, cartão recusado) e falar sobre gastar e economizar com \"spend on\", \"save up for\" e \"afford\".",
+  "blocks": [
+    {
+      "id": "b1-08-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Aquecer falando de hábitos com dinheiro.",
+        "prompts": ["Are you a saver or a spender?", "How do you usually pay for things?"],
+        "watchFor": [
+          "Dizer \"I pay with card\"; é \"I pay by card\" ou \"with my card\".",
+          "Usar \"economize\"; economizar dinheiro é \"save\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-08-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita a pergunta do caixa.",
+          "prompt": "Will you be paying by card or in cash?",
+          "accepted": [
+            "Will you be paying by card or in cash",
+            "Will you be paying by card or cash",
+            "Are you paying by card or in cash"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-08-warm-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e responda que vai pagar com cartão.",
+          "listen": "How would you like to pay?",
+          "accepted": [
+            "By card, please",
+            "By card",
+            "I'll pay by card",
+            "I'll pay by card, please",
+            "Card, please",
+            "With my card, please",
+            "I'd like to pay by card",
+            "Credit card, please",
+            "By credit card"
+          ],
+          "commonErrors": [
+            {
+              "id": "in-card",
+              "match": "\\b(in|on) (the )?card\\b",
+              "explanation_pt": "Forma de pagamento com cartão é \"by card\" (ou \"with my card\"). Em dinheiro é \"in cash\".",
+              "correction_en": "By card, please."
+            },
+            {
+              "id": "with-cash-card",
+              "match": "\\bwith cash\\b",
+              "explanation_pt": "Em dinheiro é \"in cash\".",
+              "correction_en": "In cash, please."
+            }
+          ]
+        },
+        {
+          "id": "b1-08-warm-3",
+          "kind": "choice",
+          "instruction_pt": "Como se diz \"economizar dinheiro\"?",
+          "options": ["economize money", "save money", "spare money"],
+          "answer": 1,
+          "explanation_pt": "Economizar é \"save\". \"Economize\" existe, mas é formal e raro na conversa."
+        }
+      ]
+    },
+    {
+      "id": "b1-08-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Aprender o vocabulário de banco e de finanças pessoais.",
+        "prompts": [
+          "What do you spend most of your money on?",
+          "Is there something you're saving up for?"
+        ],
+        "watchFor": [
+          "Dizer \"spend in clothes\"; é \"spend on clothes\".",
+          "Confundir \"borrow\" (pegar emprestado) e \"lend\" (emprestar)."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-08-vocab-1",
+          "kind": "vocab",
+          "word_en": "to afford",
+          "meaning_pt": "ter dinheiro para, poder pagar",
+          "example_en": "I can't afford a new car right now."
+        },
+        {
+          "id": "b1-08-vocab-2",
+          "kind": "vocab",
+          "word_en": "to save up for",
+          "meaning_pt": "juntar dinheiro para",
+          "example_en": "I'm saving up for a trip to Chile."
+        },
+        {
+          "id": "b1-08-vocab-3",
+          "kind": "vocab",
+          "word_en": "to withdraw",
+          "meaning_pt": "sacar (dinheiro)",
+          "example_en": "I need to withdraw some cash before we go."
+        },
+        {
+          "id": "b1-08-vocab-4",
+          "kind": "vocab",
+          "word_en": "to be declined",
+          "meaning_pt": "ser recusado (cartão)",
+          "example_en": "I'm sorry, your card has been declined."
+        },
+        {
+          "id": "b1-08-vocab-5",
+          "kind": "match",
+          "instruction_pt": "Ligue cada palavra ao significado.",
+          "pairs": [
+            { "en": "to borrow", "pt": "pegar emprestado" },
+            { "en": "to lend", "pt": "emprestar (para alguém)" },
+            { "en": "bill", "pt": "conta (a pagar)" },
+            { "en": "fee", "pt": "taxa, tarifa" },
+            { "en": "loan", "pt": "empréstimo" }
+          ]
+        },
+        {
+          "id": "b1-08-vocab-6",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Você pode me emprestar vinte reais?\"",
+          "accepted": [
+            "Can you lend me twenty reais",
+            "Could you lend me twenty reais",
+            "Can you lend me 20 reais",
+            "Could you lend me 20 reais",
+            "Can I borrow twenty reais",
+            "Could I borrow twenty reais",
+            "Can I borrow 20 reais from you"
+          ],
+          "commonErrors": [
+            {
+              "id": "borrow-me",
+              "match": "\\bborrow me\\b",
+              "explanation_pt": "\"Borrow\" é pegar emprestado. Para pedir que alguém empreste a você, use \"lend me\" ou \"Can I borrow...?\".",
+              "correction_en": "Can you lend me twenty reais?"
+            },
+            {
+              "id": "empresta",
+              "match": "\\bemprest\\w*\\b|\\bloan me\\b",
+              "explanation_pt": "O verbo mais natural para emprestar a alguém é \"lend\": \"Can you lend me...?\".",
+              "correction_en": "Can you lend me twenty reais?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-08-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Pronunciar valores em dinheiro e as palavras \"debt\" e \"receipt\" (letras mudas).",
+        "prompts": ["How do you say R$ 49.90 in English?", "Say \"debt\". Is there a B sound?"],
+        "watchFor": [
+          "Pronunciar o \"b\" de \"debt\"; é \"dét\".",
+          "Ler valores como em português (\"quarenta e nove vírgula noventa\"); em inglês: \"forty-nine ninety\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-08-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita. O \"b\" de \"debt\" é mudo.",
+          "prompt": "I want to pay off my debt this year.",
+          "accepted": ["I want to pay off my debt this year", "I wanna pay off my debt this year"],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-08-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repita o valor do jeito que se fala em inglês.",
+          "prompt": "That comes to forty-nine ninety.",
+          "accepted": [
+            "That comes to forty-nine ninety",
+            "That comes to forty nine ninety",
+            "That comes to 49.90"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-08-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Qual letra é muda em \"debt\"?",
+          "options": ["d", "b", "t"],
+          "answer": 1,
+          "explanation_pt": "Em \"debt\" (dívida) o \"b\" não é pronunciado: \"dét\"."
+        }
+      ]
+    },
+    {
+      "id": "b1-08-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Entender situações de banco e pagamento e responder.",
+        "prompts": ["Your card was declined. What do you say?", "Where's the nearest ATM?"],
+        "watchFor": [
+          "Dizer \"cash machine\" e \"ATM\" está ok; \"electronic box\" não.",
+          "Esquecer o artigo: \"I want to open account\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-08-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Ouça o atendente do banco e escolha o que ele explicou.",
+          "listen": "There's no monthly fee for this account, but you'll pay two dollars every time you use another bank's ATM.",
+          "options": [
+            "A conta tem tarifa mensal de dois dólares.",
+            "Não há tarifa mensal, mas cobra dois dólares por saque em caixa de outro banco.",
+            "Os saques são todos gratuitos."
+          ],
+          "answer": 1,
+          "explanation_pt": "\"No monthly fee\" = sem tarifa mensal; \"two dollars every time you use another bank's ATM\" = dois dólares por uso de caixa de outro banco."
+        },
+        {
+          "id": "b1-08-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e diga que quer abrir uma conta.",
+          "listen": "Good morning. What can I do for you today?",
+          "accepted": [
+            "I'd like to open an account",
+            "I would like to open an account",
+            "I'd like to open a bank account",
+            "I want to open an account",
+            "Good morning. I'd like to open an account",
+            "I'd like to open a new account, please",
+            "Hi, I'd like to open an account, please"
+          ],
+          "commonErrors": [
+            {
+              "id": "open-account-no-article",
+              "match": "\\bopen (bank )?account\\b",
+              "explanation_pt": "\"Account\" é contável e precisa de artigo: \"open an account\".",
+              "correction_en": "I'd like to open an account."
+            },
+            {
+              "id": "count",
+              "match": "\\bopen a count\\b",
+              "explanation_pt": "Conta bancária é \"account\". \"Count\" é contar ou conde.",
+              "correction_en": "I'd like to open an account."
+            }
+          ]
+        },
+        {
+          "id": "b1-08-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e peça para tentar de novo com outro cartão.",
+          "listen": "I'm sorry, your card has been declined.",
+          "accepted": [
+            "Can I try another card",
+            "Could I try another card",
+            "Can I try a different card",
+            "Oh, can I try another card",
+            "Let me try another card",
+            "Can I try again with another card",
+            "Could I try with a different card"
+          ],
+          "commonErrors": [
+            {
+              "id": "other-card",
+              "match": "\\b(an )?other card\\b",
+              "explanation_pt": "\"Outro cartão\" é \"another card\" (uma palavra só) ou \"a different card\".",
+              "correction_en": "Can I try another card?"
+            },
+            {
+              "id": "try-to-another",
+              "match": "\\btry to (another|other|a different)\\b",
+              "explanation_pt": "\"Try\" + objeto não leva \"to\": \"try another card\".",
+              "correction_en": "Can I try another card?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-08-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Conversar sobre hábitos de dinheiro: gastos, economias e metas.",
+        "prompts": [
+          "What do you spend too much money on?",
+          "What are you saving up for?",
+          "Is it a good idea to lend money to friends?"
+        ],
+        "watchFor": [
+          "\"spend in\" no lugar de \"spend on\".",
+          "\"I can't afford to buy\" é ok; \"I don't have money for buy\" não."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-08-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu gasto muito dinheiro com comida.\"",
+          "accepted": [
+            "I spend a lot of money on food",
+            "I spend lots of money on food",
+            "I spend too much money on food",
+            "I spend a lot on food",
+            "I spend so much money on food",
+            "I spend a lot of money on eating"
+          ],
+          "commonErrors": [
+            {
+              "id": "spend-with",
+              "match": "\\bspend\\b.*\\b(with|in) food\\b",
+              "explanation_pt": "\"Gastar com\" é \"spend on\": \"I spend a lot of money on food\".",
+              "correction_en": "I spend a lot of money on food."
+            },
+            {
+              "id": "expend",
+              "match": "\\bexpend\\b",
+              "explanation_pt": "\"Gastar\" dinheiro é \"spend\". \"Expend\" é formal e se usa para energia ou recursos.",
+              "correction_en": "I spend a lot of money on food."
+            }
+          ]
+        },
+        {
+          "id": "b1-08-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu não tenho condições de comprar um carro agora.\"",
+          "accepted": [
+            "I can't afford a car right now",
+            "I can't afford to buy a car right now",
+            "I can't afford a car now",
+            "I cannot afford a car right now",
+            "I can't afford to buy a car now",
+            "I don't have enough money for a car right now",
+            "I don't have enough money to buy a car right now"
+          ],
+          "commonErrors": [
+            {
+              "id": "no-conditions",
+              "match": "\\bconditions\\b",
+              "explanation_pt": "\"Não ter condições\" (dinheiro) é \"can't afford\". \"Conditions\" é tradução literal.",
+              "correction_en": "I can't afford a car right now."
+            },
+            {
+              "id": "money-for-buy",
+              "match": "\\bmoney for buy\\b",
+              "explanation_pt": "Depois de \"money\" use \"to buy\" ou \"for a car\": \"money to buy a car\".",
+              "correction_en": "I don't have enough money to buy a car right now."
+            }
+          ]
+        },
+        {
+          "id": "b1-08-conv-3",
+          "kind": "order",
+          "instruction_pt": "Coloque as palavras na ordem certa.",
+          "accepted": ["I'm saving up for a new laptop."]
+        },
+        {
+          "id": "b1-08-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Fale sobre a sua relação com dinheiro.",
+          "prompt_en": "Are you better at saving or spending money? What are you saving up for right now?",
+          "guidelines_pt": [
+            "Diga com o que você gasta mais: \"I spend most of my money on...\".",
+            "Fale de uma meta: \"I'm saving up for...\".",
+            "Dê uma dica de economia: \"One thing that helps me save is...\"."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-08-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Fixar \"lend/borrow\", \"spend on\", \"by card/in cash\" e \"afford\".",
+        "prompts": ["Have you ever lent money to someone?", "What can't you afford right now?"],
+        "watchFor": ["\"borrow me\".", "\"spend in\"."]
+      },
+      "exercises": [
+        {
+          "id": "b1-08-rev-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita a frase.",
+          "prompt": "Could you split the bill, please? We'll pay separately.",
+          "accepted": [
+            "Could you split the bill, please? We'll pay separately",
+            "Could you split the bill please? We will pay separately",
+            "Could you split the bill? We'll pay separately"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-08-rev-2",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Onde fica o caixa eletrônico mais próximo?\"",
+          "accepted": [
+            "Where's the nearest ATM",
+            "Where is the nearest ATM",
+            "Where's the nearest cash machine",
+            "Where is the closest ATM",
+            "Where's the closest ATM",
+            "Is there an ATM near here",
+            "Where can I find the nearest ATM"
+          ],
+          "commonErrors": [
+            {
+              "id": "electronic-box",
+              "match": "\\belectronic (box|cashier)\\b",
+              "explanation_pt": "Caixa eletrônico é \"ATM\" (ou \"cash machine\").",
+              "correction_en": "Where's the nearest ATM?"
+            },
+            {
+              "id": "more-near",
+              "match": "\\bmore (near|close)\\b",
+              "explanation_pt": "\"Mais próximo\" é \"nearest\" ou \"closest\".",
+              "correction_en": "Where's the nearest ATM?"
+            }
+          ]
+        },
+        {
+          "id": "b1-08-rev-3",
+          "kind": "choice",
+          "instruction_pt": "Complete: \"Can I ___ your pen?\"",
+          "options": ["lend", "borrow", "loan"],
+          "answer": 1,
+          "explanation_pt": "Quem pede para usar algo emprestado diz \"Can I borrow...?\". Quem dá diz \"I can lend you...\"."
+        },
+        {
+          "id": "b1-08-rev-4",
+          "kind": "fill",
+          "instruction_pt": "Complete com a preposição.",
+          "sentence": "She spends half her salary ___ rent.",
+          "accepted": ["on"],
+          "commonErrors": [
+            {
+              "id": "spend-in-with",
+              "match": "^(in|with|for|at)$",
+              "explanation_pt": "\"Spend money\" leva \"on\": \"spends half her salary on rent\".",
+              "correction_en": "She spends half her salary on rent."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

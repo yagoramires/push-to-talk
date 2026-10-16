@@ -1,0 +1,492 @@
+{
+  "id": "b2-02-presenting-ideas",
+  "level": "B2",
+  "order": 2,
+  "title_pt": "Apresentando ideias",
+  "title_en": "Presenting ideas",
+  "objective_pt": "Estruturar uma apresentação curta com conectivos (first, moving on, to sum up), descrever um gráfico e responder a perguntas.",
+  "blocks": [
+    {
+      "id": "b2-02-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Falar sobre experiências com apresentações e aquecer com uma abertura clara.",
+        "prompts": [
+          "When was the last time you gave a presentation?",
+          "Do you get nervous when you speak in public?"
+        ],
+        "watchFor": [
+          "\"Make a presentation\" é aceitável, mas \"give a presentation\" é mais comum.",
+          "Dizer \"explain you\" em vez de \"explain to you\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-02-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repeat out loud.",
+          "prompt": "Today I'd like to walk you through our new idea.",
+          "accepted": [
+            "Today I'd like to walk you through our new idea.",
+            "Today I would like to walk you through our new idea."
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b2-02-warm-2",
+          "kind": "choice",
+          "instruction_pt": "Which word means \"resumir\"?",
+          "options": ["summarize", "resume", "assume"],
+          "answer": 0,
+          "explanation_pt": "\"Resume\" é falso cognato: significa retomar, continuar. \"Resumir\" é \"summarize\" (ou \"sum up\")."
+        },
+        {
+          "id": "b2-02-warm-3",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Deixa eu te explicar a ideia.\"",
+          "accepted": [
+            "Let me explain the idea to you",
+            "Let me explain the idea",
+            "Let me explain the idea to you guys",
+            "Let me walk you through the idea",
+            "Let me tell you about the idea",
+            "Let me run you through the idea",
+            "Let me explain my idea to you",
+            "Let me explain my idea"
+          ],
+          "commonErrors": [
+            {
+              "id": "explain-you",
+              "match": "\\bexplain you\\b",
+              "explanation_pt": "\"Explain\" pede \"to\" antes da pessoa: \"explain the idea to you\". \"Explain you\" é tradução literal de \"te explicar\".",
+              "correction_en": "Let me explain the idea to you."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-02-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Aprender conectivos de apresentação e verbos para descrever números (rise, drop, level off).",
+        "prompts": [
+          "How would you describe your company's sales this year?",
+          "How do you move from one slide to the next?"
+        ],
+        "watchFor": [
+          "Dizer \"the graphic shows\"; o natural é \"the chart\" ou \"the graph shows\".",
+          "Confundir \"rise\" (subir, sem objeto) com \"raise\" (aumentar algo)."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-02-vocab-1",
+          "kind": "vocab",
+          "word_en": "to sum up",
+          "meaning_pt": "resumindo, para concluir",
+          "example_en": "To sum up, the project is on time and under budget."
+        },
+        {
+          "id": "b2-02-vocab-2",
+          "kind": "vocab",
+          "word_en": "to rise sharply",
+          "meaning_pt": "subir muito, de forma brusca",
+          "example_en": "Sales rose sharply in the second quarter."
+        },
+        {
+          "id": "b2-02-vocab-3",
+          "kind": "vocab",
+          "word_en": "to level off",
+          "meaning_pt": "estabilizar",
+          "example_en": "After that, the numbers levelled off."
+        },
+        {
+          "id": "b2-02-vocab-4",
+          "kind": "match",
+          "instruction_pt": "Match each expression to its meaning.",
+          "pairs": [
+            {
+              "en": "moving on to",
+              "pt": "passando para"
+            },
+            {
+              "en": "as you can see",
+              "pt": "como vocês podem ver"
+            },
+            {
+              "en": "a slight drop",
+              "pt": "uma pequena queda"
+            },
+            {
+              "en": "chart",
+              "pt": "gráfico"
+            },
+            {
+              "en": "key takeaway",
+              "pt": "principal lição, ponto-chave"
+            }
+          ]
+        },
+        {
+          "id": "b2-02-vocab-5",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Como vocês podem ver no gráfico, as vendas subiram 10%.\"",
+          "accepted": [
+            "As you can see in the chart, sales rose by 10%",
+            "As you can see on the chart, sales rose by 10%",
+            "As you can see in the chart, sales went up by 10%",
+            "As you can see in the graph, sales rose by 10%",
+            "As you can see on the graph, sales went up by 10%",
+            "As you can see in the chart, sales increased by 10%",
+            "As you can see from the chart, sales increased by 10%",
+            "As you can see in the chart, sales rose 10%",
+            "As you can see in the chart, sales went up 10%",
+            "As you can see in the chart, sales increased by ten percent",
+            "As you can see in the chart, sales rose by ten percent",
+            "As you can see in the chart, sales went up by ten percent"
+          ],
+          "commonErrors": [
+            {
+              "id": "graphic",
+              "match": "\\bthe graphic\\b",
+              "explanation_pt": "Em inglês, gráfico de dados é \"chart\" ou \"graph\". \"Graphic\" é uma imagem ou arte visual.",
+              "correction_en": "As you can see in the chart, sales rose by 10%."
+            },
+            {
+              "id": "raised",
+              "match": "\\bsales raised\\b",
+              "explanation_pt": "\"Raise\" precisa de objeto (alguém aumenta algo). Quando o número sobe sozinho, use \"rise\" (rose) ou \"go up\" (went up).",
+              "correction_en": "Sales rose by 10%."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-02-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Treinar a pausa e a ênfase nas palavras-chave, a tônica de \"percent\" e o \"-ed\" dos verbos de tendência.",
+        "prompts": [
+          "Say \"twenty percent\". Where is the stress in \"percent\"?",
+          "Say \"dropped\" and \"started\". Do they end the same way?"
+        ],
+        "watchFor": [
+          "Falar \"percent\" com tônica no começo; é per-CENT.",
+          "Pronunciar \"dropped\" como \"drop-ED\"; o \"-ed\" aqui soa como \"t\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-02-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repeat. \"Dropped\" ends with a \"t\" sound, and \"percent\" is per-CENT.",
+          "prompt": "Our costs dropped by fifteen percent.",
+          "accepted": [
+            "Our costs dropped by fifteen percent.",
+            "Our costs dropped by 15 percent.",
+            "Our costs dropped by 15%."
+          ],
+          "commonErrors": [
+            {
+              "id": "dropped-ed",
+              "match": "\\bcosts drop by\\b",
+              "explanation_pt": "Não esqueça o \"-ed\" do passado. Em \"dropped\" ele soa como \"t\": \"dropt\".",
+              "correction_en": "Our costs dropped by fifteen percent."
+            }
+          ]
+        },
+        {
+          "id": "b2-02-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repeat. Pause briefly after \"So\" and stress \"key\".",
+          "prompt": "So, the key takeaway is simple: we need more time.",
+          "accepted": ["So, the key takeaway is simple: we need more time."],
+          "commonErrors": []
+        },
+        {
+          "id": "b2-02-pron-3",
+          "kind": "choice",
+          "instruction_pt": "In which word does \"-ed\" add an extra syllable?",
+          "options": ["started", "dropped", "increased"],
+          "answer": 0,
+          "explanation_pt": "O \"-ed\" só vira sílaba extra (\"id\") depois de \"t\" ou \"d\": \"star-ted\". Em \"dropped\" e \"increased\" ele soa como \"t\", sem sílaba nova."
+        }
+      ]
+    },
+    {
+      "id": "b2-02-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Entender os conectivos que organizam uma apresentação e responder a perguntas da plateia.",
+        "prompts": [
+          "What does a presenter mean by \"moving on\"?",
+          "What do you say when you don't know the answer to a question?"
+        ],
+        "watchFor": [
+          "Responder \"Good question\" e depois não responder; treinar \"I'll get back to you on that\".",
+          "Dizer \"I don't know\" seco demais; em apresentações, suavizar."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-02-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Listen. What is the presenter doing?",
+          "listen": "Right, that's all on costs. Moving on to the timeline, we're planning to launch in March.",
+          "options": [
+            "Changing to a new topic",
+            "Finishing the presentation",
+            "Answering a question"
+          ],
+          "answer": 0,
+          "explanation_pt": "\"Moving on to...\" sinaliza a passagem para um novo tópico: dos custos para o cronograma."
+        },
+        {
+          "id": "b2-02-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Listen. You don't know the answer right now. Say you'll check and get back to them.",
+          "listen": "How much will the second phase cost?",
+          "accepted": [
+            "I'm not sure, but I'll get back to you on that",
+            "I'll get back to you on that",
+            "Good question. I'll get back to you on that",
+            "I don't have that number right now, but I'll get back to you",
+            "I'm not sure. Let me check and get back to you",
+            "Let me check and get back to you",
+            "I'll have to check and get back to you",
+            "I need to check that. I'll get back to you",
+            "I'll check and let you know",
+            "Let me check and let you know",
+            "I don't know yet, but I'll find out and let you know"
+          ],
+          "commonErrors": [
+            {
+              "id": "return-to-you",
+              "match": "\\b(return|come back) (to you|for you)\\b",
+              "explanation_pt": "\"Te dou um retorno\" em inglês é \"I'll get back to you\". \"Return to you\" soa como voltar fisicamente até a pessoa.",
+              "correction_en": "I'll check and get back to you on that."
+            },
+            {
+              "id": "give-return",
+              "match": "\\bgive you (a )?(return|feedback)\\b",
+              "explanation_pt": "\"Dar um retorno\" não se traduz palavra por palavra. Diga \"I'll get back to you\" ou \"I'll let you know\".",
+              "correction_en": "I'll get back to you on that."
+            }
+          ]
+        },
+        {
+          "id": "b2-02-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Listen and answer: what happened to sales after the spike?",
+          "listen": "Sales rose sharply in January, and after that they levelled off.",
+          "accepted": [
+            "They levelled off",
+            "They leveled off",
+            "Sales levelled off",
+            "Sales leveled off",
+            "They stayed the same",
+            "They stayed stable",
+            "They became stable",
+            "They stabilized",
+            "They stopped growing",
+            "They stayed more or less the same",
+            "After that, they levelled off",
+            "After that, they leveled off"
+          ],
+          "commonErrors": [
+            {
+              "id": "they-fell",
+              "match": "\\b(fell|dropped|went down|decreased)\\b",
+              "explanation_pt": "\"Level off\" não é cair: é parar de subir e ficar estável.",
+              "correction_en": "They levelled off."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-02-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Fazer uma mini-apresentação de 1 minuto com começo, meio e fim, usando conectivos.",
+        "prompts": [
+          "Can you present one idea to improve your team's work?",
+          "What's the main benefit?",
+          "To sum up?"
+        ],
+        "watchFor": [
+          "Começar com \"I will talk about...\" sem contexto; incentivar \"Today I'd like to...\".",
+          "Usar \"resume\" no sentido de resumir."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-02-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Primeiro, vou falar sobre o problema e depois vou mostrar a solução.\"",
+          "accepted": [
+            "First, I'll talk about the problem and then I'll show the solution",
+            "First, I'll talk about the problem and then I'll show you the solution",
+            "First, I'm going to talk about the problem and then I'll show you the solution",
+            "First, I'm going to talk about the problem and then show you the solution",
+            "First, I'll talk about the problem, and then I'll present the solution",
+            "First of all, I'll talk about the problem and then I'll show you the solution",
+            "First, I'll go over the problem and then I'll show you the solution",
+            "First, I'll talk about the problem and after that I'll show you the solution"
+          ],
+          "commonErrors": [
+            {
+              "id": "talk-about-of",
+              "match": "\\btalk (about of|of about|over)\\b",
+              "explanation_pt": "\"Falar sobre\" é \"talk about\", sem outra preposição.",
+              "correction_en": "First, I'll talk about the problem and then I'll show you the solution."
+            },
+            {
+              "id": "after-i-show",
+              "match": "\\bafter i (will )?show\\b",
+              "explanation_pt": "\"Depois\" sozinho, para ordenar etapas, é \"then\" ou \"after that\". \"After I show\" muda o sentido para \"depois que eu mostrar\".",
+              "correction_en": "First, I'll talk about the problem and then I'll show you the solution."
+            }
+          ]
+        },
+        {
+          "id": "b2-02-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Resumindo, essa mudança vai nos economizar tempo e dinheiro.\"",
+          "accepted": [
+            "To sum up, this change will save us time and money",
+            "To sum up, this change is going to save us time and money",
+            "In short, this change will save us time and money",
+            "To summarize, this change will save us time and money",
+            "To summarise, this change will save us time and money",
+            "In summary, this change will save us time and money",
+            "So, to sum up, this change will save us time and money",
+            "To sum up, this change will save us both time and money"
+          ],
+          "commonErrors": [
+            {
+              "id": "resuming",
+              "match": "\\b(resuming|to resume|resume)\\b",
+              "explanation_pt": "\"Resume\" significa retomar. Para \"resumindo\" use \"to sum up\", \"to summarize\" ou \"in short\".",
+              "correction_en": "To sum up, this change will save us time and money."
+            },
+            {
+              "id": "economize",
+              "match": "\\beconomi[sz]e\\b",
+              "explanation_pt": "\"Economizar tempo e dinheiro\" é \"save time and money\". \"Economize\" existe, mas é raro e formal.",
+              "correction_en": "This change will save us time and money."
+            }
+          ]
+        },
+        {
+          "id": "b2-02-conv-3",
+          "kind": "order",
+          "instruction_pt": "Put the words in order to invite questions.",
+          "accepted": ["I'd be happy to answer any questions you have"]
+        },
+        {
+          "id": "b2-02-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Give a one-minute presentation of an idea to improve something at work or at home.",
+          "prompt_en": "You've got one minute. What's your idea, why does it matter, and what should we do next?",
+          "guidelines_pt": [
+            "Open: \"Today I'd like to talk about...\"",
+            "Use signposts: \"First...\", \"Moving on to...\", \"As you can see...\"",
+            "Close: \"To sum up...\" and invite questions."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-02-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Revisar conectivos, verbos de tendência e os falsos cognatos \"resume\" e \"graphic\".",
+        "prompts": [
+          "How do you start a presentation?",
+          "How do you describe a number that goes down a little?"
+        ],
+        "watchFor": ["Usar \"raise\" sem objeto.", "Usar \"resume\" no lugar de \"sum up\"."]
+      },
+      "exercises": [
+        {
+          "id": "b2-02-rev-1",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Houve uma pequena queda em abril.\"",
+          "accepted": [
+            "There was a slight drop in April",
+            "There was a small drop in April",
+            "There was a slight decrease in April",
+            "There was a small decrease in April",
+            "There was a slight fall in April",
+            "There was a small dip in April",
+            "There was a slight dip in April"
+          ],
+          "commonErrors": [
+            {
+              "id": "had-a-drop",
+              "match": "^(it )?had a (slight|small)\\b",
+              "explanation_pt": "\"Houve\" em inglês é \"there was\". \"Had\" (teve) precisa de um sujeito: \"We had a slight drop\".",
+              "correction_en": "There was a slight drop in April."
+            },
+            {
+              "id": "drop-on-april",
+              "match": "\\b(on|at) april\\b",
+              "explanation_pt": "Com meses usamos \"in\": \"in April\".",
+              "correction_en": "There was a slight drop in April."
+            }
+          ]
+        },
+        {
+          "id": "b2-02-rev-2",
+          "kind": "fill",
+          "instruction_pt": "Complete the sentence.",
+          "sentence": "Prices ___ by 5% last year.",
+          "accepted": ["rose", "went up", "increased", "fell", "dropped", "went down", "decreased"],
+          "commonErrors": [
+            {
+              "id": "raised-no-object",
+              "match": "^raised$",
+              "explanation_pt": "\"Raise\" precisa de objeto: \"They raised prices\". Sem objeto, use \"rose\" ou \"went up\".",
+              "correction_en": "Prices rose by 5% last year."
+            },
+            {
+              "id": "present-tense",
+              "match": "^(rise|rises|increase|increases)$",
+              "explanation_pt": "\"Last year\" pede o passado: \"rose\" ou \"increased\".",
+              "correction_en": "Prices rose by 5% last year."
+            }
+          ]
+        },
+        {
+          "id": "b2-02-rev-3",
+          "kind": "choice",
+          "instruction_pt": "Which phrase do you use to introduce the last point?",
+          "options": ["Finally,", "At the end,", "In the final,"],
+          "answer": 0,
+          "explanation_pt": "\"Finally\" introduz o último ponto. \"At the end\" pede complemento (\"at the end of the year\"), e \"in the final\" não existe nesse sentido."
+        },
+        {
+          "id": "b2-02-rev-4",
+          "kind": "repeat",
+          "instruction_pt": "To finish, repeat the closing line.",
+          "prompt": "Thank you for your attention. Are there any questions?",
+          "accepted": [
+            "Thank you for your attention. Are there any questions?",
+            "Thanks for your attention. Are there any questions?",
+            "Thank you for your attention. Any questions?"
+          ],
+          "commonErrors": []
+        }
+      ]
+    }
+  ]
+}

@@ -122,7 +122,14 @@
           "kind": "translate",
           "instruction_pt": "Diga em inglês: \"vinte\".",
           "accepted": ["Twenty", "20"],
-          "commonErrors": []
+          "commonErrors": [
+            {
+              "id": "twelve-twenty",
+              "match": "\\btwelve\\b",
+              "explanation_pt": "\"Twelve\" é doze. Vinte é \"twenty\".",
+              "correction_en": "Twenty."
+            }
+          ]
         }
       ]
     },
@@ -233,7 +240,14 @@
             "Seven plus three is ten",
             "Seven plus three equals ten"
           ],
-          "commonErrors": []
+          "commonErrors": [
+            {
+              "id": "no-subject",
+              "match": "^is ten\\b",
+              "explanation_pt": "Em inglês a frase precisa de sujeito: \"It is ten\" (ou \"It's ten\"), e não só \"Is ten\", como no \"É dez\" do português.",
+              "correction_en": "It's ten."
+            }
+          ]
         }
       ]
     },

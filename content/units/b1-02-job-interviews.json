@@ -1,0 +1,474 @@
+{
+  "id": "b1-02-job-interviews",
+  "level": "B1",
+  "order": 2,
+  "title_pt": "Entrevistas de emprego",
+  "title_en": "Job interviews",
+  "objective_pt": "Responder às perguntas clássicas de entrevista (\"Tell me about yourself\", pontos fortes, experiência) com \"I've been working as... for...\" e fazer perguntas sobre a vaga.",
+  "blocks": [
+    {
+      "id": "b1-02-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Aquecer falando de trabalho atual e há quanto tempo.",
+        "prompts": ["What do you do?", "How long have you been working there?"],
+        "watchFor": [
+          "Responder \"I work with marketing\" em vez de \"I work in marketing\".",
+          "Usar \"since two years\" em vez de \"for two years\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-02-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita a pergunta de entrevista.",
+          "prompt": "So, tell me a little bit about yourself.",
+          "accepted": [
+            "So, tell me a little bit about yourself",
+            "Tell me a little bit about yourself",
+            "So tell me a little about yourself"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-02-warm-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e responda que você trabalha nessa empresa há três anos.",
+          "listen": "How long have you been working at your current company?",
+          "accepted": [
+            "For three years",
+            "I've been working there for three years",
+            "I have been working there for three years",
+            "I've been there for three years",
+            "I've worked there for three years",
+            "I have worked there for three years",
+            "About three years",
+            "Three years",
+            "For about three years now",
+            "I've been working at my current company for three years"
+          ],
+          "commonErrors": [
+            {
+              "id": "since-duration",
+              "match": "\\bsince (three|3) years\\b",
+              "explanation_pt": "Para duração use \"for\": \"for three years\". \"Since\" é para o ponto de início: \"since 2021\".",
+              "correction_en": "I've been working there for three years."
+            },
+            {
+              "id": "present-duration",
+              "match": "^i (work|am working) (there|here|at)\\b.*\\bthree years\\b",
+              "explanation_pt": "\"Eu trabalho lá há três anos\" usa o present perfect em inglês: \"I've been working there for three years\".",
+              "correction_en": "I've been working there for three years."
+            }
+          ]
+        },
+        {
+          "id": "b1-02-warm-3",
+          "kind": "choice",
+          "instruction_pt": "Qual é a forma natural de dizer a sua área de trabalho?",
+          "options": ["I work with sales.", "I work in sales.", "I work on sales."],
+          "answer": 1,
+          "explanation_pt": "Para a área ou setor, use \"work in\": \"I work in sales / in IT / in marketing\". \"Work with\" é com quem ou com o quê você trabalha (\"I work with children\")."
+        }
+      ]
+    },
+    {
+      "id": "b1-02-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Aprender o vocabulário essencial de entrevista e currículo.",
+        "prompts": ["What are your main strengths?", "What would your last boss say about you?"],
+        "watchFor": [
+          "Confundir \"application\" (candidatura) com \"aplicação\" financeira.",
+          "Dizer \"I'm responsible of\"; o certo é \"responsible for\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-02-vocab-1",
+          "kind": "vocab",
+          "word_en": "strength",
+          "meaning_pt": "ponto forte",
+          "example_en": "One of my strengths is that I'm very organized."
+        },
+        {
+          "id": "b1-02-vocab-2",
+          "kind": "vocab",
+          "word_en": "to be in charge of",
+          "meaning_pt": "ser responsável por, cuidar de",
+          "example_en": "I was in charge of a team of five people."
+        },
+        {
+          "id": "b1-02-vocab-3",
+          "kind": "vocab",
+          "word_en": "to apply for",
+          "meaning_pt": "candidatar-se a",
+          "example_en": "I'm applying for the marketing position."
+        },
+        {
+          "id": "b1-02-vocab-4",
+          "kind": "vocab",
+          "word_en": "skills",
+          "meaning_pt": "habilidades, competências",
+          "example_en": "This job needs good communication skills."
+        },
+        {
+          "id": "b1-02-vocab-5",
+          "kind": "match",
+          "instruction_pt": "Ligue cada termo ao significado.",
+          "pairs": [
+            {
+              "en": "résumé / CV",
+              "pt": "currículo"
+            },
+            {
+              "en": "salary",
+              "pt": "salário"
+            },
+            {
+              "en": "position",
+              "pt": "vaga, cargo"
+            },
+            {
+              "en": "weakness",
+              "pt": "ponto fraco"
+            },
+            {
+              "en": "hiring manager",
+              "pt": "gestor que contrata"
+            }
+          ]
+        },
+        {
+          "id": "b1-02-vocab-6",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu sou responsável pelo atendimento ao cliente.\"",
+          "accepted": [
+            "I'm responsible for customer service",
+            "I am responsible for customer service",
+            "I'm in charge of customer service",
+            "I am in charge of customer service",
+            "I'm responsible for the customer service",
+            "I take care of customer service",
+            "I handle customer service"
+          ],
+          "commonErrors": [
+            {
+              "id": "responsible-of",
+              "match": "\\bresponsible (of|by)\\b",
+              "explanation_pt": "Em inglês é \"responsible for\", e não \"responsible of\" ou \"by\".",
+              "correction_en": "I'm responsible for customer service."
+            },
+            {
+              "id": "client-attendance",
+              "match": "\\battendance\\b|\\battending\\b",
+              "explanation_pt": "\"Atendimento\" não é \"attendance\" (que é presença). Use \"customer service\".",
+              "correction_en": "I'm responsible for customer service."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-02-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Pronunciar palavras de entrevista que brasileiros costumam errar: \"career\", \"colleague\", \"résumé\".",
+        "prompts": [
+          "Say \"career\" and \"Korea\". Are they the same?",
+          "How do you say \"colleague\"?"
+        ],
+        "watchFor": [
+          "Pronunciar \"career\" como \"carrier\" (transportadora); o som é \"kuh-RIR\", forte no final.",
+          "Pronunciar \"colleague\" com três sílabas (\"co-le-gue\"); são duas: \"KÓ-lig\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-02-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita. \"Career\" tem a força no final: ca-REER.",
+          "prompt": "I want to build a career in finance.",
+          "accepted": ["I want to build a career in finance", "I wanna build a career in finance"],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-02-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repita. \"Colleagues\" tem só duas sílabas: KOL-leegz.",
+          "prompt": "My colleagues would say I'm reliable and hardworking.",
+          "accepted": [
+            "My colleagues would say I'm reliable and hardworking",
+            "My colleagues would say I am reliable and hardworking"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-02-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Em \"career\", qual sílaba é a forte?",
+          "options": ["CA-reer", "ca-REER"],
+          "answer": 1,
+          "explanation_pt": "\"Career\" é ca-REER, com a força no final. Com a força no começo vira algo parecido com \"carrier\", que é outra palavra."
+        }
+      ]
+    },
+    {
+      "id": "b1-02-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Entender perguntas de entrevista e responder de forma completa e educada.",
+        "prompts": ["Why do you want to work here?", "Where do you see yourself in five years?"],
+        "watchFor": [
+          "Responder \"Because yes\" ou de forma curta demais; incentive \"because\" + motivo concreto.",
+          "Usar \"I have interest in\" em vez de \"I'm interested in\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-02-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Ouça a candidata e escolha o resumo certo.",
+          "listen": "I've been working as a nurse for six years, but I'm looking for a job with more regular hours.",
+          "options": [
+            "Ela é enfermeira há seis anos e quer um horário mais regular.",
+            "Ela quer ser enfermeira daqui a seis anos.",
+            "Ela trabalhou como enfermeira por seis meses e gostou dos horários."
+          ],
+          "answer": 0,
+          "explanation_pt": "\"I've been working as a nurse for six years\" = é enfermeira há seis anos. \"More regular hours\" = horários mais regulares."
+        },
+        {
+          "id": "b1-02-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e diga um ponto forte seu (por exemplo, que você é organizado).",
+          "listen": "What would you say is your greatest strength?",
+          "accepted": [
+            "I'm very organized",
+            "I'm organized",
+            "I'd say I'm very organized",
+            "My greatest strength is that I'm organized",
+            "I think my greatest strength is being organized",
+            "I'm a good communicator",
+            "I'm very reliable",
+            "I'm a fast learner",
+            "I'd say I'm hardworking",
+            "I work well in a team",
+            "I'm very good with people"
+          ],
+          "commonErrors": [
+            {
+              "id": "organizated",
+              "match": "\\borganizated\\b",
+              "explanation_pt": "\"Organizado\" é \"organized\", sem o \"-at-\" do português.",
+              "correction_en": "I'm very organized."
+            },
+            {
+              "id": "is-be-organized",
+              "match": "\\bstrength is (be|to be) organized\\b",
+              "explanation_pt": "Depois de \"my strength is\" use \"being organized\" ou \"that I'm organized\".",
+              "correction_en": "My greatest strength is that I'm organized."
+            }
+          ]
+        },
+        {
+          "id": "b1-02-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e diga que você se interessa pela vaga porque quer aprender mais.",
+          "listen": "Why are you interested in this position?",
+          "accepted": [
+            "Because I want to learn more",
+            "I'm interested because I want to learn more",
+            "I'm interested in it because I want to learn more",
+            "Because I'd like to learn more",
+            "Because I want to keep learning",
+            "Because it's a great opportunity to learn more",
+            "I want to learn more and grow professionally",
+            "Because I want to grow and learn more"
+          ],
+          "commonErrors": [
+            {
+              "id": "have-interest",
+              "match": "\\bi have (interest|interesse)\\b",
+              "explanation_pt": "\"Tenho interesse\" é \"I'm interested\", com o verbo \"to be\".",
+              "correction_en": "I'm interested because I want to learn more."
+            },
+            {
+              "id": "interested-on",
+              "match": "\\binterested (on|for)\\b",
+              "explanation_pt": "A preposição é \"in\": \"interested in\".",
+              "correction_en": "I'm interested in it because I want to learn more."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-02-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Simular uma entrevista: apresentar-se, falar da experiência e fazer uma pergunta ao final.",
+        "prompts": [
+          "Tell me about your last job.",
+          "Why did you leave your last job?",
+          "Do you have any questions for us?"
+        ],
+        "watchFor": [
+          "Responder \"No\" a \"Do you have any questions?\"; é melhor fazer uma pergunta.",
+          "Usar \"I worked there during two years\"; o certo é \"for two years\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-02-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu trabalho como desenvolvedor há cinco anos.\"",
+          "accepted": [
+            "I've been working as a developer for five years",
+            "I have been working as a developer for five years",
+            "I've worked as a developer for five years",
+            "I have worked as a developer for five years",
+            "I've been a developer for five years",
+            "I have been a developer for five years"
+          ],
+          "commonErrors": [
+            {
+              "id": "present-ha",
+              "match": "^i (work|am working) as\\b",
+              "explanation_pt": "\"Trabalho há cinco anos\" (algo que começou no passado e continua) usa o present perfect: \"I've been working\".",
+              "correction_en": "I've been working as a developer for five years."
+            },
+            {
+              "id": "missing-article",
+              "match": "\\bas developer\\b",
+              "explanation_pt": "Profissão no singular leva artigo: \"as a developer\".",
+              "correction_en": "I've been working as a developer for five years."
+            }
+          ]
+        },
+        {
+          "id": "b1-02-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Ao final da entrevista, pergunte: \"Como é um dia típico nessa função?\"",
+          "accepted": [
+            "What's a typical day like in this role",
+            "What is a typical day like in this role",
+            "What's a typical day like in this position",
+            "What does a typical day look like in this role",
+            "What does a typical day look like in this position",
+            "What's a typical day like for this role",
+            "What would a typical day look like in this role"
+          ],
+          "commonErrors": [
+            {
+              "id": "how-is-like",
+              "match": "^how (is|does) a typical day (like|look like)\\b",
+              "explanation_pt": "Com \"like\", a pergunta começa com \"What\": \"What's it like?\", \"What does it look like?\". \"How is it like\" é tradução de \"como é\".",
+              "correction_en": "What's a typical day like in this role?"
+            }
+          ]
+        },
+        {
+          "id": "b1-02-conv-3",
+          "kind": "order",
+          "instruction_pt": "Coloque as palavras na ordem certa.",
+          "accepted": ["Why did you leave your last job?"]
+        },
+        {
+          "id": "b1-02-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Responda à pergunta mais comum de entrevista.",
+          "prompt_en": "Tell me about yourself and why you'd be a good fit for this job.",
+          "guidelines_pt": [
+            "Diga o que você faz e há quanto tempo: \"I've been working as... for...\".",
+            "Cite um ponto forte com um exemplo concreto.",
+            "Termine dizendo por que você quer a vaga: \"I'm interested in this position because...\"."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-02-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Fixar \"for/since\", \"responsible for\" e \"interested in\".",
+        "prompts": [
+          "How long have you lived in your city?",
+          "What are you responsible for at work?"
+        ],
+        "watchFor": ["Trocar \"for\" e \"since\".", "Esquecer o \"a\" antes da profissão."]
+      },
+      "exercises": [
+        {
+          "id": "b1-02-rev-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita a frase.",
+          "prompt": "I've been in this field since 2020.",
+          "accepted": [
+            "I've been in this field since 2020",
+            "I have been in this field since 2020",
+            "I've been in this field since twenty twenty"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-02-rev-2",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu me candidatei à vaga de gerente.\"",
+          "accepted": [
+            "I applied for the manager position",
+            "I applied for the manager job",
+            "I applied for the manager role",
+            "I applied for the position of manager",
+            "I applied for the management position",
+            "I've applied for the manager position",
+            "I have applied for the manager position"
+          ],
+          "commonErrors": [
+            {
+              "id": "applied-to-vaga",
+              "match": "\\bapplied (to|in) the\\b",
+              "explanation_pt": "Para uma vaga, use \"apply for\": \"I applied for the position\". \"Apply to\" é para a empresa ou universidade.",
+              "correction_en": "I applied for the manager position."
+            },
+            {
+              "id": "vacancy-literal",
+              "match": "\\bmanager vacancy\\b",
+              "explanation_pt": "\"Vacancy\" existe, mas no dia a dia o natural é \"position\", \"job\" ou \"role\".",
+              "correction_en": "I applied for the manager position."
+            }
+          ]
+        },
+        {
+          "id": "b1-02-rev-3",
+          "kind": "choice",
+          "instruction_pt": "Complete: \"I've lived here ___ 2015.\"",
+          "options": ["for", "since", "during"],
+          "answer": 1,
+          "explanation_pt": "\"Since\" + ponto de início (2015). \"For\" + duração (ten years)."
+        },
+        {
+          "id": "b1-02-rev-4",
+          "kind": "fill",
+          "instruction_pt": "Complete com a preposição.",
+          "sentence": "I'm really interested ___ this position.",
+          "accepted": ["in"],
+          "commonErrors": [
+            {
+              "id": "interested-on",
+              "match": "^(on|for|about|at)$",
+              "explanation_pt": "\"Interested\" sempre leva \"in\": \"interested in this position\".",
+              "correction_en": "I'm really interested in this position."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

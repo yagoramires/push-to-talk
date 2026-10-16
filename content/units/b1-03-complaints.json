@@ -1,0 +1,466 @@
+{
+  "id": "b1-03-complaints",
+  "level": "B1",
+  "order": 3,
+  "title_pt": "Reclamações e problemas",
+  "title_en": "Complaints and problems",
+  "objective_pt": "Reclamar de um produto ou serviço com educação, explicar o problema (\"It doesn't work\", \"It's been broken since...\") e pedir uma solução (reembolso, troca, conserto).",
+  "blocks": [
+    {
+      "id": "b1-03-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Aquecer falando de problemas do dia a dia.",
+        "prompts": [
+          "Have you ever had a problem with something you bought online?",
+          "What did you do?"
+        ],
+        "watchFor": [
+          "Dizer \"I want to complain about of\"; é \"complain about\".",
+          "Usar tom direto demais (\"I want my money\"); mostre \"I'd like a refund, please\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-03-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita a frase educada para começar uma reclamação.",
+          "prompt": "Excuse me, I'm afraid there's a problem with my order.",
+          "accepted": [
+            "Excuse me, I'm afraid there's a problem with my order",
+            "Excuse me, I'm afraid there is a problem with my order",
+            "Excuse me, I am afraid there is a problem with my order"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-03-warm-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça o atendente e diga que o seu celular não liga.",
+          "listen": "Hi, how can I help you today?",
+          "accepted": [
+            "My phone won't turn on",
+            "My phone doesn't turn on",
+            "My phone isn't turning on",
+            "Hi, my phone won't turn on",
+            "Hi, my phone doesn't turn on",
+            "My phone won't switch on",
+            "My phone doesn't switch on",
+            "Hi, I have a problem. My phone won't turn on"
+          ],
+          "commonErrors": [
+            {
+              "id": "no-turn-on",
+              "match": "\\bphone (no|not) (turn|switch|turns|switches)\\b",
+              "explanation_pt": "A negação no presente precisa de \"doesn't\" (ou \"won't\", para algo que se recusa a funcionar): \"My phone won't turn on\".",
+              "correction_en": "My phone won't turn on."
+            },
+            {
+              "id": "connect-liga",
+              "match": "\\b(does not|will not|do not) (connect|link|call)\\b",
+              "explanation_pt": "\"Ligar\" um aparelho é \"turn on\" ou \"switch on\". \"Connect\" é conectar e \"call\" é ligar para alguém.",
+              "correction_en": "My phone won't turn on."
+            }
+          ]
+        },
+        {
+          "id": "b1-03-warm-3",
+          "kind": "choice",
+          "instruction_pt": "Qual é a forma mais educada de pedir o dinheiro de volta?",
+          "options": [
+            "Give me my money back.",
+            "I'd like a refund, please.",
+            "I want my money now."
+          ],
+          "answer": 1,
+          "explanation_pt": "\"I'd like a refund, please\" é firme e educado. As outras soam agressivas em inglês."
+        }
+      ]
+    },
+    {
+      "id": "b1-03-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Aprender palavras para descrever defeitos e pedir soluções.",
+        "prompts": [
+          "What's the difference between a refund and an exchange?",
+          "Have you ever asked for a refund?"
+        ],
+        "watchFor": [
+          "Usar \"devolution\" para devolução; o certo é \"return\".",
+          "Confundir \"broken\" (quebrado) com \"broke\" (sem dinheiro)."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-03-vocab-1",
+          "kind": "vocab",
+          "word_en": "refund",
+          "meaning_pt": "reembolso",
+          "example_en": "Can I get a full refund?"
+        },
+        {
+          "id": "b1-03-vocab-2",
+          "kind": "vocab",
+          "word_en": "faulty",
+          "meaning_pt": "com defeito",
+          "example_en": "The charger you sold me is faulty."
+        },
+        {
+          "id": "b1-03-vocab-3",
+          "kind": "vocab",
+          "word_en": "to return",
+          "meaning_pt": "devolver (um produto)",
+          "example_en": "I'd like to return these shoes."
+        },
+        {
+          "id": "b1-03-vocab-4",
+          "kind": "vocab",
+          "word_en": "to sort out",
+          "meaning_pt": "resolver",
+          "example_en": "Can you sort this out for me, please?"
+        },
+        {
+          "id": "b1-03-vocab-5",
+          "kind": "match",
+          "instruction_pt": "Ligue cada palavra ao significado.",
+          "pairs": [
+            { "en": "receipt", "pt": "nota fiscal, recibo" },
+            { "en": "exchange", "pt": "troca" },
+            { "en": "warranty", "pt": "garantia" },
+            { "en": "damaged", "pt": "danificado" },
+            { "en": "delay", "pt": "atraso" }
+          ]
+        },
+        {
+          "id": "b1-03-vocab-6",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu gostaria de devolver esta camisa.\"",
+          "accepted": [
+            "I'd like to return this shirt",
+            "I would like to return this shirt",
+            "I want to return this shirt",
+            "I'd like to return this shirt, please",
+            "Could I return this shirt",
+            "Can I return this shirt"
+          ],
+          "commonErrors": [
+            {
+              "id": "devolve",
+              "match": "\\b(devolve|give back) this shirt\\b",
+              "explanation_pt": "Devolver um produto na loja é \"return\". \"Devolve\" não tem esse sentido em inglês.",
+              "correction_en": "I'd like to return this shirt."
+            },
+            {
+              "id": "would-like-no-to",
+              "match": "\\blike return\\b",
+              "explanation_pt": "Depois de \"would like\" vem \"to\" + verbo: \"I'd like to return\".",
+              "correction_en": "I'd like to return this shirt."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-03-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Usar a entonação para soar educado e não agressivo, e pronunciar \"receipt\" (o \"p\" é mudo).",
+        "prompts": [
+          "Say \"receipt\". Do you hear a P?",
+          "Say \"I'm afraid it doesn't work\" politely."
+        ],
+        "watchFor": [
+          "Pronunciar o \"p\" de \"receipt\"; o som é \"ri-SÍT\".",
+          "Falar com entonação reta e seca; suba levemente no fim dos pedidos."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-03-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita. O \"p\" de \"receipt\" não é pronunciado.",
+          "prompt": "Here's the receipt.",
+          "accepted": ["Here's the receipt", "Here is the receipt"],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-03-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repita com tom gentil, subindo levemente no final.",
+          "prompt": "I was wondering if you could help me with this.",
+          "accepted": [
+            "I was wondering if you could help me with this",
+            "I was wondering if you could help me"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-03-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Qual letra é muda em \"receipt\"?",
+          "options": ["r", "c", "p"],
+          "answer": 2,
+          "explanation_pt": "Em \"receipt\" o \"p\" é mudo: ri-SÍT."
+        }
+      ]
+    },
+    {
+      "id": "b1-03-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Entender o atendente e responder com informações do problema.",
+        "prompts": [
+          "When did you buy it?",
+          "Do you have the receipt?",
+          "What exactly is wrong with it?"
+        ],
+        "watchFor": [
+          "Responder \"I bought it in last week\"; é \"last week\", sem preposição.",
+          "Dizer \"It's broken since Monday\" em vez de \"It's been broken since Monday\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-03-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Ouça e escolha a solução oferecida.",
+          "listen": "I'm sorry about that. We can't give you a refund, but we can exchange it for a new one.",
+          "options": [
+            "Vão devolver o dinheiro.",
+            "Vão trocar por um novo.",
+            "Vão consertar o produto."
+          ],
+          "answer": 1,
+          "explanation_pt": "\"We can't give you a refund\" = não podem reembolsar; \"we can exchange it for a new one\" = podem trocar por um novo."
+        },
+        {
+          "id": "b1-03-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e diga que comprou na semana passada.",
+          "listen": "When did you buy it?",
+          "accepted": [
+            "I bought it last week",
+            "Last week",
+            "I got it last week",
+            "It was last week",
+            "I bought it here last week",
+            "I bought it last week, on Friday"
+          ],
+          "commonErrors": [
+            {
+              "id": "in-last-week",
+              "match": "\\b(in|on|at) last week\\b",
+              "explanation_pt": "\"Last week\" não leva preposição: \"I bought it last week\".",
+              "correction_en": "I bought it last week."
+            },
+            {
+              "id": "buyed",
+              "match": "\\bbuyed\\b|\\bbuy it last\\b",
+              "explanation_pt": "\"Buy\" é irregular: o passado é \"bought\".",
+              "correction_en": "I bought it last week."
+            }
+          ]
+        },
+        {
+          "id": "b1-03-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e diga que a tela está quebrada desde segunda-feira.",
+          "listen": "What seems to be the problem?",
+          "accepted": [
+            "The screen has been broken since Monday",
+            "The screen's been broken since Monday",
+            "The screen is broken. It's been like that since Monday",
+            "The screen has been cracked since Monday",
+            "The screen stopped working on Monday",
+            "The screen broke on Monday"
+          ],
+          "commonErrors": [
+            {
+              "id": "is-since",
+              "match": "\\bscreen is (broken|cracked) since\\b",
+              "explanation_pt": "\"Está quebrada desde segunda\" usa present perfect em inglês: \"has been broken since Monday\".",
+              "correction_en": "The screen has been broken since Monday."
+            },
+            {
+              "id": "was-since",
+              "match": "\\bwas (broken|cracked) since\\b",
+              "explanation_pt": "Se a tela continua quebrada, use \"has been\" com \"since\": \"The screen has been broken since Monday\".",
+              "correction_en": "The screen has been broken since Monday."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-03-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Fazer uma reclamação completa: cumprimentar, explicar o problema, dar detalhes e pedir uma solução.",
+        "prompts": [
+          "Tell me about a bad experience at a restaurant or hotel.",
+          "What would you say to the manager?"
+        ],
+        "watchFor": [
+          "Usar \"I want to talk with the responsible\"; o natural é \"Could I speak to the manager?\".",
+          "Esquecer de dizer o que você quer como solução."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-03-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu poderia falar com o gerente, por favor?\"",
+          "accepted": [
+            "Could I speak to the manager, please",
+            "Could I speak with the manager, please",
+            "Can I speak to the manager, please",
+            "Can I talk to the manager, please",
+            "May I speak to the manager, please",
+            "Could I talk to the manager, please",
+            "Could I speak to the manager"
+          ],
+          "commonErrors": [
+            {
+              "id": "responsible-person",
+              "match": "\\bthe responsible\\b",
+              "explanation_pt": "\"O responsável\" não vira \"the responsible\". Peça \"the manager\" ou \"the person in charge\".",
+              "correction_en": "Could I speak to the manager, please?"
+            },
+            {
+              "id": "gerent",
+              "match": "\\bgerent\\b|\\bmanagement\\b",
+              "explanation_pt": "Gerente é \"manager\".",
+              "correction_en": "Could I speak to the manager, please?"
+            }
+          ]
+        },
+        {
+          "id": "b1-03-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu estou esperando há quarenta minutos.\"",
+          "accepted": [
+            "I've been waiting for forty minutes",
+            "I have been waiting for forty minutes",
+            "I've been waiting for 40 minutes",
+            "I've been waiting forty minutes",
+            "I have been waiting forty minutes",
+            "We've been waiting for forty minutes"
+          ],
+          "commonErrors": [
+            {
+              "id": "am-waiting-for",
+              "match": "^i am waiting (for )?forty\\b",
+              "explanation_pt": "Ação que começou no passado e continua usa o present perfect continuous: \"I've been waiting for forty minutes\".",
+              "correction_en": "I've been waiting for forty minutes."
+            },
+            {
+              "id": "wait-since",
+              "match": "\\bsince forty\\b",
+              "explanation_pt": "Para duração use \"for\": \"for forty minutes\".",
+              "correction_en": "I've been waiting for forty minutes."
+            }
+          ]
+        },
+        {
+          "id": "b1-03-conv-3",
+          "kind": "order",
+          "instruction_pt": "Coloque as palavras na ordem certa.",
+          "accepted": ["This is not what I ordered."]
+        },
+        {
+          "id": "b1-03-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Faça uma reclamação sobre um produto com defeito.",
+          "prompt_en": "You bought headphones online and one side doesn't work. Call the store and explain the problem.",
+          "guidelines_pt": [
+            "Comece com educação: \"Hi, I'm calling about an order...\".",
+            "Explique o problema e desde quando: \"The left side has stopped working...\".",
+            "Peça uma solução clara: \"I'd like a refund\" ou \"Could you send me a new pair?\"."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-03-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Fixar \"refund / return / exchange\" e a estrutura \"has been ... since\".",
+        "prompts": [
+          "What would you say if your food arrived cold?",
+          "How do you ask for a refund?"
+        ],
+        "watchFor": ["Usar \"devolution\".", "Esquecer \"please\" e o \"I'd like\"."]
+      },
+      "exercises": [
+        {
+          "id": "b1-03-rev-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita a frase.",
+          "prompt": "I'm afraid this isn't good enough.",
+          "accepted": [
+            "I'm afraid this isn't good enough",
+            "I am afraid this is not good enough",
+            "I'm afraid this is not good enough"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-03-rev-2",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"A comida chegou fria.\"",
+          "accepted": [
+            "The food arrived cold",
+            "The food came cold",
+            "The food was cold when it arrived",
+            "My food arrived cold",
+            "The food is cold"
+          ],
+          "commonErrors": [
+            {
+              "id": "arrived-froze",
+              "match": "\\b(froze|frozen|freeze)\\b",
+              "explanation_pt": "\"Fria\" é \"cold\". \"Frozen\" é congelada.",
+              "correction_en": "The food arrived cold."
+            },
+            {
+              "id": "chegou-arrived-to",
+              "match": "\\barrived (to|at) cold\\b",
+              "explanation_pt": "Não há preposição aqui: \"The food arrived cold\".",
+              "correction_en": "The food arrived cold."
+            }
+          ]
+        },
+        {
+          "id": "b1-03-rev-3",
+          "kind": "choice",
+          "instruction_pt": "Como se diz \"devolução\" de um produto?",
+          "options": ["devolution", "return", "giveback"],
+          "answer": 1,
+          "explanation_pt": "Devolução é \"return\". \"Devolution\" é um termo político (transferência de poder)."
+        },
+        {
+          "id": "b1-03-rev-4",
+          "kind": "fill",
+          "instruction_pt": "Complete com a forma certa de \"be\".",
+          "sentence": "The washing machine has ___ broken since Monday.",
+          "accepted": ["been"],
+          "commonErrors": [
+            {
+              "id": "is-was",
+              "match": "^(is|was|be|being)$",
+              "explanation_pt": "Depois de \"has\" vem o particípio: \"has been\".",
+              "correction_en": "The washing machine has been broken since Monday."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,472 @@
+{
+  "id": "b1-06-news-events",
+  "level": "B1",
+  "order": 6,
+  "title_pt": "Notícias e acontecimentos",
+  "title_en": "News and events",
+  "objective_pt": "Contar uma notícia que você leu ou ouviu (\"I read that...\", \"Apparently...\"), usar a voz passiva simples (\"was arrested\", \"were injured\") e reagir a notícias com \"Really? That's awful!\".",
+  "blocks": [
+    {
+      "id": "b1-06-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Aquecer falando de como a pessoa acompanha as notícias.",
+        "prompts": [
+          "How do you usually get your news?",
+          "Did you hear any interesting news this week?"
+        ],
+        "watchFor": [
+          "Usar \"a news\" ou \"the news are\"; \"news\" é incontável e singular: \"the news is\".",
+          "Dizer \"I saw in the internet\"; é \"I saw it online\" ou \"on the internet\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-06-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita a pergunta.",
+          "prompt": "Did you hear about what happened downtown?",
+          "accepted": [
+            "Did you hear about what happened downtown",
+            "Have you heard about what happened downtown"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-06-warm-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e diga que você lê as notícias no celular.",
+          "listen": "How do you usually keep up with the news?",
+          "accepted": [
+            "I read the news on my phone",
+            "I usually read the news on my phone",
+            "I read it on my phone",
+            "On my phone",
+            "I usually read news on my phone",
+            "I check the news on my phone",
+            "Mostly on my phone"
+          ],
+          "commonErrors": [
+            {
+              "id": "in-the-phone",
+              "match": "\\b(in|at) (my|the) (phone|cell phone|cellphone)\\b",
+              "explanation_pt": "Ler algo no celular é \"on my phone\", com \"on\".",
+              "correction_en": "I read the news on my phone."
+            },
+            {
+              "id": "the-news-plural",
+              "match": "\\bread (them|the newses)\\b",
+              "explanation_pt": "\"News\" é incontável e singular: \"I read it\", e não \"I read them\".",
+              "correction_en": "I read the news on my phone."
+            }
+          ]
+        },
+        {
+          "id": "b1-06-warm-3",
+          "kind": "choice",
+          "instruction_pt": "Qual frase está correta?",
+          "options": [
+            "The news are terrible.",
+            "The news is terrible.",
+            "The newses are terrible."
+          ],
+          "answer": 1,
+          "explanation_pt": "\"News\" termina em \"s\" mas é incontável e singular: \"The news is terrible\". Uma notícia é \"a piece of news\"."
+        }
+      ]
+    },
+    {
+      "id": "b1-06-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Aprender palavras de notícias e a voz passiva mais comum.",
+        "prompts": ["What's the headline today?", "Do you trust news on social media?"],
+        "watchFor": [
+          "Confundir \"journal\" (diário, revista científica) com jornal; jornal é \"newspaper\".",
+          "Usar \"notice\" para notícia; \"notice\" é aviso."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-06-vocab-1",
+          "kind": "vocab",
+          "word_en": "headline",
+          "meaning_pt": "manchete",
+          "example_en": "The headline says prices are going up again."
+        },
+        {
+          "id": "b1-06-vocab-2",
+          "kind": "vocab",
+          "word_en": "apparently",
+          "meaning_pt": "pelo visto, aparentemente",
+          "example_en": "Apparently, the concert was canceled because of the rain."
+        },
+        {
+          "id": "b1-06-vocab-3",
+          "kind": "vocab",
+          "word_en": "to be injured",
+          "meaning_pt": "ficar ferido",
+          "example_en": "Two people were injured in the accident."
+        },
+        {
+          "id": "b1-06-vocab-4",
+          "kind": "vocab",
+          "word_en": "fake news",
+          "meaning_pt": "notícia falsa",
+          "example_en": "Always check the source before you share anything. It could be fake news."
+        },
+        {
+          "id": "b1-06-vocab-5",
+          "kind": "match",
+          "instruction_pt": "Ligue cada palavra ao significado.",
+          "pairs": [
+            {
+              "en": "newspaper",
+              "pt": "jornal"
+            },
+            {
+              "en": "flood",
+              "pt": "enchente"
+            },
+            {
+              "en": "election",
+              "pt": "eleição"
+            },
+            {
+              "en": "strike",
+              "pt": "greve"
+            },
+            {
+              "en": "breaking news",
+              "pt": "notícia urgente, de última hora"
+            }
+          ]
+        },
+        {
+          "id": "b1-06-vocab-6",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu li no jornal que vai ter uma greve.\"",
+          "accepted": [
+            "I read in the newspaper that there's going to be a strike",
+            "I read in the newspaper that there will be a strike",
+            "I read in the paper that there's going to be a strike",
+            "I read in the newspaper that there is going to be a strike",
+            "I read in the news that there's going to be a strike",
+            "I saw in the newspaper that there's going to be a strike"
+          ],
+          "commonErrors": [
+            {
+              "id": "journal",
+              "match": "\\bjournal\\b",
+              "explanation_pt": "Jornal é \"newspaper\" (ou \"paper\"). \"Journal\" é diário pessoal ou revista acadêmica.",
+              "correction_en": "I read in the newspaper that there's going to be a strike."
+            },
+            {
+              "id": "will-have",
+              "match": "\\b(will|going to) have a strike\\b",
+              "explanation_pt": "\"Vai ter\" (existir) é \"there's going to be\" ou \"there will be\", e não \"will have\".",
+              "correction_en": "I read in the newspaper that there's going to be a strike."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-06-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Pronunciar \"news\" (com \"z\" no fim) e os particípios terminados em \"-ed\" da voz passiva.",
+        "prompts": [
+          "Say \"news\". Is it \"news\" with S or with Z?",
+          "Say \"was arrested\" and \"was canceled\"."
+        ],
+        "watchFor": [
+          "Pronunciar \"news\" com \"s\" sibilante; o som final é \"z\": \"nyuz\" ou \"nuz\".",
+          "Colocar vogal extra em \"canceled\" (\"cancelédi\"); são só duas sílabas: \"CAN-seld\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-06-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita. \"News\" termina com som de \"z\".",
+          "prompt": "Have you seen the news today?",
+          "accepted": ["Have you seen the news today", "Did you see the news today"],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-06-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repita. \"Arrested\" tem o \"-ed\" como sílaba; \"canceled\" e \"closed\" não.",
+          "prompt": "The man was arrested, the game was canceled, and the road was closed.",
+          "accepted": [
+            "The man was arrested, the game was canceled, and the road was closed",
+            "The man was arrested, the game was cancelled, and the road was closed"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-06-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Em qual palavra o \"-ed\" é uma sílaba a mais?",
+          "options": ["closed", "arrested", "canceled"],
+          "answer": 1,
+          "explanation_pt": "Depois de \"t\" ou \"d\" o \"-ed\" vira sílaba: arrest-ed. Em \"closed\" e \"canceled\" ele é só um \"d\"."
+        }
+      ]
+    },
+    {
+      "id": "b1-06-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Entender uma notícia curta e reagir de forma natural.",
+        "prompts": ["Did you hear? The airport was closed this morning.", "What happened?"],
+        "watchFor": [
+          "Reagir só com \"Ok\"; ensine \"Really? What happened?\", \"That's awful!\", \"No way!\".",
+          "Esquecer o \"was/were\" na passiva: \"two people injured\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-06-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Ouça a notícia e escolha o que aconteceu.",
+          "listen": "Heavy rain caused flooding in the south of the city last night. Several roads were closed, but nobody was hurt.",
+          "options": [
+            "Ninguém se feriu, mas algumas ruas foram fechadas.",
+            "Várias pessoas se feriram na enchente.",
+            "A chuva foi fraca e nada aconteceu."
+          ],
+          "answer": 0,
+          "explanation_pt": "\"Several roads were closed\" = várias ruas foram fechadas; \"nobody was hurt\" = ninguém se feriu."
+        },
+        {
+          "id": "b1-06-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça a notícia e reaja com surpresa, perguntando o que aconteceu.",
+          "listen": "Did you hear? They closed the airport this morning.",
+          "accepted": [
+            "Really? What happened",
+            "No way! What happened",
+            "Seriously? What happened",
+            "What? What happened",
+            "Really? Why",
+            "Oh no! What happened",
+            "Really? Why did they close it",
+            "Wow, what happened"
+          ],
+          "commonErrors": [
+            {
+              "id": "what-happen",
+              "match": "\\bwhat (did )?happen$",
+              "explanation_pt": "\"O que aconteceu?\" é \"What happened?\". Sem \"did\": quando \"what\" é o sujeito, o verbo vai direto no passado.",
+              "correction_en": "Really? What happened?"
+            },
+            {
+              "id": "what-was-happened",
+              "match": "\\bwhat was happened\\b|\\bwhat is happened\\b",
+              "explanation_pt": "\"Happen\" não vai na passiva: \"What happened?\".",
+              "correction_en": "Really? What happened?"
+            }
+          ]
+        },
+        {
+          "id": "b1-06-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e conte a notícia: dois carros bateram e uma pessoa ficou ferida.",
+          "listen": "So what happened on the highway?",
+          "accepted": [
+            "Two cars crashed and one person was injured",
+            "Two cars crashed and one person was hurt",
+            "There was an accident. Two cars crashed and one person was injured",
+            "Two cars hit each other and one person was injured",
+            "Two cars collided and one person was injured",
+            "Apparently two cars crashed and one person got hurt"
+          ],
+          "commonErrors": [
+            {
+              "id": "passive-missing-be",
+              "match": "\\bone person (injured|hurt)$",
+              "explanation_pt": "Na voz passiva falta o \"was\": \"one person was injured\". Sem ele, parece que a pessoa feriu alguém.",
+              "correction_en": "Two cars crashed and one person was injured."
+            },
+            {
+              "id": "beat-bateram",
+              "match": "\\bcars (beat|hit)$|\\bcars beat\\b",
+              "explanation_pt": "\"Bater\" (o carro) é \"crash\". \"Beat\" é bater em alguém ou vencer.",
+              "correction_en": "Two cars crashed and one person was injured."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-06-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Contar uma notícia: o que, onde, quando, e reagir à notícia do outro.",
+        "prompts": [
+          "Tell me about something that happened in your city recently.",
+          "What's the biggest news story this year?"
+        ],
+        "watchFor": [
+          "Esquecer o passado: \"Yesterday the police arrest a man\".",
+          "Não dizer a fonte; ensine \"I read that...\" e \"According to...\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-06-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Segundo o jornal, o show foi cancelado.\"",
+          "accepted": [
+            "According to the newspaper, the concert was canceled",
+            "According to the newspaper, the show was canceled",
+            "According to the paper, the concert was canceled",
+            "According to the newspaper, the concert was cancelled",
+            "According to the news, the concert was canceled",
+            "The newspaper says the concert was canceled"
+          ],
+          "commonErrors": [
+            {
+              "id": "second-the-newspaper",
+              "match": "^second\\b|\\bsecond the\\b",
+              "explanation_pt": "\"Segundo\" (de acordo com) é \"according to\". \"Second\" é o número ordinal.",
+              "correction_en": "According to the newspaper, the concert was canceled."
+            },
+            {
+              "id": "according-with",
+              "match": "\\baccording (with|the)\\b",
+              "explanation_pt": "É \"according to\", com \"to\".",
+              "correction_en": "According to the newspaper, the concert was canceled."
+            }
+          ]
+        },
+        {
+          "id": "b1-06-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Pelo visto, o prefeito foi preso.\"",
+          "accepted": [
+            "Apparently, the mayor was arrested",
+            "Apparently, the mayor has been arrested",
+            "Apparently, the mayor got arrested",
+            "It seems the mayor was arrested",
+            "It looks like the mayor was arrested"
+          ],
+          "commonErrors": [
+            {
+              "id": "prefect",
+              "match": "\\bprefect\\b",
+              "explanation_pt": "Prefeito é \"mayor\". \"Prefect\" é outra coisa (um cargo escolar ou administrativo em alguns países).",
+              "correction_en": "Apparently, the mayor was arrested."
+            },
+            {
+              "id": "by-the-view",
+              "match": "\\bby the (view|look)\\b",
+              "explanation_pt": "\"Pelo visto\" é \"apparently\" ou \"it seems\". \"By the view\" é tradução literal.",
+              "correction_en": "Apparently, the mayor was arrested."
+            }
+          ]
+        },
+        {
+          "id": "b1-06-conv-3",
+          "kind": "order",
+          "instruction_pt": "Coloque as palavras na ordem certa.",
+          "accepted": ["The new bridge was opened last week."]
+        },
+        {
+          "id": "b1-06-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Conte uma notícia recente que chamou a sua atenção.",
+          "prompt_en": "Tell me about a news story that caught your attention recently. What happened, and what do you think about it?",
+          "guidelines_pt": [
+            "Diga onde você viu: \"I read online that...\" ou \"I saw on the news that...\".",
+            "Conte o que aconteceu no passado, usando pelo menos uma frase na passiva (\"was closed\", \"were injured\").",
+            "Dê a sua opinião: \"I think it's...\" ou \"It's crazy that...\"."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-06-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Fixar \"news\" no singular, \"according to\" e a passiva com \"was/were\".",
+        "prompts": [
+          "Any good news this week?",
+          "What was canceled or closed recently in your city?"
+        ],
+        "watchFor": ["\"The news are\".", "Esquecer \"was/were\" na passiva."]
+      },
+      "exercises": [
+        {
+          "id": "b1-06-rev-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita a frase.",
+          "prompt": "That's great news! I'm so glad to hear that.",
+          "accepted": [
+            "That's great news! I'm so glad to hear that",
+            "That is great news. I am so glad to hear that"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-06-rev-2",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Tenho uma boa notícia!\"",
+          "accepted": [
+            "I have some good news",
+            "I've got some good news",
+            "I have good news",
+            "I've got good news",
+            "I have a piece of good news",
+            "Guess what? I have good news"
+          ],
+          "commonErrors": [
+            {
+              "id": "a-good-news",
+              "match": "\\ba (good )?news\\b",
+              "explanation_pt": "\"News\" é incontável: \"some good news\" ou só \"good news\", nunca \"a good news\".",
+              "correction_en": "I have some good news!"
+            },
+            {
+              "id": "notice",
+              "match": "\\bnotice\\b",
+              "explanation_pt": "\"Notice\" é aviso. Notícia é \"news\".",
+              "correction_en": "I have some good news!"
+            }
+          ]
+        },
+        {
+          "id": "b1-06-rev-3",
+          "kind": "choice",
+          "instruction_pt": "Qual frase está na voz passiva?",
+          "options": ["The police arrested the man.", "The man was arrested.", "The man arrested."],
+          "answer": 1,
+          "explanation_pt": "Passiva = \"be\" + particípio: \"was arrested\". \"The man arrested\" sozinho diria que ele prendeu alguém."
+        },
+        {
+          "id": "b1-06-rev-4",
+          "kind": "fill",
+          "instruction_pt": "Complete com \"was\" ou \"were\".",
+          "sentence": "Three people ___ injured in the fire.",
+          "accepted": ["were"],
+          "commonErrors": [
+            {
+              "id": "was-plural",
+              "match": "^(was|are|is)$",
+              "explanation_pt": "\"Three people\" é plural e a notícia está no passado: \"were injured\".",
+              "correction_en": "Three people were injured in the fire."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

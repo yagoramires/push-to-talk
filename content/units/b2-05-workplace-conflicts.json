@@ -1,0 +1,489 @@
+{
+  "id": "b2-05-workplace-conflicts",
+  "level": "B2",
+  "order": 5,
+  "title_pt": "Conflitos no trabalho",
+  "title_en": "Workplace conflicts",
+  "objective_pt": "Falar de um desentendimento com diplomacia: expressar incômodo sem acusar, reconhecer o outro lado e propor uma solução.",
+  "blocks": [
+    {
+      "id": "b2-05-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Conversar sobre conflitos comuns no trabalho e perceber se o aluno usa \"discuss\" no sentido de brigar.",
+        "prompts": [
+          "What usually causes problems between colleagues?",
+          "How do you deal with a difficult coworker?"
+        ],
+        "watchFor": [
+          "Dizer \"we discussed\" querendo dizer \"brigamos\"; \"discutir\" nesse sentido é \"argue\".",
+          "Dizer \"I was very chateated\"; \"chateado\" é \"upset\" ou \"annoyed\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-05-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repeat out loud.",
+          "prompt": "I see where you're coming from, but I see it differently.",
+          "accepted": [
+            "I see where you're coming from, but I see it differently.",
+            "I see where you are coming from, but I see it differently."
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b2-05-warm-2",
+          "kind": "choice",
+          "instruction_pt": "\"Eles discutiram feio na reunião.\" Which verb fits best?",
+          "options": ["argued", "discussed", "debated"],
+          "answer": 0,
+          "explanation_pt": "\"Argue\" é discutir no sentido de brigar. \"Discuss\" é conversar sobre um assunto, sem briga."
+        },
+        {
+          "id": "b2-05-warm-3",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Eu fiquei chateado com o comentário dele.\"",
+          "accepted": [
+            "I was upset by his comment",
+            "I was upset about his comment",
+            "I got upset about his comment",
+            "I was annoyed by his comment",
+            "I was annoyed at his comment",
+            "I was annoyed about his comment",
+            "I was bothered by his comment",
+            "His comment upset me",
+            "His comment annoyed me",
+            "His comment bothered me",
+            "I felt upset about his comment"
+          ],
+          "commonErrors": [
+            {
+              "id": "upset-with-comment",
+              "match": "\\bi (was|got) (upset|annoyed) with his comment\\b",
+              "explanation_pt": "Ficamos chateados \"with\" uma pessoa, mas \"about\" ou \"by\" uma coisa: \"upset about his comment\".",
+              "correction_en": "I was upset about his comment."
+            },
+            {
+              "id": "stayed-upset",
+              "match": "\\bi stayed (upset|annoyed|sad)\\b",
+              "explanation_pt": "\"Fiquei chateado\" não é \"I stayed\" (permaneci). Use \"I was\" ou \"I got upset\".",
+              "correction_en": "I was upset about his comment."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-05-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Aprender vocabulário para conflitos: clash, misunderstanding, take it personally, sort out, common ground.",
+        "prompts": [
+          "Have you ever had a misunderstanding with a colleague?",
+          "How did you sort it out?"
+        ],
+        "watchFor": [
+          "Dizer \"I take it personal\"; o correto é \"personally\".",
+          "Pronunciar \"misunderstanding\" sem a tônica em \"stand\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-05-vocab-1",
+          "kind": "vocab",
+          "word_en": "misunderstanding",
+          "meaning_pt": "mal-entendido",
+          "example_en": "I think it was just a misunderstanding."
+        },
+        {
+          "id": "b2-05-vocab-2",
+          "kind": "vocab",
+          "word_en": "to sort out",
+          "meaning_pt": "resolver, acertar",
+          "example_en": "Let's sit down and sort this out."
+        },
+        {
+          "id": "b2-05-vocab-3",
+          "kind": "vocab",
+          "word_en": "to take something personally",
+          "meaning_pt": "levar para o lado pessoal",
+          "example_en": "Please don't take it personally, it's just feedback."
+        },
+        {
+          "id": "b2-05-vocab-4",
+          "kind": "match",
+          "instruction_pt": "Match each expression to its meaning.",
+          "pairs": [
+            { "en": "to clash", "pt": "bater de frente, entrar em conflito" },
+            { "en": "common ground", "pt": "um ponto em comum" },
+            { "en": "to blame", "pt": "culpar" },
+            { "en": "to calm down", "pt": "se acalmar" },
+            { "en": "to step on someone's toes", "pt": "se meter no espaço de alguém" }
+          ]
+        },
+        {
+          "id": "b2-05-vocab-5",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Não leve para o lado pessoal.\"",
+          "accepted": [
+            "Don't take it personally",
+            "Please don't take it personally",
+            "Try not to take it personally",
+            "Do not take it personally",
+            "It's nothing personal",
+            "Don't take this personally"
+          ],
+          "commonErrors": [
+            {
+              "id": "take-personal",
+              "match": "\\btake (it|this) (personal|to the personal side)\\b",
+              "explanation_pt": "O advérbio é \"personally\": \"Don't take it personally\". \"Personal side\" é tradução literal.",
+              "correction_en": "Don't take it personally."
+            },
+            {
+              "id": "no-take",
+              "match": "^(no|not) take\\b",
+              "explanation_pt": "O imperativo negativo usa \"don't\": \"Don't take it personally\".",
+              "correction_en": "Don't take it personally."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-05-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Treinar um tom calmo e a tônica de palavras longas (misunderSTANDing, apoLOgize).",
+        "prompts": [
+          "Say \"misunderstanding\". Which part is strongest?",
+          "How does your voice sound when you are calm?"
+        ],
+        "watchFor": [
+          "Colocar a tônica em \"MIS\" em \"misunderstanding\".",
+          "Falar rápido e alto demais, o que soa agressivo em inglês."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-05-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repeat calmly. Stress \"STAND\" in \"misunderstanding\".",
+          "prompt": "I think there's been a misunderstanding.",
+          "accepted": [
+            "I think there's been a misunderstanding.",
+            "I think there has been a misunderstanding.",
+            "I think there was a misunderstanding."
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b2-05-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repeat. Stress \"PO\" in \"apologize\".",
+          "prompt": "I apologize if I came across as rude.",
+          "accepted": [
+            "I apologize if I came across as rude.",
+            "I apologise if I came across as rude.",
+            "I'm sorry if I came across as rude."
+          ],
+          "commonErrors": [
+            {
+              "id": "apologize-for-if",
+              "match": "\\bi apologi[sz]e me\\b",
+              "explanation_pt": "\"Apologize\" não é reflexivo: \"I apologize\", sem \"me\" (diferente de \"eu me desculpo\").",
+              "correction_en": "I apologize if I came across as rude."
+            }
+          ]
+        },
+        {
+          "id": "b2-05-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Where is the main stress in \"misunderstanding\"?",
+          "options": ["mis-un-der-STAND-ing", "MIS-un-der-stand-ing", "mis-UN-der-stand-ing"],
+          "answer": 0,
+          "explanation_pt": "A sílaba mais forte é \"STAND\". Tônica errada em palavras longas atrapalha mais a compreensão do que um som errado."
+        }
+      ]
+    },
+    {
+      "id": "b2-05-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Entender reclamações indiretas de colegas e responder sem ficar na defensiva.",
+        "prompts": [
+          "How would you answer if a colleague said you were always late?",
+          "How do you show you're listening?"
+        ],
+        "watchFor": [
+          "Responder com \"It's not my fault\" imediatamente; treinar reconhecer antes.",
+          "Usar \"You always...\" e \"You never...\", que soam como acusação."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-05-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Listen. What is the colleague's real problem?",
+          "listen": "I don't mind helping out, but I've ended up doing your part of the report three times this month.",
+          "options": [
+            "She is doing too much of the other person's work.",
+            "She doesn't want to help at all.",
+            "She didn't finish the report."
+          ],
+          "answer": 0,
+          "explanation_pt": "\"I don't mind helping out, but...\" suaviza a reclamação. O problema é ter feito a parte do outro três vezes."
+        },
+        {
+          "id": "b2-05-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Listen. Acknowledge the problem and apologize.",
+          "listen": "Honestly, it's frustrating when you change the plan without telling me.",
+          "accepted": [
+            "You're right, I'm sorry. I should have told you",
+            "You're right. I should have told you",
+            "I'm sorry, I should have told you",
+            "Sorry, I should have let you know",
+            "I'm sorry, I should've told you",
+            "I understand. I'm sorry I didn't tell you",
+            "I see your point. I'm sorry I didn't tell you",
+            "That's fair. I'm sorry I didn't let you know",
+            "I'm sorry about that. It won't happen again",
+            "You're right, I'm sorry. It won't happen again",
+            "I apologize. I should have told you",
+            "I'm sorry, I didn't realize. I'll keep you in the loop"
+          ],
+          "commonErrors": [
+            {
+              "id": "should-told",
+              "match": "\\bshould (told|tell) you before\\b|\\bshould told\\b",
+              "explanation_pt": "Para falar de algo que não fizemos no passado: \"should have told\" (na fala, \"should've told\").",
+              "correction_en": "I'm sorry, I should have told you."
+            },
+            {
+              "id": "have-reason",
+              "match": "\\byou have (the )?reason\\b",
+              "explanation_pt": "\"Você tem razão\" é \"You're right\". \"You have reason\" é tradução literal.",
+              "correction_en": "You're right, I'm sorry. I should have told you."
+            }
+          ]
+        },
+        {
+          "id": "b2-05-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Listen. Suggest talking about it calmly in private.",
+          "listen": "I can't believe you said that in front of the whole team!",
+          "accepted": [
+            "Can we talk about this in private?",
+            "Can we talk about it in private?",
+            "Could we discuss this in private?",
+            "Let's talk about this in private",
+            "Let's talk about it in private",
+            "Why don't we talk about this in private?",
+            "Can we talk about this somewhere private?",
+            "Can we talk about this one on one?",
+            "I'm sorry. Can we talk about this privately?",
+            "Let's sit down and talk about it privately",
+            "Can we discuss this later, just the two of us?"
+          ],
+          "commonErrors": [
+            {
+              "id": "in-particular",
+              "match": "\\bin particular\\b",
+              "explanation_pt": "\"Em particular\" (a sós) é \"in private\" ou \"privately\". \"In particular\" significa \"especificamente\".",
+              "correction_en": "Can we talk about this in private?"
+            },
+            {
+              "id": "discuss-about-this",
+              "match": "\\bdiscuss about\\b",
+              "explanation_pt": "\"Discuss\" não leva \"about\": \"discuss this\". Ou use \"talk about this\".",
+              "correction_en": "Could we discuss this in private?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-05-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Resolver um conflito em uma simulação: falar do impacto (\"I feel...\"), ouvir e propor uma solução.",
+        "prompts": [
+          "You keep missing my deadlines. What's going on?",
+          "How do you think we could fix this?",
+          "Can we agree on something for next time?"
+        ],
+        "watchFor": [
+          "Começar com \"You always...\"; incentivar \"I've noticed that...\" e \"I feel...\".",
+          "Usar \"pretend\" querendo dizer \"pretender\" (intend, plan)."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-05-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Eu percebi que a gente tem tido alguns problemas de comunicação.\"",
+          "accepted": [
+            "I've noticed that we've been having some communication problems",
+            "I've noticed that we've had some communication problems",
+            "I've noticed we've been having some communication problems",
+            "I've noticed that we've been having some communication issues",
+            "I've noticed that we've been having some problems with communication",
+            "I noticed that we've been having some communication problems",
+            "I noticed we've had some communication issues",
+            "I've realized that we've been having some communication problems"
+          ],
+          "commonErrors": [
+            {
+              "id": "perceived",
+              "match": "\\bi (have )?perceived\\b",
+              "explanation_pt": "\"Perceber\" no sentido de notar é \"notice\" ou \"realize\". \"Perceive\" é formal e mais ligado a interpretação.",
+              "correction_en": "I've noticed that we've been having some communication problems."
+            },
+            {
+              "id": "we-have-had-problems-present",
+              "match": "\\bwe are having some communication\\b",
+              "explanation_pt": "\"Tem tido\" fala de algo que começou antes e continua: use o present perfect, \"we've been having\" ou \"we've had\".",
+              "correction_en": "We've been having some communication problems."
+            }
+          ]
+        },
+        {
+          "id": "b2-05-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Eu pretendo falar com ela amanhã para resolver isso.\"",
+          "accepted": [
+            "I intend to talk to her tomorrow to sort this out",
+            "I'm planning to talk to her tomorrow to sort this out",
+            "I plan to talk to her tomorrow to sort this out",
+            "I'm going to talk to her tomorrow to sort this out",
+            "I'm going to speak to her tomorrow to sort it out",
+            "I plan to talk to her tomorrow to solve this",
+            "I'm planning to talk to her tomorrow to resolve this",
+            "I intend to speak with her tomorrow to sort this out",
+            "I'm going to talk to her tomorrow to fix this"
+          ],
+          "commonErrors": [
+            {
+              "id": "pretend",
+              "match": "\\bi pretend\\b",
+              "explanation_pt": "\"Pretend\" é falso cognato: significa fingir. \"Pretender\" é \"intend\", \"plan\" ou \"be going to\".",
+              "correction_en": "I intend to talk to her tomorrow to sort this out."
+            },
+            {
+              "id": "talk-with-her-for",
+              "match": "\\bfor (sort|solve|resolve|fix)\\b",
+              "explanation_pt": "Para indicar finalidade usamos \"to\", e não \"for\": \"to sort this out\".",
+              "correction_en": "I'm going to talk to her tomorrow to sort this out."
+            }
+          ]
+        },
+        {
+          "id": "b2-05-conv-3",
+          "kind": "order",
+          "instruction_pt": "Put the words in order to find common ground.",
+          "accepted": ["I think we both want the same thing here"]
+        },
+        {
+          "id": "b2-05-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Your colleague keeps sending work late, and it affects you. Talk to them diplomatically.",
+          "prompt_en": "Hey, you wanted to talk to me? Is something wrong?",
+          "guidelines_pt": [
+            "Describe the situation without blaming: \"I've noticed that...\"",
+            "Say how it affects you: \"It puts me in a difficult position because...\"",
+            "Propose a solution: \"What if we...?\" or \"Could we agree to...?\""
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-05-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Revisar a linguagem diplomática e os falsos cognatos \"discuss\" e \"pretend\".",
+        "prompts": [
+          "How do you say you disagree without sounding rude?",
+          "What's the difference between argue and discuss?"
+        ],
+        "watchFor": ["\"Pretend\" no sentido de pretender.", "\"Take it personal\"."]
+      },
+      "exercises": [
+        {
+          "id": "b2-05-rev-1",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Eles brigaram por causa do projeto.\"",
+          "accepted": [
+            "They argued about the project",
+            "They had an argument about the project",
+            "They had a fight about the project",
+            "They fought over the project",
+            "They argued over the project",
+            "They had a disagreement about the project",
+            "They clashed over the project",
+            "They got into an argument about the project"
+          ],
+          "commonErrors": [
+            {
+              "id": "discussed-fight",
+              "match": "\\bthey discussed (about|because)\\b",
+              "explanation_pt": "\"Discuss\" é conversar sobre algo. Para briga, use \"argue\" ou \"have an argument\".",
+              "correction_en": "They argued about the project."
+            },
+            {
+              "id": "because-of-project",
+              "match": "\\bbecause of the project\\b",
+              "explanation_pt": "\"Brigar por causa de\" algo soa melhor com \"about\" ou \"over\": \"argue about the project\".",
+              "correction_en": "They argued about the project."
+            }
+          ]
+        },
+        {
+          "id": "b2-05-rev-2",
+          "kind": "fill",
+          "instruction_pt": "Complete the sentence.",
+          "sentence": "Let's sit down and sort this ___.",
+          "accepted": ["out"],
+          "commonErrors": [
+            {
+              "id": "sort-wrong-particle",
+              "match": "^(up|off|on|over)$",
+              "explanation_pt": "A expressão é \"sort out\" (resolver): \"sort this out\".",
+              "correction_en": "Let's sit down and sort this out."
+            }
+          ]
+        },
+        {
+          "id": "b2-05-rev-3",
+          "kind": "choice",
+          "instruction_pt": "Which sentence sounds the least aggressive?",
+          "options": [
+            "I feel a bit frustrated when the plan changes at the last minute.",
+            "You always change the plan at the last minute.",
+            "You never tell me anything."
+          ],
+          "answer": 0,
+          "explanation_pt": "Falar do próprio sentimento (\"I feel...\") e evitar \"always\" e \"never\" deixa a conversa mais aberta."
+        },
+        {
+          "id": "b2-05-rev-4",
+          "kind": "repeat",
+          "instruction_pt": "To finish, repeat.",
+          "prompt": "I'm glad we talked. Let's keep each other in the loop.",
+          "accepted": [
+            "I'm glad we talked. Let's keep each other in the loop.",
+            "I am glad we talked. Let us keep each other in the loop."
+          ],
+          "commonErrors": []
+        }
+      ]
+    }
+  ]
+}

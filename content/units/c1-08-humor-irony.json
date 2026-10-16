@@ -1,0 +1,466 @@
+{
+  "id": "c1-08-humor-irony",
+  "level": "C1",
+  "order": 8,
+  "title_pt": "Humor e ironia",
+  "title_en": "Humor and irony",
+  "objective_pt": "Recognise and use understatement, sarcasm and self-deprecating humour (\"Well, that went well\", \"It's not the end of the world\"), and react naturally when someone is joking.",
+  "blocks": [
+    {
+      "id": "c1-08-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Compare Brazilian and English-speaking humour, especially British understatement.",
+        "prompts": [
+          "Is Brazilian humour more direct or more ironic?",
+          "Has anyone ever misunderstood one of your jokes in English?"
+        ],
+        "watchFor": [
+          "Taking sarcasm literally.",
+          "\"Joke\" vs \"kid\": \"Are you kidding?\" is the natural form, not \"Are you joking with me?\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-08-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repeat with an ironic, flat tone, as if something has just gone wrong.",
+          "prompt": "Well, that went well.",
+          "accepted": ["Well, that went well"],
+          "commonErrors": []
+        },
+        {
+          "id": "c1-08-warm-2",
+          "kind": "choice",
+          "instruction_pt": "It's pouring with rain and your friend says \"Lovely weather for a picnic.\" What does she mean?",
+          "options": [
+            "She wants to have a picnic.",
+            "She's being sarcastic: the weather is terrible.",
+            "She thinks the rain is lovely."
+          ],
+          "answer": 1,
+          "explanation_pt": "Sarcasm says the opposite of what is meant, often with a flat or exaggerated tone."
+        },
+        {
+          "id": "c1-08-warm-3",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English: \"Você está brincando!\"",
+          "accepted": [
+            "You're kidding!",
+            "You're joking!",
+            "Are you kidding?",
+            "Are you kidding me?",
+            "Are you joking?",
+            "You must be joking!",
+            "You've got to be kidding!",
+            "No way!",
+            "Seriously?"
+          ],
+          "commonErrors": [
+            {
+              "id": "playing",
+              "match": "\\byou are playing\\b",
+              "explanation_pt": "\"Brincar\" in the sense of joking is \"kid\" or \"joke\". \"You're playing\" means you're playing a game.",
+              "correction_en": "You're kidding!"
+            },
+            {
+              "id": "joking-with-me",
+              "match": "\\bjoking with me\\b",
+              "explanation_pt": "\"Brincando comigo\" is \"kidding me\" / \"pulling my leg\", not \"joking with me\".",
+              "correction_en": "Are you kidding me?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-08-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Humour vocabulary: tongue-in-cheek, deadpan, understatement, to pull someone's leg, self-deprecating.",
+        "prompts": [
+          "Do you know anyone with a deadpan sense of humour?",
+          "When did someone last pull your leg?"
+        ],
+        "watchFor": [
+          "\"Humor\" stressed as in Portuguese (hu-MOR) instead of HU-mour.",
+          "\"Funny\" vs \"fun\": a funny person makes you laugh; a fun person is enjoyable to be with."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-08-vocab-1",
+          "kind": "vocab",
+          "word_en": "to pull someone's leg",
+          "meaning_pt": "zoar alguém, fazer alguém de bobo (de brincadeira)",
+          "example_en": "Relax, I'm just pulling your leg."
+        },
+        {
+          "id": "c1-08-vocab-2",
+          "kind": "vocab",
+          "word_en": "tongue-in-cheek",
+          "meaning_pt": "em tom de brincadeira, irônico",
+          "example_en": "His comment was totally tongue-in-cheek."
+        },
+        {
+          "id": "c1-08-vocab-3",
+          "kind": "vocab",
+          "word_en": "deadpan",
+          "meaning_pt": "sem expressão, com cara séria (ao fazer piada)",
+          "example_en": "She has a brilliant deadpan delivery."
+        },
+        {
+          "id": "c1-08-vocab-4",
+          "kind": "match",
+          "instruction_pt": "Match each word with its meaning.",
+          "pairs": [
+            {
+              "en": "understatement",
+              "pt": "eufemismo, dizer menos do que é"
+            },
+            {
+              "en": "self-deprecating",
+              "pt": "autodepreciativo"
+            },
+            {
+              "en": "a pun",
+              "pt": "um trocadilho"
+            },
+            {
+              "en": "to crack a joke",
+              "pt": "contar uma piada"
+            },
+            {
+              "en": "a running joke",
+              "pt": "uma piada interna recorrente"
+            }
+          ]
+        },
+        {
+          "id": "c1-08-vocab-5",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English: \"Relaxa, eu só estou te zoando.\"",
+          "accepted": [
+            "Relax, I'm just pulling your leg",
+            "Relax, I'm just kidding",
+            "Relax, I'm only joking",
+            "Relax, I'm just joking",
+            "Relax, I'm just messing with you",
+            "Chill, I'm just kidding",
+            "Don't worry, I'm just pulling your leg",
+            "Relax, I'm only kidding",
+            "Relax, I'm just teasing you"
+          ],
+          "commonErrors": [
+            {
+              "id": "relax-playing",
+              "match": "\\bplaying with you\\b",
+              "explanation_pt": "\"Zoar\" is \"kid\", \"tease\" or \"pull someone's leg\". \"Play with you\" sounds childish or odd.",
+              "correction_en": "Relax, I'm just pulling your leg."
+            },
+            {
+              "id": "pulling-your-foot",
+              "match": "\\bpulling your (foot|feet)\\b",
+              "explanation_pt": "The idiom is \"pull someone's leg\", with \"leg\", not \"foot\".",
+              "correction_en": "Relax, I'm just pulling your leg."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-08-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Intonation of sarcasm: flat or exaggerated pitch, lengthened vowels.",
+        "prompts": [
+          "Say \"Great.\" sincerely, then sarcastically.",
+          "Say \"Oh, brilliant\" as if your train was just cancelled."
+        ],
+        "watchFor": [
+          "Same tone for sincere and sarcastic versions, so the irony is lost.",
+          "Overacting so much that it sounds aggressive."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-08-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repeat sarcastically: stretch \"brilliant\" and keep the pitch low and flat.",
+          "prompt": "Oh, brilliant. Just what I needed.",
+          "accepted": ["Oh, brilliant. Just what I needed"],
+          "commonErrors": []
+        },
+        {
+          "id": "c1-08-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repeat this understatement in a calm, dry voice.",
+          "prompt": "It's not exactly the best idea I've ever heard.",
+          "accepted": [
+            "It's not exactly the best idea I've ever heard",
+            "It is not exactly the best idea I have ever heard"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "c1-08-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Which word is stressed in \"HUMOUR\"?",
+          "options": ["HU-mour", "hu-MOUR", "Both syllables equally"],
+          "answer": 0,
+          "explanation_pt": "In English the stress is on the first syllable: HU-mour (/ˈhjuː.mər/), unlike \"humor\" in Portuguese."
+        }
+      ]
+    },
+    {
+      "id": "c1-08-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Detect irony from context and tone, and play along.",
+        "prompts": ["Was the speaker serious?", "How could you reply with a joke?"],
+        "watchFor": [
+          "Literal answers to jokes (\"No, the weather is bad\").",
+          "Missing understatement (\"a bit of a problem\" = a big problem)."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-08-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Listen. How bad is the situation really?",
+          "listen": "The car broke down, it started snowing and we missed the wedding. So, yeah, it was a bit of a disappointing day.",
+          "options": [
+            "Slightly disappointing.",
+            "Actually very bad. The speaker is using understatement.",
+            "Quite good overall."
+          ],
+          "answer": 1,
+          "explanation_pt": "\"A bit of a disappointing day\" after a list of disasters is classic understatement."
+        },
+        {
+          "id": "c1-08-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Listen. Your friend is joking about herself. Reply light-heartedly.",
+          "listen": "I tried to bake a cake yesterday and I set off the fire alarm. Twice.",
+          "accepted": [
+            "Well, at least you tried!",
+            "At least the alarm works!",
+            "Well, at least you know the alarm works!",
+            "Sounds like a great success!",
+            "Master chef in the making!",
+            "Remind me never to eat your cake!",
+            "Practice makes perfect!",
+            "So it went well, then!",
+            "That sounds like my kind of cooking!",
+            "Twice? Impressive!"
+          ],
+          "commonErrors": [
+            {
+              "id": "literal-sorry",
+              "match": "^i am (very )?sorry\\b",
+              "explanation_pt": "She's joking about herself, so a serious apology misses the tone. Play along: \"At least the alarm works!\"",
+              "correction_en": "Well, at least you know the alarm works!"
+            }
+          ]
+        },
+        {
+          "id": "c1-08-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Listen and reply with an understatement about the weather.",
+          "listen": "Have you seen it outside? It's like a hurricane out there.",
+          "accepted": [
+            "It's a bit windy, isn't it?",
+            "Yeah, it's a little breezy",
+            "Just a bit breezy, then",
+            "Bit windy, isn't it?",
+            "Not exactly beach weather, is it?",
+            "It's not ideal, is it?",
+            "A little blustery, yes",
+            "Yeah, slightly windy",
+            "Yes, it's a bit wild out there"
+          ],
+          "commonErrors": [
+            {
+              "id": "tag-no",
+              "match": "\\b(windy|breezy) (no|not)$",
+              "explanation_pt": "The Portuguese \"né?\" becomes a question tag in English: \"It's a bit windy, isn't it?\", not \"windy, no?\".",
+              "correction_en": "It's a bit windy, isn't it?"
+            },
+            {
+              "id": "no-understatement",
+              "match": "\\b(very|extremely) (windy|bad|strong)\\b",
+              "explanation_pt": "That's accurate, but the task asks for understatement: say less than it is (\"a bit windy\").",
+              "correction_en": "It's a bit windy, isn't it?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-08-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Tell a funny story using self-deprecation and understatement; react to the teacher's irony.",
+        "prompts": [
+          "Tell me about your worst cooking (or DIY) disaster.",
+          "(Teacher uses sarcasm.) Did you get it?",
+          "What kind of jokes don't translate well from Portuguese?"
+        ],
+        "watchFor": ["\"Joking with me\", \"you're playing\".", "Explaining the joke too much."]
+      },
+      "exercises": [
+        {
+          "id": "c1-08-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English: \"Não sou exatamente o melhor motorista do mundo.\"",
+          "accepted": [
+            "I'm not exactly the best driver in the world",
+            "I'm not exactly the world's best driver",
+            "I'm not exactly a great driver",
+            "I'm not the best driver in the world, to be honest",
+            "Let's just say I'm not the best driver in the world",
+            "I'm not exactly the best driver ever"
+          ],
+          "commonErrors": [
+            {
+              "id": "of-the-world",
+              "match": "\\bbest driver of the world\\b",
+              "explanation_pt": "With superlatives and places, English uses \"in\": \"the best driver in the world\".",
+              "correction_en": "I'm not exactly the best driver in the world."
+            },
+            {
+              "id": "motorist",
+              "match": "\\bmotorist\\b",
+              "explanation_pt": "\"Motorist\" exists but is formal (news reports). In conversation, \"motorista\" is \"driver\".",
+              "correction_en": "I'm not exactly the best driver in the world."
+            }
+          ]
+        },
+        {
+          "id": "c1-08-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English: \"Não é o fim do mundo.\"",
+          "accepted": [
+            "It's not the end of the world",
+            "It isn't the end of the world",
+            "That's not the end of the world",
+            "It's hardly the end of the world",
+            "Well, it's not the end of the world"
+          ],
+          "commonErrors": [
+            {
+              "id": "is-not-the-end-word",
+              "match": "\\bend of world\\b",
+              "explanation_pt": "Keep both articles: \"the end of the world\".",
+              "correction_en": "It's not the end of the world."
+            }
+          ]
+        },
+        {
+          "id": "c1-08-conv-3",
+          "kind": "order",
+          "instruction_pt": "Put the words in order to make a self-deprecating joke.",
+          "accepted": ["Let's just say cooking isn't my strong point"]
+        },
+        {
+          "id": "c1-08-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Tell a short funny story about yourself in about a minute, using understatement or self-deprecation.",
+          "prompt_en": "Tell me about a time when something went hilariously wrong for you. Don't be afraid to laugh at yourself.",
+          "guidelines_pt": [
+            "Set it up: \"So, picture this...\".",
+            "Use self-deprecation: \"Let's just say I'm not the most...\".",
+            "Use understatement for the worst moment: \"It was a bit of a disaster.\"",
+            "End with a punchline or \"Well, at least...\"."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-08-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Recycle humour vocabulary and check the learner can switch between literal and ironic readings.",
+        "prompts": [
+          "Say something sarcastic about Monday mornings.",
+          "Pull my leg about something."
+        ],
+        "watchFor": ["\"Pulling your foot\"", "Flat intonation that hides the irony."]
+      },
+      "exercises": [
+        {
+          "id": "c1-08-rev-1",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English: \"Ele tem um senso de humor muito seco.\"",
+          "accepted": [
+            "He has a very dry sense of humour",
+            "He has a very dry sense of humor",
+            "He's got a very dry sense of humour",
+            "He's got a really dry sense of humor",
+            "He has a really dry sense of humour",
+            "His sense of humour is very dry"
+          ],
+          "commonErrors": [
+            {
+              "id": "sense-of-the-humor",
+              "match": "\\bsense of the hum",
+              "explanation_pt": "No article: \"a sense of humour\".",
+              "correction_en": "He has a very dry sense of humour."
+            },
+            {
+              "id": "humor-very-dry-order",
+              "match": "\\bhumou?r very dry\\b",
+              "explanation_pt": "Adjectives go before the noun: \"a very dry sense of humour\".",
+              "correction_en": "He has a very dry sense of humour."
+            }
+          ]
+        },
+        {
+          "id": "c1-08-rev-2",
+          "kind": "fill",
+          "instruction_pt": "Complete with one word.",
+          "sentence": "Don't take it seriously, I'm only pulling your ___.",
+          "accepted": ["leg"],
+          "commonErrors": [
+            {
+              "id": "foot",
+              "match": "^(foot|feet|arm|hair)$",
+              "explanation_pt": "The idiom is \"pull someone's leg\".",
+              "correction_en": "Don't take it seriously, I'm only pulling your leg."
+            }
+          ]
+        },
+        {
+          "id": "c1-08-rev-3",
+          "kind": "choice",
+          "instruction_pt": "Which one is an understatement?",
+          "options": [
+            "This is the worst day of my entire life!",
+            "Losing my wallet was slightly inconvenient.",
+            "I'm so happy I could fly!"
+          ],
+          "answer": 1,
+          "explanation_pt": "Understatement makes something sound less serious than it is: \"slightly inconvenient\" for a lost wallet."
+        },
+        {
+          "id": "c1-08-rev-4",
+          "kind": "repeat",
+          "instruction_pt": "Repeat with a smile in your voice.",
+          "prompt": "Well, it could have been worse.",
+          "accepted": [
+            "Well, it could have been worse",
+            "It could have been worse",
+            "Well, it could've been worse"
+          ],
+          "commonErrors": []
+        }
+      ]
+    }
+  ]
+}

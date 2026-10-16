@@ -95,6 +95,7 @@ export function makeCourse({ withA2 = false } = {}): Course {
           )
         }))
       }
-    }
+    },
+    audio: {}
   }
 }

@@ -1,0 +1,480 @@
+{
+  "id": "b1-10-telling-a-story",
+  "level": "B1",
+  "order": 10,
+  "title_pt": "Contando uma história",
+  "title_en": "Telling a story",
+  "objective_pt": "Contar uma história pessoal com começo, meio e fim, usando passado contínuo para o cenário (\"I was walking home when...\"), passado simples para os fatos e conectores (\"First\", \"Then\", \"Suddenly\", \"In the end\").",
+  "blocks": [
+    {
+      "id": "b1-10-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Aquecer lembrando de uma situação engraçada ou estranha.",
+        "prompts": [
+          "Has anything funny happened to you recently?",
+          "What were you doing at eight o'clock last night?"
+        ],
+        "watchFor": [
+          "Contar tudo no presente (\"So I go to the store and I see...\"); no nível B1, treine o passado.",
+          "Dizer \"I was walk\"; o passado contínuo é \"was + -ing\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-10-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita o começo da história.",
+          "prompt": "You won't believe what happened to me yesterday.",
+          "accepted": [
+            "You won't believe what happened to me yesterday",
+            "You will not believe what happened to me yesterday"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-10-warm-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e diga que você estava jantando.",
+          "listen": "What were you doing at eight o'clock last night?",
+          "accepted": [
+            "I was having dinner",
+            "I was eating dinner",
+            "I was having dinner at home",
+            "I was having dinner with my family",
+            "I think I was having dinner",
+            "I was making dinner",
+            "I was cooking dinner"
+          ],
+          "commonErrors": [
+            {
+              "id": "was-eat",
+              "match": "\\bi was (eat|have|dine)\\b",
+              "explanation_pt": "O passado contínuo é \"was\" + verbo com \"-ing\": \"I was having dinner\".",
+              "correction_en": "I was having dinner."
+            },
+            {
+              "id": "jantar-the-dinner",
+              "match": "\\b(having|eating) the dinner\\b",
+              "explanation_pt": "Refeições vão sem artigo: \"having dinner\".",
+              "correction_en": "I was having dinner."
+            }
+          ]
+        },
+        {
+          "id": "b1-10-warm-3",
+          "kind": "choice",
+          "instruction_pt": "Qual frase descreve uma ação interrompida por outra?",
+          "options": [
+            "I walked home when it started to rain.",
+            "I was walking home when it started to rain.",
+            "I was walk home when it started to rain."
+          ],
+          "answer": 1,
+          "explanation_pt": "A ação longa (o cenário) vai no passado contínuo: \"I was walking\". A ação curta que interrompe vai no passado simples: \"it started\"."
+        }
+      ]
+    },
+    {
+      "id": "b1-10-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Aprender conectores e expressões para dar ritmo a uma história.",
+        "prompts": ["How do you start a story in English?", "How do you end it?"],
+        "watchFor": [
+          "Usar \"In the final\" para \"no final\"; é \"In the end\" ou \"At the end\".",
+          "Repetir \"and then\" o tempo todo; varie com \"after that\", \"suddenly\", \"luckily\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-10-vocab-1",
+          "kind": "vocab",
+          "word_en": "suddenly",
+          "meaning_pt": "de repente",
+          "example_en": "Suddenly, the lights went out."
+        },
+        {
+          "id": "b1-10-vocab-2",
+          "kind": "vocab",
+          "word_en": "luckily",
+          "meaning_pt": "por sorte",
+          "example_en": "Luckily, someone found my wallet and gave it back."
+        },
+        {
+          "id": "b1-10-vocab-3",
+          "kind": "vocab",
+          "word_en": "in the end",
+          "meaning_pt": "no final, no fim das contas",
+          "example_en": "In the end, we missed the flight, but we had a great time."
+        },
+        {
+          "id": "b1-10-vocab-4",
+          "kind": "vocab",
+          "word_en": "it turned out that",
+          "meaning_pt": "acabou que, descobriu-se que",
+          "example_en": "It turned out that the man was my neighbor's brother."
+        },
+        {
+          "id": "b1-10-vocab-5",
+          "kind": "match",
+          "instruction_pt": "Ligue cada conector ao significado.",
+          "pairs": [
+            {
+              "en": "at first",
+              "pt": "no começo"
+            },
+            {
+              "en": "after that",
+              "pt": "depois disso"
+            },
+            {
+              "en": "meanwhile",
+              "pt": "enquanto isso"
+            },
+            {
+              "en": "unfortunately",
+              "pt": "infelizmente"
+            },
+            {
+              "en": "eventually",
+              "pt": "finalmente, depois de um tempo"
+            }
+          ]
+        },
+        {
+          "id": "b1-10-vocab-6",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"No final, deu tudo certo.\"",
+          "accepted": [
+            "In the end, everything worked out",
+            "In the end, it all worked out",
+            "In the end, everything was fine",
+            "In the end, everything turned out fine",
+            "In the end, everything turned out okay",
+            "In the end, everything went well",
+            "In the end, it all worked out fine"
+          ],
+          "commonErrors": [
+            {
+              "id": "gave-right",
+              "match": "\\b(gave|give) (all )?(right|certain)\\b",
+              "explanation_pt": "\"Dar certo\" não é \"give right\". Use \"work out\" ou \"turn out fine\".",
+              "correction_en": "In the end, everything worked out."
+            },
+            {
+              "id": "in-the-final",
+              "match": "^(in|at) the final\\b",
+              "explanation_pt": "\"No final\" de uma história é \"In the end\". \"The final\" é a final de um campeonato.",
+              "correction_en": "In the end, everything worked out."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-10-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Pronunciar a forma fraca de \"was\" e o final \"-ed\" em histórias.",
+        "prompts": [
+          "Say \"I was walking\" quickly. Do you hear \"wuz\"?",
+          "Say \"walked\", \"started\", \"stopped\"."
+        ],
+        "watchFor": [
+          "Acentuar \"was\" no meio da frase; ele é fraco: \"wəz\".",
+          "Pronunciar \"walked\" como \"uólquedi\"; é \"wókt\", uma sílaba só."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-10-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita. O \"was\" é fraco e rápido.",
+          "prompt": "I was waiting for the bus when I saw an old friend.",
+          "accepted": ["I was waiting for the bus when I saw an old friend"],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-10-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repita. \"Walked\" e \"stopped\" terminam em som de \"t\"; \"started\" tem o \"-ed\" como sílaba.",
+          "prompt": "We walked, we stopped, and then it started to rain.",
+          "accepted": ["We walked, we stopped, and then it started to rain"],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-10-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Como termina o som de \"walked\"?",
+          "options": [
+            "com \"d\" e vogal: \"uólquedi\"",
+            "com som de \"t\": \"wókt\"",
+            "com \"id\": \"wókid\""
+          ],
+          "answer": 1,
+          "explanation_pt": "Depois de som surdo (k, p, s, sh, ch, f), o \"-ed\" soa como \"t\": walked = \"wókt\"."
+        }
+      ]
+    },
+    {
+      "id": "b1-10-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Entender uma história curta e reagir com perguntas e comentários.",
+        "prompts": ["And then what happened?", "How did you feel?"],
+        "watchFor": [
+          "Reagir só com \"Ok\"; ensine \"Oh no!\", \"What did you do?\", \"That's hilarious!\".",
+          "Perguntar \"What you did?\"; é \"What did you do?\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-10-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Ouça a história e escolha o que aconteceu.",
+          "listen": "I was cooking dinner when the fire alarm went off. It turned out that I'd left a towel on the stove. Luckily, nobody was hurt.",
+          "options": [
+            "Houve um incêndio grande e alguém se feriu.",
+            "O alarme tocou por causa de um pano no fogão, e ninguém se feriu.",
+            "O alarme tocou sem motivo enquanto ela dormia."
+          ],
+          "answer": 1,
+          "explanation_pt": "\"The fire alarm went off\" = o alarme tocou; \"I'd left a towel on the stove\" = tinha deixado um pano no fogão; \"nobody was hurt\" = ninguém se feriu."
+        },
+        {
+          "id": "b1-10-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça o começo da história e pergunte o que a pessoa fez.",
+          "listen": "So I got to the airport and realized I'd left my passport at home.",
+          "accepted": [
+            "Oh no! What did you do",
+            "What did you do",
+            "No way! What did you do",
+            "Really? What did you do",
+            "Oh no! So what did you do",
+            "What happened then"
+          ],
+          "commonErrors": [
+            {
+              "id": "what-you-did",
+              "match": "\\bwhat you (did|do)\\b",
+              "explanation_pt": "Na pergunta no passado, use o auxiliar \"did\" antes do sujeito: \"What did you do?\".",
+              "correction_en": "Oh no! What did you do?"
+            },
+            {
+              "id": "what-did-you-did",
+              "match": "\\bwhat did you did\\b",
+              "explanation_pt": "Com \"did\", o verbo principal volta à forma base: \"What did you do?\".",
+              "correction_en": "Oh no! What did you do?"
+            }
+          ]
+        },
+        {
+          "id": "b1-10-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e responda que você estava andando de bicicleta quando caiu.",
+          "listen": "How did you break your arm?",
+          "accepted": [
+            "I was riding my bike when I fell",
+            "I was riding my bike and I fell",
+            "I was riding a bike when I fell",
+            "I was riding my bike when I fell off",
+            "I fell off my bike",
+            "I was cycling when I fell",
+            "I was riding my bicycle when I fell"
+          ],
+          "commonErrors": [
+            {
+              "id": "falled",
+              "match": "\\b(falled|felt|fall)\\b",
+              "explanation_pt": "O passado de \"fall\" é \"fell\". Cuidado: \"felt\" é o passado de \"feel\" (sentir).",
+              "correction_en": "I was riding my bike when I fell."
+            },
+            {
+              "id": "walking-bike",
+              "match": "\\b(walking|going) (of|in|on) (my |a )?bike\\b",
+              "explanation_pt": "\"Andar de bicicleta\" é \"ride a bike\".",
+              "correction_en": "I was riding my bike when I fell."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-10-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Contar uma história completa de 1 a 2 minutos, com cenário, problema, reação e final.",
+        "prompts": [
+          "Tell me about the most embarrassing moment of your life.",
+          "Have you ever got lost somewhere?",
+          "Tell me about a time something went wrong on a trip."
+        ],
+        "watchFor": [
+          "Misturar presente e passado sem perceber.",
+          "Esquecer conectores; peça pelo menos três: \"First\", \"Suddenly\", \"In the end\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-10-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu estava dormindo quando o telefone tocou.\"",
+          "accepted": [
+            "I was sleeping when the phone rang",
+            "I was asleep when the phone rang",
+            "I was sleeping when my phone rang",
+            "I was asleep when my phone rang"
+          ],
+          "commonErrors": [
+            {
+              "id": "phone-ringed",
+              "match": "\\b(ringed|rung|ring)$",
+              "explanation_pt": "\"Ring\" é irregular: o passado é \"rang\".",
+              "correction_en": "I was sleeping when the phone rang."
+            },
+            {
+              "id": "slept-when",
+              "match": "^i slept when\\b",
+              "explanation_pt": "A ação que estava acontecendo vai no passado contínuo: \"I was sleeping\".",
+              "correction_en": "I was sleeping when the phone rang."
+            },
+            {
+              "id": "touched",
+              "match": "\\btouched\\b",
+              "explanation_pt": "Telefone \"tocar\" é \"ring\" (passado \"rang\"). \"Touch\" é tocar com a mão.",
+              "correction_en": "I was sleeping when the phone rang."
+            }
+          ]
+        },
+        {
+          "id": "b1-10-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Acabou que ele era o novo chefe.\"",
+          "accepted": [
+            "It turned out that he was the new boss",
+            "It turned out he was the new boss",
+            "Turns out he was the new boss",
+            "It turns out he was the new boss",
+            "As it turned out, he was the new boss"
+          ],
+          "commonErrors": [
+            {
+              "id": "finished-that",
+              "match": "\\b(finished|ended|ends) (that|up that)\\b",
+              "explanation_pt": "\"Acabou que\" (descobriu-se) é \"It turned out that\", e não \"finished/ended that\".",
+              "correction_en": "It turned out that he was the new boss."
+            },
+            {
+              "id": "chief",
+              "match": "\\bnew chief\\b",
+              "explanation_pt": "Chefe no trabalho é \"boss\". \"Chief\" é usado em cargos como \"chief of police\".",
+              "correction_en": "It turned out that he was the new boss."
+            }
+          ]
+        },
+        {
+          "id": "b1-10-conv-3",
+          "kind": "order",
+          "instruction_pt": "Coloque as palavras na ordem certa.",
+          "accepted": ["While we were driving, the car broke down."]
+        },
+        {
+          "id": "b1-10-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Conte uma história real que aconteceu com você.",
+          "prompt_en": "Tell me about a time when something unexpected happened to you.",
+          "guidelines_pt": [
+            "Dê o cenário no passado contínuo: \"It was a Saturday and I was...\".",
+            "Conte os fatos no passado simples com conectores: \"Suddenly...\", \"Then...\", \"After that...\".",
+            "Termine com o final e como você se sentiu: \"In the end... I felt...\"."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-10-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Fixar passado contínuo x passado simples e os verbos irregulares mais comuns em histórias.",
+        "prompts": [
+          "What were you doing when you heard some big news?",
+          "Tell me a story in three sentences."
+        ],
+        "watchFor": [
+          "\"I was walk\".",
+          "Passado regular em verbos irregulares: \"falled\", \"ringed\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-10-rev-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita a frase.",
+          "prompt": "To cut a long story short, we never found the keys.",
+          "accepted": [
+            "To cut a long story short, we never found the keys",
+            "To make a long story short, we never found the keys"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-10-rev-2",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Enquanto eu esperava, começou a chover.\"",
+          "accepted": [
+            "While I was waiting, it started to rain",
+            "While I was waiting, it started raining",
+            "While I was waiting, it began to rain",
+            "It started to rain while I was waiting",
+            "It started raining while I was waiting"
+          ],
+          "commonErrors": [
+            {
+              "id": "started-rain-no-it",
+              "match": "\\b(waiting|waited) started\\b|^started to rain\\b",
+              "explanation_pt": "Em inglês a chuva precisa de sujeito: \"it started to rain\".",
+              "correction_en": "While I was waiting, it started to rain."
+            },
+            {
+              "id": "while-i-waited",
+              "match": "^while i (waited|wait)\\b",
+              "explanation_pt": "Ação em andamento no passado: \"While I was waiting\".",
+              "correction_en": "While I was waiting, it started to rain."
+            }
+          ]
+        },
+        {
+          "id": "b1-10-rev-3",
+          "kind": "choice",
+          "instruction_pt": "Qual é o passado de \"fall\"?",
+          "options": ["falled", "felt", "fell"],
+          "answer": 2,
+          "explanation_pt": "\"Fall\" → \"fell\". \"Felt\" é o passado de \"feel\" (sentir)."
+        },
+        {
+          "id": "b1-10-rev-4",
+          "kind": "fill",
+          "instruction_pt": "Complete com \"was\" ou \"were\".",
+          "sentence": "We ___ having lunch when the power went out.",
+          "accepted": ["were"],
+          "commonErrors": [
+            {
+              "id": "was-we",
+              "match": "^(was|are|is)$",
+              "explanation_pt": "Com \"we\", o passado de \"be\" é \"were\".",
+              "correction_en": "We were having lunch when the power went out."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,484 @@
+{
+  "id": "c1-01-nuance-hedging",
+  "level": "C1",
+  "order": 1,
+  "title_pt": "Nuance e atenuação",
+  "title_en": "Nuance and hedging",
+  "objective_pt": "Soften claims and express degrees of certainty with hedging language (\"I'd argue\", \"to some extent\", \"it would seem\") so you sound measured rather than blunt.",
+  "blocks": [
+    {
+      "id": "c1-01-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Notice how blunt statements can sound rude or naive in English and start softening them.",
+        "prompts": [
+          "Is remote work better than working in an office?",
+          "How sure are you about that, on a scale from one to ten?"
+        ],
+        "watchFor": [
+          "Overusing \"I think\" as the only hedge; push for variety (\"I'd say\", \"I suspect\").",
+          "Translating \"com certeza\" as \"with certainty\" when \"definitely\" or \"for sure\" is natural."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-01-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repeat, keeping the tone relaxed and tentative.",
+          "prompt": "I'd argue that it's not quite that simple.",
+          "accepted": [
+            "I'd argue that it's not quite that simple",
+            "I'd argue it's not quite that simple",
+            "I would argue that it is not quite that simple"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "c1-01-warm-2",
+          "kind": "choice",
+          "instruction_pt": "Which sentence sounds the most measured in a work meeting?",
+          "options": [
+            "Your plan is wrong.",
+            "I'm not entirely convinced the plan will work as it stands.",
+            "Your plan is totally impossible."
+          ],
+          "answer": 1,
+          "explanation_pt": "\"Not entirely convinced\" and \"as it stands\" soften the disagreement and leave room for discussion."
+        },
+        {
+          "id": "c1-01-warm-3",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English: \"Eu diria que isso depende do contexto.\"",
+          "accepted": [
+            "I'd say that depends on the context",
+            "I'd say it depends on the context",
+            "I would say it depends on the context",
+            "I'd say that it depends on the context",
+            "I'd say it depends on context",
+            "I'd say that depends on context",
+            "I'd say it really depends on the context"
+          ],
+          "commonErrors": [
+            {
+              "id": "depends-of",
+              "match": "\\bdepends? of\\b",
+              "explanation_pt": "In English it's \"depend on\", not \"depend of\" (a literal copy of \"depender de\").",
+              "correction_en": "I'd say it depends on the context."
+            },
+            {
+              "id": "would-say-dizer",
+              "match": "^i will say\\b",
+              "explanation_pt": "\"Eu diria\" is conditional: use \"I'd say\" / \"I would say\", not \"I will say\".",
+              "correction_en": "I'd say it depends on the context."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-01-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Build a toolkit of hedges: arguably, to some extent, it would seem, I'm inclined to think, tend to.",
+        "prompts": [
+          "Give me an opinion about social media using \"arguably\".",
+          "What do Brazilians tend to do on weekends?"
+        ],
+        "watchFor": [
+          "Stress on \"ARguably\" (first syllable), not \"arGUably\".",
+          "\"Tend to\" followed by a gerund (\"tend to doing\") instead of the base verb."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-01-vocab-1",
+          "kind": "vocab",
+          "word_en": "arguably",
+          "meaning_pt": "possivelmente, pode-se dizer que (com bons argumentos)",
+          "example_en": "It's arguably the best coffee in the city."
+        },
+        {
+          "id": "c1-01-vocab-2",
+          "kind": "vocab",
+          "word_en": "to some extent",
+          "meaning_pt": "até certo ponto",
+          "example_en": "To some extent, I agree with you."
+        },
+        {
+          "id": "c1-01-vocab-3",
+          "kind": "vocab",
+          "word_en": "I'm inclined to think",
+          "meaning_pt": "tendo a achar",
+          "example_en": "I'm inclined to think the delay was unavoidable."
+        },
+        {
+          "id": "c1-01-vocab-4",
+          "kind": "match",
+          "instruction_pt": "Match each hedge with its meaning.",
+          "pairs": [
+            {
+              "en": "it would seem",
+              "pt": "ao que parece"
+            },
+            {
+              "en": "by and large",
+              "pt": "de modo geral"
+            },
+            {
+              "en": "more or less",
+              "pt": "mais ou menos"
+            },
+            {
+              "en": "in a sense",
+              "pt": "de certa forma"
+            }
+          ]
+        },
+        {
+          "id": "c1-01-vocab-5",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English: \"Até certo ponto, você tem razão.\"",
+          "accepted": [
+            "To some extent, you're right",
+            "To some extent you have a point",
+            "To a certain extent, you're right",
+            "To an extent, you're right",
+            "You're right to some extent",
+            "You're right to a certain extent",
+            "Up to a point, you're right",
+            "You're right, up to a point",
+            "To some degree, you're right"
+          ],
+          "commonErrors": [
+            {
+              "id": "you-have-reason",
+              "match": "\\byou have (the )?reason\\b",
+              "explanation_pt": "\"Ter razão\" is \"to be right\" in English. \"You have reason\" is a literal translation and sounds wrong.",
+              "correction_en": "To some extent, you're right."
+            },
+            {
+              "id": "until-certain-point",
+              "match": "\\buntil (a )?certain point\\b",
+              "explanation_pt": "\"Até certo ponto\" is \"to some extent\" or \"up to a point\". \"Until\" is only for time.",
+              "correction_en": "To some extent, you're right."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-01-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Practise the falling-rising intonation that signals reservation, and the reduced \"would\" in \"it'd\" and \"I'd\".",
+        "prompts": [
+          "Say \"Well... maybe\" as if you don't really agree.",
+          "Say \"It would seem so\" quickly and naturally."
+        ],
+        "watchFor": [
+          "Flat intonation that makes hedges sound like firm statements.",
+          "Pronouncing every syllable of \"would\" fully in connected speech."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-01-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repeat with a fall-rise on \"sense\" to show reservation.",
+          "prompt": "In a sense, that's true.",
+          "accepted": ["In a sense, that's true", "In a sense that is true"],
+          "commonErrors": []
+        },
+        {
+          "id": "c1-01-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repeat. Link the words smoothly: \"it-would-seem\".",
+          "prompt": "It would seem that we underestimated the costs.",
+          "accepted": [
+            "It would seem that we underestimated the costs",
+            "It would seem we underestimated the costs"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "c1-01-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Where is the main stress in \"arguably\"?",
+          "options": ["AR-gu-a-bly", "ar-GU-a-bly", "ar-gu-A-bly"],
+          "answer": 0,
+          "explanation_pt": "Like \"argue\", the stress falls on the first syllable: AR-gu-a-bly."
+        }
+      ]
+    },
+    {
+      "id": "c1-01-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Detect how certain a speaker really is from the hedges they use.",
+        "prompts": [
+          "When someone says \"I'm not sure that's the best idea\", what do they really mean?",
+          "How would you respond to a hedged criticism?"
+        ],
+        "watchFor": [
+          "Taking polite hedges literally and missing the disagreement behind them.",
+          "Answering with a flat \"yes\" or \"no\" instead of a hedged reply."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-01-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Listen. How does the speaker feel about the proposal?",
+          "listen": "I can see the appeal, but I'm not sure it's the best use of our budget right now.",
+          "options": [
+            "She fully supports it.",
+            "She has serious doubts about it.",
+            "She doesn't understand it."
+          ],
+          "answer": 1,
+          "explanation_pt": "\"I can see the appeal, but I'm not sure...\" is a polite way of disagreeing."
+        },
+        {
+          "id": "c1-01-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Listen and give a cautious, partly agreeing answer.",
+          "listen": "Do you think artificial intelligence will replace teachers?",
+          "accepted": [
+            "To some extent, maybe",
+            "To some extent, but not entirely",
+            "Not entirely, I'd say",
+            "I doubt it will replace them completely",
+            "I doubt it, at least not completely",
+            "Perhaps partly, but not completely",
+            "Possibly in some areas, but not entirely",
+            "It might, to some extent",
+            "I'd say only partly",
+            "I don't think it will replace them entirely",
+            "I don't think it'll fully replace them",
+            "Not completely, I don't think"
+          ],
+          "commonErrors": [
+            {
+              "id": "i-think-that-no",
+              "match": "\\bi think (that )?no\\b",
+              "explanation_pt": "\"Acho que não\" is \"I don't think so\" in English, not \"I think no\".",
+              "correction_en": "I don't think so, at least not completely."
+            }
+          ]
+        },
+        {
+          "id": "c1-01-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Listen and answer with a hedge that shows you're fairly but not completely sure.",
+          "listen": "Will the project be finished by Friday?",
+          "accepted": [
+            "It should be",
+            "It should be, yes",
+            "Hopefully",
+            "Hopefully, yes",
+            "Probably",
+            "Most likely",
+            "In all likelihood, yes",
+            "I'd imagine so",
+            "I would think so",
+            "I'd expect so",
+            "I expect so",
+            "I think so, but I can't promise",
+            "Probably, but I can't guarantee it",
+            "It's likely, yes",
+            "As far as I know, yes"
+          ],
+          "commonErrors": [
+            {
+              "id": "i-hope-yes",
+              "match": "\\bi hope (that )?yes\\b",
+              "explanation_pt": "\"Espero que sim\" is \"I hope so\" (or \"hopefully\"), not \"I hope yes\".",
+              "correction_en": "Hopefully, yes."
+            },
+            {
+              "id": "with-certainty",
+              "match": "\\bwith certainty\\b",
+              "explanation_pt": "\"Com certeza\" is \"definitely\" or \"for sure\"; \"with certainty\" sounds formal and odd. And here you were asked to hedge, so avoid sounding 100% sure.",
+              "correction_en": "It should be."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-01-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Hold an opinion while sounding open-minded: hedge, give a reason, concede a point.",
+        "prompts": [
+          "Should companies require employees to return to the office?",
+          "What are the downsides of your view?",
+          "Is there anything you're less sure about?"
+        ],
+        "watchFor": [
+          "\"In my opinion, I think...\" (double hedge); one is enough.",
+          "\"Actually\" used to mean \"currently\" (false friend of \"atualmente\")."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-01-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English: \"Não tenho tanta certeza de que isso seja uma boa ideia.\"",
+          "accepted": [
+            "I'm not so sure that's a good idea",
+            "I'm not so sure it's a good idea",
+            "I'm not that sure it's a good idea",
+            "I'm not too sure that's a good idea",
+            "I'm not entirely sure it's a good idea",
+            "I'm not convinced it's a good idea",
+            "I'm not so sure that it's a good idea",
+            "I'm not so sure that's such a good idea"
+          ],
+          "commonErrors": [
+            {
+              "id": "have-certainty",
+              "match": "\\bi (do not )?have (so much |that much |much )?certain(ty)?\\b",
+              "explanation_pt": "\"Ter certeza\" is \"to be sure\": \"I'm not sure\", not \"I don't have certainty\".",
+              "correction_en": "I'm not so sure that's a good idea."
+            }
+          ]
+        },
+        {
+          "id": "c1-01-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English: \"Atualmente, a maioria das pessoas tende a trabalhar de casa.\"",
+          "accepted": [
+            "Nowadays, most people tend to work from home",
+            "These days, most people tend to work from home",
+            "Currently, most people tend to work from home",
+            "At the moment, most people tend to work from home",
+            "Most people tend to work from home nowadays",
+            "Most people tend to work from home these days"
+          ],
+          "commonErrors": [
+            {
+              "id": "actually-atualmente",
+              "match": "^actually\\b",
+              "explanation_pt": "\"Actually\" means \"na verdade\", not \"atualmente\". Use \"nowadays\", \"these days\" or \"currently\".",
+              "correction_en": "Nowadays, most people tend to work from home."
+            },
+            {
+              "id": "most-of-people",
+              "match": "\\bmost of (the )?people\\b",
+              "explanation_pt": "For people in general, say \"most people\" without \"of the\".",
+              "correction_en": "Nowadays, most people tend to work from home."
+            },
+            {
+              "id": "tend-to-working",
+              "match": "\\btend to working\\b",
+              "explanation_pt": "\"Tend to\" is followed by the base form: \"tend to work\".",
+              "correction_en": "Nowadays, most people tend to work from home."
+            }
+          ]
+        },
+        {
+          "id": "c1-01-conv-3",
+          "kind": "order",
+          "instruction_pt": "Put the words in order to make a hedged statement.",
+          "accepted": ["There may be some truth in that"]
+        },
+        {
+          "id": "c1-01-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Answer the question in about a minute. Take a position, but hedge it and concede at least one point.",
+          "prompt_en": "Some people say a four-day working week would make everyone more productive. What's your take on that?",
+          "guidelines_pt": [
+            "Open with a hedge: \"I'd be inclined to think...\" or \"To some extent...\".",
+            "Give one reason and one example.",
+            "Concede a point: \"That said, ...\" or \"Admittedly, ...\".",
+            "Close with a qualified conclusion: \"On balance, ...\"."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-01-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Recycle the hedges and check that the learner can switch between firm and tentative statements.",
+        "prompts": [
+          "Make this softer: \"That's a bad idea.\"",
+          "Make this firmer: \"It might possibly be a problem.\""
+        ],
+        "watchFor": [
+          "Stacking too many hedges (\"maybe perhaps possibly\"), which sounds evasive.",
+          "\"Depend of\" coming back under pressure."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-01-rev-1",
+          "kind": "translate",
+          "instruction_pt": "Make this sentence more tentative and say it: \"This plan will fail.\"",
+          "accepted": [
+            "This plan might fail",
+            "This plan may fail",
+            "This plan could fail",
+            "I suspect this plan might fail",
+            "I'm afraid this plan might not work",
+            "I'm not sure this plan will work",
+            "I'm not convinced this plan will work",
+            "There's a chance this plan might fail",
+            "This plan may well fail",
+            "It seems this plan might fail",
+            "I have a feeling this plan might fail"
+          ],
+          "commonErrors": [
+            {
+              "id": "still-blunt",
+              "match": "^this plan will fail$",
+              "explanation_pt": "That's the original, blunt version. Add a modal (\"might\", \"could\") or a softener (\"I suspect...\").",
+              "correction_en": "I suspect this plan might fail."
+            }
+          ]
+        },
+        {
+          "id": "c1-01-rev-2",
+          "kind": "fill",
+          "instruction_pt": "Complete with one word.",
+          "sentence": "It all depends ___ the budget.",
+          "accepted": ["on", "upon"],
+          "commonErrors": [
+            {
+              "id": "depends-of",
+              "match": "^(of|from)$",
+              "explanation_pt": "\"Depend\" takes \"on\" (or the more formal \"upon\").",
+              "correction_en": "It all depends on the budget."
+            }
+          ]
+        },
+        {
+          "id": "c1-01-rev-3",
+          "kind": "choice",
+          "instruction_pt": "Which word means \"na verdade\"?",
+          "options": ["actually", "currently", "nowadays"],
+          "answer": 0,
+          "explanation_pt": "\"Actually\" = \"na verdade\". \"Atualmente\" is \"currently\" or \"nowadays\"."
+        },
+        {
+          "id": "c1-01-rev-4",
+          "kind": "repeat",
+          "instruction_pt": "Repeat to finish the unit.",
+          "prompt": "On balance, I'd say it's worth a try.",
+          "accepted": [
+            "On balance, I'd say it's worth a try",
+            "On balance, I'd say it's worth trying"
+          ],
+          "commonErrors": []
+        }
+      ]
+    }
+  ]
+}

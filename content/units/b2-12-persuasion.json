@@ -1,0 +1,510 @@
+{
+  "id": "b2-12-persuasion",
+  "level": "B2",
+  "order": 12,
+  "title_pt": "Persuasão",
+  "title_en": "Persuasion",
+  "objective_pt": "Convencer alguém de uma ideia: apresentar benefícios, antecipar objeções e fechar com uma pergunta (\"What have we got to lose?\").",
+  "blocks": [
+    {
+      "id": "b2-12-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Conversar sobre a última vez em que o aluno convenceu (ou foi convencido) e ver como ele argumenta.",
+        "prompts": [
+          "When did you last convince someone to do something?",
+          "Are you easy to persuade?"
+        ],
+        "watchFor": [
+          "Dizer \"it's worth to try\"; o certo é \"it's worth trying\".",
+          "Fechar frases com \"no?\" (\"This is good, no?\"); em inglês usamos question tags: \"isn't it?\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-12-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repeat out loud.",
+          "prompt": "Trust me, it's definitely worth trying.",
+          "accepted": [
+            "Trust me, it's definitely worth trying.",
+            "Trust me, it is definitely worth trying."
+          ],
+          "commonErrors": [
+            {
+              "id": "worth-to",
+              "match": "\\bworth to try\\b",
+              "explanation_pt": "Depois de \"worth\" usamos o verbo com -ing: \"worth trying\".",
+              "correction_en": "Trust me, it's definitely worth trying."
+            }
+          ]
+        },
+        {
+          "id": "b2-12-warm-2",
+          "kind": "choice",
+          "instruction_pt": "Which question tag is correct? \"It's a great opportunity, ___?\"",
+          "options": ["isn't it", "no", "is it not true"],
+          "answer": 0,
+          "explanation_pt": "Em inglês, a confirmação no fim usa o mesmo verbo da frase, negado: \"It's..., isn't it?\". O \"no?\" do português soa estranho."
+        },
+        {
+          "id": "b2-12-warm-3",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Vale a pena tentar.\"",
+          "accepted": [
+            "It's worth trying",
+            "It's worth a try",
+            "It's worth a shot",
+            "It's worth giving it a try",
+            "It's worth giving it a shot",
+            "It's worth it to try",
+            "It's definitely worth trying",
+            "It's worth trying it"
+          ],
+          "commonErrors": [
+            {
+              "id": "worth-to-try",
+              "match": "\\bworth to\\b",
+              "explanation_pt": "\"Worth\" é seguido de -ing ou de um substantivo: \"worth trying\", \"worth a try\".",
+              "correction_en": "It's worth trying."
+            },
+            {
+              "id": "worth-the-pain",
+              "match": "\\bworth the (pain|penalty|feather)\\b",
+              "explanation_pt": "\"Vale a pena\" não é \"worth the pain\". Use só \"worth it\" ou \"worth trying\".",
+              "correction_en": "It's worth trying."
+            },
+            {
+              "id": "missing-it",
+              "match": "^is worth\\b",
+              "explanation_pt": "O inglês precisa do sujeito: \"It's worth trying\".",
+              "correction_en": "It's worth trying."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-12-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Aprender expressões de persuasão: benefit, in the long run, pay off, win-win, what's the catch, convince.",
+        "prompts": [
+          "What's a habit that pays off in the long run?",
+          "When something looks too good, what do you ask?"
+        ],
+        "watchFor": [
+          "Dizer \"convince you to\" está certo, mas \"persuade\" é mais forte para levar à ação.",
+          "Dizer \"in the long term\" e \"in the long run\" misturados (\"in the long time\")."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-12-vocab-1",
+          "kind": "vocab",
+          "word_en": "in the long run",
+          "meaning_pt": "a longo prazo",
+          "example_en": "It's more expensive now, but it'll save you money in the long run."
+        },
+        {
+          "id": "b2-12-vocab-2",
+          "kind": "vocab",
+          "word_en": "to pay off",
+          "meaning_pt": "valer a pena, dar retorno",
+          "example_en": "All that hard work finally paid off."
+        },
+        {
+          "id": "b2-12-vocab-3",
+          "kind": "vocab",
+          "word_en": "win-win",
+          "meaning_pt": "bom para os dois lados",
+          "example_en": "It's a win-win situation: you save time and we save money."
+        },
+        {
+          "id": "b2-12-vocab-4",
+          "kind": "match",
+          "instruction_pt": "Match each expression to its meaning.",
+          "pairs": [
+            {
+              "en": "What's the catch?",
+              "pt": "Qual é a pegadinha?"
+            },
+            {
+              "en": "benefit",
+              "pt": "benefício, vantagem"
+            },
+            {
+              "en": "to persuade",
+              "pt": "persuadir, convencer"
+            },
+            {
+              "en": "think about it",
+              "pt": "pense bem"
+            },
+            {
+              "en": "to be worth it",
+              "pt": "valer a pena"
+            }
+          ]
+        },
+        {
+          "id": "b2-12-vocab-5",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"A longo prazo, isso vai valer a pena.\"",
+          "accepted": [
+            "In the long run, it'll be worth it",
+            "In the long run, this will be worth it",
+            "In the long run, it will pay off",
+            "In the long run, this will pay off",
+            "In the long run, it's going to be worth it",
+            "In the long term, it'll be worth it",
+            "In the long term, this will pay off",
+            "It'll be worth it in the long run",
+            "It'll pay off in the long run",
+            "This will pay off in the long run"
+          ],
+          "commonErrors": [
+            {
+              "id": "long-time",
+              "match": "\\bin (a|the) long (time|period)\\b",
+              "explanation_pt": "\"A longo prazo\" é \"in the long run\" ou \"in the long term\". \"In a long time\" significa \"há muito tempo\".",
+              "correction_en": "In the long run, it'll be worth it."
+            },
+            {
+              "id": "will-worth",
+              "match": "\\bwill worth\\b",
+              "explanation_pt": "\"Worth\" não é verbo: precisa do \"be\": \"it will be worth it\".",
+              "correction_en": "In the long run, it'll be worth it."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-12-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Treinar a entonação persuasiva: pausa antes do ponto principal e ênfase nos benefícios.",
+        "prompts": [
+          "Say \"Just imagine...\" and pause. How does it feel?",
+          "Which word would you stress in \"It's completely free\"?"
+        ],
+        "watchFor": [
+          "Falar rápido demais, sem pausa antes do ponto principal.",
+          "Pronunciar \"worth\" como \"wort\"; o \"th\" final é com a língua entre os dentes."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-12-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repeat. Pause after \"imagine\" and stress \"half\".",
+          "prompt": "Just imagine... we could cut our costs in half.",
+          "accepted": ["Just imagine... we could cut our costs in half."],
+          "commonErrors": []
+        },
+        {
+          "id": "b2-12-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repeat. Finish \"worth\" with your tongue between your teeth.",
+          "prompt": "Believe me, it's worth every penny.",
+          "accepted": [
+            "Believe me, it's worth every penny.",
+            "Believe me, it is worth every penny."
+          ],
+          "commonErrors": [
+            {
+              "id": "word-every",
+              "match": "\\b(word|wort) every penny\\b",
+              "explanation_pt": "A palavra é \"worth\", terminando no som \"th\" (língua entre os dentes), não \"word\".",
+              "correction_en": "Believe me, it's worth every penny."
+            }
+          ]
+        },
+        {
+          "id": "b2-12-pron-3",
+          "kind": "choice",
+          "instruction_pt": "In a persuasive question tag, \"It's a great deal, isn't it?\", the voice usually...",
+          "options": [
+            "goes down, because you expect a \"yes\"",
+            "goes up, because you really don't know",
+            "stays flat"
+          ],
+          "answer": 0,
+          "explanation_pt": "Quando você espera concordância, a voz desce no \"isn't it?\". Subindo, soa como dúvida de verdade."
+        }
+      ]
+    },
+    {
+      "id": "b2-12-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Reconhecer técnicas de persuasão e responder a objeções.",
+        "prompts": [
+          "What's the best argument to convince your boss of something?",
+          "How do you answer \"It's too expensive\"?"
+        ],
+        "watchFor": [
+          "Responder objeções com \"no, you are wrong\"; treinar \"I understand, but...\".",
+          "Usar \"advantage\" e \"benefit\" com preposição errada (\"advantage in\")."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-12-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Listen. Which technique does the speaker use?",
+          "listen": "Not only will it save us money, but it'll also make the team happier. So what have we got to lose?",
+          "options": [
+            "Two benefits and a question to close",
+            "A complaint about the team",
+            "A warning about the cost"
+          ],
+          "answer": 0,
+          "explanation_pt": "\"Not only... but also...\" soma dois benefícios, e \"What have we got to lose?\" fecha com uma pergunta retórica."
+        },
+        {
+          "id": "b2-12-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Listen. Answer the objection: say you understand, but it pays off in the long run.",
+          "listen": "I like the idea, but it's too expensive.",
+          "accepted": [
+            "I understand, but it pays off in the long run",
+            "I understand, but it'll pay off in the long run",
+            "I see what you mean, but it'll pay off in the long run",
+            "I know it's expensive, but it'll pay off in the long run",
+            "I understand, but it's worth it in the long run",
+            "I understand, but it'll be worth it in the long run",
+            "I get that, but in the long run it'll pay off",
+            "I hear you, but it'll save us money in the long run",
+            "I understand, but it'll save money in the long run",
+            "That's true, but it pays off in the long run",
+            "Fair enough, but it'll pay off in the long run"
+          ],
+          "commonErrors": [
+            {
+              "id": "long-time",
+              "match": "\\bin (a|the) long time\\b",
+              "explanation_pt": "\"A longo prazo\" é \"in the long run\", não \"in a long time\".",
+              "correction_en": "I understand, but it'll pay off in the long run."
+            },
+            {
+              "id": "i-am-understand",
+              "match": "\\bi am understand\\b",
+              "explanation_pt": "\"Understand\" já é verbo: \"I understand\".",
+              "correction_en": "I understand, but it'll pay off in the long run."
+            }
+          ]
+        },
+        {
+          "id": "b2-12-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Listen. Convince your friend with \"Wouldn't it be great if...?\"",
+          "listen": "I don't know if I want to go on the trip with you guys.",
+          "accepted": [
+            "Wouldn't it be great if we all went together?",
+            "Wouldn't it be great if you came with us?",
+            "Wouldn't it be great if we went together?",
+            "Wouldn't it be great if you joined us?",
+            "Come on, wouldn't it be great if you came with us?",
+            "Wouldn't it be great to go together?",
+            "Wouldn't it be great if you came too?",
+            "Wouldn't it be great if we traveled together?",
+            "Wouldn't it be great if we travelled together?"
+          ],
+          "commonErrors": [
+            {
+              "id": "would-be-great-if-will",
+              "match": "\\bif (you|we) (will|would) (come|go|join)\\b",
+              "explanation_pt": "Com \"Wouldn't it be great if...\" o verbo depois do \"if\" vai para o passado: \"if you came\".",
+              "correction_en": "Wouldn't it be great if you came with us?"
+            },
+            {
+              "id": "will-not-it",
+              "match": "^(will not|would) it be great if\\b|^is not it great if\\b",
+              "explanation_pt": "Para imaginar algo e convencer, use \"Wouldn't it be great if...?\", com o verbo depois do \"if\" no passado.",
+              "correction_en": "Wouldn't it be great if you came with us?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-12-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Convencer o professor de uma ideia (uma viagem, uma mudança no trabalho, um produto), respondendo a objeções.",
+        "prompts": ["Convince me to start running.", "But I don't have time.", "What's the catch?"],
+        "watchFor": [
+          "Repetir o mesmo argumento; incentivar benefício, exemplo e pergunta de fechamento.",
+          "Ignorar a objeção; treinar \"I understand, but...\" e \"That's exactly why...\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-12-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Não só é mais barato, mas também é mais rápido.\"",
+          "accepted": [
+            "Not only is it cheaper, but it's also faster",
+            "Not only is it cheaper, it's also faster",
+            "Not only is it cheaper, but it is also quicker",
+            "It's not only cheaper, but also faster",
+            "It's not only cheaper but also quicker",
+            "It's not just cheaper, it's also faster",
+            "It's not only cheaper, it's also faster",
+            "Not only is it cheaper, but it's faster too"
+          ],
+          "commonErrors": [
+            {
+              "id": "not-only-it-is",
+              "match": "^not only it is\\b",
+              "explanation_pt": "Quando a frase começa com \"Not only\", invertemos: \"Not only is it cheaper\". Ou diga \"It's not only cheaper...\".",
+              "correction_en": "Not only is it cheaper, but it's also faster."
+            },
+            {
+              "id": "more-cheap",
+              "match": "\\bmore (cheap|fast|quick)\\b",
+              "explanation_pt": "Adjetivos curtos fazem o comparativo com \"-er\": \"cheaper\", \"faster\".",
+              "correction_en": "Not only is it cheaper, but it's also faster."
+            }
+          ]
+        },
+        {
+          "id": "b2-12-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Pense bem: o que a gente tem a perder?\"",
+          "accepted": [
+            "Think about it: what have we got to lose?",
+            "Think about it, what do we have to lose?",
+            "Think it over: what have we got to lose?",
+            "Think about it, what's there to lose?",
+            "Just think about it: what do we have to lose?"
+          ],
+          "commonErrors": [
+            {
+              "id": "think-well",
+              "match": "^think well\\b",
+              "explanation_pt": "\"Pense bem\" não é \"think well\". Use \"Think about it\" ou \"Think it over\".",
+              "correction_en": "Think about it: what have we got to lose?"
+            },
+            {
+              "id": "what-we-have",
+              "match": "\\bwhat we have to lose\\b",
+              "explanation_pt": "Na pergunta direta, precisa do auxiliar: \"What do we have to lose?\" ou \"What have we got to lose?\".",
+              "correction_en": "What have we got to lose?"
+            },
+            {
+              "id": "lose-loose",
+              "match": "\\bto loose\\b",
+              "explanation_pt": "\"Perder\" é \"lose\" (com som de \"z\"). \"Loose\" é \"solto\", com som de \"s\".",
+              "correction_en": "What have we got to lose?"
+            }
+          ]
+        },
+        {
+          "id": "b2-12-conv-3",
+          "kind": "order",
+          "instruction_pt": "Put the words in order to answer an objection.",
+          "accepted": ["I understand your concern but that's exactly why we need it"]
+        },
+        {
+          "id": "b2-12-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Convince your manager to let the team work from home two days a week.",
+          "prompt_en": "I'm not sure about this. Why should we let people work from home? Convince me.",
+          "guidelines_pt": [
+            "Give two benefits: \"Not only..., but also...\"",
+            "Answer an objection: \"I understand your concern, but...\"",
+            "Close with a question: \"Why don't we try it for a month? What have we got to lose?\""
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-12-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Revisar as expressões de persuasão e fechar o nível B2 com uma fala convincente.",
+        "prompts": [
+          "Convince me to read your favorite book.",
+          "What's the biggest benefit of learning English?"
+        ],
+        "watchFor": ["\"Worth to\".", "\"No?\" no lugar de question tag."]
+      },
+      "exercises": [
+        {
+          "id": "b2-12-rev-1",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Eu te convenci, não convenci?\"",
+          "accepted": [
+            "I convinced you, didn't I?",
+            "I've convinced you, haven't I?",
+            "I persuaded you, didn't I?",
+            "I've persuaded you, haven't I?",
+            "I convinced you, right?",
+            "So I convinced you, didn't I?"
+          ],
+          "commonErrors": [
+            {
+              "id": "tag-no",
+              "match": "\\bconvinced you no\\b",
+              "explanation_pt": "Para confirmar, o inglês usa question tag com o mesmo auxiliar: \"I convinced you, didn't I?\".",
+              "correction_en": "I convinced you, didn't I?"
+            },
+            {
+              "id": "wrong-tag",
+              "match": "\\bconvinced you (is not it|are not you|do not i)\\b",
+              "explanation_pt": "O verbo está no passado simples, então o tag é \"didn't I?\".",
+              "correction_en": "I convinced you, didn't I?"
+            }
+          ]
+        },
+        {
+          "id": "b2-12-rev-2",
+          "kind": "fill",
+          "instruction_pt": "Complete the sentence.",
+          "sentence": "This course is really worth ___.",
+          "accepted": ["it", "taking", "doing", "trying"],
+          "commonErrors": [
+            {
+              "id": "worth-to-take",
+              "match": "^to (take|do|try)$",
+              "explanation_pt": "Depois de \"worth\" usamos -ing ou \"it\": \"worth taking\", \"worth it\".",
+              "correction_en": "This course is really worth taking."
+            }
+          ]
+        },
+        {
+          "id": "b2-12-rev-3",
+          "kind": "choice",
+          "instruction_pt": "Which sentence is the most persuasive?",
+          "options": [
+            "Just imagine how much time you'd save every week.",
+            "You should do it because I said so.",
+            "Maybe it's good, I don't know."
+          ],
+          "answer": 0,
+          "explanation_pt": "\"Just imagine...\" faz a pessoa visualizar o benefício. As outras opções não convencem."
+        },
+        {
+          "id": "b2-12-rev-4",
+          "kind": "repeat",
+          "instruction_pt": "To finish, repeat.",
+          "prompt": "Give it a try. I promise you won't regret it.",
+          "accepted": [
+            "Give it a try. I promise you won't regret it.",
+            "Give it a try. I promise you will not regret it."
+          ],
+          "commonErrors": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,510 @@
+{
+  "id": "b2-09-explaining-processes",
+  "level": "B2",
+  "order": 9,
+  "title_pt": "Explicando processos",
+  "title_en": "Explaining processes",
+  "objective_pt": "Explicar passo a passo como algo funciona ou é feito, com sequenciadores (first, once, after that) e a voz passiva.",
+  "blocks": [
+    {
+      "id": "b2-09-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Pedir ao aluno que explique algo simples que ele sabe fazer e observar como ele ordena as etapas.",
+        "prompts": [
+          "How do you make a good cup of coffee?",
+          "Can you explain what you do at work to someone outside your field?"
+        ],
+        "watchFor": [
+          "Inverter a ordem em perguntas indiretas: \"Can you explain how does it work?\"; o certo é \"how it works\".",
+          "Usar só \"and then... and then...\"; variar com \"once\", \"after that\", \"finally\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-09-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repeat out loud.",
+          "prompt": "It's easier than it looks. Let me show you how it works.",
+          "accepted": [
+            "It's easier than it looks. Let me show you how it works.",
+            "It is easier than it looks. Let me show you how it works."
+          ],
+          "commonErrors": [
+            {
+              "id": "how-does-it-work",
+              "match": "\\bshow you how does it work\\b",
+              "explanation_pt": "Em pergunta indireta, a ordem é de afirmação: \"how it works\", sem \"does\".",
+              "correction_en": "Let me show you how it works."
+            }
+          ]
+        },
+        {
+          "id": "b2-09-warm-2",
+          "kind": "choice",
+          "instruction_pt": "Which question is correct?",
+          "options": [
+            "Could you explain how this machine works?",
+            "Could you explain how does this machine work?",
+            "Could you explain me how this machine works?"
+          ],
+          "answer": 0,
+          "explanation_pt": "Depois de \"Could you explain...\", a ordem é de afirmação (\"how this machine works\"), e \"explain\" não aceita \"me\" direto."
+        },
+        {
+          "id": "b2-09-warm-3",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Você pode me explicar como funciona?\"",
+          "accepted": [
+            "Can you explain to me how it works?",
+            "Could you explain to me how it works?",
+            "Can you explain how it works?",
+            "Could you explain how it works?",
+            "Can you tell me how it works?",
+            "Could you tell me how it works?",
+            "Can you show me how it works?",
+            "Could you walk me through how it works?"
+          ],
+          "commonErrors": [
+            {
+              "id": "explain-me",
+              "match": "\\bexplain me\\b",
+              "explanation_pt": "\"Explain\" não aceita a pessoa logo depois: \"explain to me\". Ou use \"tell me\".",
+              "correction_en": "Can you explain to me how it works?"
+            },
+            {
+              "id": "how-does-it-work-indirect",
+              "match": "\\bhow (does|do) it work\\b",
+              "explanation_pt": "Dentro de outra pergunta, a ordem é de afirmação: \"how it works\".",
+              "correction_en": "Can you explain how it works?"
+            },
+            {
+              "id": "how-functions",
+              "match": "\\bhow (it )?functions\\b",
+              "explanation_pt": "\"Funcionar\" no dia a dia é \"work\": \"how it works\". \"Function\" é mais técnico.",
+              "correction_en": "Can you explain how it works?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-09-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Aprender sequenciadores e verbos de processo: once, beforehand, step, make sure, set up, carry out.",
+        "prompts": [
+          "What's the first step to open a bank account?",
+          "What do you need to do beforehand?"
+        ],
+        "watchFor": [
+          "Usar \"after\" sozinho como \"depois\" no começo da frase; preferir \"after that\" ou \"then\".",
+          "Confundir \"make sure\" com \"be sure\" no imperativo."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-09-vocab-1",
+          "kind": "vocab",
+          "word_en": "once",
+          "meaning_pt": "assim que, depois que",
+          "example_en": "Once the water boils, add the pasta."
+        },
+        {
+          "id": "b2-09-vocab-2",
+          "kind": "vocab",
+          "word_en": "to make sure",
+          "meaning_pt": "garantir, certificar-se",
+          "example_en": "Make sure you save the file before closing it."
+        },
+        {
+          "id": "b2-09-vocab-3",
+          "kind": "vocab",
+          "word_en": "to set up",
+          "meaning_pt": "configurar, montar",
+          "example_en": "It only takes five minutes to set up the app."
+        },
+        {
+          "id": "b2-09-vocab-4",
+          "kind": "match",
+          "instruction_pt": "Match each expression to its meaning.",
+          "pairs": [
+            {
+              "en": "beforehand",
+              "pt": "antes, com antecedência"
+            },
+            {
+              "en": "step",
+              "pt": "etapa, passo"
+            },
+            {
+              "en": "to carry out",
+              "pt": "realizar, executar"
+            },
+            {
+              "en": "meanwhile",
+              "pt": "enquanto isso"
+            },
+            {
+              "en": "to be sent",
+              "pt": "ser enviado"
+            }
+          ]
+        },
+        {
+          "id": "b2-09-vocab-5",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Assim que você se cadastrar, vai receber um e-mail.\"",
+          "accepted": [
+            "Once you sign up, you'll receive an email",
+            "Once you sign up, you'll get an email",
+            "Once you've signed up, you'll receive an email",
+            "Once you've signed up, you'll get an email",
+            "As soon as you sign up, you'll receive an email",
+            "As soon as you sign up, you'll get an email",
+            "Once you register, you'll receive an email",
+            "As soon as you register, you'll get an email",
+            "Once you've registered, you'll receive an email",
+            "Once you sign up, you will receive an e-mail"
+          ],
+          "commonErrors": [
+            {
+              "id": "once-will",
+              "match": "\\b(once|as soon as) you will\\b",
+              "explanation_pt": "Depois de \"once\" e \"as soon as\" usamos o presente, mesmo falando do futuro: \"Once you sign up\".",
+              "correction_en": "Once you sign up, you'll receive an email."
+            },
+            {
+              "id": "cadaster",
+              "match": "\\bcadast(er|re|rate)\\b",
+              "explanation_pt": "\"Se cadastrar\" é \"sign up\" ou \"register\". \"Cadaster\" é um termo técnico de registro de terras.",
+              "correction_en": "Once you sign up, you'll receive an email."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-09-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Treinar a voz passiva na fala rápida (\"it's sent\", \"they're checked\") e o \"-ed\" final.",
+        "prompts": [
+          "Say \"the boxes are checked\". Do you hear the \"t\" at the end?",
+          "Say \"is packed\" and \"is packaged\"."
+        ],
+        "watchFor": [
+          "Engolir o \"-ed\" do particípio: \"is check\" em vez de \"is checked\".",
+          "Pronunciar \"-ed\" como sílaba extra em \"checked\" (\"chek-ed\")."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-09-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repeat. \"Checked\" and \"packed\" end with a \"t\" sound.",
+          "prompt": "Every order is checked and packed by hand.",
+          "accepted": ["Every order is checked and packed by hand."],
+          "commonErrors": [
+            {
+              "id": "is-check",
+              "match": "\\bis check and pack\\b",
+              "explanation_pt": "Na voz passiva, o verbo vai no particípio: \"is checked and packed\".",
+              "correction_en": "Every order is checked and packed by hand."
+            }
+          ]
+        },
+        {
+          "id": "b2-09-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repeat. \"Delivered\" ends with a \"d\" sound, \"collected\" has an extra syllable.",
+          "prompt": "The parcels are collected in the morning and delivered the next day.",
+          "accepted": ["The parcels are collected in the morning and delivered the next day."],
+          "commonErrors": []
+        },
+        {
+          "id": "b2-09-pron-3",
+          "kind": "choice",
+          "instruction_pt": "How many syllables does \"collected\" have?",
+          "options": ["three: col-LEC-ted", "two: col-LECTD", "four: col-lec-te-d"],
+          "answer": 0,
+          "explanation_pt": "Como \"collect\" termina em \"t\", o \"-ed\" vira sílaba: col-LEC-ted."
+        }
+      ]
+    },
+    {
+      "id": "b2-09-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Seguir instruções em sequência e responder qual é a próxima etapa.",
+        "prompts": [
+          "What's the next step after you pay online?",
+          "What do you have to do beforehand?"
+        ],
+        "watchFor": [
+          "Perder a ordem das etapas por não perceber \"once\" e \"before\".",
+          "Responder com o verbo na forma errada depois de \"you need to\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-09-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Listen. What happens first?",
+          "listen": "Before you install the update, make sure all your files are backed up.",
+          "options": [
+            "You back up your files.",
+            "You install the update.",
+            "You delete your files."
+          ],
+          "answer": 0,
+          "explanation_pt": "\"Before you install... make sure... are backed up\": primeiro o backup, depois a atualização."
+        },
+        {
+          "id": "b2-09-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Listen and say what you need to do next.",
+          "listen": "Okay, you've filled in the form. Once that's done, you need to upload a copy of your ID. What's the next step?",
+          "accepted": [
+            "Upload a copy of my ID",
+            "I need to upload a copy of my ID",
+            "I have to upload a copy of my ID",
+            "The next step is to upload a copy of my ID",
+            "Next, I upload a copy of my ID",
+            "I need to upload my ID",
+            "Upload my ID",
+            "To upload a copy of my ID",
+            "I upload a copy of my ID"
+          ],
+          "commonErrors": [
+            {
+              "id": "need-uploading",
+              "match": "\\bneed (uploading|to uploading)\\b",
+              "explanation_pt": "Depois de \"need to\" o verbo vem na forma base: \"I need to upload\".",
+              "correction_en": "I need to upload a copy of my ID."
+            },
+            {
+              "id": "your-id",
+              "match": "\\b(copy of|upload) your id\\b",
+              "explanation_pt": "Falando de você mesmo, troque \"your\" por \"my\": \"upload a copy of my ID\".",
+              "correction_en": "I need to upload a copy of my ID."
+            }
+          ]
+        },
+        {
+          "id": "b2-09-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Listen and answer: who checks the applications?",
+          "listen": "All applications are reviewed by a committee, and the results are sent out by email a month later.",
+          "accepted": [
+            "A committee",
+            "A committee checks them",
+            "A committee reviews them",
+            "They're reviewed by a committee",
+            "They are reviewed by a committee",
+            "They're checked by a committee",
+            "The committee",
+            "The committee reviews them",
+            "By a committee"
+          ],
+          "commonErrors": [
+            {
+              "id": "reviewed-of",
+              "match": "\\breviewed (of|for) (a|the) committee\\b",
+              "explanation_pt": "Na voz passiva, quem faz a ação vem depois de \"by\": \"reviewed by a committee\".",
+              "correction_en": "They're reviewed by a committee."
+            },
+            {
+              "id": "commission",
+              "match": "\\bcommission\\b",
+              "explanation_pt": "\"Comissão\" (grupo que avalia) aqui é \"committee\". \"Commission\" costuma ser a comissão em dinheiro.",
+              "correction_en": "A committee reviews them."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-09-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Explicar um processo real do trabalho ou da vida (uma receita, um sistema, um trâmite) com etapas claras.",
+        "prompts": [
+          "How does a typical project work at your company, from start to finish?",
+          "What's a recipe you know by heart? Talk me through it.",
+          "What happens if someone skips a step?"
+        ],
+        "watchFor": [
+          "Esquecer o verbo \"be\" na passiva: \"the data analyzed\".",
+          "Usar \"you must\" demais; variar com \"you need to\", \"you have to\", \"make sure\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-09-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Os dados são analisados e depois um relatório é enviado ao cliente.\"",
+          "accepted": [
+            "The data is analyzed and then a report is sent to the client",
+            "The data are analyzed and then a report is sent to the client",
+            "The data is analysed and then a report is sent to the client",
+            "The data is analyzed and after that a report is sent to the client",
+            "The data is analyzed, then a report is sent to the client",
+            "The data is analyzed and then a report is sent to the customer",
+            "The data gets analyzed and then a report is sent to the client"
+          ],
+          "commonErrors": [
+            {
+              "id": "passive-no-be",
+              "match": "\\bthe data analy[sz]ed\\b",
+              "explanation_pt": "A voz passiva precisa do verbo \"be\": \"the data is analyzed\".",
+              "correction_en": "The data is analyzed and then a report is sent to the client."
+            },
+            {
+              "id": "is-send",
+              "match": "\\bis send\\b",
+              "explanation_pt": "Na passiva o verbo vai no particípio: \"is sent\", não \"is send\".",
+              "correction_en": "A report is sent to the client."
+            },
+            {
+              "id": "sent-for-client",
+              "match": "\\bsent for the (client|customer)\\b",
+              "explanation_pt": "Enviamos algo \"to\" alguém: \"sent to the client\".",
+              "correction_en": "A report is sent to the client."
+            }
+          ]
+        },
+        {
+          "id": "b2-09-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Certifique-se de salvar tudo antes de desligar.\"",
+          "accepted": [
+            "Make sure you save everything before you turn it off",
+            "Make sure you save everything before turning it off",
+            "Make sure to save everything before you turn it off",
+            "Make sure to save everything before turning it off",
+            "Make sure you save everything before shutting down",
+            "Make sure you save everything before you shut it down",
+            "Be sure to save everything before turning it off",
+            "Make sure you save everything before switching it off",
+            "Make sure you've saved everything before you turn it off"
+          ],
+          "commonErrors": [
+            {
+              "id": "certify",
+              "match": "\\bcertify\\b",
+              "explanation_pt": "\"Certifique-se\" é \"make sure\". \"Certify\" é emitir um certificado.",
+              "correction_en": "Make sure you save everything before you turn it off."
+            },
+            {
+              "id": "before-turn",
+              "match": "\\bbefore (to )?turn (it )?off\\b",
+              "explanation_pt": "Depois de \"before\", use -ing (\"before turning it off\") ou uma frase completa (\"before you turn it off\").",
+              "correction_en": "Make sure you save everything before turning it off."
+            },
+            {
+              "id": "disconnect",
+              "match": "\\bdisconnect\\b",
+              "explanation_pt": "\"Desligar\" um aparelho é \"turn off\", \"switch off\" ou \"shut down\". \"Disconnect\" é desconectar.",
+              "correction_en": "Make sure you save everything before you turn it off."
+            }
+          ]
+        },
+        {
+          "id": "b2-09-conv-3",
+          "kind": "order",
+          "instruction_pt": "Put the words in order.",
+          "accepted": ["Once the form is approved you will be contacted by email"]
+        },
+        {
+          "id": "b2-09-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Explain a process you know well, step by step, to someone who has never done it.",
+          "prompt_en": "I've never done this before. Could you talk me through it, from the very first step?",
+          "guidelines_pt": [
+            "Order the steps: \"First...\", \"Once...\", \"After that...\", \"Finally...\"",
+            "Use the passive for at least one step: \"It's sent...\", \"It's checked...\"",
+            "Give one warning: \"Make sure you...\""
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-09-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Revisar sequenciadores, a voz passiva e as perguntas indiretas.",
+        "prompts": ["How is coffee produced?", "Can you tell me how your phone's camera works?"],
+        "watchFor": ["\"Explain me\".", "Passiva sem \"be\"."]
+      },
+      "exercises": [
+        {
+          "id": "b2-09-rev-1",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Esse vinho é feito no sul do Brasil.\"",
+          "accepted": [
+            "This wine is made in the south of Brazil",
+            "This wine is made in southern Brazil",
+            "This wine is produced in the south of Brazil",
+            "This wine is produced in southern Brazil",
+            "That wine is made in the south of Brazil"
+          ],
+          "commonErrors": [
+            {
+              "id": "is-did",
+              "match": "\\bis (did|done|maked)\\b",
+              "explanation_pt": "Produtos são \"made\": \"This wine is made in...\". \"Done\" é usado para tarefas.",
+              "correction_en": "This wine is made in the south of Brazil."
+            },
+            {
+              "id": "south-of-the",
+              "match": "\\bin south of brazil\\b",
+              "explanation_pt": "Falta o \"the\": \"in the south of Brazil\". Ou diga \"in southern Brazil\".",
+              "correction_en": "This wine is made in the south of Brazil."
+            }
+          ]
+        },
+        {
+          "id": "b2-09-rev-2",
+          "kind": "fill",
+          "instruction_pt": "Complete with the passive form of \"send\".",
+          "sentence": "Your password will be ___ to your phone.",
+          "accepted": ["sent"],
+          "commonErrors": [
+            {
+              "id": "send-base",
+              "match": "^(send|sended|sending)$",
+              "explanation_pt": "Depois de \"will be\" vem o particípio: \"will be sent\".",
+              "correction_en": "Your password will be sent to your phone."
+            }
+          ]
+        },
+        {
+          "id": "b2-09-rev-3",
+          "kind": "choice",
+          "instruction_pt": "Which word means \"assim que\" in a sequence?",
+          "options": ["once", "one time", "only"],
+          "answer": 0,
+          "explanation_pt": "\"Once\" no começo da frase é \"assim que\": \"Once it's ready, call me\"."
+        },
+        {
+          "id": "b2-09-rev-4",
+          "kind": "repeat",
+          "instruction_pt": "To finish, repeat.",
+          "prompt": "And that's it. Once you've done it twice, it becomes second nature.",
+          "accepted": [
+            "And that's it. Once you've done it twice, it becomes second nature.",
+            "And that is it. Once you have done it twice, it becomes second nature."
+          ],
+          "commonErrors": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,460 @@
+{
+  "id": "b1-11-agreeing-disagreeing",
+  "level": "B1",
+  "order": 11,
+  "title_pt": "Concordando e discordando",
+  "title_en": "Agreeing and disagreeing",
+  "objective_pt": "Dar opinião e concordar ou discordar com educação (\"I agree\", \"I see your point, but...\", \"So do I / Neither do I\"), sem o erro clássico \"I'm agree\".",
+  "blocks": [
+    {
+      "id": "b1-11-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Aquecer dando opiniões rápidas sobre temas leves.",
+        "prompts": ["Pizza is better than burgers. Do you agree?", "Is summer the best season?"],
+        "watchFor": [
+          "Dizer \"I'm agree\"; \"agree\" é verbo: \"I agree\".",
+          "Discordar de forma seca (\"No, you're wrong\"); mostre formas mais suaves."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-11-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita a pergunta de opinião.",
+          "prompt": "What do you think about working from home?",
+          "accepted": [
+            "What do you think about working from home",
+            "What do you think of working from home"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-11-warm-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça a opinião e diga que concorda totalmente.",
+          "listen": "I think public transport should be free for everyone.",
+          "accepted": [
+            "I totally agree",
+            "I completely agree",
+            "I agree",
+            "I totally agree with you",
+            "I completely agree with you",
+            "I couldn't agree more",
+            "Absolutely",
+            "Yes, I totally agree",
+            "I agree with you one hundred percent",
+            "Exactly"
+          ],
+          "commonErrors": [
+            {
+              "id": "im-agree",
+              "match": "\\bi am (totally |completely )?(agree|agreed)\\b",
+              "explanation_pt": "\"Agree\" já é verbo: \"I agree\". \"I'm agree\" é tradução de \"eu estou de acordo\".",
+              "correction_en": "I totally agree."
+            },
+            {
+              "id": "agree-with-it",
+              "match": "\\bagree (to|of) you\\b",
+              "explanation_pt": "Concordar com alguém é \"agree with\": \"I agree with you\".",
+              "correction_en": "I totally agree with you."
+            }
+          ]
+        },
+        {
+          "id": "b1-11-warm-3",
+          "kind": "choice",
+          "instruction_pt": "Qual frase está correta?",
+          "options": ["I'm agree with you.", "I agree with you.", "I am agreed with you."],
+          "answer": 1,
+          "explanation_pt": "\"Agree\" é verbo, então não usa \"am\": \"I agree with you\". O erro \"I'm agree\" é um dos mais comuns de brasileiros."
+        }
+      ]
+    },
+    {
+      "id": "b1-11-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Aprender expressões para dar opinião, concordar, discordar e concordar em parte.",
+        "prompts": [
+          "How can you disagree politely?",
+          "Do you agree that social media is bad for teenagers?"
+        ],
+        "watchFor": [
+          "Usar \"In my opinion\" e \"I think\" juntos (\"In my opinion, I think...\"); escolha um.",
+          "Dizer \"according to me\"; o natural é \"in my opinion\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-11-vocab-1",
+          "kind": "vocab",
+          "word_en": "I see your point, but...",
+          "meaning_pt": "Entendo o seu ponto, mas...",
+          "example_en": "I see your point, but I don't think it's that simple."
+        },
+        {
+          "id": "b1-11-vocab-2",
+          "kind": "vocab",
+          "word_en": "to some extent",
+          "meaning_pt": "até certo ponto",
+          "example_en": "I agree with you to some extent."
+        },
+        {
+          "id": "b1-11-vocab-3",
+          "kind": "vocab",
+          "word_en": "I'm not so sure about that",
+          "meaning_pt": "Não tenho tanta certeza disso",
+          "example_en": "Cheaper is always better? I'm not so sure about that."
+        },
+        {
+          "id": "b1-11-vocab-4",
+          "kind": "vocab",
+          "word_en": "That's a good point",
+          "meaning_pt": "Bem lembrado, é verdade",
+          "example_en": "That's a good point. I hadn't thought of that."
+        },
+        {
+          "id": "b1-11-vocab-5",
+          "kind": "match",
+          "instruction_pt": "Ligue cada expressão ao significado.",
+          "pairs": [
+            {
+              "en": "Exactly!",
+              "pt": "Exatamente!"
+            },
+            {
+              "en": "I couldn't agree more.",
+              "pt": "Concordo plenamente."
+            },
+            {
+              "en": "I'm afraid I disagree.",
+              "pt": "Desculpe, mas discordo."
+            },
+            {
+              "en": "It depends.",
+              "pt": "Depende."
+            },
+            {
+              "en": "Fair enough.",
+              "pt": "Justo, faz sentido."
+            }
+          ]
+        },
+        {
+          "id": "b1-11-vocab-6",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Na minha opinião, o centro é muito caro.\"",
+          "accepted": [
+            "In my opinion, downtown is very expensive",
+            "In my opinion, downtown is too expensive",
+            "In my opinion, the city center is very expensive",
+            "In my opinion, the city centre is very expensive",
+            "In my opinion, downtown is really expensive",
+            "I think downtown is very expensive",
+            "In my view, downtown is very expensive"
+          ],
+          "commonErrors": [
+            {
+              "id": "according-to-me",
+              "match": "^according to me\\b",
+              "explanation_pt": "\"According to me\" soa estranho; use \"In my opinion\" ou \"I think\".",
+              "correction_en": "In my opinion, downtown is very expensive."
+            },
+            {
+              "id": "opinion-i-think",
+              "match": "^in my opinion i think\\b",
+              "explanation_pt": "\"In my opinion\" e \"I think\" dizem a mesma coisa; use só um.",
+              "correction_en": "In my opinion, downtown is very expensive."
+            },
+            {
+              "id": "center-the-city",
+              "match": "^(in my opinion )?the (center|centre) is\\b",
+              "explanation_pt": "\"O centro\" da cidade é \"downtown\" (EUA) ou \"the city center\".",
+              "correction_en": "In my opinion, downtown is very expensive."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-11-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Usar a entonação para soar educado ao discordar, e pronunciar \"agree\" com força no final.",
+        "prompts": [
+          "Say \"I agree\" with stress on \"-GREE\".",
+          "Say \"I see your point, but...\" softly."
+        ],
+        "watchFor": [
+          "Acentuar a primeira sílaba de \"agree\" (\"Ágri\"); é \"a-GREE\".",
+          "Falar \"but\" alto e forte; na discordância educada ele é suave."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-11-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita. A força está em a-GREE e dis-a-GREE.",
+          "prompt": "Sometimes I agree, and sometimes I disagree.",
+          "accepted": ["Sometimes I agree, and sometimes I disagree"],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-11-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repita com tom suave, sem pesar no \"but\".",
+          "prompt": "I see what you mean, but I'm not so sure.",
+          "accepted": [
+            "I see what you mean, but I'm not so sure",
+            "I see what you mean, but I am not so sure"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-11-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Onde está a força em \"disagree\"?",
+          "options": ["DIS-a-gree", "dis-A-gree", "dis-a-GREE"],
+          "answer": 2,
+          "explanation_pt": "É dis-a-GREE, com a força no final, igual a a-GREE."
+        }
+      ]
+    },
+    {
+      "id": "b1-11-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Entender opiniões e responder com \"So do I / Neither do I\" e discordância educada.",
+        "prompts": ["I love Mondays. Do you?", "I don't like spicy food. What about you?"],
+        "watchFor": [
+          "Dizer \"Me too\" para uma frase negativa; o certo é \"Me neither\" ou \"Neither do I\".",
+          "Usar \"So am I\" para \"I like\"; o auxiliar tem que combinar: \"So do I\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-11-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Ouça e escolha a posição da pessoa.",
+          "listen": "I agree with you up to a point, but I still think the price is too high.",
+          "options": [
+            "Concorda totalmente.",
+            "Concorda em parte, mas acha o preço alto demais.",
+            "Discorda totalmente e acha o preço baixo."
+          ],
+          "answer": 1,
+          "explanation_pt": "\"Up to a point\" = até certo ponto; \"but I still think the price is too high\" = mas ainda acha o preço alto."
+        },
+        {
+          "id": "b1-11-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e diga que você também não gosta.",
+          "listen": "I don't like waking up early.",
+          "accepted": [
+            "Neither do I",
+            "Me neither",
+            "Nor do I",
+            "I don't either",
+            "I don't like it either",
+            "Me neither. I hate it",
+            "Neither do I. I hate it"
+          ],
+          "commonErrors": [
+            {
+              "id": "me-too-negative",
+              "match": "^(me too|so do i|i too)\\b",
+              "explanation_pt": "Para concordar com uma frase negativa, use \"Me neither\" ou \"Neither do I\". \"Me too\" é para frases afirmativas.",
+              "correction_en": "Me neither."
+            },
+            {
+              "id": "neither-am-i",
+              "match": "^neither am i\\b",
+              "explanation_pt": "A frase original usa \"don't\", então a resposta é \"Neither do I\" (ou \"I don't either\").",
+              "correction_en": "Neither do I."
+            }
+          ]
+        },
+        {
+          "id": "b1-11-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e discorde com educação, começando com \"I see your point, but...\".",
+          "listen": "Learning English is impossible after thirty.",
+          "accepted": [
+            "I see your point, but I don't agree",
+            "I see your point, but I disagree",
+            "I see your point, but I don't think that's true",
+            "I see your point, but I don't think so",
+            "I see your point, but it's never too late",
+            "I see your point, but I'm not so sure",
+            "I see your point, but lots of people learn after thirty"
+          ],
+          "commonErrors": [
+            {
+              "id": "im-not-agree",
+              "match": "\\bi am (not )?(agree|disagree)\\b",
+              "explanation_pt": "\"Agree\" e \"disagree\" são verbos: \"I don't agree\" ou \"I disagree\", sem \"am\".",
+              "correction_en": "I see your point, but I don't agree."
+            },
+            {
+              "id": "no-agree",
+              "match": "\\bi (no|not) agree\\b",
+              "explanation_pt": "A negação usa \"don't\": \"I don't agree\".",
+              "correction_en": "I see your point, but I don't agree."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-11-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Discutir um tema, dar opinião com motivo e reagir à opinião do outro.",
+        "prompts": [
+          "Should homework be banned?",
+          "Is it better to rent or to buy a house?",
+          "Are smartphones making us less social?"
+        ],
+        "watchFor": [
+          "Opinar sem justificar; peça sempre \"because...\" e um exemplo.",
+          "Interromper sem marcador; ensine \"Sorry, can I just say something?\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b1-11-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu concordo com você até certo ponto.\"",
+          "accepted": [
+            "I agree with you to some extent",
+            "I agree with you up to a point",
+            "I agree with you to a certain extent",
+            "To some extent, I agree with you",
+            "I partly agree with you"
+          ],
+          "commonErrors": [
+            {
+              "id": "im-agree",
+              "match": "\\bi am agree\\b",
+              "explanation_pt": "\"Agree\" é verbo: \"I agree\", sem \"am\".",
+              "correction_en": "I agree with you to some extent."
+            },
+            {
+              "id": "until-certain-point",
+              "match": "\\b(until|till) (a )?certain point\\b",
+              "explanation_pt": "\"Até certo ponto\" é \"to some extent\" ou \"up to a point\". \"Until\" é para tempo.",
+              "correction_en": "I agree with you to some extent."
+            }
+          ]
+        },
+        {
+          "id": "b1-11-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Desculpe, mas eu não concordo.\"",
+          "accepted": [
+            "Sorry, but I don't agree",
+            "I'm sorry, but I don't agree",
+            "I'm afraid I don't agree",
+            "I'm afraid I disagree",
+            "Sorry, but I disagree",
+            "I'm sorry, but I disagree"
+          ],
+          "commonErrors": [
+            {
+              "id": "no-agree",
+              "match": "\\bi (no|not) agree\\b",
+              "explanation_pt": "A negação usa \"don't\": \"I don't agree\".",
+              "correction_en": "Sorry, but I don't agree."
+            },
+            {
+              "id": "im-not-agree",
+              "match": "\\bi am not agree\\b",
+              "explanation_pt": "\"Agree\" é verbo, então não usa \"am\": \"I don't agree\".",
+              "correction_en": "Sorry, but I don't agree."
+            }
+          ]
+        },
+        {
+          "id": "b1-11-conv-3",
+          "kind": "order",
+          "instruction_pt": "Coloque as palavras na ordem certa.",
+          "accepted": ["That's a good point, but it depends."]
+        },
+        {
+          "id": "b1-11-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Dê a sua opinião e responda a quem pensa diferente.",
+          "prompt_en": "Some people say that everyone should learn to cook at school. Do you agree or disagree? Why?",
+          "guidelines_pt": [
+            "Diga a sua posição: \"I agree / I disagree / I agree to some extent\".",
+            "Dê dois motivos com exemplos: \"First,... Also,...\".",
+            "Mostre que entende o outro lado: \"I see why some people think..., but...\"."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-11-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Fixar \"I agree\" sem \"am\", \"So do I / Neither do I\" e a discordância educada.",
+        "prompts": ["I love chocolate.", "I can't swim very well."],
+        "watchFor": ["\"I'm agree\".", "\"Me too\" para frase negativa."]
+      },
+      "exercises": [
+        {
+          "id": "b1-11-rev-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita a frase.",
+          "prompt": "Fair enough, but have you thought about the cost?",
+          "accepted": ["Fair enough, but have you thought about the cost"],
+          "commonErrors": []
+        },
+        {
+          "id": "b1-11-rev-2",
+          "kind": "translate",
+          "instruction_pt": "Alguém diz \"I love traveling.\" Diga em inglês: \"Eu também!\" usando \"so\".",
+          "accepted": ["So do I", "So do I. I love it"],
+          "commonErrors": [
+            {
+              "id": "so-am-i",
+              "match": "^so (am|is|love) i\\b|^so i do\\b",
+              "explanation_pt": "\"I love\" usa o auxiliar \"do\", então a resposta é \"So do I\" (verbo antes do sujeito).",
+              "correction_en": "So do I!"
+            }
+          ]
+        },
+        {
+          "id": "b1-11-rev-3",
+          "kind": "choice",
+          "instruction_pt": "Alguém diz \"I can't cook.\" Como concordar?",
+          "options": ["Me too.", "Neither can I.", "So can I."],
+          "answer": 1,
+          "explanation_pt": "A frase é negativa com \"can't\", então: \"Neither can I\" (ou \"Me neither\")."
+        },
+        {
+          "id": "b1-11-rev-4",
+          "kind": "fill",
+          "instruction_pt": "Complete com a preposição.",
+          "sentence": "I don't agree ___ you on this one.",
+          "accepted": ["with"],
+          "commonErrors": [
+            {
+              "id": "agree-to-of",
+              "match": "^(to|of|about|on)$",
+              "explanation_pt": "Concordar com uma pessoa é \"agree with\".",
+              "correction_en": "I don't agree with you on this one."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

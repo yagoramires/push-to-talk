@@ -1,0 +1,477 @@
+{
+  "id": "c1-03-register",
+  "level": "C1",
+  "order": 3,
+  "title_pt": "Registro formal e informal",
+  "title_en": "Formal vs informal register",
+  "objective_pt": "Switch register on purpose: say the same thing to a friend and to a client (\"Can you send it over?\" vs \"Would you be able to forward it?\"), choosing the right verbs, phrasal verbs and openers.",
+  "blocks": [
+    {
+      "id": "c1-03-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Raise awareness that the same request changes shape with the listener.",
+        "prompts": [
+          "How would you ask your best friend to lend you some money?",
+          "And how would you ask your bank manager for a loan?"
+        ],
+        "watchFor": [
+          "Using \"I want\" for requests, which sounds demanding in English.",
+          "Being too formal with friends (\"Would you be so kind...\") as a joke-free default."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-03-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repeat this formal request.",
+          "prompt": "Would you be able to send me the report by Friday?",
+          "accepted": ["Would you be able to send me the report by Friday?"],
+          "commonErrors": []
+        },
+        {
+          "id": "c1-03-warm-2",
+          "kind": "choice",
+          "instruction_pt": "Which version is informal?",
+          "options": [
+            "I'd appreciate it if you could get back to me.",
+            "Let me know what you think.",
+            "I look forward to hearing from you."
+          ],
+          "answer": 1,
+          "explanation_pt": "\"Let me know\" is relaxed and friendly. The other two are typical of formal emails."
+        },
+        {
+          "id": "c1-03-warm-3",
+          "kind": "translate",
+          "instruction_pt": "Say this politely to a client: \"Eu quero uma cópia do contrato.\"",
+          "accepted": [
+            "I'd like a copy of the contract",
+            "I would like a copy of the contract, please",
+            "Could I have a copy of the contract?",
+            "Could I have a copy of the contract, please?",
+            "Could you send me a copy of the contract?",
+            "Would it be possible to get a copy of the contract?",
+            "Would you be able to send me a copy of the contract?",
+            "Could you possibly send me a copy of the contract?"
+          ],
+          "commonErrors": [
+            {
+              "id": "i-want",
+              "match": "^i want\\b",
+              "explanation_pt": "\"I want\" sounds demanding in a request, especially to a client. Use \"I'd like\" or \"Could I have...?\".",
+              "correction_en": "I'd like a copy of the contract, please."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-03-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Pair informal phrasal verbs with their formal Latin-based equivalents: find out / ascertain, get in touch / contact, put off / postpone.",
+        "prompts": [
+          "What's the formal word for \"put off\"?",
+          "Would you write \"kids\" in a report?"
+        ],
+        "watchFor": [
+          "Assuming the Latin-based word is always better: in speech it can sound stiff.",
+          "\"Postpone\" vs \"anticipate\": \"antecipar\" a meeting is \"bring forward\", not \"anticipate\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-03-vocab-1",
+          "kind": "vocab",
+          "word_en": "to bring forward",
+          "meaning_pt": "antecipar (uma reunião, um prazo)",
+          "example_en": "Can we bring the meeting forward to Monday?"
+        },
+        {
+          "id": "c1-03-vocab-2",
+          "kind": "vocab",
+          "word_en": "to get in touch",
+          "meaning_pt": "entrar em contato",
+          "example_en": "I'll get in touch with you next week."
+        },
+        {
+          "id": "c1-03-vocab-3",
+          "kind": "vocab",
+          "word_en": "to ascertain",
+          "meaning_pt": "apurar, verificar (formal)",
+          "example_en": "We are trying to ascertain the cause of the delay."
+        },
+        {
+          "id": "c1-03-vocab-4",
+          "kind": "match",
+          "instruction_pt": "Match each informal phrase with its formal equivalent.",
+          "pairs": [
+            {
+              "en": "put off",
+              "pt": "postpone"
+            },
+            {
+              "en": "find out",
+              "pt": "ascertain"
+            },
+            {
+              "en": "get",
+              "pt": "obtain"
+            },
+            {
+              "en": "ask for",
+              "pt": "request"
+            },
+            {
+              "en": "help",
+              "pt": "assist"
+            }
+          ]
+        },
+        {
+          "id": "c1-03-vocab-5",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English: \"Podemos antecipar a reunião?\"",
+          "accepted": [
+            "Can we bring the meeting forward?",
+            "Could we bring the meeting forward?",
+            "Can we bring forward the meeting?",
+            "Could we bring forward the meeting?",
+            "Can we move the meeting up?",
+            "Could we move the meeting up?",
+            "Can we move the meeting earlier?",
+            "Could we have the meeting earlier?",
+            "Can we hold the meeting earlier?"
+          ],
+          "commonErrors": [
+            {
+              "id": "anticipate-meeting",
+              "match": "\\banticipate the meeting\\b",
+              "explanation_pt": "\"Anticipate\" means \"prever, esperar\". To \"antecipar\" a meeting is \"bring it forward\" or \"move it up\".",
+              "correction_en": "Can we bring the meeting forward?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-03-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Notice how informal speech uses reductions (gonna, wanna, kinda) and formal speech keeps full forms.",
+        "prompts": [
+          "Say \"I'm going to call him\" quickly to a friend.",
+          "Now say it in a formal presentation."
+        ],
+        "watchFor": [
+          "Using \"gonna\" and \"wanna\" in formal contexts.",
+          "Over-articulating every word in casual speech, which sounds robotic."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-03-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repeat casually, as you would to a friend (\"gonna\", \"wanna\").",
+          "prompt": "I'm gonna grab a coffee. Wanna come?",
+          "accepted": [
+            "I'm gonna grab a coffee. Wanna come?",
+            "I'm going to grab a coffee. Want to come?",
+            "I'm going to grab a coffee. Do you want to come?",
+            "I'm gonna grab a coffee. Do you wanna come?"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "c1-03-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repeat clearly, in a formal register.",
+          "prompt": "I would be grateful if you could assist us.",
+          "accepted": [
+            "I would be grateful if you could assist us",
+            "I'd be grateful if you could assist us"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "c1-03-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Where would \"gonna\" be appropriate?",
+          "options": [
+            "A job interview",
+            "A chat with a colleague at lunch",
+            "A speech at a conference"
+          ],
+          "answer": 1,
+          "explanation_pt": "\"Gonna\" is normal in relaxed speech. In interviews and speeches, \"going to\" sounds more appropriate."
+        }
+      ]
+    },
+    {
+      "id": "c1-03-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Identify register from a short message and reply in the same register.",
+        "prompts": ["Who do you think is speaking, and to whom?", "How would you reply?"],
+        "watchFor": [
+          "Replying to an informal message with a stiff formal sentence.",
+          "Missing that \"I was wondering if...\" is a polite request, not a question about the past."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-03-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Listen. What is the relationship between the speakers most likely to be?",
+          "listen": "I was wondering whether you might have a moment to go over the figures before the board meeting.",
+          "options": [
+            "Two close friends",
+            "Colleagues in a fairly formal workplace",
+            "A parent and a child"
+          ],
+          "answer": 1,
+          "explanation_pt": "\"I was wondering whether you might...\" and \"board meeting\" signal a polite, professional register."
+        },
+        {
+          "id": "c1-03-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Listen. A friend is asking. Reply informally that you can't tonight but tomorrow works.",
+          "listen": "Hey, fancy grabbing a drink tonight?",
+          "accepted": [
+            "I can't tonight, but tomorrow works",
+            "Can't tonight, but tomorrow works",
+            "I can't tonight, but how about tomorrow?",
+            "Can't tonight. How about tomorrow?",
+            "Not tonight, but tomorrow's good",
+            "Not tonight, but tomorrow works for me",
+            "I'd love to, but not tonight. Tomorrow?",
+            "Sorry, I can't tonight. Tomorrow?",
+            "Tonight's no good, but tomorrow works",
+            "I can't make it tonight, but tomorrow's fine"
+          ],
+          "commonErrors": [
+            {
+              "id": "too-formal",
+              "match": "\\b(unfortunately i am unable|i regret)\\b",
+              "explanation_pt": "Grammatically fine, but far too formal for a friend. Keep it light: \"Can't tonight, but tomorrow works.\"",
+              "correction_en": "Can't tonight, but tomorrow works."
+            },
+            {
+              "id": "tomorrow-funciona",
+              "match": "\\btomorrow (it )?functions\\b",
+              "explanation_pt": "\"Funciona\" for a plan is \"works\" or \"is good\", not \"functions\".",
+              "correction_en": "Can't tonight, but tomorrow works."
+            }
+          ]
+        },
+        {
+          "id": "c1-03-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Listen. A client is asking. Reply formally that you will look into it and get back to them.",
+          "listen": "Could you tell me why my order hasn't arrived yet?",
+          "accepted": [
+            "I'll look into it and get back to you",
+            "I'll look into it and get back to you shortly",
+            "Let me look into that and get back to you",
+            "I'll look into this and get back to you as soon as possible",
+            "I'll check and get back to you as soon as possible",
+            "I'll find out and get back to you",
+            "I'll look into it and contact you shortly",
+            "I'll investigate and get back to you",
+            "Certainly, I'll look into it and get back to you"
+          ],
+          "commonErrors": [
+            {
+              "id": "return-to-you",
+              "match": "\\b(return|come back) to you\\b",
+              "explanation_pt": "\"Dar um retorno\" is \"get back to you\". \"Return to you\" sounds like you physically come back.",
+              "correction_en": "I'll look into it and get back to you."
+            },
+            {
+              "id": "verify",
+              "match": "\\bverify\\b",
+              "explanation_pt": "In conversation, \"verificar\" is usually \"check\" or \"look into\". \"Verify\" means \"confirm that something is true\" and sounds technical.",
+              "correction_en": "I'll look into it and get back to you."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-03-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Role-play the same situation twice, first with a friend, then with a client.",
+        "prompts": [
+          "You need to cancel a plan. Tell me as your friend.",
+          "Now tell me as your client.",
+          "What did you change, and why?"
+        ],
+        "watchFor": [
+          "\"Return to you\", \"anticipate the meeting\", \"I want\" in requests.",
+          "Mixing registers in one sentence (\"Hey, I would be most grateful...\")."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-03-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Say this formally to a client: \"Infelizmente, vamos ter que adiar a reunião.\"",
+          "accepted": [
+            "Unfortunately, we'll have to postpone the meeting",
+            "Unfortunately, we will have to postpone the meeting",
+            "Unfortunately, we're going to have to postpone the meeting",
+            "I'm afraid we'll have to postpone the meeting",
+            "I'm afraid we will need to postpone the meeting",
+            "Unfortunately, we'll need to postpone the meeting",
+            "Regrettably, we'll have to postpone the meeting",
+            "Unfortunately, we'll have to reschedule the meeting"
+          ],
+          "commonErrors": [
+            {
+              "id": "adjourn",
+              "match": "\\badjourn\\b",
+              "explanation_pt": "\"Adjourn\" means to pause or end a meeting that has started. \"Adiar\" (move to a later date) is \"postpone\" or \"reschedule\".",
+              "correction_en": "Unfortunately, we'll have to postpone the meeting."
+            },
+            {
+              "id": "put-off-informal",
+              "match": "\\bput (off the meeting|the meeting off)\\b",
+              "explanation_pt": "\"Put off\" is correct but informal. For a client, \"postpone\" fits better.",
+              "correction_en": "Unfortunately, we'll have to postpone the meeting."
+            }
+          ]
+        },
+        {
+          "id": "c1-03-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Say this informally to a friend: \"Me avisa se você precisar de alguma coisa.\"",
+          "accepted": [
+            "Let me know if you need anything",
+            "Just let me know if you need anything",
+            "Give me a shout if you need anything",
+            "Shout if you need anything",
+            "Tell me if you need anything",
+            "Let me know if you need something",
+            "Text me if you need anything"
+          ],
+          "commonErrors": [
+            {
+              "id": "advise-me",
+              "match": "\\badvise me\\b",
+              "explanation_pt": "\"Avisar\" is \"let (someone) know\" or \"tell\". \"Advise\" means \"aconselhar\" and sounds very formal.",
+              "correction_en": "Let me know if you need anything."
+            },
+            {
+              "id": "need-of",
+              "match": "\\bneed of anything\\b",
+              "explanation_pt": "\"Precisar de\" is just \"need\": \"if you need anything\".",
+              "correction_en": "Let me know if you need anything."
+            }
+          ]
+        },
+        {
+          "id": "c1-03-conv-3",
+          "kind": "order",
+          "instruction_pt": "Put the words in order to make a polite formal request.",
+          "accepted": ["I was wondering if you could help me"]
+        },
+        {
+          "id": "c1-03-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Leave two short voice messages: first to a friend, then to a client.",
+          "prompt_en": "You can't make it to an appointment tomorrow. Leave one voice message for a close friend and another for an important client, explaining and suggesting a new time.",
+          "guidelines_pt": [
+            "Friend: relaxed openers (\"Hey!\"), contractions, phrasal verbs.",
+            "Client: \"I'm afraid...\", \"Would it be possible to...?\", \"I apologise for any inconvenience.\"",
+            "Suggest a new time in both messages.",
+            "Close appropriately: \"Cheers!\" vs \"Many thanks, and apologies again.\""
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-03-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Check the learner can upgrade or downgrade the register of a sentence on demand.",
+        "prompts": [
+          "Make this formal: \"Can you help me out?\"",
+          "Make this informal: \"I shall contact you.\""
+        ],
+        "watchFor": ["False friends: advise, anticipate, verify, adjourn.", "Overusing \"shall\"."]
+      },
+      "exercises": [
+        {
+          "id": "c1-03-rev-1",
+          "kind": "translate",
+          "instruction_pt": "Make this more formal and say it: \"Can you help me out?\"",
+          "accepted": [
+            "Could you assist me?",
+            "Would you be able to assist me?",
+            "Would you be able to help me?",
+            "Could you possibly help me?",
+            "I was wondering if you could help me",
+            "I was wondering if you could assist me",
+            "I'd be grateful if you could help me",
+            "I would be grateful for your assistance",
+            "Would you mind helping me?"
+          ],
+          "commonErrors": [
+            {
+              "id": "still-informal",
+              "match": "\\bhelp me out\\b",
+              "explanation_pt": "\"Help me out\" is the informal version. Use \"assist\", \"Would you be able to...\" or \"I was wondering if...\".",
+              "correction_en": "Would you be able to assist me?"
+            }
+          ]
+        },
+        {
+          "id": "c1-03-rev-2",
+          "kind": "fill",
+          "instruction_pt": "Complete the formal email ending with one word.",
+          "sentence": "I look forward to ___ from you.",
+          "accepted": ["hearing"],
+          "commonErrors": [
+            {
+              "id": "look-forward-to-hear",
+              "match": "^(hear|listen|listening)$",
+              "explanation_pt": "In \"look forward to\", \"to\" is a preposition, so it's followed by \"-ing\": \"hearing from you\".",
+              "correction_en": "I look forward to hearing from you."
+            }
+          ]
+        },
+        {
+          "id": "c1-03-rev-3",
+          "kind": "choice",
+          "instruction_pt": "\"Antecipar a reunião\" is...",
+          "options": [
+            "anticipate the meeting",
+            "bring the meeting forward",
+            "advance the meeting up"
+          ],
+          "answer": 1,
+          "explanation_pt": "\"Bring forward\" (or \"move up\"). \"Anticipate\" means to expect or predict."
+        },
+        {
+          "id": "c1-03-rev-4",
+          "kind": "repeat",
+          "instruction_pt": "Repeat this formal closing.",
+          "prompt": "Please don't hesitate to get in touch if you have any questions.",
+          "accepted": [
+            "Please don't hesitate to get in touch if you have any questions",
+            "Please do not hesitate to get in touch if you have any questions"
+          ],
+          "commonErrors": []
+        }
+      ]
+    }
+  ]
+}

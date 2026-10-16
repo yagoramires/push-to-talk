@@ -1,0 +1,455 @@
+{
+  "id": "a1-11-weather",
+  "level": "A1",
+  "order": 11,
+  "title_pt": "O tempo",
+  "title_en": "Weather",
+  "objective_pt": "Perguntar e dizer como está o tempo (\"It's sunny\", \"It's raining\"), falar da temperatura e das estações, e usar o tempo para puxar conversa.",
+  "blocks": [
+    {
+      "id": "a1-11-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Aquecer com o tempo de hoje, o assunto mais comum para puxar conversa.",
+        "prompts": ["What's the weather like today?", "Is it hot or cold now?"],
+        "watchFor": [
+          "Dizer \"Is hot\" sem o \"It\"; em inglês o tempo sempre começa com \"It's\".",
+          "Dizer \"It's doing hot\" (do \"está fazendo calor\")."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-11-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita em voz alta.",
+          "prompt": "It's a beautiful day today!",
+          "accepted": ["It's a beautiful day today", "It is a beautiful day today"],
+          "commonErrors": []
+        },
+        {
+          "id": "a1-11-warm-2",
+          "kind": "choice",
+          "instruction_pt": "Como dizemos \"Está calor\"?",
+          "options": ["It's hot.", "Is hot.", "It's doing hot."],
+          "answer": 0,
+          "explanation_pt": "Para falar do tempo usamos \"It's\": \"It's hot\". O \"it\" não pode sumir."
+        },
+        {
+          "id": "a1-11-warm-3",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Está frio hoje.\"",
+          "accepted": [
+            "It's cold today",
+            "It is cold today",
+            "Today it's cold",
+            "It's very cold today",
+            "It's really cold today",
+            "It's chilly today",
+            "Today is cold",
+            "It's a cold day today"
+          ],
+          "commonErrors": [
+            {
+              "id": "is-cold-no-it",
+              "match": "^is (cold|very cold)\\b",
+              "explanation_pt": "Falta o sujeito: em inglês dizemos \"It's cold\".",
+              "correction_en": "It's cold today."
+            },
+            {
+              "id": "doing-cold",
+              "match": "\\b(doing|making|does|makes) (cold|a cold)\\b",
+              "explanation_pt": "\"Fazer frio\" não usa \"do\" nem \"make\": \"It's cold\".",
+              "correction_en": "It's cold today."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-11-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Aprender palavras do tempo e estações: sunny, cloudy, rainy, windy, hot, warm, cold, summer, winter, spring, fall.",
+        "prompts": [
+          "What's your favorite season?",
+          "Is it rainy in your city?",
+          "Do you like windy days?"
+        ],
+        "watchFor": [
+          "Dizer \"It's sun\"; o adjetivo é \"sunny\".",
+          "Confundir \"warm\" (morno, agradável) e \"worm\" (minhoca) na pronúncia."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-11-vocab-1",
+          "kind": "vocab",
+          "word_en": "sunny",
+          "meaning_pt": "ensolarado",
+          "example_en": "It's sunny and warm today."
+        },
+        {
+          "id": "a1-11-vocab-2",
+          "kind": "vocab",
+          "word_en": "raining",
+          "meaning_pt": "chovendo",
+          "example_en": "Take an umbrella. It's raining."
+        },
+        {
+          "id": "a1-11-vocab-3",
+          "kind": "vocab",
+          "word_en": "summer",
+          "meaning_pt": "verão",
+          "example_en": "Summer in Brazil is very hot."
+        },
+        {
+          "id": "a1-11-vocab-4",
+          "kind": "match",
+          "instruction_pt": "Ligue cada palavra ao seu significado.",
+          "pairs": [
+            { "en": "cloudy", "pt": "nublado" },
+            { "en": "windy", "pt": "ventando" },
+            { "en": "winter", "pt": "inverno" },
+            { "en": "spring", "pt": "primavera" },
+            { "en": "fall", "pt": "outono" }
+          ]
+        },
+        {
+          "id": "a1-11-vocab-5",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Está chovendo.\"",
+          "accepted": [
+            "It's raining",
+            "It is raining",
+            "It's rainy",
+            "It's raining a lot",
+            "It's raining now",
+            "It's pouring"
+          ],
+          "commonErrors": [
+            {
+              "id": "is-raining-no-it",
+              "match": "^is rain",
+              "explanation_pt": "Falta o \"it\": \"It's raining\".",
+              "correction_en": "It's raining."
+            },
+            {
+              "id": "its-rain",
+              "match": "^it is rain$",
+              "explanation_pt": "\"Rain\" é o substantivo. Para \"está chovendo\" use \"raining\" (ou \"rainy\").",
+              "correction_en": "It's raining."
+            },
+            {
+              "id": "is-chuving",
+              "match": "\\b(rains|chovendo)\\b",
+              "explanation_pt": "Para o que acontece agora, use \"It's raining\".",
+              "correction_en": "It's raining."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-11-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Treinar o \"-y\" final (sunny, cloudy, windy) e o \"w\" de \"warm\" e \"weather\".",
+        "prompts": [
+          "Say \"weather\". Where is your tongue on \"th\"?",
+          "Say \"warm\" and \"cold\"."
+        ],
+        "watchFor": [
+          "Pronunciar \"weather\" como \"uéder\"; o \"th\" vibra com a língua entre os dentes.",
+          "Pronunciar \"warm\" como \"uarm\" com \"a\" aberto; é \"uórm\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-11-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita. Língua entre os dentes no \"th\" de \"weather\".",
+          "prompt": "What's the weather like today?",
+          "accepted": ["What's the weather like today?", "What is the weather like today"],
+          "commonErrors": [
+            {
+              "id": "wether-weder",
+              "match": "\\b(weder|wetter|weader)\\b",
+              "explanation_pt": "O \"th\" de \"weather\" não é \"d\": ponha a língua entre os dentes, com a voz vibrando.",
+              "correction_en": "What's the weather like today?"
+            }
+          ]
+        },
+        {
+          "id": "a1-11-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repita. \"Warm\" soa como \"uórm\".",
+          "prompt": "It's warm and sunny in spring.",
+          "accepted": ["It's warm and sunny in spring", "It is warm and sunny in spring"],
+          "commonErrors": []
+        },
+        {
+          "id": "a1-11-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Ouça e escolha o tempo que você entendeu.",
+          "listen": "It's cloudy and windy.",
+          "options": ["Nublado e ventando.", "Ensolarado e quente.", "Chovendo e frio."],
+          "answer": 0,
+          "explanation_pt": "\"Cloudy\" é nublado e \"windy\" é ventando."
+        }
+      ]
+    },
+    {
+      "id": "a1-11-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Entender uma previsão do tempo simples e responder sobre o tempo onde você está.",
+        "prompts": ["What's the weather like in your city?", "What's the temperature today?"],
+        "watchFor": [
+          "Dizer \"30 degrees\" sem \"It's\".",
+          "Responder \"Is sun\"; o certo é \"It's sunny\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-11-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Ouça a previsão e escolha.",
+          "listen": "Tomorrow it's going to be cold and rainy in London. Take an umbrella!",
+          "options": ["Frio e chuva amanhã.", "Calor e sol amanhã.", "Frio e sol hoje."],
+          "answer": 0,
+          "explanation_pt": "\"Tomorrow... cold and rainy\": amanhã vai estar frio e chuvoso. Por isso, \"take an umbrella\"."
+        },
+        {
+          "id": "a1-11-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e responda: está ensolarado e quente.",
+          "listen": "What's the weather like today?",
+          "accepted": [
+            "It's sunny and hot",
+            "It is sunny and hot",
+            "It's hot and sunny",
+            "It's sunny and warm",
+            "It's warm and sunny",
+            "Sunny and hot",
+            "Hot and sunny",
+            "It's very sunny and hot",
+            "It's sunny and really hot today",
+            "Today it's sunny and hot"
+          ],
+          "commonErrors": [
+            {
+              "id": "is-sun",
+              "match": "\\b(is|it is) sun\\b",
+              "explanation_pt": "\"Sun\" é o sol. Para o tempo use o adjetivo: \"It's sunny\".",
+              "correction_en": "It's sunny and hot."
+            },
+            {
+              "id": "no-it-weather",
+              "match": "^is (sunny|hot)\\b",
+              "explanation_pt": "Falta o \"it\": \"It's sunny and hot\".",
+              "correction_en": "It's sunny and hot."
+            }
+          ]
+        },
+        {
+          "id": "a1-11-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e responda: sua estação favorita é o inverno.",
+          "listen": "What's your favorite season?",
+          "accepted": [
+            "My favorite season is winter",
+            "My favourite season is winter",
+            "Winter",
+            "It's winter",
+            "I love winter",
+            "I like winter",
+            "Winter is my favorite season",
+            "Winter is my favorite",
+            "I like winter the most",
+            "Definitely winter"
+          ],
+          "commonErrors": [
+            {
+              "id": "station-season",
+              "match": "\\bstation\\b",
+              "explanation_pt": "\"Station\" é estação de trem. Estação do ano é \"season\".",
+              "correction_en": "My favorite season is winter."
+            },
+            {
+              "id": "the-winter",
+              "match": "\\bis the winter\\b",
+              "explanation_pt": "Com estações, em geral, não usamos \"the\": \"My favorite season is winter\".",
+              "correction_en": "My favorite season is winter."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-11-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Usar o tempo para puxar conversa e falar do clima da sua cidade nas estações.",
+        "prompts": [
+          "Nice day, isn't it?",
+          "What's the weather like in your city in winter?",
+          "Do you prefer hot or cold weather?"
+        ],
+        "watchFor": [
+          "Dizer \"It makes 30 degrees\"; o certo é \"It's 30 degrees\".",
+          "Dizer \"In the summer is hot\" sem o \"it\".",
+          "Usar \"time\" para \"tempo\" (clima); é \"weather\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-11-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Está fazendo trinta graus.\"",
+          "accepted": [
+            "It's thirty degrees",
+            "It is thirty degrees",
+            "It's 30 degrees",
+            "It's 30 degrees today",
+            "It's thirty degrees Celsius",
+            "It's about 30 degrees",
+            "The temperature is 30 degrees"
+          ],
+          "commonErrors": [
+            {
+              "id": "makes-degrees",
+              "match": "\\b(makes|making|does|doing) thirty\\b",
+              "explanation_pt": "\"Fazer 30 graus\" é \"It's 30 degrees\". Não usamos \"make\" nem \"do\".",
+              "correction_en": "It's thirty degrees."
+            },
+            {
+              "id": "grades",
+              "match": "\\bgrades\\b",
+              "explanation_pt": "\"Grades\" são notas da escola. Graus é \"degrees\".",
+              "correction_en": "It's thirty degrees."
+            }
+          ]
+        },
+        {
+          "id": "a1-11-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Como está o tempo na sua cidade?\"",
+          "accepted": [
+            "What's the weather like in your city?",
+            "What is the weather like in your city?",
+            "How's the weather in your city?",
+            "How is the weather in your city?",
+            "What's the weather like where you live?",
+            "How's the weather where you are?"
+          ],
+          "commonErrors": [
+            {
+              "id": "time-weather",
+              "match": "\\bthe time\\b",
+              "explanation_pt": "\"Tempo\" (clima) é \"weather\". \"Time\" é tempo do relógio.",
+              "correction_en": "What's the weather like in your city?"
+            },
+            {
+              "id": "how-is-weather-like",
+              "match": "^how is the weather like\\b",
+              "explanation_pt": "Use \"What's the weather like?\" ou \"How's the weather?\", sem misturar os dois.",
+              "correction_en": "What's the weather like in your city?"
+            }
+          ]
+        },
+        {
+          "id": "a1-11-conv-3",
+          "kind": "order",
+          "instruction_pt": "Coloque as palavras na ordem certa.",
+          "accepted": ["It is very hot in the summer"]
+        },
+        {
+          "id": "a1-11-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Fale do tempo na sua cidade hoje e na sua estação favorita.",
+          "prompt_en": "It's cold and rainy here in London today. What's the weather like in your city? What's your favorite season?",
+          "guidelines_pt": [
+            "Diga como está o tempo hoje: \"It's sunny/cloudy/raining...\".",
+            "Diga a temperatura: \"It's about 25 degrees\".",
+            "Fale da sua estação favorita e por quê: \"I love winter because...\"."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-11-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Revisar \"It's + tempo\", estações e \"weather\" vs \"time\".",
+        "prompts": ["What's the weather like now?", "Is it cold in July in your city?"],
+        "watchFor": ["Tirar o \"it\".", "\"Sun\" no lugar de \"sunny\"."]
+      },
+      "exercises": [
+        {
+          "id": "a1-11-rev-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"No inverno, faz frio e venta.\"",
+          "accepted": [
+            "In winter, it's cold and windy",
+            "In winter it is cold and windy",
+            "In the winter, it's cold and windy",
+            "It's cold and windy in winter",
+            "It's cold and windy in the winter",
+            "In winter it's cold and it's windy"
+          ],
+          "commonErrors": [
+            {
+              "id": "winter-is-cold",
+              "match": "\\bwinter (is|makes) cold\\b",
+              "explanation_pt": "Para o tempo use \"it's\": \"In winter, it's cold and windy\".",
+              "correction_en": "In winter, it's cold and windy."
+            },
+            {
+              "id": "winds",
+              "match": "\\b(winds|wind)$",
+              "explanation_pt": "\"Venta\" vira o adjetivo \"windy\": \"it's windy\".",
+              "correction_en": "In winter, it's cold and windy."
+            }
+          ]
+        },
+        {
+          "id": "a1-11-rev-2",
+          "kind": "fill",
+          "instruction_pt": "Complete com a palavra certa.",
+          "sentence": "It's ___ today. Let's go to the beach!",
+          "accepted": ["sunny", "hot", "warm", "beautiful", "nice"],
+          "commonErrors": [
+            {
+              "id": "sun-fill",
+              "match": "^sun$",
+              "explanation_pt": "\"Sun\" é o sol. O adjetivo é \"sunny\".",
+              "correction_en": "It's sunny today."
+            }
+          ]
+        },
+        {
+          "id": "a1-11-rev-3",
+          "kind": "choice",
+          "instruction_pt": "\"What's the weather like?\" pergunta sobre o quê?",
+          "options": ["O clima, o tempo lá fora.", "As horas.", "O que a pessoa gosta."],
+          "answer": 0,
+          "explanation_pt": "\"Weather\" é o tempo (clima). O \"like\" aqui significa \"como\", não \"gostar\"."
+        },
+        {
+          "id": "a1-11-rev-4",
+          "kind": "repeat",
+          "instruction_pt": "Para terminar, repita.",
+          "prompt": "Nice weather today, isn't it?",
+          "accepted": ["Nice weather today, isn't it?", "Nice weather, isn't it?"],
+          "commonErrors": []
+        }
+      ]
+    }
+  ]
+}

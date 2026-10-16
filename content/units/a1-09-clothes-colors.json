@@ -1,0 +1,477 @@
+{
+  "id": "a1-09-clothes-colors",
+  "level": "A1",
+  "order": 9,
+  "title_pt": "Roupas e cores",
+  "title_en": "Clothes and colors",
+  "objective_pt": "Dizer o que você está vestindo com \"I'm wearing...\", usar as cores antes do substantivo (a blue shirt) e perguntar \"What's your favorite color?\".",
+  "blocks": [
+    {
+      "id": "a1-09-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Aquecer com cores e roupas que o aluno vê agora.",
+        "prompts": ["What color is your shirt?", "What's your favorite color?"],
+        "watchFor": [
+          "Colocar a cor depois: \"a shirt blue\".",
+          "Pluralizar a cor: \"blues shoes\"; em inglês o adjetivo não tem plural."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-09-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita em voz alta.",
+          "prompt": "Red, blue, green, yellow, black and white.",
+          "accepted": ["Red, blue, green, yellow, black and white"],
+          "commonErrors": []
+        },
+        {
+          "id": "a1-09-warm-2",
+          "kind": "choice",
+          "instruction_pt": "Qual está certo?",
+          "options": ["a blue shirt", "a shirt blue", "a blues shirt"],
+          "answer": 0,
+          "explanation_pt": "Em inglês a cor vem antes da roupa e não vai para o plural: \"a blue shirt\", \"blue shoes\"."
+        },
+        {
+          "id": "a1-09-warm-3",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Minha cor favorita é verde.\"",
+          "accepted": [
+            "My favorite color is green",
+            "My favourite colour is green",
+            "My favorite colour is green",
+            "My favorite color's green",
+            "Green is my favorite color",
+            "I love green"
+          ],
+          "commonErrors": [
+            {
+              "id": "color-favorite",
+              "match": "\\bcolou?r favou?rite\\b",
+              "explanation_pt": "O adjetivo vem antes: \"favorite color\".",
+              "correction_en": "My favorite color is green."
+            },
+            {
+              "id": "is-the-green",
+              "match": "\\bis the green\\b",
+              "explanation_pt": "Não usamos \"the\" antes do nome da cor aqui: \"is green\".",
+              "correction_en": "My favorite color is green."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-09-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Aprender roupas do dia a dia: shirt, T-shirt, pants, jeans, dress, skirt, shoes, sneakers, jacket.",
+        "prompts": [
+          "What do you wear to work?",
+          "Do you like sneakers?",
+          "What do you wear in winter?"
+        ],
+        "watchFor": [
+          "Dizer \"a pant\" ou \"a jean\"; \"pants\" e \"jeans\" são sempre plural.",
+          "Confundir \"shirt\" (camisa) e \"skirt\" (saia)."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-09-vocab-1",
+          "kind": "vocab",
+          "word_en": "jeans",
+          "meaning_pt": "calça jeans",
+          "example_en": "I'm wearing blue jeans."
+        },
+        {
+          "id": "a1-09-vocab-2",
+          "kind": "vocab",
+          "word_en": "sneakers",
+          "meaning_pt": "tênis",
+          "example_en": "My sneakers are white."
+        },
+        {
+          "id": "a1-09-vocab-3",
+          "kind": "vocab",
+          "word_en": "jacket",
+          "meaning_pt": "jaqueta, casaco",
+          "example_en": "Take a jacket. It's cold."
+        },
+        {
+          "id": "a1-09-vocab-4",
+          "kind": "match",
+          "instruction_pt": "Ligue cada roupa ao seu significado.",
+          "pairs": [
+            {
+              "en": "shirt",
+              "pt": "camisa"
+            },
+            {
+              "en": "skirt",
+              "pt": "saia"
+            },
+            {
+              "en": "dress",
+              "pt": "vestido"
+            },
+            {
+              "en": "pants",
+              "pt": "calça"
+            },
+            {
+              "en": "shoes",
+              "pt": "sapatos"
+            }
+          ]
+        },
+        {
+          "id": "a1-09-vocab-5",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu gosto de usar tênis.\"",
+          "accepted": [
+            "I like wearing sneakers",
+            "I like to wear sneakers",
+            "I like wearing trainers",
+            "I like to wear trainers",
+            "I love wearing sneakers",
+            "I like wearing tennis shoes",
+            "I like to wear tennis shoes"
+          ],
+          "commonErrors": [
+            {
+              "id": "use-clothes",
+              "match": "\\b(use|using) (sneakers|trainers|tennis)",
+              "explanation_pt": "Para roupa, \"usar\" é \"wear\", não \"use\": \"I like wearing sneakers\".",
+              "correction_en": "I like wearing sneakers."
+            },
+            {
+              "id": "tennis-alone",
+              "match": "\\bwear(ing)? tennis$",
+              "explanation_pt": "\"Tennis\" sozinho é o esporte. O calçado é \"sneakers\" (EUA) ou \"trainers\" (Reino Unido).",
+              "correction_en": "I like wearing sneakers."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-09-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Diferenciar \"shirt\" e \"skirt\", e treinar o \"-s\" de \"clothes\" e \"shoes\" sem vogal extra.",
+        "prompts": ["Say \"shirt\", then \"skirt\".", "Say \"clothes\" in one syllable."],
+        "watchFor": [
+          "Falar \"clothes\" em duas sílabas (\"clô-tis\"); é uma só: \"clouðz\".",
+          "Colocar \"i\" antes de \"s\" + consoante: \"iskirt\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-09-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita. \"Skirt\" começa direto no \"s\", sem \"i\" antes.",
+          "prompt": "She's wearing a black skirt.",
+          "accepted": ["She's wearing a black skirt", "She is wearing a black skirt"],
+          "commonErrors": [
+            {
+              "id": "shirt-skirt",
+              "match": "\\bblack shirt\\b",
+              "explanation_pt": "Você disse \"shirt\" (camisa). Saia é \"skirt\", com \"sk\" no começo.",
+              "correction_en": "She's wearing a black skirt."
+            }
+          ]
+        },
+        {
+          "id": "a1-09-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repita. \"Clothes\" tem uma sílaba só.",
+          "prompt": "I love new clothes.",
+          "accepted": ["I love new clothes"],
+          "commonErrors": []
+        },
+        {
+          "id": "a1-09-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Ouça. Qual palavra você ouviu?",
+          "listen": "shirt",
+          "options": ["shirt", "skirt", "short"],
+          "answer": 0,
+          "explanation_pt": "\"Shirt\" (camisa) começa com \"sh\". \"Skirt\" (saia) começa com \"sk\"."
+        }
+      ]
+    },
+    {
+      "id": "a1-09-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Entender uma descrição de roupas e dizer o que você está vestindo agora.",
+        "prompts": ["What are you wearing today?", "What color are your shoes?"],
+        "watchFor": [
+          "Dizer \"I wear\" para agora; para o momento é \"I'm wearing\".",
+          "Dizer \"My shoes is\"; com plural é \"are\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-09-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Ouça e escolha a pessoa certa.",
+          "listen": "Look! Anna is wearing a red dress and white shoes.",
+          "options": [
+            "Red dress, white shoes.",
+            "White dress, red shoes.",
+            "Red skirt, white shirt."
+          ],
+          "answer": 0,
+          "explanation_pt": "\"A red dress and white shoes\": vestido vermelho e sapatos brancos."
+        },
+        {
+          "id": "a1-09-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e responda: você está usando uma camiseta azul e jeans.",
+          "listen": "What are you wearing today?",
+          "accepted": [
+            "I'm wearing a blue T-shirt and jeans",
+            "I am wearing a blue T-shirt and jeans",
+            "I'm wearing a blue T-shirt and blue jeans",
+            "A blue T-shirt and jeans",
+            "I'm wearing jeans and a blue T-shirt",
+            "I'm wearing a blue tee shirt and jeans",
+            "I'm wearing a blue shirt and jeans",
+            "I'm wearing a blue t shirt and a pair of jeans",
+            "Today I'm wearing a blue T-shirt and jeans"
+          ],
+          "commonErrors": [
+            {
+              "id": "t-shirt-blue",
+              "match": "\\bt shirt blue\\b",
+              "explanation_pt": "A cor vem antes da roupa: \"a blue T-shirt\".",
+              "correction_en": "I'm wearing a blue T-shirt and jeans."
+            },
+            {
+              "id": "i-am-using",
+              "match": "\\b(using|use)\\b",
+              "explanation_pt": "Para roupa, \"usar\" é \"wear\": \"I'm wearing\".",
+              "correction_en": "I'm wearing a blue T-shirt and jeans."
+            },
+            {
+              "id": "a-jeans",
+              "match": "\\ba jeans\\b",
+              "explanation_pt": "\"Jeans\" é sempre plural: diga \"jeans\" ou \"a pair of jeans\".",
+              "correction_en": "I'm wearing a blue T-shirt and jeans."
+            }
+          ]
+        },
+        {
+          "id": "a1-09-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e responda: seus sapatos são pretos.",
+          "listen": "What color are your shoes?",
+          "accepted": [
+            "They're black",
+            "They are black",
+            "My shoes are black",
+            "Black",
+            "They're black shoes",
+            "My shoes are black today"
+          ],
+          "commonErrors": [
+            {
+              "id": "shoes-is",
+              "match": "\\b(shoes|they) is\\b",
+              "explanation_pt": "\"Shoes\" é plural, então o verbo é \"are\": \"They're black\".",
+              "correction_en": "They're black."
+            },
+            {
+              "id": "blacks",
+              "match": "\\bblacks\\b",
+              "explanation_pt": "Cores não vão para o plural em inglês: \"black\".",
+              "correction_en": "They're black."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-09-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Descrever roupas suas e de outras pessoas, com cor, e falar do que você gosta de vestir.",
+        "prompts": [
+          "What do you usually wear on weekends?",
+          "What is your teacher wearing?",
+          "Do you prefer dresses or pants?"
+        ],
+        "watchFor": [
+          "Dizer \"He is wearing a pants\".",
+          "Esquecer o \"-ing\" no presente contínuo: \"I'm wear\".",
+          "Usar \"use\" no lugar de \"wear\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-09-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Ele está usando uma camisa branca e uma calça preta.\"",
+          "accepted": [
+            "He's wearing a white shirt and black pants",
+            "He is wearing a white shirt and black pants",
+            "He's wearing a white shirt and black trousers",
+            "He is wearing a white shirt and black trousers",
+            "He's wearing a white shirt and a pair of black pants",
+            "He's wearing black pants and a white shirt"
+          ],
+          "commonErrors": [
+            {
+              "id": "a-pants",
+              "match": "\\ba (black )?(pants|trousers)\\b",
+              "explanation_pt": "\"Pants\" é sempre plural, sem \"a\": \"black pants\" (ou \"a pair of black pants\").",
+              "correction_en": "He's wearing a white shirt and black pants."
+            },
+            {
+              "id": "shirt-white",
+              "match": "\\bshirt white\\b",
+              "explanation_pt": "A cor vem antes da roupa: \"a white shirt\".",
+              "correction_en": "He's wearing a white shirt and black pants."
+            },
+            {
+              "id": "is-using",
+              "match": "\\b(using|use)\\b",
+              "explanation_pt": "Para roupa, \"usar\" é \"wear\".",
+              "correction_en": "He's wearing a white shirt and black pants."
+            }
+          ]
+        },
+        {
+          "id": "a1-09-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"No fim de semana eu uso roupas confortáveis.\"",
+          "accepted": [
+            "On the weekend I wear comfortable clothes",
+            "On weekends I wear comfortable clothes",
+            "At the weekend I wear comfortable clothes",
+            "I wear comfortable clothes on the weekend",
+            "I wear comfortable clothes on weekends",
+            "I wear comfortable clothes at the weekend"
+          ],
+          "commonErrors": [
+            {
+              "id": "end-of-week",
+              "match": "\\bend of (the )?week\\b",
+              "explanation_pt": "\"Fim de semana\" é \"weekend\", uma palavra só.",
+              "correction_en": "On the weekend I wear comfortable clothes."
+            },
+            {
+              "id": "clothes-comfortable",
+              "match": "\\bclothes comfortable\\b",
+              "explanation_pt": "O adjetivo vem antes: \"comfortable clothes\".",
+              "correction_en": "I wear comfortable clothes on the weekend."
+            },
+            {
+              "id": "use-clothes-conv",
+              "match": "\\buse\\b",
+              "explanation_pt": "Para roupa, \"usar\" é \"wear\".",
+              "correction_en": "I wear comfortable clothes on the weekend."
+            }
+          ]
+        },
+        {
+          "id": "a1-09-conv-3",
+          "kind": "order",
+          "instruction_pt": "Coloque as palavras na ordem certa.",
+          "accepted": ["I am wearing a green jacket today"]
+        },
+        {
+          "id": "a1-09-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Descreva o que você está vestindo hoje e o que gosta de usar.",
+          "prompt_en": "Today I'm wearing a gray sweater and black jeans. What are you wearing today? And what do you like to wear?",
+          "guidelines_pt": [
+            "Diga o que está vestindo agora: \"I'm wearing a ... and ...\".",
+            "Coloque a cor antes de cada roupa.",
+            "Diga o que você gosta de usar no fim de semana: \"On weekends I wear...\"."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-09-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Revisar cores, roupas, \"wear\" e \"I'm wearing\".",
+        "prompts": ["What color is your phone?", "What are you wearing now?"],
+        "watchFor": ["Cor depois do substantivo.", "\"Use\" no lugar de \"wear\"."]
+      },
+      "exercises": [
+        {
+          "id": "a1-09-rev-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu tenho um vestido vermelho.\"",
+          "accepted": [
+            "I have a red dress",
+            "I've got a red dress",
+            "I have got a red dress",
+            "I have one red dress"
+          ],
+          "commonErrors": [
+            {
+              "id": "dress-red",
+              "match": "\\bdress red\\b",
+              "explanation_pt": "A cor vem antes da roupa: \"a red dress\".",
+              "correction_en": "I have a red dress."
+            },
+            {
+              "id": "vest-dress",
+              "match": "\\bvest\\b",
+              "explanation_pt": "\"Vest\" é colete (ou regata). Vestido é \"dress\".",
+              "correction_en": "I have a red dress."
+            }
+          ]
+        },
+        {
+          "id": "a1-09-rev-2",
+          "kind": "fill",
+          "instruction_pt": "Complete com o verbo certo.",
+          "sentence": "She is ___ a yellow jacket.",
+          "accepted": ["wearing"],
+          "commonErrors": [
+            {
+              "id": "using-wearing",
+              "match": "^(using|use|wear|wears)$",
+              "explanation_pt": "Para roupa no momento: \"is wearing\".",
+              "correction_en": "She is wearing a yellow jacket."
+            }
+          ]
+        },
+        {
+          "id": "a1-09-rev-3",
+          "kind": "choice",
+          "instruction_pt": "O que significa \"sneakers\"?",
+          "options": ["tênis", "meias", "chinelos"],
+          "answer": 0,
+          "explanation_pt": "\"Sneakers\" são tênis. Meias são \"socks\" e chinelos são \"flip-flops\"."
+        },
+        {
+          "id": "a1-09-rev-4",
+          "kind": "repeat",
+          "instruction_pt": "Para terminar, repita.",
+          "prompt": "I love your jacket! The color is beautiful.",
+          "accepted": [
+            "I love your jacket! The color is beautiful",
+            "I love your jacket. The colour is beautiful"
+          ],
+          "commonErrors": []
+        }
+      ]
+    }
+  ]
+}

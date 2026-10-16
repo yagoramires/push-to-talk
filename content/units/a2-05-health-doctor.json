@@ -1,0 +1,480 @@
+{
+  "id": "a2-05-health-doctor",
+  "level": "A2",
+  "order": 5,
+  "title_pt": "Saúde e o médico",
+  "title_en": "Health and the doctor",
+  "objective_pt": "Dizer o que você está sentindo (\"I have a headache\", \"My back hurts\"), responder às perguntas do médico e dar e entender conselhos com \"should\".",
+  "blocks": [
+    {
+      "id": "a2-05-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Perguntar como a pessoa está se sentindo e introduzir \"I have a...\" para sintomas.",
+        "prompts": ["How are you feeling today?", "When was the last time you were sick?"],
+        "watchFor": [
+          "\"I'm with a headache\" (do \"estou com dor de cabeça\"); o certo é \"I have a headache\".",
+          "\"I'm constipated\" querendo dizer \"estou resfriado\"; em inglês \"constipated\" é estar com prisão de ventre."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-05-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita em voz alta.",
+          "prompt": "I don't feel very well today.",
+          "accepted": ["I don't feel very well today", "I do not feel very well today"],
+          "commonErrors": [
+            {
+              "id": "feel-good-not",
+              "match": "\\bi not feel\\b",
+              "explanation_pt": "A negação no presente usa \"don't\": \"I don't feel well\".",
+              "correction_en": "I don't feel very well today."
+            }
+          ]
+        },
+        {
+          "id": "a2-05-warm-2",
+          "kind": "choice",
+          "instruction_pt": "Você está com o nariz escorrendo e espirrando. O que você diz?",
+          "options": ["I have a cold.", "I'm constipated.", "I'm cold."],
+          "answer": 0,
+          "explanation_pt": "\"I have a cold\" é \"estou resfriado\". \"Constipated\" é prisão de ventre, e \"I'm cold\" é \"estou com frio\"."
+        },
+        {
+          "id": "a2-05-warm-3",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu estou com dor de cabeça.\"",
+          "accepted": [
+            "I have a headache",
+            "I've got a headache",
+            "I have got a headache",
+            "My head hurts",
+            "My head is hurting",
+            "I have a bad headache"
+          ],
+          "commonErrors": [
+            {
+              "id": "with-headache",
+              "match": "\\bi am with\\b",
+              "explanation_pt": "\"Estou com\" (sintoma) vira \"I have\" em inglês: \"I have a headache\".",
+              "correction_en": "I have a headache."
+            },
+            {
+              "id": "pain-of-head",
+              "match": "\\bpain (of|in the|on the) head\\b",
+              "explanation_pt": "\"Dor de cabeça\" é uma palavra só: \"headache\".",
+              "correction_en": "I have a headache."
+            },
+            {
+              "id": "have-headache-no-a",
+              "match": "^i have headache$",
+              "explanation_pt": "\"Headache\" leva artigo: \"I have a headache\".",
+              "correction_en": "I have a headache."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-05-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Aprender sintomas e palavras da consulta: sore throat, fever, cough, hurt, prescription, medicine.",
+        "prompts": [
+          "What do you do when you have a sore throat?",
+          "Do you take medicine when you have a fever?",
+          "Does anything hurt now?"
+        ],
+        "watchFor": [
+          "Pedir uma \"recipe\" ao médico; \"recipe\" é receita de bolo, e a receita médica é \"prescription\".",
+          "\"I'm with fever\" em vez de \"I have a fever\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-05-vocab-1",
+          "kind": "vocab",
+          "word_en": "sore throat",
+          "meaning_pt": "dor de garganta",
+          "example_en": "I have a sore throat and a cough."
+        },
+        {
+          "id": "a2-05-vocab-2",
+          "kind": "vocab",
+          "word_en": "hurt",
+          "meaning_pt": "doer, machucar",
+          "example_en": "My back hurts when I sit for a long time."
+        },
+        {
+          "id": "a2-05-vocab-3",
+          "kind": "vocab",
+          "word_en": "prescription",
+          "meaning_pt": "receita médica",
+          "example_en": "The doctor gave me a prescription for some antibiotics."
+        },
+        {
+          "id": "a2-05-vocab-4",
+          "kind": "match",
+          "instruction_pt": "Ligue cada palavra ao seu significado.",
+          "pairs": [
+            { "en": "fever", "pt": "febre" },
+            { "en": "cough", "pt": "tosse" },
+            { "en": "stomachache", "pt": "dor de barriga" },
+            { "en": "dizzy", "pt": "tonto" },
+            { "en": "appointment", "pt": "consulta (horário marcado)" }
+          ]
+        },
+        {
+          "id": "a2-05-vocab-5",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu estou com febre e dor de garganta.\"",
+          "accepted": [
+            "I have a fever and a sore throat",
+            "I've got a fever and a sore throat",
+            "I have a temperature and a sore throat",
+            "I've got a temperature and a sore throat",
+            "I have a fever and my throat hurts",
+            "I have a sore throat and a fever"
+          ],
+          "commonErrors": [
+            {
+              "id": "with-fever",
+              "match": "\\bi am with\\b",
+              "explanation_pt": "Para sintomas, \"estou com\" vira \"I have\": \"I have a fever\".",
+              "correction_en": "I have a fever and a sore throat."
+            },
+            {
+              "id": "pain-of-throat",
+              "match": "\\bpain (of|in the) throat\\b",
+              "explanation_pt": "\"Dor de garganta\" é \"a sore throat\".",
+              "correction_en": "I have a fever and a sore throat."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-05-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Treinar o \"th\" de \"throat\", o \"ache\" que soa \"eik\" e o \"ough\" de \"cough\" (\"kóf\").",
+        "prompts": ["Say \"headache\". How do you say \"ache\"?", "Say \"throat\" and \"cough\"."],
+        "watchFor": [
+          "Pronunciar \"ache\" como \"atchi\"; o certo é \"eik\".",
+          "\"Throat\" com \"t\" ou \"f\" no começo: \"troat\", \"froat\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-05-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita. \"Ache\" soa como \"eik\": \"HED-eik\".",
+          "prompt": "I have a headache and a stomachache.",
+          "accepted": [
+            "I have a headache and a stomachache",
+            "I have a headache and a stomach ache"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "a2-05-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repita. Língua entre os dentes no \"th\" de \"throat\".",
+          "prompt": "My throat hurts and I can't stop coughing.",
+          "accepted": [
+            "My throat hurts and I can't stop coughing",
+            "My throat hurts and I cannot stop coughing"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "a2-05-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Como se pronuncia o \"ache\" de \"headache\"?",
+          "options": ["eik", "atchi", "ash"],
+          "answer": 0,
+          "explanation_pt": "\"Ache\" rima com \"cake\": \"eik\". O mesmo vale para \"toothache\" e \"backache\"."
+        }
+      ]
+    },
+    {
+      "id": "a2-05-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Entender as perguntas e os conselhos do médico.",
+        "prompts": ["What seems to be the problem?", "How long have you felt like this?"],
+        "watchFor": [
+          "Responder \"since three days\"; o certo é \"for three days\" ou \"since Monday\".",
+          "Não reconhecer \"should\" como conselho."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-05-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Ouça o médico e escolha o conselho que ele deu.",
+          "listen": "You should stay in bed for two days and drink a lot of water. Take this medicine after meals.",
+          "options": [
+            "Ficar de cama dois dias, beber muita água e tomar o remédio depois das refeições.",
+            "Fazer exercícios e tomar o remédio antes de dormir.",
+            "Voltar ao trabalho e beber chá."
+          ],
+          "answer": 0,
+          "explanation_pt": "\"Stay in bed\" é ficar de cama, e \"after meals\" é depois das refeições. \"You should\" introduz um conselho."
+        },
+        {
+          "id": "a2-05-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça o médico e diga que as suas costas doem.",
+          "listen": "What seems to be the problem?",
+          "accepted": [
+            "My back hurts",
+            "My back is hurting",
+            "I have a backache",
+            "I've got a backache",
+            "I have back pain",
+            "I have a pain in my back",
+            "My back hurts a lot",
+            "I have a bad backache"
+          ],
+          "commonErrors": [
+            {
+              "id": "my-coast",
+              "match": "\\bmy (coast|costs|backs)\\b",
+              "explanation_pt": "\"Costas\" é \"back\", no singular. \"Coast\" é o litoral.",
+              "correction_en": "My back hurts."
+            },
+            {
+              "id": "back-hurt-no-s",
+              "match": "^my back hurt$",
+              "explanation_pt": "Com \"my back\" (ele) o verbo no presente leva \"-s\": \"My back hurts\".",
+              "correction_en": "My back hurts."
+            },
+            {
+              "id": "pain-in-the-back",
+              "match": "\\bi am with\\b",
+              "explanation_pt": "\"Estou com dor\" vira \"I have\" ou \"My back hurts\" em inglês.",
+              "correction_en": "My back hurts."
+            }
+          ]
+        },
+        {
+          "id": "a2-05-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e responda que você está assim há três dias.",
+          "listen": "How long have you felt like this?",
+          "accepted": [
+            "For three days",
+            "For 3 days",
+            "Three days",
+            "About three days",
+            "For about three days",
+            "Since three days ago",
+            "I've felt like this for three days",
+            "I have felt like this for three days",
+            "For three days now",
+            "It started three days ago",
+            "Since Monday, three days ago"
+          ],
+          "commonErrors": [
+            {
+              "id": "since-three-days",
+              "match": "^since three days$",
+              "explanation_pt": "Para quantidade de tempo usamos \"for\": \"for three days\". \"Since\" vai com o ponto de início: \"since Monday\".",
+              "correction_en": "For three days."
+            },
+            {
+              "id": "there-is-three-days",
+              "match": "\\b(there is|there are|has|have) three days\\b",
+              "explanation_pt": "\"Há três dias\" (duração) é \"for three days\". \"There are three days\" é tradução literal.",
+              "correction_en": "For three days."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-05-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Simular uma consulta: marcar horário, descrever sintomas e entender o conselho.",
+        "prompts": [
+          "Good morning. What's the matter?",
+          "Do you have a fever?",
+          "Are you allergic to anything?"
+        ],
+        "watchFor": [
+          "\"I need to make a consult\"; o certo é \"make an appointment\".",
+          "\"You should to rest\" com \"to\" depois de \"should\".",
+          "\"I'm allergic of\" em vez de \"allergic to\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-05-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu gostaria de marcar uma consulta.\"",
+          "accepted": [
+            "I'd like to make an appointment",
+            "I would like to make an appointment",
+            "I'd like to book an appointment",
+            "I would like to book an appointment",
+            "I'd like to schedule an appointment",
+            "Can I make an appointment, please?",
+            "I'd like to see a doctor",
+            "I'd like to make an appointment with the doctor"
+          ],
+          "commonErrors": [
+            {
+              "id": "consult",
+              "match": "\\b(a|an) (consult|consultation)\\b",
+              "explanation_pt": "\"Consulta\" com hora marcada é \"appointment\". \"Consult\" é um verbo e \"consultation\" é bem formal.",
+              "correction_en": "I'd like to make an appointment."
+            },
+            {
+              "id": "mark-appointment",
+              "match": "\\bmark\\b",
+              "explanation_pt": "\"Marcar\" uma consulta é \"make\" ou \"book\". \"Mark\" é marcar com caneta.",
+              "correction_en": "I'd like to make an appointment."
+            }
+          ]
+        },
+        {
+          "id": "a2-05-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Você deveria descansar e beber muita água.\"",
+          "accepted": [
+            "You should rest and drink a lot of water",
+            "You should rest and drink lots of water",
+            "You should rest and drink plenty of water",
+            "You should get some rest and drink a lot of water",
+            "You ought to rest and drink a lot of water",
+            "You should take a rest and drink a lot of water"
+          ],
+          "commonErrors": [
+            {
+              "id": "should-to",
+              "match": "\\bshould to\\b",
+              "explanation_pt": "Depois de \"should\" o verbo vem sem \"to\": \"You should rest\".",
+              "correction_en": "You should rest and drink a lot of water."
+            },
+            {
+              "id": "much-water",
+              "match": "\\bdrink much water\\b",
+              "explanation_pt": "Em frases afirmativas, \"muita água\" soa mais natural como \"a lot of water\".",
+              "correction_en": "You should rest and drink a lot of water."
+            }
+          ]
+        },
+        {
+          "id": "a2-05-conv-3",
+          "kind": "order",
+          "instruction_pt": "Coloque as palavras na ordem certa para formar a frase.",
+          "accepted": ["I am allergic to penicillin"]
+        },
+        {
+          "id": "a2-05-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Você está no consultório. Responda ao médico e explique o que está sentindo.",
+          "prompt_en": "Good morning. Please sit down. So, what's the problem today? How long have you felt like this?",
+          "guidelines_pt": [
+            "Diga 2 sintomas: \"I have a sore throat and a fever.\"",
+            "Diga há quanto tempo: \"For two days.\" ou \"Since Monday.\"",
+            "Pergunte o que fazer: \"What should I do?\" ou \"Do I need any medicine?\""
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-05-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Revisar sintomas, \"hurt\" e conselhos com \"should\".",
+        "prompts": [
+          "What should I do if I have a cold?",
+          "What do you take when you have a headache?"
+        ],
+        "watchFor": ["\"Recipe\" em vez de \"prescription\".", "\"Should to\" com \"to\"."]
+      },
+      "exercises": [
+        {
+          "id": "a2-05-rev-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu preciso de uma receita para esse remédio?\"",
+          "accepted": [
+            "Do I need a prescription for this medicine?",
+            "Do I need a prescription for this medication?",
+            "Do I need a prescription for this?",
+            "Do I need a prescription for this drug?",
+            "Is a prescription necessary for this medicine?"
+          ],
+          "commonErrors": [
+            {
+              "id": "recipe",
+              "match": "\\brecipe\\b",
+              "explanation_pt": "Falso cognato: \"recipe\" é receita de comida. Receita médica é \"prescription\".",
+              "correction_en": "Do I need a prescription for this medicine?"
+            },
+            {
+              "id": "remedy",
+              "match": "\\bremedy\\b",
+              "explanation_pt": "\"Remédio\" (de farmácia) é \"medicine\". \"Remedy\" é usado mais para remédio caseiro ou solução.",
+              "correction_en": "Do I need a prescription for this medicine?"
+            },
+            {
+              "id": "i-need-question",
+              "match": "^i need a prescription\\b",
+              "explanation_pt": "Para fazer a pergunta, comece com \"Do\": \"Do I need...?\".",
+              "correction_en": "Do I need a prescription for this medicine?"
+            }
+          ]
+        },
+        {
+          "id": "a2-05-rev-2",
+          "kind": "fill",
+          "instruction_pt": "Complete com o verbo certo.",
+          "sentence": "My feet ___ after the long walk.",
+          "accepted": ["hurt", "ache"],
+          "commonErrors": [
+            {
+              "id": "hurts-plural",
+              "match": "^(hurts|aches)$",
+              "explanation_pt": "\"Feet\" é plural (eles), então o verbo fica sem \"-s\": \"My feet hurt\".",
+              "correction_en": "My feet hurt after the long walk."
+            }
+          ]
+        },
+        {
+          "id": "a2-05-rev-3",
+          "kind": "choice",
+          "instruction_pt": "Qual frase é um conselho?",
+          "options": ["You should see a doctor.", "You saw a doctor.", "You are a doctor."],
+          "answer": 0,
+          "explanation_pt": "\"Should\" + verbo é o jeito mais comum de dar conselho: \"você deveria...\"."
+        },
+        {
+          "id": "a2-05-rev-4",
+          "kind": "repeat",
+          "instruction_pt": "Para terminar, repita.",
+          "prompt": "I hope you feel better soon!",
+          "accepted": ["I hope you feel better soon", "Hope you feel better soon", "Get well soon"],
+          "commonErrors": [
+            {
+              "id": "get-better-fast",
+              "match": "\\bfeel better fast\\b",
+              "explanation_pt": "O natural é \"feel better soon\" (logo).",
+              "correction_en": "I hope you feel better soon!"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

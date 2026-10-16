@@ -113,3 +113,22 @@ test('rejects an invalid assessment file, naming it', async () => {
   const dir = await dirWith({ 'a.json': c.units[0] }, { 'placement.json': { levels: [] } })
   await expect(loadCourse(dir)).rejects.toThrow(/placement\.json/)
 })
+
+test('reads the audio index; course.audio is {} without one', async () => {
+  const c = makeCourse()
+  const dir = await dirWith({ 'a.json': c.units[0] })
+  expect((await loadCourse(dir)).audio).toEqual({})
+  await mkdir(join(dir, 'audio'))
+  await writeFile(join(dir, 'audio', '0123456789abcdef.mp3'), '')
+  await writeFile(join(dir, 'audio', 'index.json'), JSON.stringify({ Hi: '0123456789abcdef.mp3' }))
+  expect((await loadCourse(dir)).audio).toEqual({ Hi: '0123456789abcdef.mp3' })
+})
+
+test('rejects an audio index pointing to a missing file, naming it', async () => {
+  const c = makeCourse()
+  const dir = await dirWith({ 'a.json': c.units[0] })
+  await mkdir(join(dir, 'audio'))
+  await writeFile(join(dir, 'audio', 'index.json'), JSON.stringify({ Hi: 'fedcba9876543210.mp3' }))
+  await expect(loadCourse(dir)).rejects.toThrow(/fedcba9876543210\.mp3/)
+  await expect(loadCourse(dir)).rejects.toBeInstanceOf(ContentError)
+})

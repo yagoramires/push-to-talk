@@ -1,0 +1,529 @@
+{
+  "id": "a2-12-invitations",
+  "level": "A2",
+  "order": 12,
+  "title_pt": "Fazendo convites",
+  "title_en": "Making invitations",
+  "objective_pt": "Convidar alguém (\"Would you like to...?\", \"How about...?\"), aceitar ou recusar com educação e combinar dia, hora e lugar.",
+  "blocks": [
+    {
+      "id": "a2-12-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Introduzir o convite educado e as respostas \"I'd love to\" e \"I'm afraid I can't\".",
+        "prompts": [
+          "Would you like to have a coffee after class?",
+          "When did someone last invite you to a party?"
+        ],
+        "watchFor": [
+          "\"Would you like go?\" sem o \"to\".",
+          "Responder só \"I'd love!\"; o certo é \"I'd love to!\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-12-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita o convite em voz alta.",
+          "prompt": "Would you like to come to my party on Saturday?",
+          "accepted": ["Would you like to come to my party on Saturday?"],
+          "commonErrors": [
+            {
+              "id": "like-go-no-to",
+              "match": "\\bwould you like come\\b",
+              "explanation_pt": "Depois de \"would you like\" vem \"to\" + verbo: \"Would you like to come?\".",
+              "correction_en": "Would you like to come to my party on Saturday?"
+            }
+          ]
+        },
+        {
+          "id": "a2-12-warm-2",
+          "kind": "choice",
+          "instruction_pt": "Qual resposta aceita um convite com entusiasmo?",
+          "options": ["I'd love to!", "I'd love!", "I love to!"],
+          "answer": 0,
+          "explanation_pt": "\"I'd love to\" (eu adoraria) precisa do \"to\" no fim. \"I love to\" é \"eu adoro fazer isso\" em geral."
+        },
+        {
+          "id": "a2-12-warm-3",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Você quer ir ao cinema hoje à noite?\"",
+          "accepted": [
+            "Do you want to go to the movies tonight?",
+            "Do you want to go to the cinema tonight?",
+            "Would you like to go to the movies tonight?",
+            "Would you like to go to the cinema tonight?",
+            "Do you wanna go to the movies tonight?",
+            "Want to go to the movies tonight?",
+            "How about going to the movies tonight?",
+            "Do you want to see a movie tonight?",
+            "Would you like to see a movie tonight?"
+          ],
+          "commonErrors": [
+            {
+              "id": "today-night",
+              "match": "\\btoday (at|in the|at the) night\\b",
+              "explanation_pt": "\"Hoje à noite\" é uma palavra só: \"tonight\".",
+              "correction_en": "Do you want to go to the movies tonight?"
+            },
+            {
+              "id": "you-want-go",
+              "match": "^you want (to )?go\\b",
+              "explanation_pt": "Na pergunta, comece com \"Do\": \"Do you want to go...?\".",
+              "correction_en": "Do you want to go to the movies tonight?"
+            },
+            {
+              "id": "want-go-no-to",
+              "match": "\\bwant go\\b",
+              "explanation_pt": "Depois de \"want\" vem \"to\": \"want to go\".",
+              "correction_en": "Do you want to go to the movies tonight?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-12-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Aprender as expressões de convite e resposta: How about...?, I'd love to, I'm afraid I can't, maybe another time, I've got plans.",
+        "prompts": [
+          "How do you say no politely?",
+          "What do you say if you're busy?",
+          "How about meeting on Sunday?"
+        ],
+        "watchFor": [
+          "\"I have a compromise\" (do \"tenho um compromisso\"); \"compromise\" é acordo com concessões. O certo é \"I have plans\" ou \"I have an appointment\".",
+          "\"How about go...?\"; depois de \"How about\" vem \"-ing\": \"How about going...?\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-12-vocab-1",
+          "kind": "vocab",
+          "word_en": "How about...?",
+          "meaning_pt": "Que tal...?",
+          "example_en": "How about having lunch together tomorrow?"
+        },
+        {
+          "id": "a2-12-vocab-2",
+          "kind": "vocab",
+          "word_en": "I'm afraid I can't",
+          "meaning_pt": "infelizmente não posso",
+          "example_en": "Thanks for asking, but I'm afraid I can't. I'm working."
+        },
+        {
+          "id": "a2-12-vocab-3",
+          "kind": "vocab",
+          "word_en": "maybe another time",
+          "meaning_pt": "fica para a próxima",
+          "example_en": "Sorry, I'm busy tonight. Maybe another time?"
+        },
+        {
+          "id": "a2-12-vocab-4",
+          "kind": "match",
+          "instruction_pt": "Ligue cada expressão ao seu significado.",
+          "pairs": [
+            { "en": "I'd love to", "pt": "eu adoraria" },
+            { "en": "I've got plans", "pt": "eu tenho um compromisso" },
+            { "en": "Sounds great!", "pt": "Parece ótimo!" },
+            { "en": "Let me check", "pt": "Deixa eu ver" },
+            { "en": "Count me in!", "pt": "Pode contar comigo!" }
+          ]
+        },
+        {
+          "id": "a2-12-vocab-5",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Desculpa, eu não posso. Eu tenho um compromisso.\"",
+          "accepted": [
+            "Sorry, I can't. I have plans",
+            "Sorry, I can't. I've got plans",
+            "Sorry, I can't. I already have plans",
+            "Sorry, I can't. I have other plans",
+            "I'm sorry, I can't. I have plans",
+            "Sorry, I can't. I have something else",
+            "Sorry, I can't. I have an appointment",
+            "I'm afraid I can't. I have plans",
+            "Sorry, I can't make it. I have plans",
+            "Sorry, I can't. I'm busy"
+          ],
+          "commonErrors": [
+            {
+              "id": "compromise",
+              "match": "\\bcompromise\\b",
+              "explanation_pt": "Falso cognato: \"compromise\" é um acordo em que cada lado cede. \"Compromisso\" é \"plans\" ou \"an appointment\".",
+              "correction_en": "Sorry, I can't. I have plans."
+            },
+            {
+              "id": "no-can",
+              "match": "\\bi (no|not) can\\b",
+              "explanation_pt": "A negação de \"can\" é \"can't\" (cannot): \"I can't\".",
+              "correction_en": "Sorry, I can't. I have plans."
+            },
+            {
+              "id": "excuse-me-sorry",
+              "match": "^excuse me\\b",
+              "explanation_pt": "Para pedir desculpas ao recusar, use \"Sorry\". \"Excuse me\" é para chamar atenção ou pedir licença.",
+              "correction_en": "Sorry, I can't. I have plans."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-12-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Treinar a ligação de \"Would you\" (\"wú-dju\") e a entonação que sobe no convite e desce na resposta.",
+        "prompts": [
+          "Say \"Would you like to...?\" fast.",
+          "Say \"I'd love to!\" with a happy voice."
+        ],
+        "watchFor": [
+          "Separar \"would\" e \"you\" sem ligar os sons.",
+          "Recusar com voz seca; um tom mais suave (\"Oh, I'm sorry...\") soa mais educado."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-12-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita. \"Would you\" se junta: \"wú-dju\". A voz sobe no fim da pergunta.",
+          "prompt": "Would you like to join us for dinner?",
+          "accepted": ["Would you like to join us for dinner?"],
+          "commonErrors": []
+        },
+        {
+          "id": "a2-12-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repita com uma voz gentil: primeiro agradeça, depois recuse.",
+          "prompt": "Oh, thanks for asking, but I'm afraid I can't.",
+          "accepted": [
+            "Oh, thanks for asking, but I'm afraid I can't",
+            "Thanks for asking, but I'm afraid I can't",
+            "Oh, thank you for asking, but I'm afraid I can't"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "a2-12-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Em \"I can't\", como você mostra que é negativo, se o \"t\" quase não aparece?",
+          "options": [
+            "A vogal de \"can't\" é mais longa e forte: \"kænt\".",
+            "Fala \"can\" mais baixo.",
+            "Não tem diferença entre \"can\" e \"can't\"."
+          ],
+          "answer": 0,
+          "explanation_pt": "\"Can\" na frase é curtinho e fraco (\"kn\"). \"Can't\" é forte, com a vogal aberta e longa."
+        }
+      ]
+    },
+    {
+      "id": "a2-12-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Entender um convite com dia, hora e lugar e responder aceitando ou propondo outro horário.",
+        "prompts": ["Are you free on Friday?", "What time is good for you?"],
+        "watchFor": [
+          "\"I'm free in Friday\"; dias da semana usam \"on\".",
+          "\"Is good for me\" sem o \"it\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-12-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Ouça o convite e escolha o que foi combinado.",
+          "listen": "We're having a barbecue at my place on Sunday. It starts at one. Can you bring some drinks?",
+          "options": [
+            "Churrasco na casa dele no domingo à uma; levar bebidas.",
+            "Churrasco no parque no sábado às onze; levar carne.",
+            "Jantar na casa dele no domingo às sete; levar sobremesa."
+          ],
+          "answer": 0,
+          "explanation_pt": "\"At my place\" é na casa dele, \"on Sunday\" é no domingo, \"at one\" é à uma, e \"bring some drinks\" é levar bebidas."
+        },
+        {
+          "id": "a2-12-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça o convite e aceite com entusiasmo.",
+          "listen": "Would you like to come to my birthday party on Friday?",
+          "accepted": [
+            "I'd love to",
+            "Yes, I'd love to",
+            "I would love to",
+            "Yes, I'd love to. Thank you",
+            "Yes, I'd love to. Thanks for inviting me",
+            "I'd love to, thanks",
+            "Sure, I'd love to",
+            "Of course! I'd love to",
+            "Yes, of course",
+            "Yes, sure",
+            "That sounds great! I'd love to",
+            "Sounds great, I'd love to come",
+            "I'd love to come",
+            "Yes, I'd love to come"
+          ],
+          "commonErrors": [
+            {
+              "id": "would-love-no-to",
+              "match": "\\bi would love$",
+              "explanation_pt": "\"I'd love\" precisa do \"to\" no fim: \"I'd love to!\".",
+              "correction_en": "I'd love to!"
+            },
+            {
+              "id": "i-love-to",
+              "match": "^(yes )?i love to\\b",
+              "explanation_pt": "\"I love to\" é \"eu adoro\" (em geral). Para aceitar um convite, diga \"I'd love to\".",
+              "correction_en": "Yes, I'd love to!"
+            },
+            {
+              "id": "with-pleasure",
+              "match": "\\bwith (much )?pleasure\\b",
+              "explanation_pt": "\"With pleasure\" existe, mas soa formal para um convite de amigo. \"I'd love to!\" é mais natural.",
+              "correction_en": "Yes, I'd love to!"
+            }
+          ]
+        },
+        {
+          "id": "a2-12-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e diga que no sábado você não pode, mas no domingo você está livre.",
+          "listen": "Are you free on Saturday? Let's go hiking!",
+          "accepted": [
+            "Sorry, I can't on Saturday, but I'm free on Sunday",
+            "I can't on Saturday, but I'm free on Sunday",
+            "Saturday is bad for me, but I'm free on Sunday",
+            "I'm busy on Saturday, but I'm free on Sunday",
+            "Sorry, I'm busy on Saturday. How about Sunday?",
+            "I can't on Saturday. How about Sunday?",
+            "Not on Saturday, but I'm free on Sunday",
+            "Sorry, I'm not free on Saturday, but Sunday is fine",
+            "Saturday doesn't work for me, but I'm free on Sunday",
+            "I'm afraid I can't on Saturday, but I'm free on Sunday"
+          ],
+          "commonErrors": [
+            {
+              "id": "in-saturday",
+              "match": "\\b(in|at) (saturday|sunday)\\b",
+              "explanation_pt": "Dias da semana usam \"on\": \"on Saturday\", \"on Sunday\".",
+              "correction_en": "I can't on Saturday, but I'm free on Sunday."
+            },
+            {
+              "id": "i-am-free-sunday-no-be",
+              "match": "\\bbut i free\\b",
+              "explanation_pt": "Falta o verbo \"to be\": \"I'm free\".",
+              "correction_en": "I can't on Saturday, but I'm free on Sunday."
+            },
+            {
+              "id": "no-can",
+              "match": "\\bi (no|not) can\\b",
+              "explanation_pt": "A negação de \"can\" é \"can't\".",
+              "correction_en": "I can't on Saturday, but I'm free on Sunday."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-12-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Convidar, negociar o horário e confirmar o plano numa conversa completa.",
+        "prompts": [
+          "I'm having a party next week. Would you like to come?",
+          "What would you like to do this weekend?",
+          "Where should we meet?"
+        ],
+        "watchFor": [
+          "\"Let's to go\" com \"to\"; depois de \"let's\" vem o verbo direto.",
+          "\"We meet where?\" em vez de \"Where should we meet?\".",
+          "\"How about go\" em vez de \"How about going\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a2-12-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Que tal a gente se encontrar às sete na frente do cinema?\"",
+          "accepted": [
+            "How about meeting at seven in front of the cinema?",
+            "How about meeting at 7 in front of the cinema?",
+            "How about we meet at seven in front of the cinema?",
+            "What about meeting at seven in front of the cinema?",
+            "Why don't we meet at seven in front of the cinema?",
+            "Let's meet at seven in front of the cinema",
+            "How about meeting at seven in front of the movie theater?",
+            "Shall we meet at seven in front of the cinema?"
+          ],
+          "commonErrors": [
+            {
+              "id": "how-about-meet",
+              "match": "^(how|what) about (to )?meet at\\b",
+              "explanation_pt": "Depois de \"How about\" o verbo vem com \"-ing\": \"How about meeting...?\".",
+              "correction_en": "How about meeting at seven in front of the cinema?"
+            },
+            {
+              "id": "what-such",
+              "match": "^what (such|tal)\\b",
+              "explanation_pt": "\"Que tal\" é \"How about...?\" ou \"What about...?\".",
+              "correction_en": "How about meeting at seven in front of the cinema?"
+            },
+            {
+              "id": "front-of-no-in",
+              "match": "\\b(at the front of|on front of|in the front of)\\b",
+              "explanation_pt": "\"Na frente de\" é \"in front of\".",
+              "correction_en": "How about meeting at seven in front of the cinema?"
+            }
+          ]
+        },
+        {
+          "id": "a2-12-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Obrigado pelo convite! Vamos sim.\"",
+          "accepted": [
+            "Thanks for the invitation! We'll be there",
+            "Thank you for the invitation! We'll be there",
+            "Thanks for inviting us! We'll be there",
+            "Thank you for inviting us! We'll come",
+            "Thanks for the invite! We'll be there",
+            "Thanks for the invitation! We'll definitely come",
+            "Thanks for inviting us! We'd love to come",
+            "Thank you for the invitation! We'll come"
+          ],
+          "commonErrors": [
+            {
+              "id": "convite",
+              "match": "\\b(convite|invite of)\\b",
+              "explanation_pt": "\"Convite\" é \"invitation\" (ou \"invite\", informal).",
+              "correction_en": "Thanks for the invitation! We'll be there."
+            },
+            {
+              "id": "we-go-yes",
+              "match": "\\bwe go yes\\b|\\bwe will go yes\\b",
+              "explanation_pt": "O \"sim\" de reforço não se traduz. Diga \"We'll be there\" ou \"We'll definitely come\".",
+              "correction_en": "Thanks for the invitation! We'll be there."
+            },
+            {
+              "id": "thanks-by",
+              "match": "\\bthanks? (you )?by\\b",
+              "explanation_pt": "\"Obrigado por\" é \"thanks for\".",
+              "correction_en": "Thanks for the invitation! We'll be there."
+            }
+          ]
+        },
+        {
+          "id": "a2-12-conv-3",
+          "kind": "order",
+          "instruction_pt": "Coloque as palavras na ordem certa para formar o convite.",
+          "accepted": ["Let's go for a walk in the park"]
+        },
+        {
+          "id": "a2-12-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Convide a Sam para fazer algo no fim de semana. Ela já tem um compromisso no sábado, então combinem outro dia.",
+          "prompt_en": "Hey! It's so good to hear from you. I'm busy on Saturday, I've got plans with my family. But what did you want to ask me?",
+          "guidelines_pt": [
+            "Faça o convite: \"Would you like to...?\" ou \"How about...?\".",
+            "Proponha outro dia e horário: \"Are you free on Sunday?\", \"How about at four?\".",
+            "Combine o lugar e confirme: \"Let's meet at... See you then!\"."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-12-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Revisar convites, aceitar e recusar, e as preposições de tempo.",
+        "prompts": ["Invite me to do something next week.", "How do you say no politely?"],
+        "watchFor": ["\"I have a compromise\".", "\"Let's to go\"."]
+      },
+      "exercises": [
+        {
+          "id": "a2-12-rev-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Vamos tomar um café amanhã?\"",
+          "accepted": [
+            "Shall we have a coffee tomorrow?",
+            "Do you want to have a coffee tomorrow?",
+            "Would you like to have a coffee tomorrow?",
+            "Let's have a coffee tomorrow",
+            "How about a coffee tomorrow?",
+            "How about having a coffee tomorrow?",
+            "Do you want to get a coffee tomorrow?",
+            "Want to grab a coffee tomorrow?",
+            "Do you want to grab a coffee tomorrow?",
+            "Shall we get a coffee tomorrow?"
+          ],
+          "commonErrors": [
+            {
+              "id": "take-a-coffee",
+              "match": "\\btake (a )?coffee\\b",
+              "explanation_pt": "\"Tomar um café\" é \"have a coffee\" (ou \"get/grab a coffee\"), e não \"take a coffee\".",
+              "correction_en": "Shall we have a coffee tomorrow?"
+            },
+            {
+              "id": "lets-to",
+              "match": "\\blet us to\\b",
+              "explanation_pt": "Depois de \"let's\" vem o verbo sem \"to\": \"Let's have a coffee\".",
+              "correction_en": "Let's have a coffee tomorrow."
+            },
+            {
+              "id": "we-go",
+              "match": "^(we go|go we)\\b",
+              "explanation_pt": "\"Vamos...?\" como convite é \"Shall we...?\" ou \"Let's...\".",
+              "correction_en": "Shall we have a coffee tomorrow?"
+            }
+          ]
+        },
+        {
+          "id": "a2-12-rev-2",
+          "kind": "fill",
+          "instruction_pt": "Complete o convite.",
+          "sentence": "How about ___ to the beach on Sunday?",
+          "accepted": ["going"],
+          "commonErrors": [
+            {
+              "id": "how-about-go",
+              "match": "^(go|to go|we go)$",
+              "explanation_pt": "Depois de \"How about\" o verbo leva \"-ing\": \"How about going...?\".",
+              "correction_en": "How about going to the beach on Sunday?"
+            }
+          ]
+        },
+        {
+          "id": "a2-12-rev-3",
+          "kind": "choice",
+          "instruction_pt": "Qual é a recusa mais educada?",
+          "options": [
+            "Thanks for asking, but I'm afraid I can't. Maybe another time?",
+            "No. I don't want.",
+            "No, I have a compromise."
+          ],
+          "answer": 0,
+          "explanation_pt": "Agradecer, recusar com \"I'm afraid I can't\" e sugerir outra vez é o jeito educado. \"Compromise\" é falso cognato."
+        },
+        {
+          "id": "a2-12-rev-4",
+          "kind": "repeat",
+          "instruction_pt": "Para terminar, repita.",
+          "prompt": "Sounds great! See you on Sunday, then.",
+          "accepted": [
+            "Sounds great! See you on Sunday, then",
+            "Sounds great! See you on Sunday",
+            "That sounds great! See you on Sunday, then"
+          ],
+          "commonErrors": []
+        }
+      ]
+    }
+  ]
+}

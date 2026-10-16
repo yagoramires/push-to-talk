@@ -6,7 +6,6 @@ import { checkAnswer, normalize } from '../src/shared/matcher'
 
 test('all units in content/ are valid', async () => {
   const course = await loadCourse(join(__dirname, '..', 'content'))
-  expect(course.units.map((u) => u.id)).toEqual(['a1-01-greetings', 'a1-02-numbers-age'])
   for (const u of course.units) {
     expect(u.blocks.map((b) => b.kind)).toEqual([...BLOCK_KINDS])
     const total = u.blocks.reduce((s, b) => s + b.minutes, 0)
@@ -123,7 +122,7 @@ test('real course loads the placement (A1-C1) and the A1 exam', async () => {
   expect(exam?.parts.map((p) => p.items.length)).toEqual([5, 5, 5, 5])
   for (const l of course.placement!.levels)
     expect(new Set(l.items.map((i) => i.exercise.kind)).size).toBeGreaterThanOrEqual(2)
-  for (const e of assessmentExercises(course)) expect(e.id).toMatch(/^(pl|ex-a1)-/)
+  for (const e of assessmentExercises(course)) expect(e.id).toMatch(/^(pl|ex-(a1|a2|b1|b2|c1))-/)
 })
 
 test('assessments: accepted answers pass checkAnswer and no commonError rejects them', async () => {

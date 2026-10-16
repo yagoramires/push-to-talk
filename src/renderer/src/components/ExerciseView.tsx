@@ -15,6 +15,7 @@ import {
   type CheckResult,
   type FinalVerdict
 } from '../../../shared/matcher'
+import { listenTexts } from '../../../shared/listen'
 import type { Mode } from '../../../shared/progress'
 import { shuffled, vocabAsRepeat } from '../flow'
 import ListenButton from './ListenButton'
@@ -51,7 +52,7 @@ export default function ExerciseView({
             </p>
           </div>
           <div className="actions">
-            <ListenButton text={`${ex.word_en}. ${ex.example_en}`} />
+            <ListenButton text={listenTexts(ex)[0]} />
           </div>
           <SpokenAnswer
             check={vocabAsRepeat(ex)}
@@ -70,7 +71,7 @@ export default function ExerciseView({
             {ex.prompt_en}
           </p>
           <div className="actions">
-            <ListenButton text={ex.prompt_en} />
+            <ListenButton text={listenTexts(ex)[0]} />
           </div>
           <FreeSpeakAnswer exercise={ex} mode={mode} exam={exam} onFinal={onFinal} />
         </article>
@@ -78,7 +79,7 @@ export default function ExerciseView({
     case 'repeat':
     case 'translate':
     case 'listen_answer': {
-      const listenText = ex.listen ?? ex.prompt
+      const [listenText] = listenTexts(ex)
       return (
         <article className="exercise">
           <p className="instruction">{ex.instruction_pt}</p>
@@ -160,7 +161,7 @@ function ChoiceView({ ex, locked, exam, onCheck }: ViewProps<ChoiceExercise>): R
       )}
       {ex.listen && (
         <div className="actions">
-          <ListenButton text={ex.listen} />
+          <ListenButton text={listenTexts(ex)[0]} />
         </div>
       )}
       <div className="options">

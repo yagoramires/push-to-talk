@@ -1,0 +1,469 @@
+{
+  "id": "a1-04-daily-routine",
+  "level": "A1",
+  "order": 4,
+  "title_pt": "Rotina diária",
+  "title_en": "Daily routine",
+  "objective_pt": "Contar o que você faz num dia comum (acordar, tomar café, trabalhar, dormir) com o presente simples, e perguntar \"What time do you get up?\".",
+  "blocks": [
+    {
+      "id": "a1-04-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Aquecer com ações do dia a dia que o aluno faz toda manhã.",
+        "prompts": ["What do you do in the morning?", "Do you drink coffee every day?"],
+        "watchFor": [
+          "Dizer \"I wake up 7\" sem o \"at\".",
+          "Traduzir \"tomar café\" como \"take coffee\"; o natural é \"have breakfast\" ou \"drink coffee\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-04-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita em voz alta.",
+          "prompt": "I get up and I have breakfast.",
+          "accepted": ["I get up and I have breakfast", "I get up and have breakfast"],
+          "commonErrors": []
+        },
+        {
+          "id": "a1-04-warm-2",
+          "kind": "choice",
+          "instruction_pt": "O que significa \"have breakfast\"?",
+          "options": ["tomar café da manhã", "almoçar", "jantar"],
+          "answer": 0,
+          "explanation_pt": "\"Breakfast\" é o café da manhã. Almoço é \"lunch\" e jantar é \"dinner\"."
+        },
+        {
+          "id": "a1-04-warm-3",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu tomo café da manhã todo dia.\"",
+          "accepted": [
+            "I have breakfast every day",
+            "I eat breakfast every day",
+            "Every day I have breakfast",
+            "I have breakfast every morning",
+            "I eat breakfast every morning"
+          ],
+          "commonErrors": [
+            {
+              "id": "take-breakfast",
+              "match": "\\btake (breakfast|coffee)\\b",
+              "explanation_pt": "\"Tomar café\" não é \"take\". Para refeições usamos \"have\": \"I have breakfast\".",
+              "correction_en": "I have breakfast every day."
+            },
+            {
+              "id": "all-days",
+              "match": "\\ball (the )?days\\b",
+              "explanation_pt": "\"Todo dia\" é \"every day\". \"All days\" é tradução literal.",
+              "correction_en": "I have breakfast every day."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-04-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Aprender os verbos da rotina: wake up, get up, take a shower, go to work, have lunch, go to bed.",
+        "prompts": [
+          "When do you take a shower?",
+          "Do you go to work by bus?",
+          "When do you go to bed?"
+        ],
+        "watchFor": [
+          "Dizer \"take a bath\" para banho de chuveiro; o comum é \"take a shower\".",
+          "Esquecer o \"to\" em \"go to work\" ou colocar \"to\" em \"go home\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-04-vocab-1",
+          "kind": "vocab",
+          "word_en": "wake up",
+          "meaning_pt": "acordar",
+          "example_en": "I wake up at six."
+        },
+        {
+          "id": "a1-04-vocab-2",
+          "kind": "vocab",
+          "word_en": "take a shower",
+          "meaning_pt": "tomar banho",
+          "example_en": "I take a shower in the morning."
+        },
+        {
+          "id": "a1-04-vocab-3",
+          "kind": "vocab",
+          "word_en": "go to bed",
+          "meaning_pt": "ir dormir, deitar",
+          "example_en": "I go to bed at eleven."
+        },
+        {
+          "id": "a1-04-vocab-4",
+          "kind": "match",
+          "instruction_pt": "Ligue cada expressão ao seu significado.",
+          "pairs": [
+            {
+              "en": "get up",
+              "pt": "levantar"
+            },
+            {
+              "en": "go to work",
+              "pt": "ir para o trabalho"
+            },
+            {
+              "en": "have lunch",
+              "pt": "almoçar"
+            },
+            {
+              "en": "go home",
+              "pt": "ir para casa"
+            },
+            {
+              "en": "have dinner",
+              "pt": "jantar"
+            }
+          ]
+        },
+        {
+          "id": "a1-04-vocab-5",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu tomo banho de manhã.\"",
+          "accepted": [
+            "I take a shower in the morning",
+            "I have a shower in the morning",
+            "I shower in the morning",
+            "In the morning I take a shower",
+            "I take a shower every morning"
+          ],
+          "commonErrors": [
+            {
+              "id": "take-bath",
+              "match": "\\btake (a )?bath\\b",
+              "explanation_pt": "\"Bath\" é banho de banheira. Banho de chuveiro é \"shower\": \"I take a shower\".",
+              "correction_en": "I take a shower in the morning."
+            },
+            {
+              "id": "of-morning",
+              "match": "\\b(of|at|on) (the )?morning\\b",
+              "explanation_pt": "\"De manhã\" é \"in the morning\", com \"in\".",
+              "correction_en": "I take a shower in the morning."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-04-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Treinar o \"-s\" da terceira pessoa (works, gets, watches) sem vogal extra.",
+        "prompts": ["Say \"she works\" and \"she watches\".", "How many syllables in \"watches\"?"],
+        "watchFor": [
+          "Colocar vogal no fim: \"worki\", \"workis\".",
+          "Esquecer o \"s\": \"she work\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-04-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita. O \"s\" de \"works\" e \"gets\" é curto, sem vogal no fim.",
+          "prompt": "She gets up early and works all day.",
+          "accepted": ["She gets up early and works all day"],
+          "commonErrors": [
+            {
+              "id": "she-get",
+              "match": "\\bshe (get|work)\\b",
+              "explanation_pt": "Com he, she e it o verbo ganha \"s\": \"she gets\", \"she works\".",
+              "correction_en": "She gets up early and works all day."
+            }
+          ]
+        },
+        {
+          "id": "a1-04-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repita. \"Watches\" tem duas sílabas: \"wat-chiz\".",
+          "prompt": "He watches TV at night.",
+          "accepted": ["He watches TV at night"],
+          "commonErrors": [
+            {
+              "id": "he-watch",
+              "match": "\\bhe watch\\b",
+              "explanation_pt": "Com \"he\" o verbo ganha \"es\": \"he watches\".",
+              "correction_en": "He watches TV at night."
+            }
+          ]
+        },
+        {
+          "id": "a1-04-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Em qual verbo o final \"-es\" forma uma sílaba a mais?",
+          "options": ["watches", "works", "gets"],
+          "answer": 0,
+          "explanation_pt": "Depois de \"ch\", \"sh\", \"s\" e \"x\" o \"-es\" vira uma sílaba: \"wat-ches\". \"Works\" e \"gets\" têm uma sílaba só."
+        }
+      ]
+    },
+    {
+      "id": "a1-04-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Entender a rotina de outra pessoa e responder perguntas sobre a sua.",
+        "prompts": ["What time do you get up?", "What do you do after work?"],
+        "watchFor": [
+          "Responder \"I get up in 7\"; o certo é \"at 7\".",
+          "Usar \"do\" na resposta afirmativa: \"I do get up\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-04-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Ouça e escolha o que você entendeu.",
+          "listen": "Tom gets up at six and goes to work by bus.",
+          "options": [
+            "Tom goes to work by bus.",
+            "Tom goes to work by car.",
+            "Tom gets up at seven."
+          ],
+          "answer": 0,
+          "explanation_pt": "Ele disse \"goes to work by bus\": vai de ônibus. E acorda às seis (six)."
+        },
+        {
+          "id": "a1-04-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça a pergunta e responda que você levanta às 7.",
+          "listen": "What time do you get up?",
+          "accepted": [
+            "I get up at 7",
+            "I get up at seven",
+            "I get up at 7 o'clock",
+            "I get up at seven o'clock",
+            "At 7",
+            "At seven",
+            "At seven o'clock",
+            "I usually get up at 7",
+            "I usually get up at seven",
+            "I wake up at 7",
+            "I wake up at seven",
+            "Usually at seven",
+            "I get up at seven in the morning",
+            "I get up at 7 a.m."
+          ],
+          "commonErrors": [
+            {
+              "id": "in-time",
+              "match": "\\b(in|on) seven\\b",
+              "explanation_pt": "Com horário usamos \"at\": \"at seven\".",
+              "correction_en": "I get up at seven."
+            },
+            {
+              "id": "missing-at",
+              "match": "\\bup seven\\b",
+              "explanation_pt": "Falta o \"at\" antes do horário: \"I get up at seven\".",
+              "correction_en": "I get up at seven."
+            }
+          ]
+        },
+        {
+          "id": "a1-04-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e responda: você vai trabalhar de ônibus.",
+          "listen": "How do you go to work?",
+          "accepted": [
+            "I go to work by bus",
+            "By bus",
+            "I go by bus",
+            "I take the bus",
+            "I take a bus",
+            "I take the bus to work",
+            "I usually go to work by bus",
+            "I usually take the bus",
+            "I go to work on the bus"
+          ],
+          "commonErrors": [
+            {
+              "id": "of-bus",
+              "match": "\\b(of|in) bus\\b",
+              "explanation_pt": "\"De ônibus\" é \"by bus\" (ou \"I take the bus\"). \"Of bus\" é tradução literal.",
+              "correction_en": "I go to work by bus."
+            },
+            {
+              "id": "by-the-bus",
+              "match": "\\bby (the|a) bus\\b",
+              "explanation_pt": "Com \"by\" não usamos artigo: \"by bus\", \"by car\".",
+              "correction_en": "I go to work by bus."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-04-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Descrever um dia comum em sequência, com horários e com \"then\" e \"after that\".",
+        "prompts": [
+          "Tell me about your typical day.",
+          "What do you do in the evening?",
+          "Does your partner work at home?"
+        ],
+        "watchFor": [
+          "Esquecer o \"s\" na terceira pessoa: \"my wife work\".",
+          "Usar \"make\" para tudo: \"make lunch\" está certo, mas \"make a shower\" não.",
+          "Dizer \"I go to home\"; com \"home\" não vai \"to\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-04-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu chego em casa às seis.\"",
+          "accepted": [
+            "I get home at six",
+            "I get home at 6",
+            "I arrive home at six",
+            "I arrive home at 6",
+            "I come home at six",
+            "I come home at 6",
+            "I get home at six o'clock",
+            "I go home at six"
+          ],
+          "commonErrors": [
+            {
+              "id": "arrive-in-home",
+              "match": "\\b(arrive|get|come|go) (in|to|at) (my )?home\\b",
+              "explanation_pt": "Com \"home\" não usamos preposição: \"I get home\", \"I go home\".",
+              "correction_en": "I get home at six."
+            },
+            {
+              "id": "chego-in-time",
+              "match": "\\bhome (in|on) six\\b",
+              "explanation_pt": "Com horário usamos \"at\": \"at six\".",
+              "correction_en": "I get home at six."
+            }
+          ]
+        },
+        {
+          "id": "a1-04-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Minha esposa trabalha em casa.\"",
+          "accepted": [
+            "My wife works at home",
+            "My wife works from home",
+            "My wife is working from home"
+          ],
+          "commonErrors": [
+            {
+              "id": "wife-work",
+              "match": "\\bwife work\\b",
+              "explanation_pt": "\"My wife\" é \"she\", então o verbo ganha \"s\": \"works\".",
+              "correction_en": "My wife works at home."
+            },
+            {
+              "id": "in-home",
+              "match": "\\bin (the )?home\\b",
+              "explanation_pt": "\"Em casa\" é \"at home\" (ou \"from home\" para trabalho).",
+              "correction_en": "My wife works at home."
+            }
+          ]
+        },
+        {
+          "id": "a1-04-conv-3",
+          "kind": "order",
+          "instruction_pt": "Coloque as palavras na ordem certa para formar a pergunta.",
+          "accepted": ["What time do you go to bed"]
+        },
+        {
+          "id": "a1-04-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Conte como é um dia normal seu, do acordar até dormir.",
+          "prompt_en": "My day is simple. I get up at seven, I go to work, and I go to bed at eleven. What about your day?",
+          "guidelines_pt": [
+            "Diga a hora que você acorda: \"I get up at...\".",
+            "Use 3 ou 4 ações em ordem, com \"then\" e \"after that\".",
+            "Termine com a hora de dormir: \"I go to bed at...\"."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-04-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Revisar os verbos da rotina e o \"s\" da terceira pessoa.",
+        "prompts": ["What does your friend do in the morning?", "Do you work on Saturdays?"],
+        "watchFor": ["Esquecer o \"s\" de he/she.", "Usar \"in\" com horário."]
+      },
+      "exercises": [
+        {
+          "id": "a1-04-rev-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Ele almoça ao meio-dia.\"",
+          "accepted": [
+            "He has lunch at noon",
+            "He has lunch at midday",
+            "He has lunch at twelve",
+            "He has lunch at 12",
+            "He eats lunch at noon",
+            "He eats lunch at twelve",
+            "He has lunch at twelve o'clock"
+          ],
+          "commonErrors": [
+            {
+              "id": "he-have-lunch",
+              "match": "\\bhe (have|eat) lunch\\b",
+              "explanation_pt": "Com \"he\" o verbo muda: \"has\" (de have) ou \"eats\".",
+              "correction_en": "He has lunch at noon."
+            },
+            {
+              "id": "lunches",
+              "match": "\\bhe lunch",
+              "explanation_pt": "\"Almoçar\" em inglês é \"have lunch\", não um verbo só.",
+              "correction_en": "He has lunch at noon."
+            }
+          ]
+        },
+        {
+          "id": "a1-04-rev-2",
+          "kind": "fill",
+          "instruction_pt": "Complete com o verbo \"go\" na forma certa.",
+          "sentence": "She ___ to work by car.",
+          "accepted": ["goes"],
+          "commonErrors": [
+            {
+              "id": "she-go",
+              "match": "^(go|gos)$",
+              "explanation_pt": "Com \"she\" o verbo \"go\" vira \"goes\".",
+              "correction_en": "She goes to work by car."
+            }
+          ]
+        },
+        {
+          "id": "a1-04-rev-3",
+          "kind": "choice",
+          "instruction_pt": "Qual frase está certa?",
+          "options": ["I go home at five.", "I go to home at five.", "I go in home at five."],
+          "answer": 0,
+          "explanation_pt": "Com \"home\" não usamos \"to\": \"go home\"."
+        },
+        {
+          "id": "a1-04-rev-4",
+          "kind": "repeat",
+          "instruction_pt": "Para terminar, repita.",
+          "prompt": "I go to bed at eleven. Good night!",
+          "accepted": ["I go to bed at eleven. Good night", "I go to bed at 11. Good night"],
+          "commonErrors": []
+        }
+      ]
+    }
+  ]
+}

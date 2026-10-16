@@ -1,0 +1,447 @@
+{
+  "id": "c1-06-leading-discussion",
+  "level": "C1",
+  "order": 6,
+  "title_pt": "Conduzindo uma discussão",
+  "title_en": "Leading a discussion",
+  "objective_pt": "Chair a discussion: open it, bring people in (\"What's your take, Ana?\"), keep it on track (\"Let's park that for now\"), manage interruptions and wrap up with a summary.",
+  "blocks": [
+    {
+      "id": "c1-06-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Explore how the learner opens and steers a group conversation.",
+        "prompts": [
+          "You're chairing a meeting. How do you start?",
+          "Someone keeps going off topic. What do you say?"
+        ],
+        "watchFor": [
+          "\"Let's begin\" repeated mechanically; vary with \"Shall we get started?\".",
+          "\"Pass the word to\" (from \"passar a palavra\")."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-06-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repeat in a warm, confident tone.",
+          "prompt": "Right, shall we get started?",
+          "accepted": ["Right, shall we get started?", "OK, shall we get started?"],
+          "commonErrors": []
+        },
+        {
+          "id": "c1-06-warm-2",
+          "kind": "choice",
+          "instruction_pt": "Which phrase invites a quiet participant to speak?",
+          "options": [
+            "Let's move on.",
+            "Ana, I'd be interested to hear your thoughts on this.",
+            "Can we wrap this up?"
+          ],
+          "answer": 1,
+          "explanation_pt": "Naming the person and showing interest (\"I'd be interested to hear...\") brings them in gently."
+        },
+        {
+          "id": "c1-06-warm-3",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English: \"Agora eu passo a palavra para o João.\"",
+          "accepted": [
+            "Now I'll hand over to João",
+            "I'll hand over to João now",
+            "Now I'll hand it over to João",
+            "Let me hand over to João",
+            "I'll pass it over to João",
+            "Over to you, João",
+            "Now over to João",
+            "I'll turn it over to João now",
+            "João, the floor is yours"
+          ],
+          "commonErrors": [
+            {
+              "id": "pass-the-word",
+              "match": "\\bpass the word\\b",
+              "explanation_pt": "\"Passar a palavra\" is \"hand over to someone\" or \"Over to you\". \"Pass the word\" means to spread a message.",
+              "correction_en": "Now I'll hand over to João."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-06-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Chairing language: park an issue, get sidetracked, bring someone in, the floor is yours, to wrap up.",
+        "prompts": ["When would you \"park\" an issue?", "How do you wrap up a meeting?"],
+        "watchFor": [
+          "\"Agenda\" used to mean a diary (\"agenda\" pessoal is \"diary\" or \"planner\").",
+          "\"Pauta\" translated as \"pattern\"; it's \"agenda\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-06-vocab-1",
+          "kind": "vocab",
+          "word_en": "to park (an issue)",
+          "meaning_pt": "deixar (um assunto) para depois",
+          "example_en": "Let's park that for now and come back to it later."
+        },
+        {
+          "id": "c1-06-vocab-2",
+          "kind": "vocab",
+          "word_en": "to get sidetracked",
+          "meaning_pt": "desviar do assunto",
+          "example_en": "I think we're getting a bit sidetracked."
+        },
+        {
+          "id": "c1-06-vocab-3",
+          "kind": "vocab",
+          "word_en": "to wrap up",
+          "meaning_pt": "encerrar, finalizar",
+          "example_en": "Let's wrap up with the action points."
+        },
+        {
+          "id": "c1-06-vocab-4",
+          "kind": "match",
+          "instruction_pt": "Match each chairing expression with its meaning.",
+          "pairs": [
+            {
+              "en": "agenda",
+              "pt": "pauta"
+            },
+            {
+              "en": "action points",
+              "pt": "próximos passos, tarefas"
+            },
+            {
+              "en": "to bring someone in",
+              "pt": "convidar alguém a falar"
+            },
+            {
+              "en": "the floor is yours",
+              "pt": "a palavra é sua"
+            },
+            {
+              "en": "any other business",
+              "pt": "assuntos gerais"
+            }
+          ]
+        },
+        {
+          "id": "c1-06-vocab-5",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English: \"Acho que estamos fugindo do assunto.\"",
+          "accepted": [
+            "I think we're getting sidetracked",
+            "I think we're getting off topic",
+            "I think we're going off topic",
+            "I think we're drifting off topic",
+            "I think we're getting off track",
+            "I think we're straying from the point",
+            "I think we're getting a bit sidetracked",
+            "I think we're going off on a tangent"
+          ],
+          "commonErrors": [
+            {
+              "id": "running-from-subject",
+              "match": "\\b(running|escaping|fleeing) (away )?from the (subject|topic|matter)\\b",
+              "explanation_pt": "\"Fugir do assunto\" is \"get sidetracked\" or \"go off topic\". \"Run away from the subject\" means avoiding it on purpose.",
+              "correction_en": "I think we're getting sidetracked."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-06-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Signpost transitions clearly with a pause and falling intonation (\"Right.\", \"OK, so...\", \"Moving on...\").",
+        "prompts": [
+          "Say \"Right. Moving on.\" as a chair would.",
+          "How do you sound firm but friendly?"
+        ],
+        "watchFor": [
+          "Rising intonation on transitions, which sounds unsure.",
+          "No pause between topics, so listeners miss the shift."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-06-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repeat. Pause after \"Right\" and let your voice fall.",
+          "prompt": "Right. Let's move on to the next item.",
+          "accepted": ["Right. Let's move on to the next item"],
+          "commonErrors": []
+        },
+        {
+          "id": "c1-06-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repeat, firm but friendly, to stop an interruption.",
+          "prompt": "Sorry, Mark, could you let her finish?",
+          "accepted": ["Sorry, Mark, could you let her finish?"],
+          "commonErrors": []
+        },
+        {
+          "id": "c1-06-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Which intonation sounds more in control when changing topic?",
+          "options": [
+            "Rising: \"Moving on?\"",
+            "Falling: \"Moving on.\"",
+            "Flat and fast with no pause"
+          ],
+          "answer": 1,
+          "explanation_pt": "A falling tone plus a short pause signals a clear, confident transition."
+        }
+      ]
+    },
+    {
+      "id": "c1-06-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "React as a chair to what participants say.",
+        "prompts": ["What does the participant want?", "How would you respond as chair?"],
+        "watchFor": [
+          "Ignoring the off-topic remark instead of parking it.",
+          "Abrupt replies (\"No. Next.\")."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-06-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Listen. What is the chair doing?",
+          "listen": "That's a really interesting point, Lisa, but it's slightly outside the scope of today's meeting. Could we take it offline?",
+          "options": [
+            "Asking Lisa to leave the meeting.",
+            "Postponing Lisa's point to a separate conversation.",
+            "Agreeing to discuss Lisa's point now."
+          ],
+          "answer": 1,
+          "explanation_pt": "\"Take it offline\" means to discuss it separately, outside the meeting."
+        },
+        {
+          "id": "c1-06-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Listen. A participant starts a new topic. As chair, park it politely.",
+          "listen": "While we're here, can we talk about the office party?",
+          "accepted": [
+            "Let's park that for now",
+            "Can we park that for now?",
+            "Good idea, but let's park that for now",
+            "Let's come back to that later",
+            "Let's leave that for another time",
+            "Can we come back to that at the end?",
+            "Let's save that for any other business",
+            "Let's keep that for the end of the meeting",
+            "Could we take that offline?",
+            "Let's discuss that another time"
+          ],
+          "commonErrors": [
+            {
+              "id": "leave-for-after",
+              "match": "\\b(leave|let) (that|it) for after\\b",
+              "explanation_pt": "\"Deixar para depois\" is \"leave it for later\" or \"come back to it later\", not \"for after\".",
+              "correction_en": "Let's park that for now and come back to it later."
+            }
+          ]
+        },
+        {
+          "id": "c1-06-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Listen and wrap up the meeting by asking for final comments.",
+          "listen": "I think that's everything on the agenda.",
+          "accepted": [
+            "Great. Does anyone have anything else to add?",
+            "Does anyone have anything to add?",
+            "Is there anything else before we wrap up?",
+            "Any final comments before we wrap up?",
+            "Any other business?",
+            "Anything else before we finish?",
+            "Before we finish, does anyone have any final thoughts?",
+            "Does anyone want to add anything before we close?"
+          ],
+          "commonErrors": [
+            {
+              "id": "someone-has",
+              "match": "\\bsomeone (has|have) (something|anything)\\b",
+              "explanation_pt": "Questions usually use \"anyone\" and \"anything\": \"Does anyone have anything to add?\".",
+              "correction_en": "Does anyone have anything else to add?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-06-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "The learner chairs a short mock meeting while the teacher plays difficult participants.",
+        "prompts": [
+          "Open the meeting and state the goal.",
+          "(Teacher interrupts repeatedly.) Handle me.",
+          "Summarise what we agreed and assign action points."
+        ],
+        "watchFor": [
+          "\"Pass the word\", \"pauta\" as \"pattern\".",
+          "Forgetting to summarise before closing."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-06-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English: \"O objetivo da reunião de hoje é decidir o orçamento.\"",
+          "accepted": [
+            "The aim of today's meeting is to decide on the budget",
+            "The purpose of today's meeting is to decide on the budget",
+            "The goal of today's meeting is to decide on the budget",
+            "The objective of today's meeting is to decide the budget",
+            "Today's meeting is about deciding the budget",
+            "The aim of today's meeting is to agree on the budget",
+            "Today we need to decide on the budget"
+          ],
+          "commonErrors": [
+            {
+              "id": "meeting-of-today",
+              "match": "\\bmeeting of today\\b",
+              "explanation_pt": "\"Reunião de hoje\" is \"today's meeting\", not \"the meeting of today\".",
+              "correction_en": "The aim of today's meeting is to decide on the budget."
+            },
+            {
+              "id": "budget-quote",
+              "match": "\\bthe quote\\b",
+              "explanation_pt": "\"Orçamento\" as an amount to spend is \"budget\". A \"quote\" is a price estimate from a supplier.",
+              "correction_en": "The aim of today's meeting is to decide on the budget."
+            }
+          ]
+        },
+        {
+          "id": "c1-06-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English: \"Só para resumir: concordamos em adiar o lançamento.\"",
+          "accepted": [
+            "Just to sum up, we've agreed to postpone the launch",
+            "Just to summarise, we've agreed to postpone the launch",
+            "Just to summarize, we agreed to postpone the launch",
+            "So, to sum up, we've agreed to delay the launch",
+            "To sum up, we've agreed to push back the launch",
+            "Just to recap, we've agreed to postpone the launch",
+            "Just to recap, we agreed to delay the launch"
+          ],
+          "commonErrors": [
+            {
+              "id": "agreed-in",
+              "match": "\\bagreed in\\b",
+              "explanation_pt": "\"Concordar em\" fazer algo is \"agree to do something\": \"agreed to postpone\".",
+              "correction_en": "Just to sum up, we've agreed to postpone the launch."
+            },
+            {
+              "id": "resume",
+              "match": "\\bto resume\\b",
+              "explanation_pt": "\"Resumir\" is \"sum up\", \"summarise\" or \"recap\". \"Resume\" means \"retomar\".",
+              "correction_en": "Just to sum up, we've agreed to postpone the launch."
+            }
+          ]
+        },
+        {
+          "id": "c1-06-conv-3",
+          "kind": "order",
+          "instruction_pt": "Put the words in order to bring someone in.",
+          "accepted": ["Carla what's your take on this"]
+        },
+        {
+          "id": "c1-06-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Chair the opening and closing of a meeting, in about a minute.",
+          "prompt_en": "You're chairing a team meeting about whether to switch to a four-day week. Open the meeting, invite a quiet colleague to speak, park an off-topic point, then wrap up with a summary.",
+          "guidelines_pt": [
+            "Open: \"Shall we get started? The aim of today's meeting is...\".",
+            "Bring someone in: \"Carla, what's your take on this?\".",
+            "Park a side issue: \"Let's park that for now.\"",
+            "Wrap up: \"Just to sum up... The action points are...\"."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-06-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Recycle chairing phrases in quick succession.",
+        "prompts": [
+          "Open, bring someone in, park, wrap up: go!",
+          "Now chair a 30-second mini-meeting about the next team outing."
+        ],
+        "watchFor": ["\"Resume\" for \"resumir\"", "\"Pass the word\""]
+      },
+      "exercises": [
+        {
+          "id": "c1-06-rev-1",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English: \"Vamos voltar ao assunto principal.\"",
+          "accepted": [
+            "Let's get back to the main point",
+            "Let's go back to the main point",
+            "Let's get back to the main topic",
+            "Let's go back to the main issue",
+            "Let's get back on track",
+            "Let's return to the main point",
+            "Let's get back to the main subject",
+            "Let's go back to the main topic"
+          ],
+          "commonErrors": [
+            {
+              "id": "principal-subject",
+              "match": "\\bprincipal (subject|matter|assunto)\\b",
+              "explanation_pt": "\"Principal\" as an adjective sounds odd here; English prefers \"main\": \"the main point\".",
+              "correction_en": "Let's get back to the main point."
+            }
+          ]
+        },
+        {
+          "id": "c1-06-rev-2",
+          "kind": "fill",
+          "instruction_pt": "Complete with one word.",
+          "sentence": "I think we're getting a bit ___. Let's focus.",
+          "accepted": ["sidetracked", "distracted"],
+          "commonErrors": [
+            {
+              "id": "sidetrack",
+              "match": "^sidetrack$",
+              "explanation_pt": "Use the past participle after \"get\": \"getting sidetracked\".",
+              "correction_en": "I think we're getting a bit sidetracked."
+            }
+          ]
+        },
+        {
+          "id": "c1-06-rev-3",
+          "kind": "choice",
+          "instruction_pt": "\"A pauta da reunião\" is...",
+          "options": ["the meeting's pattern", "the meeting agenda", "the meeting's diary"],
+          "answer": 1,
+          "explanation_pt": "\"Pauta\" is \"agenda\". A personal \"agenda\" (caderno) is a \"diary\" or \"planner\"."
+        },
+        {
+          "id": "c1-06-rev-4",
+          "kind": "repeat",
+          "instruction_pt": "Repeat to close the meeting.",
+          "prompt": "Thanks, everyone. I'll circulate the action points this afternoon.",
+          "accepted": [
+            "Thanks, everyone. I'll circulate the action points this afternoon",
+            "Thanks everyone, I will circulate the action points this afternoon"
+          ],
+          "commonErrors": []
+        }
+      ]
+    }
+  ]
+}

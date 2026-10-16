@@ -14,6 +14,7 @@ files:
   - '!{tsconfig.json,tsconfig.node.json,tsconfig.web.json}'
   - '!content/**'
   - '!dist/**'
+  - '!scripts/**'
   # transformers.node.cjs inlines the ort-web bundle it needs and loads onnxruntime-node for inference
   - '!node_modules/onnxruntime-web/**'
 extraResources:

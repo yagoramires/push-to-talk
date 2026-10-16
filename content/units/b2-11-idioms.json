@@ -1,0 +1,477 @@
+{
+  "id": "b2-11-idioms",
+  "level": "B2",
+  "order": 11,
+  "title_pt": "Expressões idiomáticas no contexto",
+  "title_en": "Idioms in context",
+  "objective_pt": "Entender e usar expressões idiomáticas comuns (piece of cake, under the weather, call it a day) sem traduzir as do português ao pé da letra.",
+  "blocks": [
+    {
+      "id": "b2-11-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Mostrar que expressões não se traduzem palavra por palavra e descobrir quais o aluno já conhece.",
+        "prompts": [
+          "Do you know any English idioms?",
+          "What's a Brazilian expression that would be hard to translate?"
+        ],
+        "watchFor": [
+          "Traduzir \"custou os olhos da cara\" literalmente; em inglês é \"cost an arm and a leg\".",
+          "Usar a expressão no contexto errado só porque conhece as palavras."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-11-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repeat out loud.",
+          "prompt": "Don't worry, the test was a piece of cake.",
+          "accepted": [
+            "Don't worry, the test was a piece of cake.",
+            "Do not worry, the test was a piece of cake."
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b2-11-warm-2",
+          "kind": "choice",
+          "instruction_pt": "\"It was a piece of cake\" means...",
+          "options": ["It was very easy.", "It was delicious.", "It was a small part."],
+          "answer": 0,
+          "explanation_pt": "\"A piece of cake\" é algo muito fácil, como o nosso \"moleza\" ou \"mamão com açúcar\"."
+        },
+        {
+          "id": "b2-11-warm-3",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Esse celular custou os olhos da cara.\"",
+          "accepted": [
+            "This phone cost an arm and a leg",
+            "That phone cost an arm and a leg",
+            "This phone cost me an arm and a leg",
+            "This phone cost a fortune",
+            "This phone cost me a fortune",
+            "This phone was really expensive",
+            "This phone was super expensive",
+            "This phone was extremely expensive",
+            "This cell phone cost an arm and a leg"
+          ],
+          "commonErrors": [
+            {
+              "id": "eyes-of-the-face",
+              "match": "\\beyes of the face\\b",
+              "explanation_pt": "\"Os olhos da cara\" não funciona em inglês. A expressão equivalente é \"cost an arm and a leg\" (um braço e uma perna).",
+              "correction_en": "This phone cost an arm and a leg."
+            },
+            {
+              "id": "costed",
+              "match": "\\bcosted\\b",
+              "explanation_pt": "O passado de \"cost\" é \"cost\", sem \"-ed\".",
+              "correction_en": "This phone cost an arm and a leg."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-11-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Aprender expressões idiomáticas frequentes no trabalho e no dia a dia.",
+        "prompts": [
+          "When do you feel under the weather?",
+          "What's something you do once in a blue moon?"
+        ],
+        "watchFor": [
+          "Mudar palavras da expressão (\"under the time\", \"in a blue moon\"); expressões são fixas.",
+          "Usar expressões informais em contexto muito formal."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-11-vocab-1",
+          "kind": "vocab",
+          "word_en": "under the weather",
+          "meaning_pt": "meio doente, indisposto",
+          "example_en": "I'm feeling a bit under the weather today, so I'll work from home."
+        },
+        {
+          "id": "b2-11-vocab-2",
+          "kind": "vocab",
+          "word_en": "to call it a day",
+          "meaning_pt": "encerrar o dia, parar por hoje",
+          "example_en": "It's eight o'clock. Let's call it a day."
+        },
+        {
+          "id": "b2-11-vocab-3",
+          "kind": "vocab",
+          "word_en": "to break the ice",
+          "meaning_pt": "quebrar o gelo",
+          "example_en": "He told a joke to break the ice at the start of the meeting."
+        },
+        {
+          "id": "b2-11-vocab-4",
+          "kind": "match",
+          "instruction_pt": "Match each idiom to its meaning.",
+          "pairs": [
+            { "en": "once in a blue moon", "pt": "muito raramente" },
+            { "en": "on the fence", "pt": "em cima do muro, indeciso" },
+            { "en": "the ball is in your court", "pt": "agora é com você" },
+            { "en": "hit the nail on the head", "pt": "acertar em cheio" },
+            { "en": "raining cats and dogs", "pt": "chovendo canivete" }
+          ]
+        },
+        {
+          "id": "b2-11-vocab-5",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Ainda estou em cima do muro sobre essa decisão.\"",
+          "accepted": [
+            "I'm still on the fence about this decision",
+            "I'm still on the fence about that decision",
+            "I'm still on the fence about the decision",
+            "I'm still on the fence about it",
+            "I'm still undecided about this decision",
+            "I still haven't made up my mind about this decision",
+            "I'm still sitting on the fence about this decision",
+            "I'm still torn about this decision"
+          ],
+          "commonErrors": [
+            {
+              "id": "on-the-wall",
+              "match": "\\b(on|over) (top of )?the wall\\b",
+              "explanation_pt": "\"Em cima do muro\" em inglês é \"on the fence\" (na cerca), não \"on the wall\".",
+              "correction_en": "I'm still on the fence about this decision."
+            },
+            {
+              "id": "fence-of",
+              "match": "\\bon the fence (of|over|in)\\b",
+              "explanation_pt": "Dizemos \"on the fence about\" algo.",
+              "correction_en": "I'm still on the fence about this decision."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-11-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Treinar o ritmo das expressões: palavras de conteúdo fortes e \"a\", \"the\", \"of\" fracos.",
+        "prompts": [
+          "Say \"a piece of cake\". Which words are strong?",
+          "Say \"an arm and a leg\" as one phrase."
+        ],
+        "watchFor": [
+          "Pronunciar \"of\" e \"and\" com força.",
+          "Separar as palavras demais, quebrando o ritmo da expressão."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-11-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repeat. Link the words: \"an-ar-man-da-leg\".",
+          "prompt": "That holiday cost us an arm and a leg.",
+          "accepted": [
+            "That holiday cost us an arm and a leg.",
+            "That vacation cost us an arm and a leg."
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b2-11-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repeat. Stress \"BLUE\" and \"MOON\".",
+          "prompt": "We only go out for dinner once in a blue moon.",
+          "accepted": [
+            "We only go out for dinner once in a blue moon.",
+            "We only go out to dinner once in a blue moon."
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "b2-11-pron-3",
+          "kind": "choice",
+          "instruction_pt": "In \"a piece of cake\", which words are stressed?",
+          "options": ["PIECE and CAKE", "A and OF", "OF and CAKE"],
+          "answer": 0,
+          "explanation_pt": "As palavras de conteúdo (\"piece\", \"cake\") são fortes; \"a\" e \"of\" ficam fracas e rápidas."
+        }
+      ]
+    },
+    {
+      "id": "b2-11-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Entender expressões idiomáticas pelo contexto e reagir a elas.",
+        "prompts": [
+          "What does it mean when someone says \"I'm swamped\"?",
+          "How would you answer \"Let's call it a day\"?"
+        ],
+        "watchFor": [
+          "Interpretar a expressão literalmente.",
+          "Usar a expressão certa com a preposição errada."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-11-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Listen. What does the speaker mean?",
+          "listen": "I've sent them our offer. Now the ball is in their court.",
+          "options": [
+            "Now it's their turn to decide.",
+            "They are playing a game.",
+            "They lost the offer."
+          ],
+          "answer": 0,
+          "explanation_pt": "\"The ball is in their court\" quer dizer que agora a decisão é deles."
+        },
+        {
+          "id": "b2-11-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Listen and answer: why isn't Paula at work today?",
+          "listen": "Paula's not coming in today. She's a bit under the weather.",
+          "accepted": [
+            "Because she's sick",
+            "She's sick",
+            "She's not feeling well",
+            "Because she isn't feeling well",
+            "Because she's not feeling well",
+            "She's feeling a bit ill",
+            "She's a little sick",
+            "She's feeling sick",
+            "Because she's ill",
+            "She's ill",
+            "She's under the weather",
+            "Because she's under the weather",
+            "She's not well"
+          ],
+          "commonErrors": [
+            {
+              "id": "weather-literal",
+              "match": "\\b(rain|raining|bad weather|the weather is)\\b",
+              "explanation_pt": "\"Under the weather\" não tem a ver com o tempo: significa estar meio doente.",
+              "correction_en": "Because she's not feeling well."
+            },
+            {
+              "id": "she-is-sick-missing-be",
+              "match": "^(because )?she (sick|ill)\\b",
+              "explanation_pt": "Falta o verbo \"be\": \"she's sick\" (she is sick).",
+              "correction_en": "Because she's sick."
+            }
+          ]
+        },
+        {
+          "id": "b2-11-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Listen. Agree to stop working for today, using an idiom.",
+          "listen": "We've been working on this for ten hours. I'm exhausted.",
+          "accepted": [
+            "Let's call it a day",
+            "Me too. Let's call it a day",
+            "Yeah, let's call it a day",
+            "Okay, let's call it a day",
+            "I'm exhausted too. Let's call it a day",
+            "Why don't we call it a day?",
+            "Shall we call it a day?",
+            "Let's call it a night",
+            "Me too, let's call it a night"
+          ],
+          "commonErrors": [
+            {
+              "id": "close-the-day",
+              "match": "\\b(close|end|finish) the day\\b",
+              "explanation_pt": "\"Encerrar o dia\" tem uma expressão própria: \"Let's call it a day\".",
+              "correction_en": "Let's call it a day."
+            },
+            {
+              "id": "lets-to",
+              "match": "\\blet us to\\b",
+              "explanation_pt": "Depois de \"let's\" o verbo vem sem \"to\": \"Let's call it a day\".",
+              "correction_en": "Let's call it a day."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-11-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Usar duas ou três expressões naturalmente numa conversa sobre a semana ou o trabalho.",
+        "prompts": [
+          "How was your week? Was it a piece of cake or a nightmare?",
+          "Is there a decision you're on the fence about?",
+          "What's something that costs an arm and a leg in Brazil?"
+        ],
+        "watchFor": [
+          "Encaixar expressões à força; elas devem aparecer quando cabem.",
+          "Traduzir expressões brasileiras ao pé da letra (\"pagar o pato\", \"chover no molhado\")."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-11-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Está chovendo canivete, vamos ficar em casa.\"",
+          "accepted": [
+            "It's raining cats and dogs, let's stay home",
+            "It's raining cats and dogs, let's stay at home",
+            "It's raining cats and dogs, so let's stay home",
+            "It's raining cats and dogs, so let's stay in",
+            "It's pouring, let's stay home",
+            "It's pouring down, let's stay home",
+            "It's pouring, so let's stay in",
+            "It's raining really hard, let's stay home",
+            "It's raining heavily, let's stay at home"
+          ],
+          "commonErrors": [
+            {
+              "id": "raining-knives",
+              "match": "\\braining (knives|penknives|hammers|swiss)\\b",
+              "explanation_pt": "\"Chovendo canivete\" em inglês é \"raining cats and dogs\" ou só \"pouring\".",
+              "correction_en": "It's raining cats and dogs, let's stay home."
+            },
+            {
+              "id": "stay-in-home",
+              "match": "\\bstay in (the )?home\\b",
+              "explanation_pt": "\"Ficar em casa\" é \"stay home\", \"stay at home\" ou \"stay in\". \"In home\" não se usa.",
+              "correction_en": "Let's stay home."
+            }
+          ]
+        },
+        {
+          "id": "b2-11-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Quem pagou o pato fui eu.\"",
+          "accepted": [
+            "I was the one who took the blame",
+            "I'm the one who took the blame",
+            "I was the one who took the fall",
+            "I took the blame",
+            "I ended up taking the blame",
+            "I took the fall",
+            "I was the one who got blamed",
+            "I got the blame",
+            "I was left holding the bag",
+            "I was left holding the baby"
+          ],
+          "commonErrors": [
+            {
+              "id": "paid-the-duck",
+              "match": "\\bpa(id|y) the duck\\b",
+              "explanation_pt": "\"Pagar o pato\" não existe em inglês. Diga \"take the blame\" ou \"take the fall\".",
+              "correction_en": "I was the one who took the blame."
+            },
+            {
+              "id": "who-paid-was-me",
+              "match": "^who (paid|took)\\b",
+              "explanation_pt": "A ordem \"quem... fui eu\" fica melhor em inglês como \"I was the one who...\".",
+              "correction_en": "I was the one who took the blame."
+            }
+          ]
+        },
+        {
+          "id": "b2-11-conv-3",
+          "kind": "order",
+          "instruction_pt": "Put the words in order.",
+          "accepted": ["You hit the nail on the head with that comment"]
+        },
+        {
+          "id": "b2-11-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Tell a friend about your week. Use at least two idioms from this unit.",
+          "prompt_en": "Hey! Long time no see. How's everything going? How was your week?",
+          "guidelines_pt": [
+            "Describe something easy or hard: \"It was a piece of cake\" or \"I was swamped\".",
+            "Mention a cost or a decision: \"cost an arm and a leg\", \"I'm on the fence about...\"",
+            "End naturally: \"Anyway, I should call it a day.\""
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-11-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Revisar as expressões e reforçar que elas são fixas.",
+        "prompts": ["What's a piece of cake for you?", "What do you do once in a blue moon?"],
+        "watchFor": [
+          "Mudar palavras da expressão.",
+          "Traduzir expressões brasileiras literalmente."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "b2-11-rev-1",
+          "kind": "translate",
+          "instruction_pt": "Say it in English: \"Você acertou em cheio.\"",
+          "accepted": [
+            "You hit the nail on the head",
+            "You've hit the nail on the head",
+            "You nailed it",
+            "You got it exactly right",
+            "You're absolutely right",
+            "Spot on",
+            "You're spot on",
+            "That's spot on"
+          ],
+          "commonErrors": [
+            {
+              "id": "hit-in-full",
+              "match": "\\bhit (in )?(full|the full)\\b",
+              "explanation_pt": "\"Acertar em cheio\" é \"hit the nail on the head\", \"nail it\" ou \"spot on\".",
+              "correction_en": "You hit the nail on the head."
+            },
+            {
+              "id": "nail-in-head",
+              "match": "\\bnail (in|at) the head\\b",
+              "explanation_pt": "A preposição é \"on\": \"hit the nail on the head\".",
+              "correction_en": "You hit the nail on the head."
+            }
+          ]
+        },
+        {
+          "id": "b2-11-rev-2",
+          "kind": "fill",
+          "instruction_pt": "Complete the idiom.",
+          "sentence": "He told a funny story to break the ___.",
+          "accepted": ["ice"],
+          "commonErrors": [
+            {
+              "id": "gelo-literal",
+              "match": "^(cold|frost|freeze|silence)$",
+              "explanation_pt": "A expressão é fixa: \"break the ice\", como \"quebrar o gelo\".",
+              "correction_en": "He told a funny story to break the ice."
+            }
+          ]
+        },
+        {
+          "id": "b2-11-rev-3",
+          "kind": "choice",
+          "instruction_pt": "\"I'm swamped this week\" means...",
+          "options": ["I have too much work.", "I'm on vacation.", "I'm feeling sick."],
+          "answer": 0,
+          "explanation_pt": "\"Swamped\" é estar atolado de trabalho."
+        },
+        {
+          "id": "b2-11-rev-4",
+          "kind": "repeat",
+          "instruction_pt": "To finish, repeat.",
+          "prompt": "It's been a long day. I think it's time to call it a day.",
+          "accepted": [
+            "It's been a long day. I think it's time to call it a day.",
+            "It has been a long day. I think it is time to call it a day."
+          ],
+          "commonErrors": []
+        }
+      ]
+    }
+  ]
+}

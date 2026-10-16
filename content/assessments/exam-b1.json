@@ -1,0 +1,463 @@
+{
+  "level": "B1",
+  "minutes": 25,
+  "parts": [
+    {
+      "skill": "listening",
+      "items": [
+        {
+          "skill": "listening",
+          "unitId": "b1-01-experiences",
+          "exercise": {
+            "id": "ex-b1-listen-1",
+            "kind": "choice",
+            "instruction_pt": "Ouça e escolha o que a pessoa disse.",
+            "listen": "I've never been to Europe, but I went to Mexico last year with some friends.",
+            "options": [
+              "Ela já foi à Europa e ao México.",
+              "Ela nunca foi à Europa, mas foi ao México no ano passado.",
+              "Ela vai ao México no ano que vem."
+            ],
+            "answer": 1,
+            "explanation_pt": "\"I've never been to Europe\" = nunca fui à Europa; \"I went to Mexico last year\" = fui ao México no ano passado."
+          }
+        },
+        {
+          "skill": "listening",
+          "unitId": "b1-03-complaints",
+          "exercise": {
+            "id": "ex-b1-listen-2",
+            "kind": "choice",
+            "instruction_pt": "Ouça a reclamação e escolha o que o cliente quer.",
+            "listen": "The heater in my room has been broken since we arrived. I'd like to change rooms, please.",
+            "options": [
+              "Quer um reembolso.",
+              "Quer trocar de quarto.",
+              "Quer um aquecedor novo para levar para casa."
+            ],
+            "answer": 1,
+            "explanation_pt": "\"I'd like to change rooms\" = gostaria de trocar de quarto."
+          }
+        },
+        {
+          "skill": "listening",
+          "unitId": "b1-10-telling-a-story",
+          "exercise": {
+            "id": "ex-b1-listen-3",
+            "kind": "choice",
+            "instruction_pt": "Ouça a história e escolha o que aconteceu.",
+            "listen": "I was jogging in the park when it started to rain, so I ran into a café. It turned out that my old teacher was sitting there.",
+            "options": [
+              "Ela encontrou uma antiga professora num café.",
+              "Ela estava num café quando começou a correr.",
+              "Ela correu na chuva até em casa."
+            ],
+            "answer": 0,
+            "explanation_pt": "\"It turned out that my old teacher was sitting there\" = acabou que minha antiga professora estava sentada lá."
+          }
+        },
+        {
+          "skill": "listening",
+          "unitId": "b1-04-giving-advice",
+          "exercise": {
+            "id": "ex-b1-listen-4",
+            "kind": "listen_answer",
+            "instruction_pt": "Ouça e dê um conselho: a pessoa deveria dormir mais cedo.",
+            "listen": "I'm always tired at work. What should I do?",
+            "accepted": [
+              "You should go to bed earlier",
+              "You should sleep earlier",
+              "Maybe you should go to bed earlier",
+              "I think you should go to bed earlier",
+              "Why don't you go to bed earlier",
+              "If I were you, I'd go to bed earlier",
+              "You'd better go to bed earlier",
+              "You should get more sleep"
+            ],
+            "commonErrors": [
+              {
+                "id": "should-to",
+                "match": "\\bshould to\\b",
+                "explanation_pt": "Depois de \"should\" vem o verbo direto, sem \"to\".",
+                "correction_en": "You should go to bed earlier."
+              },
+              {
+                "id": "more-early",
+                "match": "\\bmore early\\b",
+                "explanation_pt": "\"Mais cedo\" é \"earlier\".",
+                "correction_en": "You should go to bed earlier."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "listening",
+          "unitId": "b1-11-agreeing-disagreeing",
+          "exercise": {
+            "id": "ex-b1-listen-5",
+            "kind": "listen_answer",
+            "instruction_pt": "Ouça e diga que você também não gosta.",
+            "listen": "I don't like working on weekends.",
+            "accepted": [
+              "Neither do I",
+              "Me neither",
+              "Nor do I",
+              "I don't either",
+              "I don't like it either",
+              "Me neither. It's terrible"
+            ],
+            "commonErrors": [
+              {
+                "id": "me-too-negative",
+                "match": "^(me too|so do i)\\b",
+                "explanation_pt": "Para concordar com uma frase negativa use \"Me neither\" ou \"Neither do I\".",
+                "correction_en": "Neither do I."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "skill": "speaking",
+      "items": [
+        {
+          "skill": "speaking",
+          "unitId": "b1-02-job-interviews",
+          "exercise": {
+            "id": "ex-b1-speak-1",
+            "kind": "translate",
+            "instruction_pt": "Diga em inglês: \"Eu trabalho como professora há quatro anos.\"",
+            "accepted": [
+              "I've been working as a teacher for four years",
+              "I have been working as a teacher for four years",
+              "I've worked as a teacher for four years",
+              "I have worked as a teacher for four years",
+              "I've been a teacher for four years",
+              "I have been a teacher for four years"
+            ],
+            "commonErrors": [
+              {
+                "id": "present-ha",
+                "match": "^i (work|am working) as\\b",
+                "explanation_pt": "\"Trabalho há quatro anos\" usa o present perfect: \"I've been working... for four years\".",
+                "correction_en": "I've been working as a teacher for four years."
+              },
+              {
+                "id": "since-duration",
+                "match": "\\bsince four years\\b",
+                "explanation_pt": "Para duração use \"for\": \"for four years\".",
+                "correction_en": "I've been working as a teacher for four years."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "speaking",
+          "unitId": "b1-08-money-banking",
+          "exercise": {
+            "id": "ex-b1-speak-2",
+            "kind": "translate",
+            "instruction_pt": "Diga em inglês: \"Você pode me emprestar seu carregador?\"",
+            "accepted": [
+              "Can you lend me your charger",
+              "Could you lend me your charger",
+              "Can I borrow your charger",
+              "Could I borrow your charger",
+              "Can you lend me your charger, please",
+              "Could I borrow your charger, please"
+            ],
+            "commonErrors": [
+              {
+                "id": "borrow-me",
+                "match": "\\bborrow me\\b",
+                "explanation_pt": "\"Borrow\" é pegar emprestado. Use \"lend me\" ou \"Can I borrow...?\".",
+                "correction_en": "Can you lend me your charger?"
+              }
+            ]
+          }
+        },
+        {
+          "skill": "speaking",
+          "unitId": "b1-11-agreeing-disagreeing",
+          "exercise": {
+            "id": "ex-b1-speak-3",
+            "kind": "translate",
+            "instruction_pt": "Diga em inglês: \"Eu concordo com você, mas é caro demais.\"",
+            "accepted": [
+              "I agree with you, but it's too expensive",
+              "I agree with you, but it is too expensive",
+              "I agree, but it's too expensive",
+              "I agree with you, but it's way too expensive"
+            ],
+            "commonErrors": [
+              {
+                "id": "im-agree",
+                "match": "\\bi am agree\\b",
+                "explanation_pt": "\"Agree\" é verbo: \"I agree\", sem \"am\".",
+                "correction_en": "I agree with you, but it's too expensive."
+              },
+              {
+                "id": "expensive-demais",
+                "match": "\\bvery much expensive\\b|\\bexpensive too much\\b",
+                "explanation_pt": "\"Caro demais\" é \"too expensive\".",
+                "correction_en": "I agree with you, but it's too expensive."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "speaking",
+          "unitId": "b1-07-technology",
+          "exercise": {
+            "id": "ex-b1-speak-4",
+            "kind": "translate",
+            "instruction_pt": "Diga em inglês: \"Eu costumava jogar futebol, mas não jogo mais.\"",
+            "accepted": [
+              "I used to play soccer, but I don't anymore",
+              "I used to play football, but I don't anymore",
+              "I used to play soccer, but not anymore",
+              "I used to play soccer, but I don't play anymore",
+              "I used to play football, but I don't play anymore"
+            ],
+            "commonErrors": [
+              {
+                "id": "no-more",
+                "match": "\\bno more\\b",
+                "explanation_pt": "\"Não mais\" é \"not anymore\" ou \"I don't anymore\".",
+                "correction_en": "I used to play soccer, but I don't anymore."
+              },
+              {
+                "id": "use-to",
+                "match": "^i use to\\b|\\bcostume\\b",
+                "explanation_pt": "Hábito do passado é \"used to\", com \"-d\".",
+                "correction_en": "I used to play soccer, but I don't anymore."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "speaking",
+          "unitId": "b1-12-small-talk-work",
+          "exercise": {
+            "id": "ex-b1-speak-5",
+            "kind": "free_speak",
+            "instruction_pt": "Responda como num small talk com um colega, por cerca de 30 segundos.",
+            "prompt_en": "Hey! How was your weekend? Did you do anything interesting?",
+            "guidelines_pt": [
+              "Responda no passado com pelo menos dois detalhes (onde, com quem, como foi).",
+              "Use pelo menos um conector: \"First\", \"Then\", \"In the end\".",
+              "Devolva a pergunta: \"How about you?\"."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "skill": "vocabulary",
+      "items": [
+        {
+          "skill": "vocabulary",
+          "unitId": "b1-03-complaints",
+          "exercise": {
+            "id": "ex-b1-vocab-1",
+            "kind": "match",
+            "instruction_pt": "Ligue cada palavra ao significado.",
+            "pairs": [
+              {
+                "en": "refund",
+                "pt": "reembolso"
+              },
+              {
+                "en": "receipt",
+                "pt": "nota fiscal, recibo"
+              },
+              {
+                "en": "faulty",
+                "pt": "com defeito"
+              },
+              {
+                "en": "warranty",
+                "pt": "garantia"
+              }
+            ]
+          }
+        },
+        {
+          "skill": "vocabulary",
+          "unitId": "b1-05-movies-series",
+          "exercise": {
+            "id": "ex-b1-vocab-2",
+            "kind": "choice",
+            "instruction_pt": "Como se diz \"Eu assisti à série inteira\"?",
+            "options": [
+              "I assisted the whole series.",
+              "I watched the whole series.",
+              "I attended the whole series."
+            ],
+            "answer": 1,
+            "explanation_pt": "Assistir é \"watch\". \"Assist\" é ajudar e \"attend\" é comparecer."
+          }
+        },
+        {
+          "skill": "vocabulary",
+          "unitId": "b1-09-environment",
+          "exercise": {
+            "id": "ex-b1-vocab-3",
+            "kind": "match",
+            "instruction_pt": "Ligue cada palavra ao significado.",
+            "pairs": [
+              {
+                "en": "pollution",
+                "pt": "poluição"
+              },
+              {
+                "en": "to waste",
+                "pt": "desperdiçar"
+              },
+              {
+                "en": "drought",
+                "pt": "seca"
+              },
+              {
+                "en": "deforestation",
+                "pt": "desmatamento"
+              },
+              {
+                "en": "trash",
+                "pt": "lixo"
+              }
+            ]
+          }
+        },
+        {
+          "skill": "vocabulary",
+          "unitId": "b1-06-news-events",
+          "exercise": {
+            "id": "ex-b1-vocab-4",
+            "kind": "choice",
+            "instruction_pt": "Qual palavra significa \"jornal\"?",
+            "options": ["journal", "newspaper", "notice"],
+            "answer": 1,
+            "explanation_pt": "Jornal é \"newspaper\". \"Journal\" é diário ou revista acadêmica, e \"notice\" é aviso."
+          }
+        },
+        {
+          "skill": "vocabulary",
+          "unitId": "b1-12-small-talk-work",
+          "exercise": {
+            "id": "ex-b1-vocab-5",
+            "kind": "match",
+            "instruction_pt": "Ligue cada expressão ao significado.",
+            "pairs": [
+              {
+                "en": "swamped",
+                "pt": "atolado de trabalho"
+              },
+              {
+                "en": "deadline",
+                "pt": "prazo"
+              },
+              {
+                "en": "to catch up",
+                "pt": "colocar o papo em dia"
+              },
+              {
+                "en": "day off",
+                "pt": "dia de folga"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "skill": "structure",
+      "items": [
+        {
+          "skill": "structure",
+          "unitId": "b1-01-experiences",
+          "exercise": {
+            "id": "ex-b1-struct-1",
+            "kind": "fill",
+            "instruction_pt": "Complete com o verbo certo.",
+            "sentence": "I ___ that movie last Saturday.",
+            "accepted": ["saw", "watched"],
+            "commonErrors": [
+              {
+                "id": "have-seen-last",
+                "match": "^(have seen|have watched|seen|have saw)$",
+                "explanation_pt": "Com tempo definido (\"last Saturday\") use o passado simples: \"I saw\".",
+                "correction_en": "I saw that movie last Saturday."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "structure",
+          "unitId": "b1-09-environment",
+          "exercise": {
+            "id": "ex-b1-struct-2",
+            "kind": "fill",
+            "instruction_pt": "Complete com a forma certa de \"not / recycle\".",
+            "sentence": "If we ___ more, the landfills will be full in ten years.",
+            "accepted": ["don't recycle", "do not recycle"],
+            "commonErrors": [
+              {
+                "id": "will-not-recycle",
+                "match": "^(will not recycle|not recycle|no recycle)$",
+                "explanation_pt": "Depois de \"if\" vem o presente: \"If we don't recycle\".",
+                "correction_en": "If we don't recycle more, the landfills will be full in ten years."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "structure",
+          "unitId": "b1-06-news-events",
+          "exercise": {
+            "id": "ex-b1-struct-3",
+            "kind": "fill",
+            "instruction_pt": "Complete com \"was\" ou \"were\".",
+            "sentence": "The new hospital ___ opened by the mayor yesterday.",
+            "accepted": ["was"],
+            "commonErrors": [
+              {
+                "id": "were-is",
+                "match": "^(were|is|has)$",
+                "explanation_pt": "Sujeito singular no passado, na voz passiva: \"was opened\".",
+                "correction_en": "The new hospital was opened by the mayor yesterday."
+              }
+            ]
+          }
+        },
+        {
+          "skill": "structure",
+          "unitId": "b1-10-telling-a-story",
+          "exercise": {
+            "id": "ex-b1-struct-4",
+            "kind": "order",
+            "instruction_pt": "Coloque as palavras na ordem certa.",
+            "accepted": ["I was driving to work when I saw the accident."]
+          }
+        },
+        {
+          "skill": "structure",
+          "unitId": "b1-04-giving-advice",
+          "exercise": {
+            "id": "ex-b1-struct-5",
+            "kind": "choice",
+            "instruction_pt": "Qual frase está correta?",
+            "options": [
+              "If I am you, I will talk to her.",
+              "If I were you, I'd talk to her.",
+              "If I were you, I will talk to her."
+            ],
+            "answer": 1,
+            "explanation_pt": "Conselho com situação imaginária: \"If I were you, I'd (would)...\"."
+          }
+        }
+      ]
+    }
+  ]
+}

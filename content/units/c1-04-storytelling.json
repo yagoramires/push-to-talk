@@ -1,0 +1,453 @@
+{
+  "id": "c1-04-storytelling",
+  "level": "C1",
+  "order": 4,
+  "title_pt": "Contando histórias com detalhes",
+  "title_en": "Storytelling with detail",
+  "objective_pt": "Tell an anecdote vividly: mix narrative tenses (past perfect, past continuous), use precise verbs (\"stumbled\", \"glanced\") and build suspense (\"It was only when... that...\").",
+  "blocks": [
+    {
+      "id": "c1-04-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Elicit a short anecdote and listen for tense control and detail.",
+        "prompts": [
+          "Tell me about a time something went completely wrong on a trip.",
+          "What had you expected to happen?"
+        ],
+        "watchFor": [
+          "Everything in the simple past, with no background (past continuous) or earlier events (past perfect).",
+          "\"Then... then... then...\" as the only linker."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-04-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repeat, slowing down slightly before the twist.",
+          "prompt": "I'd been waiting for an hour when I realised I was at the wrong station.",
+          "accepted": [
+            "I'd been waiting for an hour when I realised I was at the wrong station",
+            "I'd been waiting for an hour when I realized I was at the wrong station",
+            "I had been waiting for an hour when I realised I was at the wrong station"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "c1-04-warm-2",
+          "kind": "choice",
+          "instruction_pt": "Which sentence makes it clear that the film started before they arrived?",
+          "options": [
+            "When we arrived, the film started.",
+            "When we arrived, the film had already started.",
+            "When we arrived, the film was starting."
+          ],
+          "answer": 1,
+          "explanation_pt": "The past perfect (\"had started\") shows the earlier action. With the simple past, the film starts when they arrive."
+        },
+        {
+          "id": "c1-04-warm-3",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English: \"Quando cheguei, todo mundo já tinha ido embora.\"",
+          "accepted": [
+            "When I arrived, everyone had already left",
+            "When I got there, everyone had already left",
+            "When I arrived, everybody had already left",
+            "When I got there, everybody had already gone",
+            "When I arrived, everyone had already gone",
+            "By the time I arrived, everyone had already left",
+            "By the time I got there, everyone had left",
+            "By the time I got there, everyone had already gone home"
+          ],
+          "commonErrors": [
+            {
+              "id": "everyone-were",
+              "match": "\\b(everyone|everybody) (were|have)\\b",
+              "explanation_pt": "\"Everyone\" is grammatically singular, but here the tense is the issue: use the past perfect, \"everyone had already left\".",
+              "correction_en": "When I arrived, everyone had already left."
+            },
+            {
+              "id": "simple-past-only",
+              "match": "\\b(everyone|everybody) already (left|went)\\b",
+              "explanation_pt": "\"Já tinha ido\" is an action before another past action, so the past perfect is clearer: \"had already left\".",
+              "correction_en": "When I arrived, everyone had already left."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-04-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Replace generic verbs (go, look, say) with precise narrative verbs: stumble, glance, mutter, rush, stare.",
+        "prompts": [
+          "Show me the difference between \"glance\" and \"stare\".",
+          "When did you last rush somewhere?"
+        ],
+        "watchFor": [
+          "\"Look to\" instead of \"look at\".",
+          "\"Realise\" used for \"perceber\" correctly, but \"notice\" vs \"realise\" confused."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-04-vocab-1",
+          "kind": "vocab",
+          "word_en": "to glance",
+          "meaning_pt": "dar uma olhada rápida",
+          "example_en": "She glanced at her watch and frowned."
+        },
+        {
+          "id": "c1-04-vocab-2",
+          "kind": "vocab",
+          "word_en": "to stumble",
+          "meaning_pt": "tropeçar; topar com (algo por acaso)",
+          "example_en": "We stumbled across a tiny restaurant in the old town."
+        },
+        {
+          "id": "c1-04-vocab-3",
+          "kind": "vocab",
+          "word_en": "to mutter",
+          "meaning_pt": "resmungar, murmurar",
+          "example_en": "He muttered something about the weather and left."
+        },
+        {
+          "id": "c1-04-vocab-4",
+          "kind": "match",
+          "instruction_pt": "Match each storytelling verb with its meaning.",
+          "pairs": [
+            { "en": "to stare", "pt": "encarar, olhar fixamente" },
+            { "en": "to rush", "pt": "ir às pressas" },
+            { "en": "to whisper", "pt": "sussurrar" },
+            { "en": "to burst into tears", "pt": "cair no choro" },
+            { "en": "to freeze", "pt": "ficar paralisado" }
+          ]
+        },
+        {
+          "id": "c1-04-vocab-5",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English: \"Foi aí que eu percebi que tinha esquecido o passaporte.\"",
+          "accepted": [
+            "That's when I realised I'd forgotten my passport",
+            "That's when I realized I had forgotten my passport",
+            "That's when I realised I'd left my passport behind",
+            "It was then that I realised I'd forgotten my passport",
+            "That was when I realised I'd forgotten my passport",
+            "That's when it hit me that I'd forgotten my passport",
+            "That's when I noticed I'd forgotten my passport"
+          ],
+          "commonErrors": [
+            {
+              "id": "perceived",
+              "match": "\\bperceived\\b",
+              "explanation_pt": "\"Perceber\" (to become aware) is \"realise\", not \"perceive\", which is formal and about the senses.",
+              "correction_en": "That's when I realised I'd forgotten my passport."
+            },
+            {
+              "id": "the-passport",
+              "match": "\\bforgotten the passport\\b",
+              "explanation_pt": "English uses possessives with personal belongings: \"my passport\", not \"the passport\".",
+              "correction_en": "That's when I realised I'd forgotten my passport."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-04-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Pacing and pausing for suspense; the three \"-ed\" endings in narrative verbs.",
+        "prompts": [
+          "Say \"And then... nothing.\" with a dramatic pause.",
+          "Say \"rushed\", \"glanced\", \"waited\"."
+        ],
+        "watchFor": [
+          "Adding an extra syllable to \"rushed\" (\"rush-ed\") or \"glanced\" (\"glan-ced\").",
+          "Rushing through the punchline."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-04-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repeat. \"Rushed\" and \"stopped\" end in /t/, one syllable each.",
+          "prompt": "I rushed to the door and stopped dead.",
+          "accepted": ["I rushed to the door and stopped dead"],
+          "commonErrors": []
+        },
+        {
+          "id": "c1-04-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repeat with a short pause after \"door\" to build suspense.",
+          "prompt": "And there, standing at the door, was my old boss.",
+          "accepted": ["And there, standing at the door, was my old boss"],
+          "commonErrors": []
+        },
+        {
+          "id": "c1-04-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Which verb has an extra syllable in the past tense?",
+          "options": ["glanced", "waited", "stumbled"],
+          "answer": 1,
+          "explanation_pt": "Verbs ending in /t/ or /d/ add /ɪd/: wai-ted. \"Glanced\" (/t/) and \"stumbled\" (/d/) don't add a syllable."
+        }
+      ]
+    },
+    {
+      "id": "c1-04-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Follow the order of events in a story told out of sequence and react naturally.",
+        "prompts": ["What happened first?", "How would you react if a friend told you this?"],
+        "watchFor": [
+          "Assuming events happened in the order they were mentioned.",
+          "Reacting with just \"OK\" instead of showing interest."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-04-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Listen. What happened first?",
+          "listen": "By the time the taxi turned up, I'd already missed the flight, and I'd been arguing with the airline for twenty minutes.",
+          "options": [
+            "The taxi arrived.",
+            "The speaker missed the flight.",
+            "The speaker started arguing with the airline."
+          ],
+          "answer": 1,
+          "explanation_pt": "Both past perfects are earlier than the taxi, and the argument came after missing the flight."
+        },
+        {
+          "id": "c1-04-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Listen to your friend and react with interest, asking what happened next.",
+          "listen": "So I opened the door, and guess who was standing there?",
+          "accepted": [
+            "Who?",
+            "No idea, who?",
+            "Who was it?",
+            "I have no idea. Who was it?",
+            "Go on, who was it?",
+            "Who was standing there?",
+            "Don't tell me it was your ex!",
+            "Who? Tell me!",
+            "I can't guess. Who?",
+            "Who was there?"
+          ],
+          "commonErrors": [
+            {
+              "id": "who-was-there-order",
+              "match": "\\bwho there was\\b",
+              "explanation_pt": "In a direct question, the verb comes before \"there\": \"Who was there?\".",
+              "correction_en": "Who was there?"
+            }
+          ]
+        },
+        {
+          "id": "c1-04-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Listen and say what you think had happened to the speaker's phone.",
+          "listen": "I got home and the phone wasn't in my bag. It turned out I'd left it on the bus.",
+          "accepted": [
+            "You'd left it on the bus",
+            "You had left it on the bus",
+            "You left it on the bus",
+            "It was on the bus",
+            "You left your phone on the bus",
+            "You'd left your phone on the bus",
+            "It had been left on the bus",
+            "It was still on the bus"
+          ],
+          "commonErrors": [
+            {
+              "id": "forgot-in",
+              "match": "\\bforgot (it|your phone) in the bus\\b",
+              "explanation_pt": "We say \"on the bus\" (also \"on the train\", \"on the plane\"), not \"in the bus\". And \"esquecer em um lugar\" is usually \"leave\".",
+              "correction_en": "You'd left it on the bus."
+            },
+            {
+              "id": "in-the-bus",
+              "match": "\\bin the bus\\b",
+              "explanation_pt": "With buses, trains and planes, English uses \"on\": \"on the bus\".",
+              "correction_en": "You'd left it on the bus."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-04-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Tell a 1–2 minute anecdote with setting, complication, climax and resolution.",
+        "prompts": [
+          "Tell me about the most embarrassing moment of your life.",
+          "Where were you and what were you doing at the time?",
+          "How did it end? Would you do anything differently?"
+        ],
+        "watchFor": [
+          "Missing background tense (\"I was walking...\").",
+          "\"In the bus\", \"perceived\", \"the passport\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-04-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English: \"Eu estava andando para casa quando começou a chover.\"",
+          "accepted": [
+            "I was walking home when it started to rain",
+            "I was walking home when it started raining",
+            "I was walking home when it began to rain",
+            "I was walking home when it began raining",
+            "I was on my way home when it started to rain",
+            "I was walking back home when it started raining"
+          ],
+          "commonErrors": [
+            {
+              "id": "walking-to-home",
+              "match": "\\bto home\\b",
+              "explanation_pt": "\"Home\" works like an adverb after verbs of movement: \"walk home\", \"go home\", without \"to\".",
+              "correction_en": "I was walking home when it started to rain."
+            },
+            {
+              "id": "started-rain-subject",
+              "match": "\\bwhen started\\b",
+              "explanation_pt": "English needs a subject for weather: \"it started to rain\".",
+              "correction_en": "I was walking home when it started to rain."
+            }
+          ]
+        },
+        {
+          "id": "c1-04-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English: \"Só quando cheguei ao hotel é que percebi o erro.\"",
+          "accepted": [
+            "It was only when I got to the hotel that I realised my mistake",
+            "It was only when I arrived at the hotel that I realised my mistake",
+            "It was only when I got to the hotel that I noticed the mistake",
+            "It wasn't until I got to the hotel that I realised my mistake",
+            "It wasn't until I arrived at the hotel that I realised the mistake",
+            "Only when I got to the hotel did I realise my mistake",
+            "Only when I arrived at the hotel did I realise my mistake",
+            "I only realised my mistake when I got to the hotel"
+          ],
+          "commonErrors": [
+            {
+              "id": "arrived-to",
+              "match": "\\barrived to\\b",
+              "explanation_pt": "\"Chegar a\" is \"arrive at\" (a building) or \"arrive in\" (a city), never \"arrive to\". Or say \"get to\".",
+              "correction_en": "It was only when I got to the hotel that I realised my mistake."
+            },
+            {
+              "id": "only-when-no-inversion",
+              "match": "^only when i (got|arrived) [a-z ]+ i (realised|realized)\\b",
+              "explanation_pt": "If you start with \"Only when...\", invert the main clause: \"...did I realise\". Or use \"It was only when... that I realised\".",
+              "correction_en": "Only when I got to the hotel did I realise my mistake."
+            }
+          ]
+        },
+        {
+          "id": "c1-04-conv-3",
+          "kind": "order",
+          "instruction_pt": "Put the words in order to start a story.",
+          "accepted": ["You'll never guess what happened to me yesterday"]
+        },
+        {
+          "id": "c1-04-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Tell the story in one or two minutes, with as much vivid detail as you can.",
+          "prompt_en": "Tell me about a time when a small mistake led to something unexpected, good or bad. Set the scene first.",
+          "guidelines_pt": [
+            "Set the scene with the past continuous: \"I was sitting...\".",
+            "Use the past perfect for what had happened before.",
+            "Use at least two precise verbs (glance, rush, stumble, mutter...).",
+            "Build up to the climax: \"It was only when... that...\", then say how it ended."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-04-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Check narrative tenses and prepositions of transport and arrival.",
+        "prompts": [
+          "What were you doing at 8 pm yesterday?",
+          "What had you done before breakfast today?"
+        ],
+        "watchFor": ["\"Arrive to\"", "\"In the bus\"", "Forgetting the past perfect."]
+      },
+      "exercises": [
+        {
+          "id": "c1-04-rev-1",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English: \"Ele parecia que não dormia havia dias.\"",
+          "accepted": [
+            "He looked like he hadn't slept for days",
+            "He looked as if he hadn't slept for days",
+            "He looked as though he hadn't slept for days",
+            "He looked like he hadn't slept in days",
+            "He seemed like he hadn't slept for days",
+            "It looked like he hadn't slept for days",
+            "It looked as if he hadn't slept in days"
+          ],
+          "commonErrors": [
+            {
+              "id": "seemed-that",
+              "match": "\\bhe seemed that\\b",
+              "explanation_pt": "\"Ele parecia que...\" is \"He looked like...\" / \"He looked as if...\", not \"He seemed that\".",
+              "correction_en": "He looked as if he hadn't slept for days."
+            },
+            {
+              "id": "didnt-sleep-since",
+              "match": "\\bdid not sleep (since|for) days\\b",
+              "explanation_pt": "For a period up to a past moment, use the past perfect: \"hadn't slept for days\".",
+              "correction_en": "He looked as if he hadn't slept for days."
+            }
+          ]
+        },
+        {
+          "id": "c1-04-rev-2",
+          "kind": "fill",
+          "instruction_pt": "Complete with one word.",
+          "sentence": "We finally arrived ___ the airport at midnight.",
+          "accepted": ["at"],
+          "commonErrors": [
+            {
+              "id": "arrive-to",
+              "match": "^(to|in)$",
+              "explanation_pt": "Use \"arrive at\" for a specific place (airport, station, hotel); \"arrive in\" for cities and countries.",
+              "correction_en": "We finally arrived at the airport at midnight."
+            }
+          ]
+        },
+        {
+          "id": "c1-04-rev-3",
+          "kind": "choice",
+          "instruction_pt": "Which verb means \"to look quickly\"?",
+          "options": ["stare", "glance", "gaze"],
+          "answer": 1,
+          "explanation_pt": "\"Glance\" is a quick look. \"Stare\" and \"gaze\" are long looks."
+        },
+        {
+          "id": "c1-04-rev-4",
+          "kind": "repeat",
+          "instruction_pt": "Repeat this classic story ending.",
+          "prompt": "Looking back, it was one of the best things that ever happened to me.",
+          "accepted": ["Looking back, it was one of the best things that ever happened to me"],
+          "commonErrors": []
+        }
+      ]
+    }
+  ]
+}

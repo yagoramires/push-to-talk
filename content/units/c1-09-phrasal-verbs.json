@@ -1,0 +1,456 @@
+{
+  "id": "c1-09-phrasal-verbs",
+  "level": "C1",
+  "order": 9,
+  "title_pt": "Phrasal verbs na fala fluente",
+  "title_en": "Phrasal verbs in fluent speech",
+  "objective_pt": "Use common idiomatic phrasal verbs naturally in conversation (come up with, put up with, run into, figure out, end up), including separable word order (\"figure it out\", not \"figure out it\").",
+  "blocks": [
+    {
+      "id": "c1-09-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Show how phrasal verbs make speech sound natural compared with Latin-based verbs.",
+        "prompts": [
+          "Which sounds more natural in a chat: \"I encountered an old friend\" or \"I ran into an old friend\"?",
+          "What's something you can't put up with?"
+        ],
+        "watchFor": [
+          "Avoiding phrasal verbs completely and choosing Latin-based words (tolerate, discover, invent).",
+          "Pronoun after the particle: \"pick up it\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-09-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repeat, linking the words: \"ran-into\", \"end-ed-up\".",
+          "prompt": "I ran into an old friend and we ended up talking for hours.",
+          "accepted": ["I ran into an old friend and we ended up talking for hours"],
+          "commonErrors": []
+        },
+        {
+          "id": "c1-09-warm-2",
+          "kind": "choice",
+          "instruction_pt": "Which sentence has the correct word order?",
+          "options": ["Can you pick up it?", "Can you pick it up?", "Can you it pick up?"],
+          "answer": 1,
+          "explanation_pt": "With separable phrasal verbs, a pronoun must go between the verb and the particle: \"pick it up\"."
+        },
+        {
+          "id": "c1-09-warm-3",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English, with a phrasal verb: \"Eu não aguento mais esse barulho.\"",
+          "accepted": [
+            "I can't put up with this noise anymore",
+            "I can't put up with this noise any more",
+            "I can't put up with this noise any longer",
+            "I can't stand this noise anymore",
+            "I can't take this noise anymore",
+            "I can't bear this noise anymore",
+            "I can't deal with this noise anymore"
+          ],
+          "commonErrors": [
+            {
+              "id": "support",
+              "match": "\\bsupport\\b",
+              "explanation_pt": "\"Suportar\" (tolerate) is \"put up with\", \"stand\" or \"bear\". \"Support\" means \"apoiar\" (false friend).",
+              "correction_en": "I can't put up with this noise anymore."
+            },
+            {
+              "id": "put-up-this",
+              "match": "\\bput up this\\b",
+              "explanation_pt": "\"Put up with\" is a three-part phrasal verb; don't drop \"with\".",
+              "correction_en": "I can't put up with this noise anymore."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-09-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "High-frequency phrasal verbs: come up with, figure out, end up, run into, bring up, turn down, look into.",
+        "prompts": [
+          "What did you end up doing last weekend?",
+          "Have you ever turned down a job offer?"
+        ],
+        "watchFor": [
+          "\"End up + infinitive\": it's \"end up doing\".",
+          "\"Turn down\" (reject) confused with \"turn off\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-09-vocab-1",
+          "kind": "vocab",
+          "word_en": "to come up with",
+          "meaning_pt": "ter (uma ideia), bolar, inventar",
+          "example_en": "She came up with a brilliant solution."
+        },
+        {
+          "id": "c1-09-vocab-2",
+          "kind": "vocab",
+          "word_en": "to end up",
+          "meaning_pt": "acabar (fazendo algo / em algum lugar)",
+          "example_en": "We ended up staying until midnight."
+        },
+        {
+          "id": "c1-09-vocab-3",
+          "kind": "vocab",
+          "word_en": "to turn down",
+          "meaning_pt": "recusar (uma oferta, um convite)",
+          "example_en": "He turned down the offer because of the salary."
+        },
+        {
+          "id": "c1-09-vocab-4",
+          "kind": "match",
+          "instruction_pt": "Match each phrasal verb with its meaning.",
+          "pairs": [
+            {
+              "en": "figure out",
+              "pt": "descobrir, entender"
+            },
+            {
+              "en": "bring up",
+              "pt": "mencionar, puxar (um assunto)"
+            },
+            {
+              "en": "run out of",
+              "pt": "ficar sem"
+            },
+            {
+              "en": "look into",
+              "pt": "investigar, examinar"
+            },
+            {
+              "en": "put off",
+              "pt": "adiar"
+            }
+          ]
+        },
+        {
+          "id": "c1-09-vocab-5",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English, with a phrasal verb: \"A gente acabou ficando em casa.\"",
+          "accepted": [
+            "We ended up staying at home",
+            "We ended up staying home",
+            "We ended up staying in",
+            "In the end, we stayed at home",
+            "We ended up just staying at home",
+            "We wound up staying home"
+          ],
+          "commonErrors": [
+            {
+              "id": "ended-up-to-stay",
+              "match": "\\bended up (to )?stay\\b",
+              "explanation_pt": "\"End up\" is followed by the \"-ing\" form: \"ended up staying\".",
+              "correction_en": "We ended up staying at home."
+            },
+            {
+              "id": "finished-staying",
+              "match": "\\bfinished (by )?staying\\b",
+              "explanation_pt": "\"Acabar fazendo\" is \"end up doing\". \"Finish\" means to complete something.",
+              "correction_en": "We ended up staying at home."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-09-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Stress in phrasal verbs: the particle is usually stressed (come UP with, turn DOWN, figure it OUT).",
+        "prompts": [
+          "Say \"I'll figure it out\" with stress on \"out\".",
+          "Say \"She turned it down\"."
+        ],
+        "watchFor": [
+          "Stressing the verb and swallowing the particle, which hides the meaning.",
+          "Pausing between the verb and the particle instead of linking them."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-09-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repeat. Stress the particle: figure it OUT.",
+          "prompt": "Don't worry, we'll figure it out.",
+          "accepted": ["Don't worry, we'll figure it out", "Don't worry, we will figure it out"],
+          "commonErrors": [
+            {
+              "id": "figure-out-it",
+              "match": "\\bfigure out it\\b",
+              "explanation_pt": "A pronoun goes between the verb and the particle: \"figure it out\".",
+              "correction_en": "Don't worry, we'll figure it out."
+            }
+          ]
+        },
+        {
+          "id": "c1-09-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repeat, linking \"turned-it-down\" smoothly.",
+          "prompt": "They offered me the job, but I turned it down.",
+          "accepted": ["They offered me the job, but I turned it down"],
+          "commonErrors": []
+        },
+        {
+          "id": "c1-09-pron-3",
+          "kind": "choice",
+          "instruction_pt": "In \"She brought it up at the meeting\", which word gets the most stress?",
+          "options": ["brought", "it", "up"],
+          "answer": 2,
+          "explanation_pt": "In phrasal verbs, the particle usually carries the stress: brought it UP."
+        }
+      ]
+    },
+    {
+      "id": "c1-09-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Understand phrasal verbs in fast, connected speech and answer using them.",
+        "prompts": ["Which phrasal verbs did you hear?", "Can you answer with a phrasal verb too?"],
+        "watchFor": [
+          "Missing the particle in fast speech, which changes the meaning completely.",
+          "Answering with a Latin-based verb that sounds stiff."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-09-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Listen. What happened?",
+          "listen": "We were halfway there when we ran out of petrol, so we ended up hitching a lift with a farmer.",
+          "options": [
+            "They ran to the petrol station.",
+            "They had no petrol left and got a ride from a farmer.",
+            "They decided to stay at a farm."
+          ],
+          "answer": 1,
+          "explanation_pt": "\"Run out of\" = have none left; \"hitch a lift\" = get a free ride from someone."
+        },
+        {
+          "id": "c1-09-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Listen and answer using \"come up with\".",
+          "listen": "Has anyone thought of a name for the new product yet?",
+          "accepted": [
+            "Not yet, but we're trying to come up with one",
+            "No, we haven't come up with one yet",
+            "We haven't come up with anything yet",
+            "Not yet. We're still trying to come up with something",
+            "Yes, Ana came up with a great one",
+            "Yes, the team came up with a few ideas",
+            "No one has come up with a name yet",
+            "Nobody has come up with one yet"
+          ],
+          "commonErrors": [
+            {
+              "id": "come-up-one",
+              "match": "\\bcome up (one|a name|something|anything)\\b",
+              "explanation_pt": "Don't drop \"with\": \"come up with one\".",
+              "correction_en": "Not yet, but we're trying to come up with one."
+            },
+            {
+              "id": "nobody-didnt",
+              "match": "\\b(nobody|no one) (has not|did not|have not)\\b",
+              "explanation_pt": "No double negatives: \"Nobody has come up with one\", not \"Nobody hasn't\".",
+              "correction_en": "Nobody has come up with one yet."
+            }
+          ]
+        },
+        {
+          "id": "c1-09-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Listen and say you'll investigate, using \"look into\".",
+          "listen": "The client says the invoice is wrong. Can you check?",
+          "accepted": [
+            "Sure, I'll look into it",
+            "I'll look into it",
+            "Of course, I'll look into it right away",
+            "No problem, I'll look into it",
+            "I'll look into it and get back to you",
+            "Sure, let me look into it",
+            "Leave it with me, I'll look into it"
+          ],
+          "commonErrors": [
+            {
+              "id": "look-it-into",
+              "match": "\\blook it into\\b",
+              "explanation_pt": "\"Look into\" is inseparable: the object goes after it: \"look into it\".",
+              "correction_en": "Sure, I'll look into it."
+            },
+            {
+              "id": "look-for-it",
+              "match": "\\blook (for|at) it\\b",
+              "explanation_pt": "\"Look for\" = procurar; \"look at\" = olhar. To investigate a problem is \"look into\".",
+              "correction_en": "Sure, I'll look into it."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-09-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Hold a natural chat about recent events that pushes the learner to use phrasal verbs.",
+        "prompts": [
+          "Have you had to put up with anything annoying lately?",
+          "What's a problem you've figured out recently?",
+          "Who did you last run into by chance?"
+        ],
+        "watchFor": ["\"Support\" for \"suportar\".", "Pronoun position: \"turn down it\"."]
+      },
+      "exercises": [
+        {
+          "id": "c1-09-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English, with a phrasal verb: \"Ela puxou esse assunto na reunião.\"",
+          "accepted": [
+            "She brought that up in the meeting",
+            "She brought it up in the meeting",
+            "She brought up that subject in the meeting",
+            "She brought up that topic at the meeting",
+            "She brought that up at the meeting",
+            "She brought it up at the meeting",
+            "She raised that in the meeting"
+          ],
+          "commonErrors": [
+            {
+              "id": "pulled-subject",
+              "match": "\\bpulled\\b",
+              "explanation_pt": "\"Puxar um assunto\" is \"bring something up\" or \"raise\", not \"pull\".",
+              "correction_en": "She brought that up in the meeting."
+            },
+            {
+              "id": "brought-up-it",
+              "match": "\\bbrought up (it|that) (in|at)\\b",
+              "explanation_pt": "With a pronoun, put it in the middle: \"brought it up\" / \"brought that up\".",
+              "correction_en": "She brought that up in the meeting."
+            }
+          ]
+        },
+        {
+          "id": "c1-09-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English, with a phrasal verb: \"Ficamos sem tempo, então vamos adiar.\"",
+          "accepted": [
+            "We've run out of time, so let's put it off",
+            "We ran out of time, so let's put it off",
+            "We've run out of time, so let's postpone it",
+            "We've run out of time, so we'll put it off",
+            "We've run out of time, so let's push it back",
+            "We're out of time, so let's put it off",
+            "We've run out of time, so let's leave it for later"
+          ],
+          "commonErrors": [
+            {
+              "id": "stayed-without",
+              "match": "\\b(stayed|were left) without time\\b",
+              "explanation_pt": "\"Ficar sem\" is \"run out of\": \"we've run out of time\".",
+              "correction_en": "We've run out of time, so let's put it off."
+            },
+            {
+              "id": "put-off-it",
+              "match": "\\bput off it\\b",
+              "explanation_pt": "Pronoun in the middle: \"put it off\".",
+              "correction_en": "We've run out of time, so let's put it off."
+            }
+          ]
+        },
+        {
+          "id": "c1-09-conv-3",
+          "kind": "order",
+          "instruction_pt": "Put the words in order.",
+          "accepted": ["I'm looking forward to catching up with you"]
+        },
+        {
+          "id": "c1-09-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Answer in about a minute, using at least four phrasal verbs from the unit.",
+          "prompt_en": "Tell me about a plan that didn't work out the way you expected. What happened, and what did you end up doing?",
+          "guidelines_pt": [
+            "Use \"end up\" + -ing for the unexpected result.",
+            "Include at least three of: come up with, run into, figure out, turn down, put off, run out of.",
+            "Put pronouns in the middle: \"figure it out\", \"put it off\".",
+            "Close with what you learned: \"Looking back...\"."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-09-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Quick-fire phrasal verb recall and word order check.",
+        "prompts": [
+          "Replace with a phrasal verb: \"tolerate\", \"postpone\", \"reject\", \"investigate\".",
+          "Tell me about a plan that fell through, using two phrasal verbs."
+        ],
+        "watchFor": ["Pronoun after the particle", "\"End up to\""]
+      },
+      "exercises": [
+        {
+          "id": "c1-09-rev-1",
+          "kind": "translate",
+          "instruction_pt": "Replace the formal verb with a phrasal verb and say it: \"I rejected their invitation.\"",
+          "accepted": [
+            "I turned down their invitation",
+            "I turned their invitation down",
+            "I turned it down",
+            "I turned down the invitation"
+          ],
+          "commonErrors": [
+            {
+              "id": "turned-off",
+              "match": "\\bturned off\\b",
+              "explanation_pt": "\"Turn off\" is for switching off a device. To reject an offer is \"turn down\".",
+              "correction_en": "I turned down their invitation."
+            }
+          ]
+        },
+        {
+          "id": "c1-09-rev-2",
+          "kind": "fill",
+          "instruction_pt": "Complete with one word.",
+          "sentence": "We've run out ___ milk again.",
+          "accepted": ["of"],
+          "commonErrors": [
+            {
+              "id": "run-out-from",
+              "match": "^(from|with|off)$",
+              "explanation_pt": "\"Run out of\" + noun.",
+              "correction_en": "We've run out of milk again."
+            }
+          ]
+        },
+        {
+          "id": "c1-09-rev-3",
+          "kind": "choice",
+          "instruction_pt": "Which sentence is correct?",
+          "options": ["I'll look it into.", "I'll look into it.", "I'll look into."],
+          "answer": 1,
+          "explanation_pt": "\"Look into\" is inseparable: the object always comes after the particle."
+        },
+        {
+          "id": "c1-09-rev-4",
+          "kind": "repeat",
+          "instruction_pt": "Repeat to finish the unit.",
+          "prompt": "It all worked out in the end.",
+          "accepted": ["It all worked out in the end", "It all worked out fine in the end"],
+          "commonErrors": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,473 @@
+{
+  "id": "c1-10-networking",
+  "level": "C1",
+  "order": 10,
+  "title_pt": "Networking profissional",
+  "title_en": "Professional networking",
+  "objective_pt": "Start and sustain a conversation with a stranger at a professional event: break the ice, describe what you do concisely, find common ground and follow up (\"It'd be great to stay in touch\").",
+  "blocks": [
+    {
+      "id": "c1-10-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Find out how comfortable the learner is approaching strangers in English.",
+        "prompts": [
+          "You're at a conference coffee break. How do you start talking to someone?",
+          "How would you describe your job in two sentences?"
+        ],
+        "watchFor": [
+          "\"I work with marketing\" (from \"trabalho com\"); it's \"I work in marketing\".",
+          "Listing job duties instead of the impact of the work."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-10-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repeat in a friendly, open tone.",
+          "prompt": "Mind if I join you? I don't think we've met.",
+          "accepted": [
+            "Mind if I join you? I don't think we've met",
+            "Do you mind if I join you? I don't think we've met"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "c1-10-warm-2",
+          "kind": "choice",
+          "instruction_pt": "Which is the most natural icebreaker at a conference?",
+          "options": [
+            "Hello. What is your salary?",
+            "So, what brings you here today?",
+            "I am Carlos. I am engineer."
+          ],
+          "answer": 1,
+          "explanation_pt": "\"What brings you here?\" is open and friendly. Also note: \"I'm an engineer\" needs the article \"an\"."
+        },
+        {
+          "id": "c1-10-warm-3",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English: \"Eu trabalho com marketing digital.\"",
+          "accepted": [
+            "I work in digital marketing",
+            "I'm in digital marketing",
+            "I work in the digital marketing field",
+            "I work in the field of digital marketing",
+            "I do digital marketing",
+            "My background is in digital marketing"
+          ],
+          "commonErrors": [
+            {
+              "id": "work-with-area",
+              "match": "\\bwork with (digital )?marketing\\b",
+              "explanation_pt": "For your field or industry, use \"work in\": \"I work in digital marketing\". \"Work with\" is for people or tools.",
+              "correction_en": "I work in digital marketing."
+            },
+            {
+              "id": "marketing-digital-order",
+              "match": "\\bmarketing digital\\b",
+              "explanation_pt": "Adjective before the noun: \"digital marketing\".",
+              "correction_en": "I work in digital marketing."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-10-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Networking vocabulary: to break the ice, common ground, to touch base, to stay in touch, a lead, to put someone in touch with.",
+        "prompts": [
+          "How do you usually break the ice?",
+          "Can you put me in touch with someone in your company?"
+        ],
+        "watchFor": [
+          "\"Contact\" used with \"with\" (\"contact with me\"); the verb takes a direct object.",
+          "\"Stay in contact\" is fine, but \"stay in touch\" is more natural."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-10-vocab-1",
+          "kind": "vocab",
+          "word_en": "to break the ice",
+          "meaning_pt": "quebrar o gelo",
+          "example_en": "A good question is the easiest way to break the ice."
+        },
+        {
+          "id": "c1-10-vocab-2",
+          "kind": "vocab",
+          "word_en": "common ground",
+          "meaning_pt": "pontos em comum",
+          "example_en": "We found some common ground: we'd both lived in Lisbon."
+        },
+        {
+          "id": "c1-10-vocab-3",
+          "kind": "vocab",
+          "word_en": "to put someone in touch with",
+          "meaning_pt": "colocar alguém em contato com",
+          "example_en": "I can put you in touch with our head of sales."
+        },
+        {
+          "id": "c1-10-vocab-4",
+          "kind": "match",
+          "instruction_pt": "Match each networking expression with its meaning.",
+          "pairs": [
+            {
+              "en": "to touch base",
+              "pt": "dar uma conversada rápida, se atualizar"
+            },
+            {
+              "en": "a lead",
+              "pt": "um contato promissor, uma pista"
+            },
+            {
+              "en": "to follow up",
+              "pt": "dar continuidade, retomar contato"
+            },
+            {
+              "en": "an elevator pitch",
+              "pt": "uma apresentação rápida de si"
+            }
+          ]
+        },
+        {
+          "id": "c1-10-vocab-5",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English: \"Seria ótimo manter contato.\"",
+          "accepted": [
+            "It'd be great to stay in touch",
+            "It would be great to stay in touch",
+            "It'd be great to keep in touch",
+            "It would be great to keep in touch",
+            "It'd be nice to stay in touch",
+            "Let's stay in touch",
+            "Let's keep in touch",
+            "It'd be great to stay in contact"
+          ],
+          "commonErrors": [
+            {
+              "id": "maintain-contact",
+              "match": "\\bmaintain (the )?contact\\b",
+              "explanation_pt": "\"Manter contato\" is \"stay in touch\" or \"keep in touch\". \"Maintain contact\" sounds bureaucratic.",
+              "correction_en": "It'd be great to stay in touch."
+            },
+            {
+              "id": "will-be-great",
+              "match": "^(it )?will be great\\b",
+              "explanation_pt": "\"Seria\" is conditional: \"It would be great\", not \"It will be great\".",
+              "correction_en": "It'd be great to stay in touch."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-10-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Sound engaged: rising intonation on genuine questions, stress on key information in your pitch.",
+        "prompts": [
+          "Ask \"Oh really? How did you get into that?\" with genuine interest.",
+          "Say your job title and company clearly."
+        ],
+        "watchFor": [
+          "Monotone delivery that sounds bored.",
+          "Mumbling the company name, the most important information."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-10-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repeat with genuine interest in your voice.",
+          "prompt": "Oh, really? How did you get into that?",
+          "accepted": ["Oh, really? How did you get into that?"],
+          "commonErrors": []
+        },
+        {
+          "id": "c1-10-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repeat, stressing the key words: HELP, SMALL, GROW, ONLINE.",
+          "prompt": "Basically, I help small businesses grow online.",
+          "accepted": [
+            "Basically, I help small businesses grow online",
+            "Basically I help small businesses to grow online"
+          ],
+          "commonErrors": []
+        },
+        {
+          "id": "c1-10-pron-3",
+          "kind": "choice",
+          "instruction_pt": "How should \"So, what do you do?\" usually sound at a networking event?",
+          "options": [
+            "Falling and friendly, as an open question.",
+            "Very high and rising, as if surprised.",
+            "Flat and fast, as a formality."
+          ],
+          "answer": 0,
+          "explanation_pt": "\"Wh-\" questions usually fall in English. A warm falling tone sounds natural and interested."
+        }
+      ]
+    },
+    {
+      "id": "c1-10-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Keep a networking conversation going: show interest, find common ground, ask follow-up questions.",
+        "prompts": ["What could you ask next?", "What do you have in common with this person?"],
+        "watchFor": [
+          "Answering and then going silent instead of asking back.",
+          "Making the conversation an interview with only questions."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-10-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Listen. What is the speaker offering?",
+          "listen": "If you're interested in the fintech side, I could introduce you to my old manager. She's always on the lookout for new talent.",
+          "options": [
+            "To give the listener a job.",
+            "To put the listener in touch with a useful contact.",
+            "To ask the listener for a job."
+          ],
+          "answer": 1,
+          "explanation_pt": "\"I could introduce you to...\" means putting someone in touch with a contact."
+        },
+        {
+          "id": "c1-10-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Listen and respond with interest, then ask a follow-up question.",
+          "listen": "I've just moved to São Paulo from London to set up our new office.",
+          "accepted": [
+            "Oh, interesting! How are you finding it so far?",
+            "That's exciting! How are you finding São Paulo?",
+            "Really? How are you settling in?",
+            "Wow, big move! How's it going so far?",
+            "Oh, nice! What made you choose São Paulo?",
+            "That's a big change! How are you finding the city?",
+            "Interesting! How are you settling in?",
+            "How are you finding it so far?"
+          ],
+          "commonErrors": [
+            {
+              "id": "how-are-you-finding-it-literal",
+              "match": "\\b(are you liking|do you are liking)\\b",
+              "explanation_pt": "\"Está gostando?\" is better as \"How are you finding it?\" or \"Do you like it?\". \"Are you liking\" is informal and avoided by many speakers.",
+              "correction_en": "How are you finding it so far?"
+            },
+            {
+              "id": "adapting",
+              "match": "\\bhow are you adapting\\b",
+              "explanation_pt": "\"Se adaptando\" in this context is more naturally \"settling in\".",
+              "correction_en": "How are you settling in?"
+            }
+          ]
+        },
+        {
+          "id": "c1-10-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Listen. The person has to leave. Close the conversation and suggest staying in touch.",
+          "listen": "Oh, I'm so sorry, I have to run. I've got a session starting in five minutes.",
+          "accepted": [
+            "No worries! It was great talking to you. Let's stay in touch",
+            "Of course! Lovely to meet you. Shall we connect on LinkedIn?",
+            "No problem. It was great to meet you. Let's keep in touch",
+            "Sure, it was nice talking to you. Let's stay in touch",
+            "No worries. Can I get your card before you go?",
+            "Of course. Great meeting you. I'll send you a message",
+            "No problem! Let's stay in touch",
+            "It was great meeting you. Let's keep in touch",
+            "It was nice to meet you. Let's stay in touch",
+            "Nice meeting you. Let's keep in touch"
+          ],
+          "commonErrors": [
+            {
+              "id": "nice-to-meet-you-ending",
+              "match": "^(no problem |no worries |sure |of course )?nice to meet you\\b",
+              "explanation_pt": "At the end of a conversation, use the -ing or past form: \"Nice meeting you\" / \"It was nice to meet you\". \"Nice to meet you\" is for the start.",
+              "correction_en": "It was great meeting you. Let's stay in touch."
+            },
+            {
+              "id": "maintain-contact",
+              "match": "\\bmaintain (the )?contact\\b",
+              "explanation_pt": "Say \"stay in touch\" or \"keep in touch\".",
+              "correction_en": "It was great meeting you. Let's stay in touch."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-10-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Role-play a full networking exchange: open, pitch, common ground, close and follow up.",
+        "prompts": [
+          "I'm standing alone by the coffee. Come and talk to me.",
+          "So, what do you do?",
+          "It's been great chatting. What's the best way to reach you?"
+        ],
+        "watchFor": [
+          "\"Work with\" for a field; \"I am engineer\" without an article.",
+          "\"Nice to meet you\" when leaving."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "c1-10-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English: \"Eu sou engenheira e trabalho numa startup de saúde.\"",
+          "accepted": [
+            "I'm an engineer and I work at a health startup",
+            "I'm an engineer and I work for a health startup",
+            "I'm an engineer and I work at a healthcare startup",
+            "I'm an engineer at a health tech startup",
+            "I'm an engineer, and I work in a health startup",
+            "I'm an engineer working at a healthcare startup",
+            "I'm an engineer and I work for a healthtech startup"
+          ],
+          "commonErrors": [
+            {
+              "id": "no-article-job",
+              "match": "\\bi am engineer\\b",
+              "explanation_pt": "Jobs need an article in English: \"I'm an engineer\".",
+              "correction_en": "I'm an engineer and I work at a health startup."
+            },
+            {
+              "id": "startup-of-health",
+              "match": "\\bstartup of health\\b",
+              "explanation_pt": "Use the noun as an adjective before the main noun: \"a health startup\".",
+              "correction_en": "I'm an engineer and I work at a health startup."
+            }
+          ]
+        },
+        {
+          "id": "c1-10-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English: \"Posso te colocar em contato com a minha sócia.\"",
+          "accepted": [
+            "I can put you in touch with my business partner",
+            "I could put you in touch with my business partner",
+            "I can put you in touch with my partner",
+            "I can introduce you to my business partner",
+            "I could introduce you to my partner",
+            "I can connect you with my business partner"
+          ],
+          "commonErrors": [
+            {
+              "id": "partner-associate",
+              "match": "\\bmy associate\\b",
+              "explanation_pt": "A \"sócio/sócia\" in a business is a \"business partner\" (or just \"partner\"). \"Associate\" is usually a colleague or junior lawyer.",
+              "correction_en": "I can put you in touch with my business partner."
+            },
+            {
+              "id": "put-in-contact",
+              "match": "\\bput you in contact\\b",
+              "explanation_pt": "Understandable, but \"put you in touch with\" is the natural expression.",
+              "correction_en": "I can put you in touch with my business partner."
+            }
+          ]
+        },
+        {
+          "id": "c1-10-conv-3",
+          "kind": "order",
+          "instruction_pt": "Put the words in order to ask an icebreaker question.",
+          "accepted": ["So what brings you to this conference"]
+        },
+        {
+          "id": "c1-10-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Respond as if at a networking event, in about a minute.",
+          "prompt_en": "Hi, I'm Rachel. I run a small design agency in Toronto. I don't think we've met. So, what do you do, and what brings you here?",
+          "guidelines_pt": [
+            "Introduce yourself and give a short pitch: what you do and why it matters.",
+            "Show interest: ask about her agency or Toronto.",
+            "Find common ground (industry, city, interests).",
+            "Suggest a follow-up: \"It'd be great to stay in touch.\""
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-10-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Recycle networking phrases and the typical errors (work with, articles, nice to meet you).",
+        "prompts": ["Give me your 20-second elevator pitch.", "End our conversation politely."],
+        "watchFor": ["\"I work with IT\"", "\"I am engineer\""]
+      },
+      "exercises": [
+        {
+          "id": "c1-10-rev-1",
+          "kind": "translate",
+          "instruction_pt": "Say this in natural English: \"Vou te mandar um e-mail semana que vem para dar continuidade.\"",
+          "accepted": [
+            "I'll send you an email next week to follow up",
+            "I'll email you next week to follow up",
+            "I'll follow up with an email next week",
+            "I'll drop you an email next week to follow up",
+            "I'll send you an email next week as a follow-up",
+            "I'll get in touch by email next week to follow up"
+          ],
+          "commonErrors": [
+            {
+              "id": "week-that-comes",
+              "match": "\\bweek that comes\\b",
+              "explanation_pt": "\"Semana que vem\" is \"next week\".",
+              "correction_en": "I'll email you next week to follow up."
+            },
+            {
+              "id": "give-continuity",
+              "match": "\\bgive continuity\\b",
+              "explanation_pt": "\"Dar continuidade\" is \"follow up\" (or \"continue\"). \"Give continuity\" is a literal translation.",
+              "correction_en": "I'll email you next week to follow up."
+            }
+          ]
+        },
+        {
+          "id": "c1-10-rev-2",
+          "kind": "fill",
+          "instruction_pt": "Complete with one word.",
+          "sentence": "I work ___ finance, mostly with start-ups.",
+          "accepted": ["in"],
+          "commonErrors": [
+            {
+              "id": "work-with",
+              "match": "^(with|on|at)$",
+              "explanation_pt": "For a field or industry, use \"work in\".",
+              "correction_en": "I work in finance, mostly with start-ups."
+            }
+          ]
+        },
+        {
+          "id": "c1-10-rev-3",
+          "kind": "choice",
+          "instruction_pt": "What do you say when leaving someone you've just met?",
+          "options": ["Nice to meet you.", "It was great meeting you.", "Pleased to meet you."],
+          "answer": 1,
+          "explanation_pt": "\"It was great meeting you\" (or \"Nice meeting you\") closes the conversation. The others are for the start."
+        },
+        {
+          "id": "c1-10-rev-4",
+          "kind": "repeat",
+          "instruction_pt": "Repeat this follow-up line.",
+          "prompt": "It was great chatting. I'll drop you a line next week.",
+          "accepted": [
+            "It was great chatting. I'll drop you a line next week",
+            "It was great chatting, I will drop you a line next week"
+          ],
+          "commonErrors": []
+        }
+      ]
+    }
+  ]
+}

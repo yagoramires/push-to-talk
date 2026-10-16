@@ -1,0 +1,469 @@
+{
+  "id": "a1-10-shopping",
+  "level": "A1",
+  "order": 10,
+  "title_pt": "Compras",
+  "title_en": "Shopping",
+  "objective_pt": "Comprar uma roupa numa loja: perguntar o preço com \"How much is this / are these?\", pedir outro tamanho, provar (\"Can I try it on?\") e pagar.",
+  "blocks": [
+    {
+      "id": "a1-10-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Aquecer com as frases de uma compra simples.",
+        "prompts": ["Do you like shopping?", "Where do you buy clothes?"],
+        "watchFor": [
+          "Dizer \"How much is these?\"; com plural é \"are\".",
+          "Pronunciar \"buy\" como \"bui\"; é \"bai\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-10-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita em voz alta.",
+          "prompt": "How much is this T-shirt?",
+          "accepted": ["How much is this T-shirt?", "How much is this t shirt"],
+          "commonErrors": []
+        },
+        {
+          "id": "a1-10-warm-2",
+          "kind": "choice",
+          "instruction_pt": "Qual está certo para \"Quanto custam estes sapatos?\"",
+          "options": [
+            "How much are these shoes?",
+            "How much is these shoes?",
+            "How much costs these shoes?"
+          ],
+          "answer": 0,
+          "explanation_pt": "Com plural (these shoes) usamos \"are\": \"How much are these shoes?\"."
+        },
+        {
+          "id": "a1-10-warm-3",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Quanto custa esta jaqueta?\"",
+          "accepted": [
+            "How much is this jacket?",
+            "How much does this jacket cost?",
+            "How much is the jacket?",
+            "How much is that jacket?",
+            "What's the price of this jacket?",
+            "Excuse me, how much is this jacket?"
+          ],
+          "commonErrors": [
+            {
+              "id": "how-much-costs",
+              "match": "^how much (costs|cost) this\\b",
+              "explanation_pt": "A pergunta precisa de \"is\" ou \"does\": \"How much is this jacket?\".",
+              "correction_en": "How much is this jacket?"
+            },
+            {
+              "id": "how-much-is-cost",
+              "match": "\\bhow much is cost\\b",
+              "explanation_pt": "Use \"How much is...?\" ou \"How much does it cost?\", não as duas juntas.",
+              "correction_en": "How much is this jacket?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-10-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Aprender o vocabulário da loja: size, try on, fitting room, cheap, expensive, on sale, cash, card.",
+        "prompts": [
+          "What size are you?",
+          "Is this expensive or cheap?",
+          "Do you pay by card or cash?"
+        ],
+        "watchFor": [
+          "Dizer \"provator\" ou \"proof\"; provador é \"fitting room\".",
+          "Dizer \"in promotion\"; liquidação é \"on sale\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-10-vocab-1",
+          "kind": "vocab",
+          "word_en": "try on",
+          "meaning_pt": "provar (roupa)",
+          "example_en": "Can I try on these jeans?"
+        },
+        {
+          "id": "a1-10-vocab-2",
+          "kind": "vocab",
+          "word_en": "expensive",
+          "meaning_pt": "caro",
+          "example_en": "This dress is very expensive."
+        },
+        {
+          "id": "a1-10-vocab-3",
+          "kind": "vocab",
+          "word_en": "on sale",
+          "meaning_pt": "em promoção, em liquidação",
+          "example_en": "These shoes are on sale."
+        },
+        {
+          "id": "a1-10-vocab-4",
+          "kind": "match",
+          "instruction_pt": "Ligue cada palavra ao seu significado.",
+          "pairs": [
+            {
+              "en": "cheap",
+              "pt": "barato"
+            },
+            {
+              "en": "size",
+              "pt": "tamanho"
+            },
+            {
+              "en": "fitting room",
+              "pt": "provador"
+            },
+            {
+              "en": "cash",
+              "pt": "dinheiro vivo"
+            },
+            {
+              "en": "receipt",
+              "pt": "nota fiscal, recibo"
+            }
+          ]
+        },
+        {
+          "id": "a1-10-vocab-5",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Está em promoção.\"",
+          "accepted": [
+            "It's on sale",
+            "It is on sale",
+            "This is on sale",
+            "It's on special offer",
+            "It's on discount",
+            "It's discounted"
+          ],
+          "commonErrors": [
+            {
+              "id": "in-promotion",
+              "match": "\\b(in|on) promotion\\b",
+              "explanation_pt": "\"Promotion\" é promoção no trabalho. Para preço reduzido diga \"on sale\".",
+              "correction_en": "It's on sale."
+            },
+            {
+              "id": "in-sale",
+              "match": "\\bin sale\\b",
+              "explanation_pt": "A preposição é \"on\": \"on sale\".",
+              "correction_en": "It's on sale."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-10-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Treinar a ligação de \"try it on\" (trai-iDón) e o som de \"this\" vs \"these\".",
+        "prompts": ["Say \"this\" and \"these\".", "Say \"Can I try it on?\" as one phrase."],
+        "watchFor": [
+          "Falar \"this\" e \"these\" iguais; \"these\" tem o \"i\" longo.",
+          "Separar \"try - it - on\" palavra por palavra."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-10-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita ligando as palavras: \"try-it-on\".",
+          "prompt": "Can I try it on?",
+          "accepted": ["Can I try it on?"],
+          "commonErrors": [
+            {
+              "id": "can-i-prove",
+              "match": "\\bprove\\b",
+              "explanation_pt": "\"Prove\" é provar uma ideia. Provar roupa é \"try on\".",
+              "correction_en": "Can I try it on?"
+            }
+          ]
+        },
+        {
+          "id": "a1-10-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repita. \"These\" tem o \"i\" longo; \"this\" tem o \"i\" curto.",
+          "prompt": "I like this shirt and these shoes.",
+          "accepted": ["I like this shirt and these shoes"],
+          "commonErrors": []
+        },
+        {
+          "id": "a1-10-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Ouça e escolha o que você entendeu.",
+          "listen": "These are twenty dollars.",
+          "options": ["These are $20.", "This is $20.", "These are $12."],
+          "answer": 0,
+          "explanation_pt": "\"These\" (estes) tem o \"i\" longo, e \"twenty\" é 20."
+        }
+      ]
+    },
+    {
+      "id": "a1-10-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Entender o vendedor (tamanho, preço, pagamento) e responder.",
+        "prompts": ["Can I help you?", "What size do you need?", "Cash or card?"],
+        "watchFor": [
+          "Responder \"I'm only looking\"; o natural é \"I'm just looking\".",
+          "Dizer \"with card\"; o comum é \"by card\" ou \"card, please\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-10-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Ouça o vendedor e escolha o preço.",
+          "listen": "The jeans are forty dollars, but today they're on sale for thirty.",
+          "options": ["$30 today", "$40 today", "$13 today"],
+          "answer": 0,
+          "explanation_pt": "Custam 40 (forty), mas hoje estão em promoção por 30 (thirty)."
+        },
+        {
+          "id": "a1-10-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça o vendedor e responda que você só está olhando, obrigado.",
+          "listen": "Hi! Can I help you?",
+          "accepted": [
+            "I'm just looking, thanks",
+            "I'm just looking, thank you",
+            "Just looking, thanks",
+            "Just looking, thank you",
+            "No, thanks, I'm just looking",
+            "No, thank you. I'm just looking",
+            "I'm only looking, thanks",
+            "No thanks, just looking",
+            "I'm just browsing, thanks",
+            "Not right now, thanks"
+          ],
+          "commonErrors": [
+            {
+              "id": "only-seeing",
+              "match": "\\b(seeing|watching)\\b",
+              "explanation_pt": "\"Só estou olhando\" é \"I'm just looking\". \"Seeing\" e \"watching\" não funcionam aqui.",
+              "correction_en": "I'm just looking, thanks."
+            }
+          ]
+        },
+        {
+          "id": "a1-10-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e responda que vai pagar com cartão.",
+          "listen": "Cash or card?",
+          "accepted": [
+            "Card, please",
+            "By card, please",
+            "Card",
+            "I'll pay by card",
+            "I'll pay with my card",
+            "I'll pay with card",
+            "Credit card, please",
+            "Debit card, please",
+            "Card, thanks",
+            "I'd like to pay by card"
+          ],
+          "commonErrors": [
+            {
+              "id": "cartoon",
+              "match": "\\bcartoon\\b",
+              "explanation_pt": "\"Cartoon\" é desenho animado. Cartão é \"card\".",
+              "correction_en": "Card, please."
+            },
+            {
+              "id": "in-card",
+              "match": "\\b(in|on) card\\b",
+              "explanation_pt": "Para forma de pagamento usamos \"by card\" ou \"with my card\".",
+              "correction_en": "By card, please."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-10-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Fazer uma compra completa: pedir tamanho, provar, perguntar o preço e decidir.",
+        "prompts": ["Do you have this in medium?", "How does it fit?", "Do you want to take it?"],
+        "watchFor": [
+          "Dizer \"Have this in medium?\" sem \"Do you\".",
+          "Dizer \"I will take\" sem \"it\".",
+          "Usar \"is too big\" para tudo; pratique \"too small\" e \"perfect\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-10-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Vocês têm isto no tamanho médio?\"",
+          "accepted": [
+            "Do you have this in medium?",
+            "Do you have this in a medium?",
+            "Do you have this in size medium?",
+            "Do you have this in a medium size?",
+            "Have you got this in medium?",
+            "Is there a medium?",
+            "Do you have a medium?",
+            "Do you have it in medium?"
+          ],
+          "commonErrors": [
+            {
+              "id": "have-no-do",
+              "match": "^(you )?have (this|it|a) ",
+              "explanation_pt": "Pergunta no presente precisa de \"Do\": \"Do you have this in medium?\".",
+              "correction_en": "Do you have this in medium?"
+            },
+            {
+              "id": "middle-size",
+              "match": "\\b(middle|average)\\b",
+              "explanation_pt": "Tamanho médio é \"medium\" (M). \"Middle\" é o meio de algo.",
+              "correction_en": "Do you have this in medium?"
+            }
+          ]
+        },
+        {
+          "id": "a1-10-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"É muito pequeno. Eu vou levar o grande.\"",
+          "accepted": [
+            "It's too small. I'll take the large one",
+            "It is too small. I will take the large one",
+            "It's too small. I'll take the big one",
+            "It's too small. I'll take the large",
+            "It's too small, I'll take the bigger one",
+            "It's too small. I'll get the large one",
+            "This is too small. I'll take the large one"
+          ],
+          "commonErrors": [
+            {
+              "id": "very-small",
+              "match": "\\bvery small\\b",
+              "explanation_pt": "Quando é um problema (pequeno demais), use \"too small\". \"Very small\" só descreve.",
+              "correction_en": "It's too small. I'll take the large one."
+            },
+            {
+              "id": "go-to-take",
+              "match": "\\b(i go take|i go to take)\\b",
+              "explanation_pt": "\"Vou levar\" (decisão na hora) é \"I'll take\".",
+              "correction_en": "It's too small. I'll take the large one."
+            },
+            {
+              "id": "carry-take",
+              "match": "\\b(carry|bring) the\\b",
+              "explanation_pt": "\"Levar\" numa compra é \"take\": \"I'll take the large one\".",
+              "correction_en": "It's too small. I'll take the large one."
+            }
+          ]
+        },
+        {
+          "id": "a1-10-conv-3",
+          "kind": "order",
+          "instruction_pt": "Coloque as palavras na ordem certa para formar a pergunta.",
+          "accepted": ["Where is the fitting room"]
+        },
+        {
+          "id": "a1-10-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Você está numa loja de roupas. Fale com o vendedor e compre algo.",
+          "prompt_en": "Hello! Welcome to our store. Are you looking for something special today?",
+          "guidelines_pt": [
+            "Diga o que você procura: \"I'm looking for a jacket\".",
+            "Pergunte o tamanho e o preço: \"Do you have this in medium? How much is it?\".",
+            "Decida e pague: \"I'll take it. Card, please.\"."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-10-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Revisar preços, tamanhos, this/these e as frases da compra.",
+        "prompts": [
+          "How do you ask the price of two things?",
+          "What do you say when you decide to buy?"
+        ],
+        "watchFor": ["\"How much is these\".", "\"In promotion\" no lugar de \"on sale\"."]
+      },
+      "exercises": [
+        {
+          "id": "a1-10-rev-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu vou levar.\" (decidindo comprar)",
+          "accepted": [
+            "I'll take it",
+            "I will take it",
+            "I'll take this",
+            "I'll take this one",
+            "I'll buy it",
+            "I'll have it",
+            "I'll get it",
+            "OK, I'll take it"
+          ],
+          "commonErrors": [
+            {
+              "id": "take-no-it",
+              "match": "^i will take$",
+              "explanation_pt": "\"Take\" precisa de objeto: \"I'll take it\".",
+              "correction_en": "I'll take it."
+            },
+            {
+              "id": "go-carry",
+              "match": "\\b(carry|bring) (it|this)\\b",
+              "explanation_pt": "\"Levar\" numa compra é \"take\": \"I'll take it\".",
+              "correction_en": "I'll take it."
+            }
+          ]
+        },
+        {
+          "id": "a1-10-rev-2",
+          "kind": "fill",
+          "instruction_pt": "Complete com is ou are.",
+          "sentence": "How much ___ these sneakers?",
+          "accepted": ["are"],
+          "commonErrors": [
+            {
+              "id": "is-these",
+              "match": "^(is|does)$",
+              "explanation_pt": "\"These sneakers\" é plural, então: \"How much are\".",
+              "correction_en": "How much are these sneakers?"
+            }
+          ]
+        },
+        {
+          "id": "a1-10-rev-3",
+          "kind": "choice",
+          "instruction_pt": "O que significa \"It's too expensive\"?",
+          "options": ["É caro demais.", "É muito barato.", "Está em promoção."],
+          "answer": 0,
+          "explanation_pt": "\"Too\" + adjetivo indica excesso: caro demais."
+        },
+        {
+          "id": "a1-10-rev-4",
+          "kind": "repeat",
+          "instruction_pt": "Para terminar, repita.",
+          "prompt": "Thank you. Can I have the receipt, please?",
+          "accepted": [
+            "Thank you. Can I have the receipt, please?",
+            "Thanks, can I have the receipt please"
+          ],
+          "commonErrors": []
+        }
+      ]
+    }
+  ]
+}
