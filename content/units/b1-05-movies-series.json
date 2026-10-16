@@ -471,5 +471,516 @@
         }
       ]
     }
+  ],
+  "practice": [
+    {
+      "id": "b1-05-prac-1",
+      "kind": "vocab",
+      "word_en": "cast",
+      "meaning_pt": "elenco",
+      "example_en": "The cast is amazing, especially the main actress."
+    },
+    {
+      "id": "b1-05-prac-2",
+      "kind": "vocab",
+      "word_en": "plot twist",
+      "meaning_pt": "reviravolta na história",
+      "example_en": "I didn't see that plot twist coming!"
+    },
+    {
+      "id": "b1-05-prac-3",
+      "kind": "repeat",
+      "instruction_pt": "Repita. \"Series\" é igual no singular e no plural.",
+      "prompt": "This series is set in a small town in Norway.",
+      "accepted": ["This series is set in a small town in Norway"],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-05-prac-4",
+      "kind": "repeat",
+      "instruction_pt": "Repita a frase com entusiasmo.",
+      "prompt": "The acting was brilliant, but the ending was a bit disappointing.",
+      "accepted": [
+        "The acting was brilliant, but the ending was a bit disappointing",
+        "The acting was brilliant but the ending was a little disappointing"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-05-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repita. \"Overrated\" tem a força no começo: O-ver-ra-ted.",
+      "prompt": "Honestly, I think that movie is overrated.",
+      "accepted": [
+        "Honestly, I think that movie is overrated",
+        "Honestly, I think that film is overrated"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-05-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repita a pergunta.",
+      "prompt": "Is it worth watching, or should I skip it?",
+      "accepted": [
+        "Is it worth watching, or should I skip it",
+        "Is it worth watching or should I just skip it"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-05-prac-7",
+      "kind": "repeat",
+      "instruction_pt": "Repita a frase.",
+      "prompt": "I watched it with subtitles because the accent was hard to follow.",
+      "accepted": [
+        "I watched it with subtitles because the accent was hard to follow",
+        "I watched it with subtitles because the accent was difficult to follow"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-05-prac-8",
+      "kind": "repeat",
+      "instruction_pt": "Repita. \"It's about\" é como se diz \"é sobre\".",
+      "prompt": "It's about a detective who's trying to solve an old crime.",
+      "accepted": [
+        "It's about a detective who's trying to solve an old crime",
+        "It is about a detective who is trying to solve an old crime"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-05-prac-9",
+      "kind": "repeat",
+      "instruction_pt": "Repita a recomendação.",
+      "prompt": "You should definitely watch it. You won't regret it.",
+      "accepted": [
+        "You should definitely watch it. You won't regret it",
+        "You should definitely watch it, you will not regret it"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-05-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Sobre o que é a série?\"",
+      "accepted": [
+        "What's the series about",
+        "What is the series about",
+        "What's the show about",
+        "What is the show about",
+        "What's it about"
+      ],
+      "commonErrors": [
+        {
+          "id": "about-what",
+          "match": "^about what\\b",
+          "explanation_pt": "Em inglês a preposição vai para o fim da pergunta: \"What's it about?\"",
+          "correction_en": "What's the series about?"
+        },
+        {
+          "id": "what-is-about-series",
+          "match": "^what is about\\b",
+          "explanation_pt": "A ordem é \"What is the series about?\", com \"about\" no fim.",
+          "correction_en": "What's the series about?"
+        }
+      ]
+    },
+    {
+      "id": "b1-05-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu prefiro ver filmes com legenda.\"",
+      "accepted": [
+        "I prefer watching movies with subtitles",
+        "I prefer to watch movies with subtitles",
+        "I prefer watching films with subtitles",
+        "I prefer to watch films with subtitles",
+        "I'd rather watch movies with subtitles"
+      ],
+      "commonErrors": [
+        {
+          "id": "legends",
+          "match": "\\blegends?\\b|\\bcaptions of\\b",
+          "explanation_pt": "\"Legenda\" de filme é \"subtitles\". \"Legend\" é lenda.",
+          "correction_en": "I prefer watching movies with subtitles."
+        },
+        {
+          "id": "see-movies",
+          "match": "\\bsee movies\\b",
+          "explanation_pt": "Para o hábito de assistir filmes em casa, o natural é \"watch movies\".",
+          "correction_en": "I prefer watching movies with subtitles."
+        }
+      ]
+    },
+    {
+      "id": "b1-05-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Esse filme é baseado numa história real.\"",
+      "accepted": [
+        "This movie is based on a true story",
+        "This film is based on a true story",
+        "That movie is based on a true story",
+        "This movie is based on a real story",
+        "It's based on a true story"
+      ],
+      "commonErrors": [
+        {
+          "id": "based-in",
+          "match": "\\bbased (in|at)\\b",
+          "explanation_pt": "\"Baseado em\" é \"based on\".",
+          "correction_en": "This movie is based on a true story."
+        },
+        {
+          "id": "history-real",
+          "match": "\\b(real|true) history\\b",
+          "explanation_pt": "\"História\" contada é \"story\". \"History\" é a disciplina, o passado.",
+          "correction_en": "This movie is based on a true story."
+        }
+      ]
+    },
+    {
+      "id": "b1-05-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu já assisti a esse filme três vezes.\"",
+      "accepted": [
+        "I've seen this movie three times",
+        "I have seen this movie three times",
+        "I've watched this movie three times",
+        "I've seen that movie three times",
+        "I've already seen this movie three times",
+        "I've seen this film three times"
+      ],
+      "commonErrors": [
+        {
+          "id": "assisted",
+          "match": "\\bassist(ed)?\\b",
+          "explanation_pt": "\"Assistir\" a um filme é \"watch\" ou \"see\". \"Assist\" é ajudar.",
+          "correction_en": "I've seen this movie three times."
+        },
+        {
+          "id": "watched-to",
+          "match": "\\b(watched|seen) to\\b",
+          "explanation_pt": "\"Watch\" e \"see\" não levam \"to\": \"I've seen this movie\".",
+          "correction_en": "I've seen this movie three times."
+        }
+      ]
+    },
+    {
+      "id": "b1-05-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"O final me deixou sem palavras.\"",
+      "accepted": [
+        "The ending left me speechless",
+        "The end left me speechless",
+        "I was speechless at the end",
+        "The ending blew my mind",
+        "The ending left me without words"
+      ],
+      "commonErrors": [
+        {
+          "id": "final-noun",
+          "match": "^the final\\b",
+          "explanation_pt": "\"Final\" de filme é \"ending\" ou \"end\". \"The final\" é a partida final de um campeonato.",
+          "correction_en": "The ending left me speechless."
+        },
+        {
+          "id": "let-me",
+          "match": "\\blet me (speechless|without)\\b",
+          "explanation_pt": "\"Deixar\" alguém num estado é \"leave\" (\"left\" no passado), e não \"let\".",
+          "correction_en": "The ending left me speechless."
+        }
+      ]
+    },
+    {
+      "id": "b1-05-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga o gênero que você mais gosta: suspense.",
+      "listen": "What kind of movies do you like?",
+      "accepted": [
+        "I like thrillers",
+        "I love thrillers",
+        "I'm into thrillers",
+        "Mostly thrillers",
+        "I really like thrillers",
+        "My favorite are thrillers",
+        "I like suspense movies"
+      ],
+      "commonErrors": [
+        {
+          "id": "suspense-plural",
+          "match": "\\bsuspenses\\b",
+          "explanation_pt": "O gênero de suspense é \"thriller\" (\"thrillers\"). \"Suspense\" é a sensação, sem plural.",
+          "correction_en": "I like thrillers."
+        },
+        {
+          "id": "i-like-of",
+          "match": "\\blike of\\b",
+          "explanation_pt": "\"Gostar de\" é \"like\", sem \"of\".",
+          "correction_en": "I like thrillers."
+        }
+      ]
+    },
+    {
+      "id": "b1-05-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que você ficou entediado e parou na metade.",
+      "listen": "Did you finish that new series everyone's talking about?",
+      "accepted": [
+        "No, I got bored and gave up halfway through",
+        "No, it was boring, so I stopped halfway",
+        "No, I got bored and stopped halfway through",
+        "No, I gave up halfway through. It was boring",
+        "No, I got bored and quit halfway"
+      ],
+      "commonErrors": [
+        {
+          "id": "got-boring",
+          "match": "\\bi (got|was|felt) boring\\b",
+          "explanation_pt": "Quem sente é \"bored\" (entediado); o que causa é \"boring\" (chato). \"I got bored\", \"it was boring\".",
+          "correction_en": "No, I got bored and gave up halfway through."
+        },
+        {
+          "id": "in-the-middle",
+          "match": "\\bin the middle\\b",
+          "explanation_pt": "\"Na metade\" (parei no meio) soa mais natural como \"halfway through\".",
+          "correction_en": "No, I got bored and gave up halfway through."
+        }
+      ]
+    },
+    {
+      "id": "b1-05-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga onde se passa a série: em Londres, nos anos 60.",
+      "listen": "Where is it set?",
+      "accepted": [
+        "It's set in London in the sixties",
+        "It's set in London in the 1960s",
+        "In London, in the sixties",
+        "It takes place in London in the sixties",
+        "It's set in London in the 60s"
+      ],
+      "commonErrors": [
+        {
+          "id": "passes-in",
+          "match": "\\bpasses\\b",
+          "explanation_pt": "\"Se passa em\" é \"is set in\" ou \"takes place in\".",
+          "correction_en": "It's set in London in the sixties."
+        },
+        {
+          "id": "in-the-years-60",
+          "match": "\\byears sixty\\b|\\byears 60\\b",
+          "explanation_pt": "\"Anos 60\" é \"the sixties\" (ou \"the 60s\").",
+          "correction_en": "It's set in London in the sixties."
+        }
+      ]
+    },
+    {
+      "id": "b1-05-prac-18",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que não, e peça para ela não contar o final.",
+      "listen": "Have you seen the last episode yet?",
+      "accepted": [
+        "No, not yet. Don't tell me the ending",
+        "Not yet, so no spoilers, please",
+        "No, I haven't. Please don't tell me what happens",
+        "Not yet. Don't spoil it for me",
+        "No, not yet, so don't tell me the ending"
+      ],
+      "commonErrors": [
+        {
+          "id": "no-tell-me",
+          "match": "(?<!do )\\b(no|not) tell me\\b",
+          "explanation_pt": "Para pedir que alguém não faça algo, use \"Don't\": \"Don't tell me\".",
+          "correction_en": "No, not yet. Don't tell me the ending."
+        },
+        {
+          "id": "give-spoiler",
+          "match": "\\bgive (me )?(a )?spoiler\\b",
+          "explanation_pt": "O natural é \"Don't spoil it\" ou \"No spoilers\".",
+          "correction_en": "Not yet. Don't spoil it for me."
+        }
+      ]
+    },
+    {
+      "id": "b1-05-prac-19",
+      "kind": "dialogue",
+      "instruction_pt": "Combine com uma amiga o que assistir hoje à noite.",
+      "scene_pt": "Você e uma amiga estão escolhendo um filme numa plataforma de streaming.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "So, what do you feel like watching tonight?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que está com vontade de ver uma comédia.",
+          "accepted": [
+            "I feel like watching a comedy",
+            "I'm in the mood for a comedy",
+            "I feel like a comedy",
+            "Something funny. Maybe a comedy",
+            "I'd like to watch a comedy"
+          ],
+          "commonErrors": [
+            {
+              "id": "feel-like-watch",
+              "match": "\\bfeel like (to )?watch\\b",
+              "explanation_pt": "Depois de \"feel like\" o verbo vai com \"-ing\": \"I feel like watching\".",
+              "correction_en": "I feel like watching a comedy."
+            },
+            {
+              "id": "have-will",
+              "match": "\\bhave (the )?will\\b",
+              "explanation_pt": "\"Estar com vontade de\" é \"feel like\" ou \"be in the mood for\".",
+              "correction_en": "I'm in the mood for a comedy."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Have you seen this one? It's got great reviews."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que já viu e que achou superestimado.",
+          "accepted": [
+            "Yes, I've seen it, and I thought it was overrated",
+            "I've already seen it. I think it's overrated",
+            "Yes, I have. Honestly, it's overrated",
+            "I've seen it. I thought it was overrated",
+            "Yeah, I've watched it. It's a bit overrated"
+          ],
+          "commonErrors": [
+            {
+              "id": "over-estimated",
+              "match": "\\bover ?estimated\\b|\\bsuper estimated\\b",
+              "explanation_pt": "\"Superestimado\" é \"overrated\".",
+              "correction_en": "Yes, I've seen it, and I thought it was overrated."
+            },
+            {
+              "id": "i-saw-already",
+              "match": "\\bi already saw\\b",
+              "explanation_pt": "\"Already\" combina mais com o present perfect: \"I've already seen it\".",
+              "correction_en": "I've already seen it. I think it's overrated."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Okay. What about this series? It's a comedy set in an office."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Pergunte quantas temporadas tem.",
+          "accepted": [
+            "How many seasons are there",
+            "How many seasons does it have",
+            "How many seasons has it got",
+            "How many seasons does it have so far",
+            "How many seasons are there so far"
+          ],
+          "commonErrors": [
+            {
+              "id": "how-many-seasons-have",
+              "match": "^how many seasons it (have|has)\\b",
+              "explanation_pt": "Na pergunta use o auxiliar: \"How many seasons does it have?\" ou \"are there?\"",
+              "correction_en": "How many seasons does it have?"
+            },
+            {
+              "id": "temporades",
+              "match": "\\btemporad|\\bseasons does it has\\b",
+              "explanation_pt": "Temporada é \"season\", e depois de \"does\" vem \"have\".",
+              "correction_en": "How many seasons does it have?"
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Three, and the episodes are only twenty minutes long."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que parece ótimo e que vocês podem maratonar.",
+          "accepted": [
+            "Sounds great. We could binge-watch it",
+            "That sounds great. Let's binge-watch it",
+            "Sounds perfect. We can binge it",
+            "That sounds good. We could binge-watch the whole thing",
+            "Sounds great, let's binge it"
+          ],
+          "commonErrors": [
+            {
+              "id": "seems-great",
+              "match": "^(it )?seems (great|good|perfect)\\b",
+              "explanation_pt": "Para reagir a uma ideia, o natural é \"Sounds great\".",
+              "correction_en": "Sounds great. We could binge-watch it."
+            },
+            {
+              "id": "marathon",
+              "match": "\\bmarathon\\b",
+              "explanation_pt": "\"Maratonar\" série é \"binge-watch\" (ou \"binge\").",
+              "correction_en": "Sounds great. We could binge-watch it."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-05-prac-20",
+      "kind": "free_speak",
+      "instruction_pt": "Fale de uma série que você não recomendaria.",
+      "prompt_en": "Tell me about a movie or series you didn't like. What was wrong with it?",
+      "guidelines_pt": [
+        "Diga sobre o que é: \"It's about...\".",
+        "Explique o problema: \"The plot was...\", \"The ending was...\".",
+        "Use \"boring\", \"overrated\" ou \"disappointing\"."
+      ]
+    },
+    {
+      "id": "b1-05-prac-21",
+      "kind": "choice",
+      "instruction_pt": "Qual frase está correta?",
+      "options": [
+        "I was very boring in the movie.",
+        "I was very bored during the movie.",
+        "I was very bored in the film of yesterday."
+      ],
+      "answer": 1,
+      "explanation_pt": "A pessoa fica \"bored\"; o filme é \"boring\". E \"during the movie\" é \"durante o filme\"."
+    },
+    {
+      "id": "b1-05-prac-22",
+      "kind": "choice",
+      "instruction_pt": "O que significa \"It was a real page-turner, and the movie is just as gripping\"?",
+      "options": [
+        "O livro e o filme prendem a atenção.",
+        "O livro é chato, mas o filme é bom.",
+        "O filme é muito longo."
+      ],
+      "answer": 0,
+      "explanation_pt": "\"Page-turner\" é um livro que prende; \"gripping\" é empolgante, que prende a atenção."
+    },
+    {
+      "id": "b1-05-prac-23",
+      "kind": "fill",
+      "instruction_pt": "Complete com a preposição: \"The film is based ___ a famous novel.\"",
+      "sentence": "The film is based ___ a famous novel.",
+      "accepted": ["on"],
+      "commonErrors": [
+        {
+          "id": "based-in",
+          "match": "^(in|at|of)$",
+          "explanation_pt": "\"Baseado em\" é \"based on\".",
+          "correction_en": "The film is based on a famous novel."
+        }
+      ]
+    },
+    {
+      "id": "b1-05-prac-24",
+      "kind": "order",
+      "instruction_pt": "Coloque as palavras na ordem certa.",
+      "accepted": ["Who is in the cast?"]
+    }
   ]
 }

@@ -374,10 +374,99 @@
           ]
         },
         {
-          "id": "b1-06-conv-3",
-          "kind": "order",
-          "instruction_pt": "Coloque as palavras na ordem certa.",
-          "accepted": ["The new bridge was opened last week."]
+          "id": "b1-06-conv-dialogue",
+          "kind": "dialogue",
+          "instruction_pt": "Comente uma notícia com uma amiga.",
+          "scene_pt": "Uma amiga conta que o festival de música da cidade foi cancelado.",
+          "turns": [
+            {
+              "speaker": "partner",
+              "text": "Did you hear? The music festival was canceled."
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Mostre surpresa e pergunte por quê.",
+              "accepted": [
+                "Really? Why was it canceled",
+                "No way! Why",
+                "Seriously? Why was it cancelled",
+                "What? Why was it canceled",
+                "Really? Why"
+              ],
+              "commonErrors": [
+                {
+                  "id": "why-it-was",
+                  "match": "\\bwhy it was\\b",
+                  "explanation_pt": "Na pergunta, o verbo vem antes do sujeito: \"Why was it canceled?\"",
+                  "correction_en": "Really? Why was it canceled?"
+                },
+                {
+                  "id": "why-canceled-no-verb",
+                  "match": "^(really )?why (it )?cancel(l)?ed\\b",
+                  "explanation_pt": "Na voz passiva a pergunta precisa de \"was\": \"Why was it canceled?\"",
+                  "correction_en": "Really? Why was it canceled?"
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Apparently, not enough tickets were sold."
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga que é uma pena e que você já tinha comprado o ingresso.",
+              "accepted": [
+                "That's a shame. I'd already bought my ticket",
+                "What a shame! I had already bought a ticket",
+                "That's a pity. I'd already bought my ticket",
+                "Oh, that's a shame. I already bought my ticket",
+                "What a pity. I'd already bought a ticket"
+              ],
+              "commonErrors": [
+                {
+                  "id": "is-a-pain",
+                  "match": "\\bis a pain\\b|\\bwhat a pain\\b",
+                  "explanation_pt": "\"Que pena\" é \"What a shame\" ou \"What a pity\". \"Pain\" é dor.",
+                  "correction_en": "What a shame! I'd already bought my ticket."
+                },
+                {
+                  "id": "had-already-buyed",
+                  "match": "\\bbuyed\\b|\\balready buy\\b",
+                  "explanation_pt": "O passado e o particípio de \"buy\" são \"bought\".",
+                  "correction_en": "I'd already bought my ticket."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Don't worry. According to the website, everyone will get a refund."
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga que é bom saber e agradeça.",
+              "accepted": [
+                "That's good to know. Thanks",
+                "Good to know, thanks",
+                "Oh, that's good to hear. Thank you",
+                "That's a relief. Thanks for telling me",
+                "Good to know. Thanks for letting me know"
+              ],
+              "commonErrors": [
+                {
+                  "id": "is-good-to-know",
+                  "match": "^is good to (know|hear)\\b",
+                  "explanation_pt": "Falta o sujeito: \"That's good to know\" (ou só \"Good to know\").",
+                  "correction_en": "That's good to know. Thanks."
+                },
+                {
+                  "id": "good-for-know",
+                  "match": "\\bgood for (know|hear)\\b",
+                  "explanation_pt": "A expressão é \"good to know\".",
+                  "correction_en": "That's good to know. Thanks."
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "b1-06-conv-free",
@@ -467,6 +556,514 @@
           ]
         }
       ]
+    }
+  ],
+  "practice": [
+    {
+      "id": "b1-06-prac-1",
+      "kind": "vocab",
+      "word_en": "breaking news",
+      "meaning_pt": "notícia de última hora",
+      "example_en": "There's some breaking news about the election."
+    },
+    {
+      "id": "b1-06-prac-2",
+      "kind": "vocab",
+      "word_en": "to go viral",
+      "meaning_pt": "viralizar",
+      "example_en": "The video went viral in just a few hours."
+    },
+    {
+      "id": "b1-06-prac-3",
+      "kind": "repeat",
+      "instruction_pt": "Repita. Na voz passiva, \"was\" fica fraco: \"wuz\".",
+      "prompt": "The bridge was closed because of the storm.",
+      "accepted": ["The bridge was closed because of the storm"],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-06-prac-4",
+      "kind": "repeat",
+      "instruction_pt": "Repita a frase.",
+      "prompt": "Apparently, the new stadium won't be ready until next year.",
+      "accepted": [
+        "Apparently, the new stadium won't be ready until next year",
+        "Apparently the new stadium will not be ready until next year"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-06-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repita. \"Injured\" tem a força no começo: IN-jured.",
+      "prompt": "Two people were injured, but nobody was killed.",
+      "accepted": [
+        "Two people were injured, but nobody was killed",
+        "Two people were injured but no one was killed",
+        "2 people were injured, but nobody was killed"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-06-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repita a reação a uma notícia ruim.",
+      "prompt": "That's terrible! I hope everyone's okay.",
+      "accepted": [
+        "That's terrible! I hope everyone's okay",
+        "That's terrible. I hope everyone is OK",
+        "That is terrible, I hope everyone is okay"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-06-prac-7",
+      "kind": "repeat",
+      "instruction_pt": "Repita a frase.",
+      "prompt": "According to the news, prices went up again this month.",
+      "accepted": [
+        "According to the news, prices went up again this month",
+        "According to the news, prices rose again this month"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-06-prac-8",
+      "kind": "repeat",
+      "instruction_pt": "Repita. \"Did you see\" costuma soar \"didja see\".",
+      "prompt": "Did you see that video that went viral?",
+      "accepted": [
+        "Did you see that video that went viral",
+        "Did you see the video that went viral"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-06-prac-9",
+      "kind": "repeat",
+      "instruction_pt": "Repita a frase com cuidado: \"fake\" tem o som \"fêik\".",
+      "prompt": "I'm not sure it's true. It might be fake news.",
+      "accepted": [
+        "I'm not sure it's true. It might be fake news",
+        "I'm not sure it is true, it might be fake news",
+        "I am not sure it's true. It may be fake news"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-06-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"A loja foi assaltada ontem à noite.\"",
+      "accepted": [
+        "The store was robbed last night",
+        "The shop was robbed last night",
+        "The store got robbed last night",
+        "The shop got robbed last night",
+        "The store was broken into last night"
+      ],
+      "commonErrors": [
+        {
+          "id": "assaulted-store",
+          "match": "\\bassaulted\\b",
+          "explanation_pt": "\"Assaltar\" uma loja é \"rob\". \"Assault\" é agredir uma pessoa.",
+          "correction_en": "The store was robbed last night."
+        },
+        {
+          "id": "yesterday-night",
+          "match": "\\byesterday (at )?night\\b",
+          "explanation_pt": "\"Ontem à noite\" é \"last night\".",
+          "correction_en": "The store was robbed last night."
+        }
+      ]
+    },
+    {
+      "id": "b1-06-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Você ficou sabendo da greve?\"",
+      "accepted": [
+        "Did you hear about the strike",
+        "Have you heard about the strike",
+        "Did you hear about the strike yet",
+        "Have you heard about the strike yet",
+        "Did you know about the strike"
+      ],
+      "commonErrors": [
+        {
+          "id": "stayed-knowing",
+          "match": "\\bstay(ed)? knowing\\b",
+          "explanation_pt": "\"Ficar sabendo\" é \"hear about\".",
+          "correction_en": "Did you hear about the strike?"
+        },
+        {
+          "id": "hear-of-strike-grev",
+          "match": "\\bhear (of|from) the strike\\b|\\bgreve\\b",
+          "explanation_pt": "\"Ficar sabendo de\" algo é \"hear about\". Greve é \"strike\".",
+          "correction_en": "Did you hear about the strike?"
+        }
+      ]
+    },
+    {
+      "id": "b1-06-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Pelo visto, vai chover o fim de semana inteiro.\"",
+      "accepted": [
+        "Apparently, it's going to rain all weekend",
+        "Apparently it will rain all weekend",
+        "Apparently, it's going to rain the whole weekend",
+        "Apparently it's going to rain all weekend long",
+        "Apparently, it's supposed to rain all weekend"
+      ],
+      "commonErrors": [
+        {
+          "id": "by-the-seen",
+          "match": "\\bby the (seen|view|look)\\b",
+          "explanation_pt": "\"Pelo visto\" é \"apparently\".",
+          "correction_en": "Apparently, it's going to rain all weekend."
+        },
+        {
+          "id": "go-to-rain",
+          "match": "\\b(go|goes) to rain\\b|\\bis going rain\\b",
+          "explanation_pt": "Previsão com \"going to\": \"it's going to rain\".",
+          "correction_en": "Apparently, it's going to rain all weekend."
+        }
+      ]
+    },
+    {
+      "id": "b1-06-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"O jogo foi adiado por causa da chuva.\"",
+      "accepted": [
+        "The game was postponed because of the rain",
+        "The match was postponed because of the rain",
+        "The game was put off because of the rain",
+        "The game got postponed because of the rain",
+        "The game was postponed due to the rain",
+        "The match was postponed due to rain"
+      ],
+      "commonErrors": [
+        {
+          "id": "adjourned-delayed",
+          "match": "\\bwas (adjourned|delayed for)\\b",
+          "explanation_pt": "\"Adiar\" para outro dia é \"postpone\" ou \"put off\".",
+          "correction_en": "The game was postponed because of the rain."
+        },
+        {
+          "id": "because-the-rain",
+          "match": "\\bbecause the rain\\b",
+          "explanation_pt": "Antes de substantivo, use \"because of\": \"because of the rain\".",
+          "correction_en": "The game was postponed because of the rain."
+        }
+      ]
+    },
+    {
+      "id": "b1-06-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Que notícia boa!\"",
+      "accepted": [
+        "What great news",
+        "That's great news",
+        "That's good news",
+        "What good news",
+        "That's such good news",
+        "Such great news"
+      ],
+      "commonErrors": [
+        {
+          "id": "a-good-news",
+          "match": "\\b(a|an) (good|great) news\\b",
+          "explanation_pt": "\"News\" é incontável: não use \"a\". Diga \"What great news!\"",
+          "correction_en": "What great news!"
+        },
+        {
+          "id": "what-news-good",
+          "match": "\\bwhat news (good|great)\\b|\\bnotice\\b",
+          "explanation_pt": "O adjetivo vem antes: \"What great news!\" E notícia é \"news\", e não \"notice\".",
+          "correction_en": "What great news!"
+        }
+      ]
+    },
+    {
+      "id": "b1-06-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que leu sobre isso hoje de manhã, na internet.",
+      "listen": "Have you heard about the earthquake in Chile?",
+      "accepted": [
+        "Yes, I read about it online this morning",
+        "Yes, I read about it this morning on the internet",
+        "Yeah, I saw it online this morning",
+        "Yes, I read about it on the internet this morning",
+        "Yes, I saw it on the news this morning"
+      ],
+      "commonErrors": [
+        {
+          "id": "today-morning",
+          "match": "\\btoday (in the )?morning\\b|\\btoday of morning\\b",
+          "explanation_pt": "\"Hoje de manhã\" é \"this morning\".",
+          "correction_en": "Yes, I read about it online this morning."
+        },
+        {
+          "id": "in-the-internet",
+          "match": "\\bin the internet\\b",
+          "explanation_pt": "\"Na internet\" é \"on the internet\" ou \"online\".",
+          "correction_en": "Yes, I read about it online this morning."
+        }
+      ]
+    },
+    {
+      "id": "b1-06-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e pergunte se alguém se machucou.",
+      "listen": "There was a big accident on the highway this morning.",
+      "accepted": [
+        "Oh no! Was anyone hurt",
+        "Was anybody hurt",
+        "Was anyone injured",
+        "Oh no! Is everyone okay",
+        "Really? Was anyone injured",
+        "Oh no! Did anyone get hurt"
+      ],
+      "commonErrors": [
+        {
+          "id": "someone-was-hurt",
+          "match": "^(oh no )?(someone|somebody) (was|got) hurt\\b",
+          "explanation_pt": "Na pergunta, o verbo vem antes: \"Was anyone hurt?\"",
+          "correction_en": "Was anyone hurt?"
+        },
+        {
+          "id": "machucated",
+          "match": "\\bhurted\\b",
+          "explanation_pt": "\"Hurt\" é irregular e não muda: \"hurt\" no passado e no particípio.",
+          "correction_en": "Was anyone hurt?"
+        }
+      ]
+    },
+    {
+      "id": "b1-06-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que acha que é notícia falsa.",
+      "listen": "I read online that chocolate makes you lose weight!",
+      "accepted": [
+        "I think that's fake news",
+        "That sounds like fake news",
+        "I don't believe it. It's probably fake news",
+        "Really? I think it's fake news",
+        "That's probably fake news",
+        "I'm not sure. It sounds like fake news"
+      ],
+      "commonErrors": [
+        {
+          "id": "a-fake-news",
+          "match": "\\ba fake news\\b",
+          "explanation_pt": "\"News\" é incontável: \"It's fake news\", sem \"a\".",
+          "correction_en": "I think that's fake news."
+        },
+        {
+          "id": "false-news",
+          "match": "\\bfalse news\\b|\\bnews false\\b",
+          "explanation_pt": "A expressão comum é \"fake news\".",
+          "correction_en": "I think that's fake news."
+        }
+      ]
+    },
+    {
+      "id": "b1-06-prac-18",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga onde você costuma ler notícias: no celular.",
+      "listen": "Where do you usually get your news?",
+      "accepted": [
+        "Usually on my phone",
+        "I usually read the news on my phone",
+        "On my phone, mostly",
+        "I usually get my news on my phone",
+        "Mostly on my phone"
+      ],
+      "commonErrors": [
+        {
+          "id": "in-my-phone",
+          "match": "\\bin my (phone|cell phone|cellphone)\\b",
+          "explanation_pt": "\"No celular\" é \"on my phone\".",
+          "correction_en": "I usually read the news on my phone."
+        },
+        {
+          "id": "the-news-plural-are",
+          "match": "\\bthe news are\\b|\\bnotices\\b",
+          "explanation_pt": "\"News\" é singular e incontável: \"the news is\".",
+          "correction_en": "I usually read the news on my phone."
+        }
+      ]
+    },
+    {
+      "id": "b1-06-prac-19",
+      "kind": "dialogue",
+      "instruction_pt": "Comente uma notícia com um colega de trabalho.",
+      "scene_pt": "Seu colega chega atrasado e conta o que aconteceu no caminho.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Sorry I'm late. The trains weren't running this morning."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Pergunte o que aconteceu.",
+          "accepted": [
+            "Oh no, what happened",
+            "Really? What happened",
+            "What happened",
+            "Why? What happened",
+            "Oh, what happened"
+          ],
+          "commonErrors": [
+            {
+              "id": "what-did-happen",
+              "match": "\\bwhat did happen\\b|\\bwhat happen$",
+              "explanation_pt": "Quando \"what\" é o sujeito, não use \"did\": \"What happened?\"",
+              "correction_en": "What happened?"
+            },
+            {
+              "id": "what-was-happened",
+              "match": "\\bwhat was happened\\b",
+              "explanation_pt": "Diga só \"What happened?\"",
+              "correction_en": "What happened?"
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Apparently, there was a fire near the central station."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Reaja e pergunte se alguém se machucou.",
+          "accepted": [
+            "That's terrible! Was anyone hurt",
+            "Oh no! Was anybody injured",
+            "That's awful. Was anyone hurt",
+            "How awful! Did anyone get hurt",
+            "That's terrible. Was anyone injured"
+          ],
+          "commonErrors": [
+            {
+              "id": "someone-hurt",
+              "match": "\\b(someone|somebody) (was|got) hurt\\b",
+              "explanation_pt": "Em perguntas, use \"anyone\" e inverta: \"Was anyone hurt?\"",
+              "correction_en": "That's terrible! Was anyone hurt?"
+            },
+            {
+              "id": "is-terrible-no-that",
+              "match": "^is (terrible|awful)\\b",
+              "explanation_pt": "Falta o sujeito: \"That's terrible!\"",
+              "correction_en": "That's terrible! Was anyone hurt?"
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "No, luckily. The building was evacuated in time."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que é um alívio e pergunte como ele ficou sabendo.",
+          "accepted": [
+            "What a relief! How did you find out",
+            "That's a relief. How did you hear about it",
+            "Thank goodness. How did you find out",
+            "What a relief. How did you hear",
+            "That's a relief! How did you know"
+          ],
+          "commonErrors": [
+            {
+              "id": "how-you-found-out",
+              "match": "^(what a relief |that is a relief )?how you (found|heard|knew)\\b",
+              "explanation_pt": "Na pergunta no passado use \"did\": \"How did you find out?\"",
+              "correction_en": "What a relief! How did you find out?"
+            },
+            {
+              "id": "relieve",
+              "match": "\\ba relieve\\b",
+              "explanation_pt": "O substantivo é \"relief\"; \"relieve\" é o verbo.",
+              "correction_en": "What a relief!"
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "It was all over the news. There's a video of it going viral."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que vai procurar o vídeo depois.",
+          "accepted": [
+            "I'll look for the video later",
+            "I'll look it up later",
+            "I'll check out the video later",
+            "I'll watch it later",
+            "I'll look for it later"
+          ],
+          "commonErrors": [
+            {
+              "id": "search-the-video",
+              "match": "\\bsearch the video\\b",
+              "explanation_pt": "\"Procurar\" algo é \"look for\" ou \"search for\".",
+              "correction_en": "I'll look for the video later."
+            },
+            {
+              "id": "i-go-look",
+              "match": "^i go (to )?look\\b",
+              "explanation_pt": "Para uma decisão na hora, use \"I'll\".",
+              "correction_en": "I'll look for the video later."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-06-prac-20",
+      "kind": "free_speak",
+      "instruction_pt": "Conte uma notícia boa que você viu recentemente.",
+      "prompt_en": "Tell me about some good news you heard recently.",
+      "guidelines_pt": [
+        "Comece com \"I read that...\" ou \"Apparently...\".",
+        "Use a voz passiva pelo menos uma vez: \"was opened\", \"was found\".",
+        "Diga o que você achou: \"I was so glad to hear that...\"."
+      ]
+    },
+    {
+      "id": "b1-06-prac-21",
+      "kind": "choice",
+      "instruction_pt": "Qual frase está correta?",
+      "options": ["The news are terrible.", "The news is terrible.", "The newses are terrible."],
+      "answer": 1,
+      "explanation_pt": "\"News\" é incontável e vai com verbo no singular: \"The news is...\"."
+    },
+    {
+      "id": "b1-06-prac-22",
+      "kind": "choice",
+      "instruction_pt": "Ouça e escolha o que aconteceu.",
+      "listen": "The concert was called off at the last minute because the singer was ill.",
+      "options": ["O show atrasou.", "O show foi cancelado.", "O cantor chegou atrasado."],
+      "answer": 1,
+      "explanation_pt": "\"Called off\" é \"cancelado\". \"Ill\" é doente."
+    },
+    {
+      "id": "b1-06-prac-23",
+      "kind": "fill",
+      "instruction_pt": "Complete com o particípio de \"build\": \"The hospital was ___ in 1950.\"",
+      "sentence": "The hospital was ___ in 1950.",
+      "accepted": ["built"],
+      "commonErrors": [
+        {
+          "id": "builded",
+          "match": "^builded$|^build$",
+          "explanation_pt": "\"Build\" é irregular: o particípio é \"built\".",
+          "correction_en": "The hospital was built in 1950."
+        }
+      ]
+    },
+    {
+      "id": "b1-06-prac-24",
+      "kind": "order",
+      "instruction_pt": "Coloque as palavras na ordem certa.",
+      "accepted": ["Nobody was hurt in the fire."]
     }
   ]
 }

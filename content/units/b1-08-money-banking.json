@@ -121,11 +121,26 @@
           "kind": "match",
           "instruction_pt": "Ligue cada palavra ao significado.",
           "pairs": [
-            { "en": "to borrow", "pt": "pegar emprestado" },
-            { "en": "to lend", "pt": "emprestar (para alguém)" },
-            { "en": "bill", "pt": "conta (a pagar)" },
-            { "en": "fee", "pt": "taxa, tarifa" },
-            { "en": "loan", "pt": "empréstimo" }
+            {
+              "en": "to borrow",
+              "pt": "pegar emprestado"
+            },
+            {
+              "en": "to lend",
+              "pt": "emprestar (para alguém)"
+            },
+            {
+              "en": "bill",
+              "pt": "conta (a pagar)"
+            },
+            {
+              "en": "fee",
+              "pt": "taxa, tarifa"
+            },
+            {
+              "en": "loan",
+              "pt": "empréstimo"
+            }
           ]
         },
         {
@@ -360,10 +375,99 @@
           ]
         },
         {
-          "id": "b1-08-conv-3",
-          "kind": "order",
-          "instruction_pt": "Coloque as palavras na ordem certa.",
-          "accepted": ["I'm saving up for a new laptop."]
+          "id": "b1-08-conv-dialogue",
+          "kind": "dialogue",
+          "instruction_pt": "Pague a conta num restaurante com um amigo.",
+          "scene_pt": "Você e um amigo terminaram de jantar e o garçom traz a conta.",
+          "turns": [
+            {
+              "speaker": "partner",
+              "text": "Here's your bill. Will you be paying together or separately?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga que vão pagar separado.",
+              "accepted": [
+                "Separately, please",
+                "We'll pay separately",
+                "Separately, thanks",
+                "We'd like to pay separately",
+                "We're paying separately"
+              ],
+              "commonErrors": [
+                {
+                  "id": "separated",
+                  "match": "\\bseparated\\b",
+                  "explanation_pt": "\"Separado\" (pagar) é o advérbio \"separately\".",
+                  "correction_en": "Separately, please."
+                },
+                {
+                  "id": "divided",
+                  "match": "\\bdivided\\b",
+                  "explanation_pt": "Diga \"separately\" ou \"split the bill\".",
+                  "correction_en": "We'll pay separately."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "No problem. How would you like to pay?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga que vai pagar no cartão e pergunte se pode deixar a gorjeta no cartão também.",
+              "accepted": [
+                "By card. Can I add the tip to the card",
+                "By card, please. Can I put the tip on the card",
+                "Card, please. Can I add a tip on the card",
+                "I'll pay by card. Can I include the tip",
+                "By card. Can I add a tip"
+              ],
+              "commonErrors": [
+                {
+                  "id": "gorjeta-gift",
+                  "match": "\\bgift\\b|\\bgorjeta\\b",
+                  "explanation_pt": "\"Gorjeta\" é \"tip\".",
+                  "correction_en": "By card. Can I add the tip to the card?"
+                },
+                {
+                  "id": "with-card",
+                  "match": "^with (the )?card\\b",
+                  "explanation_pt": "O natural é \"by card\".",
+                  "correction_en": "By card. Can I add the tip to the card?"
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Of course. That comes to thirty-two fifty with the tip."
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga que está ótimo e agradeça pelo jantar.",
+              "accepted": [
+                "That's great. Thanks for a lovely dinner",
+                "Perfect, thank you. The food was great",
+                "Great, thanks. Everything was delicious",
+                "That's fine. Thank you, the meal was lovely",
+                "Perfect. Thanks, it was a great dinner"
+              ],
+              "commonErrors": [
+                {
+                  "id": "is-perfect-no-that",
+                  "match": "^is (perfect|great|fine)\\b",
+                  "explanation_pt": "Falta o sujeito: \"That's great\".",
+                  "correction_en": "That's great. Thanks for a lovely dinner."
+                },
+                {
+                  "id": "thanks-for-the-dinner-by",
+                  "match": "\\bthanks by\\b|\\bthank you by\\b",
+                  "explanation_pt": "\"Obrigado por\" é \"thanks for\".",
+                  "correction_en": "Thanks for a lovely dinner."
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "b1-08-conv-free",
@@ -452,6 +556,515 @@
           ]
         }
       ]
+    }
+  ],
+  "practice": [
+    {
+      "id": "b1-08-prac-1",
+      "kind": "vocab",
+      "word_en": "to transfer",
+      "meaning_pt": "transferir (dinheiro)",
+      "example_en": "I'll transfer the money to your account tonight."
+    },
+    {
+      "id": "b1-08-prac-2",
+      "kind": "vocab",
+      "word_en": "to be broke",
+      "meaning_pt": "estar sem dinheiro, quebrado",
+      "example_en": "I can't go out this weekend. I'm broke."
+    },
+    {
+      "id": "b1-08-prac-3",
+      "kind": "repeat",
+      "instruction_pt": "Repita. \"Afford\" tem a força no \"FORD\".",
+      "prompt": "I can't afford a new phone right now.",
+      "accepted": ["I can't afford a new phone right now", "I cannot afford a new phone right now"],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-08-prac-4",
+      "kind": "repeat",
+      "instruction_pt": "Repita a frase.",
+      "prompt": "I'm saving up for a trip to Europe.",
+      "accepted": ["I'm saving up for a trip to Europe", "I am saving up for a trip to Europe"],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-08-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repita. \"Withdraw\" tem a força no \"DRAW\".",
+      "prompt": "I'd like to withdraw two hundred dollars, please.",
+      "accepted": [
+        "I'd like to withdraw two hundred dollars, please",
+        "I would like to withdraw 200 dollars please",
+        "I'd like to withdraw $200, please"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-08-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repita a pergunta.",
+      "prompt": "Is there a fee for transferring money abroad?",
+      "accepted": [
+        "Is there a fee for transferring money abroad",
+        "Is there a fee to transfer money abroad"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-08-prac-7",
+      "kind": "repeat",
+      "instruction_pt": "Repita a frase, ligando \"lend me\".",
+      "prompt": "Could you lend me some money until Friday?",
+      "accepted": [
+        "Could you lend me some money until Friday",
+        "Can you lend me some money until Friday"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-08-prac-8",
+      "kind": "repeat",
+      "instruction_pt": "Repita a frase.",
+      "prompt": "I always keep some cash for emergencies.",
+      "accepted": [
+        "I always keep some cash for emergencies",
+        "I always keep a little cash for emergencies"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-08-prac-9",
+      "kind": "repeat",
+      "instruction_pt": "Repita. Números grandes: \"one thousand five hundred\".",
+      "prompt": "My rent is one thousand five hundred a month.",
+      "accepted": [
+        "My rent is one thousand five hundred a month",
+        "My rent is 1500 a month",
+        "My rent is fifteen hundred a month",
+        "My rent is about fifteen hundred a month"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-08-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu estou economizando para comprar uma casa.\"",
+      "accepted": [
+        "I'm saving up to buy a house",
+        "I'm saving to buy a house",
+        "I'm saving up for a house",
+        "I'm saving money to buy a house",
+        "I am saving up to buy a house",
+        "I'm saving for a house"
+      ],
+      "commonErrors": [
+        {
+          "id": "economizing",
+          "match": "\\beconomi[sz]ing\\b",
+          "explanation_pt": "\"Economizar dinheiro\" é \"save\" (ou \"save up\").",
+          "correction_en": "I'm saving up to buy a house."
+        },
+        {
+          "id": "for-buy",
+          "match": "\\bfor (to )?buy\\b",
+          "explanation_pt": "Para indicar objetivo com verbo, use \"to\": \"to buy a house\".",
+          "correction_en": "I'm saving up to buy a house."
+        }
+      ]
+    },
+    {
+      "id": "b1-08-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu te devo cinquenta reais.\"",
+      "accepted": [
+        "I owe you fifty reais",
+        "I owe you 50 reais",
+        "I owe you fifty reals",
+        "I owe you R$50",
+        "I owe you fifty"
+      ],
+      "commonErrors": [
+        {
+          "id": "i-must-you",
+          "match": "\\bi (must|should) you\\b|\\bi debt\\b",
+          "explanation_pt": "\"Dever\" dinheiro a alguém é \"owe\": \"I owe you\".",
+          "correction_en": "I owe you fifty reais."
+        },
+        {
+          "id": "owe-to-you",
+          "match": "\\bowe to you\\b",
+          "explanation_pt": "\"Owe\" vem direto com a pessoa: \"I owe you\".",
+          "correction_en": "I owe you fifty reais."
+        }
+      ]
+    },
+    {
+      "id": "b1-08-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu queria abrir uma conta poupança.\"",
+      "accepted": [
+        "I'd like to open a savings account",
+        "I would like to open a savings account",
+        "I want to open a savings account",
+        "I'd like to open a savings account, please",
+        "I'm looking to open a savings account"
+      ],
+      "commonErrors": [
+        {
+          "id": "saving-account",
+          "match": "\\bsaving account\\b|\\baccount (of )?savings\\b",
+          "explanation_pt": "\"Conta poupança\" é \"savings account\", com \"s\" em \"savings\".",
+          "correction_en": "I'd like to open a savings account."
+        },
+        {
+          "id": "count",
+          "match": "\\bcount\\b",
+          "explanation_pt": "\"Conta\" no banco é \"account\".",
+          "correction_en": "I'd like to open a savings account."
+        }
+      ]
+    },
+    {
+      "id": "b1-08-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Estou duro este mês.\"",
+      "accepted": [
+        "I'm broke this month",
+        "I am broke this month",
+        "I'm short of money this month",
+        "I'm short on money this month",
+        "I'm out of money this month",
+        "Money's tight this month"
+      ],
+      "commonErrors": [
+        {
+          "id": "im-hard",
+          "match": "\\bi am (hard|stiff)\\b",
+          "explanation_pt": "\"Estar duro\" (sem dinheiro) é \"be broke\".",
+          "correction_en": "I'm broke this month."
+        },
+        {
+          "id": "broken",
+          "match": "\\bi am broken\\b",
+          "explanation_pt": "\"Broken\" é quebrado (objeto). Sem dinheiro é \"broke\".",
+          "correction_en": "I'm broke this month."
+        }
+      ]
+    },
+    {
+      "id": "b1-08-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Posso pagar em parcelas?\"",
+      "accepted": [
+        "Can I pay in installments",
+        "Can I pay in instalments",
+        "Could I pay in installments",
+        "Is it possible to pay in installments",
+        "Can I pay in monthly installments"
+      ],
+      "commonErrors": [
+        {
+          "id": "in-parcels",
+          "match": "\\bparcels?\\b",
+          "explanation_pt": "\"Parcela\" de pagamento é \"installment\". \"Parcel\" é pacote.",
+          "correction_en": "Can I pay in installments?"
+        },
+        {
+          "id": "pay-on-installments",
+          "match": "\\bpay (on|with|by) install?ments\\b",
+          "explanation_pt": "\"Pagar parcelado\" é \"pay in installments\".",
+          "correction_en": "Can I pay in installments?"
+        }
+      ]
+    },
+    {
+      "id": "b1-08-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que vai pagar com cartão de crédito.",
+      "listen": "Cash or card?",
+      "accepted": [
+        "Card, please",
+        "By card, please",
+        "I'll pay by card",
+        "Credit card, please",
+        "I'll pay by credit card",
+        "Card"
+      ],
+      "commonErrors": [
+        {
+          "id": "with-card",
+          "match": "\\bwith (the )?(credit )?card\\b",
+          "explanation_pt": "O mais comum é \"by card\" ou só \"card, please\".",
+          "correction_en": "By card, please."
+        },
+        {
+          "id": "in-card",
+          "match": "\\bin (credit )?card\\b",
+          "explanation_pt": "\"In\" é para \"in cash\". Com cartão: \"by card\".",
+          "correction_en": "By card, please."
+        }
+      ]
+    },
+    {
+      "id": "b1-08-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que gasta a maior parte com aluguel.",
+      "listen": "What do you spend most of your money on?",
+      "accepted": [
+        "I spend most of it on rent",
+        "Rent, mostly",
+        "Mostly on rent",
+        "I spend most of my money on rent",
+        "Most of it goes on rent",
+        "Most of it goes to rent"
+      ],
+      "commonErrors": [
+        {
+          "id": "spend-with",
+          "match": "\\bspend .*\\bwith rent\\b",
+          "explanation_pt": "\"Gastar com\" é \"spend on\".",
+          "correction_en": "I spend most of my money on rent."
+        },
+        {
+          "id": "rental",
+          "match": "\\brental\\b|\\baluguel\\b",
+          "explanation_pt": "O aluguel que se paga por casa é \"rent\".",
+          "correction_en": "I spend most of my money on rent."
+        }
+      ]
+    },
+    {
+      "id": "b1-08-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que pode emprestar, mas que precisa de volta na semana que vem.",
+      "listen": "Can I borrow fifty dollars?",
+      "accepted": [
+        "Sure, but I need it back next week",
+        "Yes, but I need it back next week",
+        "OK, but I'll need it back next week",
+        "Sure, but can you pay me back next week",
+        "Yes, but please pay me back next week"
+      ],
+      "commonErrors": [
+        {
+          "id": "need-back-it",
+          "match": "\\bneed back it\\b",
+          "explanation_pt": "Com pronome, a ordem é \"need it back\".",
+          "correction_en": "Sure, but I need it back next week."
+        },
+        {
+          "id": "in-the-next-week",
+          "match": "\\b(in the|on the) next week\\b",
+          "explanation_pt": "\"Semana que vem\" é \"next week\", sem preposição.",
+          "correction_en": "Sure, but I need it back next week."
+        }
+      ]
+    },
+    {
+      "id": "b1-08-prac-18",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e pergunte quanto é a taxa.",
+      "listen": "There's a fee because you don't have an account with us.",
+      "accepted": [
+        "How much is the fee",
+        "OK, how much is the fee",
+        "Oh, I see. How much is it",
+        "What's the fee",
+        "How much does it cost",
+        "I see. How much do you charge"
+      ],
+      "commonErrors": [
+        {
+          "id": "tax",
+          "match": "\\btax\\b",
+          "explanation_pt": "\"Taxa\" de serviço do banco é \"fee\". \"Tax\" é imposto.",
+          "correction_en": "OK, how much is the fee?"
+        },
+        {
+          "id": "how-much-costs",
+          "match": "\\bhow much (it )?costs\\b",
+          "explanation_pt": "Na pergunta use o auxiliar: \"How much does it cost?\" ou \"How much is it?\"",
+          "correction_en": "How much is the fee?"
+        }
+      ]
+    },
+    {
+      "id": "b1-08-prac-19",
+      "kind": "dialogue",
+      "instruction_pt": "Resolva um problema com o seu cartão no banco.",
+      "scene_pt": "Seu cartão foi recusado numa loja e você vai até a agência.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Good afternoon. How can I help you?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que o seu cartão foi recusado hoje de manhã.",
+          "accepted": [
+            "My card was declined this morning",
+            "My card got declined this morning",
+            "My card was rejected this morning",
+            "My card didn't work this morning",
+            "My card was declined at a shop this morning"
+          ],
+          "commonErrors": [
+            {
+              "id": "refused",
+              "match": "\\brefused\\b|\\brecused\\b",
+              "explanation_pt": "Para cartão, o natural é \"declined\".",
+              "correction_en": "My card was declined this morning."
+            },
+            {
+              "id": "today-morning",
+              "match": "\\btoday (in the )?morning\\b",
+              "explanation_pt": "\"Hoje de manhã\" é \"this morning\".",
+              "correction_en": "My card was declined this morning."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Let me check. Can I see some ID, please?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Entregue o documento: aqui está.",
+          "accepted": [
+            "Sure, here you are",
+            "Here you go",
+            "Of course. Here it is",
+            "Sure, here it is",
+            "Yes, here you are"
+          ],
+          "commonErrors": [
+            {
+              "id": "here-is-it",
+              "match": "\\bhere is it\\b",
+              "explanation_pt": "A ordem é \"here it is\".",
+              "correction_en": "Sure, here it is."
+            },
+            {
+              "id": "take",
+              "match": "^take$|^take it$",
+              "explanation_pt": "Para entregar algo com educação, diga \"Here you are\" ou \"Here you go\".",
+              "correction_en": "Sure, here you are."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "It looks like your card was blocked because of an unusual payment abroad."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que não fez nenhum pagamento no exterior.",
+          "accepted": [
+            "I haven't made any payments abroad",
+            "I didn't make any payments abroad",
+            "I didn't make any payment abroad",
+            "But I haven't paid for anything abroad",
+            "That wasn't me. I didn't pay for anything abroad"
+          ],
+          "commonErrors": [
+            {
+              "id": "did-no-payment",
+              "match": "\\bi (did|made) no\\b|\\bi did not made\\b",
+              "explanation_pt": "Depois de \"didn't\" o verbo fica na forma base: \"I didn't make any payments\".",
+              "correction_en": "I didn't make any payments abroad."
+            },
+            {
+              "id": "in-the-exterior",
+              "match": "\\bexterior\\b|\\bin abroad\\b",
+              "explanation_pt": "\"No exterior\" é só \"abroad\", sem preposição.",
+              "correction_en": "I didn't make any payments abroad."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "I see. Then we'll cancel this card and send you a new one."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Pergunte quanto tempo vai levar.",
+          "accepted": [
+            "How long will it take",
+            "How long will that take",
+            "How long does it take",
+            "How long is it going to take",
+            "How long will it take to arrive"
+          ],
+          "commonErrors": [
+            {
+              "id": "how-much-time-take",
+              "match": "^how much time (it )?(will )?takes?\\b",
+              "explanation_pt": "O natural é \"How long will it take?\"",
+              "correction_en": "How long will it take?"
+            },
+            {
+              "id": "how-long-it-will",
+              "match": "^how long it (will|is)\\b",
+              "explanation_pt": "Na pergunta, o auxiliar vem antes do sujeito: \"How long will it take?\"",
+              "correction_en": "How long will it take?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-08-prac-20",
+      "kind": "free_speak",
+      "instruction_pt": "Fale sobre algo para o qual você está juntando dinheiro.",
+      "prompt_en": "Are you saving up for anything at the moment? How are you doing it?",
+      "guidelines_pt": [
+        "Use \"I'm saving up for...\".",
+        "Diga o que você corta: \"I spend less on...\".",
+        "Diga se consegue pagar agora: \"I can't afford it yet, but...\"."
+      ]
+    },
+    {
+      "id": "b1-08-prac-21",
+      "kind": "choice",
+      "instruction_pt": "Complete: \"Can you ___ me ten dollars? I'll pay you back tomorrow.\"",
+      "options": ["borrow", "lend", "loan to"],
+      "answer": 1,
+      "explanation_pt": "Quem dá emprestado é \"lend\"; quem pega emprestado é \"borrow\"."
+    },
+    {
+      "id": "b1-08-prac-22",
+      "kind": "choice",
+      "instruction_pt": "O que significa \"The bill comes to eighty dollars\"?",
+      "options": [
+        "A conta chega em oitenta dólares.",
+        "A conta vem amanhã.",
+        "Faltam oitenta dólares."
+      ],
+      "answer": 0,
+      "explanation_pt": "\"Come to\" com valores é \"dar um total de\"."
+    },
+    {
+      "id": "b1-08-prac-23",
+      "kind": "fill",
+      "instruction_pt": "Complete com o phrasal verb: \"It took me two years to pay ___ my student loan.\"",
+      "sentence": "It took me two years to pay ___ my student loan.",
+      "accepted": ["off", "back"],
+      "commonErrors": [
+        {
+          "id": "pay-out",
+          "match": "^(out|up|down)$",
+          "explanation_pt": "Quitar uma dívida é \"pay off\" (ou \"pay back\").",
+          "correction_en": "It took me two years to pay off my student loan."
+        }
+      ]
+    },
+    {
+      "id": "b1-08-prac-24",
+      "kind": "order",
+      "instruction_pt": "Coloque as palavras na ordem certa.",
+      "accepted": ["I can't afford to eat out every day."]
     }
   ]
 }

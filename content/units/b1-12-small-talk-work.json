@@ -376,10 +376,99 @@
           ]
         },
         {
-          "id": "b1-12-conv-3",
-          "kind": "order",
-          "instruction_pt": "Coloque as palavras na ordem certa.",
-          "accepted": ["How's your week going so far?"]
+          "id": "b1-12-conv-dialogue",
+          "kind": "dialogue",
+          "instruction_pt": "Converse com um colega na copa do escritório.",
+          "scene_pt": "Segunda de manhã. Um colega está fazendo café na copa.",
+          "turns": [
+            {
+              "speaker": "partner",
+              "text": "Morning! Did you have a good weekend?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga que sim, que foi à praia com a família.",
+              "accepted": [
+                "Yes, thanks! I went to the beach with my family",
+                "Yeah, it was great. I went to the beach with my family",
+                "Yes, I went to the beach with my family",
+                "It was good, thanks. We went to the beach",
+                "Yes! I spent it at the beach with my family"
+              ],
+              "commonErrors": [
+                {
+                  "id": "go-to-the-beach-past",
+                  "match": "\\bi go to the beach\\b",
+                  "explanation_pt": "O fim de semana já passou: use \"I went\".",
+                  "correction_en": "Yes, thanks! I went to the beach with my family."
+                },
+                {
+                  "id": "went-in-the-beach",
+                  "match": "\\bwent (in|on) the beach\\b",
+                  "explanation_pt": "\"Ir à praia\" é \"go to the beach\".",
+                  "correction_en": "Yes, thanks! I went to the beach with my family."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Lucky you! The weather was perfect."
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Concorde e pergunte o que ele fez.",
+              "accepted": [
+                "It really was. What did you do",
+                "Yes, it was. What about you",
+                "It was! What did you get up to",
+                "I know! How about you? What did you do",
+                "It was perfect. What did you do"
+              ],
+              "commonErrors": [
+                {
+                  "id": "what-you-did",
+                  "match": "\\bwhat you did\\b",
+                  "explanation_pt": "Na pergunta no passado: \"What did you do?\"",
+                  "correction_en": "It really was. What did you do?"
+                },
+                {
+                  "id": "and-you-what-made",
+                  "match": "\\bwhat did you make\\b",
+                  "explanation_pt": "\"O que você fez?\" (atividades) é \"What did you do?\"",
+                  "correction_en": "It really was. What did you do?"
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Not much. I just watched a series and caught up on sleep."
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga que parece um bom fim de semana também e que precisa voltar para uma reunião.",
+              "accepted": [
+                "That sounds nice too. Anyway, I've got a meeting. See you later",
+                "Sounds good too! Anyway, I'd better go. I have a meeting",
+                "That sounds relaxing. Anyway, I have a meeting now. See you",
+                "Sounds nice. Anyway, I need to go to a meeting",
+                "That sounds good too. I've got to run to a meeting, though"
+              ],
+              "commonErrors": [
+                {
+                  "id": "seems-nice",
+                  "match": "^(it )?seems (nice|good|relaxing)\\b",
+                  "explanation_pt": "Para reagir ao que alguém contou, o natural é \"That sounds nice\".",
+                  "correction_en": "That sounds nice too. Anyway, I've got a meeting. See you later."
+                },
+                {
+                  "id": "reunion",
+                  "match": "\\breunion\\b",
+                  "explanation_pt": "\"Reunião\" de trabalho é \"meeting\". \"Reunion\" é um reencontro.",
+                  "correction_en": "That sounds nice too. Anyway, I've got a meeting. See you later."
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "b1-12-conv-free",
@@ -468,6 +557,514 @@
           ]
         }
       ]
+    }
+  ],
+  "practice": [
+    {
+      "id": "b1-12-prac-1",
+      "kind": "vocab",
+      "word_en": "to be up to",
+      "meaning_pt": "estar fazendo, aprontando (\"What are you up to?\")",
+      "example_en": "What are you up to this weekend?"
+    },
+    {
+      "id": "b1-12-prac-2",
+      "kind": "vocab",
+      "word_en": "Same here",
+      "meaning_pt": "Comigo também, idem",
+      "example_en": "I'm so tired today. Same here!"
+    },
+    {
+      "id": "b1-12-prac-3",
+      "kind": "repeat",
+      "instruction_pt": "Repita. \"What are you\" soa \"whatcha\" na fala rápida.",
+      "prompt": "What are you up to this weekend?",
+      "accepted": ["What are you up to this weekend"],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-12-prac-4",
+      "kind": "repeat",
+      "instruction_pt": "Repita a frase.",
+      "prompt": "I've been swamped all week, but it's finally Friday.",
+      "accepted": [
+        "I've been swamped all week, but it's finally Friday",
+        "I have been swamped all week but it is finally Friday"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-12-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repita a pergunta.",
+      "prompt": "How's the new project going?",
+      "accepted": ["How's the new project going", "How is the new project going"],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-12-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repita. Use \"anyway\" para encerrar o papo.",
+      "prompt": "Anyway, I'd better get back to work. See you later!",
+      "accepted": [
+        "Anyway, I'd better get back to work. See you later",
+        "Anyway, I had better get back to work, see you later",
+        "Anyway, I should get back to work. See you later"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-12-prac-7",
+      "kind": "repeat",
+      "instruction_pt": "Repita a frase.",
+      "prompt": "It's been ages! How have you been?",
+      "accepted": ["It's been ages! How have you been", "It has been ages, how have you been"],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-12-prac-8",
+      "kind": "repeat",
+      "instruction_pt": "Repita a frase com tom simpático.",
+      "prompt": "That sounds like fun. I'm a bit jealous!",
+      "accepted": [
+        "That sounds like fun. I'm a bit jealous",
+        "That sounds like fun, I'm a little jealous",
+        "That sounds fun. I'm a bit jealous"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-12-prac-9",
+      "kind": "repeat",
+      "instruction_pt": "Repita a pergunta.",
+      "prompt": "Are you coming to the team lunch on Thursday?",
+      "accepted": [
+        "Are you coming to the team lunch on Thursday",
+        "Are you going to the team lunch on Thursday"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-12-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Quanto tempo! Como você está?\"",
+      "accepted": [
+        "Long time no see! How are you",
+        "It's been ages! How are you",
+        "Long time no see! How have you been",
+        "It's been a long time! How are you",
+        "It's been a while! How are you doing",
+        "Long time no see! How are you doing"
+      ],
+      "commonErrors": [
+        {
+          "id": "how-much-time",
+          "match": "^how much time\\b",
+          "explanation_pt": "\"Quanto tempo!\" (saudação) é \"Long time no see!\" ou \"It's been ages!\".",
+          "correction_en": "Long time no see! How are you?"
+        },
+        {
+          "id": "how-you-are",
+          "match": "\\bhow you are\\b",
+          "explanation_pt": "Na pergunta, o verbo vem antes: \"How are you?\"",
+          "correction_en": "Long time no see! How are you?"
+        }
+      ]
+    },
+    {
+      "id": "b1-12-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Comigo também! Eu mal dormi ontem.\"",
+      "accepted": [
+        "Same here! I barely slept last night",
+        "Me too! I hardly slept last night",
+        "Same here! I hardly slept last night",
+        "Me too! I barely slept last night",
+        "Same! I barely slept last night"
+      ],
+      "commonErrors": [
+        {
+          "id": "with-me-too",
+          "match": "^with me (too|also)\\b",
+          "explanation_pt": "\"Comigo também\" é \"Same here!\" ou \"Me too!\".",
+          "correction_en": "Same here! I barely slept last night."
+        },
+        {
+          "id": "badly-slept-yesterday",
+          "match": "\\byesterday (at )?night\\b|\\bbad slept\\b",
+          "explanation_pt": "\"Ontem à noite\" é \"last night\", e \"mal dormi\" é \"barely slept\" ou \"hardly slept\".",
+          "correction_en": "Same here! I barely slept last night."
+        }
+      ]
+    },
+    {
+      "id": "b1-12-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"O que você vai fazer no feriado?\"",
+      "accepted": [
+        "What are you doing for the holiday",
+        "What are you doing on the holiday",
+        "What are you going to do on the holiday",
+        "Have you got any plans for the holiday",
+        "What are your plans for the holiday",
+        "What are you up to for the holiday",
+        "What are you doing over the long weekend"
+      ],
+      "commonErrors": [
+        {
+          "id": "feriado-holiday-what-you-will",
+          "match": "^what you (will|are going|go)\\b",
+          "explanation_pt": "Na pergunta, o auxiliar vem antes do sujeito: \"What are you doing...?\"",
+          "correction_en": "What are you doing for the holiday?"
+        },
+        {
+          "id": "in-the-holiday",
+          "match": "\\bin the holiday\\b",
+          "explanation_pt": "\"No feriado\" é \"on the holiday\" ou \"for the holiday\".",
+          "correction_en": "What are you doing for the holiday?"
+        }
+      ]
+    },
+    {
+      "id": "b1-12-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Bom, deixa eu voltar para o trabalho.\"",
+      "accepted": [
+        "Anyway, I'd better get back to work",
+        "Well, I'd better get back to work",
+        "Anyway, let me get back to work",
+        "Well, I should get back to work",
+        "Anyway, I should get back to work",
+        "Right, I'd better get back to work"
+      ],
+      "commonErrors": [
+        {
+          "id": "let-me-return-to-the-work",
+          "match": "\\bto the work\\b",
+          "explanation_pt": "\"Voltar ao trabalho\" é \"get back to work\", sem \"the\".",
+          "correction_en": "Anyway, I'd better get back to work."
+        },
+        {
+          "id": "good-let-me",
+          "match": "^good let\\b|^good i\\b",
+          "explanation_pt": "\"Bom,\" para mudar de assunto é \"Well,\" ou \"Anyway,\", e não \"Good\".",
+          "correction_en": "Well, I'd better get back to work."
+        }
+      ]
+    },
+    {
+      "id": "b1-12-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Faz tempo que você trabalha aqui?\"",
+      "accepted": [
+        "Have you been working here long",
+        "Have you worked here long",
+        "Have you been here long",
+        "How long have you been working here",
+        "How long have you worked here",
+        "Have you been working here for long"
+      ],
+      "commonErrors": [
+        {
+          "id": "makes-time",
+          "match": "\\bmakes? (a long )?time\\b",
+          "explanation_pt": "\"Faz tempo que...\" é \"Have you been... long?\" ou \"How long have you...?\"",
+          "correction_en": "Have you been working here long?"
+        },
+        {
+          "id": "you-work-here-long",
+          "match": "^(do )?you work here (for )?(a )?long\\b",
+          "explanation_pt": "Para algo que começou no passado e continua, use o present perfect: \"Have you worked here long?\"",
+          "correction_en": "Have you worked here long?"
+        }
+      ]
+    },
+    {
+      "id": "b1-12-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda que vai bem, mas que está bem ocupado.",
+      "listen": "Hey! How's it going?",
+      "accepted": [
+        "Good, thanks. Pretty busy, though",
+        "Not bad, but I'm really busy",
+        "Pretty good, but I'm swamped",
+        "Good, but busy. How about you",
+        "Fine, thanks, just a bit busy",
+        "Not bad, a bit busy. And you"
+      ],
+      "commonErrors": [
+        {
+          "id": "going-well-literal",
+          "match": "^it is going\\b",
+          "explanation_pt": "A resposta natural é curta: \"Good, thanks\" ou \"Not bad\".",
+          "correction_en": "Good, thanks. Pretty busy, though."
+        },
+        {
+          "id": "very-occupied",
+          "match": "\\boccupied\\b",
+          "explanation_pt": "\"Ocupado\" (com trabalho) é \"busy\". \"Occupied\" é para lugares (banheiro ocupado).",
+          "correction_en": "Good, thanks. Pretty busy, though."
+        }
+      ]
+    },
+    {
+      "id": "b1-12-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que não fez nada de especial, só descansou.",
+      "listen": "Did you do anything nice over the weekend?",
+      "accepted": [
+        "Nothing special, I just relaxed",
+        "Not really, I just rested",
+        "Nothing much. I just took it easy",
+        "Not much, I just stayed home and relaxed",
+        "Nothing special. I just relaxed at home"
+      ],
+      "commonErrors": [
+        {
+          "id": "nothing-of-special",
+          "match": "\\bnothing of special\\b|\\bnothing especial\\b",
+          "explanation_pt": "\"Nada de especial\" é \"nothing special\".",
+          "correction_en": "Nothing special, I just relaxed."
+        },
+        {
+          "id": "rested-myself",
+          "match": "\\b(rested|relaxed) myself\\b|\\bi just rest$",
+          "explanation_pt": "\"Descansar\" é só \"rest\" ou \"relax\", no passado: \"I just relaxed\".",
+          "correction_en": "Nothing special, I just relaxed."
+        }
+      ]
+    },
+    {
+      "id": "b1-12-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e aceite o convite para tomar um café.",
+      "listen": "I'm going to grab a coffee. Do you want to come?",
+      "accepted": [
+        "Sure, I'd love to",
+        "Yes, sounds good",
+        "Sure, let's go",
+        "Yeah, I could use a coffee",
+        "Good idea, I'll come with you",
+        "Sure, give me a minute"
+      ],
+      "commonErrors": [
+        {
+          "id": "take-a-coffee",
+          "match": "\\btake a coffee\\b",
+          "explanation_pt": "\"Tomar um café\" é \"have a coffee\" ou \"grab a coffee\".",
+          "correction_en": "Sure, I'd love to."
+        },
+        {
+          "id": "id-love-no-to",
+          "match": "\\bwould love$",
+          "explanation_pt": "Termine com \"to\": \"I'd love to\".",
+          "correction_en": "Sure, I'd love to."
+        }
+      ]
+    },
+    {
+      "id": "b1-12-prac-18",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que está trabalhando no relatório de vendas.",
+      "listen": "So what are you working on at the moment?",
+      "accepted": [
+        "I'm working on the sales report",
+        "The sales report",
+        "I'm working on the sales report right now",
+        "Mostly the sales report",
+        "I'm busy with the sales report"
+      ],
+      "commonErrors": [
+        {
+          "id": "working-in",
+          "match": "\\bworking in the\\b",
+          "explanation_pt": "\"Trabalhar em\" uma tarefa é \"work on\".",
+          "correction_en": "I'm working on the sales report."
+        },
+        {
+          "id": "report-of-sales",
+          "match": "\\breport of (the )?sales\\b|\\brelatory\\b",
+          "explanation_pt": "\"Relatório de vendas\" é \"sales report\".",
+          "correction_en": "I'm working on the sales report."
+        }
+      ]
+    },
+    {
+      "id": "b1-12-prac-19",
+      "kind": "dialogue",
+      "instruction_pt": "Puxe papo com uma colega nova no escritório.",
+      "scene_pt": "Uma colega começou na empresa esta semana e vocês se encontram no elevador.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Hi! I don't think we've met. I'm Laura. I just started on Monday."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga seu nome, que é um prazer e dê as boas-vindas.",
+          "accepted": [
+            "Nice to meet you, Laura. I'm Ana. Welcome to the team",
+            "Hi Laura, I'm Pedro. Nice to meet you, and welcome",
+            "Nice to meet you. I'm Carlos. Welcome aboard",
+            "Hi, I'm Ana. Nice to meet you. Welcome to the company",
+            "Nice to meet you, Laura. I'm Pedro. Welcome"
+          ],
+          "commonErrors": [
+            {
+              "id": "my-name-is-pleasure-welcome-be",
+              "match": "\\bbe welcome\\b|\\bwelcome in the\\b",
+              "explanation_pt": "Para dar as boas-vindas, diga \"Welcome to the team\".",
+              "correction_en": "Nice to meet you, Laura. I'm Ana. Welcome to the team."
+            },
+            {
+              "id": "pleasure-to-know",
+              "match": "\\bnice to know you\\b|\\bpleasure to know you\\b",
+              "explanation_pt": "Ao conhecer alguém, diga \"Nice to meet you\".",
+              "correction_en": "Nice to meet you, Laura. I'm Ana. Welcome to the team."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Thanks! Which department are you in?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que trabalha no marketing, no terceiro andar.",
+          "accepted": [
+            "I'm in marketing, on the third floor",
+            "I work in marketing, on the third floor",
+            "I'm in the marketing department, on the third floor",
+            "Marketing. We're on the third floor",
+            "I work in marketing. It's on the third floor"
+          ],
+          "commonErrors": [
+            {
+              "id": "in-the-third-floor",
+              "match": "\\bin the third floor\\b",
+              "explanation_pt": "\"No terceiro andar\" é \"on the third floor\".",
+              "correction_en": "I'm in marketing, on the third floor."
+            },
+            {
+              "id": "work-on-marketing",
+              "match": "\\bwork (on|at) marketing\\b",
+              "explanation_pt": "\"Trabalhar no marketing\" (no setor) é \"work in marketing\".",
+              "correction_en": "I work in marketing, on the third floor."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Oh, nice. So how long have you been here?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que está aqui há quase dois anos.",
+          "accepted": [
+            "I've been here for almost two years",
+            "Almost two years now",
+            "I've been here nearly two years",
+            "For almost two years",
+            "I've worked here for almost two years",
+            "Almost two years"
+          ],
+          "commonErrors": [
+            {
+              "id": "am-here-for",
+              "match": "^i am here (for )?(almost|nearly)\\b",
+              "explanation_pt": "Para algo que começou no passado e continua, use o present perfect: \"I've been here for almost two years\".",
+              "correction_en": "I've been here for almost two years."
+            },
+            {
+              "id": "since-two-years",
+              "match": "\\bsince (almost |nearly )?two years\\b",
+              "explanation_pt": "Com período de tempo, use \"for\", e não \"since\".",
+              "correction_en": "I've been here for almost two years."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Great. Maybe you can show me the best places for lunch around here."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que claro e convide para almoçar com a equipe amanhã.",
+          "accepted": [
+            "Sure! Why don't you join us for lunch tomorrow",
+            "Of course. Do you want to have lunch with the team tomorrow",
+            "Sure. Come and have lunch with us tomorrow",
+            "Definitely. Would you like to join us for lunch tomorrow",
+            "Sure! You can have lunch with us tomorrow"
+          ],
+          "commonErrors": [
+            {
+              "id": "lunch-with-we",
+              "match": "\\bwith we\\b",
+              "explanation_pt": "Depois de preposição use \"us\": \"with us\".",
+              "correction_en": "Sure! Why don't you join us for lunch tomorrow?"
+            },
+            {
+              "id": "join-to-us",
+              "match": "\\bjoin (to|with) us\\b",
+              "explanation_pt": "\"Join\" vem direto com a pessoa: \"join us\".",
+              "correction_en": "Would you like to join us for lunch tomorrow?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-12-prac-20",
+      "kind": "free_speak",
+      "instruction_pt": "Puxe papo com um colega na segunda de manhã.",
+      "prompt_en": "It's Monday morning. Start a short chat with a colleague and keep it going.",
+      "guidelines_pt": [
+        "Pergunte sobre o fim de semana e reaja: \"That sounds great!\".",
+        "Conte algo seu em duas ou três frases.",
+        "Encerre com \"Anyway, I'd better...\"."
+      ]
+    },
+    {
+      "id": "b1-12-prac-21",
+      "kind": "choice",
+      "instruction_pt": "Um colega diz \"I'm off to Bahia next week!\" Qual é a melhor reação?",
+      "options": ["Oh, lucky you! Is it for work or a holiday?", "Why?", "I know Bahia."],
+      "answer": 0,
+      "explanation_pt": "Reagir (\"Lucky you!\") e fazer uma pergunta mantém o small talk."
+    },
+    {
+      "id": "b1-12-prac-22",
+      "kind": "choice",
+      "instruction_pt": "Qual destes é um bom assunto para small talk no trabalho?",
+      "options": [
+        "Quanto o colega ganha.",
+        "O fim de semana e os planos para o feriado.",
+        "Em quem o colega votou."
+      ],
+      "answer": 1,
+      "explanation_pt": "Small talk usa temas leves: fim de semana, clima, férias, séries."
+    },
+    {
+      "id": "b1-12-prac-23",
+      "kind": "fill",
+      "instruction_pt": "Complete: \"Let's catch ___ after the meeting.\"",
+      "sentence": "Let's catch ___ after the meeting.",
+      "accepted": ["up"],
+      "commonErrors": [
+        {
+          "id": "catch-on",
+          "match": "^(on|out|in)$",
+          "explanation_pt": "\"Colocar o papo em dia\" é \"catch up\".",
+          "correction_en": "Let's catch up after the meeting."
+        }
+      ]
+    },
+    {
+      "id": "b1-12-prac-24",
+      "kind": "order",
+      "instruction_pt": "Coloque as palavras na ordem certa.",
+      "accepted": ["How was your holiday?"]
     }
   ]
 }

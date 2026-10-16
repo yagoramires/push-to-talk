@@ -127,11 +127,26 @@
           "kind": "match",
           "instruction_pt": "Ligue cada palavra ao significado.",
           "pairs": [
-            { "en": "receipt", "pt": "nota fiscal, recibo" },
-            { "en": "exchange", "pt": "troca" },
-            { "en": "warranty", "pt": "garantia" },
-            { "en": "damaged", "pt": "danificado" },
-            { "en": "delay", "pt": "atraso" }
+            {
+              "en": "receipt",
+              "pt": "nota fiscal, recibo"
+            },
+            {
+              "en": "exchange",
+              "pt": "troca"
+            },
+            {
+              "en": "warranty",
+              "pt": "garantia"
+            },
+            {
+              "en": "damaged",
+              "pt": "danificado"
+            },
+            {
+              "en": "delay",
+              "pt": "atraso"
+            }
           ]
         },
         {
@@ -368,10 +383,99 @@
           ]
         },
         {
-          "id": "b1-03-conv-3",
-          "kind": "order",
-          "instruction_pt": "Coloque as palavras na ordem certa.",
-          "accepted": ["This is not what I ordered."]
+          "id": "b1-03-conv-dialogue",
+          "kind": "dialogue",
+          "instruction_pt": "Reclame com o atendente da loja. Seja educado.",
+          "scene_pt": "Você volta à loja com um fone de ouvido que parou de funcionar.",
+          "turns": [
+            {
+              "speaker": "partner",
+              "text": "Hi there. What can I do for you?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga que comprou estes fones aqui e que eles estão com defeito.",
+              "accepted": [
+                "I bought these headphones here, and they're faulty",
+                "I bought these headphones here and they don't work",
+                "I bought these headphones here, but they're faulty",
+                "I bought these headphones here last week and they're faulty",
+                "I got these headphones here and they're faulty"
+              ],
+              "commonErrors": [
+                {
+                  "id": "defective-hearing",
+                  "match": "\\bhearing phones\\b|\\bear phone\\b",
+                  "explanation_pt": "Fone de ouvido é \"headphones\" ou \"earphones\".",
+                  "correction_en": "I bought these headphones here, and they're faulty."
+                },
+                {
+                  "id": "with-defect",
+                  "match": "\\bwith (a )?defect\\b",
+                  "explanation_pt": "\"Com defeito\" é \"faulty\" ou \"they don't work\".",
+                  "correction_en": "I bought these headphones here, and they're faulty."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "I'm sorry to hear that. What seems to be wrong with them?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga que o lado esquerdo parou de funcionar.",
+              "accepted": [
+                "The left side stopped working",
+                "The left side has stopped working",
+                "The left one stopped working",
+                "The left side doesn't work anymore",
+                "The left side isn't working"
+              ],
+              "commonErrors": [
+                {
+                  "id": "stopped-to-work",
+                  "match": "\\bstopped to work\\b",
+                  "explanation_pt": "\"Parar de fazer\" é \"stop + -ing\": \"stopped working\". \"Stopped to work\" é parar para trabalhar.",
+                  "correction_en": "The left side stopped working."
+                },
+                {
+                  "id": "left-side-stop",
+                  "match": "\\bleft (side|one) stop working\\b",
+                  "explanation_pt": "Use o passado: \"stopped working\".",
+                  "correction_en": "The left side stopped working."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Do you have the receipt with you?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga que sim e peça para trocar por um novo.",
+              "accepted": [
+                "Yes, here it is. Can I exchange them for a new pair",
+                "Yes, here you are. Could I exchange them for new ones",
+                "Yes. Can I swap them for a new pair",
+                "Yes, here it is. I'd like to exchange them for a new pair",
+                "Yes, here it is. Could I get a new pair"
+              ],
+              "commonErrors": [
+                {
+                  "id": "change-by-new",
+                  "match": "\\b(exchange|change|swap) (them|it) (by|to)\\b",
+                  "explanation_pt": "\"Trocar por\" é \"exchange for\".",
+                  "correction_en": "Can I exchange them for a new pair?"
+                },
+                {
+                  "id": "here-is-it",
+                  "match": "\\bhere is it\\b",
+                  "explanation_pt": "A ordem é \"here it is\".",
+                  "correction_en": "Yes, here it is."
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "b1-03-conv-free",
@@ -461,6 +565,512 @@
           ]
         }
       ]
+    }
+  ],
+  "practice": [
+    {
+      "id": "b1-03-prac-1",
+      "kind": "vocab",
+      "word_en": "to exchange",
+      "meaning_pt": "trocar (um produto por outro)",
+      "example_en": "Can I exchange these shoes for a bigger size?"
+    },
+    {
+      "id": "b1-03-prac-2",
+      "kind": "vocab",
+      "word_en": "to be overcharged",
+      "meaning_pt": "ser cobrado a mais",
+      "example_en": "I think I've been overcharged for this meal."
+    },
+    {
+      "id": "b1-03-prac-3",
+      "kind": "repeat",
+      "instruction_pt": "Repita com tom educado. \"I'm afraid\" suaviza a reclamação.",
+      "prompt": "I'm afraid the screen is cracked.",
+      "accepted": ["I'm afraid the screen is cracked", "I am afraid the screen is cracked"],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-03-prac-4",
+      "kind": "repeat",
+      "instruction_pt": "Repita a frase.",
+      "prompt": "I'd like a refund, please.",
+      "accepted": ["I'd like a refund, please", "I would like a refund please"],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-03-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repita. \"Charged\" soa \"tchardjd\", uma sílaba só.",
+      "prompt": "I think you've charged me twice.",
+      "accepted": ["I think you've charged me twice", "I think you have charged me twice"],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-03-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repita a frase, ligando \"sort it out\".",
+      "prompt": "Could you sort it out as soon as possible?",
+      "accepted": [
+        "Could you sort it out as soon as possible",
+        "Can you sort it out as soon as possible"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-03-prac-7",
+      "kind": "repeat",
+      "instruction_pt": "Repita a frase.",
+      "prompt": "The heating in my room isn't working.",
+      "accepted": ["The heating in my room isn't working", "The heating in my room is not working"],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-03-prac-8",
+      "kind": "repeat",
+      "instruction_pt": "Repita. \"Ordered\" tem duas sílabas: OR-dered.",
+      "prompt": "This isn't what I ordered.",
+      "accepted": ["This isn't what I ordered", "This is not what I ordered"],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-03-prac-9",
+      "kind": "repeat",
+      "instruction_pt": "Repita a frase com calma.",
+      "prompt": "I've called three times, and nobody has called me back.",
+      "accepted": [
+        "I've called three times, and nobody has called me back",
+        "I have called three times and nobody has called me back",
+        "I've called three times and no one has called me back"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-03-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"O meu pedido ainda não chegou.\"",
+      "accepted": [
+        "My order hasn't arrived yet",
+        "My order has not arrived yet",
+        "My order still hasn't arrived",
+        "My order hasn't come yet",
+        "My order still hasn't come",
+        "I still haven't received my order",
+        "I haven't received my order yet"
+      ],
+      "commonErrors": [
+        {
+          "id": "didnt-arrive-yet",
+          "match": "\\bdid not (arrive|come) yet\\b",
+          "explanation_pt": "Com \"yet\" o natural é o present perfect: \"hasn't arrived yet\".",
+          "correction_en": "My order hasn't arrived yet."
+        },
+        {
+          "id": "my-request",
+          "match": "\\bmy request\\b",
+          "explanation_pt": "\"Pedido\" de compra é \"order\". \"Request\" é uma solicitação.",
+          "correction_en": "My order hasn't arrived yet."
+        }
+      ]
+    },
+    {
+      "id": "b1-03-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu fui cobrado a mais.\"",
+      "accepted": [
+        "I've been overcharged",
+        "I have been overcharged",
+        "I was overcharged",
+        "You've overcharged me",
+        "I think I've been overcharged",
+        "You charged me too much"
+      ],
+      "commonErrors": [
+        {
+          "id": "charged-more",
+          "match": "\\bcharged (to )?more\\b",
+          "explanation_pt": "\"Cobrado a mais\" é \"overcharged\" ou \"charged too much\".",
+          "correction_en": "I've been overcharged."
+        },
+        {
+          "id": "collected",
+          "match": "\\bcollected\\b",
+          "explanation_pt": "\"Cobrar\" dinheiro é \"charge\", e não \"collect\".",
+          "correction_en": "I've been overcharged."
+        }
+      ]
+    },
+    {
+      "id": "b1-03-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Você pode trocar isso por um tamanho menor?\"",
+      "accepted": [
+        "Can you exchange this for a smaller size",
+        "Could you exchange this for a smaller size",
+        "Can I exchange this for a smaller size",
+        "Could I exchange this for a smaller size",
+        "Can I swap this for a smaller size",
+        "Can you change this for a smaller size"
+      ],
+      "commonErrors": [
+        {
+          "id": "exchange-by",
+          "match": "\\b(exchange|change|swap) (this|it) (by|to)\\b",
+          "explanation_pt": "\"Trocar por\" é \"exchange for\", e não \"by\" ou \"to\".",
+          "correction_en": "Can you exchange this for a smaller size?"
+        },
+        {
+          "id": "minor-size",
+          "match": "\\bminor\\b|\\bmore small\\b",
+          "explanation_pt": "\"Menor\" em tamanho é \"smaller\".",
+          "correction_en": "Can you exchange this for a smaller size?"
+        }
+      ]
+    },
+    {
+      "id": "b1-03-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Isso é inaceitável.\"",
+      "accepted": [
+        "This is unacceptable",
+        "That's unacceptable",
+        "This is not acceptable",
+        "This isn't acceptable",
+        "That's not acceptable"
+      ],
+      "commonErrors": [
+        {
+          "id": "inacceptable",
+          "match": "\\binacceptable\\b|\\bnot accepted\\b",
+          "explanation_pt": "A palavra é \"unacceptable\", com \"un-\".",
+          "correction_en": "This is unacceptable."
+        },
+        {
+          "id": "is-unacceptable-no-subject",
+          "match": "^is (unacceptable|not acceptable)\\b",
+          "explanation_pt": "Falta o sujeito: \"This is unacceptable\".",
+          "correction_en": "This is unacceptable."
+        }
+      ]
+    },
+    {
+      "id": "b1-03-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"O ar-condicionado está fazendo um barulho estranho.\"",
+      "accepted": [
+        "The air conditioning is making a strange noise",
+        "The air conditioner is making a strange noise",
+        "The air conditioning is making a weird noise",
+        "The AC is making a strange noise",
+        "The air conditioner is making a weird noise",
+        "The air conditioning is making a funny noise"
+      ],
+      "commonErrors": [
+        {
+          "id": "doing-noise",
+          "match": "\\bdoing (a )?(strange|weird) noise\\b",
+          "explanation_pt": "\"Fazer barulho\" é \"make a noise\", e não \"do\".",
+          "correction_en": "The air conditioning is making a strange noise."
+        },
+        {
+          "id": "air-conditioned",
+          "match": "\\bair conditioned\\b",
+          "explanation_pt": "\"Air-conditioned\" é adjetivo (um lugar climatizado). O aparelho é \"air conditioner\" ou \"air conditioning\".",
+          "correction_en": "The air conditioner is making a strange noise."
+        }
+      ]
+    },
+    {
+      "id": "b1-03-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que gostaria do dinheiro de volta.",
+      "listen": "Would you like a replacement or your money back?",
+      "accepted": [
+        "I'd like my money back, please",
+        "My money back, please",
+        "I'd prefer a refund",
+        "I'd like a refund, please",
+        "I'd rather have my money back",
+        "A refund, please"
+      ],
+      "commonErrors": [
+        {
+          "id": "money-of-back",
+          "match": "\\bback my money\\b|\\bmy money of back\\b",
+          "explanation_pt": "A ordem é \"my money back\".",
+          "correction_en": "I'd like my money back, please."
+        },
+        {
+          "id": "devolution",
+          "match": "\\bdevolution\\b|\\breimbursement of\\b",
+          "explanation_pt": "\"Devolução do dinheiro\" é \"refund\" ou \"my money back\".",
+          "correction_en": "I'd like a refund, please."
+        }
+      ]
+    },
+    {
+      "id": "b1-03-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e explique o problema: o celular não liga.",
+      "listen": "What's wrong with it?",
+      "accepted": [
+        "It won't turn on",
+        "It doesn't turn on",
+        "The phone won't turn on",
+        "It doesn't switch on",
+        "It won't switch on",
+        "My phone doesn't turn on"
+      ],
+      "commonErrors": [
+        {
+          "id": "not-connect",
+          "match": "\\b(does not|will not) (connect|call|link)\\b",
+          "explanation_pt": "\"Ligar\" um aparelho é \"turn on\" ou \"switch on\". \"Call\" é ligar para alguém.",
+          "correction_en": "It won't turn on."
+        },
+        {
+          "id": "no-turn-on",
+          "match": "^(it )?no turn on\\b",
+          "explanation_pt": "A negação precisa de auxiliar: \"It doesn't turn on\" ou \"It won't turn on\".",
+          "correction_en": "It won't turn on."
+        }
+      ]
+    },
+    {
+      "id": "b1-03-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que o recibo está aqui.",
+      "listen": "Do you have the receipt?",
+      "accepted": [
+        "Yes, here it is",
+        "Yes, here you are",
+        "Yes, here's the receipt",
+        "Yes, it's right here",
+        "Yes, here you go",
+        "Yes, I have it here"
+      ],
+      "commonErrors": [
+        {
+          "id": "here-is-it",
+          "match": "\\bhere is it\\b",
+          "explanation_pt": "A ordem é \"here it is\".",
+          "correction_en": "Yes, here it is."
+        },
+        {
+          "id": "recipe",
+          "match": "\\brecipe\\b",
+          "explanation_pt": "\"Recipe\" é receita de cozinha. Recibo é \"receipt\".",
+          "correction_en": "Yes, here's the receipt."
+        }
+      ]
+    },
+    {
+      "id": "b1-03-prac-18",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que você comprou na semana passada.",
+      "listen": "When did you buy the laptop?",
+      "accepted": [
+        "I bought it last week",
+        "Last week",
+        "I got it last week",
+        "I bought it here last week",
+        "It was last week"
+      ],
+      "commonErrors": [
+        {
+          "id": "buyed",
+          "match": "\\bbuyed\\b|\\bbuy it last\\b",
+          "explanation_pt": "O passado de \"buy\" é \"bought\".",
+          "correction_en": "I bought it last week."
+        },
+        {
+          "id": "in-the-last-week",
+          "match": "\\b(in the|at the) last week\\b|\\bpast week\\b",
+          "explanation_pt": "\"Semana passada\" é \"last week\", sem preposição.",
+          "correction_en": "I bought it last week."
+        }
+      ]
+    },
+    {
+      "id": "b1-03-prac-19",
+      "kind": "dialogue",
+      "instruction_pt": "Reclame na recepção do hotel. Seja educado, mas firme.",
+      "scene_pt": "Você está num hotel e o chuveiro do seu quarto não tem água quente.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Good evening. How can I help you?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que, infelizmente, não tem água quente no seu quarto.",
+          "accepted": [
+            "I'm afraid there's no hot water in my room",
+            "I'm afraid there isn't any hot water in my room",
+            "There's no hot water in my room",
+            "I'm sorry, but there's no hot water in my room",
+            "I'm afraid the hot water isn't working in my room"
+          ],
+          "commonErrors": [
+            {
+              "id": "dont-have-hot-water",
+              "match": "\\b(do not|does not) (have|has) hot water\\b|^no have\\b",
+              "explanation_pt": "Para dizer que algo não existe num lugar, use \"there's no\" ou \"there isn't any\".",
+              "correction_en": "I'm afraid there's no hot water in my room."
+            },
+            {
+              "id": "hot-water-of-room",
+              "match": "\\bin the my room\\b|\\bhot water of my room\\b",
+              "explanation_pt": "Diga \"in my room\".",
+              "correction_en": "I'm afraid there's no hot water in my room."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Oh, I'm sorry about that. What's your room number?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que é o quarto 412.",
+          "accepted": [
+            "It's room 412",
+            "Room 412",
+            "It's room four one two",
+            "Room four twelve",
+            "It's four twelve",
+            "It's 412"
+          ],
+          "commonErrors": [
+            {
+              "id": "is-room-no-it",
+              "match": "^is (room )?four\\b",
+              "explanation_pt": "Falta o sujeito: \"It's room 412\".",
+              "correction_en": "It's room 412."
+            },
+            {
+              "id": "my-room-number-have",
+              "match": "\\bmy room have\\b|\\bmy room has the number\\b",
+              "explanation_pt": "O mais simples é \"It's room 412\".",
+              "correction_en": "It's room 412."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "I'll send someone from maintenance first thing tomorrow morning."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que precisa tomar banho hoje à noite e pergunte se alguém pode resolver agora.",
+          "accepted": [
+            "I need to take a shower tonight. Could someone sort it out now",
+            "I need to shower tonight. Can someone fix it now",
+            "I need a shower tonight. Could someone sort it out now",
+            "I need to take a shower tonight. Can someone fix it now",
+            "I really need to shower tonight. Could someone come now"
+          ],
+          "commonErrors": [
+            {
+              "id": "take-a-bath-shower",
+              "match": "\\btake a bath\\b",
+              "explanation_pt": "\"Tomar banho\" de chuveiro é \"take a shower\". \"Take a bath\" é banho de banheira.",
+              "correction_en": "I need to take a shower tonight. Could someone sort it out now?"
+            },
+            {
+              "id": "this-night",
+              "match": "\\bthis night\\b|\\btoday night\\b",
+              "explanation_pt": "\"Hoje à noite\" é \"tonight\".",
+              "correction_en": "I need to take a shower tonight. Could someone sort it out now?"
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "I understand. Would you like to move to another room instead?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Aceite e agradeça: sim, seria ótimo.",
+          "accepted": [
+            "Yes, that would be great. Thank you",
+            "Yes, please. That would be great",
+            "That would be great, thanks",
+            "Yes, that would be perfect. Thank you",
+            "Yes, please, thank you"
+          ],
+          "commonErrors": [
+            {
+              "id": "would-be-great-no-that",
+              "match": "^(yes )?would be (great|perfect)\\b",
+              "explanation_pt": "Falta o sujeito: \"That would be great\".",
+              "correction_en": "Yes, that would be great. Thank you."
+            },
+            {
+              "id": "thanks-you",
+              "match": "\\bthanks you\\b",
+              "explanation_pt": "Diga \"thank you\" ou \"thanks\", não \"thanks you\".",
+              "correction_en": "Yes, that would be great. Thank you."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-03-prac-20",
+      "kind": "free_speak",
+      "instruction_pt": "Conte uma reclamação que você já fez (ou queria ter feito).",
+      "prompt_en": "Tell me about a time you had a problem with a product or a service. What did you do?",
+      "guidelines_pt": [
+        "Diga o que deu errado no passado simples.",
+        "Conte o que você disse para a empresa: \"I asked for a refund\".",
+        "Diga como terminou: \"In the end, they...\"."
+      ]
+    },
+    {
+      "id": "b1-03-prac-21",
+      "kind": "choice",
+      "instruction_pt": "Qual frase é a reclamação mais educada?",
+      "options": [
+        "Give me another one now.",
+        "I'm afraid this one doesn't work. Could I have another one?",
+        "This is rubbish. I want a new one."
+      ],
+      "answer": 1,
+      "explanation_pt": "\"I'm afraid...\" e \"Could I...?\" deixam a reclamação firme e educada."
+    },
+    {
+      "id": "b1-03-prac-22",
+      "kind": "choice",
+      "instruction_pt": "O que significa \"The item is out of stock\"?",
+      "options": [
+        "O produto está com defeito.",
+        "O produto está esgotado.",
+        "O produto está em promoção."
+      ],
+      "answer": 1,
+      "explanation_pt": "\"Out of stock\" é \"fora de estoque\", esgotado."
+    },
+    {
+      "id": "b1-03-prac-23",
+      "kind": "fill",
+      "instruction_pt": "Complete com o phrasal verb: \"I hope you can sort this ___ quickly.\"",
+      "sentence": "I hope you can sort this ___ quickly.",
+      "accepted": ["out"],
+      "commonErrors": [
+        {
+          "id": "sort-up",
+          "match": "^(up|on|off)$",
+          "explanation_pt": "Resolver um problema é \"sort out\".",
+          "correction_en": "I hope you can sort this out quickly."
+        }
+      ]
+    },
+    {
+      "id": "b1-03-prac-24",
+      "kind": "order",
+      "instruction_pt": "Coloque as palavras na ordem certa.",
+      "accepted": ["I would like to make a complaint."]
     }
   ]
 }
