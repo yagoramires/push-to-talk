@@ -61,7 +61,7 @@ describe('flattenPlan', () => {
       steps: [{ kind: 'block', minutes: 4, unitId: 'u1', block }],
       courseComplete: false
     })
-    expect(items.map((i) => i.completesBlockId)).toEqual([undefined, 'u1-conversation'])
+    expect(items.map((i) => i.completesBlockId)).toEqual([undefined, undefined, 'u1-conversation'])
   })
 })
 

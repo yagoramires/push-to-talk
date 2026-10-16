@@ -784,3 +784,37 @@ input[type='checkbox'] {
   margin: 0.85rem 0 0.25rem;
   font-size: 1.05rem;
 }
+
+/* Dialogue role-play: partner bubbles on the left, the learner's on the right */
+.dialogue {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.turn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 85%;
+}
+
+.turn .prompt {
+  margin: 0.75rem 0 1.25rem;
+  font-size: 1.3rem;
+}
+
+.turn-you {
+  align-self: flex-end;
+  align-items: flex-end;
+}
+
+.turn-you .prompt {
+  background: var(--surface-2);
+  border-color: var(--edge);
+}
+
+.turn-you .prompt::after {
+  left: auto;
+  right: 2.25rem;
+}

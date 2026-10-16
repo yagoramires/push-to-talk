@@ -1,16 +1,20 @@
 import { useState } from 'react'
-import type { Block, Exercise } from '../../../shared/content'
+import type { Block, Exercise, YouTurn } from '../../../shared/content'
 
 function Answers({ ex }: { ex: Exercise }): React.JSX.Element | null {
+  const youTurns =
+    ex.kind === 'dialogue' ? ex.turns.filter((t): t is YouTurn => t.speaker === 'you') : []
   const list: string[] =
     ex.kind === 'choice'
       ? [ex.options[ex.answer]]
       : ex.kind === 'match'
         ? ex.pairs.map((p) => `${p.en} = ${p.pt}`)
-        : 'accepted' in ex
-          ? ex.accepted
-          : []
-  const errors = 'commonErrors' in ex ? ex.commonErrors : []
+        : ex.kind === 'dialogue'
+          ? youTurns.map((t) => `${t.cue_pt}: ${t.accepted.join(' / ')}`)
+          : 'accepted' in ex
+            ? ex.accepted
+            : []
+  const errors = 'commonErrors' in ex ? ex.commonErrors : youTurns.flatMap((t) => t.commonErrors)
   if (!list.length && !errors.length) return null
   return (
     <>
@@ -18,8 +22,8 @@ function Answers({ ex }: { ex: Exercise }): React.JSX.Element | null {
         <>
           <h4>Respostas aceitas</h4>
           <ul lang="en">
-            {list.map((a) => (
-              <li key={a}>{a}</li>
+            {list.map((a, i) => (
+              <li key={i}>{a}</li>
             ))}
           </ul>
         </>
@@ -28,8 +32,8 @@ function Answers({ ex }: { ex: Exercise }): React.JSX.Element | null {
         <>
           <h4>Erros comuns</h4>
           <ul>
-            {errors.map((e) => (
-              <li key={e.id}>
+            {errors.map((e, i) => (
+              <li key={`${e.id}-${i}`}>
                 {e.explanation_pt} <span lang="en">({e.correction_en})</span>
               </li>
             ))}

@@ -28,7 +28,7 @@ test('every unit has the 6 blocks in order, ends conversation with free_speak, i
   }
 })
 
-test('every translate and listen_answer has a common error', async () => {
+test('every translate, listen_answer and dialogue "you" turn has a common error', async () => {
   const c = await course
   const all = [
     ...c.units.flatMap(exercisesOf),
@@ -37,10 +37,16 @@ test('every translate and listen_answer has a common error', async () => {
       x.parts.flatMap((p) => p.items.map((i) => i.exercise))
     )
   ]
-  const missing = all.filter(
-    (e) => (e.kind === 'translate' || e.kind === 'listen_answer') && !e.commonErrors.length
+  const missing = all.flatMap((e) =>
+    e.kind === 'dialogue'
+      ? e.turns.flatMap((t, i) =>
+          t.speaker === 'you' && !t.commonErrors.length ? [`${e.id} turn ${i}`] : []
+        )
+      : (e.kind === 'translate' || e.kind === 'listen_answer') && !e.commonErrors.length
+        ? [e.id]
+        : []
   )
-  expect(missing.map((e) => e.id)).toEqual([])
+  expect(missing).toEqual([])
 })
 
 test('every listened text has bundled audio (run npm run audio)', async () => {

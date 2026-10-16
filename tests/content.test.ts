@@ -96,7 +96,12 @@ test('checkAnswer on content: a1-02-age-translate flags have-years, accepts corr
 
 test('every accepted answer of every spoken/fill exercise is correct through checkAnswer', async () => {
   const course = await loadCourse(join(__dirname, '..', 'content'))
-  for (const e of course.units.flatMap((u) => u.blocks.flatMap((b) => b.exercises)))
+  for (const e of course.units.flatMap((u) => u.blocks.flatMap((b) => b.exercises))) {
+    if (e.kind === 'dialogue')
+      for (const t of e.turns)
+        if (t.speaker === 'you')
+          for (const a of t.accepted)
+            expect(checkAnswer(a, t).verdict, `${e.id} accepts "${a}"`).toBe('correct')
     if (
       e.kind === 'repeat' ||
       e.kind === 'translate' ||
@@ -105,6 +110,7 @@ test('every accepted answer of every spoken/fill exercise is correct through che
     )
       for (const a of e.accepted)
         expect(checkAnswer(a, e).verdict, `${e.id} accepts "${a}"`).toBe('correct')
+  }
 })
 
 const assessmentExercises = (course: Awaited<ReturnType<typeof loadCourse>>): Exercise[] => [
