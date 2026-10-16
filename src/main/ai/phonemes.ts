@@ -17,6 +17,14 @@ export const EQUIVALENT_PHONES: string[][] = [
   ['ɹ', 'r']
 ]
 
+/** Unstressed function words: their weak forms vary too much to grade fairly, so they only anchor the alignment. */
+export const UNGRADED_WORDS = new Set(
+  (
+    'a an the am is are was were be to of and or but for at as in on from that than can do does ' +
+    'have has had you your he she we they them his her our there some'
+  ).split(' ')
+)
+
 const same = (a: string, b: string): boolean =>
   a === b || EQUIVALENT_PHONES.some((c) => c.includes(a) && c.includes(b))
 
@@ -54,7 +62,7 @@ export function tokenizeIpa(ipa: string, vocab: Set<string>): string[] {
   return out
 }
 
-/** Levenshtein-aligns all expected phonemes with the heard ones; insertions count against the word of the preceding phoneme. */
+/** Levenshtein-aligns all expected phonemes with the heard ones; insertions count against the word of the preceding phoneme; UNGRADED_WORDS are aligned but left out of every PER. */
 export function scoreWords(
   expectedByWord: { word: string; phones: string[] }[],
   heard: string[]
@@ -99,11 +107,16 @@ export function scoreWords(
     }
   }
 
+  const graded = expectedByWord.map((w) => !UNGRADED_WORDS.has(w.word))
+  const sum = (f: (wi: number) => number): number =>
+    expectedByWord.reduce((acc, _, wi) => acc + (graded[wi] ? f(wi) : 0), 0)
+  const gradedPhones = sum((wi) => expectedByWord[wi].phones.length)
+  const per = gradedPhones === 0 ? 0 : sum((wi) => errors[wi]) / gradedPhones
   return {
-    score: n === 0 ? 0 : Math.max(0, Math.min(100, Math.round(100 * (1 - d[n][m] / n)))),
+    score: Math.max(0, Math.min(100, Math.round(100 * (1 - per)))),
     words: expectedByWord.map((w, wi) => ({
       word: w.word,
-      ok: errors[wi] / Math.max(1, w.phones.length) <= WORD_OK_PER,
+      ok: !graded[wi] || errors[wi] / Math.max(1, w.phones.length) <= WORD_OK_PER,
       expected: w.phones.join(''),
       heard: heardBy[wi].join('')
     }))
