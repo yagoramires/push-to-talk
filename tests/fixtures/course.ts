@@ -74,7 +74,8 @@ function makeUnit(id: string, order: number, level: Level = 'A1'): Unit {
     title_pt: id,
     title_en: id,
     objective_pt: 'Objetivo',
-    blocks
+    blocks,
+    practice: []
   }
 }
 

@@ -66,6 +66,14 @@ test('throws ContentError on duplicate exercise id across units', async () => {
   await expect(loadCourse(dir)).rejects.toBeInstanceOf(ContentError)
 })
 
+test('throws ContentError on a practice id repeating a block exercise id', async () => {
+  const u1 = structuredClone(makeCourse().units[0])
+  u1.practice = [structuredClone(u1.blocks[0].exercises[0])]
+  const dir = await dirWith({ 'a.json': u1 })
+  await expect(loadCourse(dir)).rejects.toThrow(/duplicate id "u1-warmup-ex"/)
+  await expect(loadCourse(dir)).rejects.toBeInstanceOf(ContentError)
+})
+
 test('throws ContentError on duplicate unit id', async () => {
   const [u1] = makeCourse().units
   const dir = await dirWith({ 'a.json': u1, 'b.json': u1 })

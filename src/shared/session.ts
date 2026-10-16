@@ -8,6 +8,7 @@ import {
   type Level,
   type Position
 } from './content'
+import { dueItems, practicePool } from './practice'
 import type { ProfileProgress } from './progress'
 
 export const DURATIONS = [10, 20, 30, 40, 50, 60] as const
@@ -18,14 +19,23 @@ export type SessionStep =
   | { kind: 'wrapup'; minutes: number; unitId: string; exercise: FreeSpeak }
 export type SessionPlan = { steps: SessionStep[]; courseComplete: boolean; examDue: Level | null }
 
-export function buildSession(course: Course, p: ProfileProgress, minutes: Duration): SessionPlan {
+export function buildSession(
+  course: Course,
+  p: ProfileProgress,
+  minutes: Duration,
+  now = new Date()
+): SessionPlan {
   const open = p.errorLog.filter((e) => !e.resolved).slice(0, 5)
-  const reviewMin = open.length ? Math.min(5, Math.max(2, Math.round(minutes * 0.15))) : 0
+  // With no open errors, the review step takes up to 2 practice items that are due.
+  const review = open.length
+    ? open.map((e) => e.exerciseId)
+    : dueItems(practicePool(course, p), p, now).slice(0, 2)
+  const reviewMin = review.length ? Math.min(5, Math.max(2, Math.round(minutes * 0.15))) : 0
   const convMin = minutes <= 10 ? 2 : 4
   const budget = minutes - reviewMin - convMin
 
-  const steps: SessionStep[] = open.length
-    ? [{ kind: 'review', minutes: reviewMin, exerciseIds: open.map((e) => e.exerciseId) }]
+  const steps: SessionStep[] = review.length
+    ? [{ kind: 'review', minutes: reviewMin, exerciseIds: review }]
     : []
   const blocks: Extract<SessionStep, { kind: 'block' }>[] = []
   let sum = 0

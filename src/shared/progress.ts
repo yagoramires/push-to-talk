@@ -39,6 +39,8 @@ export type ProfileProgress = {
   weakUnits: string[]
   courseComplete: boolean
   goal: Goal | null
+  /** Caixa de Leitner (1..5) e última resposta de cada item da prática extra. */
+  practice: Record<string, { box: 1 | 2 | 3 | 4 | 5; last: string }>
 }
 
 export function newProgress(profileId: string, startLevel: Level, course: Course): ProfileProgress {
@@ -55,7 +57,8 @@ export function newProgress(profileId: string, startLevel: Level, course: Course
     exams: [],
     weakUnits: [],
     courseComplete: false,
-    goal: null
+    goal: null,
+    practice: {}
   }
 }
 
@@ -71,10 +74,11 @@ export function migrateProgress(
     exams: p.exams ?? [],
     weakUnits: p.weakUnits ?? [],
     courseComplete: p.courseComplete ?? false,
-    goal: p.goal ?? null
+    goal: p.goal ?? null,
+    practice: p.practice ?? {}
   }
 }
-type NewFields = 'level' | 'exams' | 'weakUnits' | 'courseComplete' | 'goal'
+type NewFields = 'level' | 'exams' | 'weakUnits' | 'courseComplete' | 'goal' | 'practice'
 
 export function recordAttempt(
   p: ProfileProgress,

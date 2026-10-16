@@ -10,7 +10,8 @@ import {
   type ProfileProgress,
   type SessionRecord
 } from '../../shared/progress'
-import type { Duration } from '../../shared/session'
+import { buildPracticeSession } from '../../shared/practice'
+import type { Duration, SessionPlan } from '../../shared/session'
 import { AudioIndexContext } from './audio/speak'
 import ExamResult from './components/ExamResult'
 import ExamScreen from './screens/ExamScreen'
@@ -26,7 +27,7 @@ type Screen =
   | { name: 'setup' }
   | { name: 'profiles' }
   | { name: 'home' }
-  | { name: 'session'; mode: Mode; minutes: Duration }
+  | { name: 'session'; mode: Mode; minutes: Duration; plan?: SessionPlan }
   | { name: 'summary'; record: SessionRecord }
   | { name: 'placement' }
   | { name: 'exam'; mode: Mode; level: Level }
@@ -174,6 +175,7 @@ export default function App(): React.JSX.Element {
         course={course}
         progress={current}
         minutes={screen.minutes}
+        plan={screen.plan}
         onProgress={(p) => void saveProgress(p)}
         onEnd={endSession}
       />
@@ -229,6 +231,14 @@ export default function App(): React.JSX.Element {
         course={course}
         progress={current}
         onStart={(mode, minutes) => setScreen({ name: 'session', mode, minutes })}
+        onPractice={(mode, minutes) =>
+          setScreen({
+            name: 'session',
+            mode,
+            minutes,
+            plan: buildPracticeSession(course, current, minutes, new Date())
+          })
+        }
         onExam={(mode, level) => setScreen({ name: 'exam', mode, level })}
         onGoal={() => setScreen({ name: 'goal' })}
         onSwitchProfile={() => setScreen({ name: 'profiles' })}

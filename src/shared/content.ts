@@ -196,7 +196,9 @@ export const UnitSchema = z.object({
   title_pt: str,
   title_en: str,
   objective_pt: str,
-  blocks: z.array(BlockSchema).min(1)
+  blocks: z.array(BlockSchema).min(1),
+  /** Prática extra, fora da trilha: usada pelo "Praticar mais" com repetição espaçada. */
+  practice: z.array(ExerciseSchema).default([])
 })
 export type Unit = z.infer<typeof UnitSchema>
 
@@ -293,7 +295,7 @@ function assessmentItems(course: Course): { level: Level; item: AssessmentItem }
   ]
 }
 
-/** Exercícios das avaliações não têm bloco; a unidade vem do unitId ou é a primeira do nível. */
+/** Exercícios da prática e das avaliações não têm bloco; a unidade vem do unitId ou é a primeira do nível. */
 export function findExercise(
   course: Course,
   exerciseId: string
@@ -303,6 +305,10 @@ export function findExercise(
       const exercise = block.exercises.find((e) => e.id === exerciseId)
       if (exercise) return { unit, block, exercise }
     }
+  for (const unit of course.units) {
+    const exercise = unit.practice.find((e) => e.id === exerciseId)
+    if (exercise) return { unit, exercise }
+  }
   const found = assessmentItems(course).find(({ item }) => item.exercise.id === exerciseId)
   const unit =
     found &&
