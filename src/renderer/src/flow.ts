@@ -1,5 +1,9 @@
 import {
   findExercise,
+  LEVELS,
+  SKILLS,
+  type Level,
+  type Skill,
   type Block,
   type BlockKind,
   type CommonError,
@@ -138,4 +142,27 @@ export function formatSize(bytes: number): string {
   return gb >= 1
     ? `${gb.toLocaleString('pt-BR', { maximumFractionDigits: 1 })} GB`
     : `${Math.round(bytes / 1e6)} MB`
+}
+
+export const SKILL_LABELS: Record<Skill, string> = {
+  listening: 'Listening',
+  speaking: 'Fala',
+  vocabulary: 'Vocabulário',
+  structure: 'Estrutura de frases'
+}
+
+/** The highest available level not above the result (the course may not have the result's units yet). */
+export function placementStartLevel(result: Level, available: Level[]): Level {
+  const fit = available.filter((l) => LEVELS.indexOf(l) <= LEVELS.indexOf(result))
+  return fit.at(-1) ?? available[0]
+}
+
+/** Correct/total per skill, in SKILLS order, skipping skills with no answers. */
+export function skillSummary(
+  answers: { skill: Skill; correct: boolean }[]
+): { skill: Skill; correct: number; total: number }[] {
+  return SKILLS.map((skill) => {
+    const rs = answers.filter((a) => a.skill === skill)
+    return { skill, correct: rs.filter((a) => a.correct).length, total: rs.length }
+  }).filter((s) => s.total > 0)
 }

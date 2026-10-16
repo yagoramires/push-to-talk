@@ -52,12 +52,14 @@ export function SpokenAnswer({
   check,
   expected,
   mode,
+  exam,
   onFinal
 }: {
   check: { accepted: string[]; commonErrors: CommonError[] }
   /** Sentence to score pronunciation against (repeat prompt, vocab example). */
   expected?: string
   mode: Mode
+  exam?: boolean
   onFinal: OnFinal
 }): React.JSX.Element {
   const [state, setState] = useState<SpokenState>({ kind: 'idle' })
@@ -70,6 +72,7 @@ export function SpokenAnswer({
         transcript={state.transcript}
         mode={mode}
         pronunciation={state.pronunciation}
+        exam={exam}
         onFinal={(v) => onFinal(v, state.transcript)}
       />
     )
@@ -115,10 +118,12 @@ type FreeState =
 export function FreeSpeakAnswer({
   exercise,
   mode,
+  exam,
   onFinal
 }: {
   exercise: FreeSpeak
   mode: Mode
+  exam?: boolean
   onFinal: OnFinal
 }): React.JSX.Element {
   const [state, setState] = useState<FreeState>({ kind: 'idle' })
@@ -180,11 +185,15 @@ export function FreeSpeakAnswer({
           <span className="muted">Você disse: </span>
           <span lang="en">{transcript}</span>
         </p>
-        <p className="result-explanation">{ev.feedback_pt}</p>
-        <p>
-          <span className="muted">Forma corrigida: </span>
-          <strong lang="en">{ev.corrected_en}</strong>
-        </p>
+        {!exam && (
+          <>
+            <p className="result-explanation">{ev.feedback_pt}</p>
+            <p>
+              <span className="muted">Forma corrigida: </span>
+              <strong lang="en">{ev.corrected_en}</strong>
+            </p>
+          </>
+        )}
         <div className="actions">
           <button
             type="button"
@@ -194,7 +203,7 @@ export function FreeSpeakAnswer({
           >
             Continuar
           </button>
-          {!ev.correct && (
+          {!exam && !ev.correct && (
             <button
               type="button"
               className="btn btn-secondary"

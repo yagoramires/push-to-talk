@@ -6,6 +6,8 @@ import {
   flattenPlan,
   formatClock,
   formatSize,
+  placementStartLevel,
+  skillSummary,
   shuffled,
   vocabAsRepeat
 } from '../../src/renderer/src/flow'
@@ -157,5 +159,34 @@ describe('AI setup texts', () => {
     expect(formatSize(downloadBytes('light'))).toBe('1,7 GB')
     expect(formatSize(downloadBytes('strong'))).toBe('6,1 GB')
     expect(formatSize(395e6)).toBe('395 MB')
+  })
+})
+
+describe('placementStartLevel', () => {
+  test('uses the result when the course has it', () => {
+    expect(placementStartLevel('A2', ['A1', 'A2', 'B1'])).toBe('A2')
+  })
+  test('falls back to the highest available level below the result', () => {
+    expect(placementStartLevel('B1', ['A1'])).toBe('A1')
+    expect(placementStartLevel('C1', ['A1', 'A2'])).toBe('A2')
+  })
+  test('no level at or below the result: the lowest available', () => {
+    expect(placementStartLevel('A1', ['A2'])).toBe('A2')
+  })
+})
+
+describe('skillSummary', () => {
+  test('counts per skill in SKILLS order, skipping absent skills', () => {
+    expect(
+      skillSummary([
+        { skill: 'speaking', correct: true },
+        { skill: 'listening', correct: false },
+        { skill: 'speaking', correct: false },
+        { skill: 'listening', correct: true }
+      ])
+    ).toEqual([
+      { skill: 'listening', correct: 1, total: 2 },
+      { skill: 'speaking', correct: 1, total: 2 }
+    ])
   })
 })

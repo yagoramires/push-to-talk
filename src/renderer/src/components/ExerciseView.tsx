@@ -24,11 +24,18 @@ import { FreeSpeakAnswer, SpokenAnswer } from './SpokenExercise'
 type Props = {
   exercise: Exercise
   mode: Mode
+  /** Assessment: verdict only, no explanations or self-correction. */
+  exam?: boolean
   onFinal(v: FinalVerdict, transcript: string): void
 }
 
 /** Renders one exercise of any kind. Remount it (key) for each new exercise. */
-export default function ExerciseView({ exercise: ex, mode, onFinal }: Props): React.JSX.Element {
+export default function ExerciseView({
+  exercise: ex,
+  mode,
+  exam,
+  onFinal
+}: Props): React.JSX.Element {
   switch (ex.kind) {
     case 'vocab':
       return (
@@ -50,6 +57,7 @@ export default function ExerciseView({ exercise: ex, mode, onFinal }: Props): Re
             check={vocabAsRepeat(ex)}
             expected={ex.example_en}
             mode={mode}
+            exam={exam}
             onFinal={onFinal}
           />
         </article>
@@ -64,7 +72,7 @@ export default function ExerciseView({ exercise: ex, mode, onFinal }: Props): Re
           <div className="actions">
             <ListenButton text={ex.prompt_en} />
           </div>
-          <FreeSpeakAnswer exercise={ex} mode={mode} onFinal={onFinal} />
+          <FreeSpeakAnswer exercise={ex} mode={mode} exam={exam} onFinal={onFinal} />
         </article>
       )
     case 'repeat':
@@ -88,13 +96,14 @@ export default function ExerciseView({ exercise: ex, mode, onFinal }: Props): Re
             check={ex}
             expected={ex.kind === 'repeat' ? ex.prompt : undefined}
             mode={mode}
+            exam={exam}
             onFinal={onFinal}
           />
         </article>
       )
     }
     default:
-      return <CheckedExercise exercise={ex} mode={mode} onFinal={onFinal} />
+      return <CheckedExercise exercise={ex} mode={mode} exam={exam} onFinal={onFinal} />
   }
 }
 
@@ -102,12 +111,14 @@ type Answer = { result: CheckResult; transcript: string }
 type ViewProps<E> = {
   ex: E
   locked: boolean
+  exam?: boolean
   onCheck(result: CheckResult, transcript: string): void
 }
 
 function CheckedExercise({
   exercise: ex,
   mode,
+  exam,
   onFinal
 }: Props & {
   exercise: ChoiceExercise | FillExercise | OrderExercise | MatchExercise
@@ -115,6 +126,7 @@ function CheckedExercise({
   const [answer, setAnswer] = useState<Answer | null>(null)
   const view = {
     locked: answer !== null,
+    exam,
     onCheck: (result: CheckResult, transcript: string) => setAnswer({ result, transcript })
   }
   return (
@@ -129,6 +141,7 @@ function CheckedExercise({
           result={answer.result}
           transcript={answer.transcript}
           mode={mode}
+          exam={exam}
           onFinal={(v) => onFinal(v, answer.transcript)}
         />
       )}
@@ -136,7 +149,7 @@ function CheckedExercise({
   )
 }
 
-function ChoiceView({ ex, locked, onCheck }: ViewProps<ChoiceExercise>): React.JSX.Element {
+function ChoiceView({ ex, locked, exam, onCheck }: ViewProps<ChoiceExercise>): React.JSX.Element {
   const [picked, setPicked] = useState<number | null>(null)
   return (
     <>
@@ -168,7 +181,9 @@ function ChoiceView({ ex, locked, onCheck }: ViewProps<ChoiceExercise>): React.J
           </button>
         ))}
       </div>
-      {locked && ex.explanation_pt && <p className="result-explanation">{ex.explanation_pt}</p>}
+      {locked && !exam && ex.explanation_pt && (
+        <p className="result-explanation">{ex.explanation_pt}</p>
+      )}
     </>
   )
 }
