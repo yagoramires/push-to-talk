@@ -1,0 +1,474 @@
+{
+  "id": "a1-03-family",
+  "level": "A1",
+  "order": 3,
+  "title_pt": "Família",
+  "title_en": "Family",
+  "objective_pt": "Dizer quem é da sua família, quantos irmãos você tem e o nome e a idade deles, e perguntar \"Do you have any brothers or sisters?\".",
+  "blocks": [
+    {
+      "id": "a1-03-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Ativar as palavras de família que o aluno já conhece (mother, father, brother, sister).",
+        "prompts": ["Do you have a big family?", "What's your mother's name?"],
+        "watchFor": [
+          "Dizer \"I have 2 brothers\" e pronunciar \"brothers\" com \"d\" (\"broders\").",
+          "Usar \"parents\" como \"parentes\"; \"parents\" é só pai e mãe."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-03-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita em voz alta.",
+          "prompt": "This is my family.",
+          "accepted": ["This is my family"],
+          "commonErrors": []
+        },
+        {
+          "id": "a1-03-warm-2",
+          "kind": "choice",
+          "instruction_pt": "O que significa \"parents\"?",
+          "options": ["pai e mãe", "parentes", "primos"],
+          "answer": 0,
+          "explanation_pt": "\"Parents\" é falso cognato: significa pai e mãe. \"Parentes\" em inglês é \"relatives\"."
+        },
+        {
+          "id": "a1-03-warm-3",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu tenho um irmão.\"",
+          "accepted": [
+            "I have a brother",
+            "I have one brother",
+            "I've got a brother",
+            "I've got one brother",
+            "I have got a brother"
+          ],
+          "commonErrors": [
+            {
+              "id": "i-has",
+              "match": "\\bi has\\b",
+              "explanation_pt": "Com \"I\" o verbo é \"have\". \"Has\" é só para he, she e it.",
+              "correction_en": "I have a brother."
+            },
+            {
+              "id": "missing-article-brother",
+              "match": "^i have brother$",
+              "explanation_pt": "Antes de um substantivo no singular, use \"a\": \"I have a brother\".",
+              "correction_en": "I have a brother."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-03-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Aprender as palavras da família próxima: mother, father, brother, sister, son, daughter, husband, wife, parents.",
+        "prompts": ["Who is in your family?", "Do you have children?", "Is your father tall?"],
+        "watchFor": [
+          "Confundir \"son\" (filho) e \"sun\" (sol): a pronúncia é igual, tudo bem.",
+          "Pronunciar \"daughter\" com o \"gh\"; ele é mudo: \"dóter\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-03-vocab-1",
+          "kind": "vocab",
+          "word_en": "mother",
+          "meaning_pt": "mãe",
+          "example_en": "My mother is a teacher."
+        },
+        {
+          "id": "a1-03-vocab-2",
+          "kind": "vocab",
+          "word_en": "brother",
+          "meaning_pt": "irmão",
+          "example_en": "My brother is twenty years old."
+        },
+        {
+          "id": "a1-03-vocab-3",
+          "kind": "vocab",
+          "word_en": "daughter",
+          "meaning_pt": "filha",
+          "example_en": "I have a daughter. Her name is Julia."
+        },
+        {
+          "id": "a1-03-vocab-4",
+          "kind": "match",
+          "instruction_pt": "Ligue cada palavra ao seu significado.",
+          "pairs": [
+            {
+              "en": "father",
+              "pt": "pai"
+            },
+            {
+              "en": "sister",
+              "pt": "irmã"
+            },
+            {
+              "en": "son",
+              "pt": "filho"
+            },
+            {
+              "en": "wife",
+              "pt": "esposa"
+            },
+            {
+              "en": "husband",
+              "pt": "marido"
+            }
+          ]
+        },
+        {
+          "id": "a1-03-vocab-5",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Meus pais moram em São Paulo.\"",
+          "accepted": [
+            "My parents live in São Paulo",
+            "My parents live in Sao Paulo",
+            "My mom and dad live in São Paulo",
+            "My mother and father live in São Paulo",
+            "My mother and my father live in São Paulo",
+            "My mom and dad live in Sao Paulo",
+            "My mother and father live in Sao Paulo"
+          ],
+          "commonErrors": [
+            {
+              "id": "parents-lives",
+              "match": "\\bparents lives\\b",
+              "explanation_pt": "\"Parents\" é plural (eles), então o verbo fica sem \"s\": \"My parents live\".",
+              "correction_en": "My parents live in São Paulo."
+            },
+            {
+              "id": "fathers-pais",
+              "match": "\\bmy fathers\\b",
+              "explanation_pt": "\"Pais\" (pai e mãe) é \"parents\". \"Fathers\" seria vários pais homens.",
+              "correction_en": "My parents live in São Paulo."
+            },
+            {
+              "id": "live-on-city",
+              "match": "\\blive (on|at) s",
+              "explanation_pt": "Para cidade usamos \"in\": \"live in São Paulo\".",
+              "correction_en": "My parents live in São Paulo."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-03-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Treinar o \"th\" sonoro de mother, father, brother e o \"gh\" mudo de daughter.",
+        "prompts": [
+          "Say \"mother\" and \"brother\" slowly.",
+          "Is the \"gh\" in \"daughter\" silent?"
+        ],
+        "watchFor": [
+          "Trocar o \"th\" de \"mother\" por \"d\" (\"moder\") ou \"f\".",
+          "Falar o \"r\" final como o \"r\" carioca; em inglês americano a língua se curva para trás."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-03-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita. Língua entre os dentes no \"th\", com a voz vibrando.",
+          "prompt": "My mother, my father and my brother.",
+          "accepted": ["My mother, my father and my brother"],
+          "commonErrors": [
+            {
+              "id": "moder",
+              "match": "\\b(moder|fader|broder|mader)\\b",
+              "explanation_pt": "O \"th\" de \"mother\" não é \"d\": ponha a língua entre os dentes e deixe a voz vibrar.",
+              "correction_en": "My mother, my father and my brother."
+            }
+          ]
+        },
+        {
+          "id": "a1-03-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repita. O \"gh\" de \"daughter\" é mudo.",
+          "prompt": "She is my daughter.",
+          "accepted": ["She is my daughter", "She's my daughter"],
+          "commonErrors": []
+        },
+        {
+          "id": "a1-03-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Qual palavra tem o mesmo som de \"son\" (filho)?",
+          "options": ["sun", "soon", "song"],
+          "answer": 0,
+          "explanation_pt": "\"Son\" e \"sun\" soam iguais. O contexto mostra se é filho ou sol."
+        }
+      ]
+    },
+    {
+      "id": "a1-03-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Entender alguém falando da família e responder perguntas sobre irmãos.",
+        "prompts": ["Do you have any brothers or sisters?", "How old is your brother?"],
+        "watchFor": [
+          "Responder \"Yes, I have\" sem completar; o natural é \"Yes, I do\" ou \"Yes, I have a sister\".",
+          "Confundir \"his\" (dele) e \"her\" (dela)."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-03-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Ouça e escolha o que você entendeu.",
+          "listen": "I have two sisters and one brother.",
+          "options": [
+            "Two sisters and one brother.",
+            "One sister and two brothers.",
+            "Two sisters and no brothers."
+          ],
+          "answer": 0,
+          "explanation_pt": "Ela disse \"two sisters and one brother\": duas irmãs e um irmão."
+        },
+        {
+          "id": "a1-03-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça a pergunta e responda que sim, você tem uma irmã.",
+          "listen": "Do you have any brothers or sisters?",
+          "accepted": [
+            "Yes, I have a sister",
+            "Yes, I have one sister",
+            "Yes, I do. I have a sister",
+            "Yes, I do. I have one sister",
+            "Yes, one sister",
+            "Yes, a sister",
+            "I have a sister",
+            "I have one sister",
+            "Yes, I've got a sister",
+            "I've got a sister",
+            "Yes, I have a sister, but no brothers",
+            "Just one sister",
+            "Yes, I do, one sister"
+          ],
+          "commonErrors": [
+            {
+              "id": "i-has",
+              "match": "\\bi has\\b",
+              "explanation_pt": "Com \"I\" o verbo é \"have\". \"Has\" é só para he, she e it.",
+              "correction_en": "Yes, I have a sister."
+            },
+            {
+              "id": "yes-i-have-alone",
+              "match": "^yes i have$",
+              "explanation_pt": "Para responder \"Do you...?\" curto, use \"Yes, I do\". Ou complete: \"Yes, I have a sister\".",
+              "correction_en": "Yes, I do. I have a sister."
+            }
+          ]
+        },
+        {
+          "id": "a1-03-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e responda: o seu irmão tem 25 anos.",
+          "listen": "How old is your brother?",
+          "accepted": [
+            "He is 25",
+            "He's 25",
+            "He is 25 years old",
+            "He's 25 years old",
+            "My brother is 25",
+            "My brother is 25 years old",
+            "My brother's 25",
+            "25",
+            "25 years old",
+            "He is twenty-five",
+            "He's twenty-five years old"
+          ],
+          "commonErrors": [
+            {
+              "id": "he-has-years",
+              "match": "\\b(he|brother) (has|have) twenty five\\b",
+              "explanation_pt": "Idade em inglês usa \"to be\", não \"ter\": \"He is 25\".",
+              "correction_en": "He's 25."
+            },
+            {
+              "id": "she-for-brother",
+              "match": "^she is\\b",
+              "explanation_pt": "Para irmão (homem) usamos \"he\". \"She\" é para mulher.",
+              "correction_en": "He's 25."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-03-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Falar da própria família com frases completas: quem são, nomes e idades.",
+        "prompts": [
+          "Tell me about your family.",
+          "What's your sister's name?",
+          "Do you have children?"
+        ],
+        "watchFor": [
+          "Dizer \"the name of my mother\" em vez de \"my mother's name\".",
+          "Trocar \"his\" e \"her\": \"my sister and his husband\".",
+          "Dizer \"I have 30 years\" (tradução de \"tenho 30 anos\")."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-03-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"O nome da minha mãe é Maria.\"",
+          "accepted": [
+            "My mother's name is Maria",
+            "My mom's name is Maria",
+            "My mum's name is Maria",
+            "The name of my mother is Maria",
+            "My mother is called Maria",
+            "My mom is called Maria",
+            "My mother is Maria"
+          ],
+          "commonErrors": [
+            {
+              "id": "name-of-my",
+              "match": "\\bname from my mo",
+              "explanation_pt": "Em inglês o natural é o possessivo com \"'s\": \"my mother's name\" (o nome da minha mãe).",
+              "correction_en": "My mother's name is Maria."
+            },
+            {
+              "id": "mother-calls",
+              "match": "\\bmother calls\\b",
+              "explanation_pt": "\"Se chama\" não é \"calls\". Diga \"My mother's name is...\" ou \"My mother is called...\".",
+              "correction_en": "My mother's name is Maria."
+            }
+          ]
+        },
+        {
+          "id": "a1-03-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Minha irmã é casada. O marido dela se chama Pedro.\"",
+          "accepted": [
+            "My sister is married. Her husband's name is Pedro",
+            "My sister's married. Her husband's name is Pedro",
+            "My sister is married. Her husband is called Pedro",
+            "My sister is married. Her husband is Pedro",
+            "My sister is married and her husband's name is Pedro",
+            "My sister is married, and her husband is called Pedro"
+          ],
+          "commonErrors": [
+            {
+              "id": "his-husband",
+              "match": "\\bhis husband\\b",
+              "explanation_pt": "O possessivo concorda com quem possui: o marido é dela, então é \"her husband\".",
+              "correction_en": "My sister is married. Her husband's name is Pedro."
+            },
+            {
+              "id": "is-marry",
+              "match": "\\bis (marry|marriage)\\b",
+              "explanation_pt": "\"Casada\" é \"married\": \"My sister is married\".",
+              "correction_en": "My sister is married. Her husband's name is Pedro."
+            }
+          ]
+        },
+        {
+          "id": "a1-03-conv-3",
+          "kind": "order",
+          "instruction_pt": "Coloque as palavras na ordem certa para formar a pergunta.",
+          "accepted": ["Do you have any brothers or sisters"]
+        },
+        {
+          "id": "a1-03-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Fale da sua família para um amigo novo.",
+          "prompt_en": "I have a small family: my mom, my dad and my sister. What about you? Tell me about your family.",
+          "guidelines_pt": [
+            "Diga quantas pessoas tem na sua família: \"I have a big/small family\".",
+            "Fale de 2 ou 3 pessoas com nome e idade: \"My brother's name is... He's 20\".",
+            "Termine com uma pergunta: \"Do you have any brothers or sisters?\"."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-03-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Revisar as palavras da família, \"have/has\" e o possessivo \"'s\".",
+        "prompts": [
+          "Who is your favorite person in your family?",
+          "Does your father have a brother?"
+        ],
+        "watchFor": ["Usar \"have\" com he/she.", "Esquecer o \"'s\" do possessivo."]
+      },
+      "exercises": [
+        {
+          "id": "a1-03-rev-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Ele tem dois filhos.\"",
+          "accepted": [
+            "He has two children",
+            "He has two kids",
+            "He has two sons",
+            "He's got two children",
+            "He's got two kids",
+            "He has got two children"
+          ],
+          "commonErrors": [
+            {
+              "id": "he-have",
+              "match": "\\bhe have\\b",
+              "explanation_pt": "Com he, she e it o verbo \"have\" vira \"has\": \"He has two children\".",
+              "correction_en": "He has two children."
+            },
+            {
+              "id": "childrens",
+              "match": "\\bchildrens\\b",
+              "explanation_pt": "\"Children\" já é plural de \"child\". Não tem \"s\".",
+              "correction_en": "He has two children."
+            }
+          ]
+        },
+        {
+          "id": "a1-03-rev-2",
+          "kind": "fill",
+          "instruction_pt": "Complete com have ou has.",
+          "sentence": "My sister ___ a son.",
+          "accepted": ["has"],
+          "commonErrors": [
+            {
+              "id": "sister-have",
+              "match": "^have$",
+              "explanation_pt": "\"My sister\" é \"she\", então o verbo é \"has\".",
+              "correction_en": "My sister has a son."
+            }
+          ]
+        },
+        {
+          "id": "a1-03-rev-3",
+          "kind": "choice",
+          "instruction_pt": "Qual é o certo para \"o carro do meu pai\"?",
+          "options": ["my father's car", "the car of my father's", "my father car"],
+          "answer": 0,
+          "explanation_pt": "Usamos \"'s\" depois de quem possui: \"my father's car\"."
+        },
+        {
+          "id": "a1-03-rev-4",
+          "kind": "repeat",
+          "instruction_pt": "Para terminar, repita.",
+          "prompt": "I love my family.",
+          "accepted": ["I love my family"],
+          "commonErrors": []
+        }
+      ]
+    }
+  ]
+}

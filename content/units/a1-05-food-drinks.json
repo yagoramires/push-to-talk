@@ -1,0 +1,440 @@
+{
+  "id": "a1-05-food-drinks",
+  "level": "A1",
+  "order": 5,
+  "title_pt": "Comidas e bebidas",
+  "title_en": "Food and drinks",
+  "objective_pt": "Dizer o que você gosta e não gosta de comer e beber, e perguntar \"Do you like...?\" e \"What's your favorite food?\".",
+  "blocks": [
+    {
+      "id": "a1-05-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Aquecer com comidas conhecidas e o verbo \"like\".",
+        "prompts": ["Do you like pizza?", "What do you drink in the morning?"],
+        "watchFor": [
+          "Dizer \"I like of pizza\" (do \"gosto de\").",
+          "Dizer \"I no like\" em vez de \"I don't like\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-05-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita em voz alta.",
+          "prompt": "I like coffee and I love chocolate.",
+          "accepted": ["I like coffee and I love chocolate", "I like coffee and love chocolate"],
+          "commonErrors": []
+        },
+        {
+          "id": "a1-05-warm-2",
+          "kind": "choice",
+          "instruction_pt": "Qual destas é uma bebida?",
+          "options": ["juice", "bread", "rice"],
+          "answer": 0,
+          "explanation_pt": "\"Juice\" é suco. \"Bread\" é pão e \"rice\" é arroz."
+        },
+        {
+          "id": "a1-05-warm-3",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu gosto de pizza.\"",
+          "accepted": ["I like pizza", "I really like pizza", "I love pizza", "I like pizza a lot"],
+          "commonErrors": [
+            {
+              "id": "like-of",
+              "match": "\\blike of\\b",
+              "explanation_pt": "Em inglês \"like\" não leva \"of\": \"I like pizza\" (gosto de pizza).",
+              "correction_en": "I like pizza."
+            },
+            {
+              "id": "like-the-pizza",
+              "match": "\\blike the pizza\\b",
+              "explanation_pt": "Para falar de algo em geral, não usamos \"the\": \"I like pizza\".",
+              "correction_en": "I like pizza."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-05-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Aprender comidas e bebidas do dia a dia: bread, rice, beans, chicken, fish, fruit, vegetables, water, juice, milk.",
+        "prompts": ["What do you eat for lunch?", "Do you eat meat?", "What fruit do you like?"],
+        "watchFor": [
+          "Pronunciar \"vegetables\" com 4 sílabas; o natural é \"VEJ-tə-bəlz\".",
+          "Dizer \"a bread\"; pão em geral é incontável: \"some bread\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-05-vocab-1",
+          "kind": "vocab",
+          "word_en": "rice and beans",
+          "meaning_pt": "arroz e feijão",
+          "example_en": "I eat rice and beans every day."
+        },
+        {
+          "id": "a1-05-vocab-2",
+          "kind": "vocab",
+          "word_en": "chicken",
+          "meaning_pt": "frango",
+          "example_en": "I like chicken with salad."
+        },
+        {
+          "id": "a1-05-vocab-3",
+          "kind": "vocab",
+          "word_en": "vegetables",
+          "meaning_pt": "legumes e verduras",
+          "example_en": "Vegetables are good for you."
+        },
+        {
+          "id": "a1-05-vocab-4",
+          "kind": "match",
+          "instruction_pt": "Ligue cada palavra ao seu significado.",
+          "pairs": [
+            {
+              "en": "bread",
+              "pt": "pão"
+            },
+            {
+              "en": "milk",
+              "pt": "leite"
+            },
+            {
+              "en": "fish",
+              "pt": "peixe"
+            },
+            {
+              "en": "meat",
+              "pt": "carne"
+            },
+            {
+              "en": "egg",
+              "pt": "ovo"
+            }
+          ]
+        },
+        {
+          "id": "a1-05-vocab-5",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu não como carne.\"",
+          "accepted": [
+            "I don't eat meat",
+            "I do not eat meat",
+            "I never eat meat",
+            "I'm vegetarian",
+            "I am a vegetarian"
+          ],
+          "commonErrors": [
+            {
+              "id": "i-no-eat",
+              "match": "\\bi (no|not) eat\\b",
+              "explanation_pt": "Para negar no presente usamos \"don't\": \"I don't eat meat\".",
+              "correction_en": "I don't eat meat."
+            },
+            {
+              "id": "carne-meet",
+              "match": "\\beat (the )?(carne|meet)\\b",
+              "explanation_pt": "Carne é \"meat\" (o \"ea\" soa como \"i\" longo). Não use \"the\" para falar em geral.",
+              "correction_en": "I don't eat meat."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-05-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Treinar palavras que brasileiros alongam com vogal extra: \"milk\", \"juice\", \"steak\".",
+        "prompts": [
+          "Say \"milk\". Is there a sound after the K?",
+          "Say \"vegetables\" in three syllables."
+        ],
+        "watchFor": [
+          "Falar \"milki\", \"juici\", \"steiki\" (vogal no fim).",
+          "Pronunciar o \"l\" final de \"milk\" como \"u\" (\"miuk\") é aceitável, mas sem o \"i\" no fim."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-05-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita. Termine \"milk\" no \"k\", sem \"i\" no fim.",
+          "prompt": "A glass of milk, please.",
+          "accepted": ["A glass of milk, please"],
+          "commonErrors": []
+        },
+        {
+          "id": "a1-05-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repita. \"Vegetables\" tem 3 sílabas: VEJ-ta-bols.",
+          "prompt": "I love fruit and vegetables.",
+          "accepted": ["I love fruit and vegetables", "I love fruits and vegetables"],
+          "commonErrors": []
+        },
+        {
+          "id": "a1-05-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Qual palavra tem o mesmo som de \"meat\" (carne)?",
+          "options": ["meet", "met", "mat"],
+          "answer": 0,
+          "explanation_pt": "\"Meat\" (carne) e \"meet\" (conhecer) soam iguais, com \"i\" longo."
+        }
+      ]
+    },
+    {
+      "id": "a1-05-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Entender gostos de outra pessoa e responder \"Do you like...?\" com respostas curtas.",
+        "prompts": ["Do you like fish?", "What's your favorite drink?"],
+        "watchFor": [
+          "Responder \"Yes, I like\" sem objeto; o natural é \"Yes, I do\" ou \"Yes, I like it\".",
+          "Esquecer o \"it\": \"I don't like\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-05-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Ouça e escolha o que você entendeu.",
+          "listen": "I love fish, but I don't like eggs.",
+          "options": ["She doesn't like eggs.", "She doesn't like fish.", "She loves eggs."],
+          "answer": 0,
+          "explanation_pt": "Ela disse \"I love fish, but I don't like eggs\": ama peixe, não gosta de ovos."
+        },
+        {
+          "id": "a1-05-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça a pergunta e responda que sim, você gosta.",
+          "listen": "Do you like coffee?",
+          "accepted": [
+            "Yes, I do",
+            "Yes, I like coffee",
+            "Yes, I like it",
+            "Yes, I love coffee",
+            "Yes, I love it",
+            "Yes, I like it a lot",
+            "Yes, I really like coffee",
+            "Yes, I do. I love coffee",
+            "Yes, I do. I like it",
+            "Yes, I do. I drink coffee every day",
+            "Yes",
+            "I love it",
+            "I love coffee",
+            "Yes, very much"
+          ],
+          "commonErrors": [
+            {
+              "id": "yes-i-like-alone",
+              "match": "^yes i like$",
+              "explanation_pt": "\"Like\" precisa de objeto. Diga \"Yes, I like it\" ou a resposta curta \"Yes, I do\".",
+              "correction_en": "Yes, I do. I like it."
+            }
+          ]
+        },
+        {
+          "id": "a1-05-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e responda: sua comida favorita é lasanha.",
+          "listen": "What's your favorite food?",
+          "accepted": [
+            "My favorite food is lasagna",
+            "My favourite food is lasagna",
+            "My favorite food is lasagne",
+            "Lasagna",
+            "It's lasagna",
+            "I love lasagna",
+            "Lasagna is my favorite food",
+            "Lasagna is my favorite",
+            "I think lasagna",
+            "Probably lasagna"
+          ],
+          "commonErrors": [
+            {
+              "id": "food-favorite",
+              "match": "\\bfood favou?rite\\b",
+              "explanation_pt": "Em inglês o adjetivo vem antes do substantivo: \"favorite food\".",
+              "correction_en": "My favorite food is lasagna."
+            },
+            {
+              "id": "the-lasagna",
+              "match": "\\bis the lasagn",
+              "explanation_pt": "Para falar de comida em geral não usamos \"the\": \"My favorite food is lasagna\".",
+              "correction_en": "My favorite food is lasagna."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-05-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Conversar sobre gostos de comida: o que gosta, não gosta, e perguntar ao outro.",
+        "prompts": [
+          "What do you usually eat for lunch?",
+          "Is there a food you don't like?",
+          "What's a typical Brazilian food?"
+        ],
+        "watchFor": [
+          "Dizer \"I don't like nothing\" (dupla negação).",
+          "Dizer \"she like\" sem o \"s\".",
+          "Usar \"plate\" para \"prato\" no sentido de comida; o certo é \"dish\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-05-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu não gosto de peixe.\"",
+          "accepted": [
+            "I don't like fish",
+            "I do not like fish",
+            "I don't really like fish",
+            "I hate fish",
+            "I don't like fish very much",
+            "I don't like fish at all"
+          ],
+          "commonErrors": [
+            {
+              "id": "no-like",
+              "match": "\\bi (no|not) like\\b",
+              "explanation_pt": "A negação no presente usa \"don't\": \"I don't like fish\".",
+              "correction_en": "I don't like fish."
+            },
+            {
+              "id": "like-of",
+              "match": "\\blike of\\b",
+              "explanation_pt": "\"Like\" não leva \"of\": \"I don't like fish\".",
+              "correction_en": "I don't like fish."
+            }
+          ]
+        },
+        {
+          "id": "a1-05-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Feijoada é um prato brasileiro.\"",
+          "accepted": [
+            "Feijoada is a Brazilian dish",
+            "Feijoada is a Brazilian food",
+            "Feijoada is a typical Brazilian dish",
+            "Feijoada is a dish from Brazil",
+            "Feijoada is a traditional Brazilian dish"
+          ],
+          "commonErrors": [
+            {
+              "id": "dish-brazilian",
+              "match": "\\bdish brazilian\\b",
+              "explanation_pt": "O adjetivo vem antes: \"a Brazilian dish\".",
+              "correction_en": "Feijoada is a Brazilian dish."
+            },
+            {
+              "id": "plate-dish",
+              "match": "\\bbrazilian plate\\b",
+              "explanation_pt": "\"Plate\" é o prato onde se come. A comida em si é \"dish\".",
+              "correction_en": "Feijoada is a Brazilian dish."
+            }
+          ]
+        },
+        {
+          "id": "a1-05-conv-3",
+          "kind": "order",
+          "instruction_pt": "Coloque as palavras na ordem certa para formar a pergunta.",
+          "accepted": ["What do you usually eat for breakfast"]
+        },
+        {
+          "id": "a1-05-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Conte o que você gosta e não gosta de comer e beber.",
+          "prompt_en": "I love pasta and I drink a lot of tea. I don't like spicy food. What about you? What do you like to eat and drink?",
+          "guidelines_pt": [
+            "Diga 2 coisas que você gosta: \"I like...\", \"I love...\".",
+            "Diga 1 coisa que você não gosta: \"I don't like...\".",
+            "Pergunte de volta: \"What's your favorite food?\"."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-05-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Revisar comidas, \"like/don't like\" e \"does/doesn't\" para he/she.",
+        "prompts": ["Does your mother like coffee?", "What do you have for dinner?"],
+        "watchFor": ["Dizer \"she don't like\".", "Usar \"of\" depois de \"like\"."]
+      },
+      "exercises": [
+        {
+          "id": "a1-05-rev-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Minha filha não gosta de leite.\"",
+          "accepted": [
+            "My daughter doesn't like milk",
+            "My daughter does not like milk",
+            "My daughter hates milk",
+            "My daughter doesn't really like milk"
+          ],
+          "commonErrors": [
+            {
+              "id": "she-dont",
+              "match": "\\bdaughter do not\\b",
+              "explanation_pt": "Com he, she e it a negação é \"doesn't\": \"My daughter doesn't like milk\".",
+              "correction_en": "My daughter doesn't like milk."
+            },
+            {
+              "id": "doesnt-likes",
+              "match": "\\bdoes not likes\\b",
+              "explanation_pt": "Depois de \"doesn't\" o verbo volta sem \"s\": \"doesn't like\".",
+              "correction_en": "My daughter doesn't like milk."
+            }
+          ]
+        },
+        {
+          "id": "a1-05-rev-2",
+          "kind": "fill",
+          "instruction_pt": "Complete com don't ou doesn't.",
+          "sentence": "He ___ eat fish.",
+          "accepted": ["doesn't", "does not"],
+          "commonErrors": [
+            {
+              "id": "he-dont",
+              "match": "^(do not|dont)$",
+              "explanation_pt": "Com \"he\" usamos \"doesn't\".",
+              "correction_en": "He doesn't eat fish."
+            }
+          ]
+        },
+        {
+          "id": "a1-05-rev-3",
+          "kind": "choice",
+          "instruction_pt": "Qual frase está certa?",
+          "options": [
+            "I like chocolate.",
+            "I like of chocolate.",
+            "I like the chocolate in general."
+          ],
+          "answer": 0,
+          "explanation_pt": "\"Like\" não leva \"of\", e para falar em geral não usamos \"the\"."
+        },
+        {
+          "id": "a1-05-rev-4",
+          "kind": "repeat",
+          "instruction_pt": "Para terminar, repita.",
+          "prompt": "Rice and beans is my favorite food.",
+          "accepted": ["Rice and beans is my favorite food", "Rice and beans are my favorite food"],
+          "commonErrors": []
+        }
+      ]
+    }
+  ]
+}

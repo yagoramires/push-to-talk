@@ -1,0 +1,441 @@
+{
+  "id": "a1-06-at-the-cafe",
+  "level": "A1",
+  "order": 6,
+  "title_pt": "No café",
+  "title_en": "At the café",
+  "objective_pt": "Pedir uma bebida e um lanche com \"Can I have...?\" e \"I'd like...\", responder \"for here or to go?\" e perguntar o preço.",
+  "blocks": [
+    {
+      "id": "a1-06-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Aquecer com o pedido mais simples num café.",
+        "prompts": ["Do you go to cafés?", "What do you order at a café?"],
+        "watchFor": [
+          "Pedir com \"I want\"; funciona, mas \"Can I have\" e \"I'd like\" são mais educados.",
+          "Esquecer o \"please\" no fim do pedido."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-06-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita em voz alta.",
+          "prompt": "Can I have a coffee, please?",
+          "accepted": ["Can I have a coffee, please?"],
+          "commonErrors": []
+        },
+        {
+          "id": "a1-06-warm-2",
+          "kind": "choice",
+          "instruction_pt": "Qual é o jeito mais educado de pedir?",
+          "options": ["I'd like a tea, please.", "Give me a tea.", "I want tea."],
+          "answer": 0,
+          "explanation_pt": "\"I'd like..., please\" é educado. \"Give me\" soa como ordem."
+        },
+        {
+          "id": "a1-06-warm-3",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu quero um café, por favor.\" (de forma educada)",
+          "accepted": [
+            "I'd like a coffee, please",
+            "I would like a coffee, please",
+            "Can I have a coffee, please?",
+            "Could I have a coffee, please?",
+            "Can I get a coffee, please?",
+            "May I have a coffee, please?",
+            "A coffee, please",
+            "One coffee, please",
+            "I'll have a coffee, please",
+            "I want a coffee, please"
+          ],
+          "commonErrors": [
+            {
+              "id": "i-like-a",
+              "match": "^i like a coffee",
+              "explanation_pt": "\"I like\" é \"eu gosto\". Para pedir é \"I'd like\" (I would like), com o \"d\".",
+              "correction_en": "I'd like a coffee, please."
+            },
+            {
+              "id": "for-favor",
+              "match": "\\bfor favou?r\\b",
+              "explanation_pt": "\"Por favor\" é \"please\". \"For favor\" é tradução literal.",
+              "correction_en": "I'd like a coffee, please."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-06-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Aprender o vocabulário do café: menu, order, a cup of, a piece of cake, sandwich, small/medium/large, the bill.",
+        "prompts": ["What size do you want?", "Do you want sugar?", "What's on the menu?"],
+        "watchFor": [
+          "Dizer \"the count\" para a conta; é \"the bill\" ou \"the check\".",
+          "Pronunciar \"menu\" como em português; em inglês é \"MÉN-iu\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-06-vocab-1",
+          "kind": "vocab",
+          "word_en": "a cup of tea",
+          "meaning_pt": "uma xícara de chá",
+          "example_en": "I'd like a cup of tea, please."
+        },
+        {
+          "id": "a1-06-vocab-2",
+          "kind": "vocab",
+          "word_en": "a piece of cake",
+          "meaning_pt": "um pedaço de bolo",
+          "example_en": "Can I have a piece of chocolate cake?"
+        },
+        {
+          "id": "a1-06-vocab-3",
+          "kind": "vocab",
+          "word_en": "the bill",
+          "meaning_pt": "a conta",
+          "example_en": "Can I have the bill, please?"
+        },
+        {
+          "id": "a1-06-vocab-4",
+          "kind": "match",
+          "instruction_pt": "Ligue cada palavra ao seu significado.",
+          "pairs": [
+            {
+              "en": "small",
+              "pt": "pequeno"
+            },
+            {
+              "en": "large",
+              "pt": "grande"
+            },
+            {
+              "en": "sugar",
+              "pt": "açúcar"
+            },
+            {
+              "en": "to go",
+              "pt": "para viagem"
+            },
+            {
+              "en": "for here",
+              "pt": "para comer aqui"
+            }
+          ]
+        },
+        {
+          "id": "a1-06-vocab-5",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"A conta, por favor.\"",
+          "accepted": [
+            "The bill, please",
+            "The check, please",
+            "Can I have the bill, please?",
+            "Can I have the check, please?",
+            "Could I have the bill, please?",
+            "Could I have the check, please?",
+            "Can I get the check, please?",
+            "Can we have the bill, please?"
+          ],
+          "commonErrors": [
+            {
+              "id": "the-count",
+              "match": "\\b(count|account)\\b",
+              "explanation_pt": "\"Conta\" de restaurante é \"the bill\" (ou \"the check\" nos EUA). \"Account\" é conta de banco.",
+              "correction_en": "The bill, please."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-06-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Treinar o \"I'd like\" (com o \"d\" curto) e a entonação educada de pedido.",
+        "prompts": [
+          "Say \"I like\" and then \"I'd like\". Can you hear the difference?",
+          "Say \"please\" with a friendly voice."
+        ],
+        "watchFor": [
+          "Engolir o \"d\" de \"I'd\" e acabar dizendo \"I like\".",
+          "Falar \"water\" como \"uóter\" com \"t\" forte; nos EUA soa \"uó-der\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-06-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita. Encoste a língua atrás dos dentes no \"d\" de \"I'd\".",
+          "prompt": "I'd like a sandwich, please.",
+          "accepted": ["I'd like a sandwich, please", "I would like a sandwich, please"],
+          "commonErrors": [
+            {
+              "id": "i-like-no-d",
+              "match": "^i like a sandwich",
+              "explanation_pt": "Faltou o \"d\": \"I'd like\" é \"eu gostaria\". \"I like\" é \"eu gosto\".",
+              "correction_en": "I'd like a sandwich, please."
+            }
+          ]
+        },
+        {
+          "id": "a1-06-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repita. A voz sobe no fim da pergunta.",
+          "prompt": "Can I have a glass of water?",
+          "accepted": ["Can I have a glass of water?"],
+          "commonErrors": []
+        },
+        {
+          "id": "a1-06-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Ouça. O que a pessoa disse?",
+          "listen": "I'd like a tea.",
+          "options": ["I'd like a tea.", "I like tea.", "I have a tea."],
+          "answer": 0,
+          "explanation_pt": "Tinha o \"d\" curto: \"I'd like\", um pedido."
+        }
+      ]
+    },
+    {
+      "id": "a1-06-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Entender as perguntas do atendente e responder rápido.",
+        "prompts": ["For here or to go?", "Anything else?", "What size?"],
+        "watchFor": [
+          "Responder \"for take\" ou \"to take\"; o certo é \"to go\" ou \"take away\".",
+          "Não entender \"Anything else?\" (mais alguma coisa?)."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-06-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Ouça e escolha o preço que você entendeu.",
+          "listen": "That's four fifty, please.",
+          "options": ["$4.50", "$4.15", "$14.50"],
+          "answer": 0,
+          "explanation_pt": "\"Four fifty\" é 4,50. Em inglês é comum dizer o preço assim, sem \"dollars\" e \"cents\"."
+        },
+        {
+          "id": "a1-06-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e responda que é para viagem.",
+          "listen": "For here or to go?",
+          "accepted": [
+            "To go",
+            "To go, please",
+            "It's to go",
+            "To go, thanks",
+            "Take away, please",
+            "Takeaway, please",
+            "To take away, please",
+            "Take out, please",
+            "I'd like it to go",
+            "To go, thank you"
+          ],
+          "commonErrors": [
+            {
+              "id": "for-take",
+              "match": "\\b(for take|for travel|to travel|for trip)\\b",
+              "explanation_pt": "\"Para viagem\" não é \"for travel\". Diga \"to go\" (EUA) ou \"take away\" (Reino Unido).",
+              "correction_en": "To go, please."
+            }
+          ]
+        },
+        {
+          "id": "a1-06-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e responda: você não quer mais nada, obrigado.",
+          "listen": "Anything else?",
+          "accepted": [
+            "No, thank you",
+            "No, thanks",
+            "No, that's all",
+            "No, that's all, thanks",
+            "No, that's all, thank you",
+            "That's all, thanks",
+            "That's all, thank you",
+            "That's it, thanks",
+            "No, that's it",
+            "No, I'm good, thanks",
+            "Nothing else, thanks",
+            "No, nothing else, thank you"
+          ],
+          "commonErrors": [
+            {
+              "id": "only-this",
+              "match": "\\b(only|just) (this|that)\\b",
+              "explanation_pt": "\"Só isso\" soa natural como \"That's all\" ou \"That's it\".",
+              "correction_en": "No, that's all, thanks."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-06-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Fazer um pedido completo no balcão: bebida, tamanho, comida, preço e forma de comer.",
+        "prompts": ["Hi! What can I get you?", "What size would you like?", "Anything to eat?"],
+        "watchFor": [
+          "Dizer \"How much costs?\" em vez de \"How much is it?\".",
+          "Esquecer o artigo: \"Can I have coffee and sandwich\".",
+          "Dizer \"I want\" em tudo; varie com \"I'd like\" e \"Can I have\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-06-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Quanto custa?\"",
+          "accepted": [
+            "How much is it?",
+            "How much is that?",
+            "How much does it cost?",
+            "How much is this?",
+            "How much?",
+            "How much do I owe you?"
+          ],
+          "commonErrors": [
+            {
+              "id": "how-much-costs",
+              "match": "^how much (costs|cost)\\b",
+              "explanation_pt": "Em inglês a pergunta precisa de \"is\" ou \"does\": \"How much is it?\" ou \"How much does it cost?\".",
+              "correction_en": "How much is it?"
+            }
+          ]
+        },
+        {
+          "id": "a1-06-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu gostaria de um cappuccino grande e um pedaço de bolo.\"",
+          "accepted": [
+            "I'd like a large cappuccino and a piece of cake",
+            "I would like a large cappuccino and a piece of cake",
+            "Can I have a large cappuccino and a piece of cake?",
+            "Could I have a large cappuccino and a piece of cake?",
+            "Can I get a large cappuccino and a piece of cake?",
+            "A large cappuccino and a piece of cake, please",
+            "I'd like a large cappuccino and a piece of cake, please",
+            "I'll have a large cappuccino and a piece of cake"
+          ],
+          "commonErrors": [
+            {
+              "id": "cappuccino-large",
+              "match": "\\bcappuccino (large|big)\\b",
+              "explanation_pt": "O tamanho vem antes da bebida: \"a large cappuccino\".",
+              "correction_en": "I'd like a large cappuccino and a piece of cake."
+            },
+            {
+              "id": "big-size",
+              "match": "\\ba big cappuccino\\b",
+              "explanation_pt": "Para tamanho de bebida, o comum é \"large\" (e \"small\", \"medium\").",
+              "correction_en": "I'd like a large cappuccino and a piece of cake."
+            }
+          ]
+        },
+        {
+          "id": "a1-06-conv-3",
+          "kind": "order",
+          "instruction_pt": "Coloque as palavras na ordem certa para formar o pedido.",
+          "accepted": ["Can I have a small coffee please"]
+        },
+        {
+          "id": "a1-06-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Você está no balcão de um café. Faça o seu pedido.",
+          "prompt_en": "Hi there! Welcome. What can I get for you today?",
+          "guidelines_pt": [
+            "Peça uma bebida com tamanho: \"Can I have a small/large...?\".",
+            "Peça algo para comer: \"and a piece of cake / a sandwich\".",
+            "Diga se é para viagem e pergunte o preço: \"To go, please. How much is it?\"."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-06-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Revisar os pedidos educados, preços e as respostas ao atendente.",
+        "prompts": ["How do you ask for the bill?", "How do you say 'para viagem'?"],
+        "watchFor": ["Confundir \"I like\" e \"I'd like\".", "Dizer \"How much costs\"."]
+      },
+      "exercises": [
+        {
+          "id": "a1-06-rev-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Com açúcar, por favor.\"",
+          "accepted": [
+            "With sugar, please",
+            "Sugar, please",
+            "I'd like it with sugar, please",
+            "With some sugar, please"
+          ],
+          "commonErrors": [
+            {
+              "id": "with-sugar-the",
+              "match": "\\bwith the sugar\\b",
+              "explanation_pt": "Aqui não usamos \"the\": \"with sugar\".",
+              "correction_en": "With sugar, please."
+            },
+            {
+              "id": "for-favor",
+              "match": "\\bfor favou?r\\b",
+              "explanation_pt": "\"Por favor\" é \"please\".",
+              "correction_en": "With sugar, please."
+            }
+          ]
+        },
+        {
+          "id": "a1-06-rev-2",
+          "kind": "fill",
+          "instruction_pt": "Complete o pedido educado.",
+          "sentence": "I'd ___ a hot chocolate, please.",
+          "accepted": ["like"],
+          "commonErrors": [
+            {
+              "id": "want-after-d",
+              "match": "^(want|wants|likes)$",
+              "explanation_pt": "Depois de \"I'd\" (I would) vem \"like\": \"I'd like\".",
+              "correction_en": "I'd like a hot chocolate, please."
+            }
+          ]
+        },
+        {
+          "id": "a1-06-rev-3",
+          "kind": "choice",
+          "instruction_pt": "O atendente pergunta \"Anything else?\". O que significa?",
+          "options": ["Mais alguma coisa?", "Qual tamanho?", "Para viagem?"],
+          "answer": 0,
+          "explanation_pt": "\"Anything else?\" é \"mais alguma coisa?\". Responda \"No, that's all, thanks\"."
+        },
+        {
+          "id": "a1-06-rev-4",
+          "kind": "repeat",
+          "instruction_pt": "Para terminar, repita.",
+          "prompt": "Thank you! Have a nice day!",
+          "accepted": [
+            "Thank you! Have a nice day!",
+            "Thanks, have a nice day",
+            "Thank you, have a good day"
+          ],
+          "commonErrors": []
+        }
+      ]
+    }
+  ]
+}
