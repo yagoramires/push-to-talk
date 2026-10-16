@@ -11,6 +11,7 @@ import {
   type SessionRecord
 } from '../../shared/progress'
 import type { Duration } from '../../shared/session'
+import { AudioIndexContext } from './audio/speak'
 import ExamResult from './components/ExamResult'
 import ExamScreen from './screens/ExamScreen'
 import HomeScreen from './screens/HomeScreen'
@@ -241,7 +242,7 @@ export default function App(): React.JSX.Element {
           Não consegui salvar o progresso ({saveError}). Vou tentar de novo na próxima resposta.
         </div>
       )}
-      {body}
+      <AudioIndexContext.Provider value={course.audio}>{body}</AudioIndexContext.Provider>
     </>
   )
 }

@@ -1,4 +1,9 @@
-// shortcut: system TTS voice; Plan 5 swaps in the bundled audio files when `audio` exists.
+import { createContext } from 'react'
+
+/** course.audio (spoken text → bundled file), provided by App. */
+export const AudioIndexContext = createContext<Record<string, string>>({})
+
+/** System voice: the fallback when a text has no bundled audio. */
 export function speak(text: string): void {
   const synth = window.speechSynthesis
   synth.cancel()

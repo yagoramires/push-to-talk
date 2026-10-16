@@ -38,7 +38,6 @@ export const SpokenExerciseSchema = z
     instruction_pt: str,
     prompt: str.optional(),
     listen: str.optional(),
-    audio: str.optional(),
     accepted: z.array(str).min(1),
     commonErrors: z.array(CommonErrorSchema)
   })
@@ -57,8 +56,7 @@ export const VocabCardSchema = z.object({
   kind: z.literal('vocab'),
   word_en: str,
   meaning_pt: str,
-  example_en: str,
-  audio: str.optional()
+  example_en: str
 })
 export type VocabCard = z.infer<typeof VocabCardSchema>
 
@@ -78,7 +76,6 @@ export const ChoiceExerciseSchema = z
     instruction_pt: str,
     prompt: str.optional(),
     listen: str.optional(),
-    audio: str.optional(),
     options: z.array(str).min(2).max(5),
     answer: z.number().int().min(0),
     explanation_pt: str.optional()
@@ -229,6 +226,7 @@ export type Course = {
   units: Unit[] // ordenado por nível e depois por order
   placement?: Placement
   exams?: Partial<Record<Level, LevelExam>>
+  audio: Record<string, string> // texto falado → arquivo em content/audio
 }
 export type Position = { unitId: string; blockIndex: number }
 

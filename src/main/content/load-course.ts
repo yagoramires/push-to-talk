@@ -1,6 +1,6 @@
-import { readdir, readFile } from 'node:fs/promises'
+import { access, readdir, readFile } from 'node:fs/promises'
 import { join } from 'node:path'
-import type { z } from 'zod'
+import { z } from 'zod'
 import {
   LEVELS,
   LevelExamSchema,
@@ -92,7 +92,18 @@ export async function loadCourse(dir: string): Promise<Course> {
       throw new ContentError(`assessments/${name}: level "${exam.level}" does not match file name`)
     exams[level] = exam
   }
-  const course: Course = { units }
+  const audio =
+    (await parseFile(
+      join(dir, 'audio', 'index.json'),
+      'audio/index.json',
+      z.record(z.string().min(1), z.string().regex(/^[0-9a-f]{16}\.mp3$/)),
+      true
+    )) ?? {}
+  for (const file of Object.values(audio))
+    await access(join(dir, 'audio', file)).catch(() => {
+      throw new ContentError(`audio/index.json: missing file "${file}"`)
+    })
+  const course: Course = { units, audio }
   if (placement) course.placement = placement
   if (Object.keys(exams).length) course.exams = exams
   return course

@@ -419,7 +419,14 @@
           "kind": "translate",
           "instruction_pt": "Diga em inglês: \"Bom dia.\"",
           "accepted": ["Good morning", "Morning", "Good morning to you"],
-          "commonErrors": []
+          "commonErrors": [
+            {
+              "id": "good-day",
+              "match": "\\bgood day\\b",
+              "explanation_pt": "\"Good day\" é a tradução literal de \"bom dia\", mas soa antiquado. Para cumprimentar de manhã, diga \"Good morning\".",
+              "correction_en": "Good morning."
+            }
+          ]
         },
         {
           "id": "a1-01-rev-2",
