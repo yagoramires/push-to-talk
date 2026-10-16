@@ -18,6 +18,7 @@ import {
 import { listenTexts } from '../../../shared/listen'
 import type { Mode } from '../../../shared/progress'
 import { shuffled, vocabAsRepeat } from '../flow'
+import DialogueView from './DialogueView'
 import ListenButton from './ListenButton'
 import ResultView from './ResultView'
 import { FreeSpeakAnswer, SpokenAnswer } from './SpokenExercise'
@@ -103,6 +104,8 @@ export default function ExerciseView({
         </article>
       )
     }
+    case 'dialogue':
+      return <DialogueView exercise={ex} mode={mode} exam={exam} onFinal={onFinal} />
     default:
       return <CheckedExercise exercise={ex} mode={mode} exam={exam} onFinal={onFinal} />
   }

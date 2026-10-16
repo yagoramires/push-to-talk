@@ -112,11 +112,26 @@
           "kind": "match",
           "instruction_pt": "Match each expression to its meaning.",
           "pairs": [
-            { "en": "to postpone", "pt": "adiar" },
-            { "en": "action items", "pt": "tarefas definidas na reunião" },
-            { "en": "to chair a meeting", "pt": "conduzir uma reunião" },
-            { "en": "minutes", "pt": "ata" },
-            { "en": "any other business", "pt": "assuntos gerais" }
+            {
+              "en": "to postpone",
+              "pt": "adiar"
+            },
+            {
+              "en": "action items",
+              "pt": "tarefas definidas na reunião"
+            },
+            {
+              "en": "to chair a meeting",
+              "pt": "conduzir uma reunião"
+            },
+            {
+              "en": "minutes",
+              "pt": "ata"
+            },
+            {
+              "en": "any other business",
+              "pt": "assuntos gerais"
+            }
           ]
         },
         {
@@ -384,10 +399,136 @@
           ]
         },
         {
-          "id": "b2-01-conv-3",
-          "kind": "order",
-          "instruction_pt": "Put the words in order to close the meeting.",
-          "accepted": ["Let's wrap up and go over the action items"]
+          "id": "b2-01-conv-dialogue",
+          "kind": "dialogue",
+          "instruction_pt": "Role-play. You are chairing a short meeting.",
+          "scene_pt": "You are leading a 15-minute call with two colleagues. Open the meeting, keep it on track and close it.",
+          "turns": [
+            {
+              "speaker": "partner",
+              "text": "Hi, sorry I'm a bit late. Have you already started?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga que não tem problema e que estão só começando.",
+              "accepted": [
+                "No problem, we're just getting started",
+                "Don't worry, we're just getting started",
+                "No worries, we're just starting",
+                "No problem, we're just starting",
+                "Don't worry, we've just started",
+                "No problem, we've just started"
+              ],
+              "commonErrors": [
+                {
+                  "id": "no-have-problem",
+                  "match": "\\bno have problem\\b",
+                  "explanation_pt": "\"Sem problema\" é \"no problem\". \"No have\" não existe.",
+                  "correction_en": "No problem, we're just getting started."
+                },
+                {
+                  "id": "starting-now-only",
+                  "match": "\\bwe are starting just\\b",
+                  "explanation_pt": "\"Just\" vem antes do verbo principal: \"we're just starting\".",
+                  "correction_en": "No problem, we're just getting started."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Great. So, what's on the agenda today?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga que há dois itens: o orçamento e o cronograma.",
+              "accepted": [
+                "There are two items: the budget and the schedule",
+                "We have two items: the budget and the schedule",
+                "There are two items on the agenda: the budget and the schedule",
+                "We've got two items: the budget and the schedule",
+                "Two items: the budget and the schedule",
+                "There are two things: the budget and the schedule",
+                "We have two items, the budget and the timeline",
+                "There are two items, the budget and the timeline"
+              ],
+              "commonErrors": [
+                {
+                  "id": "have-two-items",
+                  "match": "^it has two\\b",
+                  "explanation_pt": "Para \"há/existem\" use \"there are\", não \"it has\".",
+                  "correction_en": "There are two items: the budget and the schedule."
+                },
+                {
+                  "id": "cronogram",
+                  "match": "\\bcronogram\\b",
+                  "explanation_pt": "\"Cronograma\" é \"schedule\" ou \"timeline\".",
+                  "correction_en": "There are two items: the budget and the schedule."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Actually, I'd like to talk about the new office too. It's a big issue for my team."
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga que é importante, mas sugira deixar para o fim.",
+              "accepted": [
+                "That's important, but let's leave it for the end",
+                "That's important, but can we leave it for the end?",
+                "That's important, but let's park it for now",
+                "That's important, but let's come back to it at the end",
+                "Good point, but let's leave it for the end",
+                "Good point, but let's park it for now",
+                "It's important, but let's leave it until the end",
+                "That's important, but could we discuss it at the end?"
+              ],
+              "commonErrors": [
+                {
+                  "id": "let-for-final",
+                  "match": "\\b(for|to) the final\\b",
+                  "explanation_pt": "\"No final\" (da reunião) é \"at the end\" ou \"for the end\". \"The final\" é a final de um campeonato.",
+                  "correction_en": "That's important, but let's leave it for the end."
+                },
+                {
+                  "id": "lets-to",
+                  "match": "\\blet us to\\b",
+                  "explanation_pt": "Depois de \"let's\" o verbo vem sem \"to\".",
+                  "correction_en": "Let's leave it for the end."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Fair enough. We're nearly out of time, actually."
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Encerre: diga que vão encerrar e que você manda a ata depois.",
+              "accepted": [
+                "Okay, let's wrap up. I'll send the minutes later",
+                "Okay, let's wrap up. I'll send the minutes afterwards",
+                "Let's wrap up then. I'll send the minutes later",
+                "Okay, let's wrap it up. I'll send the minutes after the call",
+                "Let's wrap up. I'll send out the minutes later",
+                "Okay, let's finish here. I'll send the minutes later"
+              ],
+              "commonErrors": [
+                {
+                  "id": "ata-act",
+                  "match": "\\bsend the (act|acts|ata)\\b",
+                  "explanation_pt": "\"Ata\" é \"minutes\".",
+                  "correction_en": "Okay, let's wrap up. I'll send the minutes later."
+                },
+                {
+                  "id": "wrap-off",
+                  "match": "\\bwrap (off|down)\\b",
+                  "explanation_pt": "A expressão é \"wrap up\" (encerrar).",
+                  "correction_en": "Let's wrap up."
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "b2-01-conv-free",
@@ -487,6 +628,568 @@
           ],
           "commonErrors": []
         }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "id": "b2-01-prac-1",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "Thanks for joining, everyone. Let's get started.",
+      "accepted": ["Thanks for joining, everyone. Let's get started."],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-01-prac-2",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "Can we go back to the first item on the agenda?",
+      "accepted": [
+        "Can we go back to the first item on the agenda?",
+        "Could we go back to the first item on the agenda?"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-01-prac-3",
+      "kind": "repeat",
+      "instruction_pt": "Repeat. Say \"afraid\" softly, it is polite.",
+      "prompt": "I'm afraid we're running out of time.",
+      "accepted": ["I'm afraid we're running out of time."],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-01-prac-4",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "Could you take the minutes today?",
+      "accepted": ["Could you take the minutes today?", "Can you take the minutes today?"],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-01-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "Let's park that and come back to it later.",
+      "accepted": ["Let's park that and come back to it later."],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-01-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repeat. Stress the names and the action.",
+      "prompt": "Just to recap, Maria will follow up with the client.",
+      "accepted": [
+        "Just to recap, Maria will follow up with the client.",
+        "Just to recap, Maria is going to follow up with the client."
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-01-prac-7",
+      "kind": "vocab",
+      "word_en": "to run over",
+      "meaning_pt": "passar do horário",
+      "example_en": "Sorry, the last meeting ran over by twenty minutes."
+    },
+    {
+      "id": "b2-01-prac-8",
+      "kind": "vocab",
+      "word_en": "to be on the same page",
+      "meaning_pt": "estar alinhado",
+      "example_en": "Before we decide, let's make sure we're all on the same page."
+    },
+    {
+      "id": "b2-01-prac-9",
+      "kind": "vocab",
+      "word_en": "to go over",
+      "meaning_pt": "repassar, revisar",
+      "example_en": "Let's quickly go over the action items before we finish."
+    },
+    {
+      "id": "b2-01-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Você pode compartilhar sua tela?\"",
+      "accepted": [
+        "Can you share your screen?",
+        "Could you share your screen?",
+        "Would you share your screen?",
+        "Would you mind sharing your screen?",
+        "Can you share your screen, please?",
+        "Could you share your screen, please?"
+      ],
+      "commonErrors": [
+        {
+          "id": "divide-screen",
+          "match": "\\b(divide|split) (your|the) screen\\b",
+          "explanation_pt": "\"Compartilhar a tela\" é \"share your screen\". \"Divide\" é dividir em partes.",
+          "correction_en": "Can you share your screen?"
+        }
+      ]
+    },
+    {
+      "id": "b2-01-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Eu não participei da reunião de ontem.\"",
+      "accepted": [
+        "I didn't attend yesterday's meeting",
+        "I didn't attend the meeting yesterday",
+        "I wasn't at yesterday's meeting",
+        "I wasn't at the meeting yesterday",
+        "I didn't go to yesterday's meeting",
+        "I didn't go to the meeting yesterday",
+        "I didn't join yesterday's meeting",
+        "I missed yesterday's meeting",
+        "I missed the meeting yesterday"
+      ],
+      "commonErrors": [
+        {
+          "id": "not-assist",
+          "match": "\\b(did not|do not) assist\\b",
+          "explanation_pt": "\"Assist\" é ajudar (falso cognato). \"Participar\" é \"attend\" ou \"join\".",
+          "correction_en": "I didn't attend yesterday's meeting."
+        },
+        {
+          "id": "not-participate-of",
+          "match": "\\bparticipate (of|in) (the )?yesterday\\b",
+          "explanation_pt": "\"Participate of\" não existe. Para reuniões, o mais natural é \"attend\" ou \"be at\".",
+          "correction_en": "I wasn't at yesterday's meeting."
+        }
+      ]
+    },
+    {
+      "id": "b2-01-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Vamos discutir o orçamento na próxima reunião.\"",
+      "accepted": [
+        "Let's discuss the budget at the next meeting",
+        "Let's discuss the budget in the next meeting",
+        "We'll discuss the budget at the next meeting",
+        "We'll discuss the budget in the next meeting",
+        "Let's talk about the budget at the next meeting",
+        "Let's talk about the budget in the next meeting",
+        "We can discuss the budget at the next meeting"
+      ],
+      "commonErrors": [
+        {
+          "id": "discuss-about",
+          "match": "\\bdiscuss(ed)? about\\b",
+          "explanation_pt": "\"Discuss\" não leva \"about\": \"discuss the budget\".",
+          "correction_en": "Let's discuss the budget."
+        },
+        {
+          "id": "orcamento-cost",
+          "match": "\\bdiscuss the (orcament|quote)",
+          "explanation_pt": "\"Orçamento\" (dinheiro planejado) é \"budget\". \"Quote\" é o orçamento de um fornecedor.",
+          "correction_en": "Let's discuss the budget at the next meeting."
+        }
+      ]
+    },
+    {
+      "id": "b2-01-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Quem vai conduzir a reunião amanhã?\"",
+      "accepted": [
+        "Who's going to chair the meeting tomorrow?",
+        "Who's chairing the meeting tomorrow?",
+        "Who will chair the meeting tomorrow?",
+        "Who's going to run the meeting tomorrow?",
+        "Who's running the meeting tomorrow?",
+        "Who will run the meeting tomorrow?",
+        "Who's going to lead the meeting tomorrow?",
+        "Who's leading the meeting tomorrow?",
+        "Who will lead the meeting tomorrow?",
+        "Who's leading tomorrow's meeting?",
+        "Who's chairing tomorrow's meeting?"
+      ],
+      "commonErrors": [
+        {
+          "id": "conduct-meeting",
+          "match": "\\bconduct",
+          "explanation_pt": "\"Conduct\" existe, mas é bem formal. No dia a dia use \"chair\", \"run\" ou \"lead the meeting\".",
+          "correction_en": "Who's chairing the meeting tomorrow?"
+        }
+      ]
+    },
+    {
+      "id": "b2-01-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Desculpe, você pode repetir a última parte?\"",
+      "accepted": [
+        "Sorry, could you repeat the last part?",
+        "Sorry, can you repeat the last part?",
+        "Sorry, could you say the last part again?",
+        "Sorry, can you say the last part again?",
+        "Sorry, could you repeat that last part?",
+        "Sorry, would you mind repeating the last part?",
+        "Sorry, I didn't catch the last part. Could you repeat it?"
+      ],
+      "commonErrors": [
+        {
+          "id": "repeat-again",
+          "match": "\\brepeat (it |that )?again\\b",
+          "explanation_pt": "\"Repeat again\" é redundante: \"repeat\" já é dizer de novo. Use \"repeat\" ou \"say it again\".",
+          "correction_en": "Sorry, could you repeat the last part?"
+        }
+      ]
+    },
+    {
+      "id": "b2-01-prac-15",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Acho que deveríamos adiar essa decisão.\"",
+      "accepted": [
+        "I think we should postpone this decision",
+        "I think we should postpone that decision",
+        "I think we should put off this decision",
+        "I think we should put this decision off",
+        "I think we should delay this decision",
+        "I think we should hold off on this decision",
+        "I think we should postpone this decision for now"
+      ],
+      "commonErrors": [
+        {
+          "id": "prorrogate",
+          "match": "\\b(prorrogate|prorogate|extend) (this|that) decision\\b",
+          "explanation_pt": "\"Prorrogar\" é \"extend\". Para deixar para depois, use \"postpone\" ou \"put off\".",
+          "correction_en": "I think we should postpone this decision."
+        }
+      ]
+    },
+    {
+      "id": "b2-01-prac-16",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Vou mandar a ata para todo mundo depois da reunião.\"",
+      "accepted": [
+        "I'll send the minutes to everyone after the meeting",
+        "I'll send everyone the minutes after the meeting",
+        "I'm going to send the minutes to everyone after the meeting",
+        "I'm going to send everyone the minutes after the meeting",
+        "I'll send the minutes to everybody after the meeting",
+        "I'll send the meeting notes to everyone after the meeting"
+      ],
+      "commonErrors": [
+        {
+          "id": "ata-act",
+          "match": "\\bsend the (act|acts|ata)\\b",
+          "explanation_pt": "\"Ata\" de reunião é \"minutes\" (sempre no plural) ou \"meeting notes\".",
+          "correction_en": "I'll send the minutes to everyone after the meeting."
+        },
+        {
+          "id": "send-to-all",
+          "match": "\\bto all people\\b",
+          "explanation_pt": "\"Todo mundo\" é \"everyone\" ou \"everybody\", não \"all people\".",
+          "correction_en": "I'll send the minutes to everyone after the meeting."
+        }
+      ]
+    },
+    {
+      "id": "b2-01-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and say that you can take the minutes.",
+      "listen": "Before we begin, could somebody take the minutes?",
+      "accepted": [
+        "I can take the minutes",
+        "I'll take the minutes",
+        "I can do it",
+        "I'll do it",
+        "Sure, I can take the minutes",
+        "Sure, I'll take the minutes",
+        "Sure, I can do it",
+        "Sure, I'll do it",
+        "Yes, I'll take them",
+        "I can take them"
+      ],
+      "commonErrors": [
+        {
+          "id": "make-minutes",
+          "match": "\\b(make|do) the minutes\\b",
+          "explanation_pt": "Com a ata, o verbo é \"take\": \"take the minutes\".",
+          "correction_en": "I can take the minutes."
+        }
+      ]
+    },
+    {
+      "id": "b2-01-prac-18",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and say that you agree.",
+      "listen": "I suggest we move the deadline to next Friday. What do you think?",
+      "accepted": [
+        "I agree",
+        "I agree with that",
+        "I agree with you",
+        "I think that works",
+        "That works for me",
+        "That sounds good",
+        "That sounds good to me",
+        "Sounds good to me",
+        "Yes, I agree, that's fine",
+        "That's fine with me",
+        "I think that makes sense"
+      ],
+      "commonErrors": [
+        {
+          "id": "am-agree",
+          "match": "\\bi am agree\\b",
+          "explanation_pt": "\"Agree\" já é verbo: \"I agree\", sem \"am\".",
+          "correction_en": "I agree."
+        }
+      ]
+    },
+    {
+      "id": "b2-01-prac-19",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and ask to add something before they finish.",
+      "listen": "Okay, if there's nothing else, I think we can wrap up.",
+      "accepted": [
+        "Sorry, could I just add something?",
+        "Sorry, can I just add something?",
+        "Before we wrap up, could I add something?",
+        "Before we finish, could I add something?",
+        "Could I just add one thing?",
+        "Can I just add one thing?",
+        "Actually, I have one more thing",
+        "Actually, there is one more thing",
+        "Sorry, could I add one more thing?"
+      ],
+      "commonErrors": [
+        {
+          "id": "can-i-to-add",
+          "match": "\\b(can|could) i to add\\b",
+          "explanation_pt": "Depois de \"can/could\" o verbo vem sem \"to\": \"Could I add something?\"",
+          "correction_en": "Sorry, could I just add something?"
+        }
+      ]
+    },
+    {
+      "id": "b2-01-prac-20",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and say that you missed the last part.",
+      "listen": "Sorry, you broke up a bit there. Did you get what I said about the budget?",
+      "accepted": [
+        "Sorry, I didn't catch that",
+        "Sorry, I didn't catch the last part",
+        "No, sorry, could you repeat it?",
+        "No, sorry, could you say it again?",
+        "Not really, could you repeat that?",
+        "No, I missed the last part",
+        "Sorry, I missed the last part",
+        "No, I didn't catch the part about the budget",
+        "Sorry, could you repeat the part about the budget?"
+      ],
+      "commonErrors": [
+        {
+          "id": "not-understood",
+          "match": "\\bi (did not|do not) understood\\b",
+          "explanation_pt": "Depois de \"didn't\" o verbo volta à forma base: \"I didn't understand\".",
+          "correction_en": "Sorry, I didn't catch that."
+        },
+        {
+          "id": "repeat-again",
+          "match": "\\brepeat (it |that )?again\\b",
+          "explanation_pt": "\"Repeat again\" é redundante. Use \"repeat that\" ou \"say it again\".",
+          "correction_en": "Could you repeat that?"
+        }
+      ]
+    },
+    {
+      "id": "b2-01-prac-21",
+      "kind": "choice",
+      "instruction_pt": "Your colleague says: \"Let's take this offline.\" What does she mean?",
+      "options": [
+        "Let's discuss it later, outside this meeting",
+        "Let's turn off the internet",
+        "Let's cancel the project"
+      ],
+      "answer": 0,
+      "explanation_pt": "\"Take it offline\" é continuar a conversa depois, fora da reunião, só com quem interessa."
+    },
+    {
+      "id": "b2-01-prac-22",
+      "kind": "choice",
+      "instruction_pt": "Which is the most polite way to interrupt?",
+      "options": ["Sorry to jump in, but...", "Stop, I want to talk.", "Wait, listen to me."],
+      "answer": 0,
+      "explanation_pt": "\"Sorry to jump in\" é um jeito educado e muito comum de pedir a palavra."
+    },
+    {
+      "id": "b2-01-prac-23",
+      "kind": "fill",
+      "instruction_pt": "Complete the sentence.",
+      "sentence": "The meeting ran ___ by twenty minutes, so I missed my train.",
+      "accepted": ["over", "late"],
+      "commonErrors": [
+        {
+          "id": "ran-out",
+          "match": "^(out|long|more)$",
+          "explanation_pt": "\"Run over\" é passar do horário previsto. \"Run out\" é acabar (o tempo, o café).",
+          "correction_en": "The meeting ran over by twenty minutes."
+        }
+      ]
+    },
+    {
+      "id": "b2-01-prac-24",
+      "kind": "fill",
+      "instruction_pt": "Complete the sentence.",
+      "sentence": "Let's go ___ the action items one more time.",
+      "accepted": ["over", "through"],
+      "commonErrors": [
+        {
+          "id": "go-in",
+          "match": "^(in|on|by|about)$",
+          "explanation_pt": "\"Go over\" ou \"go through\" é repassar, revisar.",
+          "correction_en": "Let's go over the action items one more time."
+        }
+      ]
+    },
+    {
+      "id": "b2-01-prac-25",
+      "kind": "order",
+      "instruction_pt": "Put the words in order to move the meeting forward.",
+      "accepted": ["Could we move on to the next item"]
+    },
+    {
+      "id": "b2-01-prac-26",
+      "kind": "dialogue",
+      "instruction_pt": "Role-play. Take part in a project meeting.",
+      "scene_pt": "You are in a weekly team meeting. The project manager, Laura, is chairing it.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Morning, everyone. Thanks for joining. First on the agenda is the launch date. Any updates?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que o time de design precisa de mais uma semana.",
+          "accepted": [
+            "The design team needs one more week",
+            "The design team needs another week",
+            "The design team needs an extra week",
+            "Yes, the design team needs one more week",
+            "Yes, the design team needs another week",
+            "The design team needs a bit more time, about one more week",
+            "The design team needs one more week to finish"
+          ],
+          "commonErrors": [
+            {
+              "id": "more-one-week",
+              "match": "\\bmore one week\\b",
+              "explanation_pt": "Em inglês a ordem é \"one more week\" ou \"another week\". \"More one week\" é tradução literal.",
+              "correction_en": "The design team needs one more week."
+            },
+            {
+              "id": "need-without-s",
+              "match": "\\bthe design team need\\b",
+              "explanation_pt": "\"The team\" é terceira pessoa do singular: \"needs\".",
+              "correction_en": "The design team needs one more week."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "I see. That would push the launch to the twentieth. Is everyone okay with that?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Concorde, mas diga que precisam avisar o cliente.",
+          "accepted": [
+            "I agree, but we need to tell the client",
+            "I agree, but we need to let the client know",
+            "I agree, but we have to tell the client",
+            "I agree, but we have to let the client know",
+            "That's fine, but we need to tell the client",
+            "That's fine, but we need to let the client know",
+            "I'm okay with that, but we need to inform the client",
+            "Fine by me, but we need to tell the client"
+          ],
+          "commonErrors": [
+            {
+              "id": "am-agree",
+              "match": "\\bi am agree\\b",
+              "explanation_pt": "\"Agree\" é verbo: \"I agree\".",
+              "correction_en": "I agree, but we need to tell the client."
+            },
+            {
+              "id": "advise-client",
+              "match": "\\b(advise|advice) the client\\b",
+              "explanation_pt": "\"Avisar\" é \"tell\", \"let know\" ou \"inform\". \"Advise\" é aconselhar.",
+              "correction_en": "I agree, but we need to let the client know."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Good point. Could you follow up with them after this call?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que sim e que vai mandar um e-mail hoje à tarde.",
+          "accepted": [
+            "Sure, I'll send them an email this afternoon",
+            "Sure, I'll email them this afternoon",
+            "Yes, I'll send them an email this afternoon",
+            "Yes, I'll email them this afternoon",
+            "Of course, I'll send them an email this afternoon",
+            "Sure, I'll follow up by email this afternoon",
+            "No problem, I'll email them this afternoon"
+          ],
+          "commonErrors": [
+            {
+              "id": "in-this-afternoon",
+              "match": "\\b(in|on) this afternoon\\b",
+              "explanation_pt": "Com \"this\", \"next\" e \"last\" não se usa preposição: \"this afternoon\".",
+              "correction_en": "Sure, I'll email them this afternoon."
+            },
+            {
+              "id": "send-email-to-them-to",
+              "match": "\\bsend an email for them\\b",
+              "explanation_pt": "Mandar e-mail para alguém: \"send them an email\" ou \"send an email to them\".",
+              "correction_en": "Sure, I'll send them an email this afternoon."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Perfect. We're almost out of time. Anything else before we wrap up?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que não, que é tudo da sua parte.",
+          "accepted": [
+            "No, that's all from me",
+            "No, that's everything from me",
+            "No, that's it from me",
+            "Nothing else from me",
+            "No, nothing else from me",
+            "No, I think that's all",
+            "That's all from my side"
+          ],
+          "commonErrors": [
+            {
+              "id": "is-all",
+              "match": "^no is all\\b",
+              "explanation_pt": "Falta o sujeito: \"That's all\", não \"is all\".",
+              "correction_en": "No, that's all from me."
+            },
+            {
+              "id": "of-me",
+              "match": "\\b(all|it|everything) of me\\b",
+              "explanation_pt": "\"Da minha parte\" é \"from me\" ou \"from my side\".",
+              "correction_en": "No, that's all from me."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-01-prac-27",
+      "kind": "free_speak",
+      "instruction_pt": "Recap a meeting for a colleague who missed it.",
+      "prompt_en": "I couldn't make it to the meeting this morning. What did I miss?",
+      "guidelines_pt": [
+        "Say what was discussed: \"We went over...\"",
+        "Say what was decided: \"We agreed to...\"",
+        "Give the action items: \"You're supposed to follow up on...\""
       ]
     }
   ]

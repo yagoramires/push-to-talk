@@ -1,4 +1,5 @@
 import { nextPosition, type Course, type Level, type Position, type Skill } from './content'
+import type { Goal } from './goal'
 import type { FinalVerdict } from './matcher'
 
 export type Mode = 'solo' | 'guided'
@@ -37,6 +38,9 @@ export type ProfileProgress = {
   /** Unidades a reforçar depois de uma prova reprovada. */
   weakUnits: string[]
   courseComplete: boolean
+  goal: Goal | null
+  /** Caixa de Leitner (1..5) e última resposta de cada item da prática extra. */
+  practice: Record<string, { box: 1 | 2 | 3 | 4 | 5; last: string }>
 }
 
 export function newProgress(profileId: string, startLevel: Level, course: Course): ProfileProgress {
@@ -52,7 +56,9 @@ export function newProgress(profileId: string, startLevel: Level, course: Course
     level: startLevel,
     exams: [],
     weakUnits: [],
-    courseComplete: false
+    courseComplete: false,
+    goal: null,
+    practice: {}
   }
 }
 
@@ -67,10 +73,12 @@ export function migrateProgress(
     level: p.level ?? (unit ? unit.level : p.startLevel),
     exams: p.exams ?? [],
     weakUnits: p.weakUnits ?? [],
-    courseComplete: p.courseComplete ?? false
+    courseComplete: p.courseComplete ?? false,
+    goal: p.goal ?? null,
+    practice: p.practice ?? {}
   }
 }
-type NewFields = 'level' | 'exams' | 'weakUnits' | 'courseComplete'
+type NewFields = 'level' | 'exams' | 'weakUnits' | 'courseComplete' | 'goal' | 'practice'
 
 export function recordAttempt(
   p: ProfileProgress,

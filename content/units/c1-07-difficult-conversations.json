@@ -377,10 +377,86 @@
           ]
         },
         {
-          "id": "c1-07-conv-3",
-          "kind": "order",
-          "instruction_pt": "Put the words in order to propose a way forward.",
-          "accepted": ["How about we find a solution that works for both of us"]
+          "id": "c1-07-conv-dialogue",
+          "kind": "dialogue",
+          "instruction_pt": "Role-play: give a colleague difficult feedback without making them defensive.",
+          "scene_pt": "A colleague made mistakes in a report sent to a client. You asked to see them.",
+          "turns": [
+            {
+              "speaker": "partner",
+              "text": "Hi! You wanted to see me?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Say yes, and that there's something a bit delicate you need to raise.",
+              "accepted": [
+                "Yes, there's something a bit delicate I need to raise",
+                "Yes, there's something a little delicate I need to raise",
+                "Yes, there's something slightly delicate I need to raise",
+                "Yes, I need to raise something a bit delicate",
+                "Yes, there's something a bit sensitive I need to raise",
+                "Yes, there's a slightly delicate matter I need to raise",
+                "Yes, I need to raise a slightly sensitive issue"
+              ],
+              "commonErrors": [
+                {
+                  "id": "sensible",
+                  "match": "\\bsensible\\b",
+                  "explanation_pt": "\"Sensible\" means \"sensato\". \"Delicado\" is \"delicate\" or \"sensitive\".",
+                  "correction_en": "There's something a bit delicate I need to raise."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Oh. That sounds serious."
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Say it's nothing major, but there were a few errors in the report you sent the client.",
+              "accepted": [
+                "It's nothing major, but there were a few errors in the report you sent the client",
+                "It's nothing major, but there were a few mistakes in the report you sent the client",
+                "Nothing major, but there were a few errors in the report you sent to the client",
+                "It's nothing serious, but there were a few errors in the report you sent the client",
+                "It's nothing major, but the report you sent the client had a few errors",
+                "It's nothing big, but there were some mistakes in the report you sent the client"
+              ],
+              "commonErrors": [
+                {
+                  "id": "few-errors",
+                  "match": "\\bthere were few\\b",
+                  "explanation_pt": "\"A few\" means \"alguns\". Without \"a\", \"few\" means \"poucos\" and sounds negative.",
+                  "correction_en": "There were a few errors."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Oh no. I'm so embarrassed. I was rushing to meet the deadline."
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Say you understand, it happens, and suggest going through it together.",
+              "accepted": [
+                "I understand, it happens. Let's go through it together",
+                "I understand. It happens. Shall we go through it together",
+                "Don't worry, it happens. Let's go through it together",
+                "I understand, these things happen. Let's go through it together",
+                "It happens. Why don't we go through it together",
+                "I get it, it happens. Let's go through it together",
+                "It happens to everyone. Let's go through it together"
+              ],
+              "commonErrors": [
+                {
+                  "id": "pass-through",
+                  "match": "\\bpass through it\\b",
+                  "explanation_pt": "\"Revisar juntos\" is \"go through it together\".",
+                  "correction_en": "Let's go through it together."
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "c1-07-conv-free",
@@ -463,6 +539,516 @@
           "prompt": "Thanks for being so open about it. Let's keep talking.",
           "accepted": ["Thanks for being so open about it. Let's keep talking"],
           "commonErrors": []
+        }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "id": "c1-07-prac-1",
+      "kind": "vocab",
+      "word_en": "to break the news",
+      "meaning_pt": "dar a notícia (geralmente ruim)",
+      "example_en": "She broke the news to the team on Monday morning."
+    },
+    {
+      "id": "c1-07-prac-2",
+      "kind": "vocab",
+      "word_en": "to bottle up",
+      "meaning_pt": "guardar para si, reprimir (sentimentos)",
+      "example_en": "It's not healthy to bottle up your frustration."
+    },
+    {
+      "id": "c1-07-prac-3",
+      "kind": "vocab",
+      "word_en": "to clear the air",
+      "meaning_pt": "esclarecer as coisas, desfazer o clima ruim",
+      "example_en": "We had a long chat, and it really cleared the air."
+    },
+    {
+      "id": "c1-07-prac-4",
+      "kind": "vocab",
+      "word_en": "tactful",
+      "meaning_pt": "diplomático, com tato",
+      "example_en": "That was a very tactful way of saying no."
+    },
+    {
+      "id": "c1-07-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repeat in a calm, gentle tone.",
+      "prompt": "I'm afraid I've got some bad news.",
+      "accepted": ["I'm afraid I've got some bad news", "I'm afraid I have some bad news"],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-07-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repeat sincerely, stressing \"mean\".",
+      "prompt": "I didn't mean to upset you.",
+      "accepted": ["I didn't mean to upset you", "I did not mean to upset you"],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-07-prac-7",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "I'd rather we talked about this face to face.",
+      "accepted": [
+        "I'd rather we talked about this face to face",
+        "I'd rather we talk about this face to face",
+        "I would rather we talked about this face to face"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-07-prac-8",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "Let's take a step back and look at the bigger picture.",
+      "accepted": [
+        "Let's take a step back and look at the bigger picture",
+        "Let us take a step back and look at the bigger picture"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-07-prac-9",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "I appreciate you telling me how you feel.",
+      "accepted": [
+        "I appreciate you telling me how you feel",
+        "I appreciate you telling me how you feel about it"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-07-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Eu preciso ser sincero com você.\"",
+      "accepted": [
+        "I need to be honest with you",
+        "I have to be honest with you",
+        "I've got to be honest with you",
+        "I need to be upfront with you",
+        "I need to be straight with you",
+        "I have to be straight with you",
+        "I'll be honest with you",
+        "I need to be frank with you"
+      ],
+      "commonErrors": [
+        {
+          "id": "sincere",
+          "match": "\\bsincere\\b",
+          "explanation_pt": "\"Sincero\" here is \"honest\" or \"frank\". \"Sincere\" describes genuine feelings (\"sincere apologies\").",
+          "correction_en": "I need to be honest with you."
+        }
+      ]
+    },
+    {
+      "id": "c1-07-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Sinto muito que você se sinta assim.\"",
+      "accepted": [
+        "I'm sorry you feel that way",
+        "I'm sorry you feel like that",
+        "I'm really sorry you feel that way",
+        "I'm sorry that you feel that way",
+        "I'm so sorry you feel that way",
+        "I'm sorry to hear you feel that way",
+        "I am sorry you feel that way"
+      ],
+      "commonErrors": [
+        {
+          "id": "feel-yourself",
+          "match": "\\bfeel yourself\\b",
+          "explanation_pt": "\"Sentir-se\" is just \"feel\" in English, with no reflexive.",
+          "correction_en": "I'm sorry you feel that way."
+        }
+      ]
+    },
+    {
+      "id": "c1-07-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Não foi minha intenção te magoar.\"",
+      "accepted": [
+        "I didn't mean to hurt you",
+        "I never meant to hurt you",
+        "I didn't intend to hurt you",
+        "It wasn't my intention to hurt you",
+        "I didn't mean to upset you",
+        "I really didn't mean to hurt you",
+        "Hurting you was never my intention",
+        "I didn't mean to hurt your feelings"
+      ],
+      "commonErrors": [
+        {
+          "id": "pretend",
+          "match": "\\bpretend(ed)?\\b",
+          "explanation_pt": "\"Pretend\" means \"fingir\". \"Ter intenção\" is \"mean to\" or \"intend to\".",
+          "correction_en": "I didn't mean to hurt you."
+        }
+      ]
+    },
+    {
+      "id": "c1-07-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Podemos conversar sobre o que aconteceu ontem?\"",
+      "accepted": [
+        "Can we talk about what happened yesterday",
+        "Could we talk about what happened yesterday",
+        "Can we have a chat about what happened yesterday",
+        "Do you mind if we talk about what happened yesterday",
+        "Could we have a word about what happened yesterday",
+        "Can I talk to you about what happened yesterday",
+        "Would you mind if we talked about what happened yesterday"
+      ],
+      "commonErrors": [
+        {
+          "id": "converse",
+          "match": "\\bconverse\\b",
+          "explanation_pt": "\"Conversar\" is \"talk\" or \"have a chat\". \"Converse\" is very formal and rare.",
+          "correction_en": "Can we talk about what happened yesterday?"
+        },
+        {
+          "id": "what-did-happen",
+          "match": "\\bwhat did happen\\b",
+          "explanation_pt": "Here \"what\" is the subject, so no \"did\": \"what happened\".",
+          "correction_en": "What happened yesterday."
+        }
+      ]
+    },
+    {
+      "id": "c1-07-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Vamos tentar encontrar um meio-termo.\"",
+      "accepted": [
+        "Let's try to find a middle ground",
+        "Let's try to find some middle ground",
+        "Let's try to find a compromise",
+        "Let's try and find a compromise",
+        "Let's try to meet halfway",
+        "Let's try to meet each other halfway",
+        "Let's see if we can find a compromise",
+        "Let's try to reach a compromise"
+      ],
+      "commonErrors": [
+        {
+          "id": "middle-term",
+          "match": "\\bmiddle term\\b",
+          "explanation_pt": "\"Meio-termo\" is \"middle ground\" or \"compromise\".",
+          "correction_en": "Let's try to find a compromise."
+        }
+      ]
+    },
+    {
+      "id": "c1-07-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen. A colleague is annoyed. Acknowledge their feelings and apologise.",
+      "listen": "Why wasn't I told about the changes earlier?",
+      "accepted": [
+        "I can see why you're frustrated, and I'm sorry",
+        "I understand why you're upset. I'm sorry",
+        "That's a fair question, and I'm sorry you weren't told",
+        "You're right, you should have been told earlier. I'm sorry",
+        "I'm sorry, you should have been told sooner",
+        "I can see why you're annoyed. That was our mistake",
+        "I completely understand. You should have been told earlier",
+        "I'm really sorry about that. You should have been informed",
+        "I hear you, and I apologise",
+        "I hear you, and I apologize"
+      ],
+      "commonErrors": [
+        {
+          "id": "sorry-for-you",
+          "match": "\\bsorry for you\\b",
+          "explanation_pt": "\"I'm sorry for you\" sounds like pity. Say \"I'm sorry\" or \"I'm sorry you weren't told\".",
+          "correction_en": "I'm sorry you weren't told earlier."
+        }
+      ]
+    },
+    {
+      "id": "c1-07-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen. You have to say no. Refuse tactfully and offer an alternative.",
+      "listen": "Can I have Friday off? It's my sister's wedding.",
+      "accepted": [
+        "I'm afraid Friday isn't possible, but could you take Monday instead",
+        "I'm sorry, but Friday won't be possible. How about Monday",
+        "Unfortunately, I can't give you Friday off, but what about the afternoon",
+        "I'm afraid we're short-staffed on Friday. Could you take the afternoon off instead",
+        "I wish I could, but Friday's difficult. Could we look at another option",
+        "I'm afraid I can't approve Friday, but let's see what we can do",
+        "Unfortunately not, but you could leave early on Friday",
+        "I'm really sorry, but I can't say yes to Friday. Could you swap shifts with someone"
+      ],
+      "commonErrors": [
+        {
+          "id": "cannot-to",
+          "match": "\\bcannot to\\b",
+          "explanation_pt": "After \"can't\", use the bare verb: \"I can't give\", not \"I can't to give\".",
+          "correction_en": "I'm afraid I can't give you Friday off."
+        }
+      ]
+    },
+    {
+      "id": "c1-07-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen. Respond with empathy and invite them to say more.",
+      "listen": "I just feel like my work isn't appreciated around here.",
+      "accepted": [
+        "I'm sorry you feel that way. Can you tell me more",
+        "That must be frustrating. What makes you feel that way",
+        "I'm sorry to hear that. Can you tell me more about it",
+        "I really appreciate you telling me. What's been going on",
+        "I hear you. Can you give me an example",
+        "That's not good to hear. Tell me more",
+        "I'm sorry you feel like that. What's been happening",
+        "Thanks for being honest. Can you tell me more"
+      ],
+      "commonErrors": [
+        {
+          "id": "explain-me",
+          "match": "\\bexplain me\\b",
+          "explanation_pt": "\"Explain\" needs \"to\" before the person: \"explain to me\", or use \"tell me\".",
+          "correction_en": "Can you tell me more?"
+        }
+      ]
+    },
+    {
+      "id": "c1-07-prac-18",
+      "kind": "free_speak",
+      "instruction_pt": "Deliver bad news tactfully, in about a minute.",
+      "prompt_en": "You have to tell a team member that the project they have been leading has been cancelled. What do you say?",
+      "guidelines_pt": [
+        "Prepare them: \"I'm afraid I've got some difficult news.\"",
+        "Give the reason briefly and honestly.",
+        "Acknowledge their feelings: \"I know how much work you put into it.\"",
+        "Offer a way forward: \"What I'd like to do now is...\""
+      ]
+    },
+    {
+      "id": "c1-07-prac-19",
+      "kind": "dialogue",
+      "instruction_pt": "Role-play: raise a problem with your neighbour without causing a fight.",
+      "scene_pt": "Your neighbour's music has been keeping you awake. You knock on his door.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Oh, hi. Is everything okay?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Say yes, but there's something you'd like to talk to him about.",
+          "accepted": [
+            "Yes, but there's something I'd like to talk to you about",
+            "Yes, thanks, but there's something I'd like to talk to you about",
+            "Yes, but there's something I wanted to talk to you about",
+            "Everything's fine, but there's something I'd like to talk to you about",
+            "Yes, but there's something I'd like to discuss with you",
+            "Yes, but I'd like to have a word with you about something"
+          ],
+          "commonErrors": [
+            {
+              "id": "discuss-about",
+              "match": "\\bdiscuss about\\b",
+              "explanation_pt": "\"Discuss\" takes a direct object: \"discuss something\".",
+              "correction_en": "There's something I'd like to discuss with you."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Sure. What's up?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Say the music has been quite loud late at night, and it's been hard to sleep.",
+          "accepted": [
+            "The music has been quite loud late at night, and it's been hard to sleep",
+            "The music's been quite loud late at night, and it's been hard to sleep",
+            "The music has been quite loud late at night, and I've found it hard to sleep",
+            "The music has been rather loud late at night, and it's been hard to sleep",
+            "The music has been a bit loud late at night, and it's been difficult to sleep",
+            "It's been quite loud late at night, and I've been finding it hard to sleep"
+          ],
+          "commonErrors": [
+            {
+              "id": "sound-high",
+              "match": "\\b(sound|music) (has been|is|was) (very |quite )?high\\b",
+              "explanation_pt": "Music or noise is \"loud\", not \"high\" (\"som alto\").",
+              "correction_en": "The music has been quite loud."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Oh, I had no idea. Nobody's said anything before."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Say you understand, and that you didn't want to make a fuss.",
+          "accepted": [
+            "I understand, and I didn't want to make a fuss",
+            "I understand. I didn't want to make a fuss",
+            "I know, I didn't want to make a fuss",
+            "That's understandable. I didn't want to make a fuss",
+            "I understand. I just didn't want to make a fuss",
+            "I realise that. I didn't want to make a fuss",
+            "I realize that. I didn't want to make a fuss"
+          ],
+          "commonErrors": [
+            {
+              "id": "make-scandal",
+              "match": "\\bmake a scandal\\b",
+              "explanation_pt": "\"Fazer escândalo / confusão\" is \"make a fuss\".",
+              "correction_en": "I didn't want to make a fuss."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Well, I'm sorry. What would help?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Ask if he could keep it down after eleven on weeknights.",
+          "accepted": [
+            "Could you keep it down after eleven on weeknights",
+            "Would you mind keeping it down after eleven on weeknights",
+            "Could you possibly keep it down after eleven on weeknights",
+            "Would you be able to keep it down after eleven on weeknights",
+            "If you could keep it down after eleven on weeknights, that would be great",
+            "Could you turn it down after eleven on weeknights"
+          ],
+          "commonErrors": [
+            {
+              "id": "mind-to",
+              "match": "\\bmind to\\b",
+              "explanation_pt": "\"Would you mind\" is followed by -ing: \"Would you mind keeping...\".",
+              "correction_en": "Would you mind keeping it down?"
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Of course. That's absolutely fine."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Thank him and say you really appreciate it.",
+          "accepted": [
+            "Thanks, I really appreciate it",
+            "Thank you, I really appreciate it",
+            "Thanks so much, I really appreciate it",
+            "Thanks, I really appreciate that",
+            "Thank you. I really appreciate your understanding",
+            "Thanks a lot, I really appreciate it"
+          ],
+          "commonErrors": [
+            {
+              "id": "appreciate-very-much",
+              "match": "\\bappreciate very much\\b",
+              "explanation_pt": "\"Appreciate\" needs an object: \"I really appreciate it\".",
+              "correction_en": "I really appreciate it."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-07-prac-20",
+      "kind": "choice",
+      "instruction_pt": "Which is the most tactful way to say no to a request?",
+      "options": [
+        "No. That's not happening.",
+        "I'm afraid that won't be possible this time, but let's see what else we can do.",
+        "Why would you even ask that?"
+      ],
+      "answer": 1,
+      "explanation_pt": "\"I'm afraid\", \"this time\" and an alternative soften the refusal."
+    },
+    {
+      "id": "c1-07-prac-21",
+      "kind": "choice",
+      "instruction_pt": "What does \"to bottle up your feelings\" mean?",
+      "options": ["To share them with everyone", "To keep them to yourself", "To write them down"],
+      "answer": 1,
+      "explanation_pt": "If you bottle something up, you keep it inside instead of expressing it."
+    },
+    {
+      "id": "c1-07-prac-22",
+      "kind": "choice",
+      "instruction_pt": "Listen. What is the speaker doing?",
+      "listen": "I felt a bit left out when the decision was made without me.",
+      "options": [
+        "Blaming the listener",
+        "Using an \"I\" statement to express a concern",
+        "Ending the relationship"
+      ],
+      "answer": 1,
+      "explanation_pt": "\"I felt ... when ...\" describes the speaker's experience without attacking the other person."
+    },
+    {
+      "id": "c1-07-prac-23",
+      "kind": "fill",
+      "instruction_pt": "Complete with one word.",
+      "sentence": "I can see ___ you might feel that way.",
+      "accepted": ["why", "how"],
+      "commonErrors": [
+        {
+          "id": "see-because",
+          "match": "^(because|what)$",
+          "explanation_pt": "Use \"why\" (or \"how\") to acknowledge the reason: \"I can see why...\".",
+          "correction_en": "I can see why you might feel that way."
+        }
+      ]
+    },
+    {
+      "id": "c1-07-prac-24",
+      "kind": "fill",
+      "instruction_pt": "Complete with one word.",
+      "sentence": "We had a long talk, and it really cleared the ___.",
+      "accepted": ["air"],
+      "commonErrors": [
+        {
+          "id": "cleared-climate",
+          "match": "^(climate|environment|atmosphere)$",
+          "explanation_pt": "The idiom is \"clear the air\".",
+          "correction_en": "It really cleared the air."
+        }
+      ]
+    },
+    {
+      "id": "c1-07-prac-25",
+      "kind": "order",
+      "instruction_pt": "Put the words in order to propose a way forward.",
+      "accepted": ["How about we try a different approach next time"]
+    },
+    {
+      "id": "c1-07-prac-26",
+      "kind": "match",
+      "instruction_pt": "Match each expression with its meaning.",
+      "pairs": [
+        {
+          "en": "to break the news",
+          "pt": "dar a notícia"
+        },
+        {
+          "en": "to bottle up",
+          "pt": "reprimir sentimentos"
+        },
+        {
+          "en": "to clear the air",
+          "pt": "desfazer o clima ruim"
+        },
+        {
+          "en": "tactful",
+          "pt": "diplomático"
+        },
+        {
+          "en": "to meet halfway",
+          "pt": "chegar a um meio-termo"
         }
       ]
     }

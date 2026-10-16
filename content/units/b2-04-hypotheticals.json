@@ -516,5 +516,569 @@
         }
       ]
     }
+  ],
+  "practice": [
+    {
+      "id": "b2-04-prac-1",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "If I had more free time, I would learn to play the piano.",
+      "accepted": ["If I had more free time, I would learn to play the piano."],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-04-prac-2",
+      "kind": "repeat",
+      "instruction_pt": "Repeat. Say \"were\", not \"was\", in careful speech.",
+      "prompt": "If I were you, I would take the job.",
+      "accepted": ["If I were you, I would take the job.", "If I was you, I'd take the job."],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-04-prac-3",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "I wish I'd studied harder at university.",
+      "accepted": [
+        "I wish I'd studied harder at university.",
+        "I wish I had studied harder in college."
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-04-prac-4",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "If we had left earlier, we would have caught the train.",
+      "accepted": [
+        "If we had left earlier, we would have caught the train.",
+        "If we'd left earlier, we'd have caught the train."
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-04-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "Supposing your flight was cancelled, what would you do?",
+      "accepted": [
+        "Supposing your flight was cancelled, what would you do?",
+        "Suppose your flight was cancelled, what would you do?",
+        "Supposing your flight got cancelled, what would you do?"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-04-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "I really regret not going to her party.",
+      "accepted": [
+        "I really regret not going to her party.",
+        "I really regret not going to her birthday party."
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-04-prac-7",
+      "kind": "vocab",
+      "word_en": "if only",
+      "meaning_pt": "quem dera, se ao menos",
+      "example_en": "If only I had listened to my mother!"
+    },
+    {
+      "id": "b2-04-prac-8",
+      "kind": "vocab",
+      "word_en": "in hindsight",
+      "meaning_pt": "olhando para trás, em retrospecto",
+      "example_en": "In hindsight, moving to another city was the right decision."
+    },
+    {
+      "id": "b2-04-prac-9",
+      "kind": "vocab",
+      "word_en": "to have second thoughts",
+      "meaning_pt": "ficar em dúvida, repensar",
+      "example_en": "I'm having second thoughts about selling my car."
+    },
+    {
+      "id": "b2-04-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Se eu ganhasse na loteria, eu viajaria pelo mundo.\"",
+      "accepted": [
+        "If I won the lottery, I would travel the world",
+        "If I won the lottery, I would travel around the world",
+        "I'd travel the world if I won the lottery",
+        "I'd travel around the world if I won the lottery"
+      ],
+      "commonErrors": [
+        {
+          "id": "if-would-win",
+          "match": "\\bif i would win\\b",
+          "explanation_pt": "Na parte do \"if\" (segundo condicional) usa-se o passado: \"If I won\", não \"would win\".",
+          "correction_en": "If I won the lottery, I'd travel the world."
+        },
+        {
+          "id": "gain-lottery",
+          "match": "\\b(gained|gain) the lottery\\b",
+          "explanation_pt": "\"Ganhar na loteria\" é \"win the lottery\". \"Gain\" é ganhar peso, experiência.",
+          "correction_en": "If I won the lottery, I'd travel the world."
+        }
+      ]
+    },
+    {
+      "id": "b2-04-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Quem me dera eu falasse francês.\"",
+      "accepted": [
+        "I wish I spoke French",
+        "I wish I could speak French",
+        "If only I spoke French",
+        "If only I could speak French"
+      ],
+      "commonErrors": [
+        {
+          "id": "wish-speak",
+          "match": "\\bi wish i (speak|can speak|will speak)\\b",
+          "explanation_pt": "Depois de \"I wish\" o verbo volta um tempo: \"I wish I spoke / could speak\".",
+          "correction_en": "I wish I spoke French."
+        },
+        {
+          "id": "who-gives",
+          "match": "\\bwho (me )?(gives|give)\\b",
+          "explanation_pt": "\"Quem me dera\" não se traduz palavra por palavra. Use \"I wish\" ou \"If only\".",
+          "correction_en": "I wish I spoke French."
+        }
+      ]
+    },
+    {
+      "id": "b2-04-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Se eu tivesse sabido, eu teria te ajudado.\"",
+      "accepted": [
+        "If I had known, I would have helped you",
+        "If I'd known, I would have helped you",
+        "If I had known, I would have helped",
+        "I would have helped you if I had known",
+        "I'd have helped you if I'd known"
+      ],
+      "commonErrors": [
+        {
+          "id": "if-would-have",
+          "match": "\\bif (i|we|you|she|he|they) would have\\b",
+          "explanation_pt": "No terceiro condicional, depois de \"if\" vem \"had\" + particípio: \"If I had known...\", não \"would have\".",
+          "correction_en": "If I had known, I would have told you."
+        },
+        {
+          "id": "would-have-help",
+          "match": "\\bwould have help\\b",
+          "explanation_pt": "Depois de \"would have\" vem o particípio: \"would have helped\".",
+          "correction_en": "If I had known, I would have helped you."
+        }
+      ]
+    },
+    {
+      "id": "b2-04-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Eu me arrependo de não ter aceitado a oferta.\"",
+      "accepted": [
+        "I regret not accepting the offer",
+        "I regret not having accepted the offer",
+        "I regret not taking the offer",
+        "I regret that I didn't accept the offer",
+        "I regret not taking the job offer",
+        "I regret not accepting the job offer"
+      ],
+      "commonErrors": [
+        {
+          "id": "regret-of",
+          "match": "\\bregret (of|for) not\\b",
+          "explanation_pt": "\"Regret\" não leva preposição: \"I regret not accepting\".",
+          "correction_en": "I regret not accepting the offer."
+        },
+        {
+          "id": "repent",
+          "match": "\\brepent\\b",
+          "explanation_pt": "\"Repent\" é arrependimento religioso, de pecado. No dia a dia use \"regret\".",
+          "correction_en": "I regret not accepting the offer."
+        }
+      ]
+    },
+    {
+      "id": "b2-04-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"O que você faria se pudesse morar em qualquer lugar?\"",
+      "accepted": [
+        "What would you do if you could live anywhere?",
+        "Where would you live if you could live anywhere?",
+        "If you could live anywhere, what would you do?",
+        "If you could live anywhere, where would you live?"
+      ],
+      "commonErrors": [
+        {
+          "id": "if-can",
+          "match": "\\bif you can live\\b",
+          "explanation_pt": "Situação imaginária: use o passado, \"if you could live\".",
+          "correction_en": "What would you do if you could live anywhere?"
+        },
+        {
+          "id": "any-place-where",
+          "match": "\\bin any place\\b",
+          "explanation_pt": "\"Em qualquer lugar\" soa mais natural como \"anywhere\".",
+          "correction_en": "What would you do if you could live anywhere?"
+        }
+      ]
+    },
+    {
+      "id": "b2-04-prac-15",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Se eu não tivesse perdido o voo, teria chegado a tempo.\"",
+      "accepted": [
+        "If I hadn't missed the flight, I would have arrived on time",
+        "If I hadn't missed my flight, I would have arrived on time",
+        "If I hadn't missed the flight, I would have got there on time",
+        "If I hadn't missed the flight, I would have gotten there on time",
+        "I would have arrived on time if I hadn't missed the flight"
+      ],
+      "commonErrors": [
+        {
+          "id": "lost-flight",
+          "match": "\\b(lost|lose) (the|my) flight\\b",
+          "explanation_pt": "\"Perder\" um voo, ônibus ou trem é \"miss\". \"Lose\" é perder um objeto.",
+          "correction_en": "If I hadn't missed the flight, I'd have arrived on time."
+        },
+        {
+          "id": "if-would-not-have",
+          "match": "\\bif i would not have\\b",
+          "explanation_pt": "Depois de \"if\" (terceiro condicional) use \"hadn't\" + particípio.",
+          "correction_en": "If I hadn't missed the flight, I'd have arrived on time."
+        }
+      ]
+    },
+    {
+      "id": "b2-04-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and say what you would do. Use \"I would\".",
+      "listen": "Imagine you found a wallet full of money in the street. What would you do?",
+      "accepted": [
+        "I would take it to the police",
+        "I would give it to the police",
+        "I would try to find the owner",
+        "I would look for the owner",
+        "I'd hand it in to the police"
+      ],
+      "commonErrors": [
+        {
+          "id": "will-take",
+          "match": "\\bi will (take|give|try|look)\\b",
+          "explanation_pt": "Situação imaginária pede \"would\", não \"will\".",
+          "correction_en": "I'd take it to the police."
+        },
+        {
+          "id": "search-owner",
+          "match": "\\bsearch the owner\\b",
+          "explanation_pt": "\"Procurar alguém\" é \"look for\" ou \"search for\".",
+          "correction_en": "I'd look for the owner."
+        }
+      ]
+    },
+    {
+      "id": "b2-04-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and give advice. Start with \"If I were you\".",
+      "listen": "My boss offered me a promotion, but I'd have to move to another city.",
+      "accepted": [
+        "If I were you, I would take it",
+        "If I were you, I'd accept it",
+        "If I were you, I'd think about it carefully",
+        "If I were you, I'd talk to my family first",
+        "If I were you, I'd go for it",
+        "If I was you, I'd take it"
+      ],
+      "commonErrors": [
+        {
+          "id": "if-i-am-you",
+          "match": "\\bif i am you\\b",
+          "explanation_pt": "Para conselho use o passado: \"If I were you\".",
+          "correction_en": "If I were you, I'd take it."
+        },
+        {
+          "id": "if-i-would-be",
+          "match": "\\bif i would be you\\b",
+          "explanation_pt": "Depois de \"if\" não se usa \"would\": \"If I were you\".",
+          "correction_en": "If I were you, I'd take it."
+        }
+      ]
+    },
+    {
+      "id": "b2-04-prac-18",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and say one thing you wish were different. Start with \"I wish\".",
+      "listen": "Is there anything you'd change about your life right now?",
+      "accepted": [
+        "I wish I had more free time",
+        "I wish I had more time",
+        "I wish I lived closer to the beach",
+        "I wish I could travel more",
+        "I wish I earned more money",
+        "I wish I spoke better English",
+        "I wish I could speak English better",
+        "I wish I had more time for my family"
+      ],
+      "commonErrors": [
+        {
+          "id": "wish-present",
+          "match": "\\bi wish (i|we) (have|am|can|live|speak)\\b",
+          "explanation_pt": "Depois de \"I wish\" o verbo volta um tempo: \"I wish I had / were / could\".",
+          "correction_en": "I wish I had more time."
+        }
+      ]
+    },
+    {
+      "id": "b2-04-prac-19",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and say what you regret. Use \"I should have\".",
+      "listen": "Looking back on your school years, is there anything you would do differently?",
+      "accepted": [
+        "I should have studied harder",
+        "I should have studied more",
+        "I should have learned English earlier",
+        "I should have read more books",
+        "I should have studied English earlier",
+        "I should have paid more attention in class"
+      ],
+      "commonErrors": [
+        {
+          "id": "should-study",
+          "match": "\\bshould have (study|learn|pay)\\b",
+          "explanation_pt": "Depois de \"should have\" vem o particípio: \"should have studied\".",
+          "correction_en": "I should have studied harder."
+        },
+        {
+          "id": "should-of",
+          "match": "\\bshould of\\b",
+          "explanation_pt": "\"Should of\" é um erro de escrita/escuta. O certo é \"should have\" (should've).",
+          "correction_en": "I should have studied harder."
+        }
+      ]
+    },
+    {
+      "id": "b2-04-prac-20",
+      "kind": "choice",
+      "instruction_pt": "\"If I had known, I would have come.\" Did the person come?",
+      "options": [
+        "No, they did not know, so they did not come",
+        "Yes, they came",
+        "They will come next time"
+      ],
+      "answer": 0,
+      "explanation_pt": "O terceiro condicional fala de algo que NÃO aconteceu no passado."
+    },
+    {
+      "id": "b2-04-prac-21",
+      "kind": "choice",
+      "instruction_pt": "Choose the correct sentence.",
+      "options": ["I wish I were taller.", "I wish I am taller.", "I wish I will be taller."],
+      "answer": 0,
+      "explanation_pt": "Depois de \"I wish\", para o presente, usamos o passado: \"were\", \"had\", \"could\"."
+    },
+    {
+      "id": "b2-04-prac-22",
+      "kind": "fill",
+      "instruction_pt": "Complete the sentence.",
+      "sentence": "If I ___ you, I would talk to her about it.",
+      "accepted": ["were", "was"],
+      "commonErrors": [
+        {
+          "id": "am-be",
+          "match": "^(am|be|would be|will be)$",
+          "explanation_pt": "Conselho com \"if\": \"If I were you\". \"Was\" também se ouve no dia a dia.",
+          "correction_en": "If I were you, I would talk to her about it."
+        }
+      ]
+    },
+    {
+      "id": "b2-04-prac-23",
+      "kind": "fill",
+      "instruction_pt": "Complete the sentence.",
+      "sentence": "If we had booked earlier, we would have ___ a cheaper hotel.",
+      "accepted": ["found", "got", "gotten"],
+      "commonErrors": [
+        {
+          "id": "find",
+          "match": "^(find|founded|get)$",
+          "explanation_pt": "Depois de \"would have\" vem o particípio: \"found\" (de \"find\").",
+          "correction_en": "We would have found a cheaper hotel."
+        }
+      ]
+    },
+    {
+      "id": "b2-04-prac-24",
+      "kind": "order",
+      "instruction_pt": "Put the words in order.",
+      "accepted": ["If only I had saved more money last year"]
+    },
+    {
+      "id": "b2-04-prac-25",
+      "kind": "match",
+      "instruction_pt": "Match each expression to its meaning.",
+      "pairs": [
+        {
+          "en": "in hindsight",
+          "pt": "olhando para trás"
+        },
+        {
+          "en": "if only",
+          "pt": "quem dera"
+        },
+        {
+          "en": "to regret",
+          "pt": "arrepender-se"
+        },
+        {
+          "en": "supposing",
+          "pt": "supondo que"
+        },
+        {
+          "en": "to have second thoughts",
+          "pt": "repensar"
+        }
+      ]
+    },
+    {
+      "id": "b2-04-prac-26",
+      "kind": "dialogue",
+      "instruction_pt": "Role-play. Talk about a big decision with a friend.",
+      "scene_pt": "Your friend Jake is thinking of quitting his job to travel for a year. He asks for your opinion.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "So, I'm thinking of quitting my job and travelling for a year. Crazy, right?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que não é loucura e que, se você fosse ele, faria isso.",
+          "accepted": [
+            "It's not crazy. If I were you, I'd do it",
+            "Not at all. If I were you, I'd do it",
+            "It's not crazy at all. If I were you, I'd go for it",
+            "That's not crazy. If I were you, I'd do it",
+            "It's not crazy. If I was you, I'd do it"
+          ],
+          "commonErrors": [
+            {
+              "id": "if-i-am-you",
+              "match": "\\bif i am you\\b",
+              "explanation_pt": "Conselho: \"If I were you\".",
+              "correction_en": "If I were you, I'd do it."
+            },
+            {
+              "id": "is-not-crazy",
+              "match": "^is not crazy\\b",
+              "explanation_pt": "Falta o sujeito: \"It's not crazy\".",
+              "correction_en": "It's not crazy."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Really? But what if I can't find a job when I come back?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que, se isso acontecesse, ele poderia trabalhar como freelancer.",
+          "accepted": [
+            "If that happened, you could work as a freelancer",
+            "If that happened, you could freelance",
+            "If that happened, you could work freelance",
+            "You could work as a freelancer if that happened",
+            "If that happens, you could work as a freelancer",
+            "If that happened, you could always work as a freelancer"
+          ],
+          "commonErrors": [
+            {
+              "id": "if-would-happen",
+              "match": "\\bif that would happen\\b",
+              "explanation_pt": "Depois de \"if\" não se usa \"would\": \"If that happened\".",
+              "correction_en": "If that happened, you could work as a freelancer."
+            },
+            {
+              "id": "as-freelance-a",
+              "match": "\\bwork like a freelancer\\b",
+              "explanation_pt": "\"Trabalhar como\" (profissão) é \"work as\".",
+              "correction_en": "You could work as a freelancer."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "True. Did you ever think about doing something like that?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que sim, e que queria ter feito isso quando era mais novo.",
+          "accepted": [
+            "Yes, and I wish I had done it when I was younger",
+            "Yes, I wish I'd done it when I was younger",
+            "I did, and I wish I had done it when I was younger",
+            "Yes, and I wish I'd done it when I was younger",
+            "Yes. I regret not doing it when I was younger",
+            "Yes, and I should have done it when I was younger"
+          ],
+          "commonErrors": [
+            {
+              "id": "wish-did-present",
+              "match": "\\bi wish i (do|did|have done) it\\b",
+              "explanation_pt": "Arrependimento do passado: \"I wish I had done it\".",
+              "correction_en": "I wish I had done it when I was younger."
+            },
+            {
+              "id": "more-young",
+              "match": "\\bmore young\\b",
+              "explanation_pt": "\"Mais novo\" é \"younger\".",
+              "correction_en": "I wish I had done it when I was younger."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Why didn't you?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que, se não tivesse conseguido aquele emprego, você teria ido.",
+          "accepted": [
+            "If I hadn't got that job, I would have gone",
+            "If I hadn't gotten that job, I would have gone",
+            "I would have gone if I hadn't got that job",
+            "I'd have gone if I hadn't gotten that job"
+          ],
+          "commonErrors": [
+            {
+              "id": "if-would-have",
+              "match": "\\bif (i|we|you|she|he|they) would have\\b",
+              "explanation_pt": "No terceiro condicional, depois de \"if\" vem \"had\" + particípio: \"If I had known...\", não \"would have\".",
+              "correction_en": "If I had known, I would have told you."
+            },
+            {
+              "id": "would-have-went",
+              "match": "\\bwould have went\\b",
+              "explanation_pt": "O particípio de \"go\" é \"gone\": \"would have gone\".",
+              "correction_en": "I would have gone if I hadn't got that job."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-04-prac-27",
+      "kind": "free_speak",
+      "instruction_pt": "Talk about a decision you would make differently today.",
+      "prompt_en": "Is there a decision in your life that you would make differently now? What would have happened?",
+      "guidelines_pt": [
+        "Describe the decision: \"A few years ago, I decided to...\"",
+        "Use the third conditional: \"If I had..., I would have...\"",
+        "Add a wish: \"I wish I had...\""
+      ]
+    }
   ]
 }

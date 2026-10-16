@@ -374,10 +374,100 @@
           ]
         },
         {
-          "id": "b1-01-conv-3",
-          "kind": "order",
-          "instruction_pt": "Coloque as palavras na ordem certa.",
-          "accepted": ["What was it like?"]
+          "id": "b1-01-conv-dialogue",
+          "kind": "dialogue",
+          "instruction_pt": "Converse com uma amiga sobre experiências. Responda com detalhes.",
+          "scene_pt": "Uma amiga pergunta se você já fez algo radical.",
+          "turns": [
+            {
+              "speaker": "partner",
+              "text": "Have you ever done anything really adventurous?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga que sim, que já fez rafting uma vez.",
+              "accepted": [
+                "Yes, I've been rafting once",
+                "Yes, I have. I went rafting once",
+                "Yes, I've done rafting once",
+                "Yeah, I went rafting once",
+                "Yes, I've gone rafting once",
+                "Yes, I tried rafting once"
+              ],
+              "commonErrors": [
+                {
+                  "id": "made-rafting",
+                  "match": "\\bmade rafting\\b",
+                  "explanation_pt": "\"Fazer\" uma atividade é \"go\" ou \"do\": \"I went rafting\", e não \"made\".",
+                  "correction_en": "Yes, I went rafting once."
+                },
+                {
+                  "id": "one-time",
+                  "match": "\\bone time\\b",
+                  "explanation_pt": "\"Uma vez\" é \"once\".",
+                  "correction_en": "Yes, I went rafting once."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Really? Where was that?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga que foi em Brotas, no ano passado.",
+              "accepted": [
+                "It was in Brotas last year",
+                "In Brotas, last year",
+                "I went to Brotas last year",
+                "We went to Brotas last year",
+                "Last year, in Brotas"
+              ],
+              "commonErrors": [
+                {
+                  "id": "have-been-last-year",
+                  "match": "\\bhave (been|gone)\\b.*\\blast year\\b",
+                  "explanation_pt": "Com \"last year\" use o passado simples: \"It was\" ou \"I went\".",
+                  "correction_en": "It was in Brotas last year."
+                },
+                {
+                  "id": "in-the-last-year",
+                  "match": "\\bin the last year\\b",
+                  "explanation_pt": "\"No ano passado\" é \"last year\", sem \"in the\". \"In the last year\" quer dizer \"nos últimos 12 meses\".",
+                  "correction_en": "It was in Brotas last year."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Were you scared?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga que um pouco no começo, mas que foi muito divertido.",
+              "accepted": [
+                "A little at first, but it was really fun",
+                "A bit at first, but it was so much fun",
+                "I was a little scared at first, but it was really fun",
+                "A little at the beginning, but it was a lot of fun",
+                "Yes, a little at first, but it was really fun"
+              ],
+              "commonErrors": [
+                {
+                  "id": "was-very-funny",
+                  "match": "\\bfunny\\b",
+                  "explanation_pt": "\"Funny\" é engraçado. Divertido é \"fun\".",
+                  "correction_en": "A little at first, but it was really fun."
+                },
+                {
+                  "id": "in-the-start",
+                  "match": "\\bin the start\\b",
+                  "explanation_pt": "\"No começo\" é \"at first\" ou \"at the beginning\".",
+                  "correction_en": "A little at first, but it was really fun."
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "b1-01-conv-free",
@@ -469,6 +559,512 @@
           ]
         }
       ]
+    }
+  ],
+  "practice": [
+    {
+      "id": "b1-01-prac-1",
+      "kind": "vocab",
+      "word_en": "bucket list",
+      "meaning_pt": "lista de coisas para fazer antes de morrer",
+      "example_en": "Swimming with dolphins is on my bucket list."
+    },
+    {
+      "id": "b1-01-prac-2",
+      "kind": "vocab",
+      "word_en": "to give it a go",
+      "meaning_pt": "tentar, arriscar fazer algo",
+      "example_en": "I've never surfed, but I'd love to give it a go."
+    },
+    {
+      "id": "b1-01-prac-3",
+      "kind": "repeat",
+      "instruction_pt": "Repita a pergunta, ligando \"have you\".",
+      "prompt": "Have you ever tried Indian food?",
+      "accepted": ["Have you ever tried Indian food"],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-01-prac-4",
+      "kind": "repeat",
+      "instruction_pt": "Repita. \"Been\" soa curto, como \"bin\".",
+      "prompt": "I've been to Chile, but I've never been to Peru.",
+      "accepted": [
+        "I've been to Chile, but I've never been to Peru",
+        "I've been to Chile but I have never been to Peru"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-01-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repita a frase.",
+      "prompt": "It was a once in a lifetime trip.",
+      "accepted": ["It was a once in a lifetime trip", "It was a once in a lifetime experience"],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-01-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repita. Em \"she's been\", o \"'s\" é \"has\".",
+      "prompt": "She's been abroad three times so far.",
+      "accepted": [
+        "She's been abroad three times so far",
+        "She has been abroad three times so far"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-01-prac-7",
+      "kind": "repeat",
+      "instruction_pt": "Repita a pergunta de detalhe.",
+      "prompt": "Who did you go with, and what was it like?",
+      "accepted": [
+        "Who did you go with, and what was it like",
+        "Who did you go with? What was it like"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-01-prac-8",
+      "kind": "repeat",
+      "instruction_pt": "Repita. \"Haven't\" tem o \"t\" bem leve no fim.",
+      "prompt": "I haven't been on a plane yet.",
+      "accepted": ["I haven't been on a plane yet", "I have not been on a plane yet"],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-01-prac-9",
+      "kind": "repeat",
+      "instruction_pt": "Repita. \"Ridden\" é o particípio de \"ride\".",
+      "prompt": "Have you ever ridden a horse?",
+      "accepted": ["Have you ever ridden a horse"],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-01-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu nunca morei no exterior.\"",
+      "accepted": [
+        "I've never lived abroad",
+        "I have never lived abroad",
+        "I've never lived in another country",
+        "I've never lived overseas",
+        "I never lived abroad"
+      ],
+      "commonErrors": [
+        {
+          "id": "in-the-abroad",
+          "match": "\\b(in|in the|at) abroad\\b",
+          "explanation_pt": "\"Abroad\" já significa \"no exterior\". Não use preposição antes: \"lived abroad\".",
+          "correction_en": "I've never lived abroad."
+        },
+        {
+          "id": "exterior",
+          "match": "\\bexterior\\b",
+          "explanation_pt": "\"Exterior\" em inglês é a parte de fora de algo. \"No exterior\" é \"abroad\".",
+          "correction_en": "I've never lived abroad."
+        }
+      ]
+    },
+    {
+      "id": "b1-01-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Você já andou de montanha-russa?\"",
+      "accepted": [
+        "Have you ever been on a roller coaster",
+        "Have you ever ridden a roller coaster",
+        "Have you ever gone on a roller coaster",
+        "Have you been on a roller coaster",
+        "Did you ever ride a roller coaster",
+        "Have you ever been on a rollercoaster"
+      ],
+      "commonErrors": [
+        {
+          "id": "walked-roller",
+          "match": "\\bwalk(ed)?\\b",
+          "explanation_pt": "\"Andar\" de brinquedo ou de cavalo não é \"walk\". Use \"ride\" ou \"be on\".",
+          "correction_en": "Have you ever been on a roller coaster?"
+        },
+        {
+          "id": "you-already",
+          "match": "^(you already|did you already)\\b",
+          "explanation_pt": "\"Você já...?\" sobre experiência de vida é \"Have you ever...?\", e não \"you already\".",
+          "correction_en": "Have you ever been on a roller coaster?"
+        }
+      ]
+    },
+    {
+      "id": "b1-01-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu já visitei quatro países até agora.\"",
+      "accepted": [
+        "I've visited four countries so far",
+        "I have visited four countries so far",
+        "I've already visited four countries",
+        "I've been to four countries so far",
+        "So far I've visited four countries",
+        "I've already been to four countries"
+      ],
+      "commonErrors": [
+        {
+          "id": "until-now",
+          "match": "\\buntil now\\b",
+          "explanation_pt": "\"Até agora\" com present perfect é \"so far\". \"Until now\" sugere que algo mudou agora.",
+          "correction_en": "I've visited four countries so far."
+        },
+        {
+          "id": "visited-past-sofar",
+          "match": "^i (already )?visited\\b",
+          "explanation_pt": "Com \"so far\" (até agora), use o present perfect: \"I've visited\".",
+          "correction_en": "I've visited four countries so far."
+        }
+      ]
+    },
+    {
+      "id": "b1-01-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Foi a primeira vez que eu vi neve.\"",
+      "accepted": [
+        "It was the first time I saw snow",
+        "It was the first time I had seen snow",
+        "It was the first time I'd seen snow",
+        "That was the first time I saw snow",
+        "It was my first time seeing snow",
+        "That was the first time I had seen snow"
+      ],
+      "commonErrors": [
+        {
+          "id": "was-first-time-no-it",
+          "match": "^was the first time\\b",
+          "explanation_pt": "Em inglês a frase precisa de sujeito: \"It was the first time...\".",
+          "correction_en": "It was the first time I saw snow."
+        },
+        {
+          "id": "saw-the-snow",
+          "match": "\\bsaw the snow\\b",
+          "explanation_pt": "Falando de neve em geral, não use \"the\": \"I saw snow\".",
+          "correction_en": "It was the first time I saw snow."
+        }
+      ]
+    },
+    {
+      "id": "b1-01-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu nunca fiz isso, mas eu gostaria de tentar.\"",
+      "accepted": [
+        "I've never done that, but I'd like to try",
+        "I have never done that, but I would like to try",
+        "I've never done it, but I'd like to try",
+        "I've never done that, but I'd love to try",
+        "I've never done that, but I'd like to give it a go",
+        "I've never done it, but I'd like to try it"
+      ],
+      "commonErrors": [
+        {
+          "id": "never-did-it-made",
+          "match": "\\bnever (made|make)\\b",
+          "explanation_pt": "\"Fazer\" uma atividade é \"do\" (\"done\"), e não \"make\".",
+          "correction_en": "I've never done that, but I'd like to try."
+        },
+        {
+          "id": "like-try-no-to",
+          "match": "\\bwould like try\\b",
+          "explanation_pt": "Depois de \"I'd like\" vem \"to\": \"I'd like to try\".",
+          "correction_en": "I've never done that, but I'd like to try."
+        }
+      ]
+    },
+    {
+      "id": "b1-01-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda que sim, e diga quando foi (no passado simples).",
+      "listen": "Have you ever been to a music festival?",
+      "accepted": [
+        "Yes, I have. I went to one last summer",
+        "Yes, I went to one last year",
+        "Yes, I have. I went to Rock in Rio in 2019",
+        "Yes, I've been to Lollapalooza",
+        "Yes, I have, I went last year",
+        "Yes, I went to one two years ago",
+        "Yeah, I went to one last summer"
+      ],
+      "commonErrors": [
+        {
+          "id": "have-went",
+          "match": "\\bhave went\\b",
+          "explanation_pt": "\"Went\" é passado simples; depois de \"have\" use \"been\" ou \"gone\". Ou diga só \"I went\".",
+          "correction_en": "Yes, I went to one last summer."
+        },
+        {
+          "id": "have-been-last",
+          "match": "\\bhave (been|gone)\\b.*\\b(last|ago)\\b",
+          "explanation_pt": "Com tempo definido (\"last summer\", \"two years ago\"), use o passado simples: \"I went\".",
+          "correction_en": "Yes, I went to one last summer."
+        }
+      ]
+    },
+    {
+      "id": "b1-01-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda que não, nunca.",
+      "listen": "Have you ever broken a bone?",
+      "accepted": [
+        "No, I haven't",
+        "No, never",
+        "No, I've never broken a bone",
+        "No, I have never broken anything",
+        "No, luckily I haven't",
+        "No, I haven't, luckily",
+        "Never"
+      ],
+      "commonErrors": [
+        {
+          "id": "no-i-didnt",
+          "match": "^no i (did not|do not)\\b",
+          "explanation_pt": "Para \"Have you ever...?\", a resposta curta é \"No, I haven't\".",
+          "correction_en": "No, I haven't."
+        },
+        {
+          "id": "never-broke",
+          "match": "\\bnever broke\\b",
+          "explanation_pt": "Depois de \"I've never\" vem o particípio: \"broken\", e não \"broke\".",
+          "correction_en": "No, I've never broken a bone."
+        }
+      ]
+    },
+    {
+      "id": "b1-01-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que foi incrível e que você faria de novo.",
+      "listen": "So what was it like?",
+      "accepted": [
+        "It was amazing. I'd do it again",
+        "It was amazing, I would do it again",
+        "It was incredible and I'd do it again",
+        "It was awesome. I'd love to do it again",
+        "It was amazing. I'd definitely do it again",
+        "Amazing, I'd do it again"
+      ],
+      "commonErrors": [
+        {
+          "id": "was-amazing-no-it",
+          "match": "^was (amazing|incredible|awesome)\\b",
+          "explanation_pt": "Falta o sujeito: \"It was amazing\".",
+          "correction_en": "It was amazing. I'd do it again."
+        },
+        {
+          "id": "make-again",
+          "match": "\\bmake it again\\b",
+          "explanation_pt": "\"Fazer de novo\" uma experiência é \"do it again\".",
+          "correction_en": "It was amazing. I'd do it again."
+        }
+      ]
+    },
+    {
+      "id": "b1-01-prac-18",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga quantas vezes você foi lá: duas vezes.",
+      "listen": "How many times have you been to the beach this year?",
+      "accepted": [
+        "Twice",
+        "I've been twice",
+        "I've been there twice",
+        "Twice so far",
+        "I've been twice so far",
+        "I've been to the beach twice this year"
+      ],
+      "commonErrors": [
+        {
+          "id": "two-times",
+          "match": "\\btwo times\\b",
+          "explanation_pt": "\"Two times\" se entende, mas o natural é \"twice\".",
+          "correction_en": "I've been twice so far."
+        },
+        {
+          "id": "i-went-twice-year",
+          "match": "^i have went\\b",
+          "explanation_pt": "\"Have went\" não existe; use \"I've been\".",
+          "correction_en": "I've been twice so far."
+        }
+      ]
+    },
+    {
+      "id": "b1-01-prac-19",
+      "kind": "dialogue",
+      "instruction_pt": "Converse com um colega sobre viagens. Responda às perguntas dele.",
+      "scene_pt": "No intervalo do trabalho, um colega pergunta sobre lugares que você já visitou.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Have you ever been abroad?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que sim, que já foi à Argentina.",
+          "accepted": [
+            "Yes, I've been to Argentina",
+            "Yes, I have. I've been to Argentina",
+            "Yeah, I've been to Argentina",
+            "Yes, I went to Argentina",
+            "Yes, I have, I went to Argentina",
+            "Yes, once. I went to Argentina"
+          ],
+          "commonErrors": [
+            {
+              "id": "i-know-argentina",
+              "match": "\\bi know argentina\\b",
+              "explanation_pt": "\"Conhecer um lugar\" é \"I've been to\", e não \"I know\".",
+              "correction_en": "Yes, I've been to Argentina."
+            },
+            {
+              "id": "i-been",
+              "match": "^(yes )?i been\\b",
+              "explanation_pt": "Falta o \"have\": \"I've been to Argentina\".",
+              "correction_en": "Yes, I've been to Argentina."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Oh, nice! When did you go?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que foi há dois anos, com a sua irmã.",
+          "accepted": [
+            "I went two years ago with my sister",
+            "Two years ago, with my sister",
+            "I went there two years ago with my sister",
+            "It was two years ago. I went with my sister",
+            "I went with my sister two years ago"
+          ],
+          "commonErrors": [
+            {
+              "id": "have-gone-ago",
+              "match": "\\bhave (been|gone|went)\\b.*\\bago\\b",
+              "explanation_pt": "Com \"ago\" use o passado simples: \"I went two years ago\".",
+              "correction_en": "I went two years ago with my sister."
+            },
+            {
+              "id": "before-two-years",
+              "match": "\\bbefore two years\\b|\\bthere is two years\\b",
+              "explanation_pt": "\"Há dois anos\" é \"two years ago\".",
+              "correction_en": "I went two years ago with my sister."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "What was it like?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que foi incrível e que vocês experimentaram muita comida nova.",
+          "accepted": [
+            "It was amazing. We tried a lot of new food",
+            "It was amazing and we tried lots of new food",
+            "It was incredible. We tried a lot of new food",
+            "It was awesome, we tried a lot of new food",
+            "It was amazing. We tried a lot of new dishes"
+          ],
+          "commonErrors": [
+            {
+              "id": "experimented-food",
+              "match": "\\bexperiment(ed)?\\b",
+              "explanation_pt": "\"Experimentar\" comida é \"try\" (\"tried\").",
+              "correction_en": "It was amazing. We tried a lot of new food."
+            },
+            {
+              "id": "was-no-it",
+              "match": "^was (amazing|incredible|awesome)\\b",
+              "explanation_pt": "Falta o sujeito: \"It was amazing\".",
+              "correction_en": "It was amazing. We tried a lot of new food."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Sounds great. Is there anywhere you've never been but really want to go?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que nunca foi ao Japão, mas que está na sua lista de desejos.",
+          "accepted": [
+            "I've never been to Japan, but it's on my bucket list",
+            "I have never been to Japan, but it is on my bucket list",
+            "I've never been to Japan. It's on my bucket list",
+            "Japan. I've never been there, but it's on my bucket list",
+            "I've never been to Japan, but I'd love to go"
+          ],
+          "commonErrors": [
+            {
+              "id": "never-went-japan",
+              "match": "\\bi never went to japan\\b",
+              "explanation_pt": "Para experiência de vida sem data, o natural é \"I've never been to Japan\".",
+              "correction_en": "I've never been to Japan, but it's on my bucket list."
+            },
+            {
+              "id": "never-know-japan",
+              "match": "\\bnever (know|knew|known) japan\\b",
+              "explanation_pt": "\"Nunca conheci o Japão\" é \"I've never been to Japan\".",
+              "correction_en": "I've never been to Japan, but it's on my bucket list."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-01-prac-20",
+      "kind": "free_speak",
+      "instruction_pt": "Fale sobre algo que você nunca fez, mas quer fazer.",
+      "prompt_en": "What's on your bucket list? Why do you want to do it?",
+      "guidelines_pt": [
+        "Use \"I've never... but I'd love to...\".",
+        "Explique por quê, com \"because\".",
+        "Diga quando você acha que vai fazer isso."
+      ]
+    },
+    {
+      "id": "b1-01-prac-21",
+      "kind": "choice",
+      "instruction_pt": "Qual frase está correta?",
+      "options": [
+        "Have you ever eaten octopus?",
+        "Did you ever ate octopus?",
+        "Have you ever ate octopus?"
+      ],
+      "answer": 0,
+      "explanation_pt": "Depois de \"have\" vem o particípio: \"eaten\". \"Ate\" é o passado simples."
+    },
+    {
+      "id": "b1-01-prac-22",
+      "kind": "choice",
+      "instruction_pt": "Complete: \"I ___ to Rio three times, but I ___ there last year.\"",
+      "options": ["have been / didn't go", "went / haven't been", "have gone / haven't gone"],
+      "answer": 0,
+      "explanation_pt": "Experiência sem data: \"I have been\". Com \"last year\" (tempo definido): passado simples, \"didn't go\"."
+    },
+    {
+      "id": "b1-01-prac-23",
+      "kind": "fill",
+      "instruction_pt": "Complete com o particípio de \"see\": \"I've never ___ a whale.\"",
+      "sentence": "I've never ___ a whale.",
+      "accepted": ["seen"],
+      "commonErrors": [
+        {
+          "id": "saw-participle",
+          "match": "^saw$",
+          "explanation_pt": "\"Saw\" é o passado simples. Depois de \"have\" use o particípio \"seen\".",
+          "correction_en": "I've never seen a whale."
+        }
+      ]
+    },
+    {
+      "id": "b1-01-prac-24",
+      "kind": "order",
+      "instruction_pt": "Coloque as palavras na ordem certa.",
+      "accepted": ["Have you ever met anyone famous?"]
     }
   ]
 }

@@ -506,5 +506,600 @@
         }
       ]
     }
+  ],
+  "practice": [
+    {
+      "id": "b2-09-prac-1",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "First of all, you need to create an account.",
+      "accepted": [
+        "First of all, you need to create an account.",
+        "First, you need to create an account."
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-09-prac-2",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "Once the form has been submitted, you'll get a confirmation email.",
+      "accepted": [
+        "Once the form has been submitted, you'll get a confirmation email.",
+        "Once the form is submitted, you'll get a confirmation email."
+      ],
+      "commonErrors": [
+        {
+          "id": "once-will",
+          "match": "\\bonce (it|you|the \\w+) will\\b",
+          "explanation_pt": "Depois de \"once\" (assim que) use o presente, não \"will\": \"once it's done\".",
+          "correction_en": "Once it's ready, you can start."
+        }
+      ]
+    },
+    {
+      "id": "b2-09-prac-3",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "Make sure you save your work before closing the program.",
+      "accepted": [
+        "Make sure you save your work before closing the program.",
+        "Make sure to save your work before closing the program."
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-09-prac-4",
+      "kind": "repeat",
+      "instruction_pt": "Repeat. Pay attention to the -ed endings.",
+      "prompt": "The beans are roasted, ground and then packed by hand.",
+      "accepted": ["The beans are roasted, ground and then packed by hand."],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-09-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "After that, the data is checked by our team.",
+      "accepted": [
+        "After that, the data is checked by our team.",
+        "After that, the data gets checked by our team."
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-09-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "Setting up the printer only takes a few minutes.",
+      "accepted": [
+        "Setting up the printer only takes a few minutes.",
+        "Setting up the printer just takes a few minutes."
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-09-prac-7",
+      "kind": "vocab",
+      "word_en": "to plug in",
+      "meaning_pt": "ligar na tomada",
+      "example_en": "Plug in the charger and wait for the green light."
+    },
+    {
+      "id": "b2-09-prac-8",
+      "kind": "vocab",
+      "word_en": "step by step",
+      "meaning_pt": "passo a passo",
+      "example_en": "I'll explain the whole process step by step."
+    },
+    {
+      "id": "b2-09-prac-9",
+      "kind": "vocab",
+      "word_en": "to be sent out",
+      "meaning_pt": "ser enviado (para várias pessoas ou lugares)",
+      "example_en": "The invoices are sent out at the end of every month."
+    },
+    {
+      "id": "b2-09-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Primeiro, você precisa baixar o aplicativo.\"",
+      "accepted": [
+        "First, you need to download the app",
+        "First of all, you need to download the app",
+        "First, you have to download the app",
+        "First, download the app",
+        "First of all, you have to download the application",
+        "To start with, you need to download the app"
+      ],
+      "commonErrors": [
+        {
+          "id": "low-the-app",
+          "match": "\\b(low|lower|put down) the app\\b",
+          "explanation_pt": "\"Baixar\" um aplicativo é \"download\".",
+          "correction_en": "First, you need to download the app."
+        },
+        {
+          "id": "precise",
+          "match": "\\byou precise\\b",
+          "explanation_pt": "\"Precisar\" é \"need\" ou \"have to\". \"Precise\" é adjetivo (exato).",
+          "correction_en": "First, you need to download the app."
+        }
+      ]
+    },
+    {
+      "id": "b2-09-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Assim que o pagamento for aprovado, o pedido é enviado.\"",
+      "accepted": [
+        "Once the payment is approved, the order is sent",
+        "Once the payment is approved, the order is shipped",
+        "Once the payment has been approved, the order is sent",
+        "As soon as the payment is approved, the order is sent",
+        "As soon as the payment is approved, the order is shipped",
+        "Once the payment is approved, the order gets sent",
+        "Once the payment is approved, the order is sent out",
+        "Once the payment goes through, the order is shipped"
+      ],
+      "commonErrors": [
+        {
+          "id": "once-will-be",
+          "match": "\\b(once|as soon as) the payment will\\b",
+          "explanation_pt": "Depois de \"once/as soon as\" use o presente: \"once the payment is approved\".",
+          "correction_en": "Once the payment is approved, the order is sent."
+        },
+        {
+          "id": "order-send",
+          "match": "\\bthe order (is )?send\\b",
+          "explanation_pt": "Na voz passiva use o particípio: \"is sent\".",
+          "correction_en": "Once the payment is approved, the order is sent."
+        }
+      ]
+    },
+    {
+      "id": "b2-09-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Certifique-se de que a máquina está desligada.\"",
+      "accepted": [
+        "Make sure the machine is off",
+        "Make sure the machine is turned off",
+        "Make sure that the machine is off",
+        "Make sure the machine is switched off",
+        "Make sure that the machine is turned off",
+        "Check that the machine is off",
+        "Make sure the machine is unplugged"
+      ],
+      "commonErrors": [
+        {
+          "id": "certify",
+          "match": "\\bcertify\\b",
+          "explanation_pt": "\"Certifique-se\" é \"make sure\". \"Certify\" é emitir um certificado.",
+          "correction_en": "Make sure the machine is off."
+        },
+        {
+          "id": "is-disconnected",
+          "match": "\\bis (desligated|disconnected)\\b",
+          "explanation_pt": "Para aparelho, \"desligado\" é \"off\" ou \"turned off\".",
+          "correction_en": "Make sure the machine is off."
+        }
+      ]
+    },
+    {
+      "id": "b2-09-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Os produtos são testados antes de serem vendidos.\"",
+      "accepted": [
+        "The products are tested before they are sold",
+        "The products are tested before being sold",
+        "Products are tested before they are sold",
+        "Products are tested before being sold",
+        "The products get tested before they are sold",
+        "The products are tested before they go on sale"
+      ],
+      "commonErrors": [
+        {
+          "id": "are-test",
+          "match": "\\bare test\\b",
+          "explanation_pt": "Na voz passiva use o particípio: \"are tested\".",
+          "correction_en": "The products are tested before they are sold."
+        },
+        {
+          "id": "before-of",
+          "match": "\\bbefore of\\b",
+          "explanation_pt": "\"Antes de\" é só \"before\".",
+          "correction_en": "The products are tested before being sold."
+        }
+      ]
+    },
+    {
+      "id": "b2-09-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Depois disso, você só precisa configurar sua senha.\"",
+      "accepted": [
+        "After that, you just need to set up your password",
+        "After that, you only need to set up your password",
+        "After that, you just need to create your password",
+        "After that, you just have to set up your password",
+        "Then you just need to set up your password",
+        "After that, all you need to do is set up your password",
+        "After that, you just need to set your password"
+      ],
+      "commonErrors": [
+        {
+          "id": "configure",
+          "match": "\\bconfigure\\b",
+          "explanation_pt": "\"Configure\" existe, mas no dia a dia o natural é \"set up\".",
+          "correction_en": "After that, you just need to set up your password."
+        },
+        {
+          "id": "after-this-of",
+          "match": "\\bafter of\\b",
+          "explanation_pt": "\"Depois disso\" é \"after that\".",
+          "correction_en": "After that, you just need to set up your password."
+        }
+      ]
+    },
+    {
+      "id": "b2-09-prac-15",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"O café é colhido à mão e depois secado ao sol.\"",
+      "accepted": [
+        "The coffee is picked by hand and then dried in the sun",
+        "The coffee is harvested by hand and then dried in the sun",
+        "Coffee is picked by hand and then dried in the sun",
+        "Coffee is harvested by hand and then dried in the sun",
+        "The coffee is hand-picked and then dried in the sun",
+        "The coffee is picked by hand and then sun-dried"
+      ],
+      "commonErrors": [
+        {
+          "id": "to-hand",
+          "match": "\\b(at|to|with) (the )?hand\\b",
+          "explanation_pt": "\"À mão\" é \"by hand\".",
+          "correction_en": "The coffee is picked by hand."
+        },
+        {
+          "id": "dry-passive",
+          "match": "\\bthen (dry|dryed)\\b",
+          "explanation_pt": "Passiva: \"dried\" (y vira i).",
+          "correction_en": "Then it is dried in the sun."
+        }
+      ]
+    },
+    {
+      "id": "b2-09-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and explain the first step.",
+      "listen": "How do I start using the new system?",
+      "accepted": [
+        "First, you need to log in with your email",
+        "First, log in with your company email",
+        "First of all, you need to create an account",
+        "First, you have to create a password",
+        "The first step is to log in with your email",
+        "First, you need to download the app",
+        "To start with, log in with your email"
+      ],
+      "commonErrors": [
+        {
+          "id": "firstly-of-all",
+          "match": "\\bfirstly of all\\b",
+          "explanation_pt": "Use \"first of all\" ou só \"first\".",
+          "correction_en": "First of all, you need to create an account."
+        },
+        {
+          "id": "login-with",
+          "match": "\\bdo the login\\b",
+          "explanation_pt": "\"Fazer login\" é \"log in\".",
+          "correction_en": "First, you need to log in with your email."
+        }
+      ]
+    },
+    {
+      "id": "b2-09-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and say what happens after the form is sent. Use the passive.",
+      "listen": "What happens after I send the application form?",
+      "accepted": [
+        "It's checked by our team",
+        "It's reviewed by our team",
+        "The form is checked by our team",
+        "Your application is reviewed by our team",
+        "After that, it's checked by our team",
+        "It's checked, and then you get an email",
+        "It's sent to the HR team"
+      ],
+      "commonErrors": [
+        {
+          "id": "is-check",
+          "match": "\\bis (check|review|send)\\b",
+          "explanation_pt": "Passiva: \"is checked\", \"is reviewed\", \"is sent\".",
+          "correction_en": "It's checked by our team."
+        },
+        {
+          "id": "for-our-team",
+          "match": "\\b(checked|reviewed) for our team\\b",
+          "explanation_pt": "O agente da passiva vem com \"by\": \"by our team\".",
+          "correction_en": "It's checked by our team."
+        }
+      ]
+    },
+    {
+      "id": "b2-09-prac-18",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and give a warning. Start with \"Make sure\".",
+      "listen": "I'm going to update the software on my laptop now.",
+      "accepted": [
+        "Make sure you save your files first",
+        "Make sure you back up your files first",
+        "Make sure your laptop is plugged in",
+        "Make sure the battery is charged",
+        "Make sure you have a backup",
+        "Make sure to save your work first"
+      ],
+      "commonErrors": [
+        {
+          "id": "make-sure-of",
+          "match": "\\bmake sure of save\\b",
+          "explanation_pt": "Use \"make sure you...\" ou \"make sure to...\".",
+          "correction_en": "Make sure you save your files first."
+        },
+        {
+          "id": "certify",
+          "match": "\\bcertify\\b",
+          "explanation_pt": "\"Certifique-se\" é \"make sure\".",
+          "correction_en": "Make sure you save your files first."
+        }
+      ]
+    },
+    {
+      "id": "b2-09-prac-19",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and explain how long it takes.",
+      "listen": "How long does it take to set up the new router?",
+      "accepted": [
+        "It only takes about ten minutes",
+        "It takes about ten minutes",
+        "About ten minutes",
+        "It's quick, about ten minutes",
+        "It takes around ten minutes to set it up",
+        "Setting it up takes about ten minutes"
+      ],
+      "commonErrors": [
+        {
+          "id": "delays",
+          "match": "\\bit (delays|lasts) about\\b",
+          "explanation_pt": "\"Leva (tempo)\" é \"it takes\".",
+          "correction_en": "It takes about ten minutes."
+        },
+        {
+          "id": "takes-to-set-up-it",
+          "match": "\\bset up it\\b",
+          "explanation_pt": "Com pronome, o \"it\" fica no meio: \"set it up\".",
+          "correction_en": "It takes about ten minutes to set it up."
+        }
+      ]
+    },
+    {
+      "id": "b2-09-prac-20",
+      "kind": "choice",
+      "instruction_pt": "Which word means \"assim que\"?",
+      "options": ["once", "one", "only"],
+      "answer": 0,
+      "explanation_pt": "\"Once\" também quer dizer \"uma vez\", mas no começo de uma oração significa \"assim que\"."
+    },
+    {
+      "id": "b2-09-prac-21",
+      "kind": "choice",
+      "instruction_pt": "Choose the correct passive sentence.",
+      "options": [
+        "The packages are delivered every morning.",
+        "The packages delivered every morning.",
+        "The packages are deliver every morning."
+      ],
+      "answer": 0,
+      "explanation_pt": "Voz passiva: verbo \"be\" + particípio (\"are delivered\")."
+    },
+    {
+      "id": "b2-09-prac-22",
+      "kind": "fill",
+      "instruction_pt": "Complete the sentence.",
+      "sentence": "___ the water boils, add the pasta.",
+      "accepted": ["Once", "When", "As soon as", "After"],
+      "commonErrors": [
+        {
+          "id": "since",
+          "match": "^(since|after that|until)$",
+          "explanation_pt": "\"Assim que\" é \"once\" ou \"as soon as\".",
+          "correction_en": "Once the water boils, add the pasta."
+        }
+      ]
+    },
+    {
+      "id": "b2-09-prac-23",
+      "kind": "fill",
+      "instruction_pt": "Complete the sentence.",
+      "sentence": "All the orders are ___ out before noon.",
+      "accepted": ["sent", "shipped"],
+      "commonErrors": [
+        {
+          "id": "send",
+          "match": "^(send|sended|sending)$",
+          "explanation_pt": "Passiva pede o particípio: \"sent\".",
+          "correction_en": "All the orders are sent out before noon."
+        }
+      ]
+    },
+    {
+      "id": "b2-09-prac-24",
+      "kind": "order",
+      "instruction_pt": "Put the words in order.",
+      "accepted": ["Once the form is approved you will receive a code"]
+    },
+    {
+      "id": "b2-09-prac-25",
+      "kind": "match",
+      "instruction_pt": "Match each expression to its meaning.",
+      "pairs": [
+        {
+          "en": "to set up",
+          "pt": "configurar, montar"
+        },
+        {
+          "en": "to make sure",
+          "pt": "certificar-se"
+        },
+        {
+          "en": "once",
+          "pt": "assim que"
+        },
+        {
+          "en": "to plug in",
+          "pt": "ligar na tomada"
+        },
+        {
+          "en": "step by step",
+          "pt": "passo a passo"
+        }
+      ]
+    },
+    {
+      "id": "b2-09-prac-26",
+      "kind": "dialogue",
+      "instruction_pt": "Role-play. Explain a process to a new colleague.",
+      "scene_pt": "A new colleague, Ben, starts today. You explain how to ask for a day off in your company.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Hi! Quick question: how do I ask for a day off here?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que primeiro ele precisa entrar no portal de RH.",
+          "accepted": [
+            "First, you need to log in to the HR portal",
+            "First, you have to log into the HR portal",
+            "First of all, you need to log in to the HR portal",
+            "First, log in to the HR portal",
+            "First, you need to go to the HR portal",
+            "First, you need to access the HR portal"
+          ],
+          "commonErrors": [
+            {
+              "id": "enter-portal",
+              "match": "\\benter (in )?(the|on the) hr\\b",
+              "explanation_pt": "Para sistemas, \"entrar\" é \"log in to\" ou \"go to\".",
+              "correction_en": "First, you need to log in to the HR portal."
+            },
+            {
+              "id": "rh",
+              "match": "\\b(rh|r h)\\b",
+              "explanation_pt": "Em inglês a sigla é \"HR\" (human resources).",
+              "correction_en": "First, you need to log in to the HR portal."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Okay. And then?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que depois ele preenche o formulário e escolhe a data.",
+          "accepted": [
+            "Then you fill in the form and choose the date",
+            "After that, you fill in the form and choose the date",
+            "Then you fill out the form and pick the date",
+            "After that, fill in the form and choose the date",
+            "Then you fill out the form and select the date",
+            "Next, you fill in the form and choose the date"
+          ],
+          "commonErrors": [
+            {
+              "id": "fill-the-form",
+              "match": "\\bfill the form\\b",
+              "explanation_pt": "\"Preencher um formulário\" é \"fill in\" ou \"fill out the form\".",
+              "correction_en": "Then you fill in the form and choose the date."
+            },
+            {
+              "id": "fill-up",
+              "match": "\\bfill up the form\\b",
+              "explanation_pt": "\"Fill up\" é encher (o tanque). Formulário é \"fill in\" ou \"fill out\".",
+              "correction_en": "Then you fill in the form."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Got it. How long does it take to get an answer?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que, assim que o pedido for enviado, ele é analisado pelo gestor em dois dias.",
+          "accepted": [
+            "Once the request is sent, it is reviewed by your manager within two days",
+            "Once it's submitted, your manager reviews it within two days",
+            "Once the request is sent, it's checked by your manager within two days",
+            "Once you send it, it's reviewed by your manager in two days",
+            "As soon as the request is sent, your manager reviews it within two days",
+            "Once it's sent, it's approved or rejected by your manager within two days"
+          ],
+          "commonErrors": [
+            {
+              "id": "once-will",
+              "match": "\\bonce (it|the request|you) will\\b",
+              "explanation_pt": "Depois de \"once\" use o presente: \"once it's sent\".",
+              "correction_en": "Once it's sent, it's reviewed by your manager."
+            },
+            {
+              "id": "reviewed-for",
+              "match": "\\b(reviewed|checked) for your manager\\b",
+              "explanation_pt": "Na passiva, quem faz a ação vem com \"by\".",
+              "correction_en": "It's reviewed by your manager."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Great. Anything else I should know?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga para ele se certificar de pedir com pelo menos uma semana de antecedência.",
+          "accepted": [
+            "Make sure you ask at least a week in advance",
+            "Make sure to ask at least one week in advance",
+            "Make sure you ask at least a week before",
+            "Just make sure you ask at least a week in advance",
+            "Make sure you send it at least a week in advance",
+            "Make sure you request it at least a week ahead"
+          ],
+          "commonErrors": [
+            {
+              "id": "in-minimum",
+              "match": "\\bin minimum\\b",
+              "explanation_pt": "\"Pelo menos\" é \"at least\".",
+              "correction_en": "Make sure you ask at least a week in advance."
+            },
+            {
+              "id": "with-antecedence",
+              "match": "\\bwith (a week of )?antecedence\\b",
+              "explanation_pt": "\"Com antecedência\" é \"in advance\".",
+              "correction_en": "Make sure you ask at least a week in advance."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-09-prac-27",
+      "kind": "free_speak",
+      "instruction_pt": "Explain how to do something you know well.",
+      "prompt_en": "Choose something you know how to do well, like a recipe, a work task or a sport. Explain it step by step.",
+      "guidelines_pt": [
+        "Use sequencers: \"First... Then... Once... Finally...\"",
+        "Use the passive: \"The ... is mixed / checked / sent...\"",
+        "Give a tip: \"Make sure you...\""
+      ]
+    }
   ]
 }

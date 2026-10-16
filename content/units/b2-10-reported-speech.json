@@ -516,5 +516,594 @@
         }
       ]
     }
+  ],
+  "practice": [
+    {
+      "id": "b2-10-prac-1",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "She told me she was moving to Lisbon next year.",
+      "accepted": ["She told me she was moving to Lisbon next year."],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-10-prac-2",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "He asked me if I could cover his shift on Saturday.",
+      "accepted": [
+        "He asked me if I could cover his shift on Saturday.",
+        "He asked me whether I could cover his shift on Saturday."
+      ],
+      "commonErrors": [
+        {
+          "id": "asked-if-inverted",
+          "match": "\\basked (me )?(if|whether|where|when|what|why|how) (do|does|did|is|are|can|was|were|will) (i|you|he|she|we|they)\\b",
+          "explanation_pt": "Na pergunta indireta a ordem é a de afirmação: \"asked if I was\", não \"asked if was I\".",
+          "correction_en": "He asked me if I was coming."
+        }
+      ]
+    },
+    {
+      "id": "b2-10-prac-3",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "My boss mentioned that the budget might be cut.",
+      "accepted": [
+        "My boss mentioned that the budget might be cut.",
+        "My boss mentioned the budget might be cut."
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-10-prac-4",
+      "kind": "repeat",
+      "instruction_pt": "Repeat. Stress \"warned\" and \"not\".",
+      "prompt": "They warned us not to take the night bus.",
+      "accepted": [
+        "They warned us not to take the night bus.",
+        "They warned us not to take the bus at night."
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-10-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "Paul admitted he had forgotten about the meeting.",
+      "accepted": [
+        "Paul admitted he had forgotten about the meeting.",
+        "Paul admitted that he'd forgotten about the meeting."
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-10-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "She wanted to know where I had bought my jacket.",
+      "accepted": [
+        "She wanted to know where I had bought my jacket.",
+        "She wanted to know where I bought my jacket."
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-10-prac-7",
+      "kind": "vocab",
+      "word_en": "to point out",
+      "meaning_pt": "observar, chamar a atenção para",
+      "example_en": "She pointed out that the price didn't include taxes."
+    },
+    {
+      "id": "b2-10-prac-8",
+      "kind": "vocab",
+      "word_en": "to deny",
+      "meaning_pt": "negar",
+      "example_en": "He denied taking the money."
+    },
+    {
+      "id": "b2-10-prac-9",
+      "kind": "vocab",
+      "word_en": "apparently",
+      "meaning_pt": "pelo visto, parece que",
+      "example_en": "Apparently, the office is closing early on Friday."
+    },
+    {
+      "id": "b2-10-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Ela me disse que estava cansada.\"",
+      "accepted": [
+        "She told me she was tired",
+        "She told me that she was tired",
+        "She said she was tired",
+        "She said that she was tired",
+        "She said to me that she was tired",
+        "She told me she's tired",
+        "She said she's tired"
+      ],
+      "commonErrors": [
+        {
+          "id": "said-me",
+          "match": "\\bsaid (me|him|her|us|them)\\b",
+          "explanation_pt": "\"Say\" não leva a pessoa logo depois. Use \"told me\" ou \"said to me\".",
+          "correction_en": "She told me she was busy."
+        },
+        {
+          "id": "told-that-me",
+          "match": "\\btold that\\b",
+          "explanation_pt": "\"Tell\" precisa da pessoa: \"told me that...\".",
+          "correction_en": "She told me she was tired."
+        }
+      ]
+    },
+    {
+      "id": "b2-10-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Ele me perguntou se eu gostava do meu trabalho.\"",
+      "accepted": [
+        "He asked me if I liked my job",
+        "He asked me whether I liked my job",
+        "He asked if I liked my job",
+        "He asked whether I liked my job",
+        "He asked me if I like my job",
+        "He asked me if I enjoyed my job"
+      ],
+      "commonErrors": [
+        {
+          "id": "asked-if-inverted",
+          "match": "\\basked (me )?(if|whether|where|when|what|why|how) (do|does|did|is|are|can|was|were|will) (i|you|he|she|we|they)\\b",
+          "explanation_pt": "Na pergunta indireta a ordem é a de afirmação: \"asked if I was\", não \"asked if was I\".",
+          "correction_en": "He asked me if I was coming."
+        },
+        {
+          "id": "asked-me-that-if",
+          "match": "\\basked (me )?that if\\b",
+          "explanation_pt": "Para perguntas sim/não use só \"if\" ou \"whether\".",
+          "correction_en": "He asked me if I liked my job."
+        }
+      ]
+    },
+    {
+      "id": "b2-10-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Meu médico me avisou para não comer muito sal.\"",
+      "accepted": [
+        "My doctor warned me not to eat too much salt",
+        "My doctor warned me not to eat a lot of salt",
+        "My doctor told me not to eat too much salt",
+        "My doctor told me not to eat a lot of salt",
+        "My doctor warned me against eating too much salt",
+        "My doctor advised me not to eat too much salt"
+      ],
+      "commonErrors": [
+        {
+          "id": "warned-to-not",
+          "match": "\\b(warned|told|advised) me to not\\b",
+          "explanation_pt": "Em ordens indiretas negativas o \"not\" vem antes do \"to\": \"warned me not to eat\".",
+          "correction_en": "My doctor warned me not to eat too much salt."
+        },
+        {
+          "id": "advised-avisar",
+          "match": "\\badvised me that\\b",
+          "explanation_pt": "\"Avisar para não fazer\" é \"warn someone not to\". \"Advise\" é aconselhar.",
+          "correction_en": "My doctor warned me not to eat too much salt."
+        }
+      ]
+    },
+    {
+      "id": "b2-10-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Ela admitiu que tinha cometido um erro.\"",
+      "accepted": [
+        "She admitted she had made a mistake",
+        "She admitted that she had made a mistake",
+        "She admitted making a mistake",
+        "She admitted to making a mistake",
+        "She admitted she made a mistake",
+        "She admitted that she made a mistake",
+        "She admitted having made a mistake"
+      ],
+      "commonErrors": [
+        {
+          "id": "did-a-mistake",
+          "match": "\\b(had )?(did|done) a mistake\\b",
+          "explanation_pt": "\"Cometer um erro\" é \"make a mistake\" (passado \"made\").",
+          "correction_en": "She admitted she had made a mistake."
+        },
+        {
+          "id": "admitted-to-make",
+          "match": "\\badmitted to make\\b",
+          "explanation_pt": "Depois de \"admit to\" o verbo vai com -ing: \"admitted to making\".",
+          "correction_en": "She admitted to making a mistake."
+        }
+      ]
+    },
+    {
+      "id": "b2-10-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Eles disseram que iam chegar atrasados.\"",
+      "accepted": [
+        "They said they would be late",
+        "They said that they would be late",
+        "They said they were going to be late",
+        "They said they were going to arrive late",
+        "They told us they would be late",
+        "They said they would arrive late"
+      ],
+      "commonErrors": [
+        {
+          "id": "said-me",
+          "match": "\\bsaid (me|him|her|us|them)\\b",
+          "explanation_pt": "\"Say\" não leva a pessoa logo depois. Use \"told me\" ou \"said to me\".",
+          "correction_en": "She told me she was busy."
+        },
+        {
+          "id": "arrive-delayed",
+          "match": "\\b(arrive|be) delayed\\b",
+          "explanation_pt": "Para pessoas, \"atrasado\" é \"late\". \"Delayed\" se usa para voos e trens.",
+          "correction_en": "They said they would be late."
+        }
+      ]
+    },
+    {
+      "id": "b2-10-prac-15",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Ela quis saber onde eu morava.\"",
+      "accepted": [
+        "She wanted to know where I lived",
+        "She asked me where I lived",
+        "She asked where I lived",
+        "She wanted to know where I live",
+        "She asked me where I live"
+      ],
+      "commonErrors": [
+        {
+          "id": "asked-if-inverted",
+          "match": "\\basked (me )?(if|whether|where|when|what|why|how) (do|does|did|is|are|can|was|were|will) (i|you|he|she|we|they)\\b",
+          "explanation_pt": "Na pergunta indireta a ordem é a de afirmação: \"asked if I was\", não \"asked if was I\".",
+          "correction_en": "He asked me if I was coming."
+        },
+        {
+          "id": "where-did-i-live",
+          "match": "\\bknow where did i\\b",
+          "explanation_pt": "Pergunta indireta: \"where I lived\", sem \"did\".",
+          "correction_en": "She wanted to know where I lived."
+        }
+      ]
+    },
+    {
+      "id": "b2-10-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and report what Anna said. Start with \"She said\".",
+      "listen": "Anna: \"I'm going to quit my job next month.\"",
+      "accepted": [
+        "She said she was going to quit her job the next month",
+        "She said she was going to quit her job next month",
+        "She said she's going to quit her job next month",
+        "She said that she was going to quit her job next month",
+        "She told me she was going to quit her job next month",
+        "She said she would quit her job the following month"
+      ],
+      "commonErrors": [
+        {
+          "id": "said-me",
+          "match": "\\bsaid (me|him|her|us|them)\\b",
+          "explanation_pt": "\"Say\" não leva a pessoa logo depois. Use \"told me\" ou \"said to me\".",
+          "correction_en": "She told me she was busy."
+        },
+        {
+          "id": "quit-my-job",
+          "match": "\\bquit my job\\b",
+          "explanation_pt": "No discurso indireto o possessivo muda: \"my\" vira \"her\".",
+          "correction_en": "She said she was going to quit her job next month."
+        }
+      ]
+    },
+    {
+      "id": "b2-10-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and report the question. Start with \"He asked me\".",
+      "listen": "Mark: \"Do you want to come to the concert?\"",
+      "accepted": [
+        "He asked me if I wanted to come to the concert",
+        "He asked me whether I wanted to come to the concert",
+        "He asked me if I wanted to go to the concert",
+        "He asked me if I want to come to the concert",
+        "He asked me whether I wanted to go to the concert with him",
+        "He asked me if I wanted to go to the concert with him"
+      ],
+      "commonErrors": [
+        {
+          "id": "asked-if-inverted",
+          "match": "\\basked (me )?(if|whether|where|when|what|why|how) (do|does|did|is|are|can|was|were|will) (i|you|he|she|we|they)\\b",
+          "explanation_pt": "Na pergunta indireta a ordem é a de afirmação: \"asked if I was\", não \"asked if was I\".",
+          "correction_en": "He asked me if I was coming."
+        },
+        {
+          "id": "asked-me-did-i",
+          "match": "\\basked me (do|did) i\\b",
+          "explanation_pt": "Use \"if\" ou \"whether\" e a ordem normal: \"asked me if I wanted\".",
+          "correction_en": "He asked me if I wanted to come to the concert."
+        }
+      ]
+    },
+    {
+      "id": "b2-10-prac-18",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and report the warning. Use \"warned\".",
+      "listen": "Neighbour: \"Don't leave your bike outside. It might get stolen.\"",
+      "accepted": [
+        "She warned me not to leave my bike outside",
+        "He warned me not to leave my bike outside",
+        "My neighbour warned me not to leave my bike outside",
+        "My neighbor warned me not to leave my bike outside because it might get stolen",
+        "She warned me not to leave my bike outside because it might get stolen",
+        "My neighbour warned me that my bike might get stolen"
+      ],
+      "commonErrors": [
+        {
+          "id": "warned-to-not",
+          "match": "\\bwarned me to not\\b",
+          "explanation_pt": "O \"not\" vem antes do \"to\": \"warned me not to\".",
+          "correction_en": "My neighbour warned me not to leave my bike outside."
+        },
+        {
+          "id": "warned-dont",
+          "match": "\\bwarned me do not\\b",
+          "explanation_pt": "No discurso indireto a ordem vira \"not to\" + verbo.",
+          "correction_en": "My neighbour warned me not to leave my bike outside."
+        }
+      ]
+    },
+    {
+      "id": "b2-10-prac-19",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and pass on the message to your colleague. Start with \"Apparently\".",
+      "listen": "Manager: \"The meeting tomorrow has been cancelled.\"",
+      "accepted": [
+        "Apparently, tomorrow's meeting has been cancelled",
+        "Apparently, the meeting tomorrow has been cancelled",
+        "Apparently, tomorrow's meeting was cancelled",
+        "Apparently, the meeting tomorrow was cancelled",
+        "Apparently, the meeting's been cancelled",
+        "Apparently, there is no meeting tomorrow"
+      ],
+      "commonErrors": [
+        {
+          "id": "apparently-will",
+          "match": "\\bapparently (the meeting )?is cancel\\b",
+          "explanation_pt": "Use o particípio: \"has been cancelled\".",
+          "correction_en": "Apparently, tomorrow's meeting has been cancelled."
+        },
+        {
+          "id": "appear-that",
+          "match": "^it appears that the meeting cancel",
+          "explanation_pt": "\"Cancel\" na passiva: \"has been cancelled\".",
+          "correction_en": "Apparently, tomorrow's meeting has been cancelled."
+        }
+      ]
+    },
+    {
+      "id": "b2-10-prac-20",
+      "kind": "choice",
+      "instruction_pt": "Choose the correct sentence.",
+      "options": ["He told me he was busy.", "He said me he was busy.", "He told he was busy."],
+      "answer": 0,
+      "explanation_pt": "\"Tell\" pede a pessoa (told me). \"Say\" não: \"He said he was busy\"."
+    },
+    {
+      "id": "b2-10-prac-21",
+      "kind": "choice",
+      "instruction_pt": "Choose the correct reported question.",
+      "options": [
+        "She asked where the station was.",
+        "She asked where was the station.",
+        "She asked where is the station."
+      ],
+      "answer": 0,
+      "explanation_pt": "Na pergunta indireta, a ordem é sujeito + verbo: \"where the station was\"."
+    },
+    {
+      "id": "b2-10-prac-22",
+      "kind": "fill",
+      "instruction_pt": "Complete the sentence.",
+      "sentence": "My sister ___ me she had a new boyfriend.",
+      "accepted": ["told"],
+      "commonErrors": [
+        {
+          "id": "said",
+          "match": "^(said|says|say|speak|spoke)$",
+          "explanation_pt": "Com a pessoa logo depois, use \"told\": \"told me\".",
+          "correction_en": "My sister told me she had a new boyfriend."
+        }
+      ]
+    },
+    {
+      "id": "b2-10-prac-23",
+      "kind": "fill",
+      "instruction_pt": "Complete the sentence.",
+      "sentence": "He asked me ___ I had finished the report.",
+      "accepted": ["if", "whether"],
+      "commonErrors": [
+        {
+          "id": "that",
+          "match": "^(that|do|did)$",
+          "explanation_pt": "Pergunta sim/não indireta: \"if\" ou \"whether\".",
+          "correction_en": "He asked me if I had finished the report."
+        }
+      ]
+    },
+    {
+      "id": "b2-10-prac-24",
+      "kind": "order",
+      "instruction_pt": "Put the words in order.",
+      "accepted": ["She asked me what time the train left"]
+    },
+    {
+      "id": "b2-10-prac-25",
+      "kind": "match",
+      "instruction_pt": "Match each expression to its meaning.",
+      "pairs": [
+        {
+          "en": "to warn",
+          "pt": "avisar (de um perigo)"
+        },
+        {
+          "en": "to admit",
+          "pt": "admitir"
+        },
+        {
+          "en": "to deny",
+          "pt": "negar"
+        },
+        {
+          "en": "to point out",
+          "pt": "observar, apontar"
+        },
+        {
+          "en": "apparently",
+          "pt": "pelo visto"
+        }
+      ]
+    },
+    {
+      "id": "b2-10-prac-26",
+      "kind": "dialogue",
+      "instruction_pt": "Role-play. Tell a friend what happened at work.",
+      "scene_pt": "Your friend Lucy asks about your day. Your manager gave you some news this morning.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Hey! How was work today? You look a bit worried."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que sua chefe te disse que a empresa estava mudando de escritório.",
+          "accepted": [
+            "My boss told me the company was moving offices",
+            "My boss told me that the company was moving offices",
+            "My manager told me the company was moving to a new office",
+            "My boss said the company was moving offices",
+            "My boss told me the company's moving offices",
+            "My manager said that the company was moving to another office"
+          ],
+          "commonErrors": [
+            {
+              "id": "said-me",
+              "match": "\\bsaid (me|him|her|us|them)\\b",
+              "explanation_pt": "\"Say\" não leva a pessoa logo depois. Use \"told me\" ou \"said to me\".",
+              "correction_en": "She told me she was busy."
+            },
+            {
+              "id": "chief",
+              "match": "\\bmy chief\\b",
+              "explanation_pt": "\"Chefe\" no trabalho é \"boss\" ou \"manager\".",
+              "correction_en": "My boss told me the company was moving offices."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Oh really? Where to?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que ela mencionou que seria do outro lado da cidade.",
+          "accepted": [
+            "She mentioned it would be on the other side of the city",
+            "She mentioned that it would be on the other side of town",
+            "She mentioned it was going to be on the other side of the city",
+            "She said it would be on the other side of town",
+            "She mentioned it would be across town",
+            "She mentioned it'd be on the other side of town"
+          ],
+          "commonErrors": [
+            {
+              "id": "mentioned-me",
+              "match": "\\bmentioned me\\b",
+              "explanation_pt": "\"Mention\" não leva a pessoa logo depois: \"she mentioned that...\" ou \"mentioned to me\".",
+              "correction_en": "She mentioned it would be on the other side of the city."
+            },
+            {
+              "id": "other-side-of-the-city-in",
+              "match": "\\bin the other side\\b",
+              "explanation_pt": "\"Do outro lado\" é \"on the other side\".",
+              "correction_en": "It would be on the other side of the city."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "That's far from your place! Did you ask her anything?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que perguntou se vocês podiam trabalhar de casa alguns dias.",
+          "accepted": [
+            "I asked if we could work from home some days",
+            "I asked her if we could work from home a few days a week",
+            "I asked her whether we could work from home some days",
+            "I asked if we could work from home on some days",
+            "I asked her if we could work remotely a few days a week"
+          ],
+          "commonErrors": [
+            {
+              "id": "asked-if-inverted",
+              "match": "\\basked (me )?(if|whether|where|when|what|why|how) (do|does|did|is|are|can|was|were|will) (i|you|he|she|we|they)\\b",
+              "explanation_pt": "Na pergunta indireta a ordem é a de afirmação: \"asked if I was\", não \"asked if was I\".",
+              "correction_en": "He asked me if I was coming."
+            },
+            {
+              "id": "asked-that-could",
+              "match": "\\basked (her )?that we could\\b",
+              "explanation_pt": "Para perguntas sim/não: \"asked if\" ou \"asked whether\".",
+              "correction_en": "I asked her if we could work from home some days."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "And what did she say?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que ela admitiu que ainda não tinha pensado nisso.",
+          "accepted": [
+            "She admitted she hadn't thought about it yet",
+            "She admitted that she hadn't thought about it yet",
+            "She admitted she hadn't thought about that yet",
+            "She admitted she hadn't thought of it yet",
+            "She admitted she didn't think about it yet",
+            "She admitted she hadn't considered it yet"
+          ],
+          "commonErrors": [
+            {
+              "id": "thought-in-it",
+              "match": "\\bthought in (it|that)\\b",
+              "explanation_pt": "\"Pensar em algo\" é \"think about\" ou \"think of\".",
+              "correction_en": "She admitted she hadn't thought about it yet."
+            },
+            {
+              "id": "admitted-me",
+              "match": "\\badmitted me\\b",
+              "explanation_pt": "\"Admit\" não leva a pessoa logo depois.",
+              "correction_en": "She admitted she hadn't thought about it yet."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-10-prac-27",
+      "kind": "free_speak",
+      "instruction_pt": "Tell someone about a conversation you had recently.",
+      "prompt_en": "Think about an interesting conversation you had this week. What did the other person say and ask you?",
+      "guidelines_pt": [
+        "Report statements: \"She told me that...\"",
+        "Report questions: \"He asked me if... / where...\"",
+        "Use other verbs: \"mentioned\", \"warned\", \"admitted\""
+      ]
+    }
   ]
 }

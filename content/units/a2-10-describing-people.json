@@ -125,11 +125,26 @@
           "kind": "match",
           "instruction_pt": "Ligue cada palavra ao seu significado.",
           "pairs": [
-            { "en": "shy", "pt": "tímido" },
-            { "en": "beard", "pt": "barba" },
-            { "en": "slim", "pt": "magro (elogio)" },
-            { "en": "bald", "pt": "careca" },
-            { "en": "funny", "pt": "engraçado" }
+            {
+              "en": "shy",
+              "pt": "tímido"
+            },
+            {
+              "en": "beard",
+              "pt": "barba"
+            },
+            {
+              "en": "slim",
+              "pt": "magro (elogio)"
+            },
+            {
+              "en": "bald",
+              "pt": "careca"
+            },
+            {
+              "en": "funny",
+              "pt": "engraçado"
+            }
           ]
         },
         {
@@ -479,6 +494,539 @@
           ],
           "commonErrors": []
         }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "id": "a2-10-prac-1",
+      "kind": "vocab",
+      "word_en": "shy",
+      "meaning_pt": "tímido",
+      "example_en": "My son is a bit shy with new people."
+    },
+    {
+      "id": "a2-10-prac-2",
+      "kind": "vocab",
+      "word_en": "beard",
+      "meaning_pt": "barba",
+      "example_en": "My uncle has a long gray beard."
+    },
+    {
+      "id": "a2-10-prac-3",
+      "kind": "vocab",
+      "word_en": "in his twenties",
+      "meaning_pt": "na casa dos vinte anos",
+      "example_en": "Our new teacher is in his twenties."
+    },
+    {
+      "id": "a2-10-prac-4",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "My best friend has curly red hair.",
+      "accepted": ["My best friend has curly red hair."],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-10-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "She's really kind and always helps people.",
+      "accepted": ["She's really kind and always helps people."],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-10-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "He's quite tall and wears glasses.",
+      "accepted": ["He's quite tall and wears glasses."],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-10-prac-7",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "What does your brother look like?",
+      "accepted": ["What does your brother look like?"],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-10-prac-8",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "My grandmother is short and has gray hair.",
+      "accepted": ["My grandmother is short and has gray hair."],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-10-prac-9",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Ela tem cabelo loiro e liso.\"",
+      "accepted": [
+        "She has straight blond hair",
+        "She has straight blonde hair",
+        "She's got straight blond hair",
+        "She has blond, straight hair",
+        "She's got straight blonde hair",
+        "Her hair is blond and straight"
+      ],
+      "commonErrors": [
+        {
+          "id": "hair-order",
+          "match": "\\bhair (long|short|curly|straight|dark|blond|blonde|black|brown|red)\\b",
+          "explanation_pt": "O adjetivo vem antes do substantivo: \"long hair\", \"curly hair\".",
+          "correction_en": "She has straight blond hair."
+        },
+        {
+          "id": "hairs",
+          "match": "\\bhairs\\b",
+          "explanation_pt": "\"Cabelo\" (todo) é incontável: \"hair\", sem \"s\".",
+          "correction_en": "She has straight blond hair."
+        }
+      ]
+    },
+    {
+      "id": "a2-10-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Meu irmão é alto e magro.\"",
+      "accepted": [
+        "My brother is tall and slim",
+        "My brother is tall and thin",
+        "My brother's tall and slim",
+        "My brother is tall and skinny",
+        "My brother's tall and thin"
+      ],
+      "commonErrors": [
+        {
+          "id": "high",
+          "match": "\\bhigh\\b",
+          "explanation_pt": "Para pessoas, \"alto\" é \"tall\". \"High\" é para coisas, como montanhas.",
+          "correction_en": "My brother is tall and slim."
+        },
+        {
+          "id": "magro-lean",
+          "match": "\\b(lean|meager)\\b",
+          "explanation_pt": "Magro é \"slim\" ou \"thin\".",
+          "correction_en": "My brother is tall and slim."
+        }
+      ]
+    },
+    {
+      "id": "a2-10-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Como é a sua chefe? (personalidade)\"",
+      "accepted": [
+        "What's your boss like?",
+        "What is your boss like?",
+        "What's your boss like as a person?",
+        "What kind of person is your boss?",
+        "How is your boss as a person?"
+      ],
+      "commonErrors": [
+        {
+          "id": "how-is-like",
+          "match": "^how is your boss like\\b",
+          "explanation_pt": "A pergunta é \"What's your boss like?\", sem \"how\".",
+          "correction_en": "What's your boss like?"
+        },
+        {
+          "id": "look-like",
+          "match": "\\blook like\\b",
+          "explanation_pt": "\"What does she look like?\" pergunta sobre a aparência. Para personalidade: \"What's she like?\".",
+          "correction_en": "What's your boss like?"
+        }
+      ]
+    },
+    {
+      "id": "a2-10-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Ele é muito engraçado e extrovertido.\"",
+      "accepted": [
+        "He's very funny and outgoing",
+        "He is very funny and outgoing",
+        "He's really funny and outgoing",
+        "He's so funny and outgoing",
+        "He's very funny and very outgoing",
+        "He's really funny and sociable"
+      ],
+      "commonErrors": [
+        {
+          "id": "funny-fun",
+          "match": "\\bvery fun\\b",
+          "explanation_pt": "\"Engraçado\" é \"funny\". \"Fun\" é divertido (uma atividade).",
+          "correction_en": "He's very funny and outgoing."
+        },
+        {
+          "id": "extrovert",
+          "match": "\\bextroverted\\b",
+          "explanation_pt": "O mais comum em inglês é \"outgoing\".",
+          "correction_en": "He's very funny and outgoing."
+        }
+      ]
+    },
+    {
+      "id": "a2-10-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Ela tem uns trinta anos.\"",
+      "accepted": [
+        "She's about thirty",
+        "She is about thirty",
+        "She's around thirty",
+        "She's in her thirties",
+        "She's about thirty years old",
+        "She's thirty or so"
+      ],
+      "commonErrors": [
+        {
+          "id": "has-years",
+          "match": "\\b(has|have) (about |around )?(twenty|thirty|forty|fifty|sixty|\\w+ty) (\\w+ )?years\\b",
+          "explanation_pt": "Idade usa \"be\": \"She's about forty\", \"He's thirty years old\".",
+          "correction_en": "She's about thirty."
+        }
+      ]
+    },
+    {
+      "id": "a2-10-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"O meu pai é muito calmo e paciente.\"",
+      "accepted": [
+        "My dad is very calm and patient",
+        "My father is very calm and patient",
+        "My dad's very calm and patient",
+        "My father is really calm and patient",
+        "My dad is really calm and patient",
+        "My dad is so calm and patient"
+      ],
+      "commonErrors": [
+        {
+          "id": "pacient",
+          "match": "\\bpacient\\b",
+          "explanation_pt": "Paciente (adjetivo) é \"patient\".",
+          "correction_en": "My dad is very calm and patient."
+        },
+        {
+          "id": "tranquil",
+          "match": "\\btranquil\\b",
+          "explanation_pt": "O natural é \"calm\" ou \"relaxed\".",
+          "correction_en": "My dad is very calm and patient."
+        }
+      ]
+    },
+    {
+      "id": "a2-10-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que ela tem cabelo cacheado e olhos castanhos.",
+      "listen": "What does your best friend look like?",
+      "accepted": [
+        "She has curly hair and brown eyes",
+        "She's got curly hair and brown eyes",
+        "She has curly hair and dark eyes",
+        "Curly hair and brown eyes",
+        "She has curly brown hair and brown eyes",
+        "She has brown eyes and curly hair"
+      ],
+      "commonErrors": [
+        {
+          "id": "hair-order",
+          "match": "\\bhair (long|short|curly|straight|dark|blond|blonde|black|brown|red)\\b",
+          "explanation_pt": "O adjetivo vem antes do substantivo: \"long hair\", \"curly hair\".",
+          "correction_en": "She has curly hair and brown eyes."
+        },
+        {
+          "id": "hairs",
+          "match": "\\bhairs\\b",
+          "explanation_pt": "\"Cabelo\" (todo) é incontável: \"hair\", sem \"s\".",
+          "correction_en": "She has curly hair and brown eyes."
+        },
+        {
+          "id": "eyes-brown",
+          "match": "\\beyes brown\\b",
+          "explanation_pt": "Adjetivo antes: \"brown eyes\".",
+          "correction_en": "She has curly hair and brown eyes."
+        }
+      ]
+    },
+    {
+      "id": "a2-10-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que ele é muito simpático, mas um pouco tímido.",
+      "listen": "What's your neighbor like?",
+      "accepted": [
+        "He's very nice, but a bit shy",
+        "He's really nice but a little shy",
+        "He's very friendly, but a bit shy",
+        "He's nice, but a bit shy",
+        "He's very nice but a little bit shy",
+        "He's really friendly, but a bit shy"
+      ],
+      "commonErrors": [
+        {
+          "id": "sympathetic",
+          "match": "\\bsympathetic\\b",
+          "explanation_pt": "\"Simpático\" é \"nice\" ou \"friendly\". \"Sympathetic\" é compreensivo.",
+          "correction_en": "He's very nice, but a bit shy."
+        }
+      ]
+    },
+    {
+      "id": "a2-10-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que ele tem uns oitenta anos.",
+      "listen": "How old is your grandfather?",
+      "accepted": [
+        "He's about eighty",
+        "He is about eighty",
+        "He's around eighty",
+        "He's in his eighties",
+        "About eighty",
+        "He's about eighty years old"
+      ],
+      "commonErrors": [
+        {
+          "id": "has-years",
+          "match": "\\b(has|have) (about |around )?(twenty|thirty|forty|fifty|sixty|\\w+ty) (\\w+ )?years\\b",
+          "explanation_pt": "Idade usa \"be\": \"She's about forty\", \"He's thirty years old\".",
+          "correction_en": "He's about eighty."
+        },
+        {
+          "id": "has-eighty",
+          "match": "\\bhas (about )?eighty\\b",
+          "explanation_pt": "Idade usa \"be\": \"He's about eighty\".",
+          "correction_en": "He's about eighty."
+        }
+      ]
+    },
+    {
+      "id": "a2-10-prac-18",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que é parecido com a sua mãe.",
+      "listen": "Who do you look like in your family?",
+      "accepted": [
+        "I look like my mother",
+        "I look like my mom",
+        "I take after my mother",
+        "I look like my mum",
+        "My mother",
+        "I look a lot like my mom"
+      ],
+      "commonErrors": [
+        {
+          "id": "seem-with",
+          "match": "\\b(seem|look) with\\b|\\blook like with\\b",
+          "explanation_pt": "\"Parecido com\" (aparência) é \"look like\": \"I look like my mother\".",
+          "correction_en": "I look like my mother."
+        },
+        {
+          "id": "am-like",
+          "match": "^i am like my\\b",
+          "explanation_pt": "Para aparência, \"I look like my mother\".",
+          "correction_en": "I look like my mother."
+        }
+      ]
+    },
+    {
+      "id": "a2-10-prac-19",
+      "kind": "fill",
+      "instruction_pt": "Complete a pergunta sobre a personalidade.",
+      "sentence": "What is your sister ___?",
+      "accepted": ["like"],
+      "commonErrors": [
+        {
+          "id": "look-like",
+          "match": "^(look like|looks like|as|how)$",
+          "explanation_pt": "Para personalidade: \"What is she like?\".",
+          "correction_en": "like."
+        }
+      ]
+    },
+    {
+      "id": "a2-10-prac-20",
+      "kind": "fill",
+      "instruction_pt": "Complete com o verbo certo.",
+      "sentence": "He ___ short dark hair and a beard.",
+      "accepted": ["has", "has got"],
+      "commonErrors": [
+        {
+          "id": "have-is",
+          "match": "^(have|is|are)$",
+          "explanation_pt": "Com \"he\" use \"has\": \"He has short dark hair\".",
+          "correction_en": "has."
+        }
+      ]
+    },
+    {
+      "id": "a2-10-prac-21",
+      "kind": "choice",
+      "instruction_pt": "\"What does he look like?\" pergunta sobre:",
+      "options": ["A aparência.", "Do que ele gosta.", "A personalidade."],
+      "answer": 0,
+      "explanation_pt": "\"Look like\" é a aparência física. Para personalidade: \"What is he like?\"."
+    },
+    {
+      "id": "a2-10-prac-22",
+      "kind": "choice",
+      "instruction_pt": "Qual frase está certa?",
+      "options": [
+        "She has long black hair.",
+        "She has hair long black.",
+        "She has long black hairs."
+      ],
+      "answer": 0,
+      "explanation_pt": "Adjetivos vêm antes de \"hair\", e \"hair\" fica sem \"s\"."
+    },
+    {
+      "id": "a2-10-prac-23",
+      "kind": "match",
+      "instruction_pt": "Ligue cada palavra ao seu significado.",
+      "pairs": [
+        {
+          "en": "shy",
+          "pt": "tímido"
+        },
+        {
+          "en": "bald",
+          "pt": "careca"
+        },
+        {
+          "en": "kind",
+          "pt": "gentil"
+        },
+        {
+          "en": "beard",
+          "pt": "barba"
+        },
+        {
+          "en": "slim",
+          "pt": "magro"
+        }
+      ]
+    },
+    {
+      "id": "a2-10-prac-24",
+      "kind": "order",
+      "instruction_pt": "Coloque as palavras na ordem certa para formar a frase.",
+      "accepted": ["My aunt is short and very funny"]
+    },
+    {
+      "id": "a2-10-prac-25",
+      "kind": "dialogue",
+      "instruction_pt": "Converse: responda a cada fala seguindo a dica.",
+      "scene_pt": "Você vai buscar uma amiga da Sam no aeroporto, mas não a conhece. A Sam liga para combinar.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Thanks for picking up my friend Lisa today!"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Pergunte como ela é (aparência).",
+          "accepted": [
+            "What does she look like?",
+            "What does Lisa look like?",
+            "No problem. What does she look like?",
+            "Sure. What does Lisa look like?",
+            "How will I recognize her?"
+          ],
+          "commonErrors": [
+            {
+              "id": "how-look",
+              "match": "^how does she look like\\b|\\bhow (is|does) (she|lisa) look like\\b",
+              "explanation_pt": "A pergunta é \"What does she look like?\", sem \"how\".",
+              "correction_en": "What does she look like?"
+            },
+            {
+              "id": "what-like",
+              "match": "^what is she like$",
+              "explanation_pt": "Essa pergunta é sobre a personalidade. Para aparência use \"What does she look like?\".",
+              "correction_en": "What does she look like?"
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "She's tall, with short curly hair. She usually wears glasses."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Pergunte quantos anos ela tem, mais ou menos.",
+          "accepted": [
+            "How old is she, more or less?",
+            "How old is she?",
+            "About how old is she?",
+            "How old is she, roughly?",
+            "And how old is she?"
+          ],
+          "commonErrors": [
+            {
+              "id": "how-many-years",
+              "match": "\\bhow many years (she has|does she have)\\b",
+              "explanation_pt": "Para idade use \"How old is she?\".",
+              "correction_en": "How old is she, more or less?"
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "She's in her thirties. And she's really friendly, so don't worry!"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que vai levar uma placa com o nome dela.",
+          "accepted": [
+            "I'll take a sign with her name",
+            "I'll bring a sign with her name on it",
+            "I'll bring a sign with her name",
+            "I'll have a sign with her name",
+            "I'm going to take a sign with her name"
+          ],
+          "commonErrors": [
+            {
+              "id": "plate",
+              "match": "\\b(plate|plaque)\\b",
+              "explanation_pt": "Placa com nome é \"sign\".",
+              "correction_en": "I'll take a sign with her name."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Great idea. Her flight lands at six."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que vai estar lá às cinco e meia.",
+          "accepted": [
+            "I'll be there at five thirty",
+            "I'll be there at half past five",
+            "OK, I'll be there at five thirty",
+            "I'll get there at five thirty",
+            "No problem. I'll be there at half past five"
+          ],
+          "commonErrors": [
+            {
+              "id": "in-five",
+              "match": "\\b(in|on) (five|half)\\b",
+              "explanation_pt": "Para horas use \"at\".",
+              "correction_en": "I'll be there at five thirty."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Thank you so much!"
+        }
+      ]
+    },
+    {
+      "id": "a2-10-prac-26",
+      "kind": "free_speak",
+      "instruction_pt": "Descreva para a Sam alguém da sua família: aparência e personalidade.",
+      "prompt_en": "Tell me about someone in your family. What do they look like, and what are they like?",
+      "guidelines_pt": [
+        "Diga a aparência: altura, cabelo, olhos (\"She's short and has dark hair\").",
+        "Diga a personalidade com 2 adjetivos: \"funny\", \"kind\", \"shy\".",
+        "Diga com quem você se parece: \"I look like my...\"."
       ]
     }
   ]

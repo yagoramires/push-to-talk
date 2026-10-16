@@ -379,10 +379,126 @@
           ]
         },
         {
-          "id": "a1-08-conv-3",
-          "kind": "order",
-          "instruction_pt": "Coloque as palavras na ordem certa para formar a pergunta.",
-          "accepted": ["What time does the movie start"]
+          "id": "a1-08-conv-dialogue",
+          "kind": "dialogue",
+          "instruction_pt": "Converse: ouça cada fala e responda em inglês.",
+          "scene_pt": "Você combina um encontro com um colega de curso.",
+          "turns": [
+            {
+              "speaker": "partner",
+              "text": "Let's study together this week. Are you free on Wednesday?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga que não, mas está livre na quinta.",
+              "accepted": [
+                "No, I'm not. But I'm free on Thursday",
+                "No, but I'm free on Thursday",
+                "No, but I am free on Thursday",
+                "Sorry, no. I'm free on Thursday",
+                "No, sorry. Thursday is good for me",
+                "Not on Wednesday, but I'm free on Thursday",
+                "No, I'm not, but Thursday is OK"
+              ],
+              "commonErrors": [
+                {
+                  "id": "in-day",
+                  "match": "\\b(in|at) (monday|tuesday|wednesday|thursday|friday|saturday|sunday)\\b",
+                  "explanation_pt": "Com dias da semana use \"on\": \"on Monday\".",
+                  "correction_en": "I'm free on Thursday."
+                },
+                {
+                  "id": "im-free-no-be",
+                  "match": "\\bi free\\b",
+                  "explanation_pt": "Falta o verbo: \"I'm free\".",
+                  "correction_en": "I'm free on Thursday."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Thursday is good. What time?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Sugira às 7 da noite.",
+              "accepted": [
+                "At seven in the evening",
+                "At seven o'clock",
+                "At 7 pm",
+                "At seven pm",
+                "Seven pm?",
+                "How about seven o'clock?",
+                "At seven?",
+                "What about seven in the evening?",
+                "Let's meet at seven"
+              ],
+              "commonErrors": [
+                {
+                  "id": "in-hour",
+                  "match": "\\b(in|on) (one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)( o clock)?$",
+                  "explanation_pt": "Com horas use \"at\": \"at seven\".",
+                  "correction_en": "At seven in the evening."
+                },
+                {
+                  "id": "hours",
+                  "match": "\\b(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve) hours\\b",
+                  "explanation_pt": "Para dizer a hora não use \"hours\": \"It's seven\" ou \"seven o'clock\".",
+                  "correction_en": "At seven in the evening."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Perfect. Where do you want to meet?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Sugira a biblioteca.",
+              "accepted": [
+                "At the library",
+                "In the library",
+                "Let's meet at the library",
+                "The library?",
+                "How about the library?",
+                "What about the library?",
+                "Let's meet in the library"
+              ],
+              "commonErrors": [
+                {
+                  "id": "in-the-bookstore",
+                  "match": "\\blibrary store\\b|\\bbookstore\\b",
+                  "explanation_pt": "Biblioteca é \"library\". \"Bookstore\" é livraria.",
+                  "correction_en": "At the library."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Great. See you on Thursday at seven!"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Confirme e se despeça.",
+              "accepted": [
+                "OK, see you then!",
+                "Great, see you on Thursday!",
+                "See you on Thursday!",
+                "OK, see you!",
+                "See you then. Bye!",
+                "Perfect, see you Thursday!",
+                "Bye! See you on Thursday at seven"
+              ],
+              "commonErrors": [
+                {
+                  "id": "in-day",
+                  "match": "\\b(in|at) (monday|tuesday|wednesday|thursday|friday|saturday|sunday)\\b",
+                  "explanation_pt": "Com dias da semana use \"on\": \"on Monday\".",
+                  "correction_en": "See you on Thursday!"
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "a1-08-conv-free",
@@ -469,6 +585,569 @@
             "See you Monday at nine"
           ],
           "commonErrors": []
+        }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "id": "a1-08-prac-1",
+      "kind": "dialogue",
+      "instruction_pt": "Converse: ouça cada fala e responda em inglês.",
+      "scene_pt": "Você liga para marcar um corte de cabelo no salão.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Good morning, Style Salon. How can I help you?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que quer marcar um horário.",
+          "accepted": [
+            "I'd like to make an appointment, please",
+            "I would like to make an appointment",
+            "Can I make an appointment, please?",
+            "I'd like to book an appointment",
+            "I want to make an appointment, please",
+            "Can I book a haircut, please?",
+            "I'd like to book a haircut, please"
+          ],
+          "commonErrors": [
+            {
+              "id": "mark-hour",
+              "match": "\\bmark (a|an) (hour|time)\\b",
+              "explanation_pt": "\"Marcar um horário\" é \"make an appointment\" ou \"book\".",
+              "correction_en": "I'd like to make an appointment, please."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Sure. What day is good for you?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga sábado de manhã.",
+          "accepted": [
+            "Saturday morning",
+            "On Saturday morning",
+            "Saturday morning, please",
+            "Is Saturday morning OK?",
+            "Saturday in the morning",
+            "On Saturday in the morning",
+            "How about Saturday morning?"
+          ],
+          "commonErrors": [
+            {
+              "id": "in-day",
+              "match": "\\b(in|at) (monday|tuesday|wednesday|thursday|friday|saturday|sunday)\\b",
+              "explanation_pt": "Com dias da semana use \"on\": \"on Monday\".",
+              "correction_en": "On Saturday morning."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "We have ten fifteen or eleven thirty."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Escolha 11h30.",
+          "accepted": [
+            "Eleven thirty, please",
+            "Eleven thirty",
+            "At eleven thirty",
+            "Half past eleven, please",
+            "Eleven thirty is good",
+            "11:30, please",
+            "Eleven thirty is perfect"
+          ],
+          "commonErrors": [
+            {
+              "id": "in-hour",
+              "match": "\\b(in|on) (one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)( o clock)?$",
+              "explanation_pt": "Com horas use \"at\": \"at seven\".",
+              "correction_en": "At eleven thirty."
+            },
+            {
+              "id": "eleven-and-half",
+              "match": "\\beleven and (a )?half\\b",
+              "explanation_pt": "\"Onze e meia\" é \"eleven thirty\" ou \"half past eleven\".",
+              "correction_en": "Eleven thirty, please."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "OK. Saturday at eleven thirty. What's your name?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga seu nome (use \"Carla Souza\").",
+          "accepted": [
+            "It's Carla Souza",
+            "Carla Souza",
+            "My name is Carla Souza",
+            "My name's Carla Souza",
+            "Carla Souza. Thank you",
+            "I'm Carla Souza"
+          ],
+          "commonErrors": [
+            {
+              "id": "my-name-are",
+              "match": "\\bmy name are\\b",
+              "explanation_pt": "Com \"my name\" o verbo é \"is\".",
+              "correction_en": "My name is Carla Souza."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-08-prac-2",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"São oito horas.\"",
+      "accepted": [
+        "It's eight o'clock",
+        "It's eight",
+        "It is eight",
+        "It is eight o'clock",
+        "It's 8 o'clock",
+        "It's 8"
+      ],
+      "commonErrors": [
+        {
+          "id": "are-hours",
+          "match": "^(they )?are (one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)\\b",
+          "explanation_pt": "Hora em inglês usa \"It's\": \"It's seven o'clock\", não \"are\".",
+          "correction_en": "It's eight o'clock."
+        },
+        {
+          "id": "hours",
+          "match": "\\b(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve) hours\\b",
+          "explanation_pt": "Para dizer a hora não use \"hours\": \"It's seven\" ou \"seven o'clock\".",
+          "correction_en": "It's eight o'clock."
+        }
+      ]
+    },
+    {
+      "id": "a1-08-prac-3",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"São dez e meia.\"",
+      "accepted": [
+        "It's ten thirty",
+        "It's half past ten",
+        "It is ten thirty",
+        "It is half past ten",
+        "It's 10:30",
+        "Ten thirty"
+      ],
+      "commonErrors": [
+        {
+          "id": "are-hours",
+          "match": "^(they )?are (one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)\\b",
+          "explanation_pt": "Hora em inglês usa \"It's\": \"It's seven o'clock\", não \"are\".",
+          "correction_en": "It's ten thirty."
+        },
+        {
+          "id": "ten-and-half",
+          "match": "\\bten and (a )?half\\b",
+          "explanation_pt": "\"Dez e meia\" é \"ten thirty\" ou \"half past ten\".",
+          "correction_en": "It's ten thirty."
+        }
+      ]
+    },
+    {
+      "id": "a1-08-prac-4",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"A loja abre às nove.\"",
+      "accepted": [
+        "The store opens at nine",
+        "The shop opens at nine",
+        "The store opens at nine o'clock",
+        "The shop opens at nine o'clock",
+        "The store opens at 9",
+        "The shop opens at 9 am"
+      ],
+      "commonErrors": [
+        {
+          "id": "store-open",
+          "match": "\\b(store|shop) open at\\b",
+          "explanation_pt": "Com \"the store\" (it), o verbo ganha \"s\": \"opens\".",
+          "correction_en": "The store opens at nine."
+        },
+        {
+          "id": "in-hour",
+          "match": "\\b(in|on) (one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)( o clock)?$",
+          "explanation_pt": "Com horas use \"at\": \"at seven\".",
+          "correction_en": "The store opens at nine."
+        }
+      ]
+    },
+    {
+      "id": "a1-08-prac-5",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu tenho aula na terça e na quinta.\"",
+      "accepted": [
+        "I have class on Tuesday and Thursday",
+        "I have classes on Tuesday and Thursday",
+        "I have class on Tuesdays and Thursdays",
+        "I have classes on Tuesdays and Thursdays",
+        "I have a class on Tuesday and Thursday",
+        "I have class on Tuesday and on Thursday"
+      ],
+      "commonErrors": [
+        {
+          "id": "in-day",
+          "match": "\\b(in|at) (monday|tuesday|wednesday|thursday|friday|saturday|sunday)\\b",
+          "explanation_pt": "Com dias da semana use \"on\": \"on Monday\".",
+          "correction_en": "I have class on Tuesday and Thursday."
+        }
+      ]
+    },
+    {
+      "id": "a1-08-prac-6",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"São quinze para as seis.\"",
+      "accepted": [
+        "It's quarter to six",
+        "It's a quarter to six",
+        "It is quarter to six",
+        "It's five forty-five",
+        "It is five forty-five",
+        "It's 5:45"
+      ],
+      "commonErrors": [
+        {
+          "id": "are-hours",
+          "match": "^(they )?are (one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)\\b",
+          "explanation_pt": "Hora em inglês usa \"It's\": \"It's seven o'clock\", não \"are\".",
+          "correction_en": "It's quarter to six."
+        },
+        {
+          "id": "fifteen-to",
+          "match": "\\bfifteen (to|for) six\\b",
+          "explanation_pt": "\"Quinze para as seis\" é \"quarter to six\" ou \"five forty-five\".",
+          "correction_en": "It's quarter to six."
+        }
+      ]
+    },
+    {
+      "id": "a1-08-prac-7",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Que horas são?\"",
+      "accepted": [
+        "What time is it?",
+        "What's the time?",
+        "What is the time?",
+        "Do you have the time?",
+        "Do you know what time it is?"
+      ],
+      "commonErrors": [
+        {
+          "id": "what-hours",
+          "match": "\\bwhat hours\\b",
+          "explanation_pt": "\"Que horas são?\" é \"What time is it?\".",
+          "correction_en": "What time is it?"
+        },
+        {
+          "id": "what-time-it-is",
+          "match": "^what time it is$",
+          "explanation_pt": "Na pergunta direta, o verbo vem antes: \"What time is it?\".",
+          "correction_en": "What time is it?"
+        }
+      ]
+    },
+    {
+      "id": "a1-08-prac-8",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"A reunião é ao meio-dia.\"",
+      "accepted": [
+        "The meeting is at noon",
+        "The meeting is at midday",
+        "The meeting is at twelve",
+        "The meeting is at twelve o'clock",
+        "The meeting's at noon",
+        "The meeting is at 12"
+      ],
+      "commonErrors": [
+        {
+          "id": "in-noon",
+          "match": "\\b(in|on) (noon|midday)\\b",
+          "explanation_pt": "Use \"at noon\".",
+          "correction_en": "The meeting is at noon."
+        },
+        {
+          "id": "meio-day",
+          "match": "\\bmiddle day\\b",
+          "explanation_pt": "\"Meio-dia\" é \"noon\" ou \"midday\".",
+          "correction_en": "The meeting is at noon."
+        }
+      ]
+    },
+    {
+      "id": "a1-08-prac-9",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "It's ten past four.",
+      "accepted": ["It's ten past four"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-08-prac-10",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "The bus comes at quarter past eight.",
+      "accepted": ["The bus comes at quarter past eight"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-08-prac-11",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "I have English class on Wednesday evening.",
+      "accepted": ["I have English class on Wednesday evening"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-08-prac-12",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "Sorry, I'm late! What time is it?",
+      "accepted": ["Sorry, I'm late! What time is it"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-08-prac-13",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "The bank closes at four on Fridays.",
+      "accepted": ["The bank closes at four on Fridays"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-08-prac-14",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: são cinco e quinze.",
+      "listen": "Excuse me, do you have the time?",
+      "accepted": [
+        "Yes, it's five fifteen",
+        "It's five fifteen",
+        "It's quarter past five",
+        "Yes, it's quarter past five",
+        "It's a quarter past five",
+        "Five fifteen",
+        "Sure, it's five fifteen",
+        "It's 5:15"
+      ],
+      "commonErrors": [
+        {
+          "id": "are-hours",
+          "match": "^(they )?are (one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)\\b",
+          "explanation_pt": "Hora em inglês usa \"It's\": \"It's seven o'clock\", não \"are\".",
+          "correction_en": "It's quarter past five."
+        },
+        {
+          "id": "five-and-fifteen",
+          "match": "\\bfive and fifteen\\b",
+          "explanation_pt": "\"Cinco e quinze\" é \"five fifteen\" ou \"quarter past five\".",
+          "correction_en": "It's five fifteen."
+        }
+      ]
+    },
+    {
+      "id": "a1-08-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: você acorda às 6h30.",
+      "listen": "What time do you wake up on weekdays?",
+      "accepted": [
+        "At six thirty",
+        "I wake up at six thirty",
+        "At half past six",
+        "I wake up at half past six",
+        "At 6:30",
+        "I wake up at 6:30",
+        "I get up at six thirty"
+      ],
+      "commonErrors": [
+        {
+          "id": "in-hour",
+          "match": "\\b(in|on) (one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)( o clock)?$",
+          "explanation_pt": "Com horas use \"at\": \"at seven\".",
+          "correction_en": "At six thirty."
+        },
+        {
+          "id": "six-and-half",
+          "match": "\\bsix and (a )?half\\b",
+          "explanation_pt": "\"Seis e meia\" é \"six thirty\" ou \"half past six\".",
+          "correction_en": "At six thirty."
+        }
+      ]
+    },
+    {
+      "id": "a1-08-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: hoje é sexta-feira.",
+      "listen": "What day is today?",
+      "accepted": ["It's Friday", "It is Friday", "Friday", "Today is Friday", "Today's Friday"],
+      "commonErrors": [
+        {
+          "id": "in-day",
+          "match": "\\b(in|at) (monday|tuesday|wednesday|thursday|friday|saturday|sunday)\\b",
+          "explanation_pt": "Com dias da semana use \"on\": \"on Monday\".",
+          "correction_en": "It's Friday."
+        },
+        {
+          "id": "sixth-fair",
+          "match": "\\bsixth\\b",
+          "explanation_pt": "Sexta-feira é \"Friday\".",
+          "correction_en": "It's Friday."
+        }
+      ]
+    },
+    {
+      "id": "a1-08-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: o filme começa às 8.",
+      "listen": "What time does the film start?",
+      "accepted": [
+        "At eight",
+        "At eight o'clock",
+        "It starts at eight",
+        "It starts at eight o'clock",
+        "At 8",
+        "It starts at 8 pm",
+        "At eight pm",
+        "The film starts at eight"
+      ],
+      "commonErrors": [
+        {
+          "id": "in-hour",
+          "match": "\\b(in|on) (one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)( o clock)?$",
+          "explanation_pt": "Com horas use \"at\": \"at seven\".",
+          "correction_en": "At eight."
+        },
+        {
+          "id": "it-start",
+          "match": "\\bit start\\b",
+          "explanation_pt": "Com \"it\", o verbo ganha \"s\": \"It starts\".",
+          "correction_en": "It starts at eight."
+        }
+      ]
+    },
+    {
+      "id": "a1-08-prac-18",
+      "kind": "vocab",
+      "word_en": "early",
+      "meaning_pt": "cedo",
+      "example_en": "I get up early on Mondays."
+    },
+    {
+      "id": "a1-08-prac-19",
+      "kind": "vocab",
+      "word_en": "late",
+      "meaning_pt": "tarde, atrasado",
+      "example_en": "Sorry, I'm late!"
+    },
+    {
+      "id": "a1-08-prac-20",
+      "kind": "vocab",
+      "word_en": "weekend",
+      "meaning_pt": "fim de semana",
+      "example_en": "See you on the weekend!"
+    },
+    {
+      "id": "a1-08-prac-21",
+      "kind": "free_speak",
+      "instruction_pt": "Fale da sua semana.",
+      "prompt_en": "What do you do during the week? Tell me your days and times.",
+      "guidelines_pt": [
+        "Use \"on Monday\", \"on Tuesday\"...",
+        "Use horas com \"at\": \"at seven\"",
+        "Fale de pelo menos três dias"
+      ]
+    },
+    {
+      "id": "a1-08-prac-22",
+      "kind": "choice",
+      "instruction_pt": "Como se diz 7h45?",
+      "options": [
+        "It's quarter to eight.",
+        "It's quarter past seven.",
+        "It's seven and forty-five."
+      ],
+      "answer": 0,
+      "explanation_pt": "7h45 é \"quarter to eight\" (quinze para as oito) ou \"seven forty-five\"."
+    },
+    {
+      "id": "a1-08-prac-23",
+      "kind": "choice",
+      "instruction_pt": "Ouça e escolha o dia.",
+      "listen": "The dentist is on Tuesday at two.",
+      "options": ["terça", "quinta", "sábado"],
+      "answer": 0,
+      "explanation_pt": "\"Tuesday\" é terça-feira. Quinta é \"Thursday\"."
+    },
+    {
+      "id": "a1-08-prac-24",
+      "kind": "fill",
+      "instruction_pt": "Complete com a preposição certa.",
+      "sentence": "The party is ___ Saturday.",
+      "accepted": ["on"],
+      "commonErrors": [
+        {
+          "id": "in-at",
+          "match": "^(in|at)$",
+          "explanation_pt": "Com dias da semana use \"on\".",
+          "correction_en": "on"
+        }
+      ]
+    },
+    {
+      "id": "a1-08-prac-25",
+      "kind": "fill",
+      "instruction_pt": "Complete com a preposição certa.",
+      "sentence": "I finish work ___ six thirty.",
+      "accepted": ["at"],
+      "commonErrors": [
+        {
+          "id": "in-on",
+          "match": "^(in|on)$",
+          "explanation_pt": "Com horas use \"at\".",
+          "correction_en": "at"
+        }
+      ]
+    },
+    {
+      "id": "a1-08-prac-26",
+      "kind": "order",
+      "instruction_pt": "Coloque as palavras na ordem certa para formar a frase.",
+      "accepted": ["The bank opens at ten on Saturday"]
+    },
+    {
+      "id": "a1-08-prac-27",
+      "kind": "match",
+      "instruction_pt": "Ligue cada palavra ao seu significado.",
+      "pairs": [
+        {
+          "en": "Friday",
+          "pt": "sexta-feira"
+        },
+        {
+          "en": "Wednesday",
+          "pt": "quarta-feira"
+        },
+        {
+          "en": "noon",
+          "pt": "meio-dia"
+        },
+        {
+          "en": "midnight",
+          "pt": "meia-noite"
+        },
+        {
+          "en": "weekend",
+          "pt": "fim de semana"
         }
       ]
     }

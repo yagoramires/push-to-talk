@@ -118,11 +118,26 @@
           "kind": "match",
           "instruction_pt": "Ligue cada expressão ao seu significado.",
           "pairs": [
-            { "en": "take a message", "pt": "anotar um recado" },
-            { "en": "the line is busy", "pt": "a linha está ocupada" },
-            { "en": "voicemail", "pt": "caixa postal" },
-            { "en": "missed call", "pt": "chamada perdida" },
-            { "en": "speak up", "pt": "falar mais alto" }
+            {
+              "en": "take a message",
+              "pt": "anotar um recado"
+            },
+            {
+              "en": "the line is busy",
+              "pt": "a linha está ocupada"
+            },
+            {
+              "en": "voicemail",
+              "pt": "caixa postal"
+            },
+            {
+              "en": "missed call",
+              "pt": "chamada perdida"
+            },
+            {
+              "en": "speak up",
+              "pt": "falar mais alto"
+            }
           ]
         },
         {
@@ -493,6 +508,526 @@
           ],
           "commonErrors": []
         }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "id": "a2-08-prac-1",
+      "kind": "vocab",
+      "word_en": "take a message",
+      "meaning_pt": "anotar um recado",
+      "example_en": "She's not here. Can I take a message?"
+    },
+    {
+      "id": "a2-08-prac-2",
+      "kind": "vocab",
+      "word_en": "the line is busy",
+      "meaning_pt": "a linha está ocupada",
+      "example_en": "I called twice, but the line was busy."
+    },
+    {
+      "id": "a2-08-prac-3",
+      "kind": "vocab",
+      "word_en": "put you through",
+      "meaning_pt": "transferir a ligação",
+      "example_en": "One moment. I'll put you through to sales."
+    },
+    {
+      "id": "a2-08-prac-4",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "Hello, this is Carla from the bank.",
+      "accepted": ["Hello, this is Carla from the bank."],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-08-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "Could you ask him to call me back?",
+      "accepted": ["Could you ask him to call me back?"],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-08-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "Sorry, I think you have the wrong number.",
+      "accepted": ["Sorry, I think you have the wrong number."],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-08-prac-7",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "Could you speak more slowly, please?",
+      "accepted": ["Could you speak more slowly, please?"],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-08-prac-8",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "I'll call you back in ten minutes.",
+      "accepted": ["I'll call you back in ten minutes."],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-08-prac-9",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Oi, aqui é a Júlia. A Marta está?\"",
+      "accepted": [
+        "Hi, this is Julia. Is Marta there?",
+        "Hi, it's Julia. Is Marta there?",
+        "Hello, this is Julia. Is Marta there?",
+        "Hi, this is Julia. Is Marta in?",
+        "Hi, it's Julia. Is Marta available?",
+        "Hi, this is Julia. Is Marta available?"
+      ],
+      "commonErrors": [
+        {
+          "id": "here-is",
+          "match": "^(hi |hello )?(here is|i am here)\\b",
+          "explanation_pt": "Ao telefone, para se identificar, diga \"This is...\" ou \"It's...\".",
+          "correction_en": "Hi, this is Julia. Is Marta there?"
+        },
+        {
+          "id": "marta-is",
+          "match": "\\bmarta is (there|in)\\b",
+          "explanation_pt": "Na pergunta o \"is\" vem antes: \"Is Marta there?\".",
+          "correction_en": "Hi, this is Julia. Is Marta there?"
+        }
+      ]
+    },
+    {
+      "id": "a2-08-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Posso deixar um recado?\"",
+      "accepted": [
+        "Can I leave a message?",
+        "Could I leave a message?",
+        "May I leave a message?",
+        "Can I leave her a message?",
+        "Can I leave him a message?"
+      ],
+      "commonErrors": [
+        {
+          "id": "let-message",
+          "match": "\\blet a message\\b",
+          "explanation_pt": "\"Deixar\" um recado é \"leave a message\".",
+          "correction_en": "Can I leave a message?"
+        },
+        {
+          "id": "recado",
+          "match": "\\b(note|errand)\\b",
+          "explanation_pt": "Recado ao telefone é \"message\".",
+          "correction_en": "Can I leave a message?"
+        }
+      ]
+    },
+    {
+      "id": "a2-08-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Você pode repetir, por favor?\"",
+      "accepted": [
+        "Can you repeat that, please?",
+        "Could you repeat that, please?",
+        "Could you say that again, please?",
+        "Sorry, can you repeat that?",
+        "Can you say that again, please?",
+        "Pardon?"
+      ],
+      "commonErrors": [
+        {
+          "id": "repeat-no-that",
+          "match": "^(can|could) you repeat please$",
+          "explanation_pt": "O natural é \"Could you repeat that, please?\".",
+          "correction_en": "Can you repeat that, please?"
+        }
+      ]
+    },
+    {
+      "id": "a2-08-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Desculpe, ele está numa reunião.\"",
+      "accepted": [
+        "Sorry, he's in a meeting",
+        "I'm sorry, he's in a meeting",
+        "Sorry, he is in a meeting",
+        "I'm afraid he's in a meeting",
+        "Sorry, he's in a meeting right now",
+        "Sorry, he's in a meeting at the moment"
+      ],
+      "commonErrors": [
+        {
+          "id": "on-meeting",
+          "match": "\\b(on|at) a meeting\\b",
+          "explanation_pt": "Estar numa reunião é \"in a meeting\".",
+          "correction_en": "Sorry, he's in a meeting."
+        }
+      ]
+    },
+    {
+      "id": "a2-08-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Qual é o seu número de telefone?\"",
+      "accepted": [
+        "What's your phone number?",
+        "What is your phone number?",
+        "What's your number?",
+        "Can I have your phone number?",
+        "Could I have your number?",
+        "What's your telephone number?"
+      ],
+      "commonErrors": [
+        {
+          "id": "which-number",
+          "match": "^which is\\b",
+          "explanation_pt": "Para pedir informação use \"What's...?\".",
+          "correction_en": "What's your phone number?"
+        },
+        {
+          "id": "number-of-phone",
+          "match": "\\bnumber of (phone|telephone)\\b",
+          "explanation_pt": "Em inglês: \"phone number\".",
+          "correction_en": "What's your phone number?"
+        }
+      ]
+    },
+    {
+      "id": "a2-08-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu te ligo amanhã de manhã.\"",
+      "accepted": [
+        "I'll call you tomorrow morning",
+        "I will call you tomorrow morning",
+        "I'll phone you tomorrow morning",
+        "I'll give you a call tomorrow morning",
+        "I'll ring you tomorrow morning",
+        "I'll call you back tomorrow morning"
+      ],
+      "commonErrors": [
+        {
+          "id": "call-to-you",
+          "match": "\\bcall to you\\b",
+          "explanation_pt": "Ligar para alguém é \"call someone\", sem \"to\".",
+          "correction_en": "I'll call you tomorrow morning."
+        },
+        {
+          "id": "tomorrow-in",
+          "match": "\\btomorrow (in|on) the morning\\b",
+          "explanation_pt": "O natural é \"tomorrow morning\".",
+          "correction_en": "I'll call you tomorrow morning."
+        }
+      ]
+    },
+    {
+      "id": "a2-08-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga para a pessoa aguardar um momento.",
+      "listen": "Hello, can I speak to Mr. Davis, please?",
+      "accepted": [
+        "Hold on, please",
+        "One moment, please",
+        "Just a moment, please",
+        "Hold on a second, please",
+        "Please hold",
+        "Sure, hold on",
+        "Just a second, please"
+      ],
+      "commonErrors": [
+        {
+          "id": "wait-little",
+          "match": "\\bwait a little\\b",
+          "explanation_pt": "Ao telefone diga \"Hold on\" ou \"One moment, please\".",
+          "correction_en": "Hold on, please."
+        }
+      ]
+    },
+    {
+      "id": "a2-08-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que é o Rafael, da empresa Alfa.",
+      "listen": "Who's calling, please?",
+      "accepted": [
+        "This is Rafael from Alfa",
+        "It's Rafael from Alfa",
+        "Rafael from Alfa",
+        "My name is Rafael. I'm calling from Alfa",
+        "Rafael, from Alfa. I'm calling about the invoice"
+      ],
+      "commonErrors": [
+        {
+          "id": "here-is",
+          "match": "^(hi |hello )?(here is|i am here)\\b",
+          "explanation_pt": "Ao telefone, para se identificar, diga \"This is...\" ou \"It's...\".",
+          "correction_en": "This is Rafael from Alfa."
+        },
+        {
+          "id": "of-alfa",
+          "match": "\\brafael of alfa\\b",
+          "explanation_pt": "Para dizer a empresa use \"from\": \"Rafael from Alfa\".",
+          "correction_en": "This is Rafael from Alfa."
+        }
+      ]
+    },
+    {
+      "id": "a2-08-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e peça para ela te ligar de volta.",
+      "listen": "Can I take a message?",
+      "accepted": [
+        "Yes, please. Could you ask her to call me back?",
+        "Yes, can you ask her to call me back?",
+        "Could you ask her to call me back?",
+        "Please ask her to call me back",
+        "Yes, please ask her to call me back",
+        "Yes, could she call me back, please?"
+      ],
+      "commonErrors": [
+        {
+          "id": "call-back-me",
+          "match": "\\bcall back me\\b",
+          "explanation_pt": "O pronome vai no meio: \"call me back\".",
+          "correction_en": "Yes, please. Could you ask her to call me back?"
+        },
+        {
+          "id": "ask-her-call",
+          "match": "\\bask her call\\b",
+          "explanation_pt": "Use \"ask her to call\".",
+          "correction_en": "Yes, please. Could you ask her to call me back?"
+        }
+      ]
+    },
+    {
+      "id": "a2-08-prac-18",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e soletre \"Ramos\".",
+      "listen": "Could you spell your last name?",
+      "accepted": [
+        "R-A-M-O-S",
+        "Sure. R-A-M-O-S",
+        "It's R-A-M-O-S",
+        "Yes, R-A-M-O-S",
+        "Sure, it's R-A-M-O-S"
+      ],
+      "commonErrors": [
+        {
+          "id": "portuguese-letters",
+          "match": "\\b(erre|eme|esse)\\b",
+          "explanation_pt": "Use os nomes das letras em inglês: R (\"ar\"), A (\"ei\"), M (\"em\"), O (\"ou\"), S (\"es\").",
+          "correction_en": "R-A-M-O-S."
+        }
+      ]
+    },
+    {
+      "id": "a2-08-prac-19",
+      "kind": "fill",
+      "instruction_pt": "Complete com a palavra que falta.",
+      "sentence": "Please ___ on. I'll check.",
+      "accepted": ["hold"],
+      "commonErrors": [
+        {
+          "id": "wait",
+          "match": "^(wait|stay|keep)$",
+          "explanation_pt": "Ao telefone, \"aguarde\" é \"hold on\".",
+          "correction_en": "hold."
+        }
+      ]
+    },
+    {
+      "id": "a2-08-prac-20",
+      "kind": "fill",
+      "instruction_pt": "Complete com a palavra que falta.",
+      "sentence": "Can I ___ a message for her?",
+      "accepted": ["leave"],
+      "commonErrors": [
+        {
+          "id": "let",
+          "match": "^(let|give|make)$",
+          "explanation_pt": "\"Deixar um recado\" é \"leave a message\".",
+          "correction_en": "leave."
+        }
+      ]
+    },
+    {
+      "id": "a2-08-prac-21",
+      "kind": "choice",
+      "instruction_pt": "Ao telefone, alguém diz \"Sorry, wrong number\". O que aconteceu?",
+      "options": [
+        "A pessoa ligou para o número errado.",
+        "A linha está ocupada.",
+        "A ligação caiu."
+      ],
+      "answer": 0,
+      "explanation_pt": "\"Wrong number\" é número errado."
+    },
+    {
+      "id": "a2-08-prac-22",
+      "kind": "choice",
+      "instruction_pt": "Como você se identifica ao telefone?",
+      "options": ["This is Paula.", "I am Paula here.", "Here is Paula."],
+      "answer": 0,
+      "explanation_pt": "Ao telefone o inglês usa \"This is...\" ou \"It's...\"."
+    },
+    {
+      "id": "a2-08-prac-23",
+      "kind": "match",
+      "instruction_pt": "Ligue cada expressão ao seu significado.",
+      "pairs": [
+        {
+          "en": "hang up",
+          "pt": "desligar"
+        },
+        {
+          "en": "hold on",
+          "pt": "aguardar"
+        },
+        {
+          "en": "call back",
+          "pt": "ligar de volta"
+        },
+        {
+          "en": "wrong number",
+          "pt": "número errado"
+        },
+        {
+          "en": "busy",
+          "pt": "ocupado"
+        }
+      ]
+    },
+    {
+      "id": "a2-08-prac-24",
+      "kind": "order",
+      "instruction_pt": "Coloque as palavras na ordem certa para formar a frase.",
+      "accepted": ["Can I speak to the manager please"]
+    },
+    {
+      "id": "a2-08-prac-25",
+      "kind": "dialogue",
+      "instruction_pt": "Converse: responda a cada fala seguindo a dica.",
+      "scene_pt": "Você liga para uma loja para saber se o seu pedido chegou.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Good afternoon, Tech Store. How can I help you?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga quem é e que está ligando sobre o seu pedido.",
+          "accepted": [
+            "Hi, this is Ana Souza. I'm calling about my order",
+            "Hello, it's Ana Souza. I'm calling about my order",
+            "Hi, my name is Ana Souza. I'm calling about my order",
+            "Hi, this is Ana Souza. I'm calling about an order",
+            "This is Ana Souza. I'm calling about my order"
+          ],
+          "commonErrors": [
+            {
+              "id": "here-is",
+              "match": "^(hi |hello )?(here is|i am here)\\b",
+              "explanation_pt": "Ao telefone, para se identificar, diga \"This is...\" ou \"It's...\".",
+              "correction_en": "Hi, this is Ana Souza. I'm calling about my order."
+            },
+            {
+              "id": "calling-for",
+              "match": "\\bcalling for my order\\b",
+              "explanation_pt": "\"Ligando sobre\" é \"calling about\".",
+              "correction_en": "Hi, this is Ana Souza. I'm calling about my order."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Sure. Do you have the order number?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que sim: é 5 3 8 2.",
+          "accepted": [
+            "Yes, it's 5 3 8 2",
+            "Yes, five three eight two",
+            "It's 5 3 8 2",
+            "Yes, it's 5382"
+          ],
+          "commonErrors": [
+            {
+              "id": "is-no-it",
+              "match": "^yes is\\b",
+              "explanation_pt": "Use \"it's\": \"Yes, it's 5382\".",
+              "correction_en": "Yes, it's 5 3 8 2."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Thank you. Hmm, the person who can help you is at lunch right now."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Pergunte se pode deixar um recado.",
+          "accepted": [
+            "Can I leave a message?",
+            "Could I leave a message?",
+            "May I leave a message?",
+            "Can I leave a message, then?",
+            "OK. Can I leave a message?"
+          ],
+          "commonErrors": [
+            {
+              "id": "let-message",
+              "match": "\\blet a message\\b",
+              "explanation_pt": "\"Deixar um recado\" é \"leave a message\".",
+              "correction_en": "Can I leave a message?"
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Of course."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Peça para ele te ligar de volta hoje à tarde.",
+          "accepted": [
+            "Could he call me back this afternoon?",
+            "Can he call me back this afternoon?",
+            "Please ask him to call me back this afternoon",
+            "Could you ask him to call me back this afternoon?",
+            "Can you ask him to call me back this afternoon?"
+          ],
+          "commonErrors": [
+            {
+              "id": "call-back-me",
+              "match": "\\bcall back me\\b",
+              "explanation_pt": "O pronome vai no meio: \"call me back\".",
+              "correction_en": "Could he call me back this afternoon?"
+            },
+            {
+              "id": "today-afternoon",
+              "match": "\\btoday (at|in the) afternoon\\b",
+              "explanation_pt": "\"Hoje à tarde\" é \"this afternoon\".",
+              "correction_en": "Could he call me back this afternoon?"
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "No problem. He'll call you back soon."
+        }
+      ]
+    },
+    {
+      "id": "a2-08-prac-26",
+      "kind": "free_speak",
+      "instruction_pt": "Deixe um recado na caixa postal de um amigo.",
+      "prompt_en": "Hi, this is Sam. I can't answer the phone right now. Please leave a message after the beep!",
+      "guidelines_pt": [
+        "Diga quem é: \"Hi Sam, it's...\".",
+        "Explique por que ligou: \"I'm calling about...\".",
+        "Peça retorno e dê um horário: \"Can you call me back after six?\"."
       ]
     }
   ]

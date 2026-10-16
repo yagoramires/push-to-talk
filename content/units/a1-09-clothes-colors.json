@@ -473,5 +473,550 @@
         }
       ]
     }
+  ],
+  "practice": [
+    {
+      "id": "a1-09-prac-1",
+      "kind": "dialogue",
+      "instruction_pt": "Converse: ouça cada fala e responda em inglês.",
+      "scene_pt": "Você está numa loja e um amigo pergunta o que você vai usar na festa de sábado.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "So, what are you wearing to the party on Saturday?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que vai usar um vestido azul.",
+          "accepted": [
+            "I'm wearing a blue dress",
+            "I am wearing a blue dress",
+            "A blue dress",
+            "I'm going to wear a blue dress",
+            "I want to wear a blue dress",
+            "My blue dress",
+            "I'll wear a blue dress"
+          ],
+          "commonErrors": [
+            {
+              "id": "color-after",
+              "match": "\\b(shirt|dress|jacket|skirt|pants|shoes|sneakers|sweater|jeans|cap|bag|scarf|t shirt) (red|blue|green|yellow|black|white|gray|grey|pink|brown|purple|orange)\\b",
+              "explanation_pt": "Em inglês a cor vem antes da roupa: \"a red dress\", não \"a dress red\".",
+              "correction_en": "I'm wearing a blue dress."
+            },
+            {
+              "id": "use-wear",
+              "match": "\\b(use|uses|using)\\b",
+              "explanation_pt": "Para roupa, \"usar\" é \"wear\": \"I'm wearing...\".",
+              "correction_en": "I'm wearing a blue dress."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Nice! And shoes?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que vai usar sapatos pretos.",
+          "accepted": [
+            "Black shoes",
+            "I'm wearing black shoes",
+            "I am wearing black shoes",
+            "My black shoes",
+            "I'll wear black shoes",
+            "Black shoes, I think"
+          ],
+          "commonErrors": [
+            {
+              "id": "color-plural",
+              "match": "\\b(reds|blues|greens|yellows|blacks|whites|grays|pinks|browns)\\b",
+              "explanation_pt": "Cor não vai para o plural: \"black shoes\", não \"blacks shoes\".",
+              "correction_en": "I'm wearing black shoes."
+            },
+            {
+              "id": "color-after",
+              "match": "\\b(shirt|dress|jacket|skirt|pants|shoes|sneakers|sweater|jeans|cap|bag|scarf|t shirt) (red|blue|green|yellow|black|white|gray|grey|pink|brown|purple|orange)\\b",
+              "explanation_pt": "Em inglês a cor vem antes da roupa: \"a red dress\", não \"a dress red\".",
+              "correction_en": "I'm wearing black shoes."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "I don't know what to wear. What about this green shirt?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que gosta e que verde é sua cor favorita.",
+          "accepted": [
+            "I like it! Green is my favorite color",
+            "I like it. Green's my favorite color",
+            "I love it! Green is my favorite color",
+            "It's nice! Green is my favorite color",
+            "I like it. My favorite color is green",
+            "Nice! I love green"
+          ],
+          "commonErrors": [
+            {
+              "id": "favorite-colour-is-the",
+              "match": "\\bis the green\\b",
+              "explanation_pt": "Não use \"the\" antes de cor: \"My favorite color is green\".",
+              "correction_en": "Green is my favorite color."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "OK, I can wear it with jeans."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Concorde: diga que fica ótimo.",
+          "accepted": [
+            "Perfect! It looks great",
+            "Yes, it looks great",
+            "Great idea!",
+            "That's perfect",
+            "Yes! That looks good",
+            "Good idea. It looks great"
+          ],
+          "commonErrors": [
+            {
+              "id": "stay-great",
+              "match": "\\bstays? (great|good)\\b",
+              "explanation_pt": "\"Ficar bem\" (roupa) é \"look great\" ou \"look good\".",
+              "correction_en": "It looks great."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-09-prac-2",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu estou usando uma camiseta branca.\"",
+      "accepted": [
+        "I'm wearing a white T-shirt",
+        "I am wearing a white T-shirt",
+        "I'm wearing a white tee",
+        "I'm wearing a white t shirt"
+      ],
+      "commonErrors": [
+        {
+          "id": "color-after",
+          "match": "\\b(shirt|dress|jacket|skirt|pants|shoes|sneakers|sweater|jeans|cap|bag|scarf|t shirt) (red|blue|green|yellow|black|white|gray|grey|pink|brown|purple|orange)\\b",
+          "explanation_pt": "Em inglês a cor vem antes da roupa: \"a red dress\", não \"a dress red\".",
+          "correction_en": "I'm wearing a white T-shirt."
+        },
+        {
+          "id": "use-wear",
+          "match": "\\b(use|uses|using)\\b",
+          "explanation_pt": "Para roupa, \"usar\" é \"wear\": \"I'm wearing...\".",
+          "correction_en": "I'm wearing a white T-shirt."
+        }
+      ]
+    },
+    {
+      "id": "a1-09-prac-3",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Ela gosta de roupas coloridas.\"",
+      "accepted": [
+        "She likes colorful clothes",
+        "She loves colorful clothes",
+        "She likes colourful clothes",
+        "She likes clothes with lots of colors"
+      ],
+      "commonErrors": [
+        {
+          "id": "she-like",
+          "match": "\\bshe like\\b",
+          "explanation_pt": "Com \"she\", o verbo ganha \"s\": \"she likes\".",
+          "correction_en": "She likes colorful clothes."
+        },
+        {
+          "id": "clothe",
+          "match": "\\bclothe$|\\bclothings\\b",
+          "explanation_pt": "\"Roupas\" é \"clothes\".",
+          "correction_en": "She likes colorful clothes."
+        }
+      ]
+    },
+    {
+      "id": "a1-09-prac-4",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Meu casaco é marrom.\"",
+      "accepted": [
+        "My coat is brown",
+        "My coat's brown",
+        "My jacket is brown",
+        "My jacket's brown"
+      ],
+      "commonErrors": [
+        {
+          "id": "is-brown-the",
+          "match": "\\bis the brown\\b",
+          "explanation_pt": "Sem \"the\" antes da cor: \"My coat is brown\".",
+          "correction_en": "My coat is brown."
+        },
+        {
+          "id": "marrom-maroon",
+          "match": "\\bmaroon\\b",
+          "explanation_pt": "\"Marrom\" é \"brown\". \"Maroon\" é vinho.",
+          "correction_en": "My coat is brown."
+        }
+      ]
+    },
+    {
+      "id": "a1-09-prac-5",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"De que cor é a sua bolsa?\"",
+      "accepted": [
+        "What color is your bag?",
+        "What colour is your bag?",
+        "What color is your purse?",
+        "What's the color of your bag?",
+        "What color is your handbag?"
+      ],
+      "commonErrors": [
+        {
+          "id": "of-what-color",
+          "match": "^of what colou?r\\b",
+          "explanation_pt": "Em inglês: \"What color is...?\", sem \"of\" no começo.",
+          "correction_en": "What color is your bag?"
+        },
+        {
+          "id": "which-color-is",
+          "match": "^which colou?r is\\b",
+          "explanation_pt": "O natural é \"What color is...?\".",
+          "correction_en": "What color is your bag?"
+        }
+      ]
+    },
+    {
+      "id": "a1-09-prac-6",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu não uso saia.\"",
+      "accepted": [
+        "I don't wear skirts",
+        "I do not wear skirts",
+        "I never wear skirts",
+        "I don't wear a skirt"
+      ],
+      "commonErrors": [
+        {
+          "id": "use-wear",
+          "match": "\\b(use|uses|using)\\b",
+          "explanation_pt": "Para roupa, \"usar\" é \"wear\": \"I'm wearing...\".",
+          "correction_en": "I don't wear skirts."
+        },
+        {
+          "id": "i-no-wear",
+          "match": "^i (no|not) wear\\b",
+          "explanation_pt": "A negativa usa \"don't\": \"I don't wear skirts\".",
+          "correction_en": "I don't wear skirts."
+        }
+      ]
+    },
+    {
+      "id": "a1-09-prac-7",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Ele está usando um boné vermelho e tênis azuis.\"",
+      "accepted": [
+        "He's wearing a red cap and blue sneakers",
+        "He is wearing a red cap and blue sneakers",
+        "He's wearing a red hat and blue sneakers",
+        "He's wearing a red cap and blue trainers",
+        "He is wearing a red cap and blue tennis shoes"
+      ],
+      "commonErrors": [
+        {
+          "id": "color-after",
+          "match": "\\b(shirt|dress|jacket|skirt|pants|shoes|sneakers|sweater|jeans|cap|bag|scarf|t shirt) (red|blue|green|yellow|black|white|gray|grey|pink|brown|purple|orange)\\b",
+          "explanation_pt": "Em inglês a cor vem antes da roupa: \"a red dress\", não \"a dress red\".",
+          "correction_en": "He's wearing a red cap and blue sneakers."
+        },
+        {
+          "id": "color-plural",
+          "match": "\\b(reds|blues|greens|yellows|blacks|whites|grays|pinks|browns)\\b",
+          "explanation_pt": "Cor não vai para o plural: \"black shoes\", não \"blacks shoes\".",
+          "correction_en": "He's wearing a red cap and blue sneakers."
+        }
+      ]
+    },
+    {
+      "id": "a1-09-prac-8",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Essa calça é muito grande.\"",
+      "accepted": [
+        "These pants are too big",
+        "These pants are very big",
+        "These trousers are too big",
+        "These jeans are too big",
+        "The pants are too big"
+      ],
+      "commonErrors": [
+        {
+          "id": "this-pants-is",
+          "match": "\\b(this|that) pants\\b|\\bpants is\\b",
+          "explanation_pt": "\"Pants\" é plural em inglês: \"these pants are\".",
+          "correction_en": "These pants are too big."
+        }
+      ]
+    },
+    {
+      "id": "a1-09-prac-9",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "I usually wear jeans and a T-shirt.",
+      "accepted": ["I usually wear jeans and a T-shirt"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-09-prac-10",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "Your new sneakers are really cool!",
+      "accepted": ["Your new sneakers are really cool"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-09-prac-11",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "It's cold. Wear your scarf and your coat.",
+      "accepted": ["It's cold. Wear your scarf and your coat"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-09-prac-12",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "My favorite colors are blue and purple.",
+      "accepted": ["My favorite colors are blue and purple"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-09-prac-13",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "He's wearing a gray suit and a tie.",
+      "accepted": ["He's wearing a gray suit and a tie"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-09-prac-14",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: sua cor favorita é amarelo.",
+      "listen": "What's your favorite color?",
+      "accepted": [
+        "It's yellow",
+        "It is yellow",
+        "Yellow",
+        "My favorite color is yellow",
+        "Yellow. I love it",
+        "I love yellow"
+      ],
+      "commonErrors": [
+        {
+          "id": "the-yellow",
+          "match": "\\bis the yellow\\b",
+          "explanation_pt": "Sem \"the\" antes da cor: \"It's yellow\".",
+          "correction_en": "It's yellow."
+        }
+      ]
+    },
+    {
+      "id": "a1-09-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: você está usando uma blusa rosa.",
+      "listen": "What are you wearing right now?",
+      "accepted": [
+        "I'm wearing a pink blouse",
+        "I am wearing a pink blouse",
+        "A pink blouse",
+        "I'm wearing a pink top",
+        "A pink top",
+        "I am wearing a pink shirt",
+        "I'm wearing a pink shirt"
+      ],
+      "commonErrors": [
+        {
+          "id": "color-after",
+          "match": "\\b(shirt|dress|jacket|skirt|pants|shoes|sneakers|sweater|jeans|cap|bag|scarf|t shirt) (red|blue|green|yellow|black|white|gray|grey|pink|brown|purple|orange)\\b",
+          "explanation_pt": "Em inglês a cor vem antes da roupa: \"a red dress\", não \"a dress red\".",
+          "correction_en": "I'm wearing a pink blouse."
+        },
+        {
+          "id": "use-wear",
+          "match": "\\b(use|uses|using)\\b",
+          "explanation_pt": "Para roupa, \"usar\" é \"wear\": \"I'm wearing...\".",
+          "correction_en": "I'm wearing a pink blouse."
+        }
+      ]
+    },
+    {
+      "id": "a1-09-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: não, você prefere tênis.",
+      "listen": "Do you like wearing high heels?",
+      "accepted": [
+        "No, I don't. I prefer sneakers",
+        "No, I prefer sneakers",
+        "No, I don't",
+        "No. I like sneakers",
+        "Not really. I prefer sneakers",
+        "No, I prefer trainers",
+        "No, I like sneakers better"
+      ],
+      "commonErrors": [
+        {
+          "id": "no-i-not",
+          "match": "^no i not\\b",
+          "explanation_pt": "Resposta curta negativa: \"No, I don't\".",
+          "correction_en": "No, I don't."
+        }
+      ]
+    },
+    {
+      "id": "a1-09-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: o casaco é verde.",
+      "listen": "What color is your jacket?",
+      "accepted": [
+        "It's green",
+        "It is green",
+        "Green",
+        "My jacket is green",
+        "It's dark green",
+        "My jacket's green"
+      ],
+      "commonErrors": [
+        {
+          "id": "the-green",
+          "match": "\\bis the green\\b",
+          "explanation_pt": "Sem \"the\" antes da cor.",
+          "correction_en": "It's green."
+        },
+        {
+          "id": "they-are",
+          "match": "^they are\\b",
+          "explanation_pt": "\"Jacket\" é singular: \"It's green\".",
+          "correction_en": "It's green."
+        }
+      ]
+    },
+    {
+      "id": "a1-09-prac-18",
+      "kind": "vocab",
+      "word_en": "wear",
+      "meaning_pt": "usar (roupa)",
+      "example_en": "I wear a uniform at work."
+    },
+    {
+      "id": "a1-09-prac-19",
+      "kind": "vocab",
+      "word_en": "coat",
+      "meaning_pt": "casaco (comprido)",
+      "example_en": "Take your coat. It is cold."
+    },
+    {
+      "id": "a1-09-prac-20",
+      "kind": "vocab",
+      "word_en": "purple",
+      "meaning_pt": "roxo",
+      "example_en": "She has a purple bag."
+    },
+    {
+      "id": "a1-09-prac-21",
+      "kind": "free_speak",
+      "instruction_pt": "Descreva a roupa de alguém.",
+      "prompt_en": "Look at a person near you, or think of a friend. What is he or she wearing?",
+      "guidelines_pt": [
+        "Use \"He's/She's wearing...\"",
+        "Cor antes da roupa: \"a black jacket\"",
+        "Fale de pelo menos três peças"
+      ]
+    },
+    {
+      "id": "a1-09-prac-22",
+      "kind": "choice",
+      "instruction_pt": "Qual está certo?",
+      "options": ["a shirt blue", "a blue shirt", "a blues shirt"],
+      "answer": 1,
+      "explanation_pt": "A cor vem antes e não vai para o plural: \"a blue shirt\"."
+    },
+    {
+      "id": "a1-09-prac-23",
+      "kind": "choice",
+      "instruction_pt": "Ouça e escolha a cor dos sapatos.",
+      "listen": "I like your brown shoes!",
+      "options": ["marrons", "pretos", "brancos"],
+      "answer": 0,
+      "explanation_pt": "\"Brown\" é marrom."
+    },
+    {
+      "id": "a1-09-prac-24",
+      "kind": "fill",
+      "instruction_pt": "Complete com o verbo certo.",
+      "sentence": "I always ___ a hat at the beach.",
+      "accepted": ["wear"],
+      "commonErrors": [
+        {
+          "id": "use",
+          "match": "^use$",
+          "explanation_pt": "Para roupa, use \"wear\".",
+          "correction_en": "wear"
+        }
+      ]
+    },
+    {
+      "id": "a1-09-prac-25",
+      "kind": "fill",
+      "instruction_pt": "Complete com \"is\" ou \"are\".",
+      "sentence": "My new jeans ___ blue.",
+      "accepted": ["are"],
+      "commonErrors": [
+        {
+          "id": "is",
+          "match": "^is$",
+          "explanation_pt": "\"Jeans\" é plural em inglês: \"are\".",
+          "correction_en": "are"
+        }
+      ]
+    },
+    {
+      "id": "a1-09-prac-26",
+      "kind": "order",
+      "instruction_pt": "Coloque as palavras na ordem certa para formar a frase.",
+      "accepted": ["She is wearing a long purple dress"]
+    },
+    {
+      "id": "a1-09-prac-27",
+      "kind": "match",
+      "instruction_pt": "Ligue cada palavra ao seu significado.",
+      "pairs": [
+        {
+          "en": "coat",
+          "pt": "casaco"
+        },
+        {
+          "en": "boots",
+          "pt": "botas"
+        },
+        {
+          "en": "socks",
+          "pt": "meias"
+        },
+        {
+          "en": "tie",
+          "pt": "gravata"
+        },
+        {
+          "en": "orange",
+          "pt": "laranja"
+        }
+      ]
+    }
   ]
 }

@@ -55,7 +55,9 @@ export function flattenPlan(course: Course, plan: SessionPlan): SessionItem[] {
               {
                 exercise: found.exercise,
                 unitId: found.unit.id,
-                label: 'Revisão dos erros',
+                label: found.unit.practice.includes(found.exercise)
+                  ? 'Prática extra'
+                  : 'Revisão dos erros',
                 block: found.block,
                 ...at
               }

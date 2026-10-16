@@ -480,5 +480,512 @@
         }
       ]
     }
+  ],
+  "practice": [
+    {
+      "id": "b1-04-prac-1",
+      "kind": "vocab",
+      "word_en": "Why don't you...?",
+      "meaning_pt": "Por que você não...? (sugestão)",
+      "example_en": "Why don't you talk to your boss about it?"
+    },
+    {
+      "id": "b1-04-prac-2",
+      "kind": "vocab",
+      "word_en": "to sleep on it",
+      "meaning_pt": "pensar melhor antes de decidir (\"dormir sobre o assunto\")",
+      "example_en": "Don't decide now. Sleep on it."
+    },
+    {
+      "id": "b1-04-prac-3",
+      "kind": "repeat",
+      "instruction_pt": "Repita. Em \"I'd\", o \"d\" é bem curto.",
+      "prompt": "If I were you, I'd talk to her first.",
+      "accepted": [
+        "If I were you, I'd talk to her first",
+        "If I were you I would talk to her first"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-04-prac-4",
+      "kind": "repeat",
+      "instruction_pt": "Repita a sugestão, ligando \"why don't you\".",
+      "prompt": "Why don't you take a few days off?",
+      "accepted": ["Why don't you take a few days off", "Why don't you take some time off"],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-04-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repita. \"Shouldn't\" soa \"shudnt\", sem o \"l\".",
+      "prompt": "You shouldn't stay up so late.",
+      "accepted": ["You shouldn't stay up so late", "You should not stay up so late"],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-04-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repita a frase.",
+      "prompt": "Have you thought about moving somewhere quieter?",
+      "accepted": [
+        "Have you thought about moving somewhere quieter",
+        "Have you thought about moving to somewhere quieter"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-04-prac-7",
+      "kind": "repeat",
+      "instruction_pt": "Repita o conselho mais forte, quase um aviso.",
+      "prompt": "You'd better see a doctor about that cough.",
+      "accepted": [
+        "You'd better see a doctor about that cough",
+        "You had better see a doctor about that cough"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-04-prac-8",
+      "kind": "repeat",
+      "instruction_pt": "Repita a frase.",
+      "prompt": "It might be worth asking for a second opinion.",
+      "accepted": [
+        "It might be worth asking for a second opinion",
+        "It may be worth asking for a second opinion"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-04-prac-9",
+      "kind": "repeat",
+      "instruction_pt": "Repita a resposta a um conselho.",
+      "prompt": "Thanks, that's really helpful. I'll think about it.",
+      "accepted": [
+        "Thanks, that's really helpful. I'll think about it",
+        "Thank you, that's really helpful. I will think about it"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-04-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Você deveria dormir mais.\"",
+      "accepted": [
+        "You should sleep more",
+        "You should get more sleep",
+        "You ought to sleep more",
+        "You should try to sleep more",
+        "You should get some more sleep"
+      ],
+      "commonErrors": [
+        {
+          "id": "should-to",
+          "match": "\\bshould to\\b",
+          "explanation_pt": "Depois de \"should\" vem o verbo sem \"to\": \"You should sleep\".",
+          "correction_en": "You should sleep more."
+        },
+        {
+          "id": "must-sleep",
+          "match": "\\bmust sleep\\b",
+          "explanation_pt": "\"Must\" é obrigação forte. Para conselho, \"should\" é o natural.",
+          "correction_en": "You should sleep more."
+        }
+      ]
+    },
+    {
+      "id": "b1-04-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Se eu fosse você, eu não compraria esse carro.\"",
+      "accepted": [
+        "If I were you, I wouldn't buy that car",
+        "If I were you, I would not buy that car",
+        "If I was you, I wouldn't buy that car",
+        "I wouldn't buy that car if I were you",
+        "If I were you, I wouldn't buy this car"
+      ],
+      "commonErrors": [
+        {
+          "id": "if-i-am-you",
+          "match": "\\bif i (am|be) you\\b",
+          "explanation_pt": "Para situações imaginárias, use \"If I were you\".",
+          "correction_en": "If I were you, I wouldn't buy that car."
+        },
+        {
+          "id": "will-not-buy",
+          "match": "\\bwill not buy\\b",
+          "explanation_pt": "Com \"If I were you\" use \"would\": \"I wouldn't buy\".",
+          "correction_en": "If I were you, I wouldn't buy that car."
+        }
+      ]
+    },
+    {
+      "id": "b1-04-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Por que você não conversa com ele?\"",
+      "accepted": [
+        "Why don't you talk to him",
+        "Why don't you speak to him",
+        "Why don't you talk with him",
+        "Why don't you have a chat with him",
+        "Why don't you speak with him"
+      ],
+      "commonErrors": [
+        {
+          "id": "why-you-dont",
+          "match": "^why you (do not|not)\\b",
+          "explanation_pt": "Na pergunta o auxiliar vem antes do sujeito: \"Why don't you...?\"",
+          "correction_en": "Why don't you talk to him?"
+        },
+        {
+          "id": "converse-him",
+          "match": "\\bconverse\\b",
+          "explanation_pt": "\"Conversar\" no dia a dia é \"talk to\" ou \"speak to\". \"Converse\" é bem formal.",
+          "correction_en": "Why don't you talk to him?"
+        }
+      ]
+    },
+    {
+      "id": "b1-04-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Não vale a pena se preocupar com isso.\"",
+      "accepted": [
+        "It's not worth worrying about",
+        "It isn't worth worrying about",
+        "It's not worth worrying about it",
+        "It's not worth worrying about that",
+        "There's no point worrying about it",
+        "It's not worth getting worried about"
+      ],
+      "commonErrors": [
+        {
+          "id": "worth-to-worry",
+          "match": "\\bworth (to )?worry\\b",
+          "explanation_pt": "Depois de \"worth\" o verbo vai com \"-ing\": \"worth worrying\".",
+          "correction_en": "It's not worth worrying about."
+        },
+        {
+          "id": "not-worth-the-pain",
+          "match": "\\bworth the pain\\b",
+          "explanation_pt": "\"Vale a pena\" é \"it's worth it\"; não traduza \"pena\" ao pé da letra.",
+          "correction_en": "It's not worth worrying about."
+        }
+      ]
+    },
+    {
+      "id": "b1-04-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Você já pensou em fazer um curso?\"",
+      "accepted": [
+        "Have you thought about taking a course",
+        "Have you ever thought about taking a course",
+        "Have you considered taking a course",
+        "Have you thought about doing a course",
+        "Have you ever thought about doing a course"
+      ],
+      "commonErrors": [
+        {
+          "id": "thought-in",
+          "match": "\\bthought in\\b",
+          "explanation_pt": "\"Pensar em\" é \"think about\", e não \"think in\".",
+          "correction_en": "Have you thought about taking a course?"
+        },
+        {
+          "id": "about-take",
+          "match": "\\babout (take|do|make) a course\\b",
+          "explanation_pt": "Depois de preposição o verbo vai com \"-ing\": \"about taking\".",
+          "correction_en": "Have you thought about taking a course?"
+        }
+      ]
+    },
+    {
+      "id": "b1-04-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e dê um conselho: ela deveria pedir um aumento.",
+      "listen": "I've been working really hard, but my salary hasn't changed in three years.",
+      "accepted": [
+        "You should ask for a raise",
+        "I think you should ask for a raise",
+        "If I were you, I'd ask for a raise",
+        "Why don't you ask for a raise",
+        "You should ask for a pay rise",
+        "You should ask your boss for a raise"
+      ],
+      "commonErrors": [
+        {
+          "id": "ask-a-raise-increase",
+          "match": "\\bincrease\\b|\\baugment\\b",
+          "explanation_pt": "\"Aumento\" de salário é \"raise\" (EUA) ou \"pay rise\" (Reino Unido).",
+          "correction_en": "You should ask for a raise."
+        },
+        {
+          "id": "ask-raise-no-for",
+          "match": "\\bask a (raise|pay rise)\\b",
+          "explanation_pt": "\"Pedir\" algo é \"ask for\": \"ask for a raise\".",
+          "correction_en": "You should ask for a raise."
+        }
+      ]
+    },
+    {
+      "id": "b1-04-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e sugira que ele vá a pé ou de bicicleta.",
+      "listen": "I want to get fit, but I never have time to go to the gym.",
+      "accepted": [
+        "Why don't you walk or cycle to work",
+        "You should walk or ride a bike to work",
+        "Why don't you walk or bike to work",
+        "You could cycle to work",
+        "You could walk to work instead",
+        "If I were you, I'd cycle to work"
+      ],
+      "commonErrors": [
+        {
+          "id": "go-of-bike",
+          "match": "\\b(of|in) bike\\b",
+          "explanation_pt": "\"De bicicleta\" é \"by bike\", ou use o verbo \"cycle\".",
+          "correction_en": "Why don't you cycle to work?"
+        },
+        {
+          "id": "walk-of-foot",
+          "match": "\\bwalk (by|of) foot\\b|\\bgo by foot\\b",
+          "explanation_pt": "\"A pé\" é \"on foot\", ou só \"walk\".",
+          "correction_en": "Why don't you walk to work?"
+        }
+      ]
+    },
+    {
+      "id": "b1-04-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e aconselhe a não tomar a decisão hoje.",
+      "listen": "They offered me a job in another city. Should I accept it right now?",
+      "accepted": [
+        "I wouldn't decide today. Sleep on it",
+        "You should sleep on it",
+        "Don't decide today. Sleep on it",
+        "I'd sleep on it first",
+        "If I were you, I'd sleep on it",
+        "You'd better not decide today"
+      ],
+      "commonErrors": [
+        {
+          "id": "dont-decide-today-no-do",
+          "match": "^(you )?not decide\\b",
+          "explanation_pt": "Para dar uma ordem negativa use \"Don't\": \"Don't decide today\".",
+          "correction_en": "Don't decide today. Sleep on it."
+        },
+        {
+          "id": "sleep-about-it",
+          "match": "\\bsleep (about|over) it\\b",
+          "explanation_pt": "A expressão é \"sleep on it\".",
+          "correction_en": "You should sleep on it."
+        }
+      ]
+    },
+    {
+      "id": "b1-04-prac-18",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e agradeça o conselho, dizendo que vai tentar.",
+      "listen": "Maybe you should try meditation before bed.",
+      "accepted": [
+        "That's a good idea. I'll try it",
+        "Good idea, I'll give it a try",
+        "Thanks, I'll try that",
+        "That's a great idea. I'll try it tonight",
+        "Thanks, maybe I'll try it",
+        "That's a good idea, thanks"
+      ],
+      "commonErrors": [
+        {
+          "id": "is-good-idea",
+          "match": "^is a (good|great) idea\\b",
+          "explanation_pt": "Falta o sujeito: \"That's a good idea\".",
+          "correction_en": "That's a good idea. I'll try it."
+        },
+        {
+          "id": "i-go-try",
+          "match": "\\bi go try\\b|\\bi go to try\\b",
+          "explanation_pt": "Para decisão na hora, use \"I'll\": \"I'll try it\".",
+          "correction_en": "That's a good idea. I'll try it."
+        }
+      ]
+    },
+    {
+      "id": "b1-04-prac-19",
+      "kind": "dialogue",
+      "instruction_pt": "Um amigo pede conselho. Dê sugestões a ele.",
+      "scene_pt": "Seu amigo está estressado com o trabalho e não sabe o que fazer.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "I'm so stressed. I've got too much work and I can't sleep."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que sente muito e pergunte há quanto tempo ele se sente assim.",
+          "accepted": [
+            "I'm sorry to hear that. How long have you felt like this",
+            "Oh no, I'm sorry. How long have you been feeling like this",
+            "I'm sorry. How long have you been feeling this way",
+            "I'm sorry to hear that. How long have you been like this",
+            "That's awful. How long have you felt this way"
+          ],
+          "commonErrors": [
+            {
+              "id": "how-long-you-feel",
+              "match": "\\bhow long (do )?you feel\\b",
+              "explanation_pt": "Para algo que começou no passado e continua, use \"How long have you felt...?\"",
+              "correction_en": "How long have you been feeling like this?"
+            },
+            {
+              "id": "sorry-for-hear",
+              "match": "\\bsorry (for|of) hear\\b",
+              "explanation_pt": "A expressão é \"I'm sorry to hear that\".",
+              "correction_en": "I'm sorry to hear that."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "About two months. Since my colleague left, I'm doing two jobs."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Aconselhe: se fosse você, conversaria com o chefe.",
+          "accepted": [
+            "If I were you, I'd talk to your boss",
+            "If I were you, I would talk to my boss",
+            "If I were you, I'd speak to your boss",
+            "You should talk to your boss",
+            "Why don't you talk to your boss",
+            "If I were you, I'd talk to the boss"
+          ],
+          "commonErrors": [
+            {
+              "id": "if-i-was-will",
+              "match": "\\bif i (am|be) you\\b",
+              "explanation_pt": "Use \"If I were you\" para dar conselhos.",
+              "correction_en": "If I were you, I'd talk to your boss."
+            },
+            {
+              "id": "talk-with-chief",
+              "match": "\\bchief\\b",
+              "explanation_pt": "\"Chefe\" no trabalho é \"boss\" ou \"manager\".",
+              "correction_en": "If I were you, I'd talk to your boss."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "I'm worried she'll think I can't handle it."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que vale a pena tentar e que ela provavelmente vai entender.",
+          "accepted": [
+            "It's worth a try. She'll probably understand",
+            "It's worth trying. She'll probably understand",
+            "It's worth it. She'll probably understand",
+            "I think it's worth a try. She'll probably understand",
+            "It's worth a try. I'm sure she'll understand"
+          ],
+          "commonErrors": [
+            {
+              "id": "worth-the-pain",
+              "match": "\\bworth the pain\\b|\\bworth to try\\b",
+              "explanation_pt": "\"Vale a pena tentar\" é \"It's worth a try\" ou \"It's worth trying\".",
+              "correction_en": "It's worth a try. She'll probably understand."
+            },
+            {
+              "id": "probably-she-understand",
+              "match": "\\bshe probably understand\\b|\\bshe understand\\b",
+              "explanation_pt": "Com \"she\" e futuro: \"she'll probably understand\".",
+              "correction_en": "It's worth a try. She'll probably understand."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Maybe you're right. Anything else?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que ele deveria descansar no fim de semana e evitar o celular à noite.",
+          "accepted": [
+            "You should take it easy this weekend and avoid your phone at night",
+            "You should rest this weekend and stay off your phone at night",
+            "Take it easy this weekend and avoid your phone at night",
+            "You should relax this weekend and avoid using your phone at night",
+            "You should take it easy at the weekend and avoid your phone at night"
+          ],
+          "commonErrors": [
+            {
+              "id": "avoid-to-use",
+              "match": "\\bavoid to\\b",
+              "explanation_pt": "Depois de \"avoid\" o verbo vai com \"-ing\": \"avoid using\".",
+              "correction_en": "You should take it easy this weekend and avoid using your phone at night."
+            },
+            {
+              "id": "in-the-night",
+              "match": "\\bin the night\\b",
+              "explanation_pt": "\"À noite\" é \"at night\".",
+              "correction_en": "You should take it easy this weekend and avoid your phone at night."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-04-prac-20",
+      "kind": "free_speak",
+      "instruction_pt": "Dê conselhos para quem está começando a aprender inglês.",
+      "prompt_en": "A friend wants to start learning English. What advice would you give them?",
+      "guidelines_pt": [
+        "Use \"You should...\", \"Why don't you...?\" e \"If I were you, I'd...\".",
+        "Dê pelo menos três conselhos.",
+        "Explique por que cada um ajuda."
+      ]
+    },
+    {
+      "id": "b1-04-prac-21",
+      "kind": "choice",
+      "instruction_pt": "Qual frase está correta?",
+      "options": ["You should to call her.", "You should call her.", "You should calling her."],
+      "answer": 1,
+      "explanation_pt": "\"Should\" vem seguido do verbo sem \"to\" e sem \"-ing\"."
+    },
+    {
+      "id": "b1-04-prac-22",
+      "kind": "choice",
+      "instruction_pt": "Qual é a forma natural de pedir conselho?",
+      "options": [
+        "What do you advise to me?",
+        "Can you give me an advice?",
+        "What would you do if you were me?"
+      ],
+      "answer": 2,
+      "explanation_pt": "\"Advice\" é incontável (não diga \"an advice\"). \"What would you do if you were me?\" é natural."
+    },
+    {
+      "id": "b1-04-prac-23",
+      "kind": "fill",
+      "instruction_pt": "Complete: \"You'd better ___ (not / be) late tomorrow.\"",
+      "sentence": "You'd better ___ late tomorrow.",
+      "accepted": ["not be"],
+      "commonErrors": [
+        {
+          "id": "better-dont",
+          "match": "^(do not|not to)( be)?$",
+          "explanation_pt": "A negativa de \"had better\" é \"had better not\" + verbo: \"You'd better not be late\".",
+          "correction_en": "You'd better not be late tomorrow."
+        }
+      ]
+    },
+    {
+      "id": "b1-04-prac-24",
+      "kind": "order",
+      "instruction_pt": "Coloque as palavras na ordem certa.",
+      "accepted": ["What would you do if you were me?"]
+    }
   ]
 }

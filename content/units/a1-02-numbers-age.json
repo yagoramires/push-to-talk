@@ -408,5 +408,541 @@
         }
       ]
     }
+  ],
+  "practice": [
+    {
+      "id": "a1-02-prac-1",
+      "kind": "dialogue",
+      "instruction_pt": "Converse: ouça cada fala e responda em inglês.",
+      "scene_pt": "Você está se inscrevendo numa academia. A recepcionista pergunta seus dados.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Hi! Let's start. What's your name?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga seu nome (use \"Rafael\").",
+          "accepted": [
+            "I'm Rafael",
+            "I am Rafael",
+            "My name is Rafael",
+            "My name's Rafael",
+            "Rafael",
+            "It's Rafael"
+          ],
+          "commonErrors": [
+            {
+              "id": "my-name-are",
+              "match": "\\bmy name are\\b",
+              "explanation_pt": "Com \"my name\" o verbo é \"is\".",
+              "correction_en": "My name is Rafael."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "And how old are you, Rafael?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que você tem 34 anos.",
+          "accepted": [
+            "I'm 34",
+            "I am 34",
+            "I'm 34 years old",
+            "I am 34 years old",
+            "34",
+            "34 years old",
+            "I'm thirty-four",
+            "I am thirty-four years old"
+          ],
+          "commonErrors": [
+            {
+              "id": "have-years",
+              "match": "\\b(have|has) [a-z]+( [a-z]+)? years\\b",
+              "explanation_pt": "Idade em inglês usa \"to be\": \"I'm 30\", e não \"I have 30 years\".",
+              "correction_en": "I'm 34."
+            },
+            {
+              "id": "thirty-for",
+              "match": "\\bthirty (for|four years)$",
+              "explanation_pt": "Diga \"thirty-four years old\" ou só \"thirty-four\".",
+              "correction_en": "I'm thirty-four."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Great. What's your phone number?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga seu telefone: 9 8 7 6 5 4 3 2 1.",
+          "accepted": [
+            "It's 9 8 7 6 5 4 3 2 1",
+            "It is 9 8 7 6 5 4 3 2 1",
+            "9 8 7 6 5 4 3 2 1",
+            "My number is 9 8 7 6 5 4 3 2 1",
+            "My phone number is 9 8 7 6 5 4 3 2 1",
+            "My phone number's 9 8 7 6 5 4 3 2 1"
+          ],
+          "commonErrors": [
+            {
+              "id": "is-missing",
+              "match": "^my (phone )?number nine\\b",
+              "explanation_pt": "Falta o verbo: \"My number is...\".",
+              "correction_en": "It's 9 8 7 6 5 4 3 2 1."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Perfect. And how many people are in your family?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que são quatro pessoas.",
+          "accepted": [
+            "Four",
+            "Four people",
+            "There are four people",
+            "There are four",
+            "We're four",
+            "We are four",
+            "Four people in my family",
+            "There are four people in my family",
+            "My family has four people"
+          ],
+          "commonErrors": [
+            {
+              "id": "have-four",
+              "match": "^(have|has) four\\b",
+              "explanation_pt": "\"Há/tem\" (existência) em inglês é \"there are\": \"There are four people\".",
+              "correction_en": "There are four people."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Thank you! Welcome to the gym."
+        }
+      ]
+    },
+    {
+      "id": "a1-02-prac-2",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu tenho 30 anos.\"",
+      "accepted": [
+        "I'm 30",
+        "I am 30",
+        "I'm 30 years old",
+        "I am 30 years old",
+        "I'm thirty",
+        "I am thirty years old"
+      ],
+      "commonErrors": [
+        {
+          "id": "have-years",
+          "match": "\\b(have|has) [a-z]+( [a-z]+)? years\\b",
+          "explanation_pt": "Idade em inglês usa \"to be\": \"I'm 30\", e não \"I have 30 years\".",
+          "correction_en": "I'm 30."
+        },
+        {
+          "id": "no-be",
+          "match": "^i thirty\\b",
+          "explanation_pt": "Falta o verbo \"to be\": \"I'm 30\", \"She's 12\".",
+          "correction_en": "I'm 30."
+        }
+      ]
+    },
+    {
+      "id": "a1-02-prac-3",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Minha mãe tem 62 anos.\"",
+      "accepted": [
+        "My mother is 62",
+        "My mother's 62",
+        "My mother is 62 years old",
+        "My mom is 62",
+        "My mom is 62 years old",
+        "My mom's 62",
+        "My mother is sixty-two"
+      ],
+      "commonErrors": [
+        {
+          "id": "have-years",
+          "match": "\\b(have|has) [a-z]+( [a-z]+)? years\\b",
+          "explanation_pt": "Idade em inglês usa \"to be\": \"I'm 30\", e não \"I have 30 years\".",
+          "correction_en": "My mother is 62."
+        },
+        {
+          "id": "no-be",
+          "match": "^my (mother|mom) sixty\\b",
+          "explanation_pt": "Falta o verbo \"to be\": \"I'm 30\", \"She's 12\".",
+          "correction_en": "My mother is 62."
+        }
+      ]
+    },
+    {
+      "id": "a1-02-prac-4",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Quantos anos ela tem?\"",
+      "accepted": ["How old is she?", "How old's she?", "What is her age?", "What's her age?"],
+      "commonErrors": [
+        {
+          "id": "how-many-years",
+          "match": "\\bhow many years\\b",
+          "explanation_pt": "Para perguntar a idade use \"How old...?\", e não \"How many years...?\".",
+          "correction_en": "How old is she?"
+        },
+        {
+          "id": "how-old-she-is",
+          "match": "^how old she is$",
+          "explanation_pt": "Na pergunta o verbo vem antes: \"How old is she?\".",
+          "correction_en": "How old is she?"
+        }
+      ]
+    },
+    {
+      "id": "a1-02-prac-5",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Ele tem 18 anos.\"",
+      "accepted": [
+        "He's 18",
+        "He is 18",
+        "He's 18 years old",
+        "He is 18 years old",
+        "He is eighteen",
+        "He's eighteen years old"
+      ],
+      "commonErrors": [
+        {
+          "id": "have-years",
+          "match": "\\b(have|has) [a-z]+( [a-z]+)? years\\b",
+          "explanation_pt": "Idade em inglês usa \"to be\": \"I'm 30\", e não \"I have 30 years\".",
+          "correction_en": "He's 18."
+        },
+        {
+          "id": "she-for-he",
+          "match": "^she\\b",
+          "explanation_pt": "\"Ele\" é \"he\".",
+          "correction_en": "He's 18."
+        }
+      ]
+    },
+    {
+      "id": "a1-02-prac-6",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Meu telefone é 3 2 1 5 4 0 9 8.\"",
+      "accepted": [
+        "My phone number is 3 2 1 5 4 0 9 8",
+        "My phone number's 3 2 1 5 4 0 9 8",
+        "My number is 3 2 1 5 4 0 9 8",
+        "My number's 3 2 1 5 4 0 9 8",
+        "My telephone number is 3 2 1 5 4 0 9 8",
+        "My phone number is 3 2 1 5 4 oh 9 8",
+        "My number is 3 2 1 5 4 zero 9 8"
+      ],
+      "commonErrors": [
+        {
+          "id": "my-telephone-is",
+          "match": "^my phone is\\b",
+          "explanation_pt": "\"Meu telefone\" (o número) é \"my phone number\". \"My phone\" é o aparelho.",
+          "correction_en": "My phone number is 3 2 1 5 4 0 9 8."
+        }
+      ]
+    },
+    {
+      "id": "a1-02-prac-7",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Nós temos 2 filhos. Eles têm 5 e 8 anos.\"",
+      "accepted": [
+        "We have two children. They're 5 and 8",
+        "We have two children. They are 5 and 8",
+        "We have two kids. They're 5 and 8",
+        "We have two kids. They are 5 and 8",
+        "We've got two children. They're 5 and 8",
+        "We have two children. They are 5 and 8 years old",
+        "We have two kids. They're 5 and 8 years old"
+      ],
+      "commonErrors": [
+        {
+          "id": "have-years",
+          "match": "\\b(have|has) [a-z]+( [a-z]+)? years\\b",
+          "explanation_pt": "Idade em inglês usa \"to be\": \"I'm 30\", e não \"I have 30 years\".",
+          "correction_en": "We have two children. They're 5 and 8."
+        },
+        {
+          "id": "they-have",
+          "match": "\\bthey have five\\b",
+          "explanation_pt": "Idade usa \"to be\": \"They're 5 and 8\".",
+          "correction_en": "They're 5 and 8."
+        }
+      ]
+    },
+    {
+      "id": "a1-02-prac-8",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "Eleven, twelve, thirteen, fourteen.",
+      "accepted": ["Eleven, twelve, thirteen, fourteen"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-02-prac-9",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "My grandmother is ninety years old.",
+      "accepted": ["My grandmother is ninety years old"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-02-prac-10",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "I'm thirty-three. And you?",
+      "accepted": ["I'm thirty-three. And you"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-02-prac-11",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "Sixty, seventy, eighty, ninety, one hundred.",
+      "accepted": ["Sixty, seventy, eighty, ninety, one hundred"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-02-prac-12",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "What's your phone number?",
+      "accepted": ["What's your phone number"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-02-prac-13",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: você tem 27 anos.",
+      "listen": "And you? How old are you, Julia?",
+      "accepted": [
+        "I'm 27",
+        "I am 27",
+        "I'm 27 years old",
+        "I am 27 years old",
+        "27",
+        "27 years old",
+        "I'm twenty-seven"
+      ],
+      "commonErrors": [
+        {
+          "id": "have-years",
+          "match": "\\b(have|has) [a-z]+( [a-z]+)? years\\b",
+          "explanation_pt": "Idade em inglês usa \"to be\": \"I'm 30\", e não \"I have 30 years\".",
+          "correction_en": "I'm 27."
+        }
+      ]
+    },
+    {
+      "id": "a1-02-prac-14",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda com o número.",
+      "listen": "What is ten plus ten?",
+      "accepted": [
+        "Twenty",
+        "It's twenty",
+        "It is twenty",
+        "20",
+        "It's 20",
+        "Ten plus ten is twenty",
+        "Ten plus ten is 20"
+      ],
+      "commonErrors": [
+        {
+          "id": "twelve",
+          "match": "\\btwelve\\b",
+          "explanation_pt": "Cuidado: 20 é \"twenty\". \"Twelve\" é 12.",
+          "correction_en": "Twenty."
+        }
+      ]
+    },
+    {
+      "id": "a1-02-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: seu pai tem 58 anos.",
+      "listen": "How old is your father?",
+      "accepted": [
+        "He's 58",
+        "He is 58",
+        "He's 58 years old",
+        "He is 58 years old",
+        "My father is 58",
+        "My dad is 58",
+        "58",
+        "My father's 58",
+        "Fifty-eight"
+      ],
+      "commonErrors": [
+        {
+          "id": "have-years",
+          "match": "\\b(have|has) [a-z]+( [a-z]+)? years\\b",
+          "explanation_pt": "Idade em inglês usa \"to be\": \"I'm 30\", e não \"I have 30 years\".",
+          "correction_en": "He's 58."
+        },
+        {
+          "id": "she-for-he",
+          "match": "^she\\b",
+          "explanation_pt": "Para o pai, use \"he\".",
+          "correction_en": "He's 58."
+        }
+      ]
+    },
+    {
+      "id": "a1-02-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: tem 3 pessoas na sala.",
+      "listen": "How many people are in the room?",
+      "accepted": [
+        "Three",
+        "Three people",
+        "There are three",
+        "There are three people",
+        "There are three people in the room",
+        "3"
+      ],
+      "commonErrors": [
+        {
+          "id": "have-three",
+          "match": "^(have|has) three\\b",
+          "explanation_pt": "\"Tem\" (existe) é \"there are\": \"There are three people\".",
+          "correction_en": "There are three people."
+        }
+      ]
+    },
+    {
+      "id": "a1-02-prac-17",
+      "kind": "vocab",
+      "word_en": "fifteen",
+      "meaning_pt": "quinze",
+      "example_en": "My cousin is fifteen."
+    },
+    {
+      "id": "a1-02-prac-18",
+      "kind": "vocab",
+      "word_en": "fifty",
+      "meaning_pt": "cinquenta",
+      "example_en": "My father is fifty years old."
+    },
+    {
+      "id": "a1-02-prac-19",
+      "kind": "vocab",
+      "word_en": "phone number",
+      "meaning_pt": "número de telefone",
+      "example_en": "Can I have your phone number?"
+    },
+    {
+      "id": "a1-02-prac-20",
+      "kind": "free_speak",
+      "instruction_pt": "Fale sobre as idades na sua família.",
+      "prompt_en": "Tell me about the people in your home. How old are they?",
+      "guidelines_pt": [
+        "Use \"He's...\", \"She's...\" + idade",
+        "Fale de pelo menos duas pessoas",
+        "Não use \"have\" para idade"
+      ]
+    },
+    {
+      "id": "a1-02-prac-21",
+      "kind": "choice",
+      "instruction_pt": "Qual número é \"forty\"?",
+      "options": ["14", "40", "4"],
+      "answer": 1,
+      "explanation_pt": "\"Forty\" é 40. 14 é \"fourteen\", com a tônica no fim."
+    },
+    {
+      "id": "a1-02-prac-22",
+      "kind": "choice",
+      "instruction_pt": "Ouça e escolha a idade.",
+      "listen": "My son is thirteen.",
+      "options": ["13", "30", "33"],
+      "answer": 0,
+      "explanation_pt": "\"Thirteen\" é 13: a tônica fica no fim (\"thirTEEN\"). 30 é \"THIRty\"."
+    },
+    {
+      "id": "a1-02-prac-23",
+      "kind": "fill",
+      "instruction_pt": "Complete com o verbo certo.",
+      "sentence": "My parents ___ sixty years old.",
+      "accepted": ["are"],
+      "commonErrors": [
+        {
+          "id": "have",
+          "match": "^(have|has)$",
+          "explanation_pt": "Idade usa \"to be\". Com \"my parents\" (eles) é \"are\".",
+          "correction_en": "are"
+        },
+        {
+          "id": "is",
+          "match": "^is$",
+          "explanation_pt": "\"My parents\" é plural, então o verbo é \"are\".",
+          "correction_en": "are"
+        }
+      ]
+    },
+    {
+      "id": "a1-02-prac-24",
+      "kind": "fill",
+      "instruction_pt": "Complete com o verbo certo.",
+      "sentence": "How old ___ your sister?",
+      "accepted": ["is"],
+      "commonErrors": [
+        {
+          "id": "are",
+          "match": "^are$",
+          "explanation_pt": "\"Your sister\" é uma pessoa (she), então o verbo é \"is\".",
+          "correction_en": "is"
+        },
+        {
+          "id": "have",
+          "match": "^has$",
+          "explanation_pt": "Idade usa \"to be\": \"How old is...\".",
+          "correction_en": "is"
+        }
+      ]
+    },
+    {
+      "id": "a1-02-prac-25",
+      "kind": "order",
+      "instruction_pt": "Coloque as palavras na ordem certa para formar a frase.",
+      "accepted": ["How old is your brother"]
+    },
+    {
+      "id": "a1-02-prac-26",
+      "kind": "match",
+      "instruction_pt": "Ligue cada palavra ao seu significado.",
+      "pairs": [
+        {
+          "en": "eleven",
+          "pt": "onze"
+        },
+        {
+          "en": "sixteen",
+          "pt": "dezesseis"
+        },
+        {
+          "en": "sixty",
+          "pt": "sessenta"
+        },
+        {
+          "en": "seventy",
+          "pt": "setenta"
+        },
+        {
+          "en": "one hundred",
+          "pt": "cem"
+        }
+      ]
+    }
   ]
 }

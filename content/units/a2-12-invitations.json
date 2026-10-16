@@ -126,11 +126,26 @@
           "kind": "match",
           "instruction_pt": "Ligue cada expressão ao seu significado.",
           "pairs": [
-            { "en": "I'd love to", "pt": "eu adoraria" },
-            { "en": "I've got plans", "pt": "eu tenho um compromisso" },
-            { "en": "Sounds great!", "pt": "Parece ótimo!" },
-            { "en": "Let me check", "pt": "Deixa eu ver" },
-            { "en": "Count me in!", "pt": "Pode contar comigo!" }
+            {
+              "en": "I'd love to",
+              "pt": "eu adoraria"
+            },
+            {
+              "en": "I've got plans",
+              "pt": "eu tenho um compromisso"
+            },
+            {
+              "en": "Sounds great!",
+              "pt": "Parece ótimo!"
+            },
+            {
+              "en": "Let me check",
+              "pt": "Deixa eu ver"
+            },
+            {
+              "en": "Count me in!",
+              "pt": "Pode contar comigo!"
+            }
           ]
         },
         {
@@ -419,10 +434,93 @@
           ]
         },
         {
-          "id": "a2-12-conv-3",
-          "kind": "order",
-          "instruction_pt": "Coloque as palavras na ordem certa para formar o convite.",
-          "accepted": ["Let's go for a walk in the park"]
+          "id": "a2-12-conv-dialogue",
+          "kind": "dialogue",
+          "instruction_pt": "Converse: responda a cada fala seguindo a dica.",
+          "scene_pt": "A Sam te liga para fazer um convite.",
+          "turns": [
+            {
+              "speaker": "partner",
+              "text": "Hi! Would you like to go to a concert with me on Friday?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga que adoraria, mas pergunte a que horas é.",
+              "accepted": [
+                "I'd love to! What time is it?",
+                "I'd love to. What time does it start?",
+                "Sure, I'd love to! What time is it?",
+                "Yes, I'd love to. What time is it?"
+              ],
+              "commonErrors": [
+                {
+                  "id": "love-no-to",
+                  "match": "\\bi would love$|\\bi would love it$",
+                  "explanation_pt": "Para aceitar: \"I'd love to!\".",
+                  "correction_en": "I'd love to! What time is it?"
+                },
+                {
+                  "id": "what-hour",
+                  "match": "\\bwhat hour\\b",
+                  "explanation_pt": "Para horário use \"What time...?\".",
+                  "correction_en": "I'd love to! What time is it?"
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "It starts at nine. Shall we meet at eight thirty?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga que às oito e meia está bom e pergunte onde.",
+              "accepted": [
+                "Eight thirty is fine. Where?",
+                "Eight thirty is good. Where should we meet?",
+                "Sounds good. Where shall we meet?",
+                "OK, eight thirty is fine. Where do we meet?",
+                "Great. Where should we meet?",
+                "Half past eight is fine. Where?"
+              ],
+              "commonErrors": [
+                {
+                  "id": "is-good-for",
+                  "match": "\\bis good for me where\\b",
+                  "explanation_pt": "Separe as duas ideias: \"Eight thirty is fine. Where...?\".",
+                  "correction_en": "Eight thirty is fine. Where?"
+                },
+                {
+                  "id": "where-we-meet",
+                  "match": "\\bwhere we (meet|should meet)\\b",
+                  "explanation_pt": "Na pergunta o auxiliar vem antes: \"Where should we meet?\".",
+                  "correction_en": "Eight thirty is fine. Where?"
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "How about in front of the theater?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Concorde e diga \"até sexta\".",
+              "accepted": [
+                "Perfect. See you on Friday!",
+                "Great. See you on Friday!",
+                "OK. See you Friday!",
+                "Sounds good. See you on Friday!",
+                "Perfect! See you then!"
+              ],
+              "commonErrors": [
+                {
+                  "id": "until-friday",
+                  "match": "\\buntil friday\\b",
+                  "explanation_pt": "\"Até sexta\" como despedida é \"See you on Friday\".",
+                  "correction_en": "Perfect. See you on Friday!"
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "a2-12-conv-free",
@@ -523,6 +621,496 @@
           ],
           "commonErrors": []
         }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "id": "a2-12-prac-1",
+      "kind": "vocab",
+      "word_en": "I'd love to",
+      "meaning_pt": "eu adoraria",
+      "example_en": "Dinner on Saturday? I'd love to!"
+    },
+    {
+      "id": "a2-12-prac-2",
+      "kind": "vocab",
+      "word_en": "I've got plans",
+      "meaning_pt": "eu já tenho compromisso",
+      "example_en": "Sorry, I can't come tonight. I've got plans."
+    },
+    {
+      "id": "a2-12-prac-3",
+      "kind": "vocab",
+      "word_en": "Shall we...?",
+      "meaning_pt": "Vamos...? (sugestão)",
+      "example_en": "Shall we meet at the station at seven?"
+    },
+    {
+      "id": "a2-12-prac-4",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "How about going to the beach on Sunday?",
+      "accepted": ["How about going to the beach on Sunday?"],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-12-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "Thanks for inviting me. I'd love to come.",
+      "accepted": ["Thanks for inviting me. I'd love to come."],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-12-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "Do you want to grab a coffee after work?",
+      "accepted": ["Do you want to grab a coffee after work?"],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-12-prac-7",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "I'm sorry, I can't. I'm working on Saturday.",
+      "accepted": ["I'm sorry, I can't. I'm working on Saturday."],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-12-prac-8",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "Let's meet at the café at four.",
+      "accepted": ["Let's meet at the café at four."],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-12-prac-9",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Você gostaria de jantar comigo no sábado?\"",
+      "accepted": [
+        "Would you like to have dinner with me on Saturday?",
+        "Would you like to have dinner with me Saturday?",
+        "Would you like to go to dinner with me on Saturday?",
+        "Would you like to have dinner on Saturday?",
+        "Do you want to have dinner with me on Saturday?",
+        "Would you like to go out for dinner with me on Saturday?"
+      ],
+      "commonErrors": [
+        {
+          "id": "like-no-to",
+          "match": "\\bwould you like (go|come|have|join|watch|see)\\b",
+          "explanation_pt": "Depois de \"Would you like\" use \"to\": \"Would you like to come?\".",
+          "correction_en": "Would you like to have dinner with me on Saturday?"
+        },
+        {
+          "id": "in-saturday",
+          "match": "\\bin saturday\\b",
+          "explanation_pt": "Com dias da semana use \"on\".",
+          "correction_en": "Would you like to have dinner with me on Saturday?"
+        }
+      ]
+    },
+    {
+      "id": "a2-12-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Que tal ir ao parque amanhã?\"",
+      "accepted": [
+        "How about going to the park tomorrow?",
+        "What about going to the park tomorrow?",
+        "How about the park tomorrow?",
+        "Why don't we go to the park tomorrow?",
+        "Shall we go to the park tomorrow?",
+        "Let's go to the park tomorrow"
+      ],
+      "commonErrors": [
+        {
+          "id": "how-about-go",
+          "match": "\\b(how|what) about (go|to go)\\b",
+          "explanation_pt": "Depois de \"How about\" use o verbo com \"-ing\": \"How about going...?\".",
+          "correction_en": "How about going to the park tomorrow?"
+        }
+      ]
+    },
+    {
+      "id": "a2-12-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Desculpa, eu não posso. Tenho que trabalhar.\"",
+      "accepted": [
+        "Sorry, I can't. I have to work",
+        "I'm sorry, I can't. I have to work",
+        "Sorry, I can't. I need to work",
+        "Sorry, I cannot. I have to work",
+        "Sorry, I can't. I've got to work",
+        "I'm afraid I can't. I have to work"
+      ],
+      "commonErrors": [
+        {
+          "id": "no-can",
+          "match": "^i (no|not) can\\b",
+          "explanation_pt": "A negação é \"I can't\".",
+          "correction_en": "Sorry, I can't. I have to work."
+        },
+        {
+          "id": "have-that",
+          "match": "\\bhave that work\\b",
+          "explanation_pt": "\"Ter que\" é \"have to\": \"I have to work\".",
+          "correction_en": "Sorry, I can't. I have to work."
+        }
+      ]
+    },
+    {
+      "id": "a2-12-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Talvez outro dia.\"",
+      "accepted": [
+        "Maybe another time",
+        "Maybe another day",
+        "Perhaps another time",
+        "Maybe some other time",
+        "Maybe next time",
+        "Maybe another time, then"
+      ],
+      "commonErrors": [
+        {
+          "id": "other-day",
+          "match": "\\bother day$",
+          "explanation_pt": "\"Outro dia\" (uma outra vez) é \"another day\" ou \"another time\".",
+          "correction_en": "Maybe another time."
+        }
+      ]
+    },
+    {
+      "id": "a2-12-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"A que horas começa a festa?\"",
+      "accepted": [
+        "What time does the party start?",
+        "What time is the party?",
+        "When does the party start?",
+        "What time does the party begin?",
+        "When is the party?"
+      ],
+      "commonErrors": [
+        {
+          "id": "party-starts",
+          "match": "\\bwhat time (the party starts|starts the party)\\b",
+          "explanation_pt": "Na pergunta use \"does\": \"What time does the party start?\".",
+          "correction_en": "What time does the party start?"
+        },
+        {
+          "id": "which-hour",
+          "match": "^(which|what) hour\\b",
+          "explanation_pt": "Para horário use \"What time...?\".",
+          "correction_en": "What time does the party start?"
+        }
+      ]
+    },
+    {
+      "id": "a2-12-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Posso levar um amigo?\"",
+      "accepted": [
+        "Can I bring a friend?",
+        "Could I bring a friend?",
+        "Is it OK if I bring a friend?",
+        "Can I bring a friend with me?",
+        "May I bring a friend?",
+        "Can I bring someone?"
+      ],
+      "commonErrors": [
+        {
+          "id": "take-friend",
+          "match": "\\b(take|carry) a friend\\b",
+          "explanation_pt": "Levar alguém junto (para onde você vai) é \"bring\".",
+          "correction_en": "Can I bring a friend?"
+        }
+      ]
+    },
+    {
+      "id": "a2-12-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e aceite com entusiasmo.",
+      "listen": "Would you like to come to my house for lunch on Sunday?",
+      "accepted": [
+        "I'd love to!",
+        "Yes, I'd love to",
+        "Sure, I'd love to!",
+        "That sounds great! I'd love to",
+        "Yes, thank you! I'd love to",
+        "Yes, I'd love to come"
+      ],
+      "commonErrors": [
+        {
+          "id": "love-no-to",
+          "match": "\\bi would love$|\\bi would love it$",
+          "explanation_pt": "Para aceitar: \"I'd love to!\".",
+          "correction_en": "I'd love to!"
+        },
+        {
+          "id": "i-like",
+          "match": "^(yes )?i like\\b",
+          "explanation_pt": "\"I like\" é \"eu gosto\". Para aceitar um convite: \"I'd love to\".",
+          "correction_en": "I'd love to!"
+        }
+      ]
+    },
+    {
+      "id": "a2-12-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e recuse com educação: você já tem compromisso.",
+      "listen": "Do you want to go to the gym with me tonight?",
+      "accepted": [
+        "Sorry, I can't. I've got plans",
+        "I'm sorry, I can't. I have plans",
+        "Sorry, I've got plans tonight",
+        "Thanks, but I can't. I have plans",
+        "I'm afraid I can't. I've got plans",
+        "Sorry, I already have plans"
+      ],
+      "commonErrors": [
+        {
+          "id": "no-can",
+          "match": "^i (no|not) can\\b",
+          "explanation_pt": "A negação é \"I can't\".",
+          "correction_en": "Sorry, I can't. I've got plans."
+        },
+        {
+          "id": "compromise",
+          "match": "\\bcompromise\\b",
+          "explanation_pt": "\"Compromisso\" é \"plans\" (ou \"an appointment\"). \"Compromise\" é um acordo.",
+          "correction_en": "Sorry, I can't. I've got plans."
+        }
+      ]
+    },
+    {
+      "id": "a2-12-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que sim, depois das três.",
+      "listen": "Are you free on Saturday afternoon?",
+      "accepted": [
+        "Yes, after three",
+        "Yes, I'm free after three",
+        "Yes, after three o'clock",
+        "Yeah, after three",
+        "I'm free after three",
+        "Yes, I am. After three"
+      ],
+      "commonErrors": [
+        {
+          "id": "free-in-three",
+          "match": "\\b(in|from) three\\b",
+          "explanation_pt": "Use \"after three\" para dizer depois das três.",
+          "correction_en": "Yes, after three."
+        }
+      ]
+    },
+    {
+      "id": "a2-12-prac-18",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e sugira às sete e meia.",
+      "listen": "Shall we meet at the restaurant at eight?",
+      "accepted": [
+        "How about seven thirty?",
+        "Can we meet at seven thirty?",
+        "What about half past seven?",
+        "How about half past seven?",
+        "Could we make it seven thirty?",
+        "Is seven thirty OK?"
+      ],
+      "commonErrors": [
+        {
+          "id": "how-about-at",
+          "match": "\\bhow about (in|on) seven\\b",
+          "explanation_pt": "Para sugerir horário: \"How about seven thirty?\".",
+          "correction_en": "How about seven thirty?"
+        }
+      ]
+    },
+    {
+      "id": "a2-12-prac-19",
+      "kind": "fill",
+      "instruction_pt": "Complete o convite.",
+      "sentence": "Would you like ___ come to the movies?",
+      "accepted": ["to"],
+      "commonErrors": [
+        {
+          "id": "for-no",
+          "match": "^(for|of|at)$",
+          "explanation_pt": "\"Would you like\" pede \"to\": \"Would you like to come?\".",
+          "correction_en": "to."
+        }
+      ]
+    },
+    {
+      "id": "a2-12-prac-20",
+      "kind": "fill",
+      "instruction_pt": "Complete com a forma certa do verbo.",
+      "sentence": "How about ___ a pizza tonight?",
+      "accepted": ["ordering", "getting", "having"],
+      "commonErrors": [
+        {
+          "id": "base-form",
+          "match": "^(order|get|have|to order)$",
+          "explanation_pt": "Depois de \"How about\" use o verbo com \"-ing\".",
+          "correction_en": "ordering."
+        }
+      ]
+    },
+    {
+      "id": "a2-12-prac-21",
+      "kind": "choice",
+      "instruction_pt": "Qual frase recusa um convite com educação?",
+      "options": ["Thanks for asking, but I can't.", "No.", "I don't want."],
+      "answer": 0,
+      "explanation_pt": "Agradecer antes de recusar é mais educado: \"Thanks for asking, but I can't\"."
+    },
+    {
+      "id": "a2-12-prac-22",
+      "kind": "choice",
+      "instruction_pt": "\"Let's meet at seven\" é:",
+      "options": ["Uma sugestão de horário.", "Uma recusa.", "Uma pergunta sobre a hora."],
+      "answer": 0,
+      "explanation_pt": "\"Let's...\" é uma sugestão: \"vamos nos encontrar às sete\"."
+    },
+    {
+      "id": "a2-12-prac-23",
+      "kind": "match",
+      "instruction_pt": "Ligue cada expressão ao seu significado.",
+      "pairs": [
+        {
+          "en": "How about...?",
+          "pt": "Que tal...?"
+        },
+        {
+          "en": "I'd love to",
+          "pt": "Eu adoraria"
+        },
+        {
+          "en": "I've got plans",
+          "pt": "Já tenho compromisso"
+        },
+        {
+          "en": "Maybe another time",
+          "pt": "Fica para outra vez"
+        },
+        {
+          "en": "Sounds great",
+          "pt": "Parece ótimo"
+        }
+      ]
+    },
+    {
+      "id": "a2-12-prac-24",
+      "kind": "order",
+      "instruction_pt": "Coloque as palavras na ordem certa para formar a frase.",
+      "accepted": ["Would you like to join us for lunch"]
+    },
+    {
+      "id": "a2-12-prac-25",
+      "kind": "dialogue",
+      "instruction_pt": "Converse: responda a cada fala seguindo a dica.",
+      "scene_pt": "Um colega novo, o Ben, convida você para algo depois do trabalho.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Hey! A few of us are going for pizza after work. Do you want to come?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que adoraria, mas só pode depois das sete.",
+          "accepted": [
+            "I'd love to, but I can't go until seven",
+            "I'd love to, but only after seven",
+            "I'd love to, but I can only go after seven",
+            "I'd love to, but I can't come before seven",
+            "Sounds great, but I can only come after seven"
+          ],
+          "commonErrors": [
+            {
+              "id": "love-no-to",
+              "match": "\\bi would love$|\\bi would love it$",
+              "explanation_pt": "Para aceitar: \"I'd love to!\".",
+              "correction_en": "I'd love to, but I can't go until seven."
+            },
+            {
+              "id": "only-can-after",
+              "match": "\\bi only can\\b",
+              "explanation_pt": "A ordem é \"I can only...\".",
+              "correction_en": "I'd love to, but I can't go until seven."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "No problem. We'll be there until ten."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Pergunte onde é a pizzaria.",
+          "accepted": [
+            "Where is the pizza place?",
+            "Where's the pizzeria?",
+            "Where is the pizzeria?",
+            "Where's the restaurant?",
+            "Which pizza place is it?",
+            "Where are you going?"
+          ],
+          "commonErrors": [
+            {
+              "id": "where-the-is",
+              "match": "^where the (pizza|pizzeria|restaurant)\\b",
+              "explanation_pt": "Na pergunta o \"is\" vem antes: \"Where is the pizza place?\".",
+              "correction_en": "Where is the pizza place?"
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "It's called Napoli. It's next to the station."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que conhece e pergunte se pode levar sua namorada.",
+          "accepted": [
+            "I know it. Can I bring my girlfriend?",
+            "Oh, I know it. Can I bring my girlfriend?",
+            "I know that place. Can I bring my girlfriend?",
+            "I know it. Is it OK if I bring my girlfriend?",
+            "I know where it is. Can I bring my girlfriend?"
+          ],
+          "commonErrors": [
+            {
+              "id": "take-girlfriend",
+              "match": "\\b(take|carry) my girlfriend\\b",
+              "explanation_pt": "Levar alguém junto é \"bring\".",
+              "correction_en": "I know it. Can I bring my girlfriend?"
+            },
+            {
+              "id": "know-no-it",
+              "match": "^i know can\\b",
+              "explanation_pt": "Diga \"I know it\" antes da pergunta.",
+              "correction_en": "I know it. Can I bring my girlfriend?"
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Of course! The more the merrier."
+        }
+      ]
+    },
+    {
+      "id": "a2-12-prac-26",
+      "kind": "free_speak",
+      "instruction_pt": "Convide a Sam para o seu aniversário. Diga o dia, a hora e o lugar.",
+      "prompt_en": "Hey! I heard it's your birthday soon. Are you doing anything?",
+      "guidelines_pt": [
+        "Faça o convite: \"Would you like to come to my birthday party?\".",
+        "Diga dia, hora e lugar: \"It's on Saturday at eight, at my place\".",
+        "Diga o que ela pode levar: \"You can bring a friend!\"."
       ]
     }
   ]

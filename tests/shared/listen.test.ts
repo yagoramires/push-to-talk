@@ -24,7 +24,20 @@ test.each<[Exercise, string[]]>([
   [{ ...base, kind: 'choice', options: ['9', '5'], answer: 0 }, []],
   [{ ...base, kind: 'fill', sentence: 'I ___ ok.', accepted: ['am'], commonErrors: [] }, []],
   [{ ...base, kind: 'order', accepted: ['a b'] }, []],
-  [{ ...base, kind: 'match', pairs: [] }, []]
+  [{ ...base, kind: 'match', pairs: [] }, []],
+  [
+    {
+      ...base,
+      kind: 'dialogue',
+      scene_pt: 'cena',
+      turns: [
+        { speaker: 'partner', text: 'Hi!' },
+        { speaker: 'you', cue_pt: 'Responda', accepted: ['hi'], commonErrors: [] },
+        { speaker: 'partner', text: 'Bye!' }
+      ]
+    },
+    ['Hi!', 'Bye!']
+  ]
 ])('%o plays %o', (ex, texts) => {
   expect(listenTexts(ex)).toEqual(texts)
 })

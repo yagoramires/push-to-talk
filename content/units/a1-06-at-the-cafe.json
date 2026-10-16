@@ -347,10 +347,118 @@
           ]
         },
         {
-          "id": "a1-06-conv-3",
-          "kind": "order",
-          "instruction_pt": "Coloque as palavras na ordem certa para formar o pedido.",
-          "accepted": ["Can I have a small coffee please"]
+          "id": "a1-06-conv-dialogue",
+          "kind": "dialogue",
+          "instruction_pt": "Converse: ouça cada fala e responda em inglês.",
+          "scene_pt": "Você faz um pedido no balcão de um café em Londres.",
+          "turns": [
+            {
+              "speaker": "partner",
+              "text": "Hi! What can I get you?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Peça um chá com leite.",
+              "accepted": [
+                "I'd like a tea with milk, please",
+                "I would like a tea with milk, please",
+                "Can I have a tea with milk, please?",
+                "A tea with milk, please",
+                "Tea with milk, please",
+                "Could I have a tea with milk, please?",
+                "I'll have a tea with milk, please"
+              ],
+              "commonErrors": [
+                {
+                  "id": "i-want",
+                  "match": "^i want\\b",
+                  "explanation_pt": "\"I want...\" soa seco no balcão. Peça com \"I'd like...\" ou \"Can I have...?\".",
+                  "correction_en": "I'd like a tea with milk, please."
+                },
+                {
+                  "id": "can-i-has",
+                  "match": "\\bcan i has\\b",
+                  "explanation_pt": "Depois de \"can\" o verbo fica na forma base: \"Can I have...?\".",
+                  "correction_en": "Can I have a tea with milk, please?"
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Sure. Anything to eat?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Peça um croissant.",
+              "accepted": [
+                "A croissant, please",
+                "I'd like a croissant, please",
+                "Can I have a croissant, please?",
+                "Yes, a croissant, please",
+                "Yes, I'd like a croissant",
+                "I'll have a croissant, please",
+                "Yes, one croissant, please"
+              ],
+              "commonErrors": [
+                {
+                  "id": "i-want",
+                  "match": "^i want\\b",
+                  "explanation_pt": "\"I want...\" soa seco no balcão. Peça com \"I'd like...\" ou \"Can I have...?\".",
+                  "correction_en": "I'd like a croissant, please."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Is that for here or to go?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga que é para comer aqui.",
+              "accepted": [
+                "For here, please",
+                "For here",
+                "Here, please",
+                "I'll have it here",
+                "To eat here, please",
+                "It's for here"
+              ],
+              "commonErrors": [
+                {
+                  "id": "to-here",
+                  "match": "^to here\\b",
+                  "explanation_pt": "\"Para comer aqui\" é \"for here\".",
+                  "correction_en": "For here, please."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "OK. That's six pounds twenty."
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Pergunte se pode pagar com cartão.",
+              "accepted": [
+                "Can I pay by card?",
+                "Can I pay with card?",
+                "Can I pay by credit card?",
+                "Can I pay with my card?",
+                "Do you take cards?",
+                "Do you accept cards?",
+                "Card OK?",
+                "Is card OK?"
+              ],
+              "commonErrors": [
+                {
+                  "id": "pay-in-card",
+                  "match": "\\bpay (in|on) card\\b",
+                  "explanation_pt": "\"Pagar com cartão\" é \"pay by card\".",
+                  "correction_en": "Can I pay by card?"
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "a1-06-conv-free",
@@ -434,6 +542,532 @@
             "Thank you, have a good day"
           ],
           "commonErrors": []
+        }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "id": "a1-06-prac-1",
+      "kind": "dialogue",
+      "instruction_pt": "Converse: ouça cada fala e responda em inglês.",
+      "scene_pt": "Você está num café com uma amiga e chama o garçom.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Hello! Are you ready to order?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que sim e peça dois cafés.",
+          "accepted": [
+            "Yes, two coffees, please",
+            "Yes, we'd like two coffees, please",
+            "Yes, can we have two coffees, please?",
+            "Two coffees, please",
+            "Yes, we would like two coffees, please",
+            "Yes, we'll have two coffees, please"
+          ],
+          "commonErrors": [
+            {
+              "id": "two-coffee",
+              "match": "\\btwo coffee please\\b",
+              "explanation_pt": "No plural: \"two coffees\".",
+              "correction_en": "Two coffees, please."
+            },
+            {
+              "id": "i-want",
+              "match": "^i want\\b",
+              "explanation_pt": "\"I want...\" soa seco no balcão. Peça com \"I'd like...\" ou \"Can I have...?\".",
+              "correction_en": "We'd like two coffees, please."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Milk and sugar?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga: com leite, sem açúcar.",
+          "accepted": [
+            "With milk, no sugar, please",
+            "Milk, but no sugar, please",
+            "With milk but without sugar",
+            "Just milk, please",
+            "Milk, please. No sugar",
+            "With milk and no sugar, please",
+            "Milk but no sugar"
+          ],
+          "commonErrors": [
+            {
+              "id": "without-of",
+              "match": "\\bwithout of\\b",
+              "explanation_pt": "\"Sem\" é \"without\" ou \"no\", sem \"of\".",
+              "correction_en": "With milk, no sugar, please."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Anything else? We have great brownies today."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Peça um brownie para dividir.",
+          "accepted": [
+            "One brownie to share, please",
+            "Can we have one brownie to share?",
+            "We'd like one brownie to share",
+            "One brownie, please. To share",
+            "A brownie to share, please",
+            "Yes, one brownie to share, please"
+          ],
+          "commonErrors": [
+            {
+              "id": "to-divide",
+              "match": "\\bto divide\\b",
+              "explanation_pt": "\"Dividir\" comida é \"share\".",
+              "correction_en": "One brownie to share, please."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Here you are. Enjoy!"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Agradeça e peça a conta depois.",
+          "accepted": [
+            "Thank you! Can we have the bill, please?",
+            "Thanks! Can we have the check, please?",
+            "Thank you. The bill, please",
+            "Thanks! The check, please",
+            "Thank you. Could we have the bill, please?",
+            "Thank you! Can I have the check, please?"
+          ],
+          "commonErrors": [
+            {
+              "id": "the-account",
+              "match": "\\bthe account\\b",
+              "explanation_pt": "\"A conta\" no café é \"the bill\" (ou \"the check\" nos EUA).",
+              "correction_en": "Can we have the bill, please?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-06-prac-2",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu queria um suco de laranja, por favor.\"",
+      "accepted": [
+        "I'd like an orange juice, please",
+        "I would like an orange juice, please",
+        "I'd like some orange juice, please",
+        "Can I have an orange juice, please?",
+        "An orange juice, please",
+        "Could I have an orange juice, please?",
+        "I'll have an orange juice, please"
+      ],
+      "commonErrors": [
+        {
+          "id": "i-want",
+          "match": "^i want\\b",
+          "explanation_pt": "\"I want...\" soa seco no balcão. Peça com \"I'd like...\" ou \"Can I have...?\".",
+          "correction_en": "I'd like an orange juice, please."
+        },
+        {
+          "id": "juice-of-orange",
+          "match": "\\bjuice of orange\\b",
+          "explanation_pt": "O tipo vem antes: \"orange juice\".",
+          "correction_en": "I'd like an orange juice, please."
+        }
+      ]
+    },
+    {
+      "id": "a1-06-prac-3",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Quanto custa o bolo?\"",
+      "accepted": [
+        "How much is the cake?",
+        "How much does the cake cost?",
+        "How much is the cake, please?",
+        "What's the price of the cake?"
+      ],
+      "commonErrors": [
+        {
+          "id": "how-many",
+          "match": "^how many\\b",
+          "explanation_pt": "Preço é \"How much...?\". \"How many\" é para contar coisas.",
+          "correction_en": "How much is the cake?"
+        },
+        {
+          "id": "how-much-cost",
+          "match": "^how much costs\\b",
+          "explanation_pt": "Diga \"How much is...?\" ou \"How much does it cost?\".",
+          "correction_en": "How much is the cake?"
+        }
+      ]
+    },
+    {
+      "id": "a1-06-prac-4",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Para viagem, por favor.\"",
+      "accepted": [
+        "To go, please",
+        "Takeaway, please",
+        "To take away, please",
+        "It's to go, please",
+        "To go"
+      ],
+      "commonErrors": [
+        {
+          "id": "for-travel",
+          "match": "\\bfor (travel|trip)\\b",
+          "explanation_pt": "\"Para viagem\" é \"to go\" (EUA) ou \"takeaway\" (Reino Unido).",
+          "correction_en": "To go, please."
+        }
+      ]
+    },
+    {
+      "id": "a1-06-prac-5",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Pode me dar um copo de água?\"",
+      "accepted": [
+        "Can I have a glass of water?",
+        "Could I have a glass of water?",
+        "Can I have a glass of water, please?",
+        "Could I have a glass of water, please?",
+        "Can you give me a glass of water?",
+        "Can I get a glass of water?"
+      ],
+      "commonErrors": [
+        {
+          "id": "can-i-has",
+          "match": "\\bcan i has\\b",
+          "explanation_pt": "Depois de \"can\" o verbo fica na forma base: \"Can I have...?\".",
+          "correction_en": "Can I have a glass of water?"
+        },
+        {
+          "id": "cup-of-water",
+          "match": "\\ba cup of water\\b",
+          "explanation_pt": "Água vem em copo de vidro: \"a glass of water\".",
+          "correction_en": "Can I have a glass of water?"
+        }
+      ]
+    },
+    {
+      "id": "a1-06-prac-6",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Um café pequeno sem açúcar.\"",
+      "accepted": [
+        "A small coffee without sugar",
+        "A small coffee with no sugar",
+        "A small coffee, no sugar",
+        "One small coffee without sugar",
+        "A small coffee without sugar, please",
+        "A small coffee, no sugar, please"
+      ],
+      "commonErrors": [
+        {
+          "id": "coffee-small",
+          "match": "\\bcoffee small\\b",
+          "explanation_pt": "O adjetivo vem antes: \"a small coffee\".",
+          "correction_en": "A small coffee without sugar."
+        }
+      ]
+    },
+    {
+      "id": "a1-06-prac-7",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Vocês têm leite de soja?\"",
+      "accepted": [
+        "Do you have soy milk?",
+        "Do you have any soy milk?",
+        "Have you got soy milk?",
+        "Have you got any soy milk?",
+        "Do you have soya milk?"
+      ],
+      "commonErrors": [
+        {
+          "id": "you-have-q",
+          "match": "^you have\\b",
+          "explanation_pt": "Na pergunta use \"Do\": \"Do you have...?\".",
+          "correction_en": "Do you have soy milk?"
+        },
+        {
+          "id": "milk-of-soy",
+          "match": "\\bmilk of soy\\b",
+          "explanation_pt": "O tipo vem antes: \"soy milk\".",
+          "correction_en": "Do you have soy milk?"
+        }
+      ]
+    },
+    {
+      "id": "a1-06-prac-8",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"É só isso, obrigado.\"",
+      "accepted": [
+        "That's all, thanks",
+        "That is all, thank you",
+        "That's it, thanks",
+        "That's everything, thank you",
+        "No, that's all. Thanks",
+        "That's all, thank you",
+        "Nothing else, thanks"
+      ],
+      "commonErrors": [
+        {
+          "id": "is-only-this",
+          "match": "^(is )?only this\\b",
+          "explanation_pt": "\"É só isso\" é \"That's all\" ou \"That's it\".",
+          "correction_en": "That's all, thanks."
+        }
+      ]
+    },
+    {
+      "id": "a1-06-prac-9",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "I'd like a muffin and a black coffee, please.",
+      "accepted": ["I'd like a muffin and a black coffee, please"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-06-prac-10",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "Could we have the menu, please?",
+      "accepted": ["Could we have the menu, please"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-06-prac-11",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "A large latte to go, please.",
+      "accepted": ["A large latte to go, please"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-06-prac-12",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "Excuse me, there's no sugar on the table.",
+      "accepted": ["Excuse me, there's no sugar on the table"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-06-prac-13",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "Keep the change.",
+      "accepted": ["Keep the change"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-06-prac-14",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: você quer um café grande.",
+      "listen": "Small, medium or large?",
+      "accepted": [
+        "Large, please",
+        "Large",
+        "A large one, please",
+        "Large one, please",
+        "I would like a large one",
+        "I'd like a large one, please"
+      ],
+      "commonErrors": [
+        {
+          "id": "big",
+          "match": "^big\\b",
+          "explanation_pt": "Para tamanho de bebida use \"large\".",
+          "correction_en": "Large, please."
+        }
+      ]
+    },
+    {
+      "id": "a1-06-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: você vai pagar em dinheiro.",
+      "listen": "How would you like to pay?",
+      "accepted": [
+        "Cash, please",
+        "In cash",
+        "Cash",
+        "I'll pay cash",
+        "I'll pay in cash",
+        "With cash, please",
+        "I would like to pay in cash"
+      ],
+      "commonErrors": [
+        {
+          "id": "in-money",
+          "match": "\\b(in|with) money\\b",
+          "explanation_pt": "Pagar \"em dinheiro\" é \"in cash\" ou \"cash\".",
+          "correction_en": "Cash, please."
+        }
+      ]
+    },
+    {
+      "id": "a1-06-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: não, só isso.",
+      "listen": "Would you like anything else?",
+      "accepted": [
+        "No, that's all, thanks",
+        "No, thank you. That's all",
+        "No, thanks",
+        "No, that's it",
+        "No, thank you",
+        "That's all, thanks",
+        "No, nothing else, thanks",
+        "No, I'm good, thanks"
+      ],
+      "commonErrors": [
+        {
+          "id": "no-only-this",
+          "match": "\\bonly this\\b",
+          "explanation_pt": "\"Só isso\" é \"That's all\".",
+          "correction_en": "No, that's all, thanks."
+        }
+      ]
+    },
+    {
+      "id": "a1-06-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: você quer açúcar.",
+      "listen": "Do you want sugar in your coffee?",
+      "accepted": [
+        "Yes, please",
+        "Yes, a little, please",
+        "Yes, one sugar, please",
+        "Yes, I do. Thanks",
+        "Yes, please. Just a little",
+        "Yes, two sugars, please",
+        "Yes"
+      ],
+      "commonErrors": [
+        {
+          "id": "yes-i-want",
+          "match": "^yes i want$",
+          "explanation_pt": "Resposta educada: \"Yes, please\".",
+          "correction_en": "Yes, please."
+        }
+      ]
+    },
+    {
+      "id": "a1-06-prac-18",
+      "kind": "vocab",
+      "word_en": "menu",
+      "meaning_pt": "cardápio",
+      "example_en": "Can I see the menu, please?"
+    },
+    {
+      "id": "a1-06-prac-19",
+      "kind": "vocab",
+      "word_en": "to go",
+      "meaning_pt": "para viagem",
+      "example_en": "Two coffees to go, please."
+    },
+    {
+      "id": "a1-06-prac-20",
+      "kind": "vocab",
+      "word_en": "cash",
+      "meaning_pt": "dinheiro (em espécie)",
+      "example_en": "Sorry, we only take cash."
+    },
+    {
+      "id": "a1-06-prac-21",
+      "kind": "free_speak",
+      "instruction_pt": "Peça seu lanche favorito num café.",
+      "prompt_en": "Good morning! What would you like today? Something to drink? Something to eat?",
+      "guidelines_pt": [
+        "Use \"I'd like...\" ou \"Can I have...?\"",
+        "Peça uma bebida e algo para comer",
+        "Diga o tamanho e se é \"for here\" ou \"to go\""
+      ]
+    },
+    {
+      "id": "a1-06-prac-22",
+      "kind": "choice",
+      "instruction_pt": "Qual é o jeito mais educado de pedir?",
+      "options": ["I want a coffee.", "I'd like a coffee, please.", "Give me a coffee."],
+      "answer": 1,
+      "explanation_pt": "\"I'd like..., please\" é educado e natural no café."
+    },
+    {
+      "id": "a1-06-prac-23",
+      "kind": "choice",
+      "instruction_pt": "Ouça e escolha o preço.",
+      "listen": "That's three fifty, please.",
+      "options": ["$3.15", "$3.50", "$5.30"],
+      "answer": 1,
+      "explanation_pt": "\"Three fifty\" é $3,50."
+    },
+    {
+      "id": "a1-06-prac-24",
+      "kind": "fill",
+      "instruction_pt": "Complete o pedido.",
+      "sentence": "___ I have a cheese sandwich, please?",
+      "accepted": ["Can", "Could", "May"],
+      "commonErrors": [
+        {
+          "id": "do",
+          "match": "^do$",
+          "explanation_pt": "Para pedir algo, use \"Can I have...?\".",
+          "correction_en": "Can"
+        }
+      ]
+    },
+    {
+      "id": "a1-06-prac-25",
+      "kind": "fill",
+      "instruction_pt": "Complete com a palavra certa.",
+      "sentence": "I'd like a ___ of orange juice.",
+      "accepted": ["glass", "bottle"],
+      "commonErrors": [
+        {
+          "id": "cup",
+          "match": "^cup$",
+          "explanation_pt": "Suco vem em copo de vidro: \"a glass of juice\".",
+          "correction_en": "glass"
+        }
+      ]
+    },
+    {
+      "id": "a1-06-prac-26",
+      "kind": "order",
+      "instruction_pt": "Coloque as palavras na ordem certa para formar a frase.",
+      "accepted": ["I'd like a cheese sandwich please"]
+    },
+    {
+      "id": "a1-06-prac-27",
+      "kind": "match",
+      "instruction_pt": "Ligue cada palavra ao seu significado.",
+      "pairs": [
+        {
+          "en": "menu",
+          "pt": "cardápio"
+        },
+        {
+          "en": "waiter",
+          "pt": "garçom"
+        },
+        {
+          "en": "change",
+          "pt": "troco"
+        },
+        {
+          "en": "napkin",
+          "pt": "guardanapo"
+        },
+        {
+          "en": "spoon",
+          "pt": "colher"
         }
       ]
     }

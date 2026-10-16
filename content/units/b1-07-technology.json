@@ -468,5 +468,511 @@
         }
       ]
     }
+  ],
+  "practice": [
+    {
+      "id": "b1-07-prac-1",
+      "kind": "vocab",
+      "word_en": "to update",
+      "meaning_pt": "atualizar",
+      "example_en": "You need to update the app before you can use it."
+    },
+    {
+      "id": "b1-07-prac-2",
+      "kind": "vocab",
+      "word_en": "to back up",
+      "meaning_pt": "fazer cópia de segurança (backup)",
+      "example_en": "I back up my photos every week."
+    },
+    {
+      "id": "b1-07-prac-3",
+      "kind": "repeat",
+      "instruction_pt": "Repita. \"Used to\" soa \"iustu\".",
+      "prompt": "I used to have a really old phone with buttons.",
+      "accepted": ["I used to have a really old phone with buttons"],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-07-prac-4",
+      "kind": "repeat",
+      "instruction_pt": "Repita a frase.",
+      "prompt": "The app keeps crashing every time I open it.",
+      "accepted": [
+        "The app keeps crashing every time I open it",
+        "The app keeps crashing whenever I open it"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-07-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repita. \"Wi-Fi\" se diz \"uái-fai\".",
+      "prompt": "The Wi-Fi is down again. Can you restart the router?",
+      "accepted": [
+        "The Wi-Fi is down again. Can you restart the router",
+        "The wifi is down again, can you restart the router",
+        "The Wi-Fi is down again. Could you restart the router"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-07-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repita a frase.",
+      "prompt": "I've just downloaded an app that helps me save money.",
+      "accepted": [
+        "I've just downloaded an app that helps me save money",
+        "I have just downloaded an app that helps me save money"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-07-prac-7",
+      "kind": "repeat",
+      "instruction_pt": "Repita a frase.",
+      "prompt": "Don't forget to back up your files.",
+      "accepted": ["Don't forget to back up your files", "Do not forget to back up your files"],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-07-prac-8",
+      "kind": "repeat",
+      "instruction_pt": "Repita. \"Screen\" começa com \"s\" direto, sem \"is\" na frente.",
+      "prompt": "I spend too much time looking at screens.",
+      "accepted": [
+        "I spend too much time looking at screens",
+        "I spend too much time looking at a screen"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-07-prac-9",
+      "kind": "repeat",
+      "instruction_pt": "Repita a pergunta.",
+      "prompt": "Have you tried logging out and logging back in?",
+      "accepted": [
+        "Have you tried logging out and logging back in",
+        "Have you tried logging out and back in"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-07-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Meu celular está sem bateria.\"",
+      "accepted": [
+        "My phone is dead",
+        "My phone's dead",
+        "My phone has no battery",
+        "My phone's out of battery",
+        "My battery is dead",
+        "My phone has run out of battery",
+        "My phone ran out of battery"
+      ],
+      "commonErrors": [
+        {
+          "id": "without-battery",
+          "match": "\\bwithout battery\\b",
+          "explanation_pt": "\"Sem bateria\" é \"dead\", \"out of battery\" ou \"has no battery\".",
+          "correction_en": "My phone is dead."
+        },
+        {
+          "id": "cellular",
+          "match": "\\bcellular\\b",
+          "explanation_pt": "Celular é \"phone\" ou \"cell phone\", e não \"cellular\".",
+          "correction_en": "My phone is dead."
+        }
+      ]
+    },
+    {
+      "id": "b1-07-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu não consigo me conectar ao Wi-Fi.\"",
+      "accepted": [
+        "I can't connect to the Wi-Fi",
+        "I cannot connect to the Wi-Fi",
+        "I can't get on the Wi-Fi",
+        "I can't connect to the wifi",
+        "I can't get connected to the Wi-Fi"
+      ],
+      "commonErrors": [
+        {
+          "id": "connect-me",
+          "match": "\\bconnect me\\b|\\bconnect myself\\b",
+          "explanation_pt": "\"Conectar-se\" é só \"connect\", sem \"me\" ou \"myself\".",
+          "correction_en": "I can't connect to the Wi-Fi."
+        },
+        {
+          "id": "connect-in",
+          "match": "\\bconnect (in|on|at) the\\b",
+          "explanation_pt": "\"Conectar a\" é \"connect to\".",
+          "correction_en": "I can't connect to the Wi-Fi."
+        }
+      ]
+    },
+    {
+      "id": "b1-07-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu costumava jogar videogame todo dia.\"",
+      "accepted": [
+        "I used to play video games every day",
+        "I used to play videogames every day",
+        "I used to play games every day",
+        "I used to play video games all the time",
+        "I used to play video games every single day"
+      ],
+      "commonErrors": [
+        {
+          "id": "use-to-past",
+          "match": "^i use to\\b",
+          "explanation_pt": "No passado, escreva e fale \"used to\" (com \"d\").",
+          "correction_en": "I used to play video games every day."
+        },
+        {
+          "id": "costumed",
+          "match": "\\b(was )?accustomed to play\\b|\\busually played\\b",
+          "explanation_pt": "Para hábito no passado que não existe mais, o natural é \"used to\".",
+          "correction_en": "I used to play video games every day."
+        }
+      ]
+    },
+    {
+      "id": "b1-07-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Você precisa atualizar o aplicativo.\"",
+      "accepted": [
+        "You need to update the app",
+        "You have to update the app",
+        "You need to update the application",
+        "You should update the app",
+        "You've got to update the app"
+      ],
+      "commonErrors": [
+        {
+          "id": "actualize",
+          "match": "\\bactuali[sz]e\\b",
+          "explanation_pt": "\"Atualizar\" é \"update\". \"Actualize\" não tem esse sentido.",
+          "correction_en": "You need to update the app."
+        },
+        {
+          "id": "need-update",
+          "match": "\\bneed update\\b",
+          "explanation_pt": "Depois de \"need\" vem \"to\": \"need to update\".",
+          "correction_en": "You need to update the app."
+        }
+      ]
+    },
+    {
+      "id": "b1-07-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu não consigo viver sem o meu notebook.\"",
+      "accepted": [
+        "I can't live without my laptop",
+        "I cannot live without my laptop",
+        "I couldn't live without my laptop",
+        "I can't do without my laptop",
+        "I can't live without my computer"
+      ],
+      "commonErrors": [
+        {
+          "id": "notebook",
+          "match": "\\bnotebook\\b",
+          "explanation_pt": "Em inglês, \"notebook\" é caderno. O computador portátil é \"laptop\".",
+          "correction_en": "I can't live without my laptop."
+        },
+        {
+          "id": "live-without-of",
+          "match": "\\bwithout of\\b",
+          "explanation_pt": "\"Without\" não leva \"of\".",
+          "correction_en": "I can't live without my laptop."
+        }
+      ]
+    },
+    {
+      "id": "b1-07-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga quanto tempo passa no celular: umas quatro horas por dia.",
+      "listen": "Do you check your screen time?",
+      "accepted": [
+        "Yes, it's about four hours a day",
+        "Yes. I spend about four hours a day on my phone",
+        "Yeah, around four hours a day",
+        "Yes, about four hours a day",
+        "Yes, and it's around four hours a day"
+      ],
+      "commonErrors": [
+        {
+          "id": "four-hours-for-day",
+          "match": "\\bfour hours (for|by|per the) day\\b",
+          "explanation_pt": "\"Por dia\" é \"a day\" (ou \"per day\").",
+          "correction_en": "Yes, it's about four hours a day."
+        },
+        {
+          "id": "spend-in-phone",
+          "match": "\\bin (my|the) phone\\b",
+          "explanation_pt": "\"No celular\" é \"on my phone\".",
+          "correction_en": "Yes. I spend about four hours a day on my phone."
+        }
+      ]
+    },
+    {
+      "id": "b1-07-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que ainda não, mas que vai fazer agora.",
+      "listen": "Have you backed up your photos?",
+      "accepted": [
+        "Not yet, but I'll do it now",
+        "No, not yet. I'll do it now",
+        "Not yet. I'll do it right now",
+        "No, I haven't. I'll do it now",
+        "Not yet, but I'll back them up now"
+      ],
+      "commonErrors": [
+        {
+          "id": "i-go-do",
+          "match": "\\bi go (to )?do\\b|\\bi do it now\\b",
+          "explanation_pt": "Para decisão tomada na hora, use \"I'll\": \"I'll do it now\".",
+          "correction_en": "Not yet, but I'll do it now."
+        },
+        {
+          "id": "no-yet",
+          "match": "^no yet\\b|\\byet not\\b",
+          "explanation_pt": "\"Ainda não\" é \"not yet\".",
+          "correction_en": "Not yet, but I'll do it now."
+        }
+      ]
+    },
+    {
+      "id": "b1-07-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e dê uma sugestão: limpar o cache ou reinstalar.",
+      "listen": "This app keeps freezing. What should I do?",
+      "accepted": [
+        "You could try reinstalling it",
+        "Why don't you reinstall it",
+        "Try clearing the cache",
+        "You should clear the cache or reinstall it",
+        "Have you tried reinstalling it",
+        "Maybe you should reinstall it"
+      ],
+      "commonErrors": [
+        {
+          "id": "try-reinstall-base",
+          "match": "\\btry (to )?reinstall it$",
+          "explanation_pt": "Para sugerir uma solução, o natural é \"try reinstalling it\" (\"-ing\").",
+          "correction_en": "You could try reinstalling it."
+        },
+        {
+          "id": "clean-cache",
+          "match": "\\bclean the cache\\b",
+          "explanation_pt": "Com cache, o verbo usado é \"clear\": \"clear the cache\".",
+          "correction_en": "Try clearing the cache."
+        }
+      ]
+    },
+    {
+      "id": "b1-07-prac-18",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que prefere livros de papel.",
+      "listen": "Do you read on a tablet or do you prefer paper books?",
+      "accepted": [
+        "I prefer paper books",
+        "I prefer real books",
+        "I'd rather read paper books",
+        "Paper books, definitely",
+        "I prefer reading paper books",
+        "I still prefer paper books"
+      ],
+      "commonErrors": [
+        {
+          "id": "books-of-paper",
+          "match": "\\bbooks (of|in) paper\\b",
+          "explanation_pt": "Em inglês o material vem antes: \"paper books\".",
+          "correction_en": "I prefer paper books."
+        },
+        {
+          "id": "prefer-than",
+          "match": "\\bprefer .* than\\b",
+          "explanation_pt": "Com \"prefer\", compare com \"to\": \"I prefer paper books to tablets\".",
+          "correction_en": "I prefer paper books to tablets."
+        }
+      ]
+    },
+    {
+      "id": "b1-07-prac-19",
+      "kind": "dialogue",
+      "instruction_pt": "Ligue para o suporte técnico e explique o problema.",
+      "scene_pt": "Sua internet de casa não funciona desde ontem. Você liga para a operadora.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Thank you for calling. How can I help you today?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que a sua internet não funciona desde ontem.",
+          "accepted": [
+            "My internet hasn't been working since yesterday",
+            "My internet has been down since yesterday",
+            "My internet has not worked since yesterday",
+            "The internet hasn't been working since yesterday",
+            "My internet's been down since yesterday"
+          ],
+          "commonErrors": [
+            {
+              "id": "dont-work-since",
+              "match": "\\b(does not|is not) work(ing)? since\\b",
+              "explanation_pt": "Para algo que começou no passado e continua, use o present perfect: \"hasn't been working since yesterday\".",
+              "correction_en": "My internet hasn't been working since yesterday."
+            },
+            {
+              "id": "fell",
+              "match": "\\bfell\\b|\\bfallen\\b",
+              "explanation_pt": "\"A internet caiu\" não é \"fell\". Diga \"is down\" ou \"isn't working\".",
+              "correction_en": "My internet has been down since yesterday."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "I'm sorry about that. Have you tried restarting the router?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que sim, que já tentou duas vezes.",
+          "accepted": [
+            "Yes, I've already tried twice",
+            "Yes, I've tried that twice",
+            "Yes, I've restarted it twice",
+            "Yes, I already tried that twice",
+            "Yes, twice"
+          ],
+          "commonErrors": [
+            {
+              "id": "two-times",
+              "match": "\\btwo times\\b",
+              "explanation_pt": "O natural é \"twice\".",
+              "correction_en": "Yes, I've already tried twice."
+            },
+            {
+              "id": "already-tryed",
+              "match": "\\btryed\\b",
+              "explanation_pt": "O passado de \"try\" é \"tried\".",
+              "correction_en": "Yes, I've already tried twice."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Okay. Are the lights on the router on or off?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que a luz vermelha fica piscando.",
+          "accepted": [
+            "The red light keeps flashing",
+            "The red light keeps blinking",
+            "There's a red light that keeps flashing",
+            "The red light is flashing",
+            "The red light is blinking"
+          ],
+          "commonErrors": [
+            {
+              "id": "keeps-to-blink",
+              "match": "\\bkeeps (to )?(blink|flash)\\b",
+              "explanation_pt": "Depois de \"keep\" o verbo vai com \"-ing\": \"keeps flashing\".",
+              "correction_en": "The red light keeps flashing."
+            },
+            {
+              "id": "light-red",
+              "match": "\\blight red\\b",
+              "explanation_pt": "O adjetivo vem antes do substantivo: \"the red light\".",
+              "correction_en": "The red light keeps flashing."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "That means there's a problem in your area. A technician can come tomorrow between nine and twelve."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Aceite e pergunte se precisa estar em casa.",
+          "accepted": [
+            "That's fine. Do I need to be at home",
+            "OK. Do I need to be home",
+            "That's fine. Do I have to be at home",
+            "Great. Will I need to be home",
+            "Okay, do I need to be there"
+          ],
+          "commonErrors": [
+            {
+              "id": "i-need-be",
+              "match": "\\bneed be\\b",
+              "explanation_pt": "Depois de \"need\" vem \"to\": \"Do I need to be at home?\"",
+              "correction_en": "Do I need to be at home?"
+            },
+            {
+              "id": "i-need-question",
+              "match": "^(that is fine |ok |okay )?i need to be (at )?home$",
+              "explanation_pt": "Para perguntar, use o auxiliar: \"Do I need to be at home?\"",
+              "correction_en": "Do I need to be at home?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-07-prac-20",
+      "kind": "free_speak",
+      "instruction_pt": "Compare a tecnologia de antes com a de hoje.",
+      "prompt_en": "How is technology different now from when you were a child?",
+      "guidelines_pt": [
+        "Use \"I used to...\" para o passado.",
+        "Use \"Now I...\" ou \"These days...\" para o presente.",
+        "Diga se a mudança foi boa ou ruim e por quê."
+      ]
+    },
+    {
+      "id": "b1-07-prac-21",
+      "kind": "choice",
+      "instruction_pt": "Qual frase está correta?",
+      "options": [
+        "I'm used to work from home.",
+        "I used to working from home.",
+        "I'm used to working from home."
+      ],
+      "answer": 2,
+      "explanation_pt": "\"Be used to\" (estar acostumado) vem com \"-ing\": \"I'm used to working\"."
+    },
+    {
+      "id": "b1-07-prac-22",
+      "kind": "choice",
+      "instruction_pt": "O que significa \"The website is down\"?",
+      "options": ["O site está fora do ar.", "O site está lento.", "O site está no fim da página."],
+      "answer": 0,
+      "explanation_pt": "\"To be down\" é estar fora do ar, sem funcionar."
+    },
+    {
+      "id": "b1-07-prac-23",
+      "kind": "fill",
+      "instruction_pt": "Complete com a forma certa de \"charge\": \"I forgot ___ my phone last night.\"",
+      "sentence": "I forgot ___ my phone last night.",
+      "accepted": ["to charge"],
+      "commonErrors": [
+        {
+          "id": "forgot-charging",
+          "match": "^charging$|^charge$",
+          "explanation_pt": "\"Forgot to charge\" = esqueci de carregar. \"Forgot charging\" mudaria o sentido.",
+          "correction_en": "I forgot to charge my phone last night."
+        }
+      ]
+    },
+    {
+      "id": "b1-07-prac-24",
+      "kind": "order",
+      "instruction_pt": "Coloque as palavras na ordem certa.",
+      "accepted": ["My laptop keeps freezing."]
+    }
   ]
 }

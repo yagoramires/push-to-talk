@@ -383,10 +383,87 @@
           ]
         },
         {
-          "id": "c1-01-conv-3",
-          "kind": "order",
-          "instruction_pt": "Put the words in order to make a hedged statement.",
-          "accepted": ["There may be some truth in that"]
+          "id": "c1-01-conv-dialogue",
+          "kind": "dialogue",
+          "instruction_pt": "Role-play: respond to your friend with nuance. Agree partly, then qualify.",
+          "scene_pt": "A friend makes a sweeping claim about social media over coffee.",
+          "turns": [
+            {
+              "speaker": "partner",
+              "text": "Honestly, I think social media has ruined our ability to concentrate."
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Agree to some extent, but say it's not quite that simple.",
+              "accepted": [
+                "To some extent, but I think it's not quite that simple",
+                "To some extent, yes, but it's not quite that simple",
+                "I agree to some extent, but it's not quite that simple",
+                "Up to a point, but it's not quite that simple",
+                "You have a point, but it's not quite that simple",
+                "To an extent, but it's not that simple",
+                "I'd agree to some extent, but it's not quite that simple"
+              ],
+              "commonErrors": [
+                {
+                  "id": "in-some-extent",
+                  "match": "\\bin (some|a certain) extent\\b",
+                  "explanation_pt": "The preposition is \"to\": \"to some extent\", \"to a certain extent\".",
+                  "correction_en": "To some extent, yes."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Come on. Everyone's glued to their phones these days."
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Say that's true by and large, but some people use it to learn.",
+              "accepted": [
+                "By and large that's true, but some people use it to learn",
+                "That's true by and large, but some people use it to learn",
+                "That's largely true, but some people use it to learn",
+                "That's true on the whole, but some people use it to learn",
+                "By and large, yes, but some people use it to learn things",
+                "On the whole that's true, but some people use it for learning",
+                "That's broadly true, but some people use it to learn"
+              ],
+              "commonErrors": [
+                {
+                  "id": "for-learn",
+                  "match": "\\bfor learn\\b",
+                  "explanation_pt": "After \"for\" use -ing (\"for learning\"), or use \"to learn\".",
+                  "correction_en": "Some people use it to learn."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Fair enough. So what would you say the real problem is?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Say you'd argue the problem is how we use it, not the technology itself.",
+              "accepted": [
+                "I'd argue the problem is how we use it, not the technology itself",
+                "I'd argue that the problem is how we use it, not the technology itself",
+                "I would argue the problem is how we use it, not the technology itself",
+                "I'd argue it's how we use it, not the technology itself",
+                "I'd argue the problem is the way we use it, not the technology itself",
+                "I'd say the problem is how we use it, not the technology itself",
+                "I'd argue the problem is how we use it rather than the technology itself"
+              ],
+              "commonErrors": [
+                {
+                  "id": "own-technology",
+                  "match": "\\bthe own technology\\b",
+                  "explanation_pt": "\"A própria tecnologia\" is \"the technology itself\", not \"the own technology\".",
+                  "correction_en": "Not the technology itself."
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "c1-01-conv-free",
@@ -477,6 +554,530 @@
             "On balance, I'd say it's worth trying"
           ],
           "commonErrors": []
+        }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "id": "c1-01-prac-1",
+      "kind": "vocab",
+      "word_en": "presumably",
+      "meaning_pt": "presumivelmente, imagino que",
+      "example_en": "Presumably, they'll get back to us by the end of the week."
+    },
+    {
+      "id": "c1-01-prac-2",
+      "kind": "vocab",
+      "word_en": "to a large extent",
+      "meaning_pt": "em grande parte",
+      "example_en": "To a large extent, the delay was caused by the supplier."
+    },
+    {
+      "id": "c1-01-prac-3",
+      "kind": "vocab",
+      "word_en": "it's safe to say",
+      "meaning_pt": "dá para dizer com segurança que",
+      "example_en": "It's safe to say that nobody expected this result."
+    },
+    {
+      "id": "c1-01-prac-4",
+      "kind": "vocab",
+      "word_en": "in all likelihood",
+      "meaning_pt": "com toda a probabilidade",
+      "example_en": "In all likelihood, the meeting will be postponed."
+    },
+    {
+      "id": "c1-01-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "There's a chance we may have overlooked something.",
+      "accepted": [
+        "There's a chance we may have overlooked something",
+        "There's a chance we might have overlooked something",
+        "There is a chance we may have overlooked something"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-01-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "I'm inclined to agree, up to a point.",
+      "accepted": ["I'm inclined to agree, up to a point", "I am inclined to agree, up to a point"],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-01-prac-7",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "It's arguably the most important decision we'll make this year.",
+      "accepted": [
+        "It's arguably the most important decision we'll make this year",
+        "It is arguably the most important decision we will make this year"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-01-prac-8",
+      "kind": "repeat",
+      "instruction_pt": "Repeat. Keep \"by and large\" light and quick.",
+      "prompt": "By and large, the feedback has been positive.",
+      "accepted": [
+        "By and large, the feedback has been positive",
+        "By and large the feedback's been positive"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-01-prac-9",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with a fall-rise on \"failure\" to show reservation.",
+      "prompt": "I wouldn't go so far as to say it's a failure.",
+      "accepted": [
+        "I wouldn't go so far as to say it's a failure",
+        "I would not go so far as to say it is a failure"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-01-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Pode ser que a gente precise de mais tempo.\"",
+      "accepted": [
+        "We may need more time",
+        "We might need more time",
+        "We may need a bit more time",
+        "We might need a bit more time",
+        "It's possible we'll need more time",
+        "It's possible that we'll need more time",
+        "Perhaps we'll need more time",
+        "Maybe we'll need more time",
+        "We could need more time",
+        "We may well need more time"
+      ],
+      "commonErrors": [
+        {
+          "id": "can-be-that",
+          "match": "\\bcan be (that|we)\\b",
+          "explanation_pt": "\"Pode ser que\" is not \"can be that\". Use \"may/might\" or \"It's possible that...\".",
+          "correction_en": "We may need more time."
+        }
+      ]
+    },
+    {
+      "id": "c1-01-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"De modo geral, os resultados foram bons.\"",
+      "accepted": [
+        "By and large, the results were good",
+        "On the whole, the results were good",
+        "Overall, the results were good",
+        "Generally speaking, the results were good",
+        "In general, the results were good",
+        "By and large, the results were positive",
+        "On the whole, the results were positive",
+        "Overall, the results were positive",
+        "The results were good on the whole",
+        "The results were broadly good"
+      ],
+      "commonErrors": [
+        {
+          "id": "general-mode",
+          "match": "\\b(in|of) (a )?general (way|mode)\\b",
+          "explanation_pt": "\"De modo geral\" is \"by and large\", \"on the whole\" or \"overall\", not \"in a general way\".",
+          "correction_en": "On the whole, the results were good."
+        }
+      ]
+    },
+    {
+      "id": "c1-01-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Ao que parece, ninguém leu o relatório.\"",
+      "accepted": [
+        "It would seem that nobody read the report",
+        "It would seem nobody read the report",
+        "It would seem that no one read the report",
+        "It would seem no one read the report",
+        "It seems that nobody read the report",
+        "It seems nobody read the report",
+        "It seems no one read the report",
+        "Apparently, nobody read the report",
+        "Apparently, no one read the report",
+        "Apparently nobody has read the report",
+        "It would seem nobody has read the report"
+      ],
+      "commonErrors": [
+        {
+          "id": "double-negative",
+          "match": "\\b(nobody|no one) (did not|has not)\\b",
+          "explanation_pt": "English avoids double negatives: \"nobody read it\", not \"nobody didn't read it\".",
+          "correction_en": "It would seem that nobody read the report."
+        }
+      ]
+    },
+    {
+      "id": "c1-01-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Eu tendo a achar que ele está certo.\"",
+      "accepted": [
+        "I'm inclined to think he's right",
+        "I'm inclined to think that he's right",
+        "I tend to think he's right",
+        "I tend to think that he's right",
+        "I'm inclined to believe he's right",
+        "I'm inclined to think he is right",
+        "I tend to think he is right",
+        "I'm inclined to agree with him",
+        "I tend to agree with him"
+      ],
+      "commonErrors": [
+        {
+          "id": "has-reason",
+          "match": "\\bhe has (the )?reason\\b",
+          "explanation_pt": "\"Estar certo / ter razão\" is \"to be right\", not \"to have reason\".",
+          "correction_en": "I'm inclined to think he's right."
+        }
+      ]
+    },
+    {
+      "id": "c1-01-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Não diria que é impossível, mas é improvável.\"",
+      "accepted": [
+        "I wouldn't say it's impossible, but it's unlikely",
+        "I wouldn't say that it's impossible, but it's unlikely",
+        "I wouldn't say it's impossible, but it is unlikely",
+        "I wouldn't call it impossible, but it's unlikely",
+        "I wouldn't say it's impossible, but it's not very likely",
+        "I wouldn't say it's impossible, just unlikely",
+        "It's not impossible, but it's unlikely",
+        "I wouldn't say it's impossible, but it's improbable",
+        "I would not say it is impossible, but it is unlikely"
+      ],
+      "commonErrors": [
+        {
+          "id": "improvable",
+          "match": "\\bimprovable\\b",
+          "explanation_pt": "\"Improvable\" means \"can be improved\". For \"improvável\" say \"unlikely\" or \"improbable\".",
+          "correction_en": "I wouldn't say it's impossible, but it's unlikely."
+        }
+      ]
+    },
+    {
+      "id": "c1-01-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and answer with a hedge: partly yes, but not completely.",
+      "listen": "Is the new policy going to solve the problem?",
+      "accepted": [
+        "To some extent",
+        "To some extent, yes",
+        "Up to a point",
+        "Up to a point, yes",
+        "Partly, yes",
+        "In part, yes",
+        "It should help to some extent",
+        "It might help, but it won't solve everything",
+        "It may help, but not completely",
+        "I doubt it'll solve it completely",
+        "Not entirely, I'd say",
+        "To a certain extent",
+        "Only partly, I'd imagine",
+        "It'll help, but I doubt it'll solve everything"
+      ],
+      "commonErrors": [
+        {
+          "id": "in-some-extent",
+          "match": "\\bin (some|a certain) extent\\b",
+          "explanation_pt": "The preposition is \"to\": \"to some extent\", \"to a certain extent\".",
+          "correction_en": "To some extent, yes."
+        },
+        {
+          "id": "until-a-point",
+          "match": "\\buntil (a|certain) point\\b",
+          "explanation_pt": "\"Até certo ponto\" is \"up to a point\", not \"until a point\".",
+          "correction_en": "Up to a point, yes."
+        }
+      ]
+    },
+    {
+      "id": "c1-01-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and give a measured answer: mostly yes, with a reservation.",
+      "listen": "Was the presentation a success?",
+      "accepted": [
+        "By and large, yes",
+        "On the whole, yes",
+        "More or less, yes",
+        "For the most part, yes",
+        "Mostly, yes",
+        "Broadly speaking, yes",
+        "I'd say so, on the whole",
+        "I'd say it went fairly well",
+        "Largely, yes, though there's room for improvement",
+        "On the whole, yes, but it ran a bit long",
+        "Yes, by and large",
+        "I think so, more or less"
+      ],
+      "commonErrors": [
+        {
+          "id": "in-the-whole",
+          "match": "\\bin the whole\\b",
+          "explanation_pt": "The expression is \"on the whole\", not \"in the whole\".",
+          "correction_en": "On the whole, yes."
+        },
+        {
+          "id": "general-lines",
+          "match": "\\bin general lines\\b",
+          "explanation_pt": "\"Em linhas gerais\" is \"broadly speaking\" or \"by and large\".",
+          "correction_en": "Broadly speaking, yes."
+        }
+      ]
+    },
+    {
+      "id": "c1-01-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and answer cautiously, showing you are doubtful.",
+      "listen": "Do you think prices will go down next year?",
+      "accepted": [
+        "I doubt it",
+        "I doubt they will",
+        "I doubt it, to be honest",
+        "I wouldn't count on it",
+        "I'm not so sure",
+        "I'm not convinced they will",
+        "It seems unlikely",
+        "It seems unlikely, to be honest",
+        "Possibly, but I doubt it",
+        "I wouldn't bet on it",
+        "I have my doubts",
+        "I'd be surprised if they did",
+        "Probably not"
+      ],
+      "commonErrors": [
+        {
+          "id": "think-that-no",
+          "match": "\\bi (doubt|think|believe)( that)? (yes|no)\\b",
+          "explanation_pt": "English says \"I doubt it\" or \"I don't think so\", not \"I think that no\" or \"I doubt yes\".",
+          "correction_en": "I doubt it."
+        }
+      ]
+    },
+    {
+      "id": "c1-01-prac-18",
+      "kind": "free_speak",
+      "instruction_pt": "Answer in about a minute. Give your view, but hedge where you are not sure.",
+      "prompt_en": "Will remote work still be common ten years from now?",
+      "guidelines_pt": [
+        "Open with a hedge: \"In all likelihood...\" or \"I'm inclined to think...\".",
+        "Give one reason and one example.",
+        "Concede something: \"That said, ...\" or \"Admittedly, ...\".",
+        "Close with \"On balance, ...\""
+      ]
+    },
+    {
+      "id": "c1-01-prac-19",
+      "kind": "dialogue",
+      "instruction_pt": "Role-play: answer your colleague with measured, hedged language.",
+      "scene_pt": "A colleague asks what you think of a new supplier's proposal. You have some doubts.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Have you had a chance to look at the new supplier's proposal?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Say yes, and that it looks promising to some extent.",
+          "accepted": [
+            "Yes, and to some extent it looks promising",
+            "Yes, it looks promising to some extent",
+            "Yes, I have. It looks promising to some extent",
+            "Yes, it seems promising to some extent",
+            "Yes, and it looks fairly promising",
+            "Yes, it looks promising, up to a point",
+            "Yes, I have, and it looks quite promising in some ways"
+          ],
+          "commonErrors": [
+            {
+              "id": "in-some-extent",
+              "match": "\\bin (some|a certain) extent\\b",
+              "explanation_pt": "The preposition is \"to\": \"to some extent\", \"to a certain extent\".",
+              "correction_en": "To some extent, yes."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "But? I can hear a 'but' coming."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Say you're not entirely convinced by the price.",
+          "accepted": [
+            "I'm not entirely convinced by the price",
+            "I'm not entirely convinced about the price",
+            "I'm not totally convinced by the price",
+            "I'm not completely convinced by the price",
+            "I'm not entirely sure about the price",
+            "The price doesn't entirely convince me",
+            "I'm not entirely happy with the price",
+            "I'm not quite convinced by the price"
+          ],
+          "commonErrors": [
+            {
+              "id": "convinced-with",
+              "match": "\\bconvinced with\\b",
+              "explanation_pt": "We say \"convinced by\" or \"convinced about\", not \"convinced with\".",
+              "correction_en": "I'm not entirely convinced by the price."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Fair enough. So would you recommend we go with them?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Say it would seem a good option, but you'd suggest negotiating first.",
+          "accepted": [
+            "It would seem a good option, but I'd suggest negotiating first",
+            "It would seem like a good option, but I'd suggest negotiating first",
+            "It seems like a good option, but I'd suggest negotiating first",
+            "It would seem to be a good option, but I'd suggest we negotiate first",
+            "It seems a good option, but I'd suggest negotiating first",
+            "It would seem a good option, but I'd suggest that we negotiate first",
+            "It looks like a good option, but I'd suggest negotiating first"
+          ],
+          "commonErrors": [
+            {
+              "id": "suggest-to",
+              "match": "\\bsuggest to\\b",
+              "explanation_pt": "\"Suggest\" takes -ing or a that-clause, not \"to + verb\".",
+              "correction_en": "I'd suggest negotiating first."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Makes sense. I'll set up a call with them."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Say that sounds like a sensible approach.",
+          "accepted": [
+            "That sounds like a sensible approach",
+            "That sounds sensible",
+            "That sounds like a sensible idea",
+            "Sounds like a sensible approach",
+            "That seems like a sensible approach",
+            "That sounds like a good approach",
+            "Sounds sensible"
+          ],
+          "commonErrors": [
+            {
+              "id": "sensitive",
+              "match": "\\bsensitive\\b",
+              "explanation_pt": "\"Sensitive\" means \"sensível\". \"Sensato\" is \"sensible\".",
+              "correction_en": "That sounds like a sensible approach."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-01-prac-20",
+      "kind": "choice",
+      "instruction_pt": "Which reply sounds the most measured?",
+      "prompt": "Is this the best solution?",
+      "options": [
+        "Yes, absolutely, no doubt about it.",
+        "It's arguably the best option we have, though it isn't perfect.",
+        "No, it's a terrible idea."
+      ],
+      "answer": 1,
+      "explanation_pt": "Arguably plus a concession (\"though it isn't perfect\") gives your view without overstating it."
+    },
+    {
+      "id": "c1-01-prac-21",
+      "kind": "choice",
+      "instruction_pt": "Which sentence expresses the highest degree of certainty?",
+      "options": ["It might be true.", "It's bound to be true.", "It could possibly be true."],
+      "answer": 1,
+      "explanation_pt": "\"Bound to\" means \"almost certain\". \"Might\" and \"could possibly\" are much weaker."
+    },
+    {
+      "id": "c1-01-prac-22",
+      "kind": "choice",
+      "instruction_pt": "What does \"presumably\" mean here?",
+      "prompt": "Presumably, they'll call us back.",
+      "options": [
+        "They will definitely call.",
+        "It's reasonable to assume they'll call.",
+        "They have refused to call."
+      ],
+      "answer": 1,
+      "explanation_pt": "\"Presumably\" means you assume something is true based on what you know, without being sure."
+    },
+    {
+      "id": "c1-01-prac-23",
+      "kind": "fill",
+      "instruction_pt": "Complete with one word.",
+      "sentence": "I wouldn't go so ___ as to call it a disaster.",
+      "accepted": ["far"],
+      "commonErrors": [
+        {
+          "id": "so-long",
+          "match": "^(long|much)$",
+          "explanation_pt": "The fixed phrase is \"go so far as to\".",
+          "correction_en": "I wouldn't go so far as to call it a disaster."
+        }
+      ]
+    },
+    {
+      "id": "c1-01-prac-24",
+      "kind": "fill",
+      "instruction_pt": "Complete with one word.",
+      "sentence": "There may well be some truth ___ what she says.",
+      "accepted": ["in"],
+      "commonErrors": [
+        {
+          "id": "truth-on",
+          "match": "^(on|of)$",
+          "explanation_pt": "We say \"some truth in\" something.",
+          "correction_en": "There may well be some truth in what she says."
+        }
+      ]
+    },
+    {
+      "id": "c1-01-prac-25",
+      "kind": "order",
+      "instruction_pt": "Put the words in order to make a hedged statement.",
+      "accepted": ["By and large it seems to be working"]
+    },
+    {
+      "id": "c1-01-prac-26",
+      "kind": "match",
+      "instruction_pt": "Match each hedge with its meaning.",
+      "pairs": [
+        {
+          "en": "in all likelihood",
+          "pt": "com toda a probabilidade"
+        },
+        {
+          "en": "as far as I can tell",
+          "pt": "pelo que eu posso ver"
+        },
+        {
+          "en": "for the most part",
+          "pt": "na maior parte"
+        },
+        {
+          "en": "all things being equal",
+          "pt": "em condições normais"
+        },
+        {
+          "en": "to a degree",
+          "pt": "até certo ponto"
         }
       ]
     }

@@ -116,11 +116,26 @@
           "kind": "match",
           "instruction_pt": "Ligue cada palavra ao seu significado.",
           "pairs": [
-            { "en": "platform", "pt": "plataforma" },
-            { "en": "trip", "pt": "viagem" },
-            { "en": "one-way ticket", "pt": "passagem só de ida" },
-            { "en": "gate", "pt": "portão de embarque" },
-            { "en": "luggage", "pt": "bagagem" }
+            {
+              "en": "platform",
+              "pt": "plataforma"
+            },
+            {
+              "en": "trip",
+              "pt": "viagem"
+            },
+            {
+              "en": "one-way ticket",
+              "pt": "passagem só de ida"
+            },
+            {
+              "en": "gate",
+              "pt": "portão de embarque"
+            },
+            {
+              "en": "luggage",
+              "pt": "bagagem"
+            }
           ]
         },
         {
@@ -473,6 +488,532 @@
             }
           ]
         }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "id": "a2-04-prac-1",
+      "kind": "vocab",
+      "word_en": "platform",
+      "meaning_pt": "plataforma (da estação)",
+      "example_en": "The train to Rio leaves from platform 3."
+    },
+    {
+      "id": "a2-04-prac-2",
+      "kind": "vocab",
+      "word_en": "catch",
+      "meaning_pt": "pegar (ônibus, trem) a tempo",
+      "example_en": "We ran to catch the last bus."
+    },
+    {
+      "id": "a2-04-prac-3",
+      "kind": "vocab",
+      "word_en": "one-way ticket",
+      "meaning_pt": "passagem só de ida",
+      "example_en": "I bought a one-way ticket to Lisbon."
+    },
+    {
+      "id": "a2-04-prac-4",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "How much is a ticket to the city center?",
+      "accepted": ["How much is a ticket to the city center?"],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-04-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "The bus was late, so I took a taxi.",
+      "accepted": ["The bus was late, so I took a taxi."],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-04-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "Which platform does the train leave from?",
+      "accepted": ["Which platform does the train leave from?"],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-04-prac-7",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "It takes about two hours by car.",
+      "accepted": ["It takes about two hours by car."],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-04-prac-8",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "We caught the early flight to Salvador.",
+      "accepted": ["We caught the early flight to Salvador."],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-04-prac-9",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu gostaria de uma passagem de ida e volta para Campinas.\"",
+      "accepted": [
+        "I'd like a round-trip ticket to Campinas",
+        "I'd like a return ticket to Campinas",
+        "I would like a round-trip ticket to Campinas",
+        "A round-trip ticket to Campinas, please",
+        "A return ticket to Campinas, please",
+        "Could I have a round-trip ticket to Campinas?",
+        "Can I have a return ticket to Campinas?"
+      ],
+      "commonErrors": [
+        {
+          "id": "go-and-back",
+          "match": "\\b(go and (come )?back|going and return)\\b",
+          "explanation_pt": "\"Ida e volta\" é \"round-trip\" (americano) ou \"return\" (britânico).",
+          "correction_en": "I'd like a round-trip ticket to Campinas."
+        },
+        {
+          "id": "passage",
+          "match": "\\bpassage\\b",
+          "explanation_pt": "\"Passagem\" de viagem é \"ticket\". \"Passage\" é corredor ou trecho de texto.",
+          "correction_en": "I'd like a round-trip ticket to Campinas."
+        }
+      ]
+    },
+    {
+      "id": "a2-04-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Quanto tempo leva para chegar ao centro?\"",
+      "accepted": [
+        "How long does it take to get to the city center?",
+        "How long does it take to get downtown?",
+        "How long does it take to get to the center?",
+        "How long does it take to the city center?",
+        "How long is it to the city center?",
+        "How long does it take to get to the city centre?"
+      ],
+      "commonErrors": [
+        {
+          "id": "how-much-time",
+          "match": "^how much time\\b",
+          "explanation_pt": "Para duração o natural é \"How long does it take...?\".",
+          "correction_en": "How long does it take to get to the city center?"
+        },
+        {
+          "id": "takes-it",
+          "match": "\\bhow long it takes\\b",
+          "explanation_pt": "Na pergunta use \"does\": \"How long does it take...?\".",
+          "correction_en": "How long does it take to get to the city center?"
+        }
+      ]
+    },
+    {
+      "id": "a2-04-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu perdi o trem e cheguei atrasado.\"",
+      "accepted": [
+        "I missed the train and I was late",
+        "I missed the train and arrived late",
+        "I missed the train and got there late",
+        "I missed the train, so I was late",
+        "I missed the train and got in late",
+        "I missed the train and I arrived late"
+      ],
+      "commonErrors": [
+        {
+          "id": "lost-bus",
+          "match": "\\b(lost|loosed|lose) the (bus|train|flight|plane)\\b",
+          "explanation_pt": "\"Perder\" o ônibus/trem/voo é \"miss\". \"Lose\" é perder um objeto.",
+          "correction_en": "I missed the train and I was late."
+        },
+        {
+          "id": "arrived-delayed",
+          "match": "\\b(arrived|was) delayed\\b",
+          "explanation_pt": "Para pessoas use \"late\". \"Delayed\" é para voos e trens.",
+          "correction_en": "I missed the train and I was late."
+        }
+      ]
+    },
+    {
+      "id": "a2-04-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu prefiro ir de trem.\"",
+      "accepted": [
+        "I prefer to go by train",
+        "I prefer going by train",
+        "I prefer the train",
+        "I'd rather go by train",
+        "I prefer taking the train",
+        "I'd prefer to go by train"
+      ],
+      "commonErrors": [
+        {
+          "id": "by-the",
+          "match": "\\bby (the|a) (bus|train|car|plane|subway|metro)\\b|\\bin (bus|train|subway)\\b",
+          "explanation_pt": "Para meio de transporte use \"by\" sem artigo: \"by bus\", \"by train\".",
+          "correction_en": "I prefer to go by train."
+        },
+        {
+          "id": "prefer-than",
+          "match": "\\bprefer go\\b",
+          "explanation_pt": "Depois de \"prefer\" use \"to go\" ou \"going\".",
+          "correction_en": "I prefer to go by train."
+        }
+      ]
+    },
+    {
+      "id": "a2-04-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"O trem sai da plataforma dois.\"",
+      "accepted": [
+        "The train leaves from platform two",
+        "The train leaves from platform 2",
+        "The train departs from platform two",
+        "The train goes from platform two",
+        "It leaves from platform two"
+      ],
+      "commonErrors": [
+        {
+          "id": "exit",
+          "match": "\\btrain (exits|goes out)\\b",
+          "explanation_pt": "\"Sair\" (partir) para transporte é \"leave\" ou \"depart\". \"Exit\" é sair de um lugar.",
+          "correction_en": "The train leaves from platform two."
+        }
+      ]
+    },
+    {
+      "id": "a2-04-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Nós pegamos um táxi para o aeroporto.\"",
+      "accepted": [
+        "We took a taxi to the airport",
+        "We got a taxi to the airport",
+        "We took a cab to the airport",
+        "We caught a taxi to the airport",
+        "We went to the airport by taxi",
+        "We got a cab to the airport"
+      ],
+      "commonErrors": [
+        {
+          "id": "picked",
+          "match": "\\b(picked|pick) (up )?a (taxi|cab)\\b",
+          "explanation_pt": "\"Pegar\" um táxi é \"take\" ou \"get\". \"Pick up\" é buscar alguém.",
+          "correction_en": "We took a taxi to the airport."
+        },
+        {
+          "id": "take-present",
+          "match": "^we take a\\b",
+          "explanation_pt": "A ação já passou: \"took\".",
+          "correction_en": "We took a taxi to the airport."
+        }
+      ]
+    },
+    {
+      "id": "a2-04-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que você normalmente vai de ônibus.",
+      "listen": "How do you usually get to work?",
+      "accepted": [
+        "I usually go by bus",
+        "I usually take the bus",
+        "Usually by bus",
+        "By bus",
+        "I usually get the bus",
+        "I usually go to work by bus",
+        "I normally take the bus"
+      ],
+      "commonErrors": [
+        {
+          "id": "by-the",
+          "match": "\\bby (the|a) (bus|train|car|plane|subway|metro)\\b|\\bin (bus|train|subway)\\b",
+          "explanation_pt": "Para meio de transporte use \"by\" sem artigo: \"by bus\", \"by train\".",
+          "correction_en": "I usually go by bus."
+        },
+        {
+          "id": "go-of-bus",
+          "match": "\\bof bus\\b",
+          "explanation_pt": "\"De ônibus\" é \"by bus\".",
+          "correction_en": "I usually go by bus."
+        }
+      ]
+    },
+    {
+      "id": "a2-04-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que sim, pode sentar.",
+      "listen": "Is this seat free?",
+      "accepted": [
+        "Yes, it is",
+        "Yes, go ahead",
+        "Yes, it's free",
+        "Yes, sit down",
+        "Yeah, it's free",
+        "Yes, please sit down",
+        "Yes, of course"
+      ],
+      "commonErrors": [
+        {
+          "id": "yes-is",
+          "match": "^yes is$",
+          "explanation_pt": "A resposta curta precisa do sujeito: \"Yes, it is\".",
+          "correction_en": "Yes, it is."
+        }
+      ]
+    },
+    {
+      "id": "a2-04-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que sai às dez e meia.",
+      "listen": "When does the next bus to the airport leave?",
+      "accepted": [
+        "It leaves at ten thirty",
+        "At ten thirty",
+        "At half past ten",
+        "It leaves at half past ten",
+        "The next one leaves at ten thirty",
+        "It's at ten thirty",
+        "At 10:30"
+      ],
+      "commonErrors": [
+        {
+          "id": "in-time",
+          "match": "^(in|on) (ten|half)\\b",
+          "explanation_pt": "Para horários use \"at\": \"at ten thirty\".",
+          "correction_en": "It leaves at ten thirty."
+        },
+        {
+          "id": "exit",
+          "match": "\\bexits\\b",
+          "explanation_pt": "\"Sair\" para transporte é \"leave\".",
+          "correction_en": "It leaves at ten thirty."
+        }
+      ]
+    },
+    {
+      "id": "a2-04-prac-18",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que foi bom, mas o voo atrasou uma hora.",
+      "listen": "How was your flight?",
+      "accepted": [
+        "It was good, but it was delayed by an hour",
+        "It was fine, but it was an hour late",
+        "Good, but it was delayed by one hour",
+        "It was OK, but it was delayed an hour",
+        "It was good, but it was one hour late",
+        "Good, but it was an hour late"
+      ],
+      "commonErrors": [
+        {
+          "id": "is-good",
+          "match": "^it is\\b",
+          "explanation_pt": "O voo já passou: \"It was\".",
+          "correction_en": "It was good, but it was delayed by an hour."
+        },
+        {
+          "id": "delay-one-hour",
+          "match": "\\bit delayed\\b",
+          "explanation_pt": "Use a voz passiva: \"it was delayed\".",
+          "correction_en": "It was good, but it was delayed by an hour."
+        }
+      ]
+    },
+    {
+      "id": "a2-04-prac-19",
+      "kind": "fill",
+      "instruction_pt": "Complete com a preposição certa.",
+      "sentence": "I go to the gym ___ bike.",
+      "accepted": ["by"],
+      "commonErrors": [
+        {
+          "id": "of-with",
+          "match": "^(of|with|in|on)$",
+          "explanation_pt": "Meio de transporte: \"by bike\", \"by car\".",
+          "correction_en": "by."
+        }
+      ]
+    },
+    {
+      "id": "a2-04-prac-20",
+      "kind": "fill",
+      "instruction_pt": "Complete com o verbo certo.",
+      "sentence": "Hurry up or we'll ___ the train!",
+      "accepted": ["miss"],
+      "commonErrors": [
+        {
+          "id": "lose",
+          "match": "^(lose|loose|lost)$",
+          "explanation_pt": "\"Perder\" o trem é \"miss\".",
+          "correction_en": "miss."
+        }
+      ]
+    },
+    {
+      "id": "a2-04-prac-21",
+      "kind": "choice",
+      "instruction_pt": "Você chegou atrasado e o ônibus já saiu. O que você diz?",
+      "options": ["I missed the bus.", "I lost the bus.", "I lose the bus."],
+      "answer": 0,
+      "explanation_pt": "\"Perder\" um transporte é \"miss\". \"Lose\" é perder um objeto."
+    },
+    {
+      "id": "a2-04-prac-22",
+      "kind": "choice",
+      "instruction_pt": "O que significa \"The flight is delayed\"?",
+      "options": ["O voo está atrasado.", "O voo foi cancelado.", "O voo está no horário."],
+      "answer": 0,
+      "explanation_pt": "\"Delayed\" é atrasado. Cancelado é \"cancelled\" e no horário é \"on time\"."
+    },
+    {
+      "id": "a2-04-prac-23",
+      "kind": "match",
+      "instruction_pt": "Ligue cada palavra ao seu significado.",
+      "pairs": [
+        {
+          "en": "platform",
+          "pt": "plataforma"
+        },
+        {
+          "en": "one-way",
+          "pt": "só de ida"
+        },
+        {
+          "en": "delayed",
+          "pt": "atrasado"
+        },
+        {
+          "en": "catch",
+          "pt": "pegar a tempo"
+        },
+        {
+          "en": "luggage",
+          "pt": "bagagem"
+        }
+      ]
+    },
+    {
+      "id": "a2-04-prac-24",
+      "kind": "order",
+      "instruction_pt": "Coloque as palavras na ordem certa para formar a frase.",
+      "accepted": ["How long does the trip take"]
+    },
+    {
+      "id": "a2-04-prac-25",
+      "kind": "dialogue",
+      "instruction_pt": "Converse: responda a cada fala seguindo a dica.",
+      "scene_pt": "Você está no guichê da rodoviária comprando uma passagem.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Hi there. Where to?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que quer ir para Curitiba.",
+          "accepted": [
+            "To Curitiba, please",
+            "I'd like to go to Curitiba",
+            "Curitiba, please",
+            "One ticket to Curitiba, please",
+            "A ticket to Curitiba, please",
+            "I want to go to Curitiba, please"
+          ],
+          "commonErrors": [
+            {
+              "id": "for-curitiba",
+              "match": "\\b(ticket|go) for curitiba\\b",
+              "explanation_pt": "Destino usa \"to\": \"a ticket to Curitiba\".",
+              "correction_en": "To Curitiba, please."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "One-way or round-trip?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que é só de ida.",
+          "accepted": [
+            "One-way, please",
+            "Just one-way",
+            "One-way",
+            "Single, please",
+            "Just one-way, please",
+            "One-way, thanks"
+          ],
+          "commonErrors": [
+            {
+              "id": "only-going",
+              "match": "\\bonly (go|going)\\b",
+              "explanation_pt": "\"Só de ida\" é \"one-way\" (ou \"single\", no inglês britânico).",
+              "correction_en": "One-way, please."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "That's forty-five dollars. The bus leaves at nine fifteen."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Pergunte de qual plataforma sai.",
+          "accepted": [
+            "Which platform does it leave from?",
+            "What platform does it leave from?",
+            "Which platform?",
+            "Where does it leave from?",
+            "Which platform is it?",
+            "From which platform?"
+          ],
+          "commonErrors": [
+            {
+              "id": "leave-it",
+              "match": "\\bplatform it leaves\\b",
+              "explanation_pt": "Na pergunta use \"does\": \"Which platform does it leave from?\".",
+              "correction_en": "Which platform does it leave from?"
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Platform six. And it takes about six hours."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Agradeça e diga que vai pagar com cartão.",
+          "accepted": [
+            "Thanks. I'll pay by card",
+            "Thank you. I'll pay by card",
+            "Thanks. Can I pay by card?",
+            "Thank you. Can I pay by card?",
+            "Thanks, I'll pay with my card",
+            "Great, thanks. By card, please"
+          ],
+          "commonErrors": [
+            {
+              "id": "in-card",
+              "match": "\\bpay (in|on) card\\b",
+              "explanation_pt": "Diga \"pay by card\".",
+              "correction_en": "Thanks. I'll pay by card."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Sure. Have a good trip!"
+        }
+      ]
+    },
+    {
+      "id": "a2-04-prac-26",
+      "kind": "free_speak",
+      "instruction_pt": "Explique para a Sam como você costuma ir ao trabalho ou à escola e quanto tempo leva.",
+      "prompt_en": "How do you get to work or school every day? How long does it take?",
+      "guidelines_pt": [
+        "Diga o transporte com \"by\": \"I go by bus\", ou \"I take the subway\".",
+        "Diga a duração: \"It takes about forty minutes\".",
+        "Conte um problema comum: \"Sometimes the bus is late\"."
       ]
     }
   ]

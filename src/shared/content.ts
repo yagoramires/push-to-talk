@@ -11,7 +11,14 @@ export const BLOCK_KINDS = [
   'review'
 ] as const
 export type BlockKind = (typeof BLOCK_KINDS)[number]
-export const SPOKEN_KINDS = ['repeat', 'translate', 'listen_answer', 'free_speak', 'vocab'] as const
+export const SPOKEN_KINDS = [
+  'repeat',
+  'translate',
+  'listen_answer',
+  'free_speak',
+  'vocab',
+  'dialogue'
+] as const
 
 const str = z.string().min(1)
 const isRegex = (s: string): boolean => {
@@ -121,6 +128,39 @@ export const MatchExerciseSchema = z.object({
 })
 export type MatchExercise = z.infer<typeof MatchExerciseSchema>
 
+export const TurnSchema = z.discriminatedUnion('speaker', [
+  z.object({ speaker: z.literal('partner'), text: str }),
+  z.object({
+    speaker: z.literal('you'),
+    cue_pt: str,
+    accepted: z.array(str).min(1),
+    commonErrors: z.array(CommonErrorSchema)
+  })
+])
+export type Turn = z.infer<typeof TurnSchema>
+export type YouTurn = Extract<Turn, { speaker: 'you' }>
+
+export const DialogueSchema = z
+  .object({
+    id: str,
+    kind: z.literal('dialogue'),
+    instruction_pt: str,
+    scene_pt: str,
+    turns: z.array(TurnSchema).min(2).max(12)
+  })
+  .refine((d) => d.turns[0]?.speaker === 'partner', {
+    path: ['turns', 0],
+    message: 'the first turn is the partner'
+  })
+  .refine(
+    (d) => {
+      const you = d.turns.filter((t) => t.speaker === 'you').length
+      return you >= 3 && you <= 6
+    },
+    { path: ['turns'], message: 'needs 3 to 6 "you" turns' }
+  )
+export type Dialogue = z.infer<typeof DialogueSchema>
+
 export const ExerciseSchema = z.discriminatedUnion('kind', [
   SpokenExerciseSchema,
   VocabCardSchema,
@@ -128,7 +168,8 @@ export const ExerciseSchema = z.discriminatedUnion('kind', [
   ChoiceExerciseSchema,
   FillExerciseSchema,
   OrderExerciseSchema,
-  MatchExerciseSchema
+  MatchExerciseSchema,
+  DialogueSchema
 ])
 export type Exercise = z.infer<typeof ExerciseSchema>
 
@@ -155,7 +196,9 @@ export const UnitSchema = z.object({
   title_pt: str,
   title_en: str,
   objective_pt: str,
-  blocks: z.array(BlockSchema).min(1)
+  blocks: z.array(BlockSchema).min(1),
+  /** Prática extra, fora da trilha: usada pelo "Praticar mais" com repetição espaçada. */
+  practice: z.array(ExerciseSchema).default([])
 })
 export type Unit = z.infer<typeof UnitSchema>
 
@@ -252,7 +295,7 @@ function assessmentItems(course: Course): { level: Level; item: AssessmentItem }
   ]
 }
 
-/** Exercícios das avaliações não têm bloco; a unidade vem do unitId ou é a primeira do nível. */
+/** Exercícios da prática e das avaliações não têm bloco; a unidade vem do unitId ou é a primeira do nível. */
 export function findExercise(
   course: Course,
   exerciseId: string
@@ -262,6 +305,10 @@ export function findExercise(
       const exercise = block.exercises.find((e) => e.id === exerciseId)
       if (exercise) return { unit, block, exercise }
     }
+  for (const unit of course.units) {
+    const exercise = unit.practice.find((e) => e.id === exerciseId)
+    if (exercise) return { unit, exercise }
+  }
   const found = assessmentItems(course).find(({ item }) => item.exercise.id === exerciseId)
   const unit =
     found &&

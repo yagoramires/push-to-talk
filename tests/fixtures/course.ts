@@ -28,6 +28,35 @@ function makeUnit(id: string, order: number, level: Level = 'A1'): Unit {
       ...(kind === 'conversation'
         ? [
             {
+              id: `${id}-conv-dialogue`,
+              kind: 'dialogue' as const,
+              instruction_pt: 'Converse',
+              scene_pt: 'Você chega a um café.',
+              turns: [
+                { speaker: 'partner' as const, text: 'Hi! What would you like?' },
+                {
+                  speaker: 'you' as const,
+                  cue_pt: 'Peça um café',
+                  accepted: ['a coffee please'],
+                  commonErrors: []
+                },
+                { speaker: 'partner' as const, text: 'Small or large?' },
+                {
+                  speaker: 'you' as const,
+                  cue_pt: 'Diga pequeno',
+                  accepted: ['small please'],
+                  commonErrors: []
+                },
+                { speaker: 'partner' as const, text: 'Here you go.' },
+                {
+                  speaker: 'you' as const,
+                  cue_pt: 'Agradeça',
+                  accepted: ['thank you'],
+                  commonErrors: []
+                }
+              ]
+            },
+            {
               id: `${id}-conv-free`,
               kind: 'free_speak' as const,
               instruction_pt: 'Fale',
@@ -45,7 +74,8 @@ function makeUnit(id: string, order: number, level: Level = 'A1'): Unit {
     title_pt: id,
     title_en: id,
     objective_pt: 'Objetivo',
-    blocks
+    blocks,
+    practice: []
   }
 }
 

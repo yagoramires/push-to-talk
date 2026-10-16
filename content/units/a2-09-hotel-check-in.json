@@ -400,10 +400,111 @@
           ]
         },
         {
-          "id": "a2-09-conv-3",
-          "kind": "order",
-          "instruction_pt": "Coloque as palavras na ordem certa para formar a pergunta.",
-          "accepted": ["Could I have a wake up call at seven"]
+          "id": "a2-09-conv-dialogue",
+          "kind": "dialogue",
+          "instruction_pt": "Converse: responda a cada fala seguindo a dica.",
+          "scene_pt": "Você chega à recepção do hotel à noite para fazer o check-in.",
+          "turns": [
+            {
+              "speaker": "partner",
+              "text": "Good evening! Welcome to the Grand Hotel. How can I help you?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga que tem uma reserva em nome de Oliveira.",
+              "accepted": [
+                "Hi, I have a reservation under Oliveira",
+                "Hi, I have a reservation under the name Oliveira",
+                "Good evening. I have a reservation under Oliveira",
+                "I have a booking under the name Oliveira",
+                "Hi, I've got a reservation under Oliveira",
+                "Hi, I have a booking under Oliveira"
+              ],
+              "commonErrors": [
+                {
+                  "id": "in-name",
+                  "match": "\\bin (the )?name of\\b",
+                  "explanation_pt": "Reserva \"em nome de\" é \"under the name...\", ou \"under Silva\".",
+                  "correction_en": "Hi, I have a reservation under Oliveira."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Let me check. Yes, a double room for two nights. Can I see your passport, please?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga \"claro, aqui está\".",
+              "accepted": [
+                "Sure, here you are",
+                "Of course, here you are",
+                "Sure, here it is",
+                "Here you go",
+                "Of course. Here it is",
+                "Sure, here you go"
+              ],
+              "commonErrors": [
+                {
+                  "id": "here-is-are",
+                  "match": "^(sure |of course )?here (is|stay)$",
+                  "explanation_pt": "Para entregar algo: \"Here you are\" ou \"Here it is\".",
+                  "correction_en": "Sure, here you are."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Thank you. Here's your key card. You're in room 512."
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Pergunte se o café da manhã está incluído.",
+              "accepted": [
+                "Is breakfast included?",
+                "Is breakfast included in the price?",
+                "Does the price include breakfast?",
+                "Is the breakfast included?",
+                "Is breakfast included in the rate?"
+              ],
+              "commonErrors": [
+                {
+                  "id": "coffee-morning",
+                  "match": "\\bcoffee (of|in) the morning\\b",
+                  "explanation_pt": "Café da manhã é \"breakfast\".",
+                  "correction_en": "Is breakfast included?"
+                },
+                {
+                  "id": "breakfast-is-included",
+                  "match": "^breakfast is included$",
+                  "explanation_pt": "Na pergunta o \"is\" vem antes: \"Is breakfast included?\".",
+                  "correction_en": "Is breakfast included?"
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Yes, it is. It's from seven to ten in the restaurant."
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Pergunte a que horas é o check-out.",
+              "accepted": [
+                "What time is check-out?",
+                "When is check-out?",
+                "What time do I have to check out?",
+                "What time do we need to check out?"
+              ],
+              "commonErrors": [
+                {
+                  "id": "which-hour",
+                  "match": "^(which|what) hour\\b",
+                  "explanation_pt": "Para horário use \"What time...?\".",
+                  "correction_en": "What time is check-out?"
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "a2-09-conv-free",
@@ -496,6 +597,493 @@
           ],
           "commonErrors": []
         }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "id": "a2-09-prac-1",
+      "kind": "vocab",
+      "word_en": "key card",
+      "meaning_pt": "cartão-chave",
+      "example_en": "My key card doesn't open the door."
+    },
+    {
+      "id": "a2-09-prac-2",
+      "kind": "vocab",
+      "word_en": "single room",
+      "meaning_pt": "quarto de solteiro",
+      "example_en": "I'd like a single room for one night."
+    },
+    {
+      "id": "a2-09-prac-3",
+      "kind": "vocab",
+      "word_en": "air conditioning",
+      "meaning_pt": "ar-condicionado",
+      "example_en": "The air conditioning in my room isn't working."
+    },
+    {
+      "id": "a2-09-prac-4",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "I'd like to check in, please.",
+      "accepted": ["I'd like to check in, please."],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-09-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "The shower in my room doesn't work.",
+      "accepted": ["The shower in my room doesn't work."],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-09-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "Could I have a wake-up call at six?",
+      "accepted": ["Could I have a wake-up call at six?"],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-09-prac-7",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "Is there a gym in the hotel?",
+      "accepted": ["Is there a gym in the hotel?"],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-09-prac-8",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "Can you call a taxi for me, please?",
+      "accepted": ["Can you call a taxi for me, please?"],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-09-prac-9",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu gostaria de um quarto de casal para duas noites.\"",
+      "accepted": [
+        "I'd like a double room for two nights",
+        "I would like a double room for two nights",
+        "A double room for two nights, please",
+        "Could I have a double room for two nights?",
+        "Can I have a double room for two nights?",
+        "I'd like a room with a double bed for two nights"
+      ],
+      "commonErrors": [
+        {
+          "id": "couple-room",
+          "match": "\\bcouple room\\b|\\broom of couple\\b",
+          "explanation_pt": "\"Quarto de casal\" é \"double room\".",
+          "correction_en": "I'd like a double room for two nights."
+        },
+        {
+          "id": "two-night",
+          "match": "\\btwo night\\b",
+          "explanation_pt": "Plural: \"two nights\".",
+          "correction_en": "I'd like a double room for two nights."
+        }
+      ]
+    },
+    {
+      "id": "a2-09-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"O ar-condicionado não está funcionando.\"",
+      "accepted": [
+        "The air conditioning isn't working",
+        "The air conditioning is not working",
+        "The air conditioning doesn't work",
+        "The AC isn't working",
+        "The air conditioner isn't working",
+        "The air conditioner doesn't work"
+      ],
+      "commonErrors": [
+        {
+          "id": "no-working",
+          "match": "\\b(conditioning|conditioner|ac) (no|not) (is )?working\\b",
+          "explanation_pt": "A negação: \"isn't working\".",
+          "correction_en": "The air conditioning isn't working."
+        },
+        {
+          "id": "functioning",
+          "match": "\\bfunctioning\\b",
+          "explanation_pt": "\"Funcionar\" (aparelho) é \"work\": \"It isn't working\".",
+          "correction_en": "The air conditioning isn't working."
+        }
+      ]
+    },
+    {
+      "id": "a2-09-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Tem uma toalha a mais?\"",
+      "accepted": [
+        "Could I have an extra towel?",
+        "Can I have an extra towel?",
+        "Could I have another towel?",
+        "Can I have one more towel?",
+        "Do you have an extra towel?",
+        "Could I get an extra towel, please?"
+      ],
+      "commonErrors": [
+        {
+          "id": "has-wifi",
+          "match": "^(has|have) (wi fi|wifi|a|an|breakfast|towels)\\b",
+          "explanation_pt": "\"Tem...?\" de existência é \"Is there...?\" ou \"Are there...?\".",
+          "correction_en": "Could I have an extra towel?"
+        },
+        {
+          "id": "toalha",
+          "match": "\\b(tower|towels a more)\\b",
+          "explanation_pt": "Toalha é \"towel\" (TAU-ol). \"Tower\" é torre.",
+          "correction_en": "Could I have an extra towel?"
+        }
+      ]
+    },
+    {
+      "id": "a2-09-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"A que horas é servido o café da manhã?\"",
+      "accepted": [
+        "What time is breakfast?",
+        "What time is breakfast served?",
+        "When is breakfast served?",
+        "When is breakfast?",
+        "What time do you serve breakfast?"
+      ],
+      "commonErrors": [
+        {
+          "id": "coffee-morning",
+          "match": "\\bcoffee (of|in) the morning\\b",
+          "explanation_pt": "Café da manhã é \"breakfast\".",
+          "correction_en": "What time is breakfast?"
+        },
+        {
+          "id": "which-hour",
+          "match": "^(which|what) hour\\b",
+          "explanation_pt": "Para horário use \"What time...?\".",
+          "correction_en": "What time is breakfast?"
+        }
+      ]
+    },
+    {
+      "id": "a2-09-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Meu quarto está muito barulhento.\"",
+      "accepted": [
+        "My room is very noisy",
+        "My room is really noisy",
+        "My room is too noisy",
+        "It's very noisy in my room",
+        "My room is so noisy"
+      ],
+      "commonErrors": [
+        {
+          "id": "noise",
+          "match": "\\broom is (very )?(noise|noising)\\b",
+          "explanation_pt": "O adjetivo é \"noisy\".",
+          "correction_en": "My room is very noisy."
+        }
+      ]
+    },
+    {
+      "id": "a2-09-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu posso deixar minha mala na recepção?\"",
+      "accepted": [
+        "Can I leave my suitcase at the front desk?",
+        "Could I leave my suitcase at the front desk?",
+        "Can I leave my bag at the reception?",
+        "Can I leave my suitcase at reception?",
+        "Could I leave my bag at the front desk?",
+        "Can I leave my luggage at the front desk?"
+      ],
+      "commonErrors": [
+        {
+          "id": "let-suitcase",
+          "match": "\\blet my\\b",
+          "explanation_pt": "\"Deixar\" algo num lugar é \"leave\".",
+          "correction_en": "Can I leave my suitcase at the front desk?"
+        },
+        {
+          "id": "in-reception",
+          "match": "\\bin (the )?(reception|front desk)\\b",
+          "explanation_pt": "Na recepção é \"at reception\" ou \"at the front desk\".",
+          "correction_en": "Can I leave my suitcase at the front desk?"
+        }
+      ]
+    },
+    {
+      "id": "a2-09-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que quer fazer o check-in.",
+      "listen": "How can I help you?",
+      "accepted": [
+        "I'd like to check in, please",
+        "I'd like to check in",
+        "I want to check in, please",
+        "Check in, please",
+        "I'm here to check in",
+        "I would like to check in, please"
+      ],
+      "commonErrors": [
+        {
+          "id": "make-checkin",
+          "match": "\\b(make|do) (the )?check in\\b",
+          "explanation_pt": "Use o verbo direto: \"I'd like to check in\".",
+          "correction_en": "I'd like to check in, please."
+        }
+      ]
+    },
+    {
+      "id": "a2-09-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que sim, se não for muito caro.",
+      "listen": "Would you like a room with a view?",
+      "accepted": [
+        "Yes, if it's not too expensive",
+        "Yes, if it isn't too expensive",
+        "Yes, please, if it's not too expensive",
+        "Sure, if it's not too expensive",
+        "Yes, if it's not very expensive",
+        "If it's not too expensive, yes"
+      ],
+      "commonErrors": [
+        {
+          "id": "if-no",
+          "match": "\\bif (it )?(no|not) (is )?(too|very)\\b",
+          "explanation_pt": "A negação é \"if it's not\" ou \"if it isn't\".",
+          "correction_en": "Yes, if it's not too expensive."
+        }
+      ]
+    },
+    {
+      "id": "a2-09-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que o chuveiro não funciona.",
+      "listen": "Is everything OK with your room?",
+      "accepted": [
+        "No, the shower doesn't work",
+        "Not really. The shower doesn't work",
+        "No, the shower isn't working",
+        "The shower doesn't work",
+        "Actually, the shower isn't working",
+        "No, the shower is broken"
+      ],
+      "commonErrors": [
+        {
+          "id": "no-work",
+          "match": "\\bshower (no|not) work",
+          "explanation_pt": "A negação é \"doesn't work\" ou \"isn't working\".",
+          "correction_en": "No, the shower doesn't work."
+        },
+        {
+          "id": "shower-function",
+          "match": "\\bfunction",
+          "explanation_pt": "\"Funcionar\" é \"work\".",
+          "correction_en": "No, the shower doesn't work."
+        }
+      ]
+    },
+    {
+      "id": "a2-09-prac-18",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que vai pagar com cartão de crédito.",
+      "listen": "How would you like to pay?",
+      "accepted": [
+        "By credit card, please",
+        "By credit card",
+        "With my credit card",
+        "I'll pay by credit card",
+        "Credit card, please",
+        "I'd like to pay by credit card"
+      ],
+      "commonErrors": [
+        {
+          "id": "in-card",
+          "match": "\\b(in|on) (credit )?card\\b",
+          "explanation_pt": "Pagar com cartão: \"by credit card\".",
+          "correction_en": "By credit card, please."
+        }
+      ]
+    },
+    {
+      "id": "a2-09-prac-19",
+      "kind": "fill",
+      "instruction_pt": "Complete com a preposição certa.",
+      "sentence": "I have a reservation ___ the name Costa.",
+      "accepted": ["under"],
+      "commonErrors": [
+        {
+          "id": "in-of",
+          "match": "^(in|on|of|with)$",
+          "explanation_pt": "Reserva em nome de: \"under the name...\".",
+          "correction_en": "under."
+        }
+      ]
+    },
+    {
+      "id": "a2-09-prac-20",
+      "kind": "fill",
+      "instruction_pt": "Complete com a palavra certa.",
+      "sentence": "Is breakfast ___ in the price?",
+      "accepted": ["included"],
+      "commonErrors": [
+        {
+          "id": "include",
+          "match": "^(include|includes|inclusive)$",
+          "explanation_pt": "Use o particípio: \"included\".",
+          "correction_en": "included."
+        }
+      ]
+    },
+    {
+      "id": "a2-09-prac-21",
+      "kind": "choice",
+      "instruction_pt": "Você quer sair do hotel. O que você diz na recepção?",
+      "options": [
+        "I'd like to check out, please.",
+        "I'd like to check in, please.",
+        "I'd like to go out, please."
+      ],
+      "answer": 0,
+      "explanation_pt": "\"Check out\" é fazer o check-out e deixar o hotel."
+    },
+    {
+      "id": "a2-09-prac-22",
+      "kind": "choice",
+      "instruction_pt": "O que é \"the front desk\"?",
+      "options": ["A recepção.", "A mesa do quarto.", "O restaurante."],
+      "answer": 0,
+      "explanation_pt": "\"Front desk\" é a recepção do hotel."
+    },
+    {
+      "id": "a2-09-prac-23",
+      "kind": "match",
+      "instruction_pt": "Ligue cada palavra ao seu significado.",
+      "pairs": [
+        {
+          "en": "towel",
+          "pt": "toalha"
+        },
+        {
+          "en": "pillow",
+          "pt": "travesseiro"
+        },
+        {
+          "en": "key card",
+          "pt": "cartão-chave"
+        },
+        {
+          "en": "luggage",
+          "pt": "bagagem"
+        },
+        {
+          "en": "floor",
+          "pt": "andar"
+        }
+      ]
+    },
+    {
+      "id": "a2-09-prac-24",
+      "kind": "order",
+      "instruction_pt": "Coloque as palavras na ordem certa para formar a frase.",
+      "accepted": ["Could I have a room on a higher floor"]
+    },
+    {
+      "id": "a2-09-prac-25",
+      "kind": "dialogue",
+      "instruction_pt": "Converse: responda a cada fala seguindo a dica.",
+      "scene_pt": "Você liga para a recepção do seu quarto porque há um problema.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Front desk, this is Mark speaking."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que está no quarto 304 e o ar-condicionado não funciona.",
+          "accepted": [
+            "Hi, I'm in room 304 and the air conditioning doesn't work",
+            "Hi, this is room 304. The air conditioning isn't working",
+            "Hello, I'm in room 304. The air conditioning isn't working",
+            "Hi, room 304. The AC isn't working",
+            "Hi, I'm in room 304 and the AC doesn't work"
+          ],
+          "commonErrors": [
+            {
+              "id": "no-work",
+              "match": "\\b(conditioning|ac) (no|not) work",
+              "explanation_pt": "A negação é \"doesn't work\" ou \"isn't working\".",
+              "correction_en": "Hi, I'm in room 304 and the air conditioning doesn't work."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "I'm so sorry. I can send someone up in an hour."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Pergunte se pode trocar de quarto.",
+          "accepted": [
+            "Can I change rooms?",
+            "Could I change rooms?",
+            "Can I move to another room?",
+            "Could I have a different room?",
+            "Can I have another room?",
+            "Is it possible to change rooms?"
+          ],
+          "commonErrors": [
+            {
+              "id": "change-of-room",
+              "match": "\\bchange (of|the) room\\b",
+              "explanation_pt": "Trocar de quarto é \"change rooms\" (plural) ou \"move to another room\".",
+              "correction_en": "Can I change rooms?"
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Sure. Room 410 is free. Please come to the front desk for a new key card."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Agradeça e diga que vai descer em cinco minutos.",
+          "accepted": [
+            "Thank you. I'll come down in five minutes",
+            "Thanks, I'll be down in five minutes",
+            "Thank you. I'll be there in five minutes",
+            "Thanks. I'll come down in five minutes",
+            "Great, thank you. I'll be down in five minutes"
+          ],
+          "commonErrors": [
+            {
+              "id": "go-down",
+              "match": "\\bi will (descend|go down)\\b",
+              "explanation_pt": "Para descer até a recepção: \"I'll come down\" ou \"I'll be down\".",
+              "correction_en": "Thank you. I'll come down in five minutes."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Perfect. See you soon."
+        }
+      ]
+    },
+    {
+      "id": "a2-09-prac-26",
+      "kind": "free_speak",
+      "instruction_pt": "Conte para a Sam sobre um hotel bom (ou ruim) em que você ficou.",
+      "prompt_en": "Tell me about a hotel you stayed at. Was it good or bad? Why?",
+      "guidelines_pt": [
+        "Diga onde e quando: \"Last year I stayed at a hotel in...\".",
+        "Descreva o quarto e o café da manhã.",
+        "Conte um problema ou algo bom: \"The staff was very friendly\"."
       ]
     }
   ]

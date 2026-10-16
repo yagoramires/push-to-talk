@@ -462,5 +462,480 @@
         }
       ]
     }
+  ],
+  "practice": [
+    {
+      "id": "c1-08-prac-1",
+      "kind": "vocab",
+      "word_en": "to take the mickey",
+      "meaning_pt": "zoar, tirar sarro (inglês britânico)",
+      "example_en": "Don't listen to him. He's just taking the mickey."
+    },
+    {
+      "id": "c1-08-prac-2",
+      "kind": "vocab",
+      "word_en": "wry",
+      "meaning_pt": "irônico, seco (humor)",
+      "example_en": "She gave a wry smile when the printer jammed again."
+    },
+    {
+      "id": "c1-08-prac-3",
+      "kind": "vocab",
+      "word_en": "to be in stitches",
+      "meaning_pt": "morrer de rir",
+      "example_en": "His impression of the boss had us all in stitches."
+    },
+    {
+      "id": "c1-08-prac-4",
+      "kind": "vocab",
+      "word_en": "to fall flat",
+      "meaning_pt": "não ter graça, não funcionar (piada, ideia)",
+      "example_en": "My joke about tax returns fell flat."
+    },
+    {
+      "id": "c1-08-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with a flat, sarcastic tone.",
+      "prompt": "Great, another Monday. Just what I was hoping for.",
+      "accepted": ["Great, another Monday. Just what I was hoping for"],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-08-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with a self-deprecating smile in your voice.",
+      "prompt": "I'm not the most organised person in the world.",
+      "accepted": [
+        "I'm not the most organised person in the world",
+        "I'm not the most organized person in the world",
+        "I am not the most organised person in the world"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-08-prac-7",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "The joke fell completely flat.",
+      "accepted": ["The joke fell completely flat", "The joke completely fell flat"],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-08-prac-8",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "We were in stitches the whole evening.",
+      "accepted": ["We were in stitches the whole evening", "We were in stitches all evening"],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-08-prac-9",
+      "kind": "repeat",
+      "instruction_pt": "Repeat sarcastically, as if it's pouring with rain.",
+      "prompt": "Lovely weather we're having.",
+      "accepted": ["Lovely weather we're having", "Lovely weather we are having"],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-08-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Tô brincando, relaxa!\"",
+      "accepted": [
+        "I'm kidding, relax",
+        "I'm only kidding, relax",
+        "I'm just kidding, relax",
+        "Just kidding, relax",
+        "I'm joking, relax",
+        "I'm only joking, chill",
+        "Relax, I'm just kidding",
+        "Relax, I'm only joking",
+        "Chill, I'm just kidding",
+        "I'm just joking, relax"
+      ],
+      "commonErrors": [
+        {
+          "id": "playing",
+          "match": "\\bi am (just |only )?playing\\b",
+          "explanation_pt": "\"Brincar\" in this sense is \"kid\" or \"joke\", not \"play\".",
+          "correction_en": "I'm only kidding, relax!"
+        }
+      ]
+    },
+    {
+      "id": "c1-08-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Ele não é exatamente um gênio.\"",
+      "accepted": [
+        "He's not exactly a genius",
+        "He isn't exactly a genius",
+        "He's not exactly the sharpest tool in the box",
+        "He is not exactly a genius",
+        "He's hardly a genius",
+        "He's no genius",
+        "He's not what you'd call a genius"
+      ],
+      "commonErrors": [
+        {
+          "id": "exactly-not",
+          "match": "\\bis exactly not\\b",
+          "explanation_pt": "The ironic phrase is \"not exactly\": \"He's not exactly a genius\".",
+          "correction_en": "He's not exactly a genius."
+        }
+      ]
+    },
+    {
+      "id": "c1-08-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Say this ironically in natural English: \"Que maravilha, perdi o ônibus de novo.\"",
+      "accepted": [
+        "Brilliant, I missed the bus again",
+        "Great, I missed the bus again",
+        "Fantastic, I've missed the bus again",
+        "Brilliant, I've missed the bus again",
+        "Wonderful, I missed the bus again",
+        "Great, missed the bus again",
+        "Perfect, I missed the bus again",
+        "Just great, I missed the bus again",
+        "Lovely, I've missed the bus again"
+      ],
+      "commonErrors": [
+        {
+          "id": "lost-bus",
+          "match": "\\blost the bus\\b",
+          "explanation_pt": "\"Perder\" a bus or a flight is \"miss\", not \"lose\".",
+          "correction_en": "Brilliant, I missed the bus again."
+        }
+      ]
+    },
+    {
+      "id": "c1-08-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Você tá me zoando?\"",
+      "accepted": [
+        "Are you pulling my leg",
+        "Are you having me on",
+        "Are you kidding me",
+        "Are you joking",
+        "You're pulling my leg, aren't you",
+        "Are you messing with me",
+        "Are you taking the mickey",
+        "Are you winding me up"
+      ],
+      "commonErrors": [
+        {
+          "id": "fun-with",
+          "match": "\\bfun with me\\b",
+          "explanation_pt": "\"Zoar alguém\" can be \"make fun of someone\", not \"make fun with\".",
+          "correction_en": "Are you making fun of me?"
+        }
+      ]
+    },
+    {
+      "id": "c1-08-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Say this with dry humour in natural English: \"Pelo menos não choveu... muito.\"",
+      "accepted": [
+        "At least it didn't rain much",
+        "Well, at least it didn't rain much",
+        "At least it didn't rain too much",
+        "At least it didn't pour",
+        "At least it didn't rain that much",
+        "Look on the bright side, it didn't rain much"
+      ],
+      "commonErrors": [
+        {
+          "id": "not-rained",
+          "match": "\\bnot rained\\b",
+          "explanation_pt": "Past negative uses \"didn't\" + base verb: \"it didn't rain\".",
+          "correction_en": "At least it didn't rain much."
+        }
+      ]
+    },
+    {
+      "id": "c1-08-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and answer with ironic understatement: it went badly.",
+      "listen": "So, how was the job interview?",
+      "accepted": [
+        "Well, it could have gone better",
+        "It could have gone better",
+        "Let's just say it wasn't my finest hour",
+        "Not my finest moment",
+        "It wasn't exactly a triumph",
+        "Let's just say I won't be holding my breath",
+        "It didn't go brilliantly",
+        "I wouldn't call it a success",
+        "Put it this way, I won't be getting a call back",
+        "It wasn't my best performance"
+      ],
+      "commonErrors": [
+        {
+          "id": "could-be-better",
+          "match": "\\bit could be better\\b",
+          "explanation_pt": "For a past event use \"could have gone better\".",
+          "correction_en": "Well, it could have gone better."
+        }
+      ]
+    },
+    {
+      "id": "c1-08-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and respond with self-deprecating humour.",
+      "listen": "I heard you locked yourself out again!",
+      "accepted": [
+        "Yes, I'm a genius, aren't I",
+        "Guilty as charged",
+        "What can I say, it's a talent",
+        "Yep, my memory is legendary",
+        "I know. I should get a medal",
+        "Don't remind me",
+        "It's a gift, really",
+        "Yes, I'm clearly not the brightest",
+        "Yeah, I'm hopeless",
+        "What can I say? I'm a professional",
+        "Yes, I locked myself out again. Classic me"
+      ],
+      "commonErrors": [
+        {
+          "id": "locked-me",
+          "match": "\\blocked me out\\b",
+          "explanation_pt": "When subject and object are the same person, use \"myself\": \"I locked myself out\".",
+          "correction_en": "I locked myself out again."
+        }
+      ]
+    },
+    {
+      "id": "c1-08-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and answer sarcastically.",
+      "listen": "Did you enjoy the three-hour meeting?",
+      "accepted": [
+        "Oh, I loved every minute of it",
+        "Absolutely, best three hours of my life",
+        "Oh yes, it was thrilling",
+        "It was the highlight of my week",
+        "I couldn't get enough of it",
+        "Oh, it was riveting",
+        "What's not to love",
+        "Oh, I was on the edge of my seat",
+        "Loved it. Can't wait for the next one"
+      ],
+      "commonErrors": [
+        {
+          "id": "each-minute",
+          "match": "\\beach minute\\b",
+          "explanation_pt": "The fixed phrase is \"every minute of it\".",
+          "correction_en": "Oh, I loved every minute of it."
+        }
+      ]
+    },
+    {
+      "id": "c1-08-prac-18",
+      "kind": "free_speak",
+      "instruction_pt": "Tell a short, funny story about yourself in about a minute.",
+      "prompt_en": "Tell me about a time something embarrassing happened to you.",
+      "guidelines_pt": [
+        "Use self-deprecating humour: \"I'm not exactly the most...\".",
+        "Add an ironic comment: \"Well, that went well.\"",
+        "Use understatement for the worst moment: \"It was a bit awkward.\"",
+        "End lightly: \"Looking back, it's quite funny.\""
+      ]
+    },
+    {
+      "id": "c1-08-prac-19",
+      "kind": "dialogue",
+      "instruction_pt": "Role-play: banter with a colleague, using irony and understatement.",
+      "scene_pt": "It's Monday morning at the office. You slept badly and a colleague notices.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Morning! Wow, you look... awake."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Answer ironically that you've had a whole four hours of sleep.",
+          "accepted": [
+            "Yeah, a whole four hours of sleep",
+            "I know, I had a whole four hours of sleep",
+            "Well, I got a whole four hours of sleep",
+            "I've had a whole four hours of sleep, so I'm fresh as a daisy",
+            "Thanks, I had a whole four hours of sleep",
+            "Yep, a whole four hours of sleep. I'm a new person"
+          ],
+          "commonErrors": [
+            {
+              "id": "of-sleeping",
+              "match": "\\bhours of sleeping\\b",
+              "explanation_pt": "Use the noun: \"four hours of sleep\".",
+              "correction_en": "A whole four hours of sleep."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Ha! Big night?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Say not exactly. Your neighbour's dog decided to sing all night.",
+          "accepted": [
+            "Not exactly. My neighbour's dog decided to sing all night",
+            "Not exactly. My neighbor's dog decided to sing all night",
+            "Not exactly. The neighbour's dog decided to sing all night",
+            "Not exactly. My neighbour's dog decided to sing all night long",
+            "Not quite. My neighbour's dog decided to sing all night",
+            "Not really. My neighbour's dog decided to sing all night"
+          ],
+          "commonErrors": [
+            {
+              "id": "all-the-night",
+              "match": "\\ball the night\\b",
+              "explanation_pt": "\"A noite toda\" is \"all night\", without \"the\".",
+              "correction_en": "My neighbour's dog sang all night."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Oh no. Well, at least you've got the presentation this afternoon to look forward to."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Say sarcastically: oh yes, you can hardly contain your excitement.",
+          "accepted": [
+            "Oh yes, I can hardly contain my excitement",
+            "Oh yes, I can barely contain my excitement",
+            "Oh, I can hardly contain my excitement",
+            "Yes, I can hardly contain my excitement",
+            "Oh yes, I can't contain my excitement",
+            "Oh yes, I can hardly wait"
+          ],
+          "commonErrors": [
+            {
+              "id": "excitation",
+              "match": "\\bexcitation\\b",
+              "explanation_pt": "\"Excitação\" (empolgação) is \"excitement\".",
+              "correction_en": "I can hardly contain my excitement."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Don't worry, I'll bring you a coffee. A large one."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Say you'd be eternally grateful.",
+          "accepted": [
+            "I'd be eternally grateful",
+            "I would be eternally grateful",
+            "You're a lifesaver. I'd be eternally grateful",
+            "I'd be forever grateful",
+            "You're a star. I'd be eternally grateful",
+            "Thanks, I'd be eternally grateful"
+          ],
+          "commonErrors": [
+            {
+              "id": "thanked",
+              "match": "\\bthanked\\b",
+              "explanation_pt": "\"Agradecido\" is \"grateful\".",
+              "correction_en": "I'd be eternally grateful."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-08-prac-20",
+      "kind": "choice",
+      "instruction_pt": "After a disaster, someone says \"Well, that was a total success.\" What are they being?",
+      "options": ["sincere", "sarcastic", "confused"],
+      "answer": 1,
+      "explanation_pt": "Saying the opposite of what is obviously true, with a flat tone, is sarcasm."
+    },
+    {
+      "id": "c1-08-prac-21",
+      "kind": "choice",
+      "instruction_pt": "Which is an example of understatement?",
+      "options": [
+        "Calling a hurricane \"a bit breezy\"",
+        "Calling a hurricane \"the worst storm in history\"",
+        "Calling a hurricane \"a storm\""
+      ],
+      "answer": 0,
+      "explanation_pt": "Understatement makes something sound much smaller than it is, usually for humour."
+    },
+    {
+      "id": "c1-08-prac-22",
+      "kind": "choice",
+      "instruction_pt": "Listen. What kind of humour is this?",
+      "listen": "Oh, I'm hopeless at cooking. I once managed to burn a pot of water.",
+      "options": ["self-deprecating", "sarcasm aimed at someone else", "a pun"],
+      "answer": 0,
+      "explanation_pt": "The speaker jokes about her own lack of skill, which is self-deprecating humour."
+    },
+    {
+      "id": "c1-08-prac-23",
+      "kind": "fill",
+      "instruction_pt": "Complete with one word.",
+      "sentence": "Don't take it seriously. He's only pulling your ___.",
+      "accepted": ["leg"],
+      "commonErrors": [
+        {
+          "id": "pull-foot",
+          "match": "^(foot|arm|hair)$",
+          "explanation_pt": "The idiom is \"pull someone's leg\".",
+          "correction_en": "He's only pulling your leg."
+        }
+      ]
+    },
+    {
+      "id": "c1-08-prac-24",
+      "kind": "fill",
+      "instruction_pt": "Complete with one word.",
+      "sentence": "His impression of the teacher was so funny that we were all in ___.",
+      "accepted": ["stitches"],
+      "commonErrors": [
+        {
+          "id": "in-laughs",
+          "match": "^(laughs?|laughter|points)$",
+          "explanation_pt": "The idiom is \"in stitches\".",
+          "correction_en": "We were all in stitches."
+        }
+      ]
+    },
+    {
+      "id": "c1-08-prac-25",
+      "kind": "order",
+      "instruction_pt": "Put the words in order to make an ironic understatement.",
+      "accepted": ["It wasn't exactly the best day of my life"]
+    },
+    {
+      "id": "c1-08-prac-26",
+      "kind": "match",
+      "instruction_pt": "Match each expression with its meaning.",
+      "pairs": [
+        {
+          "en": "to take the mickey",
+          "pt": "tirar sarro"
+        },
+        {
+          "en": "wry",
+          "pt": "irônico, seco"
+        },
+        {
+          "en": "to be in stitches",
+          "pt": "morrer de rir"
+        },
+        {
+          "en": "to fall flat",
+          "pt": "não ter graça"
+        },
+        {
+          "en": "to have someone on",
+          "pt": "enganar alguém de brincadeira"
+        }
+      ]
+    }
   ]
 }

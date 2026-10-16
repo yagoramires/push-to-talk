@@ -118,11 +118,26 @@
           "kind": "match",
           "instruction_pt": "Ligue cada expressão ao seu significado.",
           "pairs": [
-            { "en": "next to", "pt": "ao lado de" },
-            { "en": "between", "pt": "entre" },
-            { "en": "on the corner", "pt": "na esquina" },
-            { "en": "traffic lights", "pt": "semáforo" },
-            { "en": "cross the street", "pt": "atravessar a rua" }
+            {
+              "en": "next to",
+              "pt": "ao lado de"
+            },
+            {
+              "en": "between",
+              "pt": "entre"
+            },
+            {
+              "en": "on the corner",
+              "pt": "na esquina"
+            },
+            {
+              "en": "traffic lights",
+              "pt": "semáforo"
+            },
+            {
+              "en": "cross the street",
+              "pt": "atravessar a rua"
+            }
           ]
         },
         {
@@ -475,6 +490,546 @@
           "accepted": ["Thanks a lot for your help", "Thanks for your help"],
           "commonErrors": []
         }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "id": "a2-02-prac-1",
+      "kind": "vocab",
+      "word_en": "next to",
+      "meaning_pt": "ao lado de",
+      "example_en": "The café is next to the bookshop."
+    },
+    {
+      "id": "a2-02-prac-2",
+      "kind": "vocab",
+      "word_en": "between",
+      "meaning_pt": "entre",
+      "example_en": "The bank is between the pharmacy and the bakery."
+    },
+    {
+      "id": "a2-02-prac-3",
+      "kind": "vocab",
+      "word_en": "traffic lights",
+      "meaning_pt": "semáforo",
+      "example_en": "Turn left at the traffic lights."
+    },
+    {
+      "id": "a2-02-prac-4",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "Excuse me, how do I get to the museum?",
+      "accepted": ["Excuse me, how do I get to the museum?"],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-02-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "Take the first street on the right.",
+      "accepted": ["Take the first street on the right."],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-02-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "The bus stop is opposite the supermarket.",
+      "accepted": ["The bus stop is opposite the supermarket."],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-02-prac-7",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "Go past the church and turn left.",
+      "accepted": ["Go past the church and turn left."],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-02-prac-8",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "The hospital is at the end of this street.",
+      "accepted": ["The hospital is at the end of this street."],
+      "commonErrors": []
+    },
+    {
+      "id": "a2-02-prac-9",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Com licença, tem um supermercado aqui perto?\"",
+      "accepted": [
+        "Excuse me, is there a supermarket near here?",
+        "Excuse me, is there a supermarket nearby?",
+        "Excuse me, is there a supermarket around here?",
+        "Is there a supermarket near here?",
+        "Is there a supermarket nearby?",
+        "Excuse me, is there a supermarket close to here?"
+      ],
+      "commonErrors": [
+        {
+          "id": "have-a",
+          "match": "\\b(have|has) a supermarket\\b",
+          "explanation_pt": "\"Tem\" de existência é \"there is\": \"Is there a...?\". \"Have\" é posse.",
+          "correction_en": "Excuse me, is there a supermarket near here?"
+        },
+        {
+          "id": "here-near",
+          "match": "\\bhere near\\b",
+          "explanation_pt": "A ordem é \"near here\".",
+          "correction_en": "Excuse me, is there a supermarket near here?"
+        }
+      ]
+    },
+    {
+      "id": "a2-02-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Vire à esquerda e siga em frente.\"",
+      "accepted": [
+        "Turn left and go straight on",
+        "Turn left and go straight ahead",
+        "Turn left and go straight",
+        "Turn left and keep going straight",
+        "Turn left, then go straight on",
+        "Turn left and then go straight ahead"
+      ],
+      "commonErrors": [
+        {
+          "id": "to-left",
+          "match": "\\bturn to (the )?(left|right)\\b|\\bturn (at|in) the (left|right)\\b",
+          "explanation_pt": "O natural é só \"turn left\" / \"turn right\", sem preposição.",
+          "correction_en": "Turn left and go straight on."
+        },
+        {
+          "id": "follow-front",
+          "match": "\\b(follow|in front)\\b",
+          "explanation_pt": "\"Siga em frente\" é \"go straight on\" ou \"go straight ahead\". \"In front\" é \"na frente de\".",
+          "correction_en": "Turn left and go straight on."
+        }
+      ]
+    },
+    {
+      "id": "a2-02-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"O banco fica entre a farmácia e o café.\"",
+      "accepted": [
+        "The bank is between the pharmacy and the café",
+        "The bank is between the pharmacy and the cafe",
+        "The bank is between the drugstore and the café",
+        "The bank is between the drugstore and the cafe",
+        "The bank's between the pharmacy and the café"
+      ],
+      "commonErrors": [
+        {
+          "id": "stays",
+          "match": "\\bbank (stays|stay)\\b",
+          "explanation_pt": "\"Fica\" (lugar) é \"is\" em inglês, não \"stays\".",
+          "correction_en": "The bank is between the pharmacy and the café."
+        },
+        {
+          "id": "between-of",
+          "match": "\\bbetween (of|the pharmacy with)\\b",
+          "explanation_pt": "\"Entre A e B\" é \"between A and B\".",
+          "correction_en": "The bank is between the pharmacy and the café."
+        }
+      ]
+    },
+    {
+      "id": "a2-02-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"É do lado do hotel.\"",
+      "accepted": [
+        "It's next to the hotel",
+        "It is next to the hotel",
+        "It's beside the hotel",
+        "It's by the hotel",
+        "It's right next to the hotel"
+      ],
+      "commonErrors": [
+        {
+          "id": "side-of",
+          "match": "\\b(on the|in the|at the) side of\\b",
+          "explanation_pt": "\"Do lado de\" é \"next to\" ou \"beside\".",
+          "correction_en": "It's next to the hotel."
+        }
+      ]
+    },
+    {
+      "id": "a2-02-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"É longe daqui?\"",
+      "accepted": [
+        "Is it far from here?",
+        "Is it far?",
+        "Is it a long way from here?",
+        "Is it a long way?",
+        "Is it far away?"
+      ],
+      "commonErrors": [
+        {
+          "id": "far-of",
+          "match": "\\bfar of\\b",
+          "explanation_pt": "\"Longe de\" é \"far from\".",
+          "correction_en": "Is it far from here?"
+        },
+        {
+          "id": "its-far",
+          "match": "^it is far$",
+          "explanation_pt": "Na pergunta o \"is\" vem antes: \"Is it far?\".",
+          "correction_en": "Is it far from here?"
+        }
+      ]
+    },
+    {
+      "id": "a2-02-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Pegue a segunda rua à direita.\"",
+      "accepted": [
+        "Take the second street on the right",
+        "Take the second right",
+        "Take the second road on the right",
+        "Take the second street on your right",
+        "Take the second turning on the right"
+      ],
+      "commonErrors": [
+        {
+          "id": "to-the-right",
+          "match": "\\b(to|at) the right\\b",
+          "explanation_pt": "Para a rua à direita, use \"on the right\".",
+          "correction_en": "Take the second street on the right."
+        },
+        {
+          "id": "catch",
+          "match": "\\bcatch the second\\b",
+          "explanation_pt": "Para ruas usamos \"take\", não \"catch\".",
+          "correction_en": "Take the second street on the right."
+        }
+      ]
+    },
+    {
+      "id": "a2-02-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que sim, fica na esquina.",
+      "listen": "Excuse me, is there a bank near here?",
+      "accepted": [
+        "Yes, it's on the corner",
+        "Yes, there is. It's on the corner",
+        "Yes, there's one on the corner",
+        "Yes, on the corner",
+        "Yeah, it's on the corner",
+        "Yes, it's just on the corner",
+        "Yes, there is one on the corner"
+      ],
+      "commonErrors": [
+        {
+          "id": "in-corner",
+          "match": "\\bin the corner\\b",
+          "explanation_pt": "Na esquina da rua é \"on the corner\". \"In the corner\" é o canto de dentro de uma sala.",
+          "correction_en": "Yes, it's on the corner."
+        },
+        {
+          "id": "yes-have",
+          "match": "^yes (it )?has\\b|^yes have\\b",
+          "explanation_pt": "Para \"Is there...?\" responda \"Yes, there is\".",
+          "correction_en": "Yes, it's on the corner."
+        }
+      ]
+    },
+    {
+      "id": "a2-02-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga para ele seguir em frente e virar à direita no semáforo.",
+      "listen": "How do I get to the train station?",
+      "accepted": [
+        "Go straight on and turn right at the traffic lights",
+        "Go straight ahead and turn right at the traffic lights",
+        "Go straight and turn right at the traffic lights",
+        "Go straight on and turn right at the lights",
+        "Go straight ahead, then turn right at the traffic lights",
+        "Go straight and turn right at the lights"
+      ],
+      "commonErrors": [
+        {
+          "id": "to-left",
+          "match": "\\bturn to (the )?(left|right)\\b|\\bturn (at|in) the (left|right)\\b",
+          "explanation_pt": "O natural é só \"turn left\" / \"turn right\", sem preposição.",
+          "correction_en": "Go straight on and turn right at the traffic lights."
+        },
+        {
+          "id": "in-lights",
+          "match": "\\bin the (traffic )?lights\\b",
+          "explanation_pt": "No semáforo é \"at the traffic lights\".",
+          "correction_en": "Go straight on and turn right at the traffic lights."
+        }
+      ]
+    },
+    {
+      "id": "a2-02-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que não, são uns dez minutos a pé.",
+      "listen": "Is the museum far from here?",
+      "accepted": [
+        "No, it's about ten minutes on foot",
+        "No, it's about ten minutes' walk",
+        "No, it's about a ten minute walk",
+        "No, it's ten minutes on foot",
+        "No, about ten minutes on foot",
+        "No, it's about ten minutes walking",
+        "No, you can walk there in ten minutes"
+      ],
+      "commonErrors": [
+        {
+          "id": "by-foot",
+          "match": "\\bby foot\\b",
+          "explanation_pt": "O mais comum é \"on foot\" ou \"ten minutes' walk\".",
+          "correction_en": "No, it's about ten minutes on foot."
+        },
+        {
+          "id": "far-yes",
+          "match": "^yes\\b",
+          "explanation_pt": "A dica é responder que não fica longe: \"No, it's...\".",
+          "correction_en": "No, it's about ten minutes on foot."
+        }
+      ]
+    },
+    {
+      "id": "a2-02-prac-18",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que fica em frente ao parque (do outro lado).",
+      "listen": "Where is the nearest pharmacy?",
+      "accepted": [
+        "It's opposite the park",
+        "It's across from the park",
+        "It is opposite the park",
+        "It's across the street from the park",
+        "Opposite the park",
+        "It's just opposite the park"
+      ],
+      "commonErrors": [
+        {
+          "id": "in-front",
+          "match": "\\bin front of\\b",
+          "explanation_pt": "\"In front of\" é \"na frente de\", colado. Do outro lado, de frente, é \"opposite\" ou \"across from\".",
+          "correction_en": "It's opposite the park."
+        },
+        {
+          "id": "opposite-of",
+          "match": "\\bopposite of the\\b",
+          "explanation_pt": "\"Opposite\" não leva \"of\": \"opposite the park\".",
+          "correction_en": "It's opposite the park."
+        }
+      ]
+    },
+    {
+      "id": "a2-02-prac-19",
+      "kind": "fill",
+      "instruction_pt": "Complete com a preposição certa.",
+      "sentence": "The café is ___ the corner.",
+      "accepted": ["on"],
+      "commonErrors": [
+        {
+          "id": "in",
+          "match": "^(in|at)$",
+          "explanation_pt": "Na esquina é \"on the corner\".",
+          "correction_en": "on."
+        }
+      ]
+    },
+    {
+      "id": "a2-02-prac-20",
+      "kind": "fill",
+      "instruction_pt": "Complete com a preposição certa.",
+      "sentence": "Turn left ___ the traffic lights.",
+      "accepted": ["at"],
+      "commonErrors": [
+        {
+          "id": "in-on",
+          "match": "^(in|on|to)$",
+          "explanation_pt": "No semáforo é \"at the traffic lights\".",
+          "correction_en": "at."
+        }
+      ]
+    },
+    {
+      "id": "a2-02-prac-21",
+      "kind": "choice",
+      "instruction_pt": "\"Go past the bank\" quer dizer:",
+      "options": ["Passe pelo banco (e continue).", "Entre no banco.", "Volte para o banco."],
+      "answer": 0,
+      "explanation_pt": "\"Go past\" é passar por um lugar e seguir em frente."
+    },
+    {
+      "id": "a2-02-prac-22",
+      "kind": "choice",
+      "instruction_pt": "Qual frase pergunta o caminho com educação?",
+      "options": [
+        "Excuse me, could you tell me the way to the station?",
+        "Where station?",
+        "You know the station?"
+      ],
+      "answer": 0,
+      "explanation_pt": "\"Excuse me, could you tell me the way to...?\" é educado e completo."
+    },
+    {
+      "id": "a2-02-prac-23",
+      "kind": "match",
+      "instruction_pt": "Ligue cada expressão ao seu significado.",
+      "pairs": [
+        {
+          "en": "go past",
+          "pt": "passar por"
+        },
+        {
+          "en": "on the corner",
+          "pt": "na esquina"
+        },
+        {
+          "en": "between",
+          "pt": "entre"
+        },
+        {
+          "en": "opposite",
+          "pt": "em frente, do outro lado"
+        },
+        {
+          "en": "next to",
+          "pt": "ao lado de"
+        }
+      ]
+    },
+    {
+      "id": "a2-02-prac-24",
+      "kind": "order",
+      "instruction_pt": "Coloque as palavras na ordem certa para formar a frase.",
+      "accepted": ["The post office is next to the bank"]
+    },
+    {
+      "id": "a2-02-prac-25",
+      "kind": "dialogue",
+      "instruction_pt": "Converse: responda a cada fala seguindo a dica.",
+      "scene_pt": "Você está na rua e um turista te para.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Excuse me, do you speak English?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que sim, um pouco.",
+          "accepted": [
+            "Yes, a little",
+            "Yes, a bit",
+            "Yes, a little bit",
+            "Yeah, a little",
+            "Yes, I do. A little",
+            "A little, yes"
+          ],
+          "commonErrors": [
+            {
+              "id": "little-few",
+              "match": "\\ba few\\b",
+              "explanation_pt": "Para \"um pouco\" de idioma use \"a little\" ou \"a bit\".",
+              "correction_en": "Yes, a little."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Great! Is there a pharmacy near here?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que sim, na Rua Augusta.",
+          "accepted": [
+            "Yes, there's one on Augusta Street",
+            "Yes, there is one on Augusta Street",
+            "Yes, on Augusta Street",
+            "Yes, there's a pharmacy on Augusta Street",
+            "Yeah, there's one on Augusta Street"
+          ],
+          "commonErrors": [
+            {
+              "id": "in-street",
+              "match": "\\bin augusta street\\b",
+              "explanation_pt": "Com nome de rua, o inglês americano usa \"on\": \"on Augusta Street\".",
+              "correction_en": "Yes, there's one on Augusta Street."
+            },
+            {
+              "id": "has-one",
+              "match": "^yes (has|have)\\b",
+              "explanation_pt": "Para existência use \"there is\".",
+              "correction_en": "Yes, there's one on Augusta Street."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "How do I get there?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga para seguir em frente e virar à direita na igreja.",
+          "accepted": [
+            "Go straight on and turn right at the church",
+            "Go straight ahead and turn right at the church",
+            "Go straight and turn right at the church",
+            "Go straight on, then turn right at the church"
+          ],
+          "commonErrors": [
+            {
+              "id": "to-left",
+              "match": "\\bturn to (the )?(left|right)\\b|\\bturn (at|in) the (left|right)\\b",
+              "explanation_pt": "O natural é só \"turn left\" / \"turn right\", sem preposição.",
+              "correction_en": "Go straight on and turn right at the church."
+            },
+            {
+              "id": "in-church",
+              "match": "\\bin the church\\b",
+              "explanation_pt": "Num ponto de referência use \"at\": \"at the church\".",
+              "correction_en": "Go straight on and turn right at the church."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Is it far?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que não, uns cinco minutos a pé.",
+          "accepted": [
+            "No, about five minutes on foot",
+            "No, it's about five minutes on foot",
+            "No, it's a five minute walk",
+            "No, it's about five minutes' walk",
+            "No, just five minutes on foot",
+            "No, it's five minutes walking"
+          ],
+          "commonErrors": [
+            {
+              "id": "by-foot",
+              "match": "\\bby foot\\b",
+              "explanation_pt": "O natural é \"on foot\" ou \"a five-minute walk\".",
+              "correction_en": "No, about five minutes on foot."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Thank you so much!"
+        }
+      ]
+    },
+    {
+      "id": "a2-02-prac-26",
+      "kind": "free_speak",
+      "instruction_pt": "Explique para a Sam como ir da sua casa até a padaria ou o mercado mais perto.",
+      "prompt_en": "I'm new in your neighborhood. How do I get from your house to the nearest bakery or supermarket?",
+      "guidelines_pt": [
+        "Use \"go straight on\", \"turn left/right\", \"take the first street\".",
+        "Dê um ponto de referência: \"next to\", \"opposite\", \"on the corner\".",
+        "Diga quanto tempo leva: \"It's about five minutes on foot\"."
       ]
     }
   ]

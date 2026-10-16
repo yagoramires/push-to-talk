@@ -16,6 +16,8 @@ export function listenTexts(ex: Exercise | AssessmentItem): string[] {
     }
     case 'choice':
       return ex.listen ? [ex.listen] : []
+    case 'dialogue':
+      return ex.turns.flatMap((t) => (t.speaker === 'partner' ? [t.text] : []))
     default:
       return []
   }

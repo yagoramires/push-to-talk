@@ -379,10 +379,100 @@
           ]
         },
         {
-          "id": "a1-03-conv-3",
-          "kind": "order",
-          "instruction_pt": "Coloque as palavras na ordem certa para formar a pergunta.",
-          "accepted": ["Do you have any brothers or sisters"]
+          "id": "a1-03-conv-dialogue",
+          "kind": "dialogue",
+          "instruction_pt": "Converse: ouça cada fala e responda em inglês.",
+          "scene_pt": "Uma colega nova mostra uma foto da família dela e pergunta sobre a sua.",
+          "turns": [
+            {
+              "speaker": "partner",
+              "text": "Look, this is a photo of my family. Do you have any brothers or sisters?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga que tem um irmão e uma irmã.",
+              "accepted": [
+                "Yes, I have a brother and a sister",
+                "Yes, I have one brother and one sister",
+                "Yes, I've got a brother and a sister",
+                "I have a brother and a sister",
+                "I have one brother and one sister",
+                "Yes, one brother and one sister",
+                "Yes, a brother and a sister",
+                "Yes, I do. I have a brother and a sister"
+              ],
+              "commonErrors": [
+                {
+                  "id": "i-has",
+                  "match": "\\b(i|you|we|they) has\\b",
+                  "explanation_pt": "Com I, you, we e they o verbo é \"have\". \"Has\" é só para he, she e it.",
+                  "correction_en": "I have a brother and a sister."
+                },
+                {
+                  "id": "yes-i-have",
+                  "match": "^yes i have$",
+                  "explanation_pt": "Para responder \"Do you...?\" curto, diga \"Yes, I do\".",
+                  "correction_en": "Yes, I do. I have a brother and a sister."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Nice! What are their names?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga que o nome do seu irmão é Pedro e o da sua irmã é Clara.",
+              "accepted": [
+                "My brother's name is Pedro and my sister's name is Clara",
+                "My brother is Pedro and my sister is Clara",
+                "My brother's Pedro and my sister's Clara",
+                "Pedro and Clara",
+                "Their names are Pedro and Clara",
+                "They're Pedro and Clara",
+                "They are Pedro and Clara",
+                "My brother is called Pedro and my sister is called Clara"
+              ],
+              "commonErrors": [
+                {
+                  "id": "name-of",
+                  "match": "\\bname of my\\b",
+                  "explanation_pt": "Para posse, use 's: \"my brother's name\".",
+                  "correction_en": "My brother's name is Pedro."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Are they older or younger than you?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga que o Pedro tem 20 anos e a Clara tem 15.",
+              "accepted": [
+                "Pedro is 20 and Clara is 15",
+                "Pedro's 20 and Clara's 15",
+                "Pedro is 20 years old and Clara is 15",
+                "They're younger. Pedro is 20 and Clara is 15",
+                "They are younger. Pedro is 20 and Clara is 15",
+                "Pedro is twenty and Clara is fifteen"
+              ],
+              "commonErrors": [
+                {
+                  "id": "have-years",
+                  "match": "\\b(have|has) [a-z]+( [a-z]+)? years\\b",
+                  "explanation_pt": "Idade em inglês usa \"to be\": \"I'm 30\", e não \"I have 30 years\".",
+                  "correction_en": "Pedro is 20 and Clara is 15."
+                },
+                {
+                  "id": "pedro-has",
+                  "match": "\\bpedro has\\b",
+                  "explanation_pt": "Idade usa \"to be\": \"Pedro is 20\".",
+                  "correction_en": "Pedro is 20 and Clara is 15."
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "a1-03-conv-free",
@@ -467,6 +557,558 @@
           "prompt": "I love my family.",
           "accepted": ["I love my family"],
           "commonErrors": []
+        }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "id": "a1-03-prac-1",
+      "kind": "dialogue",
+      "instruction_pt": "Converse: ouça cada fala e responda em inglês.",
+      "scene_pt": "Um amigo pergunta sobre a sua família durante o almoço.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "So, tell me about your family. Is it big?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que não, que sua família é pequena.",
+          "accepted": [
+            "No, it's small",
+            "No, it is small",
+            "No, my family is small",
+            "No, it's a small family",
+            "No, I have a small family",
+            "It's small",
+            "No, not really. It is small",
+            "No, it's pretty small"
+          ],
+          "commonErrors": [
+            {
+              "id": "family-are",
+              "match": "\\bmy family are small\\b",
+              "explanation_pt": "Em inglês americano \"family\" é singular: \"My family is small\".",
+              "correction_en": "My family is small."
+            },
+            {
+              "id": "is-small-no-it",
+              "match": "^no is small$",
+              "explanation_pt": "Falta o sujeito: \"No, it's small\".",
+              "correction_en": "No, it's small."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Who lives with you?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que mora com sua esposa e sua filha.",
+          "accepted": [
+            "I live with my wife and my daughter",
+            "I live with my wife and daughter",
+            "My wife and my daughter",
+            "My wife and daughter",
+            "My wife and my daughter live with me"
+          ],
+          "commonErrors": [
+            {
+              "id": "lives-with",
+              "match": "^i lives\\b",
+              "explanation_pt": "Com \"I\" o verbo fica sem \"s\": \"I live with...\".",
+              "correction_en": "I live with my wife and my daughter."
+            },
+            {
+              "id": "my-woman",
+              "match": "\\bmy woman\\b",
+              "explanation_pt": "\"Esposa\" é \"wife\". \"Woman\" é \"mulher\" em geral.",
+              "correction_en": "I live with my wife and my daughter."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Oh, nice! How old is your daughter?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que ela tem 6 anos.",
+          "accepted": [
+            "She's 6",
+            "She is 6",
+            "She's 6 years old",
+            "She is 6 years old",
+            "She is six",
+            "Six",
+            "6 years old",
+            "My daughter is 6"
+          ],
+          "commonErrors": [
+            {
+              "id": "have-years",
+              "match": "\\b(have|has) [a-z]+( [a-z]+)? years\\b",
+              "explanation_pt": "Idade em inglês usa \"to be\": \"I'm 30\", e não \"I have 30 years\".",
+              "correction_en": "She's 6."
+            },
+            {
+              "id": "he-for-she",
+              "match": "^he\\b",
+              "explanation_pt": "Para filha (mulher), use \"she\".",
+              "correction_en": "She's 6."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "And your parents? Where do they live?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que eles moram em Curitiba.",
+          "accepted": [
+            "They live in Curitiba",
+            "In Curitiba",
+            "My parents live in Curitiba",
+            "They live in Curitiba, in Brazil"
+          ],
+          "commonErrors": [
+            {
+              "id": "they-lives",
+              "match": "\\b(they|parents) lives\\b",
+              "explanation_pt": "Com \"they\" o verbo fica sem \"s\": \"They live\".",
+              "correction_en": "They live in Curitiba."
+            },
+            {
+              "id": "no-subject",
+              "match": "^live in\\b",
+              "explanation_pt": "Falta o sujeito: \"They live in Curitiba\".",
+              "correction_en": "They live in Curitiba."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-03-prac-2",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu tenho duas irmãs.\"",
+      "accepted": ["I have two sisters", "I've got two sisters", "I have got two sisters"],
+      "commonErrors": [
+        {
+          "id": "i-has",
+          "match": "\\b(i|you|we|they) has\\b",
+          "explanation_pt": "Com I, you, we e they o verbo é \"have\". \"Has\" é só para he, she e it.",
+          "correction_en": "I have two sisters."
+        },
+        {
+          "id": "two-sister",
+          "match": "\\btwo sister$",
+          "explanation_pt": "No plural, \"sister\" ganha \"s\": \"two sisters\".",
+          "correction_en": "I have two sisters."
+        }
+      ]
+    },
+    {
+      "id": "a1-03-prac-3",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Minha avó tem 80 anos.\"",
+      "accepted": [
+        "My grandmother is 80",
+        "My grandmother's 80",
+        "My grandmother is 80 years old",
+        "My grandma is 80",
+        "My grandma is 80 years old",
+        "My grandma's 80",
+        "My grandmother is eighty"
+      ],
+      "commonErrors": [
+        {
+          "id": "have-years",
+          "match": "\\b(have|has) [a-z]+( [a-z]+)? years\\b",
+          "explanation_pt": "Idade em inglês usa \"to be\": \"I'm 30\", e não \"I have 30 years\".",
+          "correction_en": "My grandmother is 80."
+        },
+        {
+          "id": "he-have",
+          "match": "\\b(he|she|it) have\\b",
+          "explanation_pt": "Com he, she e it o verbo é \"has\", não \"have\".",
+          "correction_en": "My grandmother is 80."
+        }
+      ]
+    },
+    {
+      "id": "a1-03-prac-4",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Meu irmão não tem filhos.\"",
+      "accepted": [
+        "My brother doesn't have children",
+        "My brother doesn't have any children",
+        "My brother does not have children",
+        "My brother doesn't have kids",
+        "My brother doesn't have any kids",
+        "My brother has no children",
+        "My brother has no kids"
+      ],
+      "commonErrors": [
+        {
+          "id": "he-dont",
+          "match": "\\bbrother (do not|dont) have\\b",
+          "explanation_pt": "Com \"my brother\" (he), a negativa é \"doesn't have\".",
+          "correction_en": "My brother doesn't have children."
+        },
+        {
+          "id": "doesnt-has",
+          "match": "\\bdoes not has\\b",
+          "explanation_pt": "Depois de \"doesn't\", o verbo volta para \"have\".",
+          "correction_en": "My brother doesn't have children."
+        }
+      ]
+    },
+    {
+      "id": "a1-03-prac-5",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"O nome do meu pai é Jorge.\"",
+      "accepted": [
+        "My father's name is Jorge",
+        "My dad's name is Jorge",
+        "My father is Jorge",
+        "My dad is Jorge",
+        "My father is called Jorge",
+        "My father's name's Jorge"
+      ],
+      "commonErrors": [
+        {
+          "id": "name-of",
+          "match": "\\bname of my\\b",
+          "explanation_pt": "Para posse em inglês use 's: \"My father's name\".",
+          "correction_en": "My father's name is Jorge."
+        }
+      ]
+    },
+    {
+      "id": "a1-03-prac-6",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Você tem filhos?\"",
+      "accepted": [
+        "Do you have children?",
+        "Do you have any children?",
+        "Do you have kids?",
+        "Do you have any kids?",
+        "Have you got any children?",
+        "Have you got children?"
+      ],
+      "commonErrors": [
+        {
+          "id": "you-have-q",
+          "match": "^you have (any )?(children|kids)$",
+          "explanation_pt": "Na pergunta use \"Do\": \"Do you have children?\".",
+          "correction_en": "Do you have children?"
+        },
+        {
+          "id": "sons",
+          "match": "\\bsons\\b",
+          "explanation_pt": "\"Filhos\" em geral (meninos e meninas) é \"children\" ou \"kids\".",
+          "correction_en": "Do you have children?"
+        }
+      ]
+    },
+    {
+      "id": "a1-03-prac-7",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Ela é minha prima.\"",
+      "accepted": ["She's my cousin", "She is my cousin"],
+      "commonErrors": [
+        {
+          "id": "prime",
+          "match": "\\bprime\\b",
+          "explanation_pt": "\"Primo/prima\" é \"cousin\".",
+          "correction_en": "She's my cousin."
+        }
+      ]
+    },
+    {
+      "id": "a1-03-prac-8",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Meus pais são casados há 30 anos.\"",
+      "accepted": [
+        "My parents have been married for 30 years",
+        "My parents've been married for 30 years",
+        "My parents have been married for thirty years"
+      ],
+      "commonErrors": [
+        {
+          "id": "are-married-for",
+          "match": "\\bare married (for|since|there|has)\\b",
+          "explanation_pt": "Para \"há 30 anos\" (até hoje), use \"have been married for 30 years\".",
+          "correction_en": "My parents have been married for 30 years."
+        },
+        {
+          "id": "parents-relatives",
+          "match": "\\bmy parents\\b.*\\b(cousins|uncles|aunts)\\b",
+          "explanation_pt": "\"Parents\" é só pai e mãe. Parentes em geral são \"relatives\".",
+          "correction_en": "My parents have been married for 30 years."
+        }
+      ]
+    },
+    {
+      "id": "a1-03-prac-9",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "My grandparents live in a small town.",
+      "accepted": ["My grandparents live in a small town"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-03-prac-10",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "This is my aunt, and these are my cousins.",
+      "accepted": ["This is my aunt, and these are my cousins"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-03-prac-11",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "My husband has two brothers.",
+      "accepted": ["My husband has two brothers"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-03-prac-12",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "Her son's name is Daniel.",
+      "accepted": ["Her son's name is Daniel"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-03-prac-13",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "We're a big family!",
+      "accepted": ["We're a big family"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-03-prac-14",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: sua mãe se chama Helena.",
+      "listen": "What's your mother's name?",
+      "accepted": [
+        "Her name is Helena",
+        "Her name's Helena",
+        "My mother's name is Helena",
+        "My mom's name is Helena",
+        "Helena",
+        "It's Helena",
+        "My mother is Helena",
+        "She is Helena"
+      ],
+      "commonErrors": [
+        {
+          "id": "his-name",
+          "match": "^his name\\b",
+          "explanation_pt": "Para mãe (mulher), use \"her\": \"Her name is Helena\".",
+          "correction_en": "Her name is Helena."
+        }
+      ]
+    },
+    {
+      "id": "a1-03-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: sim, você tem dois filhos.",
+      "listen": "Do you have any children?",
+      "accepted": [
+        "Yes, I have two children",
+        "Yes, I have two kids",
+        "Yes, two children",
+        "Yes, two kids",
+        "Yes, I do. I have two children",
+        "Yes, I've got two kids",
+        "I have two children",
+        "I have two kids",
+        "Yes, I do. Two kids"
+      ],
+      "commonErrors": [
+        {
+          "id": "i-has",
+          "match": "\\b(i|you|we|they) has\\b",
+          "explanation_pt": "Com I, you, we e they o verbo é \"have\". \"Has\" é só para he, she e it.",
+          "correction_en": "Yes, I have two children."
+        },
+        {
+          "id": "yes-i-have",
+          "match": "^yes i have$",
+          "explanation_pt": "Resposta curta para \"Do you...?\" é \"Yes, I do\".",
+          "correction_en": "Yes, I do. I have two children."
+        }
+      ]
+    },
+    {
+      "id": "a1-03-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda que sim, sua irmã é casada.",
+      "listen": "Is your sister married?",
+      "accepted": [
+        "Yes, she is",
+        "Yes, she's married",
+        "Yes, she is married",
+        "Yes",
+        "Yes, she's married. Her husband is Pedro",
+        "Yes, my sister is married"
+      ],
+      "commonErrors": [
+        {
+          "id": "yes-he",
+          "match": "^yes he\\b",
+          "explanation_pt": "Para irmã, use \"she\": \"Yes, she is\".",
+          "correction_en": "Yes, she is."
+        },
+        {
+          "id": "yes-she-married",
+          "match": "^yes she married$",
+          "explanation_pt": "Falta o verbo: \"Yes, she's married\".",
+          "correction_en": "Yes, she's married."
+        }
+      ]
+    },
+    {
+      "id": "a1-03-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: são cinco pessoas.",
+      "listen": "How many people are there in your family?",
+      "accepted": [
+        "Five",
+        "Five people",
+        "There are five",
+        "There are five people",
+        "There are five people in my family",
+        "We're five",
+        "We are five",
+        "My family has five people"
+      ],
+      "commonErrors": [
+        {
+          "id": "have-five",
+          "match": "^(have|has) five\\b",
+          "explanation_pt": "\"Tem\" (existe) é \"there are\": \"There are five people\".",
+          "correction_en": "There are five people."
+        }
+      ]
+    },
+    {
+      "id": "a1-03-prac-18",
+      "kind": "vocab",
+      "word_en": "grandmother",
+      "meaning_pt": "avó",
+      "example_en": "My grandmother makes great cakes."
+    },
+    {
+      "id": "a1-03-prac-19",
+      "kind": "vocab",
+      "word_en": "cousin",
+      "meaning_pt": "primo, prima",
+      "example_en": "My cousin lives in Rio."
+    },
+    {
+      "id": "a1-03-prac-20",
+      "kind": "vocab",
+      "word_en": "children",
+      "meaning_pt": "filhos (crianças)",
+      "example_en": "They have three children."
+    },
+    {
+      "id": "a1-03-prac-21",
+      "kind": "free_speak",
+      "instruction_pt": "Descreva uma pessoa da sua família.",
+      "prompt_en": "Who is your favorite person in your family? Tell me about him or her.",
+      "guidelines_pt": [
+        "Diga quem é e o nome",
+        "Diga a idade com \"He's/She's\"",
+        "Diga onde mora ou o que faz"
+      ]
+    },
+    {
+      "id": "a1-03-prac-22",
+      "kind": "choice",
+      "instruction_pt": "Como se diz \"parentes\" em inglês?",
+      "options": ["parents", "relatives", "cousins"],
+      "answer": 1,
+      "explanation_pt": "\"Parents\" é só pai e mãe. Parentes em geral são \"relatives\"."
+    },
+    {
+      "id": "a1-03-prac-23",
+      "kind": "choice",
+      "instruction_pt": "Ouça e escolha: quantos filhos ela tem?",
+      "listen": "My sister has three children: two boys and a girl.",
+      "options": ["1", "2", "3"],
+      "answer": 2,
+      "explanation_pt": "Ela diz \"three children\": três filhos."
+    },
+    {
+      "id": "a1-03-prac-24",
+      "kind": "fill",
+      "instruction_pt": "Complete com o verbo certo.",
+      "sentence": "My grandparents ___ a dog.",
+      "accepted": ["have"],
+      "commonErrors": [
+        {
+          "id": "has",
+          "match": "^has$",
+          "explanation_pt": "\"My grandparents\" é plural (they), então é \"have\".",
+          "correction_en": "have"
+        }
+      ]
+    },
+    {
+      "id": "a1-03-prac-25",
+      "kind": "fill",
+      "instruction_pt": "Complete com o possessivo certo.",
+      "sentence": "This is my brother. ___ wife is Italian.",
+      "accepted": ["His"],
+      "commonErrors": [
+        {
+          "id": "her",
+          "match": "^her$",
+          "explanation_pt": "\"Dele\" é \"his\". \"Her\" é \"dela\".",
+          "correction_en": "His"
+        }
+      ]
+    },
+    {
+      "id": "a1-03-prac-26",
+      "kind": "order",
+      "instruction_pt": "Coloque as palavras na ordem certa para formar a frase.",
+      "accepted": ["My cousin lives in Canada"]
+    },
+    {
+      "id": "a1-03-prac-27",
+      "kind": "match",
+      "instruction_pt": "Ligue cada palavra ao seu significado.",
+      "pairs": [
+        {
+          "en": "grandfather",
+          "pt": "avô"
+        },
+        {
+          "en": "aunt",
+          "pt": "tia"
+        },
+        {
+          "en": "uncle",
+          "pt": "tio"
+        },
+        {
+          "en": "cousin",
+          "pt": "primo"
+        },
+        {
+          "en": "relatives",
+          "pt": "parentes"
         }
       ]
     }

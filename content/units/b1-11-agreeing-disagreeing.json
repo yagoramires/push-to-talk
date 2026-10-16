@@ -456,5 +456,508 @@
         }
       ]
     }
+  ],
+  "practice": [
+    {
+      "id": "b1-11-prac-1",
+      "kind": "vocab",
+      "word_en": "Exactly!",
+      "meaning_pt": "Exatamente! (concordo totalmente)",
+      "example_en": "Exactly! That's what I've been saying."
+    },
+    {
+      "id": "b1-11-prac-2",
+      "kind": "vocab",
+      "word_en": "It depends",
+      "meaning_pt": "Depende",
+      "example_en": "Is it better to rent or buy? It depends on where you live."
+    },
+    {
+      "id": "b1-11-prac-3",
+      "kind": "repeat",
+      "instruction_pt": "Repita. \"Agree\" tem a força no fim: a-GREE.",
+      "prompt": "I totally agree with you about the new schedule.",
+      "accepted": [
+        "I totally agree with you about the new schedule",
+        "I completely agree with you about the new schedule"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-11-prac-4",
+      "kind": "repeat",
+      "instruction_pt": "Repita com tom educado.",
+      "prompt": "I'm afraid I don't agree with that.",
+      "accepted": [
+        "I'm afraid I don't agree with that",
+        "I am afraid I do not agree with that",
+        "I'm afraid I disagree with that"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-11-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repita a frase.",
+      "prompt": "That's true, but on the other hand, it's very expensive.",
+      "accepted": [
+        "That's true, but on the other hand, it's very expensive",
+        "That's true but on the other hand it's really expensive"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-11-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repita a frase.",
+      "prompt": "I'm with you on that one.",
+      "accepted": ["I'm with you on that one", "I'm with you on that"],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-11-prac-7",
+      "kind": "repeat",
+      "instruction_pt": "Repita a pergunta.",
+      "prompt": "Don't you think it's a bit too early to decide?",
+      "accepted": [
+        "Don't you think it's a bit too early to decide",
+        "Don't you think it's a little too early to decide"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-11-prac-8",
+      "kind": "repeat",
+      "instruction_pt": "Repita. \"Neither\" pode soar \"níder\" ou \"náider\".",
+      "prompt": "Neither do I. I can't stand it either.",
+      "accepted": [
+        "Neither do I. I can't stand it either",
+        "Neither do I, I cannot stand it either"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-11-prac-9",
+      "kind": "repeat",
+      "instruction_pt": "Repita a frase.",
+      "prompt": "You might be right, but I still have my doubts.",
+      "accepted": [
+        "You might be right, but I still have my doubts",
+        "You may be right, but I still have my doubts",
+        "You might be right but I still have some doubts"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-11-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu concordo totalmente.\"",
+      "accepted": [
+        "I totally agree",
+        "I completely agree",
+        "I agree completely",
+        "I couldn't agree more",
+        "I fully agree",
+        "I agree totally"
+      ],
+      "commonErrors": [
+        {
+          "id": "i-am-agree",
+          "match": "\\bi am (totally |completely )?agree\\b",
+          "explanation_pt": "\"Agree\" é verbo: \"I agree\", sem \"am\".",
+          "correction_en": "I totally agree."
+        },
+        {
+          "id": "agree-total",
+          "match": "\\bagree total\\b",
+          "explanation_pt": "Use o advérbio: \"totally\" ou \"completely\".",
+          "correction_en": "I totally agree."
+        }
+      ]
+    },
+    {
+      "id": "b1-11-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Depende do preço.\"",
+      "accepted": [
+        "It depends on the price",
+        "That depends on the price",
+        "It depends on how much it costs",
+        "It all depends on the price",
+        "Depends on the price"
+      ],
+      "commonErrors": [
+        {
+          "id": "depends-of",
+          "match": "\\bdepends? (of|from)\\b",
+          "explanation_pt": "\"Depender de\" é \"depend on\".",
+          "correction_en": "It depends on the price."
+        },
+        {
+          "id": "depend-no-s",
+          "match": "^it depend\\b",
+          "explanation_pt": "Com \"it\", o verbo leva \"s\": \"It depends\".",
+          "correction_en": "It depends on the price."
+        }
+      ]
+    },
+    {
+      "id": "b1-11-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu entendo o que você quer dizer, mas eu penso diferente.\"",
+      "accepted": [
+        "I see what you mean, but I see it differently",
+        "I know what you mean, but I think differently",
+        "I see what you mean, but I don't think so",
+        "I understand what you mean, but I see it differently",
+        "I see what you mean, but I have a different opinion",
+        "I get what you mean, but I see it differently"
+      ],
+      "commonErrors": [
+        {
+          "id": "what-you-want-say",
+          "match": "\\bwhat you want (to )?say\\b",
+          "explanation_pt": "\"O que você quer dizer\" é \"what you mean\".",
+          "correction_en": "I see what you mean, but I see it differently."
+        },
+        {
+          "id": "think-different",
+          "match": "\\bthink different\\b",
+          "explanation_pt": "Depois de \"think\" use o advérbio: \"differently\".",
+          "correction_en": "I know what you mean, but I think differently."
+        }
+      ]
+    },
+    {
+      "id": "b1-11-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Alguém diz \"I don't like horror movies.\" Diga em inglês: \"Nem eu.\"",
+      "accepted": ["Neither do I", "Me neither", "Nor do I", "I don't either", "Me either"],
+      "commonErrors": [
+        {
+          "id": "me-too-negative",
+          "match": "^(me too|so do i)$",
+          "explanation_pt": "Para concordar com uma frase negativa, use \"Neither do I\" ou \"Me neither\".",
+          "correction_en": "Neither do I."
+        },
+        {
+          "id": "neither-i",
+          "match": "^neither i\\b|^i neither\\b",
+          "explanation_pt": "A ordem é \"Neither do I\" (com o auxiliar antes do sujeito).",
+          "correction_en": "Neither do I."
+        }
+      ]
+    },
+    {
+      "id": "b1-11-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Você tem razão.\"",
+      "accepted": [
+        "You're right",
+        "You are right",
+        "You're absolutely right",
+        "You have a point",
+        "You've got a point",
+        "Fair point"
+      ],
+      "commonErrors": [
+        {
+          "id": "you-have-reason",
+          "match": "\\byou have (the )?reason\\b",
+          "explanation_pt": "\"Ter razão\" é \"be right\": \"You're right\".",
+          "correction_en": "You're right."
+        },
+        {
+          "id": "you-right-no-verb",
+          "match": "^you right$",
+          "explanation_pt": "Falta o verbo: \"You're right\".",
+          "correction_en": "You're right."
+        }
+      ]
+    },
+    {
+      "id": "b1-11-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e concorde, usando \"So do I\" ou \"Me too\".",
+      "listen": "I love going to the beach in winter.",
+      "accepted": [
+        "So do I",
+        "Me too",
+        "So do I. It's so peaceful",
+        "Me too! It's less crowded",
+        "Yeah, me too"
+      ],
+      "commonErrors": [
+        {
+          "id": "me-also",
+          "match": "^(me also|i also)$",
+          "explanation_pt": "Para concordar, o natural é \"So do I\" ou \"Me too\".",
+          "correction_en": "So do I."
+        },
+        {
+          "id": "so-i-do",
+          "match": "^so i do\\b|^so am i\\b",
+          "explanation_pt": "A frase usa \"love\" (presente simples), então o auxiliar é \"do\": \"So do I\".",
+          "correction_en": "So do I."
+        }
+      ]
+    },
+    {
+      "id": "b1-11-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e discorde com educação.",
+      "listen": "Social media is a complete waste of time.",
+      "accepted": [
+        "I'm not so sure about that",
+        "I see your point, but it can be useful too",
+        "I don't really agree. It can be useful",
+        "I'm not sure. It depends on how you use it",
+        "I disagree a bit. It can be useful for work"
+      ],
+      "commonErrors": [
+        {
+          "id": "you-are-wrong-rude",
+          "match": "^you are wrong$|^no that is wrong$",
+          "explanation_pt": "Isso soa muito direto. Para discordar com educação: \"I'm not so sure about that\".",
+          "correction_en": "I'm not so sure about that."
+        },
+        {
+          "id": "i-am-not-agree",
+          "match": "\\bi am not agree\\b|\\bi no agree\\b",
+          "explanation_pt": "A negativa de \"agree\" é \"I don't agree\".",
+          "correction_en": "I don't really agree. It can be useful."
+        }
+      ]
+    },
+    {
+      "id": "b1-11-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e concorde em parte: até certo ponto.",
+      "listen": "Big cities are better places to live than small towns.",
+      "accepted": [
+        "I agree up to a point",
+        "To some extent, yes",
+        "I agree to some extent, but they're more expensive",
+        "Up to a point. There are more jobs, but it's stressful",
+        "To some extent. It depends on what you want"
+      ],
+      "commonErrors": [
+        {
+          "id": "until-certain-point",
+          "match": "\\buntil (a )?certain point\\b|\\bto a certain point\\b",
+          "explanation_pt": "\"Até certo ponto\" é \"up to a point\" ou \"to some extent\".",
+          "correction_en": "I agree up to a point."
+        },
+        {
+          "id": "agree-with-partly",
+          "match": "\\bi am agree\\b",
+          "explanation_pt": "Diga \"I agree\", sem \"am\".",
+          "correction_en": "I agree up to a point."
+        }
+      ]
+    },
+    {
+      "id": "b1-11-prac-18",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que também não sabe, usando \"Neither\" ou \"Me neither\".",
+      "listen": "I can't decide which phone to buy.",
+      "accepted": [
+        "Neither can I",
+        "Me neither",
+        "Neither can I. They're all so similar",
+        "Me neither, there are too many options",
+        "I can't either"
+      ],
+      "commonErrors": [
+        {
+          "id": "neither-do-i-can",
+          "match": "^neither do i\\b",
+          "explanation_pt": "A frase usa \"can't\", então o auxiliar é \"can\": \"Neither can I\".",
+          "correction_en": "Neither can I."
+        },
+        {
+          "id": "me-too-neg",
+          "match": "^(me too|so can i)\\b",
+          "explanation_pt": "Para concordar com uma frase negativa, use \"Neither can I\" ou \"Me neither\".",
+          "correction_en": "Neither can I."
+        }
+      ]
+    },
+    {
+      "id": "b1-11-prac-19",
+      "kind": "dialogue",
+      "instruction_pt": "Discuta com um colega se a empresa deveria adotar a semana de quatro dias.",
+      "scene_pt": "No almoço, um colega comenta uma notícia sobre a semana de trabalho de quatro dias.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "I think every company should have a four-day week. What do you think?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que concorda até certo ponto.",
+          "accepted": [
+            "I agree up to a point",
+            "I agree to some extent",
+            "To some extent, yes",
+            "Up to a point, yes",
+            "I partly agree"
+          ],
+          "commonErrors": [
+            {
+              "id": "until-point",
+              "match": "\\buntil (a )?certain point\\b|\\bto a certain point\\b",
+              "explanation_pt": "\"Até certo ponto\" é \"up to a point\" ou \"to some extent\".",
+              "correction_en": "I agree up to a point."
+            },
+            {
+              "id": "am-agree",
+              "match": "\\bi am agree\\b",
+              "explanation_pt": "Diga \"I agree\", sem \"am\".",
+              "correction_en": "I agree up to a point."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Really? Why only up to a point?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que é ótimo para escritórios, mas que pode ser difícil para hospitais.",
+          "accepted": [
+            "It's great for offices, but it could be hard for hospitals",
+            "It works for offices, but it might be difficult for hospitals",
+            "It's great for offices, but hospitals might find it difficult",
+            "It's fine for offices, but it could be difficult for hospitals",
+            "It's great for offices, but it would be hard for hospitals"
+          ],
+          "commonErrors": [
+            {
+              "id": "can-be-difficult-for",
+              "match": "\\bcan to be\\b|\\bcould to be\\b",
+              "explanation_pt": "Depois de \"can\" ou \"could\" não vem \"to\".",
+              "correction_en": "It's great for offices, but it could be hard for hospitals."
+            },
+            {
+              "id": "is-great-no-it",
+              "match": "^is (great|good|fine) for\\b",
+              "explanation_pt": "Falta o sujeito: \"It's great for offices\".",
+              "correction_en": "It's great for offices, but it could be hard for hospitals."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "That's a good point. But people would be happier and more productive."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Concorde com isso e diga que viu um estudo sobre o assunto.",
+          "accepted": [
+            "That's true. I read a study about that",
+            "You're right about that. I saw a study on it",
+            "I agree with that. I read a study about it",
+            "True. I saw a study about that recently",
+            "Exactly. I read a study about it"
+          ],
+          "commonErrors": [
+            {
+              "id": "a-study-about-it-read-past",
+              "match": "\\bi (read|saw) one study\\b",
+              "explanation_pt": "Use \"a study\": \"I read a study about that\".",
+              "correction_en": "That's true. I read a study about that."
+            },
+            {
+              "id": "is-true-no-that",
+              "match": "^is true\\b",
+              "explanation_pt": "Falta o sujeito: \"That's true\".",
+              "correction_en": "That's true. I read a study about that."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "So would you like to try it here?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que sim, mas que o chefe provavelmente não vai concordar.",
+          "accepted": [
+            "Yes, but I don't think the boss will agree",
+            "Sure, but the boss probably won't agree",
+            "I'd love to, but I doubt the boss will agree",
+            "Yes, but our boss probably won't agree",
+            "Definitely, but I don't think our manager will agree"
+          ],
+          "commonErrors": [
+            {
+              "id": "boss-no-will-agree",
+              "match": "\\bboss (probably )?(no|not) (will )?agree\\b",
+              "explanation_pt": "A negativa no futuro é \"won't agree\": \"the boss probably won't agree\".",
+              "correction_en": "Yes, but the boss probably won't agree."
+            },
+            {
+              "id": "i-think-boss-wont",
+              "match": "\\bchief\\b",
+              "explanation_pt": "\"Chefe\" no trabalho é \"boss\" ou \"manager\".",
+              "correction_en": "Yes, but I don't think the boss will agree."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-11-prac-20",
+      "kind": "free_speak",
+      "instruction_pt": "Dê a sua opinião e apresente os dois lados.",
+      "prompt_en": "Should children have their own smartphones before the age of twelve? Give both sides.",
+      "guidelines_pt": [
+        "Use \"On the one hand... On the other hand...\".",
+        "Diga a sua opinião: \"Personally, I think...\".",
+        "Mostre que você entende o outro lado: \"I see why some people think...\"."
+      ]
+    },
+    {
+      "id": "b1-11-prac-21",
+      "kind": "choice",
+      "instruction_pt": "Alguém diz \"I'm not very good at maths.\" Como concordar?",
+      "options": ["So am I.", "Neither am I.", "Neither do I."],
+      "answer": 1,
+      "explanation_pt": "A frase é negativa e usa \"am\": \"Neither am I\"."
+    },
+    {
+      "id": "b1-11-prac-22",
+      "kind": "choice",
+      "instruction_pt": "Qual é a forma mais educada de discordar?",
+      "options": [
+        "That's stupid.",
+        "You're wrong.",
+        "I see what you mean, but I'm not sure I agree."
+      ],
+      "answer": 2,
+      "explanation_pt": "Reconhecer o ponto do outro antes de discordar soa mais educado."
+    },
+    {
+      "id": "b1-11-prac-23",
+      "kind": "fill",
+      "instruction_pt": "Complete: \"I'm sorry, but I don't agree ___ you on this.\"",
+      "sentence": "I'm sorry, but I don't agree ___ you on this.",
+      "accepted": ["with"],
+      "commonErrors": [
+        {
+          "id": "agree-to-you",
+          "match": "^(to|for|of)$",
+          "explanation_pt": "\"Concordar com alguém\" é \"agree with\".",
+          "correction_en": "I'm sorry, but I don't agree with you on this."
+        }
+      ]
+    },
+    {
+      "id": "b1-11-prac-24",
+      "kind": "order",
+      "instruction_pt": "Coloque as palavras na ordem certa.",
+      "accepted": ["I couldn't agree more."]
+    }
   ]
 }

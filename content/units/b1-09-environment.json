@@ -371,10 +371,99 @@
           ]
         },
         {
-          "id": "b1-09-conv-3",
-          "kind": "order",
-          "instruction_pt": "Coloque as palavras na ordem certa.",
-          "accepted": ["We need to use more renewable energy."]
+          "id": "b1-09-conv-dialogue",
+          "kind": "dialogue",
+          "instruction_pt": "Converse com uma colega sobre hábitos sustentáveis.",
+          "scene_pt": "Uma colega vê você com uma garrafa reutilizável e puxa assunto.",
+          "turns": [
+            {
+              "speaker": "partner",
+              "text": "I like your bottle. Do you take it everywhere?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga que sim, que parou de comprar garrafas de plástico.",
+              "accepted": [
+                "Yes, I've stopped buying plastic bottles",
+                "Yes, I stopped buying plastic bottles",
+                "Yeah, I don't buy plastic bottles anymore",
+                "Yes, I've stopped buying bottled water",
+                "Yes, I don't buy plastic bottles any more"
+              ],
+              "commonErrors": [
+                {
+                  "id": "stopped-to-buy",
+                  "match": "\\bstopped to buy\\b",
+                  "explanation_pt": "\"Parar de\" é \"stop + -ing\": \"stopped buying\".",
+                  "correction_en": "Yes, I've stopped buying plastic bottles."
+                },
+                {
+                  "id": "bottles-of-plastic",
+                  "match": "\\bbottles of plastic\\b",
+                  "explanation_pt": "O material vem antes: \"plastic bottles\".",
+                  "correction_en": "Yes, I've stopped buying plastic bottles."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Good for you. I always forget mine at home."
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Sugira deixar uma garrafa no escritório.",
+              "accepted": [
+                "Why don't you keep one at the office",
+                "You could leave one at the office",
+                "Why don't you leave one here at work",
+                "You should keep one at work",
+                "Maybe you could keep one at the office"
+              ],
+              "commonErrors": [
+                {
+                  "id": "why-you-dont",
+                  "match": "^why you (do not|not)\\b",
+                  "explanation_pt": "Na pergunta, o auxiliar vem antes: \"Why don't you...?\"",
+                  "correction_en": "Why don't you keep one at the office?"
+                },
+                {
+                  "id": "in-work",
+                  "match": "\\bin (the )?work\\b",
+                  "explanation_pt": "\"No trabalho\" é \"at work\".",
+                  "correction_en": "Why don't you keep one at work?"
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "That's a good idea. What else do you do?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga que tenta não desperdiçar comida e que leva marmita.",
+              "accepted": [
+                "I try not to waste food, and I bring my lunch from home",
+                "I try not to waste food and I bring lunch from home",
+                "I try not to waste food. I usually bring my own lunch",
+                "I try not to waste food, and I take my lunch to work",
+                "I try not to waste any food, and I bring a packed lunch"
+              ],
+              "commonErrors": [
+                {
+                  "id": "try-to-not",
+                  "match": "\\btry to not waste\\b|\\bdo not try to waste\\b",
+                  "explanation_pt": "A ordem natural é \"try not to waste\".",
+                  "correction_en": "I try not to waste food, and I bring my lunch from home."
+                },
+                {
+                  "id": "lunch-box-marmita",
+                  "match": "\\bmarmita\\b|\\blunch box of food\\b",
+                  "explanation_pt": "\"Levar marmita\" é \"bring my lunch\" ou \"bring a packed lunch\".",
+                  "correction_en": "I try not to waste food, and I bring my lunch from home."
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "b1-09-conv-free",
@@ -467,6 +556,520 @@
           ]
         }
       ]
+    }
+  ],
+  "practice": [
+    {
+      "id": "b1-09-prac-1",
+      "kind": "vocab",
+      "word_en": "renewable energy",
+      "meaning_pt": "energia renovável",
+      "example_en": "More countries are investing in renewable energy."
+    },
+    {
+      "id": "b1-09-prac-2",
+      "kind": "vocab",
+      "word_en": "to throw away",
+      "meaning_pt": "jogar fora",
+      "example_en": "Don't throw away those bottles. We can recycle them."
+    },
+    {
+      "id": "b1-09-prac-3",
+      "kind": "repeat",
+      "instruction_pt": "Repita. Primeira condicional: \"If\" + presente, \"will\" no resultado.",
+      "prompt": "If we plant more trees, the city will be cooler.",
+      "accepted": [
+        "If we plant more trees, the city will be cooler",
+        "If we plant more trees, the city will get cooler"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-09-prac-4",
+      "kind": "repeat",
+      "instruction_pt": "Repita a frase.",
+      "prompt": "I always take a reusable bag when I go shopping.",
+      "accepted": [
+        "I always take a reusable bag when I go shopping",
+        "I always bring a reusable bag when I go shopping"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-09-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repita. \"Pollution\" tem a força no \"LU\": po-LU-tion.",
+      "prompt": "Air pollution is a serious problem in big cities.",
+      "accepted": [
+        "Air pollution is a serious problem in big cities",
+        "Air pollution is a big problem in big cities"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-09-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repita a frase.",
+      "prompt": "We should use public transport instead of driving.",
+      "accepted": [
+        "We should use public transport instead of driving",
+        "We should use public transportation instead of driving"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-09-prac-7",
+      "kind": "repeat",
+      "instruction_pt": "Repita. \"Unless\" quer dizer \"a menos que\".",
+      "prompt": "Unless we change our habits, things will get worse.",
+      "accepted": [
+        "Unless we change our habits, things will get worse",
+        "Unless we change our habits, things are going to get worse"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-09-prac-8",
+      "kind": "repeat",
+      "instruction_pt": "Repita a frase.",
+      "prompt": "I turn off the lights whenever I leave a room.",
+      "accepted": [
+        "I turn off the lights whenever I leave a room",
+        "I turn the lights off whenever I leave a room",
+        "I switch off the lights whenever I leave a room"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-09-prac-9",
+      "kind": "repeat",
+      "instruction_pt": "Repita a frase.",
+      "prompt": "Solar panels are getting cheaper every year.",
+      "accepted": ["Solar panels are getting cheaper every year"],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-09-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Se a gente não reciclar, vai ter mais lixo no mar.\"",
+      "accepted": [
+        "If we don't recycle, there will be more trash in the ocean",
+        "If we don't recycle, there'll be more rubbish in the sea",
+        "If we don't recycle, there will be more garbage in the ocean",
+        "If we don't recycle, there will be more waste in the sea",
+        "If we don't recycle, there'll be more trash in the sea"
+      ],
+      "commonErrors": [
+        {
+          "id": "if-will-recycle",
+          "match": "^if we will\\b",
+          "explanation_pt": "Depois de \"if\" use o presente: \"If we don't recycle\", e não \"if we will\".",
+          "correction_en": "If we don't recycle, there will be more trash in the ocean."
+        },
+        {
+          "id": "will-have-more-trash",
+          "match": "\\bwill have more (trash|rubbish|garbage|waste)\\b",
+          "explanation_pt": "Para \"vai ter\" (existir), use \"there will be\".",
+          "correction_en": "If we don't recycle, there will be more trash in the ocean."
+        }
+      ]
+    },
+    {
+      "id": "b1-09-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu separo o lixo em casa.\"",
+      "accepted": [
+        "I separate my trash at home",
+        "I separate the rubbish at home",
+        "I sort my trash at home",
+        "I sort the garbage at home",
+        "I separate the recycling at home",
+        "I sort my rubbish at home"
+      ],
+      "commonErrors": [
+        {
+          "id": "luxury",
+          "match": "\\bluxury\\b|\\blixo\\b",
+          "explanation_pt": "\"Lixo\" é \"trash\" (EUA), \"rubbish\" (Reino Unido) ou \"garbage\".",
+          "correction_en": "I separate my trash at home."
+        },
+        {
+          "id": "in-home",
+          "match": "\\bin (my )?home\\b",
+          "explanation_pt": "\"Em casa\" é \"at home\".",
+          "correction_en": "I separate my trash at home."
+        }
+      ]
+    },
+    {
+      "id": "b1-09-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"O clima está mudando muito rápido.\"",
+      "accepted": [
+        "The climate is changing very fast",
+        "The climate is changing really fast",
+        "The climate is changing very quickly",
+        "The climate's changing very fast",
+        "The climate is changing so fast"
+      ],
+      "commonErrors": [
+        {
+          "id": "weather-climate",
+          "match": "\\bthe weather is changing\\b",
+          "explanation_pt": "\"Clima\" a longo prazo é \"climate\". \"Weather\" é o tempo de hoje.",
+          "correction_en": "The climate is changing very fast."
+        },
+        {
+          "id": "changing-much-fast",
+          "match": "\\bmuch (fast|quickly)\\b",
+          "explanation_pt": "\"Muito rápido\" é \"very fast\", e não \"much fast\".",
+          "correction_en": "The climate is changing very fast."
+        }
+      ]
+    },
+    {
+      "id": "b1-09-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"A gente deveria usar menos plástico.\"",
+      "accepted": [
+        "We should use less plastic",
+        "We ought to use less plastic",
+        "We should be using less plastic",
+        "We need to use less plastic",
+        "We should cut down on plastic"
+      ],
+      "commonErrors": [
+        {
+          "id": "fewer-plastic",
+          "match": "\\bfewer plastic\\b|\\bless plastics\\b",
+          "explanation_pt": "\"Plastic\" aqui é incontável: \"less plastic\".",
+          "correction_en": "We should use less plastic."
+        },
+        {
+          "id": "should-to-use",
+          "match": "\\bshould to\\b",
+          "explanation_pt": "Depois de \"should\" não vem \"to\".",
+          "correction_en": "We should use less plastic."
+        }
+      ]
+    },
+    {
+      "id": "b1-09-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu vou de bicicleta para o trabalho.\"",
+      "accepted": [
+        "I cycle to work",
+        "I ride my bike to work",
+        "I go to work by bike",
+        "I bike to work",
+        "I ride a bike to work",
+        "I go to work by bicycle"
+      ],
+      "commonErrors": [
+        {
+          "id": "go-of-bike",
+          "match": "\\b(of|in|with) (the )?(bike|bicycle)\\b",
+          "explanation_pt": "\"De bicicleta\" é \"by bike\", ou use \"cycle\" / \"ride my bike\".",
+          "correction_en": "I cycle to work."
+        },
+        {
+          "id": "go-to-the-work",
+          "match": "\\bto the work\\b",
+          "explanation_pt": "\"Para o trabalho\" é \"to work\", sem \"the\".",
+          "correction_en": "I cycle to work."
+        }
+      ]
+    },
+    {
+      "id": "b1-09-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga uma coisa que você faz: economiza água.",
+      "listen": "What do you do at home to help the planet?",
+      "accepted": [
+        "I try to save water",
+        "I save water",
+        "I try not to waste water",
+        "I take shorter showers to save water",
+        "I try to save water and energy",
+        "I always try to save water"
+      ],
+      "commonErrors": [
+        {
+          "id": "economize-water",
+          "match": "\\beconomi[sz]e\\b",
+          "explanation_pt": "\"Economizar\" água é \"save water\".",
+          "correction_en": "I try to save water."
+        },
+        {
+          "id": "try-save",
+          "match": "\\btry save\\b",
+          "explanation_pt": "Depois de \"try\" vem \"to\": \"I try to save water\".",
+          "correction_en": "I try to save water."
+        }
+      ]
+    },
+    {
+      "id": "b1-09-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que concorda, mas que é caro.",
+      "listen": "Do you think everyone should buy an electric car?",
+      "accepted": [
+        "I agree, but they're too expensive",
+        "Yes, but they're very expensive",
+        "I think so, but they're still expensive",
+        "Maybe, but they're too expensive for most people",
+        "In theory yes, but they're expensive"
+      ],
+      "commonErrors": [
+        {
+          "id": "i-am-agree",
+          "match": "\\bi am agree\\b",
+          "explanation_pt": "\"Agree\" já é verbo: \"I agree\", sem \"am\".",
+          "correction_en": "I agree, but they're too expensive."
+        },
+        {
+          "id": "expensives",
+          "match": "\\bexpensives\\b|\\bare to expensive\\b",
+          "explanation_pt": "Adjetivo não tem plural em inglês: \"they're expensive\".",
+          "correction_en": "I agree, but they're too expensive."
+        }
+      ]
+    },
+    {
+      "id": "b1-09-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga o que vai acontecer se as florestas desaparecerem: vai ficar mais quente.",
+      "listen": "What will happen if the forests disappear?",
+      "accepted": [
+        "It will get hotter",
+        "The planet will get hotter",
+        "If the forests disappear, it'll get hotter",
+        "Everything will get hotter",
+        "The world will get warmer",
+        "It'll get much hotter"
+      ],
+      "commonErrors": [
+        {
+          "id": "more-hot",
+          "match": "\\bmore (hot|warm)\\b",
+          "explanation_pt": "O comparativo de \"hot\" é \"hotter\" (e de \"warm\", \"warmer\").",
+          "correction_en": "It will get hotter."
+        },
+        {
+          "id": "go-to-get",
+          "match": "\\bwill to get\\b|\\bwill gets\\b",
+          "explanation_pt": "Depois de \"will\" vem o verbo na forma base: \"will get\".",
+          "correction_en": "It will get hotter."
+        }
+      ]
+    },
+    {
+      "id": "b1-09-prac-18",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que joga fora só o que não dá para reciclar.",
+      "listen": "Do you throw everything in the same bin?",
+      "accepted": [
+        "No, I only throw away what I can't recycle",
+        "No, I recycle as much as I can",
+        "No, I only throw away things I can't recycle",
+        "No. I separate everything I can recycle",
+        "No, I only throw out what can't be recycled"
+      ],
+      "commonErrors": [
+        {
+          "id": "throw-out-it",
+          "match": "\\bthrow (away|out) it\\b",
+          "explanation_pt": "Com pronome, ele fica no meio: \"throw it away\".",
+          "correction_en": "No, I only throw away what I can't recycle."
+        },
+        {
+          "id": "launch",
+          "match": "\\blaunch\\b",
+          "explanation_pt": "\"Jogar fora\" é \"throw away\".",
+          "correction_en": "No, I only throw away what I can't recycle."
+        }
+      ]
+    },
+    {
+      "id": "b1-09-prac-19",
+      "kind": "dialogue",
+      "instruction_pt": "Discuta com um vizinho uma ideia para o bairro.",
+      "scene_pt": "Seu vizinho quer fazer uma horta comunitária no bairro.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "I'm thinking of starting a community garden in the park. What do you think?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que é uma ótima ideia.",
+          "accepted": [
+            "That's a great idea",
+            "What a great idea",
+            "I think it's a great idea",
+            "That sounds like a great idea",
+            "Great idea"
+          ],
+          "commonErrors": [
+            {
+              "id": "is-great-idea",
+              "match": "^is a (great|good) idea\\b",
+              "explanation_pt": "Falta o sujeito: \"That's a great idea\".",
+              "correction_en": "That's a great idea."
+            },
+            {
+              "id": "a-great-ideia",
+              "match": "\\bideia\\b|\\bgreat ideas\\b",
+              "explanation_pt": "A palavra é \"idea\", no singular.",
+              "correction_en": "That's a great idea."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "I think if we grow our own vegetables, we'll waste less food."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Concorde e diga que também vai ter menos embalagens de plástico.",
+          "accepted": [
+            "I agree, and there will be less plastic packaging too",
+            "Exactly, and we'll use less plastic packaging",
+            "True, and there'll be less plastic packaging",
+            "I agree. We'll also use less plastic",
+            "Yes, and there will be less plastic packaging as well"
+          ],
+          "commonErrors": [
+            {
+              "id": "embalage",
+              "match": "\\bembalag|\\bpackings\\b",
+              "explanation_pt": "\"Embalagem\" é \"packaging\" (incontável).",
+              "correction_en": "I agree, and there will be less plastic packaging too."
+            },
+            {
+              "id": "i-am-agree",
+              "match": "\\bi am agree\\b",
+              "explanation_pt": "Diga \"I agree\", sem \"am\".",
+              "correction_en": "I agree, and there will be less plastic packaging too."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Would you like to help? We need people on Saturday mornings."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que sim e que pode trazer algumas ferramentas.",
+          "accepted": [
+            "Sure, and I can bring some tools",
+            "Yes, I'd love to. I can bring some tools",
+            "Count me in. I can bring some tools",
+            "Of course. I could bring some tools",
+            "Yes, and I'll bring some tools"
+          ],
+          "commonErrors": [
+            {
+              "id": "can-to-bring",
+              "match": "\\b(can|could) to bring\\b",
+              "explanation_pt": "Depois de \"can\" não vem \"to\": \"I can bring\".",
+              "correction_en": "Sure, and I can bring some tools."
+            },
+            {
+              "id": "ferraments",
+              "match": "\\bferrament|\\btoils\\b",
+              "explanation_pt": "\"Ferramentas\" é \"tools\".",
+              "correction_en": "Sure, and I can bring some tools."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Perfect! Do you know anyone else who might be interested?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que vai perguntar aos seus colegas de casa.",
+          "accepted": [
+            "I'll ask my roommates",
+            "I'll ask my housemates",
+            "I'll ask the people I live with",
+            "I'll check with my roommates",
+            "I can ask my flatmates"
+          ],
+          "commonErrors": [
+            {
+              "id": "house-colleagues",
+              "match": "\\bhouse colleagues\\b|\\bhome mates\\b",
+              "explanation_pt": "\"Colegas de casa\" é \"roommates\", \"housemates\" ou \"flatmates\".",
+              "correction_en": "I'll ask my roommates."
+            },
+            {
+              "id": "ask-to-my",
+              "match": "\\bask to my\\b|\\bask for my roommates\\b",
+              "explanation_pt": "\"Perguntar a alguém\" é \"ask someone\", sem \"to\".",
+              "correction_en": "I'll ask my roommates."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-09-prac-20",
+      "kind": "free_speak",
+      "instruction_pt": "Proponha uma solução para um problema ambiental da sua cidade.",
+      "prompt_en": "What's the biggest environmental problem in your city, and how could we solve it?",
+      "guidelines_pt": [
+        "Descreva o problema: \"The biggest problem is...\".",
+        "Use a primeira condicional: \"If we..., we'll...\".",
+        "Diga o que você faz para ajudar."
+      ]
+    },
+    {
+      "id": "b1-09-prac-21",
+      "kind": "choice",
+      "instruction_pt": "Qual frase está correta?",
+      "options": [
+        "If it will rain, we'll stay home.",
+        "If it rains, we'll stay home.",
+        "If it rains, we stay home tomorrow."
+      ],
+      "answer": 1,
+      "explanation_pt": "Na primeira condicional, \"if\" + presente e \"will\" no resultado."
+    },
+    {
+      "id": "b1-09-prac-22",
+      "kind": "choice",
+      "instruction_pt": "Ouça e escolha o resumo certo.",
+      "listen": "The city has banned cars from the center on Sundays, and the air is already much cleaner.",
+      "options": [
+        "Os carros estão proibidos no centro aos domingos.",
+        "Os carros só podem circular aos domingos.",
+        "O ar ficou mais poluído aos domingos."
+      ],
+      "answer": 0,
+      "explanation_pt": "\"Banned\" é proibido, e \"the air is cleaner\" é o ar está mais limpo."
+    },
+    {
+      "id": "b1-09-prac-23",
+      "kind": "fill",
+      "instruction_pt": "Complete: \"___ we act now, it will be too late.\" (a menos que)",
+      "sentence": "___ we act now, it will be too late.",
+      "accepted": ["Unless"],
+      "commonErrors": [
+        {
+          "id": "if-not",
+          "match": "^if$",
+          "explanation_pt": "\"If we act now\" mudaria o sentido. \"A menos que\" é \"unless\".",
+          "correction_en": "Unless we act now, it will be too late."
+        }
+      ]
+    },
+    {
+      "id": "b1-09-prac-24",
+      "kind": "order",
+      "instruction_pt": "Coloque as palavras na ordem certa.",
+      "accepted": ["We should stop wasting so much water."]
     }
   ]
 }

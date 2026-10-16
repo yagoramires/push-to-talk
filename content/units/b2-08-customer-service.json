@@ -115,11 +115,26 @@
           "kind": "match",
           "instruction_pt": "Match each expression to its meaning.",
           "pairs": [
-            { "en": "replacement", "pt": "troca, substituto" },
-            { "en": "on hold", "pt": "esperando na linha" },
-            { "en": "receipt", "pt": "recibo, nota fiscal" },
-            { "en": "to escalate", "pt": "passar para um superior" },
-            { "en": "warranty", "pt": "garantia" }
+            {
+              "en": "replacement",
+              "pt": "troca, substituto"
+            },
+            {
+              "en": "on hold",
+              "pt": "esperando na linha"
+            },
+            {
+              "en": "receipt",
+              "pt": "recibo, nota fiscal"
+            },
+            {
+              "en": "to escalate",
+              "pt": "passar para um superior"
+            },
+            {
+              "en": "warranty",
+              "pt": "garantia"
+            }
           ]
         },
         {
@@ -399,10 +414,129 @@
           ]
         },
         {
-          "id": "b2-08-conv-3",
-          "kind": "order",
-          "instruction_pt": "Put the words in order to make a polite request.",
-          "accepted": ["Could you tell me when I can expect the refund"]
+          "id": "b2-08-conv-dialogue",
+          "kind": "dialogue",
+          "instruction_pt": "Role-play. You work in customer service.",
+          "scene_pt": "You work for an internet provider. An angry customer calls because the internet has been down for two days.",
+          "turns": [
+            {
+              "speaker": "partner",
+              "text": "Hi. My internet has been down for two days and nobody has fixed it. This is ridiculous."
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Peça desculpas e diga que entende a frustração dele.",
+              "accepted": [
+                "I'm really sorry. I understand your frustration",
+                "I'm very sorry about that. I completely understand your frustration",
+                "I'm so sorry. I can understand how frustrating that is",
+                "I apologise. I understand how frustrating that must be",
+                "I'm really sorry about that. I understand why you're frustrated"
+              ],
+              "commonErrors": [
+                {
+                  "id": "understand-your-frustated",
+                  "match": "\\bfrustated\\b",
+                  "explanation_pt": "Atenção à pronúncia: frus-TRA-ted, com \"r\" depois do \"t\".",
+                  "correction_en": "I understand why you're frustrated."
+                },
+                {
+                  "id": "sorry-for-it",
+                  "match": "^i am sorry for it\\b",
+                  "explanation_pt": "O natural é \"I'm sorry about that\".",
+                  "correction_en": "I'm really sorry about that."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Well, I work from home, so this is a big problem for me."
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga que vai verificar agora e peça o número do cliente.",
+              "accepted": [
+                "Let me look into it right now. Could I have your customer number?",
+                "I'll look into it right away. Can I have your customer number, please?",
+                "I'll check it right now. What's your customer number?",
+                "Let me check that for you now. Could you give me your customer number?",
+                "I'll look into it now. Could I have your account number, please?"
+              ],
+              "commonErrors": [
+                {
+                  "id": "verify",
+                  "match": "\\bverify\\b",
+                  "explanation_pt": "Para checar um problema, use \"look into\" ou \"check\".",
+                  "correction_en": "Let me look into it right now."
+                },
+                {
+                  "id": "number-of-client",
+                  "match": "\\bnumber of (the )?(client|customer)\\b",
+                  "explanation_pt": "\"Número do cliente\" é \"customer number\".",
+                  "correction_en": "Could I have your customer number?"
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "It's 4-4-7-1-9."
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Agradeça e diga que um técnico pode ir amanhã de manhã.",
+              "accepted": [
+                "Thank you. A technician can come tomorrow morning",
+                "Thanks. We can send a technician tomorrow morning",
+                "Thank you. A technician can visit you tomorrow morning",
+                "Thanks. A technician will be there tomorrow morning",
+                "Thank you. I can book a technician for tomorrow morning"
+              ],
+              "commonErrors": [
+                {
+                  "id": "technical",
+                  "match": "\\ba technical\\b",
+                  "explanation_pt": "\"Técnico\" (pessoa) é \"technician\". \"Technical\" é adjetivo.",
+                  "correction_en": "A technician can come tomorrow morning."
+                },
+                {
+                  "id": "tomorrow-in-the-morning",
+                  "match": "\\btomorrow in the morning\\b",
+                  "explanation_pt": "O natural é \"tomorrow morning\".",
+                  "correction_en": "A technician can come tomorrow morning."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Fine. But I want some kind of compensation for the two days."
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga que vai dar um desconto na próxima fatura.",
+              "accepted": [
+                "I'll give you a discount on your next bill",
+                "I can give you a discount on your next bill",
+                "We'll take it off your next bill as a discount",
+                "I'll add a discount to your next bill",
+                "We can offer you a discount on your next bill",
+                "I'll apply a discount to your next bill"
+              ],
+              "commonErrors": [
+                {
+                  "id": "fatura-invoice",
+                  "match": "\\b(fature|factura)\\b",
+                  "explanation_pt": "\"Fatura\" de conta de consumo é \"bill\".",
+                  "correction_en": "I'll give you a discount on your next bill."
+                },
+                {
+                  "id": "discount-in",
+                  "match": "\\bdiscount in your\\b",
+                  "explanation_pt": "Desconto \"on\" a conta: \"a discount on your next bill\".",
+                  "correction_en": "I'll give you a discount on your next bill."
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "b2-08-conv-free",
@@ -497,6 +631,589 @@
           ],
           "commonErrors": []
         }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "id": "b2-08-prac-1",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "I'm calling about an order that hasn't arrived yet.",
+      "accepted": ["I'm calling about an order that hasn't arrived yet."],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-08-prac-2",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with a warm, helpful tone.",
+      "prompt": "I'm sorry to hear that. Let me look into it for you.",
+      "accepted": [
+        "I'm sorry to hear that. Let me look into it for you.",
+        "I'm sorry to hear that. Let me look into that for you."
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-08-prac-3",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "The headphones I bought last week are faulty.",
+      "accepted": [
+        "The headphones I bought last week are faulty.",
+        "The headphones I bought last week are defective."
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-08-prac-4",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "Could I have your order number, please?",
+      "accepted": [
+        "Could I have your order number, please?",
+        "Can I have your order number, please?"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-08-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "I'd like to exchange this for a smaller size.",
+      "accepted": [
+        "I'd like to exchange this for a smaller size.",
+        "I'd like to exchange this for a smaller one."
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-08-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "We apologise for the inconvenience.",
+      "accepted": ["We apologise for the inconvenience.", "We apologize for the inconvenience."],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-08-prac-7",
+      "kind": "vocab",
+      "word_en": "receipt",
+      "meaning_pt": "nota fiscal, comprovante de compra",
+      "example_en": "Do you still have the receipt?"
+    },
+    {
+      "id": "b2-08-prac-8",
+      "kind": "vocab",
+      "word_en": "to escalate",
+      "meaning_pt": "levar (a reclamação) para um nível acima",
+      "example_en": "If nobody solves it, I'll escalate the complaint to the manager."
+    },
+    {
+      "id": "b2-08-prac-9",
+      "kind": "vocab",
+      "word_en": "warranty",
+      "meaning_pt": "garantia",
+      "example_en": "The laptop is still under warranty."
+    },
+    {
+      "id": "b2-08-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Eu gostaria de pedir um reembolso.\"",
+      "accepted": [
+        "I'd like to ask for a refund",
+        "I'd like to request a refund",
+        "I'd like a refund",
+        "I would like to get a refund",
+        "I'd like to get my money back",
+        "I'd like a refund, please",
+        "Could I get a refund, please?"
+      ],
+      "commonErrors": [
+        {
+          "id": "reimbursement",
+          "match": "\\b(reimbursement|reimburse|devolution)\\b",
+          "explanation_pt": "Para compras, \"reembolso\" é \"refund\". \"Reimbursement\" é reembolso de despesas (do trabalho, por exemplo); \"devolution\" não tem esse sentido.",
+          "correction_en": "I'd like a refund, please."
+        },
+        {
+          "id": "ask-a-refund",
+          "match": "\\b(ask|asking) a refund\\b",
+          "explanation_pt": "\"Pedir\" algo é \"ask for\": \"ask for a refund\".",
+          "correction_en": "I'd like to ask for a refund."
+        }
+      ]
+    },
+    {
+      "id": "b2-08-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"O produto chegou com defeito.\"",
+      "accepted": [
+        "The product arrived faulty",
+        "The product arrived damaged",
+        "The product was faulty when it arrived",
+        "The product arrived broken",
+        "The item arrived faulty",
+        "The product arrived defective",
+        "The product didn't work when it arrived"
+      ],
+      "commonErrors": [
+        {
+          "id": "with-defect",
+          "match": "\\barrived with (a )?defect\\b",
+          "explanation_pt": "O natural é \"arrived faulty\" ou \"arrived damaged\".",
+          "correction_en": "The product arrived faulty."
+        },
+        {
+          "id": "arrived-broke",
+          "match": "\\barrived broke\\b",
+          "explanation_pt": "\"Quebrado\" é \"broken\". \"Broke\" é passado de \"break\" ou \"sem dinheiro\".",
+          "correction_en": "The product arrived broken."
+        }
+      ]
+    },
+    {
+      "id": "b2-08-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Vou verificar o seu pedido e te ligo amanhã.\"",
+      "accepted": [
+        "I'll look into your order and call you back tomorrow",
+        "I'll look into your order and call you tomorrow",
+        "I'll check your order and call you back tomorrow",
+        "I'll look into your order and get back to you tomorrow",
+        "I'll check on your order and call you tomorrow",
+        "Let me look into your order and I'll call you tomorrow"
+      ],
+      "commonErrors": [
+        {
+          "id": "return-you",
+          "match": "\\b(return|come back) (to )?you\\b",
+          "explanation_pt": "\"Te ligo de volta\" é \"call you back\" ou \"get back to you\".",
+          "correction_en": "I'll look into your order and call you back tomorrow."
+        },
+        {
+          "id": "verify",
+          "match": "\\bverify\\b",
+          "explanation_pt": "\"Verificar\" um problema é \"look into\" ou \"check\". \"Verify\" é confirmar se é verdade.",
+          "correction_en": "I'll look into your order and call you back tomorrow."
+        }
+      ]
+    },
+    {
+      "id": "b2-08-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Meu notebook ainda está na garantia.\"",
+      "accepted": [
+        "My laptop is still under warranty",
+        "My laptop is still in warranty",
+        "My laptop's still under warranty",
+        "My laptop is still under guarantee",
+        "My laptop is still covered by the warranty"
+      ],
+      "commonErrors": [
+        {
+          "id": "notebook",
+          "match": "\\bmy notebook\\b",
+          "explanation_pt": "Em inglês, \"notebook\" é caderno. Computador portátil é \"laptop\".",
+          "correction_en": "My laptop is still under warranty."
+        },
+        {
+          "id": "on-warranty",
+          "match": "\\bon (the )?warranty\\b",
+          "explanation_pt": "Use \"under warranty\".",
+          "correction_en": "My laptop is still under warranty."
+        }
+      ]
+    },
+    {
+      "id": "b2-08-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Eu posso trocar por outra cor?\"",
+      "accepted": [
+        "Can I exchange it for another colour?",
+        "Can I exchange it for another color?",
+        "Could I exchange it for another colour?",
+        "Could I exchange it for a different color?",
+        "Can I swap it for another colour?",
+        "Can I change it for another color?",
+        "Can I exchange it for a different colour?"
+      ],
+      "commonErrors": [
+        {
+          "id": "exchange-by",
+          "match": "\\b(exchange|change|swap) (it )?(by|to) (another|a different)\\b",
+          "explanation_pt": "Trocar uma coisa por outra: \"exchange it for\".",
+          "correction_en": "Can I exchange it for another colour?"
+        },
+        {
+          "id": "trade",
+          "match": "\\btrade it\\b",
+          "explanation_pt": "Para loja use \"exchange\" ou \"swap\". \"Trade\" é negociar, comerciar.",
+          "correction_en": "Can I exchange it for another colour?"
+        }
+      ]
+    },
+    {
+      "id": "b2-08-prac-15",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Já liguei três vezes e ninguém resolveu o problema.\"",
+      "accepted": [
+        "I've already called three times and nobody has solved the problem",
+        "I've called three times already and no one has solved the problem",
+        "I've already called three times and nobody has fixed the problem",
+        "I've called three times and nobody has sorted out the problem",
+        "I've already called three times and no one has solved it",
+        "I've already called three times, and nobody solved the problem"
+      ],
+      "commonErrors": [
+        {
+          "id": "no-body-didnt",
+          "match": "\\bnobody (did not|has not)\\b",
+          "explanation_pt": "\"Nobody\" já é negativo. Não use outro \"not\": \"nobody has solved\".",
+          "correction_en": "Nobody has solved the problem."
+        },
+        {
+          "id": "connected-three",
+          "match": "\\bi (have )?(already )?(connected|linked)\\b",
+          "explanation_pt": "\"Ligar\" (telefonar) é \"call\" ou \"phone\".",
+          "correction_en": "I've already called three times."
+        }
+      ]
+    },
+    {
+      "id": "b2-08-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen. You are the agent. Apologise and ask for the order number.",
+      "listen": "Hi, my package was supposed to arrive on Monday and it still hasn't come.",
+      "accepted": [
+        "I'm sorry to hear that. Could I have your order number, please?",
+        "I'm really sorry about that. Can I have your order number?",
+        "I apologise for that. What's your order number, please?",
+        "Sorry about that. Could you give me your order number?",
+        "I'm so sorry. Could you tell me your order number?",
+        "I'm sorry for the delay. Can I have the order number, please?"
+      ],
+      "commonErrors": [
+        {
+          "id": "sorry-for-listen",
+          "match": "\\bsorry for hear\\b",
+          "explanation_pt": "A expressão é \"sorry to hear that\".",
+          "correction_en": "I'm sorry to hear that."
+        },
+        {
+          "id": "order-of-number",
+          "match": "\\bnumber of (the )?order\\b",
+          "explanation_pt": "\"Número do pedido\" é \"order number\".",
+          "correction_en": "Could I have your order number, please?"
+        }
+      ]
+    },
+    {
+      "id": "b2-08-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen. You are the customer. Explain the problem.",
+      "listen": "Good afternoon, customer service. How can I help you?",
+      "accepted": [
+        "Hi, I bought a phone last week and it's not working",
+        "Hi, the phone I bought last week stopped working",
+        "Hello, I'm calling because my new phone is faulty",
+        "Hi, I have a problem with a phone I bought last week",
+        "Hi, I'm calling about a faulty phone I bought last week",
+        "Hi, the phone I ordered arrived broken"
+      ],
+      "commonErrors": [
+        {
+          "id": "is-not-functioning",
+          "match": "\\bnot functioning\\b",
+          "explanation_pt": "Para aparelho, o natural é \"it's not working\" ou \"it stopped working\".",
+          "correction_en": "It's not working."
+        },
+        {
+          "id": "cellular",
+          "match": "\\bcellular\\b",
+          "explanation_pt": "\"Celular\" é \"phone\", \"mobile\" (britânico) ou \"cell phone\" (americano).",
+          "correction_en": "I bought a phone last week."
+        }
+      ]
+    },
+    {
+      "id": "b2-08-prac-18",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen. You are the customer. Ask to speak to a manager.",
+      "listen": "I'm afraid there's nothing else I can do for you.",
+      "accepted": [
+        "In that case, could I speak to a manager?",
+        "Could I speak to your manager, please?",
+        "Then I'd like to speak to a manager",
+        "Can I talk to a manager, please?",
+        "I'd like to escalate this, please. Can I speak to a manager?",
+        "Could you put me through to a manager?"
+      ],
+      "commonErrors": [
+        {
+          "id": "speak-with-the-responsible",
+          "match": "\\b(the )?responsible\\b",
+          "explanation_pt": "\"O responsável\" é \"the manager\" ou \"the person in charge\". \"Responsible\" é adjetivo.",
+          "correction_en": "Could I speak to a manager?"
+        },
+        {
+          "id": "can-i-to-speak",
+          "match": "\\b(can|could) i to\\b",
+          "explanation_pt": "Depois de \"can/could\" o verbo vem sem \"to\".",
+          "correction_en": "Could I speak to a manager?"
+        }
+      ]
+    },
+    {
+      "id": "b2-08-prac-19",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen. You are the agent. Offer a solution.",
+      "listen": "This is the second time the blender has broken. I'm really not happy.",
+      "accepted": [
+        "I completely understand. We can send you a new one or give you a refund",
+        "I'm very sorry. Would you like a replacement or a refund?",
+        "I understand. We can replace it or refund your money",
+        "I'm sorry about that. We'll send you a replacement free of charge",
+        "I apologise. I can offer you a full refund",
+        "I'm so sorry. Would you prefer a new one or your money back?"
+      ],
+      "commonErrors": [
+        {
+          "id": "reimbursement",
+          "match": "\\b(reimbursement|reimburse|devolution)\\b",
+          "explanation_pt": "Para compras, \"reembolso\" é \"refund\". \"Reimbursement\" é reembolso de despesas (do trabalho, por exemplo); \"devolution\" não tem esse sentido.",
+          "correction_en": "I'd like a refund, please."
+        },
+        {
+          "id": "send-other",
+          "match": "\\bsend you other\\b",
+          "explanation_pt": "\"Outro\" (mais um) é \"another\" ou \"a new one\".",
+          "correction_en": "We can send you another one."
+        }
+      ]
+    },
+    {
+      "id": "b2-08-prac-20",
+      "kind": "choice",
+      "instruction_pt": "The agent says: \"I'll escalate this.\" What will happen?",
+      "options": [
+        "A manager or a higher team will handle it",
+        "The problem is closed",
+        "You will get a discount"
+      ],
+      "answer": 0,
+      "explanation_pt": "\"Escalate\" é passar a reclamação para alguém com mais autoridade."
+    },
+    {
+      "id": "b2-08-prac-21",
+      "kind": "choice",
+      "instruction_pt": "Which is the most polite complaint?",
+      "options": [
+        "I'm afraid the item I received is faulty.",
+        "You sent me a broken thing.",
+        "Your product is garbage."
+      ],
+      "answer": 0,
+      "explanation_pt": "\"I'm afraid\" suaviza a reclamação e mantém o tom educado."
+    },
+    {
+      "id": "b2-08-prac-22",
+      "kind": "fill",
+      "instruction_pt": "Complete the sentence.",
+      "sentence": "I'll look ___ it and call you back.",
+      "accepted": ["into"],
+      "commonErrors": [
+        {
+          "id": "look-in",
+          "match": "^(in|at|on|for)$",
+          "explanation_pt": "\"Look into\" é investigar, verificar um problema.",
+          "correction_en": "I'll look into it and call you back."
+        }
+      ]
+    },
+    {
+      "id": "b2-08-prac-23",
+      "kind": "fill",
+      "instruction_pt": "Complete the sentence.",
+      "sentence": "Do you have the ___? We need it for the exchange.",
+      "accepted": ["receipt"],
+      "commonErrors": [
+        {
+          "id": "recipe",
+          "match": "^(recipe|receive|note)$",
+          "explanation_pt": "\"Nota/comprovante\" é \"receipt\" (o \"p\" não se pronuncia). \"Recipe\" é receita de comida.",
+          "correction_en": "Do you have the receipt?"
+        }
+      ]
+    },
+    {
+      "id": "b2-08-prac-24",
+      "kind": "order",
+      "instruction_pt": "Put the words in order.",
+      "accepted": ["We apologise for any inconvenience this may have caused"]
+    },
+    {
+      "id": "b2-08-prac-25",
+      "kind": "match",
+      "instruction_pt": "Match each expression to its meaning.",
+      "pairs": [
+        {
+          "en": "refund",
+          "pt": "reembolso"
+        },
+        {
+          "en": "faulty",
+          "pt": "com defeito"
+        },
+        {
+          "en": "receipt",
+          "pt": "comprovante de compra"
+        },
+        {
+          "en": "warranty",
+          "pt": "garantia"
+        },
+        {
+          "en": "to escalate",
+          "pt": "levar a um superior"
+        }
+      ]
+    },
+    {
+      "id": "b2-08-prac-26",
+      "kind": "dialogue",
+      "instruction_pt": "Role-play. Return a faulty product at a shop.",
+      "scene_pt": "You bought a coffee machine last week and it stopped working. You go back to the shop.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Hi there. How can I help you today?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que comprou esta cafeteira semana passada e ela parou de funcionar.",
+          "accepted": [
+            "I bought this coffee machine last week and it stopped working",
+            "I bought this coffee machine last week, and it's stopped working",
+            "I bought this coffee maker last week and it stopped working",
+            "I bought this coffee machine last week and now it doesn't work",
+            "I bought this coffee machine here last week and it's not working anymore"
+          ],
+          "commonErrors": [
+            {
+              "id": "stopped-to-work",
+              "match": "\\bstopped to work\\b",
+              "explanation_pt": "\"Parar de fazer algo\" é \"stop doing\": \"stopped working\". \"Stopped to work\" é parar PARA trabalhar.",
+              "correction_en": "It stopped working."
+            },
+            {
+              "id": "in-last-week",
+              "match": "\\bin last week\\b",
+              "explanation_pt": "Com \"last week\" não se usa preposição.",
+              "correction_en": "I bought it last week."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Oh, I'm sorry about that. Do you have the receipt?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que sim, aqui está.",
+          "accepted": [
+            "Yes, here it is",
+            "Yes, here you are",
+            "Yes, here you go",
+            "Sure, here it is",
+            "Yes, I do. Here it is"
+          ],
+          "commonErrors": [
+            {
+              "id": "here-is",
+              "match": "^yes here is\\b$",
+              "explanation_pt": "Diga \"here it is\" ou \"here you are\".",
+              "correction_en": "Yes, here it is."
+            },
+            {
+              "id": "take",
+              "match": "^yes take\\b",
+              "explanation_pt": "\"Toma\" soa rude em inglês. Use \"here you are\".",
+              "correction_en": "Yes, here you are."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Thanks. We can repair it, but it'll take about two weeks."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que prefere um reembolso ou uma troca.",
+          "accepted": [
+            "I'd prefer a refund or an exchange",
+            "I'd rather have a refund or an exchange",
+            "I'd prefer a refund or a replacement",
+            "Actually, I'd prefer a refund or an exchange",
+            "Could I get a refund or an exchange instead?",
+            "I'd rather get a refund or a new one"
+          ],
+          "commonErrors": [
+            {
+              "id": "reimbursement",
+              "match": "\\b(reimbursement|reimburse|devolution)\\b",
+              "explanation_pt": "Para compras, \"reembolso\" é \"refund\". \"Reimbursement\" é reembolso de despesas (do trabalho, por exemplo); \"devolution\" não tem esse sentido.",
+              "correction_en": "I'd like a refund, please."
+            },
+            {
+              "id": "prefer-than",
+              "match": "\\bprefer .* than\\b",
+              "explanation_pt": "Com \"prefer\", a comparação usa \"to\", não \"than\". Ou use \"I'd rather\".",
+              "correction_en": "I'd prefer a refund or an exchange."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Of course. I can exchange it for a new one right now. Is that okay?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Aceite e agradeça a ajuda.",
+          "accepted": [
+            "That's perfect, thank you for your help",
+            "Perfect, thanks for your help",
+            "That's great. Thanks for your help",
+            "Yes, that's fine. Thank you for your help",
+            "That works. Thanks a lot for your help",
+            "Great, thank you so much for your help"
+          ],
+          "commonErrors": [
+            {
+              "id": "thanks-the-help",
+              "match": "\\bthanks? (you )?the help\\b",
+              "explanation_pt": "\"Obrigado pela ajuda\" é \"thanks for your help\".",
+              "correction_en": "Thanks for your help."
+            },
+            {
+              "id": "thank-for-help-by",
+              "match": "\\bthanks? (you )?by\\b",
+              "explanation_pt": "Use \"for\": \"thank you for your help\".",
+              "correction_en": "Thank you for your help."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-08-prac-27",
+      "kind": "free_speak",
+      "instruction_pt": "Make a complaint about a service you were unhappy with.",
+      "prompt_en": "Tell me about a time a product or service let you down. What did you say to the company?",
+      "guidelines_pt": [
+        "Explain the problem: \"I bought... and it...\"",
+        "Say what you want: \"I'd like a refund / an exchange.\"",
+        "Stay polite but firm: \"I'm afraid that's not acceptable.\""
       ]
     }
   ]

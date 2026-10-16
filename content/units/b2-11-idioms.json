@@ -115,11 +115,26 @@
           "kind": "match",
           "instruction_pt": "Match each idiom to its meaning.",
           "pairs": [
-            { "en": "once in a blue moon", "pt": "muito raramente" },
-            { "en": "on the fence", "pt": "em cima do muro, indeciso" },
-            { "en": "the ball is in your court", "pt": "agora é com você" },
-            { "en": "hit the nail on the head", "pt": "acertar em cheio" },
-            { "en": "raining cats and dogs", "pt": "chovendo canivete" }
+            {
+              "en": "once in a blue moon",
+              "pt": "muito raramente"
+            },
+            {
+              "en": "on the fence",
+              "pt": "em cima do muro, indeciso"
+            },
+            {
+              "en": "the ball is in your court",
+              "pt": "agora é com você"
+            },
+            {
+              "en": "hit the nail on the head",
+              "pt": "acertar em cheio"
+            },
+            {
+              "en": "raining cats and dogs",
+              "pt": "chovendo canivete"
+            }
           ]
         },
         {
@@ -471,6 +486,578 @@
           ],
           "commonErrors": []
         }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "id": "b2-11-prac-1",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "Sorry, I can't come tonight. I'm a bit under the weather.",
+      "accepted": [
+        "Sorry, I can't come tonight. I'm a bit under the weather.",
+        "Sorry, I can't make it tonight. I'm a bit under the weather."
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-11-prac-2",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "We've done enough for today. Let's call it a day.",
+      "accepted": [
+        "We've done enough for today. Let's call it a day.",
+        "We've done enough for today. Let's call it a night."
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-11-prac-3",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "The exam was a piece of cake.",
+      "accepted": ["The exam was a piece of cake.", "The test was a piece of cake."],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-11-prac-4",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "Telling a joke is a great way to break the ice.",
+      "accepted": [
+        "Telling a joke is a great way to break the ice.",
+        "Telling a joke is a good way to break the ice."
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-11-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repeat. Link the words: fingers-crossed.",
+      "prompt": "I'll keep my fingers crossed for your interview.",
+      "accepted": [
+        "I'll keep my fingers crossed for your interview.",
+        "I'm keeping my fingers crossed for your interview."
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-11-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "Don't worry, it's not rocket science.",
+      "accepted": ["Don't worry, it's not rocket science."],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-11-prac-7",
+      "kind": "vocab",
+      "word_en": "to cost an arm and a leg",
+      "meaning_pt": "custar os olhos da cara",
+      "example_en": "That new phone costs an arm and a leg."
+    },
+    {
+      "id": "b2-11-prac-8",
+      "kind": "vocab",
+      "word_en": "to hit the sack",
+      "meaning_pt": "ir dormir",
+      "example_en": "I'm exhausted. I'm going to hit the sack."
+    },
+    {
+      "id": "b2-11-prac-9",
+      "kind": "vocab",
+      "word_en": "to be on the fence",
+      "meaning_pt": "estar em cima do muro, indeciso",
+      "example_en": "I'm still on the fence about buying a car."
+    },
+    {
+      "id": "b2-11-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Esse carro custou os olhos da cara.\"",
+      "accepted": [
+        "That car cost an arm and a leg",
+        "This car cost an arm and a leg",
+        "That car was really expensive",
+        "That car cost a fortune",
+        "This car cost a fortune",
+        "That car was super expensive"
+      ],
+      "commonErrors": [
+        {
+          "id": "eyes-of-face",
+          "match": "\\beyes of the face\\b",
+          "explanation_pt": "Não traduza ao pé da letra. A expressão em inglês é \"cost an arm and a leg\".",
+          "correction_en": "That car cost an arm and a leg."
+        },
+        {
+          "id": "costed",
+          "match": "\\bcosted\\b",
+          "explanation_pt": "\"Cost\" é irregular: o passado é \"cost\".",
+          "correction_en": "That car cost an arm and a leg."
+        }
+      ]
+    },
+    {
+      "id": "b2-11-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Minha irmã ainda está em cima do muro sobre o casamento.\"",
+      "accepted": [
+        "My sister is still on the fence about the wedding",
+        "My sister's still on the fence about the wedding",
+        "My sister is still undecided about the wedding",
+        "My sister still hasn't made up her mind about the wedding",
+        "My sister is still on the fence about getting married",
+        "My sister is still unsure about the wedding"
+      ],
+      "commonErrors": [
+        {
+          "id": "on-the-wall",
+          "match": "\\b(on|over) the wall\\b",
+          "explanation_pt": "Em inglês a expressão é \"on the fence\" (cerca), não \"wall\".",
+          "correction_en": "My sister is still on the fence about the wedding."
+        },
+        {
+          "id": "fence-of",
+          "match": "\\bon the fence (of|over)\\b",
+          "explanation_pt": "Use \"about\": \"on the fence about\".",
+          "correction_en": "My sister is still on the fence about the wedding."
+        }
+      ]
+    },
+    {
+      "id": "b2-11-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Vou dormir, estou morto de cansaço.\"",
+      "accepted": [
+        "I'm going to hit the sack, I'm exhausted",
+        "I'm going to bed, I'm exhausted",
+        "I'm going to hit the sack. I'm dead tired",
+        "I'm going to bed. I'm dead tired",
+        "I'm off to bed, I'm exhausted",
+        "I'm going to hit the sack, I'm worn out",
+        "I'm going to bed, I'm worn out"
+      ],
+      "commonErrors": [
+        {
+          "id": "dead-of-tired",
+          "match": "\\bdead of (tired|tiredness)\\b",
+          "explanation_pt": "\"Morto de cansaço\" é \"exhausted\" ou \"dead tired\".",
+          "correction_en": "I'm going to bed, I'm exhausted."
+        },
+        {
+          "id": "go-to-sleep-me",
+          "match": "\\bgoing to sleep me\\b",
+          "explanation_pt": "Use \"I'm going to bed\" ou \"hit the sack\".",
+          "correction_en": "I'm going to bed."
+        }
+      ]
+    },
+    {
+      "id": "b2-11-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Foi moleza!\"",
+      "accepted": [
+        "It was a piece of cake",
+        "It was really easy",
+        "It was a breeze",
+        "That was a piece of cake",
+        "It was super easy",
+        "It was easy peasy"
+      ],
+      "commonErrors": [
+        {
+          "id": "soft",
+          "match": "\\b(soft|softness)\\b",
+          "explanation_pt": "\"Moleza\" não se traduz por \"soft\". Use \"a piece of cake\" ou \"a breeze\".",
+          "correction_en": "It was a piece of cake."
+        },
+        {
+          "id": "piece-of-pie",
+          "match": "\\bpiece of pie\\b",
+          "explanation_pt": "A expressão é \"a piece of cake\".",
+          "correction_en": "It was a piece of cake."
+        }
+      ]
+    },
+    {
+      "id": "b2-11-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Ontem a gente encerrou o expediente às cinco.\"",
+      "accepted": [
+        "Yesterday we called it a day at five",
+        "We called it a day at five yesterday",
+        "Yesterday we called it a day at five o'clock",
+        "Yesterday we finished work at five",
+        "We finished work at five yesterday",
+        "Yesterday we stopped working at five"
+      ],
+      "commonErrors": [
+        {
+          "id": "call-it-the-day",
+          "match": "\\bcalled it the day\\b",
+          "explanation_pt": "A expressão é \"call it a day\", com \"a\".",
+          "correction_en": "Yesterday we called it a day at five."
+        },
+        {
+          "id": "closed-the-expedient",
+          "match": "\\bexpedient\\b",
+          "explanation_pt": "\"Expediente\" não se traduz por \"expedient\". Use \"call it a day\" ou \"finish work\".",
+          "correction_en": "Yesterday we called it a day at five."
+        }
+      ]
+    },
+    {
+      "id": "b2-11-prac-15",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Vou torcer por você.\"",
+      "accepted": [
+        "I'll keep my fingers crossed for you",
+        "I'm keeping my fingers crossed for you",
+        "I'll be rooting for you",
+        "I'm rooting for you",
+        "Fingers crossed for you",
+        "I'll cross my fingers for you"
+      ],
+      "commonErrors": [
+        {
+          "id": "twist-for-you",
+          "match": "\\b(twist|twisting|torcer)\\b",
+          "explanation_pt": "\"Torcer\" por alguém é \"root for\" ou \"keep your fingers crossed\". \"Twist\" é torcer um objeto.",
+          "correction_en": "I'll keep my fingers crossed for you."
+        },
+        {
+          "id": "cheer-for",
+          "match": "\\bi will cheer you\\b",
+          "explanation_pt": "Use \"root for you\" ou \"cheer you on\".",
+          "correction_en": "I'll be rooting for you."
+        }
+      ]
+    },
+    {
+      "id": "b2-11-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and say you are not feeling well. Use an idiom.",
+      "listen": "You look pale. Are you okay?",
+      "accepted": [
+        "I'm feeling a bit under the weather",
+        "I'm a bit under the weather",
+        "I'm feeling under the weather today",
+        "Not really. I'm a little under the weather",
+        "I'm feeling a bit under the weather today",
+        "I'm not feeling very well"
+      ],
+      "commonErrors": [
+        {
+          "id": "under-the-time",
+          "match": "\\bunder the (time|climate)\\b",
+          "explanation_pt": "A expressão é \"under the weather\".",
+          "correction_en": "I'm feeling a bit under the weather."
+        },
+        {
+          "id": "below-the-weather",
+          "match": "\\bbelow the weather\\b",
+          "explanation_pt": "Use \"under\", não \"below\": \"under the weather\".",
+          "correction_en": "I'm a bit under the weather."
+        }
+      ]
+    },
+    {
+      "id": "b2-11-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and suggest stopping for the day.",
+      "listen": "It's almost eight o'clock and we're still working on the report.",
+      "accepted": [
+        "Let's call it a day",
+        "Why don't we call it a day?",
+        "I think we should call it a day",
+        "Let's call it a day and finish tomorrow",
+        "Shall we call it a day?",
+        "Let's call it a night"
+      ],
+      "commonErrors": [
+        {
+          "id": "call-it-the-day",
+          "match": "\\bcall it the day\\b",
+          "explanation_pt": "A expressão é \"call it a day\".",
+          "correction_en": "Let's call it a day."
+        },
+        {
+          "id": "lets-to",
+          "match": "\\blet us to\\b",
+          "explanation_pt": "Depois de \"let's\" o verbo vem sem \"to\".",
+          "correction_en": "Let's call it a day."
+        }
+      ]
+    },
+    {
+      "id": "b2-11-prac-18",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and say the task was very easy. Use an idiom.",
+      "listen": "How was the test? Was it difficult?",
+      "accepted": [
+        "No, it was a piece of cake",
+        "It was a piece of cake",
+        "Not at all, it was a piece of cake",
+        "No, it was a breeze",
+        "It was a breeze",
+        "Not at all. It was easy peasy"
+      ],
+      "commonErrors": [
+        {
+          "id": "piece-of-pie",
+          "match": "\\bpiece of (pie|bread)\\b",
+          "explanation_pt": "A expressão é \"a piece of cake\".",
+          "correction_en": "It was a piece of cake."
+        },
+        {
+          "id": "is-a-piece",
+          "match": "^(no )?is a piece\\b",
+          "explanation_pt": "Falta o sujeito: \"It was a piece of cake\".",
+          "correction_en": "It was a piece of cake."
+        }
+      ]
+    },
+    {
+      "id": "b2-11-prac-19",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and say you are undecided. Use an idiom.",
+      "listen": "So, are you going to accept the new job offer?",
+      "accepted": [
+        "I'm still on the fence",
+        "I'm still on the fence about it",
+        "I don't know yet, I'm on the fence",
+        "I haven't made up my mind yet",
+        "I'm on the fence about it",
+        "Honestly, I'm still on the fence"
+      ],
+      "commonErrors": [
+        {
+          "id": "on-the-wall",
+          "match": "\\b(on|over) the wall\\b",
+          "explanation_pt": "Em inglês: \"on the fence\".",
+          "correction_en": "I'm still on the fence."
+        },
+        {
+          "id": "above-the-fence",
+          "match": "\\b(above|over) the fence\\b",
+          "explanation_pt": "Use \"on the fence\".",
+          "correction_en": "I'm still on the fence."
+        }
+      ]
+    },
+    {
+      "id": "b2-11-prac-20",
+      "kind": "choice",
+      "instruction_pt": "\"She spilled the beans about the party.\" What did she do?",
+      "options": ["She told the secret", "She dropped the food", "She cancelled the party"],
+      "answer": 0,
+      "explanation_pt": "\"Spill the beans\" é contar um segredo, entregar a surpresa."
+    },
+    {
+      "id": "b2-11-prac-21",
+      "kind": "choice",
+      "instruction_pt": "Which idiom fits? \"Learning to use this app is easy. It's not ___.\"",
+      "options": ["rocket science", "a piece of cake", "under the weather"],
+      "answer": 0,
+      "explanation_pt": "\"It's not rocket science\" quer dizer que não é nada complicado."
+    },
+    {
+      "id": "b2-11-prac-22",
+      "kind": "fill",
+      "instruction_pt": "Complete the sentence.",
+      "sentence": "I'm exhausted. I'm going to hit the ___.",
+      "accepted": ["sack", "hay"],
+      "commonErrors": [
+        {
+          "id": "bed",
+          "match": "^(bed|bag|sac)$",
+          "explanation_pt": "A expressão é \"hit the sack\" (ou \"hit the hay\").",
+          "correction_en": "I'm going to hit the sack."
+        }
+      ]
+    },
+    {
+      "id": "b2-11-prac-23",
+      "kind": "fill",
+      "instruction_pt": "Complete the sentence.",
+      "sentence": "A good game can help break the ___ at a party.",
+      "accepted": ["ice"],
+      "commonErrors": [
+        {
+          "id": "ice-wrong",
+          "match": "^(ices|cold|glass)$",
+          "explanation_pt": "A expressão é \"break the ice\" (quebrar o gelo), igual ao português.",
+          "correction_en": "A good game can help break the ice."
+        }
+      ]
+    },
+    {
+      "id": "b2-11-prac-24",
+      "kind": "order",
+      "instruction_pt": "Put the words in order.",
+      "accepted": ["Don't worry it's not rocket science"]
+    },
+    {
+      "id": "b2-11-prac-25",
+      "kind": "match",
+      "instruction_pt": "Match each expression to its meaning.",
+      "pairs": [
+        {
+          "en": "a piece of cake",
+          "pt": "moleza"
+        },
+        {
+          "en": "under the weather",
+          "pt": "meio doente"
+        },
+        {
+          "en": "to call it a day",
+          "pt": "encerrar por hoje"
+        },
+        {
+          "en": "to cost an arm and a leg",
+          "pt": "custar os olhos da cara"
+        },
+        {
+          "en": "on the fence",
+          "pt": "em cima do muro"
+        }
+      ]
+    },
+    {
+      "id": "b2-11-prac-26",
+      "kind": "dialogue",
+      "instruction_pt": "Role-play. Chat with a colleague at the end of the day.",
+      "scene_pt": "It's Friday evening. You and your colleague Mia are still in the office.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Phew, what a week. Are you still working on that presentation?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que sim, mas que está quase terminando e que foi moleza.",
+          "accepted": [
+            "Yes, but I'm almost done. It was a piece of cake",
+            "Yeah, but I'm nearly finished. It was a piece of cake",
+            "Yes, but I'm almost finished. It was a breeze",
+            "Yes, but I'm almost done. It was really easy",
+            "Yeah, almost done. It was a piece of cake"
+          ],
+          "commonErrors": [
+            {
+              "id": "piece-of-pie",
+              "match": "\\bpiece of (pie|bread)\\b",
+              "explanation_pt": "A expressão é \"a piece of cake\".",
+              "correction_en": "It was a piece of cake."
+            },
+            {
+              "id": "am-almost-finish",
+              "match": "\\balmost finish\\b$",
+              "explanation_pt": "Use \"almost done\" ou \"almost finished\".",
+              "correction_en": "I'm almost done."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Lucky you. I'm feeling a bit under the weather, to be honest."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que sente muito e sugira que ela encerre por hoje.",
+          "accepted": [
+            "Oh, I'm sorry. Why don't you call it a day?",
+            "Sorry to hear that. You should call it a day",
+            "I'm sorry to hear that. Maybe you should call it a day",
+            "Oh no. Why don't you call it a day and go home?",
+            "Sorry to hear that. Why don't you call it a day?"
+          ],
+          "commonErrors": [
+            {
+              "id": "call-it-the-day",
+              "match": "\\bcall it the day\\b",
+              "explanation_pt": "A expressão é \"call it a day\".",
+              "correction_en": "Why don't you call it a day?"
+            },
+            {
+              "id": "sorry-for-hear",
+              "match": "\\bsorry for hear\\b",
+              "explanation_pt": "A expressão é \"sorry to hear that\".",
+              "correction_en": "Sorry to hear that."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Good idea. By the way, are you going to Jake's leaving party tomorrow?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que ainda está em cima do muro.",
+          "accepted": [
+            "I'm still on the fence",
+            "I'm still on the fence about it",
+            "I don't know, I'm still on the fence",
+            "I'm not sure yet. I'm on the fence",
+            "I haven't made up my mind yet"
+          ],
+          "commonErrors": [
+            {
+              "id": "on-the-wall",
+              "match": "\\b(on|over) the wall\\b",
+              "explanation_pt": "Em inglês: \"on the fence\".",
+              "correction_en": "I'm still on the fence."
+            },
+            {
+              "id": "above-the-fence",
+              "match": "\\b(above|over) the fence\\b",
+              "explanation_pt": "Use \"on the fence\".",
+              "correction_en": "I'm still on the fence."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Oh, come on, you should come! It'll be fun."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que tudo bem, você vai, e que vai torcer para ela melhorar.",
+          "accepted": [
+            "Okay, I'll go. And I'll keep my fingers crossed that you feel better",
+            "Fine, I'll come. I hope you feel better soon",
+            "Okay, I'll be there. Fingers crossed you feel better",
+            "Alright, I'll come. I hope you feel better",
+            "Okay, I'll go. Get well soon"
+          ],
+          "commonErrors": [
+            {
+              "id": "twist",
+              "match": "\\b(twist|twisting)\\b",
+              "explanation_pt": "\"Torcer\" é \"keep your fingers crossed\" ou \"hope\".",
+              "correction_en": "I'll keep my fingers crossed that you feel better."
+            },
+            {
+              "id": "feel-better-will",
+              "match": "\\bhope you will feel\\b",
+              "explanation_pt": "Depois de \"hope\", o mais natural é o presente: \"I hope you feel better\".",
+              "correction_en": "I hope you feel better soon."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-11-prac-27",
+      "kind": "free_speak",
+      "instruction_pt": "Tell a short story using at least three idioms.",
+      "prompt_en": "Tell me about a busy or difficult day you had recently. Try to use some idioms.",
+      "guidelines_pt": [
+        "Use idioms like \"under the weather\", \"a piece of cake\", \"call it a day\"",
+        "Tell it in order: \"First... Then... In the end...\"",
+        "Don't translate Portuguese idioms word for word."
       ]
     }
   ]

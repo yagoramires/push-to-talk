@@ -57,7 +57,14 @@ export async function loadCourse(dir: string): Promise<Course> {
   }
   for (const file of files) {
     const unit = (await parseFile(join(dir, 'units', file), file, UnitSchema))!
-    claim([unit.id, ...unit.blocks.flatMap((b) => [b.id, ...b.exercises.map((e) => e.id)])], file)
+    claim(
+      [
+        unit.id,
+        ...unit.blocks.flatMap((b) => [b.id, ...b.exercises.map((e) => e.id)]),
+        ...unit.practice.map((e) => e.id)
+      ],
+      file
+    )
     units.push(unit)
   }
   units.sort((a, b) => LEVELS.indexOf(a.level) - LEVELS.indexOf(b.level) || a.order - b.order)

@@ -376,10 +376,85 @@
           ]
         },
         {
-          "id": "c1-12-conv-3",
-          "kind": "order",
-          "instruction_pt": "Put the words in order to check understanding.",
-          "accepted": ["Correct me if I'm wrong but you mean we should wait"]
+          "id": "c1-12-conv-dialogue",
+          "kind": "dialogue",
+          "instruction_pt": "Role-play: paraphrase what the client says to check your understanding.",
+          "scene_pt": "A client explains what she needs for a new website.",
+          "turns": [
+            {
+              "speaker": "partner",
+              "text": "Basically, we like the design, but the budget is tight and we need it live before the summer."
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Paraphrase: so what she's saying is the design works, but cost and timing are the issues.",
+              "accepted": [
+                "So what you're saying is the design works, but cost and timing are the issues",
+                "So what you're saying is that the design works, but cost and timing are the issues",
+                "So, the design works, but cost and timing are the issues",
+                "So what you're saying is the design is fine, but cost and timing are the issues",
+                "In other words, the design works, but cost and timing are the problem",
+                "So the design works, but the budget and the timing are the issues",
+                "If I understand correctly, the design works, but cost and timing are the issues"
+              ],
+              "commonErrors": [
+                {
+                  "id": "what-are-you-saying",
+                  "match": "\\bwhat are you saying is\\b",
+                  "explanation_pt": "In a statement, keep subject + verb order: \"what you're saying is...\".",
+                  "correction_en": "So what you're saying is the design works."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Exactly. Is that doable?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Say it should be, if you simplify a couple of features.",
+              "accepted": [
+                "It should be, if we simplify a couple of features",
+                "It should be doable if we simplify a couple of features",
+                "It should be, as long as we simplify a couple of features",
+                "It should be, provided we simplify a couple of features",
+                "I think so, if we simplify a couple of features",
+                "It should be possible if we simplify a couple of features"
+              ],
+              "commonErrors": [
+                {
+                  "id": "couple-feature",
+                  "match": "\\ba couple of feature\\b",
+                  "explanation_pt": "\"A couple of\" takes a plural noun: \"a couple of features\".",
+                  "correction_en": "If we simplify a couple of features."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Great. Could you put that in writing for me?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Say of course, you'll send her a short summary by email today.",
+              "accepted": [
+                "Of course. I'll send you a short summary by email today",
+                "Of course, I'll email you a short summary today",
+                "Sure. I'll send you a brief summary by email today",
+                "Of course. I'll send a short summary over by email today",
+                "Absolutely. I'll email you a quick summary today",
+                "Of course. I'll send you a summary by email later today"
+              ],
+              "commonErrors": [
+                {
+                  "id": "by-the-email",
+                  "match": "\\b(by the|for) email\\b",
+                  "explanation_pt": "Say \"by email\", without \"the\".",
+                  "correction_en": "I'll send you a short summary by email today."
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "c1-12-conv-free",
@@ -460,6 +535,481 @@
           "prompt": "In a nutshell, I can now say what I mean, and mean what I say.",
           "accepted": ["In a nutshell, I can now say what I mean, and mean what I say"],
           "commonErrors": []
+        }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "id": "c1-12-prac-1",
+      "kind": "vocab",
+      "word_en": "to sum up",
+      "meaning_pt": "resumindo, para resumir",
+      "example_en": "To sum up, the trial was a success."
+    },
+    {
+      "id": "c1-12-prac-2",
+      "kind": "vocab",
+      "word_en": "to rephrase",
+      "meaning_pt": "reformular, dizer de outro jeito",
+      "example_en": "Could you rephrase the question, please?"
+    },
+    {
+      "id": "c1-12-prac-3",
+      "kind": "vocab",
+      "word_en": "in short",
+      "meaning_pt": "em suma, resumindo",
+      "example_en": "In short, we're behind schedule."
+    },
+    {
+      "id": "c1-12-prac-4",
+      "kind": "vocab",
+      "word_en": "to get the wrong end of the stick",
+      "meaning_pt": "entender tudo errado",
+      "example_en": "I think you got the wrong end of the stick. I never said that."
+    },
+    {
+      "id": "c1-12-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "If I've understood correctly, the deadline has moved to May.",
+      "accepted": [
+        "If I've understood correctly, the deadline has moved to May",
+        "If I understood correctly, the deadline has moved to May",
+        "If I've understood correctly, the deadline's moved to May"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-12-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "Let me rephrase that.",
+      "accepted": ["Let me rephrase that", "Let me just rephrase that"],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-12-prac-7",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "In short, we need a clearer plan.",
+      "accepted": ["In short, we need a clearer plan", "In short, we need a much clearer plan"],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-12-prac-8",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with a rising, checking tone at the end.",
+      "prompt": "Correct me if I'm wrong, but you'd prefer to wait.",
+      "accepted": [
+        "Correct me if I'm wrong, but you'd prefer to wait",
+        "Correct me if I'm wrong, but you would prefer to wait"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-12-prac-9",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "Sorry, I think I got the wrong end of the stick.",
+      "accepted": [
+        "Sorry, I think I got the wrong end of the stick",
+        "Sorry, I think I've got the wrong end of the stick"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-12-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Se eu entendi bem, você quer adiar o projeto.\"",
+      "accepted": [
+        "If I understood correctly, you want to postpone the project",
+        "If I've understood correctly, you want to postpone the project",
+        "If I understand correctly, you want to postpone the project",
+        "If I understood you correctly, you want to put off the project",
+        "If I've got this right, you want to postpone the project",
+        "So if I understand you, you want to postpone the project",
+        "If I understood correctly, you'd like to postpone the project",
+        "If I understood right, you want to delay the project"
+      ],
+      "commonErrors": [
+        {
+          "id": "understood-well",
+          "match": "\\bunderstood? (you )?well\\b",
+          "explanation_pt": "\"Entender bem\" here is \"understand correctly\" or \"get it right\".",
+          "correction_en": "If I understood correctly, you want to postpone the project."
+        }
+      ]
+    },
+    {
+      "id": "c1-12-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Em suma, foi uma perda de tempo.\"",
+      "accepted": [
+        "In short, it was a waste of time",
+        "In a nutshell, it was a waste of time",
+        "In brief, it was a waste of time",
+        "To sum up, it was a waste of time",
+        "Basically, it was a waste of time",
+        "Long story short, it was a waste of time",
+        "All in all, it was a waste of time",
+        "In short, it was a complete waste of time"
+      ],
+      "commonErrors": [
+        {
+          "id": "loss-of-time",
+          "match": "\\bloss of time\\b",
+          "explanation_pt": "\"Perda de tempo\" is \"a waste of time\".",
+          "correction_en": "In short, it was a waste of time."
+        }
+      ]
+    },
+    {
+      "id": "c1-12-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Resumindo a história: conseguimos o contrato.\"",
+      "accepted": [
+        "To cut a long story short, we got the contract",
+        "Long story short, we got the contract",
+        "To cut a long story short, we won the contract",
+        "Long story short, we won the contract",
+        "In short, we got the contract",
+        "To make a long story short, we got the contract",
+        "Long story short, we landed the contract"
+      ],
+      "commonErrors": [
+        {
+          "id": "resuming",
+          "match": "\\bresum(ing|e)\\b",
+          "explanation_pt": "\"Resume\" means \"retomar\". \"Resumindo\" is \"in short\" or \"to cut a long story short\".",
+          "correction_en": "Long story short, we got the contract."
+        }
+      ]
+    },
+    {
+      "id": "c1-12-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"A mensagem principal é que precisamos ouvir mais os clientes.\"",
+      "accepted": [
+        "The key message is that we need to listen to our customers more",
+        "The main message is that we need to listen to our customers more",
+        "The key takeaway is that we need to listen to customers more",
+        "The main point is that we need to listen to our customers more",
+        "The bottom line is that we need to listen to our customers more",
+        "The key message is that we need to listen more to our customers",
+        "The main message is that we need to listen more to customers",
+        "The key message is that we need to listen to our clients more"
+      ],
+      "commonErrors": [
+        {
+          "id": "listen-the",
+          "match": "\\blisten (more )?(the|our) (customers|clients)\\b",
+          "explanation_pt": "\"Ouvir alguém\" is \"listen to someone\".",
+          "correction_en": "We need to listen to our customers more."
+        }
+      ]
+    },
+    {
+      "id": "c1-12-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Say this in natural English: \"Ou seja, não temos orçamento.\"",
+      "accepted": [
+        "In other words, we don't have a budget",
+        "In other words, we don't have the budget",
+        "In other words, we have no budget",
+        "In other words, there's no budget",
+        "That is to say, we don't have a budget",
+        "So basically, we don't have a budget",
+        "In other words, we've got no budget",
+        "In other words, there's no money"
+      ],
+      "commonErrors": [
+        {
+          "id": "or-be",
+          "match": "^or (be|is)\\b",
+          "explanation_pt": "\"Ou seja\" is \"in other words\" or \"that is to say\".",
+          "correction_en": "In other words, we don't have a budget."
+        }
+      ]
+    },
+    {
+      "id": "c1-12-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and summarise it in one sentence, starting with \"So basically\".",
+      "listen": "The new system is faster and cheaper, but staff will need two weeks of training before we can switch over.",
+      "accepted": [
+        "So basically, it's better but needs training first",
+        "So basically, the new system is better, but staff need training first",
+        "So basically, it's faster and cheaper, but we need two weeks of training first",
+        "So basically, it's an improvement, but it needs two weeks of training",
+        "So basically, we can switch once staff are trained",
+        "So basically, it's worth it, but training comes first",
+        "So basically, it's faster and cheaper, but staff need training first"
+      ],
+      "commonErrors": [
+        {
+          "id": "trainings",
+          "match": "\\btrainings\\b",
+          "explanation_pt": "\"Training\" is uncountable: \"two weeks of training\".",
+          "correction_en": "Two weeks of training."
+        }
+      ]
+    },
+    {
+      "id": "c1-12-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and check your understanding by paraphrasing.",
+      "listen": "We've decided not to renew the contract, mainly because of the delays last year.",
+      "accepted": [
+        "So you're not renewing it because of the delays",
+        "So what you're saying is the delays were the main reason",
+        "So the delays are why you're not renewing",
+        "In other words, the delays cost us the contract",
+        "If I understand correctly, it's mainly because of the delays",
+        "So you're ending the contract because of last year's delays",
+        "So, in a nutshell, the delays were the deciding factor",
+        "So the main reason is the delays last year"
+      ],
+      "commonErrors": [
+        {
+          "id": "because-the",
+          "match": "\\bbecause the delays\\b",
+          "explanation_pt": "Before a noun, use \"because of\": \"because of the delays\".",
+          "correction_en": "So it's because of the delays."
+        }
+      ]
+    },
+    {
+      "id": "c1-12-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and give a one-sentence summary: the launch is delayed until June.",
+      "listen": "Could you sum up the meeting for those who missed it?",
+      "accepted": [
+        "In short, the launch has been delayed until June",
+        "Basically, the launch has been pushed back to June",
+        "To sum up, the launch is delayed until June",
+        "In a nutshell, the launch is delayed until June",
+        "The main point is that the launch has been delayed until June",
+        "Long story short, the launch is now in June",
+        "The bottom line is that the launch has been put back to June",
+        "In short, the launch has been postponed until June"
+      ],
+      "commonErrors": [
+        {
+          "id": "delayed-for",
+          "match": "\\b(delayed|postponed) for june\\b",
+          "explanation_pt": "A new date takes \"until\" or \"to\": \"delayed until June\".",
+          "correction_en": "The launch has been delayed until June."
+        }
+      ]
+    },
+    {
+      "id": "c1-12-prac-18",
+      "kind": "free_speak",
+      "instruction_pt": "Summarise something in about a minute.",
+      "prompt_en": "Summarise the plot of a film or series you watched recently, then give your opinion in one sentence.",
+      "guidelines_pt": [
+        "Start with \"Basically, it's about...\"",
+        "Keep only the main events: who, what and why.",
+        "Skip the details: \"Without giving too much away, ...\"",
+        "End with \"In a nutshell, ...\" and your opinion."
+      ]
+    },
+    {
+      "id": "c1-12-prac-19",
+      "kind": "dialogue",
+      "instruction_pt": "Role-play: summarise a meeting for a colleague who missed it.",
+      "scene_pt": "A colleague missed the morning meeting and asks you what happened.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Hey, I missed the meeting this morning. What did I miss?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Say in a nutshell, the budget has been cut by ten percent.",
+          "accepted": [
+            "In a nutshell, the budget has been cut by ten percent",
+            "In a nutshell, the budget's been cut by ten percent",
+            "In a nutshell, they've cut the budget by ten percent",
+            "In short, the budget has been cut by ten percent",
+            "Basically, the budget has been cut by ten percent",
+            "In a nutshell, the budget was cut by ten percent",
+            "In a nutshell, they cut the budget by ten per cent"
+          ],
+          "commonErrors": [
+            {
+              "id": "cut-in",
+              "match": "\\bcut (in|of|on) ten\\b",
+              "explanation_pt": "A change of amount takes \"by\": \"cut by ten percent\".",
+              "correction_en": "The budget has been cut by ten percent."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Ouch. So what does that mean for our team?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Say, to put it another way, you'll have to drop one of the projects.",
+          "accepted": [
+            "To put it another way, we'll have to drop one of the projects",
+            "To put it another way, we're going to have to drop one of the projects",
+            "In other words, we'll have to drop one of the projects",
+            "To put it another way, we'll need to drop one of the projects",
+            "Put another way, we'll have to drop one of the projects",
+            "To put it another way, one of the projects will have to go"
+          ],
+          "commonErrors": [
+            {
+              "id": "in-other-way",
+              "match": "\\bput (it )?in (an)?other way\\b",
+              "explanation_pt": "The phrase is \"to put it another way\".",
+              "correction_en": "To put it another way, we'll have to drop one of the projects."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Which one? Did they decide?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Say not yet; the gist was that they'll decide by Friday.",
+          "accepted": [
+            "Not yet. The gist was that they'll decide by Friday",
+            "Not yet, but the gist was that they'll decide by Friday",
+            "Not yet. The gist of it was that they'll decide by Friday",
+            "Not yet. Basically, they'll decide by Friday",
+            "Not yet. The gist was they'll decide by Friday",
+            "Not yet. As far as I understood, they'll decide by Friday"
+          ],
+          "commonErrors": [
+            {
+              "id": "until-friday",
+              "match": "\\buntil friday\\b",
+              "explanation_pt": "For a deadline (\"até sexta\"), use \"by Friday\".",
+              "correction_en": "They'll decide by Friday."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Okay. So, to sum up: budget cut, one project goes, decision by Friday?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Say that's it in a nutshell.",
+          "accepted": [
+            "That's it in a nutshell",
+            "Yes, that's it in a nutshell",
+            "Exactly, that's it in a nutshell",
+            "That's about the size of it",
+            "Yep, that's the gist of it",
+            "That's it exactly",
+            "You've got it"
+          ],
+          "commonErrors": [
+            {
+              "id": "in-a-nut",
+              "match": "\\bin a nut\\b",
+              "explanation_pt": "The idiom is \"in a nutshell\".",
+              "correction_en": "That's it in a nutshell."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-12-prac-20",
+      "kind": "choice",
+      "instruction_pt": "Which phrase checks that you have understood someone?",
+      "options": ["\"Moving on, ...\"", "\"So what you're saying is...\"", "\"By the way, ...\""],
+      "answer": 1,
+      "explanation_pt": "\"So what you're saying is...\" paraphrases the other person to check understanding."
+    },
+    {
+      "id": "c1-12-prac-21",
+      "kind": "choice",
+      "instruction_pt": "What does \"to get the wrong end of the stick\" mean?",
+      "options": ["To misunderstand something", "To lose an argument", "To finish a task badly"],
+      "answer": 0,
+      "explanation_pt": "If you get the wrong end of the stick, you misunderstand what someone means."
+    },
+    {
+      "id": "c1-12-prac-22",
+      "kind": "choice",
+      "instruction_pt": "Listen. Which is the best summary?",
+      "listen": "We had a great time, honestly, but between the flights, the hotel and eating out every night, it cost us an absolute fortune.",
+      "options": [
+        "The trip was cancelled.",
+        "The trip was fun but very expensive.",
+        "The trip was cheap and boring."
+      ],
+      "answer": 1,
+      "explanation_pt": "The speaker enjoyed the trip (\"had a great time\") but complains about the cost."
+    },
+    {
+      "id": "c1-12-prac-23",
+      "kind": "fill",
+      "instruction_pt": "Complete with one word.",
+      "sentence": "So, ___ other words, the project is on hold.",
+      "accepted": ["in"],
+      "commonErrors": [
+        {
+          "id": "with-other",
+          "match": "^(with|by|for)$",
+          "explanation_pt": "The phrase is \"in other words\".",
+          "correction_en": "In other words, the project is on hold."
+        }
+      ]
+    },
+    {
+      "id": "c1-12-prac-24",
+      "kind": "fill",
+      "instruction_pt": "Complete with one word.",
+      "sentence": "Let me ___ that: we're not cancelling, just delaying.",
+      "accepted": ["rephrase", "clarify"],
+      "commonErrors": [
+        {
+          "id": "resume",
+          "match": "^(resume|summary)$",
+          "explanation_pt": "To say it another way is \"rephrase\". \"Resume\" means \"retomar\".",
+          "correction_en": "Let me rephrase that."
+        }
+      ]
+    },
+    {
+      "id": "c1-12-prac-25",
+      "kind": "order",
+      "instruction_pt": "Put the words in order to check your understanding.",
+      "accepted": ["Correct me if I'm wrong but the budget is fixed"]
+    },
+    {
+      "id": "c1-12-prac-26",
+      "kind": "match",
+      "instruction_pt": "Match each summarising expression with its meaning.",
+      "pairs": [
+        {
+          "en": "to sum up",
+          "pt": "resumindo"
+        },
+        {
+          "en": "to rephrase",
+          "pt": "reformular"
+        },
+        {
+          "en": "in short",
+          "pt": "em suma"
+        },
+        {
+          "en": "to get the wrong end of the stick",
+          "pt": "entender tudo errado"
+        },
+        {
+          "en": "the gist",
+          "pt": "a ideia geral"
         }
       ]
     }

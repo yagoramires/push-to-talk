@@ -115,11 +115,26 @@
           "kind": "match",
           "instruction_pt": "Match each word to its meaning.",
           "pairs": [
-            { "en": "tip", "pt": "gorjeta" },
-            { "en": "costume", "pt": "fantasia" },
-            { "en": "sightseeing", "pt": "passeio turístico" },
-            { "en": "to stand out", "pt": "chamar atenção, destacar-se" },
-            { "en": "etiquette", "pt": "regras de etiqueta" }
+            {
+              "en": "tip",
+              "pt": "gorjeta"
+            },
+            {
+              "en": "costume",
+              "pt": "fantasia"
+            },
+            {
+              "en": "sightseeing",
+              "pt": "passeio turístico"
+            },
+            {
+              "en": "to stand out",
+              "pt": "chamar atenção, destacar-se"
+            },
+            {
+              "en": "etiquette",
+              "pt": "regras de etiqueta"
+            }
           ]
         },
         {
@@ -480,6 +495,599 @@
           ],
           "commonErrors": []
         }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "id": "b2-06-prac-1",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "It took me a few months to get used to the time difference.",
+      "accepted": [
+        "It took me a few months to get used to the time difference.",
+        "It took me a couple of months to get used to the time difference."
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-06-prac-2",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "In Japan, it's polite to take your shoes off indoors.",
+      "accepted": [
+        "In Japan, it's polite to take your shoes off indoors.",
+        "In Japan, it's polite to take off your shoes indoors."
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-06-prac-3",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "I'm not used to people kissing on both cheeks.",
+      "accepted": [
+        "I'm not used to people kissing on both cheeks.",
+        "I'm not used to people kissing me on both cheeks."
+      ],
+      "commonErrors": [
+        {
+          "id": "used-to-base",
+          "match": "\\b(am|is|are|was|get|got|getting|be) used to (kiss|people kiss)\\b",
+          "explanation_pt": "Depois de \"be/get used to\" o verbo vai com -ing: \"used to eating\", porque \"to\" aqui é preposição.",
+          "correction_en": "I'm not used to people kissing on both cheeks."
+        }
+      ]
+    },
+    {
+      "id": "b2-06-prac-4",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "Tipping is expected in the US, but not in Japan.",
+      "accepted": [
+        "Tipping is expected in the US, but not in Japan.",
+        "Tipping is expected in the States, but not in Japan."
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-06-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repeat. Stress \"culture\" and \"shock\".",
+      "prompt": "The culture shock hit me during the first month.",
+      "accepted": [
+        "The culture shock hit me during the first month.",
+        "The culture shock hit me in the first month."
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-06-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "Once you get used to it, it feels completely normal.",
+      "accepted": [
+        "Once you get used to it, it feels completely normal.",
+        "Once you get used to it, it feels totally normal."
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-06-prac-7",
+      "kind": "vocab",
+      "word_en": "to stand out",
+      "meaning_pt": "chamar atenção, se destacar",
+      "example_en": "With my bright clothes, I really stood out in London."
+    },
+    {
+      "id": "b2-06-prac-8",
+      "kind": "vocab",
+      "word_en": "homesick",
+      "meaning_pt": "com saudade de casa",
+      "example_en": "I was really homesick during my first winter abroad."
+    },
+    {
+      "id": "b2-06-prac-9",
+      "kind": "vocab",
+      "word_en": "to fit in",
+      "meaning_pt": "se encaixar, se enturmar",
+      "example_en": "It took me a few months to fit in at my new school."
+    },
+    {
+      "id": "b2-06-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Eu estou acostumado a acordar cedo.\"",
+      "accepted": [
+        "I'm used to waking up early",
+        "I'm used to getting up early",
+        "I'm used to waking early"
+      ],
+      "commonErrors": [
+        {
+          "id": "used-to-base",
+          "match": "\\b(am|is|are|was|get|got|getting|be) used to (wake|get)\\b",
+          "explanation_pt": "Depois de \"be/get used to\" o verbo vai com -ing: \"used to eating\", porque \"to\" aqui é preposição.",
+          "correction_en": "I'm used to waking up early."
+        },
+        {
+          "id": "accustomed-to-wake",
+          "match": "\\baccustomed to wake\\b",
+          "explanation_pt": "Com \"accustomed to\", o verbo também vai com -ing: \"accustomed to waking\".",
+          "correction_en": "I'm used to waking up early."
+        }
+      ]
+    },
+    {
+      "id": "b2-06-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Demorei para me acostumar com o frio.\"",
+      "accepted": [
+        "It took me a while to get used to the cold",
+        "It took me some time to get used to the cold",
+        "It took me a long time to get used to the cold",
+        "It took a while to get used to the cold",
+        "I took a while to get used to the cold",
+        "It took me time to get used to the cold"
+      ],
+      "commonErrors": [
+        {
+          "id": "delayed",
+          "match": "\\bi (delayed|late)\\b",
+          "explanation_pt": "\"Demorei para...\" é \"It took me a while to...\". \"Delay\" é atrasar algo.",
+          "correction_en": "It took me a while to get used to the cold."
+        },
+        {
+          "id": "accustom-me",
+          "match": "\\b(accustom|used) me\\b",
+          "explanation_pt": "\"Acostumar-se\" é \"get used to\", sem \"me\".",
+          "correction_en": "It took me a while to get used to the cold."
+        }
+      ]
+    },
+    {
+      "id": "b2-06-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Na minha cidade é comum jantar bem tarde.\"",
+      "accepted": [
+        "In my city, it's common to have dinner very late",
+        "In my city, it's common to have dinner really late",
+        "In my city, it's normal to have dinner very late",
+        "In my city, people usually have dinner very late",
+        "In my city, it's common to eat dinner very late",
+        "In my hometown, it's common to have dinner very late",
+        "It's common to have dinner very late in my city"
+      ],
+      "commonErrors": [
+        {
+          "id": "is-common",
+          "match": "^in my city is common\\b",
+          "explanation_pt": "Falta o sujeito: \"it's common to...\".",
+          "correction_en": "In my city, it's common to have dinner very late."
+        },
+        {
+          "id": "dine-late",
+          "match": "\\b(make|do) dinner (very |really )?late\\b",
+          "explanation_pt": "\"Jantar\" é \"have dinner\". \"Make dinner\" é preparar o jantar.",
+          "correction_en": "In my city, it's common to have dinner very late."
+        }
+      ]
+    },
+    {
+      "id": "b2-06-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Você vai se acostumar a dirigir do lado esquerdo.\"",
+      "accepted": [
+        "You'll get used to driving on the left",
+        "You'll get used to driving on the left side",
+        "You'll get used to driving on the left-hand side",
+        "You're going to get used to driving on the left",
+        "You'll soon get used to driving on the left"
+      ],
+      "commonErrors": [
+        {
+          "id": "used-to-base",
+          "match": "\\b(am|is|are|was|get|got|getting|be) used to (drive)\\b",
+          "explanation_pt": "Depois de \"be/get used to\" o verbo vai com -ing: \"used to eating\", porque \"to\" aqui é preposição.",
+          "correction_en": "You'll get used to driving on the left."
+        },
+        {
+          "id": "in-the-left",
+          "match": "\\bdriving (in|at) the left\\b",
+          "explanation_pt": "Lado da rua: \"on the left\".",
+          "correction_en": "You'll get used to driving on the left."
+        }
+      ]
+    },
+    {
+      "id": "b2-06-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Eu senti muita saudade de casa no primeiro ano.\"",
+      "accepted": [
+        "I was really homesick in the first year",
+        "I felt really homesick in my first year",
+        "I was very homesick during the first year",
+        "I missed home a lot in the first year",
+        "I was really homesick during my first year",
+        "I felt very homesick in the first year"
+      ],
+      "commonErrors": [
+        {
+          "id": "felt-missing",
+          "match": "\\bi felt (a lot of )?missing\\b",
+          "explanation_pt": "\"Sentir saudade de casa\" é \"be homesick\" ou \"miss home\".",
+          "correction_en": "I was really homesick in the first year."
+        },
+        {
+          "id": "lack-house",
+          "match": "\\b(lack|miss) (of )?(the )?house\\b",
+          "explanation_pt": "Para o lar, a família, use \"home\": \"I missed home\".",
+          "correction_en": "I missed home a lot in the first year."
+        }
+      ]
+    },
+    {
+      "id": "b2-06-prac-15",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"No começo, eu não estava acostumado com o barulho.\"",
+      "accepted": [
+        "At first, I wasn't used to the noise",
+        "In the beginning, I wasn't used to the noise",
+        "At first, I wasn't used to all the noise",
+        "At the beginning, I wasn't used to the noise"
+      ],
+      "commonErrors": [
+        {
+          "id": "in-the-start",
+          "match": "\\bin the (start|principle)\\b",
+          "explanation_pt": "\"No começo\" é \"at first\" ou \"in the beginning\".",
+          "correction_en": "At first, I wasn't used to the noise."
+        },
+        {
+          "id": "did-not-used",
+          "match": "\\bi did not used\\b",
+          "explanation_pt": "Para \"estar acostumado\" use \"I wasn't used to\".",
+          "correction_en": "At first, I wasn't used to the noise."
+        }
+      ]
+    },
+    {
+      "id": "b2-06-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and say what you found hard to get used to. Use \"get used to\".",
+      "listen": "What was the hardest thing to get used to when you travelled abroad?",
+      "accepted": [
+        "The hardest thing was getting used to the food",
+        "It was hard to get used to the food",
+        "It was hard to get used to the weather",
+        "The hardest thing was getting used to the weather",
+        "I found it hard to get used to the language",
+        "It was hard to get used to the language",
+        "The hardest thing was getting used to the time difference"
+      ],
+      "commonErrors": [
+        {
+          "id": "used-to-base",
+          "match": "\\b(am|is|are|was|get|got|getting|be) used to (eat|speak|live|drive)\\b",
+          "explanation_pt": "Depois de \"be/get used to\" o verbo vai com -ing: \"used to eating\", porque \"to\" aqui é preposição.",
+          "correction_en": "It was hard to get used to the food."
+        },
+        {
+          "id": "accustom-with",
+          "match": "\\bused with\\b",
+          "explanation_pt": "\"Get used to\", sempre com \"to\".",
+          "correction_en": "It was hard to get used to the food."
+        }
+      ]
+    },
+    {
+      "id": "b2-06-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and describe a custom from Brazil.",
+      "listen": "What's a custom in Brazil that surprises foreigners?",
+      "accepted": [
+        "People kiss on the cheek when they say hello",
+        "People greet each other with a kiss on the cheek",
+        "We usually greet people with a kiss on the cheek",
+        "Brazilians often kiss on the cheek when they meet",
+        "People often hug when they meet",
+        "We hug a lot, even people we don't know well",
+        "Brazilians are often late for parties"
+      ],
+      "commonErrors": [
+        {
+          "id": "costume",
+          "match": "\\bcostume\\b",
+          "explanation_pt": "\"Costume\" (hábito) é \"custom\" ou \"habit\". \"Costume\" em inglês é fantasia.",
+          "correction_en": "A custom in Brazil is to greet people with a kiss on the cheek."
+        },
+        {
+          "id": "in-the-face",
+          "match": "\\bkiss (in|on) the face\\b",
+          "explanation_pt": "O beijo de cumprimento é \"on the cheek\" (na bochecha).",
+          "correction_en": "People greet each other with a kiss on the cheek."
+        }
+      ]
+    },
+    {
+      "id": "b2-06-prac-18",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and give a tip to a visitor.",
+      "listen": "I'm visiting Brazil next month. Any tips?",
+      "accepted": [
+        "You should try the local food",
+        "You should try feijoada",
+        "Don't forget to try the local food",
+        "Try to learn a few words in Portuguese",
+        "You should learn some basic Portuguese",
+        "Be ready for people to hug you",
+        "You'll get used to people hugging you"
+      ],
+      "commonErrors": [
+        {
+          "id": "should-to",
+          "match": "\\bshould to\\b",
+          "explanation_pt": "Depois de \"should\" o verbo vem sem \"to\".",
+          "correction_en": "You should try the local food."
+        },
+        {
+          "id": "prove-food",
+          "match": "\\bprove the (local )?food\\b",
+          "explanation_pt": "\"Provar\" comida é \"try\". \"Prove\" é comprovar.",
+          "correction_en": "You should try the local food."
+        }
+      ]
+    },
+    {
+      "id": "b2-06-prac-19",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and say if you are used to the cold.",
+      "listen": "It's freezing today! Are you used to this kind of weather?",
+      "accepted": [
+        "No, I'm not used to it at all",
+        "Not really, I'm not used to the cold",
+        "No, I'm from a warm place, so I'm not used to it",
+        "No, I'm still getting used to it",
+        "I'm getting used to it",
+        "Not at all. I'm used to hot weather",
+        "Yes, I'm used to it now"
+      ],
+      "commonErrors": [
+        {
+          "id": "not-use",
+          "match": "\\bnot use to\\b",
+          "explanation_pt": "A forma é \"used to\", com \"d\": \"I'm not used to it\".",
+          "correction_en": "No, I'm not used to it."
+        },
+        {
+          "id": "accustom-with",
+          "match": "\\bused with\\b",
+          "explanation_pt": "É \"used to\", não \"with\".",
+          "correction_en": "I'm not used to it."
+        }
+      ]
+    },
+    {
+      "id": "b2-06-prac-20",
+      "kind": "choice",
+      "instruction_pt": "\"I used to live in Spain.\" What does it mean?",
+      "options": [
+        "I lived in Spain in the past, but not now",
+        "I am used to living in Spain",
+        "I am getting used to Spain"
+      ],
+      "answer": 0,
+      "explanation_pt": "\"Used to\" + verbo base é hábito/situação do passado. \"Be used to\" + -ing é estar acostumado."
+    },
+    {
+      "id": "b2-06-prac-21",
+      "kind": "choice",
+      "instruction_pt": "Choose the correct sentence.",
+      "options": [
+        "I'm getting used to speaking English all day.",
+        "I'm getting used to speak English all day.",
+        "I'm used to speak English all day."
+      ],
+      "answer": 0,
+      "explanation_pt": "Depois de \"get used to\" e \"be used to\", o verbo vai com -ing."
+    },
+    {
+      "id": "b2-06-prac-22",
+      "kind": "fill",
+      "instruction_pt": "Complete the sentence.",
+      "sentence": "It took me a year to ___ in at my new job.",
+      "accepted": ["fit"],
+      "commonErrors": [
+        {
+          "id": "fit-wrong",
+          "match": "^(fix|fits|fitted in|feet)$",
+          "explanation_pt": "A expressão é \"fit in\" (se enturmar).",
+          "correction_en": "It took me a year to fit in at my new job."
+        }
+      ]
+    },
+    {
+      "id": "b2-06-prac-23",
+      "kind": "fill",
+      "instruction_pt": "Complete the sentence.",
+      "sentence": "I'm still not used to ___ on the left.",
+      "accepted": ["driving"],
+      "commonErrors": [
+        {
+          "id": "drive",
+          "match": "^(drive|drove|to drive)$",
+          "explanation_pt": "Depois de \"used to\" (acostumado) vem -ing: \"driving\".",
+          "correction_en": "I'm still not used to driving on the left."
+        }
+      ]
+    },
+    {
+      "id": "b2-06-prac-24",
+      "kind": "order",
+      "instruction_pt": "Put the words in order.",
+      "accepted": ["It took me ages to get used to the weather"]
+    },
+    {
+      "id": "b2-06-prac-25",
+      "kind": "match",
+      "instruction_pt": "Match each expression to its meaning.",
+      "pairs": [
+        {
+          "en": "custom",
+          "pt": "costume, hábito"
+        },
+        {
+          "en": "culture shock",
+          "pt": "choque cultural"
+        },
+        {
+          "en": "homesick",
+          "pt": "com saudade de casa"
+        },
+        {
+          "en": "to fit in",
+          "pt": "se enturmar"
+        },
+        {
+          "en": "to stand out",
+          "pt": "chamar atenção"
+        }
+      ]
+    },
+    {
+      "id": "b2-06-prac-26",
+      "kind": "dialogue",
+      "instruction_pt": "Role-play. Talk about living abroad.",
+      "scene_pt": "You lived in Canada for two years. At a dinner, a new friend, Emma, asks about it.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "So you lived in Canada? How was that?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que foi incrível, mas difícil no começo.",
+          "accepted": [
+            "It was amazing, but hard at first",
+            "It was amazing, but difficult at first",
+            "It was incredible, but it was hard at first",
+            "It was great, but hard in the beginning",
+            "It was amazing, but a bit hard at first",
+            "Amazing, but tough at the beginning"
+          ],
+          "commonErrors": [
+            {
+              "id": "in-the-start",
+              "match": "\\bin the (start|principle)\\b",
+              "explanation_pt": "\"No começo\" é \"at first\" ou \"in the beginning\".",
+              "correction_en": "It was amazing, but hard at first."
+            },
+            {
+              "id": "in-first",
+              "match": "\\b(hard|difficult) in first\\b",
+              "explanation_pt": "\"No começo\" é \"at first\", sem \"in\".",
+              "correction_en": "It was amazing, but hard at first."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Hard in what way?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que não estava acostumado com o frio e com o dia escurecer tão cedo.",
+          "accepted": [
+            "I wasn't used to the cold or to it getting dark so early",
+            "I wasn't used to the cold and the early sunsets",
+            "I wasn't used to the cold, and it got dark so early",
+            "I wasn't used to the cold or the dark afternoons",
+            "I wasn't used to the cold, and it gets dark really early there",
+            "I wasn't used to the cold or to the days being so short"
+          ],
+          "commonErrors": [
+            {
+              "id": "was-not-use",
+              "match": "\\bnot use to\\b",
+              "explanation_pt": "A forma é \"used to\", com \"d\".",
+              "correction_en": "I wasn't used to the cold."
+            },
+            {
+              "id": "cold-weather-did",
+              "match": "\\bi did not used to\\b",
+              "explanation_pt": "Para \"estar acostumado\" no passado: \"I wasn't used to\".",
+              "correction_en": "I wasn't used to the cold."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "I can imagine. Did you ever get used to it?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que, depois de uns meses, se acostumou.",
+          "accepted": [
+            "Yes, after a few months I got used to it",
+            "After a few months, I got used to it",
+            "Yes, I got used to it after a few months",
+            "Yeah, after a couple of months I got used to it",
+            "Eventually, yes. After a few months I got used to it"
+          ],
+          "commonErrors": [
+            {
+              "id": "accustomed-me",
+              "match": "\\b(accustomed|used) me\\b",
+              "explanation_pt": "\"Acostumar-se\" é \"get used to it\", sem \"me\".",
+              "correction_en": "After a few months, I got used to it."
+            },
+            {
+              "id": "after-some-months-of",
+              "match": "\\bget use to\\b",
+              "explanation_pt": "O passado é \"got used to\".",
+              "correction_en": "I got used to it after a few months."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "And what did you miss most about Brazil?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que sentia falta da família e da comida.",
+          "accepted": [
+            "I missed my family and the food",
+            "I missed my family and the food the most",
+            "My family and the food",
+            "Mostly my family and the food",
+            "I really missed my family and the food"
+          ],
+          "commonErrors": [
+            {
+              "id": "felt-lack",
+              "match": "\\b(felt|feel) (lack|missing)\\b",
+              "explanation_pt": "\"Sentir falta\" é \"miss\": \"I missed my family\".",
+              "correction_en": "I missed my family and the food."
+            },
+            {
+              "id": "lost-family",
+              "match": "\\bi lost my family\\b",
+              "explanation_pt": "\"Lose\" é perder. Para saudade use \"miss\".",
+              "correction_en": "I missed my family and the food."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-06-prac-27",
+      "kind": "free_speak",
+      "instruction_pt": "Talk about a culture you know and how it differs from yours.",
+      "prompt_en": "Think of a country you visited or know about. What surprised you and what would be hard to get used to?",
+      "guidelines_pt": [
+        "Describe one custom: \"In ..., people usually...\"",
+        "Compare: \"In Brazil, on the other hand, we...\"",
+        "Use \"get used to\": \"It would take me a while to get used to...\""
       ]
     }
   ]

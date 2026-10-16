@@ -9,7 +9,8 @@ import {
   type ProfileProgress,
   type SessionRecord
 } from '../../../shared/progress'
-import { buildSession, type Duration } from '../../../shared/session'
+import { recordPractice } from '../../../shared/practice'
+import { buildSession, type Duration, type SessionPlan } from '../../../shared/session'
 import ExerciseView from '../components/ExerciseView'
 import PhaseTimer from '../components/PhaseTimer'
 import SoloRecap from '../components/SoloRecap'
@@ -21,6 +22,8 @@ type Props = {
   course: Course
   progress: ProfileProgress
   minutes: Duration
+  /** A ready-made plan ("Praticar mais"); without it the lesson plan is built here. */
+  plan?: SessionPlan
   onProgress(p: ProfileProgress): void
   onEnd(record: SessionRecord): void
 }
@@ -30,11 +33,15 @@ export default function SessionScreen({
   course,
   progress,
   minutes,
+  plan: ready,
   onProgress,
   onEnd
 }: Props): React.JSX.Element {
   // The plan is fixed at the start; progress keeps changing as answers come in.
-  const [plan] = useState(() => buildSession(course, progress, minutes))
+  const [plan] = useState(() => ready ?? buildSession(course, progress, minutes))
+  const [practiceIds] = useState(
+    () => new Set(course.units.flatMap((u) => u.practice.map((e) => e.id)))
+  )
   const [items] = useState(() => flattenPlan(course, plan))
   const [startedAt, setStartedAt] = useState(() => Date.now())
   const [now, setNow] = useState(startedAt)
@@ -56,13 +63,15 @@ export default function SessionScreen({
   const remaining = minutes * 60 - (now - startedAt) / 1000
 
   function handleFinal(verdict: FinalVerdict, transcript: string): void {
+    const at = new Date().toISOString()
     let p = recordAttempt(progress, {
       exerciseId: item.exercise.id,
       unitId: item.unitId,
       transcript,
       verdict,
-      at: new Date().toISOString()
+      at
     })
+    if (practiceIds.has(item.exercise.id)) p = recordPractice(p, item.exercise.id, verdict, at)
     if (item.completesBlockId) {
       p = completeBlock(p, course, item.completesBlockId)
       setBlocksDone([...blocksDone, item.completesBlockId])

@@ -21,7 +21,7 @@ const [units, assessments] = await Promise.all(
 )
 const texts = new Set(
   [
-    ...units.flatMap((u) => u.blocks.flatMap((b) => b.exercises)),
+    ...units.flatMap((u) => [...u.blocks.flatMap((b) => b.exercises), ...(u.practice ?? [])]),
     // placement.json has levels[].items, exam-*.json has parts[].items
     ...assessments.flatMap((a) => (a.levels ?? a.parts).flatMap((x) => x.items))
   ].flatMap(listenTexts)

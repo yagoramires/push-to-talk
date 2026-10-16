@@ -473,5 +473,496 @@
         }
       ]
     }
+  ],
+  "practice": [
+    {
+      "id": "c1-03-prac-1",
+      "kind": "vocab",
+      "word_en": "to forward",
+      "meaning_pt": "encaminhar",
+      "example_en": "I'll forward you the client's email in a minute."
+    },
+    {
+      "id": "c1-03-prac-2",
+      "kind": "vocab",
+      "word_en": "at your earliest convenience",
+      "meaning_pt": "assim que for possível para você (formal)",
+      "example_en": "Please reply at your earliest convenience."
+    },
+    {
+      "id": "c1-03-prac-3",
+      "kind": "vocab",
+      "word_en": "to sort out",
+      "meaning_pt": "resolver (informal)",
+      "example_en": "Don't worry, we'll sort it out tomorrow."
+    },
+    {
+      "id": "c1-03-prac-4",
+      "kind": "vocab",
+      "word_en": "regarding",
+      "meaning_pt": "a respeito de, sobre (formal)",
+      "example_en": "I'm writing regarding your recent order."
+    },
+    {
+      "id": "c1-03-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repeat in a formal, steady tone.",
+      "prompt": "I'm writing to enquire about the position you advertised.",
+      "accepted": [
+        "I'm writing to enquire about the position you advertised",
+        "I'm writing to inquire about the position you advertised",
+        "I am writing to enquire about the position you advertised"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-03-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repeat casually, as if talking to a friend at work.",
+      "prompt": "Hey, got a sec? I need to run something by you.",
+      "accepted": [
+        "Hey, got a sec? I need to run something by you",
+        "Hey, got a second? I need to run something by you"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-03-prac-7",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "Please find the revised proposal attached.",
+      "accepted": [
+        "Please find the revised proposal attached",
+        "Please find attached the revised proposal"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-03-prac-8",
+      "kind": "repeat",
+      "instruction_pt": "Repeat in a relaxed, informal tone.",
+      "prompt": "No worries, I'll sort it out tomorrow.",
+      "accepted": [
+        "No worries, I'll sort it out tomorrow",
+        "No worries, I will sort it out tomorrow"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-03-prac-9",
+      "kind": "repeat",
+      "instruction_pt": "Repeat with natural rhythm and stress.",
+      "prompt": "We regret to inform you that the event has been cancelled.",
+      "accepted": [
+        "We regret to inform you that the event has been cancelled",
+        "We regret to inform you that the event has been canceled"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "c1-03-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Say this politely to a client: \"Você poderia me enviar a fatura?\"",
+      "accepted": [
+        "Would you be able to send me the invoice",
+        "Could you possibly send me the invoice",
+        "Would you mind sending me the invoice",
+        "I'd be grateful if you could send me the invoice",
+        "Could you send me the invoice, please",
+        "Would it be possible to send me the invoice",
+        "Would you be so kind as to send me the invoice",
+        "Could you please send me the invoice",
+        "Would you be able to forward me the invoice"
+      ],
+      "commonErrors": [
+        {
+          "id": "could-you-to",
+          "match": "\\b(can|could|would) you to\\b",
+          "explanation_pt": "After modal verbs, use the bare infinitive: \"Could you send\", not \"Could you to send\".",
+          "correction_en": "Could you send me the invoice, please?"
+        }
+      ]
+    },
+    {
+      "id": "c1-03-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Say this informally to a friend: \"Vou me atrasar uns dez minutos.\"",
+      "accepted": [
+        "I'm gonna be about ten minutes late",
+        "I'm going to be about ten minutes late",
+        "I'll be about ten minutes late",
+        "I'm running about ten minutes late",
+        "Running ten minutes late",
+        "I'm running ten minutes late",
+        "Gonna be ten minutes late",
+        "I'll be ten minutes late or so",
+        "I'm gonna be like ten minutes late"
+      ],
+      "commonErrors": [
+        {
+          "id": "i-will-delay",
+          "match": "\\b(i will|i am going to|i am gonna) delay\\b",
+          "explanation_pt": "\"Me atrasar\" is \"be late\" or \"run late\". \"Delay\" is for things: \"the flight was delayed\".",
+          "correction_en": "I'm running about ten minutes late."
+        }
+      ]
+    },
+    {
+      "id": "c1-03-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Say this formally to a hotel: \"A gente queria saber se vocês têm vaga para março.\"",
+      "accepted": [
+        "We were wondering whether you have availability in March",
+        "We were wondering if you have any availability in March",
+        "We'd like to know whether you have availability in March",
+        "We'd like to enquire whether you have availability in March",
+        "We'd like to enquire about availability in March",
+        "We were wondering if you have any vacancies in March",
+        "Could you let us know whether you have availability in March",
+        "We would like to know if you have availability in March"
+      ],
+      "commonErrors": [
+        {
+          "id": "on-march",
+          "match": "\\bon march\\b",
+          "explanation_pt": "Months take \"in\": \"in March\".",
+          "correction_en": "We were wondering if you have any availability in March."
+        }
+      ]
+    },
+    {
+      "id": "c1-03-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Say this informally to a colleague you know well: \"Você pode dar uma olhada nisso?\"",
+      "accepted": [
+        "Can you take a look at this",
+        "Can you have a look at this",
+        "Could you have a quick look at this",
+        "Can you take a quick look at this",
+        "Mind having a look at this",
+        "Got a minute to look at this",
+        "Can you check this out",
+        "Could you take a look at this",
+        "Can you give this a look"
+      ],
+      "commonErrors": [
+        {
+          "id": "look-in",
+          "match": "\\blook in (this|that)\\b",
+          "explanation_pt": "\"Olhar para / dar uma olhada em\" is \"look at\", not \"look in\".",
+          "correction_en": "Can you take a look at this?"
+        }
+      ]
+    },
+    {
+      "id": "c1-03-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Make this more formal and say it: \"Sorry, we messed up your order.\"",
+      "accepted": [
+        "We apologise for the error with your order",
+        "We apologize for the error with your order",
+        "We apologise for the mistake with your order",
+        "We apologize for the mistake with your order",
+        "Please accept our apologies for the error with your order",
+        "We sincerely apologise for the error in your order",
+        "We sincerely apologize for the error in your order",
+        "We're sorry for the error with your order",
+        "Please accept our apologies for the mistake in your order"
+      ],
+      "commonErrors": [
+        {
+          "id": "messed-up",
+          "match": "\\bmessed up\\b",
+          "explanation_pt": "\"Messed up\" is too informal for a client. Use \"error\" or \"mistake\" and \"apologise\".",
+          "correction_en": "We apologise for the error with your order."
+        }
+      ]
+    },
+    {
+      "id": "c1-03-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen. You're calling your bank. Say formally that you'd like to check the status of a transfer.",
+      "listen": "Hello, thanks for calling. How can I help you today?",
+      "accepted": [
+        "I'd like to check the status of a transfer",
+        "I would like to check the status of a transfer",
+        "I'd like to check on the status of a transfer",
+        "I was wondering if you could check the status of a transfer",
+        "I'm calling to check the status of a transfer",
+        "I'm calling to enquire about the status of a transfer",
+        "I'm calling to inquire about the status of a transfer",
+        "I'd like to find out the status of a transfer",
+        "Could you check the status of a transfer for me, please"
+      ],
+      "commonErrors": [
+        {
+          "id": "i-want",
+          "match": "^i want\\b",
+          "explanation_pt": "\"I want\" sounds abrupt in a formal call. \"I'd like\" is more polite.",
+          "correction_en": "I'd like to check the status of a transfer."
+        }
+      ]
+    },
+    {
+      "id": "c1-03-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen. A friend invites you out. Accept informally.",
+      "listen": "Fancy grabbing a bite after work?",
+      "accepted": [
+        "Sure, sounds good",
+        "Yeah, why not",
+        "Yeah, sounds great",
+        "Sure, I'm in",
+        "I'm in",
+        "Definitely, count me in",
+        "Count me in",
+        "Yeah, I'd love to",
+        "Sounds good to me",
+        "Sure, where do you want to go",
+        "Yeah, go on then"
+      ],
+      "commonErrors": [
+        {
+          "id": "too-formal",
+          "match": "\\b(i would be delighted|i accept)\\b",
+          "explanation_pt": "That is too formal for a friend. Keep it casual: \"Sure, I'm in!\"",
+          "correction_en": "Sure, I'm in!"
+        }
+      ]
+    },
+    {
+      "id": "c1-03-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen. A client asks to reschedule. Agree formally.",
+      "listen": "Would it be possible to reschedule our meeting to Thursday?",
+      "accepted": [
+        "Of course, Thursday would be fine",
+        "Certainly, Thursday works for me",
+        "Certainly, Thursday would suit me",
+        "Of course, that wouldn't be a problem",
+        "Certainly, that's no problem at all",
+        "Yes, of course. What time would suit you",
+        "Of course. Would the morning suit you",
+        "Certainly. Thursday would be perfect",
+        "That would be absolutely fine"
+      ],
+      "commonErrors": [
+        {
+          "id": "in-thursday",
+          "match": "\\bin thursday\\b",
+          "explanation_pt": "Days of the week take \"on\": \"on Thursday\".",
+          "correction_en": "Certainly, Thursday works for me."
+        }
+      ]
+    },
+    {
+      "id": "c1-03-prac-18",
+      "kind": "free_speak",
+      "instruction_pt": "Say the same message twice: first to a close friend, then to a client.",
+      "prompt_en": "You need to cancel a plan you made for tomorrow. Explain why and suggest another day.",
+      "guidelines_pt": [
+        "Friend version: contractions, \"gonna\", \"Sorry, something came up\".",
+        "Client version: \"I'm afraid\", \"unfortunately\", \"Would ... suit you?\".",
+        "Give the same reason in both versions.",
+        "Suggest a new day in each version."
+      ]
+    },
+    {
+      "id": "c1-03-prac-19",
+      "kind": "dialogue",
+      "instruction_pt": "Role-play: handle a client call in a formal register.",
+      "scene_pt": "A client calls you because a delivery is late.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Good morning, this is Laura Price from Hartwell and Company. I'm calling about our order."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Greet her formally and ask how you can help.",
+          "accepted": [
+            "Good morning, Ms Price. How can I help you",
+            "Good morning, Ms Price. How may I help you",
+            "Good morning. How can I help you today",
+            "Good morning, Ms Price. What can I do for you",
+            "Good morning. How may I help you",
+            "Good morning, Ms Price. How can I be of assistance"
+          ],
+          "commonErrors": [
+            {
+              "id": "in-what-help",
+              "match": "\\bin what can i help\\b",
+              "explanation_pt": "\"Em que posso ajudar?\" is \"How can I help you?\".",
+              "correction_en": "How can I help you?"
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "We were expecting the delivery yesterday, but it hasn't arrived."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Apologise and say you'll look into it straight away.",
+          "accepted": [
+            "I'm very sorry about that. I'll look into it straight away",
+            "I do apologise. I'll look into it straight away",
+            "I do apologize. I'll look into it straight away",
+            "I'm sorry to hear that. I'll look into it right away",
+            "I apologise for the inconvenience. I'll look into it straight away",
+            "I apologize for the inconvenience. I'll look into it immediately",
+            "My apologies. I'll look into it right away"
+          ],
+          "commonErrors": [
+            {
+              "id": "see-it",
+              "match": "\\bi will see (it|this|that)\\b",
+              "explanation_pt": "\"Vou ver isso\" is \"I'll look into it\" or \"I'll check\", not \"I'll see it\".",
+              "correction_en": "I'll look into it straight away."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Thank you. When do you think we can expect it?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Say you'll get back to her by the end of the day with an update.",
+          "accepted": [
+            "I'll get back to you by the end of the day with an update",
+            "I'll get back to you with an update by the end of the day",
+            "I'll get back to you by the end of today with an update",
+            "I'll come back to you by the end of the day with an update",
+            "I'll update you by the end of the day",
+            "I'll let you know by the end of the day",
+            "I will get back to you by the end of the day with an update"
+          ],
+          "commonErrors": [
+            {
+              "id": "return-you",
+              "match": "\\breturn (to )?you\\b",
+              "explanation_pt": "\"Retornar\" a call is \"get back to someone\" or \"call someone back\".",
+              "correction_en": "I'll get back to you by the end of the day."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "That's fine. I appreciate your help."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Thank her and tell her not to hesitate to call again.",
+          "accepted": [
+            "Thank you. Please don't hesitate to call again",
+            "Thank you for calling. Please don't hesitate to call again",
+            "Not at all. Please don't hesitate to call again",
+            "You're welcome. Please don't hesitate to get in touch again",
+            "Thank you. Please don't hesitate to call if you need anything",
+            "My pleasure. Please don't hesitate to call again"
+          ],
+          "commonErrors": [
+            {
+              "id": "hesitate-in",
+              "match": "\\bhesitate in\\b",
+              "explanation_pt": "\"Hesitate\" takes \"to + verb\": \"don't hesitate to call\".",
+              "correction_en": "Please don't hesitate to call again."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-03-prac-20",
+      "kind": "choice",
+      "instruction_pt": "Which opening is the most appropriate in an email to a new client?",
+      "options": [
+        "Hey! What's up?",
+        "Dear Mr Lee, I hope this email finds you well.",
+        "Yo Mr Lee,"
+      ],
+      "answer": 1,
+      "explanation_pt": "\"Dear + title + surname\" and a polite opening line are standard in formal emails."
+    },
+    {
+      "id": "c1-03-prac-21",
+      "kind": "choice",
+      "instruction_pt": "Which verb is the most informal?",
+      "options": ["purchase", "buy", "acquire"],
+      "answer": 1,
+      "explanation_pt": "\"Buy\" is everyday English; \"purchase\" and \"acquire\" sound formal or technical."
+    },
+    {
+      "id": "c1-03-prac-22",
+      "kind": "choice",
+      "instruction_pt": "Which is the formal equivalent of \"need\"?",
+      "options": ["require", "want", "fancy"],
+      "answer": 0,
+      "explanation_pt": "\"Require\" is the formal version: \"Do you require any further information?\""
+    },
+    {
+      "id": "c1-03-prac-23",
+      "kind": "fill",
+      "instruction_pt": "Complete with one word.",
+      "sentence": "We look forward ___ hearing from you.",
+      "accepted": ["to"],
+      "commonErrors": [
+        {
+          "id": "forward-for",
+          "match": "^(for|of|in)$",
+          "explanation_pt": "\"Look forward to\" is followed by -ing: \"look forward to hearing\".",
+          "correction_en": "We look forward to hearing from you."
+        }
+      ]
+    },
+    {
+      "id": "c1-03-prac-24",
+      "kind": "fill",
+      "instruction_pt": "Complete with one word.",
+      "sentence": "Thank you ___ your prompt reply.",
+      "accepted": ["for"],
+      "commonErrors": [
+        {
+          "id": "thank-by",
+          "match": "^(by|to)$",
+          "explanation_pt": "\"Thank you for\" something, not \"by\" (a copy of \"obrigado pela\").",
+          "correction_en": "Thank you for your prompt reply."
+        }
+      ]
+    },
+    {
+      "id": "c1-03-prac-25",
+      "kind": "order",
+      "instruction_pt": "Put the words in order to make a formal request.",
+      "accepted": ["I would appreciate it if you could reply soon"]
+    },
+    {
+      "id": "c1-03-prac-26",
+      "kind": "match",
+      "instruction_pt": "Match each word with its meaning and register.",
+      "pairs": [
+        {
+          "en": "to forward",
+          "pt": "encaminhar"
+        },
+        {
+          "en": "to enquire",
+          "pt": "informar-se (formal)"
+        },
+        {
+          "en": "to sort out",
+          "pt": "resolver (informal)"
+        },
+        {
+          "en": "regarding",
+          "pt": "a respeito de (formal)"
+        },
+        {
+          "en": "to postpone",
+          "pt": "adiar (formal)"
+        }
+      ]
+    }
   ]
 }

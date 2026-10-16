@@ -476,5 +476,518 @@
         }
       ]
     }
+  ],
+  "practice": [
+    {
+      "id": "b1-10-prac-1",
+      "kind": "vocab",
+      "word_en": "all of a sudden",
+      "meaning_pt": "de repente",
+      "example_en": "We were having dinner when, all of a sudden, the lights went out."
+    },
+    {
+      "id": "b1-10-prac-2",
+      "kind": "vocab",
+      "word_en": "to realize",
+      "meaning_pt": "perceber, se dar conta",
+      "example_en": "When I got home, I realized I'd lost my wallet."
+    },
+    {
+      "id": "b1-10-prac-3",
+      "kind": "repeat",
+      "instruction_pt": "Repita. Passado contínuo para o cenário, passado simples para a interrupção.",
+      "prompt": "I was walking home when it started to snow.",
+      "accepted": [
+        "I was walking home when it started to snow",
+        "I was walking home when it started snowing"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-10-prac-4",
+      "kind": "repeat",
+      "instruction_pt": "Repita a frase com suspense.",
+      "prompt": "All of a sudden, someone knocked on the door.",
+      "accepted": [
+        "All of a sudden, someone knocked on the door",
+        "All of a sudden somebody knocked on the door"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-10-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repita. \"I'd left\" é o passado do passado.",
+      "prompt": "When I got to the station, the train had already left.",
+      "accepted": [
+        "When I got to the station, the train had already left",
+        "When I got to the station the train had already gone"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-10-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repita a frase.",
+      "prompt": "Luckily, a stranger helped me find the way.",
+      "accepted": [
+        "Luckily, a stranger helped me find the way",
+        "Luckily a stranger helped me to find the way"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-10-prac-7",
+      "kind": "repeat",
+      "instruction_pt": "Repita. \"Turned out\" liga: \"turnd-out\".",
+      "prompt": "It turned out that the shop was closed for the holiday.",
+      "accepted": [
+        "It turned out that the shop was closed for the holiday",
+        "It turned out the shop was closed for the holiday"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-10-prac-8",
+      "kind": "repeat",
+      "instruction_pt": "Repita a reação a uma história.",
+      "prompt": "No way! What did you do then?",
+      "accepted": ["No way! What did you do then", "No way! So what did you do"],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-10-prac-9",
+      "kind": "repeat",
+      "instruction_pt": "Repita. \"While\" + passado contínuo.",
+      "prompt": "While we were driving to the beach, the car broke down.",
+      "accepted": [
+        "While we were driving to the beach, the car broke down",
+        "While we were driving to the beach, our car broke down"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-10-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu estava tomando banho quando a luz acabou.\"",
+      "accepted": [
+        "I was taking a shower when the power went out",
+        "I was in the shower when the power went out",
+        "I was taking a shower when the lights went out",
+        "I was having a shower when the power went off",
+        "I was showering when the power went out",
+        "I was taking a shower when the electricity went out"
+      ],
+      "commonErrors": [
+        {
+          "id": "light-finished",
+          "match": "\\blight (finished|ended)\\b",
+          "explanation_pt": "\"A luz acabou\" é \"the power went out\" ou \"the lights went out\".",
+          "correction_en": "I was taking a shower when the power went out."
+        },
+        {
+          "id": "took-shower-when",
+          "match": "^i took a shower when\\b",
+          "explanation_pt": "Para a ação que estava em andamento, use o passado contínuo: \"I was taking a shower\".",
+          "correction_en": "I was taking a shower when the power went out."
+        }
+      ]
+    },
+    {
+      "id": "b1-10-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Quando eu cheguei, a festa já tinha acabado.\"",
+      "accepted": [
+        "When I arrived, the party had already finished",
+        "When I got there, the party had already ended",
+        "When I arrived, the party was already over",
+        "When I got there, the party had already finished",
+        "When I arrived, the party had already ended",
+        "By the time I got there, the party was over"
+      ],
+      "commonErrors": [
+        {
+          "id": "arrived-already-finished",
+          "match": "\\bparty already (finished|ended)\\b",
+          "explanation_pt": "Para algo que aconteceu antes de outra ação no passado, use \"had\" + particípio: \"had already finished\".",
+          "correction_en": "When I arrived, the party had already finished."
+        },
+        {
+          "id": "arrived-in-there",
+          "match": "\\barrived there\\b|\\barrived at there\\b",
+          "explanation_pt": "Com \"there\", diga \"got there\" ou \"arrived\" sozinho.",
+          "correction_en": "When I got there, the party had already finished."
+        }
+      ]
+    },
+    {
+      "id": "b1-10-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu percebi que tinha esquecido as chaves.\"",
+      "accepted": [
+        "I realized I had forgotten my keys",
+        "I realized I'd forgotten my keys",
+        "I realized that I had forgotten my keys",
+        "I realised I'd forgotten my keys",
+        "I realized I'd forgotten the keys",
+        "I realized I had left my keys behind"
+      ],
+      "commonErrors": [
+        {
+          "id": "perceived",
+          "match": "\\bperceived\\b|\\bnoticed me\\b",
+          "explanation_pt": "\"Perceber\" (se dar conta) é \"realize\".",
+          "correction_en": "I realized I'd forgotten my keys."
+        },
+        {
+          "id": "forgot-keys-past",
+          "match": "\\brealized i forget\\b|\\brealized i forgotten\\b",
+          "explanation_pt": "Use \"had forgotten\" (ou \"I'd forgotten\").",
+          "correction_en": "I realized I'd forgotten my keys."
+        }
+      ]
+    },
+    {
+      "id": "b1-10-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Por sorte, ninguém se machucou.\"",
+      "accepted": [
+        "Luckily, nobody got hurt",
+        "Luckily, no one was hurt",
+        "Luckily, nobody was hurt",
+        "Fortunately, no one got hurt",
+        "Luckily, no one got hurt",
+        "Thankfully, nobody was hurt"
+      ],
+      "commonErrors": [
+        {
+          "id": "by-luck",
+          "match": "\\bby luck\\b|\\bfor luck\\b",
+          "explanation_pt": "\"Por sorte\" é \"luckily\" ou \"fortunately\".",
+          "correction_en": "Luckily, nobody got hurt."
+        },
+        {
+          "id": "nobody-hurt-himself",
+          "match": "\\bhurt (himself|themselves|yourself)\\b|\\bnobody did not\\b",
+          "explanation_pt": "\"Machucar-se\" num acidente é \"get hurt\". E \"nobody\" já é negativo.",
+          "correction_en": "Luckily, nobody got hurt."
+        }
+      ]
+    },
+    {
+      "id": "b1-10-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Resumindo, a gente perdeu o voo.\"",
+      "accepted": [
+        "Long story short, we missed the flight",
+        "To cut a long story short, we missed the flight",
+        "In short, we missed the flight",
+        "Basically, we missed our flight",
+        "Long story short, we missed our flight"
+      ],
+      "commonErrors": [
+        {
+          "id": "lost-flight",
+          "match": "\\blost (the|our) flight\\b",
+          "explanation_pt": "\"Perder\" o voo, o ônibus etc. é \"miss\". \"Lose\" é perder um objeto.",
+          "correction_en": "Long story short, we missed the flight."
+        },
+        {
+          "id": "resuming",
+          "match": "\\bresuming\\b|\\bsummarizing\\b",
+          "explanation_pt": "Para \"resumindo\" numa história, diga \"long story short\" ou \"in short\".",
+          "correction_en": "Long story short, we missed the flight."
+        }
+      ]
+    },
+    {
+      "id": "b1-10-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga o que você estava fazendo: estava estudando.",
+      "listen": "What were you doing when I called you last night?",
+      "accepted": [
+        "I was studying",
+        "I was studying for a test",
+        "Sorry, I was studying",
+        "I was studying, so I didn't hear the phone",
+        "I was studying in my room"
+      ],
+      "commonErrors": [
+        {
+          "id": "i-studied",
+          "match": "^(sorry )?i studied\\b",
+          "explanation_pt": "A pergunta é sobre uma ação em andamento: \"I was studying\".",
+          "correction_en": "I was studying."
+        },
+        {
+          "id": "i-was-study",
+          "match": "\\bi was study\\b|\\bi am studying\\b",
+          "explanation_pt": "Passado contínuo: \"was\" + verbo com \"-ing\": \"I was studying\".",
+          "correction_en": "I was studying."
+        }
+      ]
+    },
+    {
+      "id": "b1-10-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e reaja com surpresa, perguntando o que aconteceu depois.",
+      "listen": "So I opened the door, and there was a huge dog in my kitchen!",
+      "accepted": [
+        "No way! What happened next",
+        "Seriously? What happened then",
+        "Oh my God! What did you do",
+        "Really? What happened next",
+        "No way! What did you do"
+      ],
+      "commonErrors": [
+        {
+          "id": "what-did-happen",
+          "match": "\\bwhat did happen\\b",
+          "explanation_pt": "Quando \"what\" é o sujeito, não use \"did\": \"What happened next?\"",
+          "correction_en": "No way! What happened next?"
+        },
+        {
+          "id": "what-you-did",
+          "match": "\\bwhat you did\\b",
+          "explanation_pt": "Na pergunta no passado: \"What did you do?\"",
+          "correction_en": "No way! What did you do?"
+        }
+      ]
+    },
+    {
+      "id": "b1-10-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga como terminou: no final, acharam o celular.",
+      "listen": "So did you ever find your phone?",
+      "accepted": [
+        "Yes, in the end we found it",
+        "In the end, we found it",
+        "Yes, we found it in the end",
+        "Yes, luckily we found it in the end",
+        "Yeah, in the end it turned up"
+      ],
+      "commonErrors": [
+        {
+          "id": "at-the-end",
+          "match": "\\bat the end\\b",
+          "explanation_pt": "\"No final\" (de uma história) é \"in the end\". \"At the end of\" é para um momento: \"at the end of the day\".",
+          "correction_en": "Yes, in the end we found it."
+        },
+        {
+          "id": "finded",
+          "match": "\\bfinded\\b|\\bfind it in the end\\b",
+          "explanation_pt": "O passado de \"find\" é \"found\".",
+          "correction_en": "Yes, in the end we found it."
+        }
+      ]
+    },
+    {
+      "id": "b1-10-prac-18",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga quando aconteceu: há uns dois anos.",
+      "listen": "When did this happen?",
+      "accepted": [
+        "About two years ago",
+        "It happened about two years ago",
+        "A couple of years ago",
+        "It was about two years ago",
+        "Around two years ago"
+      ],
+      "commonErrors": [
+        {
+          "id": "there-is-two-years",
+          "match": "\\bthere (is|are|was) (about )?two years\\b|\\bbefore two years\\b",
+          "explanation_pt": "\"Há dois anos\" é \"two years ago\".",
+          "correction_en": "About two years ago."
+        },
+        {
+          "id": "has-two-years",
+          "match": "\\b(have|has|makes) (about )?two years\\b",
+          "explanation_pt": "\"Faz dois anos\" é \"two years ago\".",
+          "correction_en": "About two years ago."
+        }
+      ]
+    },
+    {
+      "id": "b1-10-prac-19",
+      "kind": "dialogue",
+      "instruction_pt": "Conte para um amigo o que aconteceu com você na viagem.",
+      "scene_pt": "Você voltou de viagem e um amigo quer saber como foi.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Hey, you're back! How was the trip?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que foi ótima, mas que aconteceu uma coisa engraçada.",
+          "accepted": [
+            "It was great, but something funny happened",
+            "It was great, but something funny happened to me",
+            "Great! But something really funny happened",
+            "It was amazing, but something funny happened",
+            "It was great. Something funny happened, though"
+          ],
+          "commonErrors": [
+            {
+              "id": "happened-a-funny-thing",
+              "match": "^(it was great but )?happened something\\b|\\bhappened a funny thing\\b",
+              "explanation_pt": "Em inglês o sujeito vem antes do verbo: \"something funny happened\".",
+              "correction_en": "It was great, but something funny happened."
+            },
+            {
+              "id": "something-fun-happened",
+              "match": "\\bsomething fun happened\\b",
+              "explanation_pt": "Para algo que faz rir, use \"funny\". \"Fun\" é divertido.",
+              "correction_en": "It was great, but something funny happened."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Oh yeah? What happened?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que você estava esperando o ônibus quando um macaco pegou o seu sanduíche.",
+          "accepted": [
+            "I was waiting for the bus when a monkey took my sandwich",
+            "I was waiting for the bus when a monkey grabbed my sandwich",
+            "I was waiting for the bus and a monkey stole my sandwich",
+            "While I was waiting for the bus, a monkey took my sandwich",
+            "I was waiting at the bus stop when a monkey took my sandwich"
+          ],
+          "commonErrors": [
+            {
+              "id": "waited-bus-when",
+              "match": "^i waited (for )?the bus when\\b",
+              "explanation_pt": "Para a ação em andamento, use o passado contínuo: \"I was waiting\".",
+              "correction_en": "I was waiting for the bus when a monkey took my sandwich."
+            },
+            {
+              "id": "wait-the-bus",
+              "match": "\\bwaiting the bus\\b",
+              "explanation_pt": "\"Esperar\" alguém ou algo é \"wait for\".",
+              "correction_en": "I was waiting for the bus when a monkey took my sandwich."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "No way! What did you do?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que tentou pegar de volta, mas ele fugiu para uma árvore.",
+          "accepted": [
+            "I tried to get it back, but it ran up a tree",
+            "I tried to take it back, but it ran into a tree",
+            "I tried to get it back, but it ran away up a tree",
+            "I tried to get it back, but it escaped up a tree",
+            "I tried to get it back, but it climbed a tree"
+          ],
+          "commonErrors": [
+            {
+              "id": "fugiu-fled",
+              "match": "\\bfled\\b|\\bfugi",
+              "explanation_pt": "No dia a dia, \"fugiu\" é \"ran away\" ou \"ran up a tree\".",
+              "correction_en": "I tried to get it back, but it ran up a tree."
+            },
+            {
+              "id": "tried-get",
+              "match": "\\btried get\\b|\\btry to get it back but\\b",
+              "explanation_pt": "Use o passado com \"to\": \"I tried to get it back\".",
+              "correction_en": "I tried to get it back, but it ran up a tree."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Ha! So you lost your lunch."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que sim, mas que no final um turista dividiu a comida com você.",
+          "accepted": [
+            "Yes, but in the end a tourist shared his food with me",
+            "Yeah, but in the end a tourist shared her food with me",
+            "Yes, but in the end a tourist shared their food with me",
+            "I did, but in the end a tourist shared his lunch with me",
+            "Yes, but luckily a tourist shared some food with me in the end"
+          ],
+          "commonErrors": [
+            {
+              "id": "at-the-end",
+              "match": "\\bat the end\\b",
+              "explanation_pt": "\"No final\" de uma história é \"in the end\".",
+              "correction_en": "Yes, but in the end a tourist shared his food with me."
+            },
+            {
+              "id": "divided-food",
+              "match": "\\bdivided\\b",
+              "explanation_pt": "\"Dividir\" comida com alguém é \"share\".",
+              "correction_en": "Yes, but in the end a tourist shared his food with me."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-10-prac-20",
+      "kind": "free_speak",
+      "instruction_pt": "Conte uma história de um dia em que tudo deu errado.",
+      "prompt_en": "Tell me about a day when everything went wrong.",
+      "guidelines_pt": [
+        "Comece o cenário com o passado contínuo: \"I was...\".",
+        "Use conectores: \"suddenly\", \"then\", \"luckily\", \"in the end\".",
+        "Termine dizendo como você se sentiu."
+      ]
+    },
+    {
+      "id": "b1-10-prac-21",
+      "kind": "choice",
+      "instruction_pt": "Qual frase está correta?",
+      "options": [
+        "I was watching TV when the doorbell rang.",
+        "I watched TV when the doorbell was ringing.",
+        "I was watching TV when the doorbell was ring."
+      ],
+      "answer": 0,
+      "explanation_pt": "A ação longa (cenário) vai no passado contínuo; a interrupção, no passado simples."
+    },
+    {
+      "id": "b1-10-prac-22",
+      "kind": "choice",
+      "instruction_pt": "Ouça e escolha o que aconteceu.",
+      "listen": "I was halfway to work when I realized I'd left the oven on, so I had to go all the way back home.",
+      "options": [
+        "A pessoa esqueceu o forno ligado e voltou para casa.",
+        "A pessoa chegou atrasada porque o carro quebrou.",
+        "A pessoa deixou a chave no trabalho."
+      ],
+      "answer": 0,
+      "explanation_pt": "\"I'd left the oven on\" é \"eu tinha deixado o forno ligado\", e \"go all the way back home\" é voltar até em casa."
+    },
+    {
+      "id": "b1-10-prac-23",
+      "kind": "fill",
+      "instruction_pt": "Complete com o passado de \"break\": \"The car ___ down in the middle of the road.\"",
+      "sentence": "The car ___ down in the middle of the road.",
+      "accepted": ["broke"],
+      "commonErrors": [
+        {
+          "id": "breaked",
+          "match": "^(breaked|broken|break)$",
+          "explanation_pt": "O passado simples de \"break\" é \"broke\".",
+          "correction_en": "The car broke down in the middle of the road."
+        }
+      ]
+    },
+    {
+      "id": "b1-10-prac-24",
+      "kind": "order",
+      "instruction_pt": "Coloque as palavras na ordem certa.",
+      "accepted": ["What happened after that?"]
+    }
   ]
 }

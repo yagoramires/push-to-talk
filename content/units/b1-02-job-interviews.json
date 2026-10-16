@@ -470,5 +470,509 @@
         }
       ]
     }
+  ],
+  "practice": [
+    {
+      "id": "b1-02-prac-1",
+      "kind": "vocab",
+      "word_en": "weakness",
+      "meaning_pt": "ponto fraco",
+      "example_en": "My biggest weakness is that I find it hard to say no."
+    },
+    {
+      "id": "b1-02-prac-2",
+      "kind": "vocab",
+      "word_en": "to be a team player",
+      "meaning_pt": "saber trabalhar em equipe",
+      "example_en": "I'm a team player, but I can also work on my own."
+    },
+    {
+      "id": "b1-02-prac-3",
+      "kind": "repeat",
+      "instruction_pt": "Repita. A força está em \"ex\" de \"experience\": ex-PE-ri-ence.",
+      "prompt": "I have a lot of experience in sales.",
+      "accepted": ["I have a lot of experience in sales", "I've got a lot of experience in sales"],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-02-prac-4",
+      "kind": "repeat",
+      "instruction_pt": "Repita a frase, ligando \"in charge of\".",
+      "prompt": "In my last job, I was in charge of a team of five people.",
+      "accepted": [
+        "In my last job, I was in charge of a team of five people",
+        "In my last job I was in charge of a team of 5 people"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-02-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repita. \"Organized\" tem a força no \"OR\".",
+      "prompt": "I'm very organized, and I'm good at meeting deadlines.",
+      "accepted": [
+        "I'm very organized, and I'm good at meeting deadlines",
+        "I am very organized and I am good at meeting deadlines",
+        "I'm very organised, and I'm good at meeting deadlines"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-02-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repita a pergunta que o candidato faz no final.",
+      "prompt": "What are the next steps in the process?",
+      "accepted": ["What are the next steps in the process"],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-02-prac-7",
+      "kind": "repeat",
+      "instruction_pt": "Repita. \"Been working\" mostra uma ação que continua até hoje.",
+      "prompt": "I've been working in marketing for three years.",
+      "accepted": [
+        "I've been working in marketing for three years",
+        "I have been working in marketing for 3 years"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-02-prac-8",
+      "kind": "repeat",
+      "instruction_pt": "Repita a frase com calma e confiança.",
+      "prompt": "I'm looking for a new challenge.",
+      "accepted": ["I'm looking for a new challenge", "I am looking for a new challenge"],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-02-prac-9",
+      "kind": "repeat",
+      "instruction_pt": "Repita. \"Applied\" soa \"aplaid\", sem sílaba extra.",
+      "prompt": "I applied for this position because I love working with people.",
+      "accepted": [
+        "I applied for this position because I love working with people",
+        "I applied for this job because I love working with people"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b1-02-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu trabalho nessa empresa desde 2019.\"",
+      "accepted": [
+        "I've worked at this company since 2019",
+        "I have worked at this company since 2019",
+        "I've been working at this company since 2019",
+        "I've worked for this company since 2019",
+        "I've been working for this company since 2019",
+        "I've been at this company since 2019"
+      ],
+      "commonErrors": [
+        {
+          "id": "work-since",
+          "match": "^i (work|am working) (at|for|in)\\b",
+          "explanation_pt": "Para algo que começou no passado e continua, use o present perfect: \"I've worked... since 2019\".",
+          "correction_en": "I've worked at this company since 2019."
+        },
+        {
+          "id": "in-this-company-since",
+          "match": "\\bfrom (2019|twenty nineteen|two thousand)",
+          "explanation_pt": "\"Desde\" um ponto no tempo é \"since\", e não \"from\".",
+          "correction_en": "I've worked at this company since 2019."
+        }
+      ]
+    },
+    {
+      "id": "b1-02-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Meu ponto fraco é que eu sou perfeccionista.\"",
+      "accepted": [
+        "My weakness is that I'm a perfectionist",
+        "My weak point is that I'm a perfectionist",
+        "My biggest weakness is that I'm a perfectionist",
+        "My weakness is that I am a perfectionist",
+        "My weakness is being a perfectionist"
+      ],
+      "commonErrors": [
+        {
+          "id": "weak-point-perfectionist-adj",
+          "match": "\\bi am perfectionist\\b",
+          "explanation_pt": "\"Perfectionist\" é substantivo: \"I'm a perfectionist\", com \"a\".",
+          "correction_en": "My weakness is that I'm a perfectionist."
+        },
+        {
+          "id": "fraco-point",
+          "match": "\\bweak spot\\b|\\bfragile\\b",
+          "explanation_pt": "Em entrevista, \"ponto fraco\" é \"weakness\" (ou \"weak point\").",
+          "correction_en": "My weakness is that I'm a perfectionist."
+        }
+      ]
+    },
+    {
+      "id": "b1-02-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu sou bom em resolver problemas.\"",
+      "accepted": [
+        "I'm good at solving problems",
+        "I am good at solving problems",
+        "I'm good at problem solving",
+        "I'm good at fixing problems",
+        "I'm really good at solving problems"
+      ],
+      "commonErrors": [
+        {
+          "id": "good-in",
+          "match": "\\bgood in\\b",
+          "explanation_pt": "\"Bom em\" algo é \"good at\", e não \"good in\".",
+          "correction_en": "I'm good at solving problems."
+        },
+        {
+          "id": "good-at-solve",
+          "match": "\\bgood at solve\\b|\\bgood to solve\\b",
+          "explanation_pt": "Depois de \"good at\" o verbo vai com \"-ing\": \"solving\".",
+          "correction_en": "I'm good at solving problems."
+        }
+      ]
+    },
+    {
+      "id": "b1-02-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu tenho experiência com atendimento ao cliente.\"",
+      "accepted": [
+        "I have experience in customer service",
+        "I have experience with customer service",
+        "I've got experience in customer service",
+        "I have customer service experience",
+        "I have some experience in customer service"
+      ],
+      "commonErrors": [
+        {
+          "id": "an-experience",
+          "match": "\\ban experience\\b|\\bexperiences (in|with)\\b",
+          "explanation_pt": "Experiência profissional é incontável: \"I have experience\", sem \"an\" e sem plural.",
+          "correction_en": "I have experience in customer service."
+        },
+        {
+          "id": "client-attendance",
+          "match": "\\battendance\\b|\\bclient service\\b",
+          "explanation_pt": "\"Atendimento ao cliente\" é \"customer service\".",
+          "correction_en": "I have experience in customer service."
+        }
+      ]
+    },
+    {
+      "id": "b1-02-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Quando eu posso esperar uma resposta?\"",
+      "accepted": [
+        "When can I expect an answer",
+        "When can I expect a response",
+        "When can I expect to hear from you",
+        "When could I expect an answer",
+        "When will I hear back from you"
+      ],
+      "commonErrors": [
+        {
+          "id": "wait-answer",
+          "match": "\\bwait (an|a|for an|for a) (answer|response)\\b",
+          "explanation_pt": "Aqui \"esperar\" no sentido de \"contar com\" é \"expect\". \"Wait for\" é aguardar.",
+          "correction_en": "When can I expect an answer?"
+        },
+        {
+          "id": "i-can-order",
+          "match": "^when i can\\b",
+          "explanation_pt": "Em perguntas, o \"can\" vem antes do sujeito: \"When can I...?\"",
+          "correction_en": "When can I expect an answer?"
+        }
+      ]
+    },
+    {
+      "id": "b1-02-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga onde você se vê em cinco anos: liderando uma equipe.",
+      "listen": "Where do you see yourself in five years?",
+      "accepted": [
+        "I see myself leading a team",
+        "In five years, I see myself leading a team",
+        "I'd like to be leading a team",
+        "I hope to be leading a team",
+        "I see myself as a team leader",
+        "I'd like to be managing a team"
+      ],
+      "commonErrors": [
+        {
+          "id": "see-me",
+          "match": "\\bsee me\\b",
+          "explanation_pt": "Quando o sujeito e o objeto são a mesma pessoa, use \"myself\": \"I see myself...\".",
+          "correction_en": "I see myself leading a team."
+        },
+        {
+          "id": "see-myself-lead",
+          "match": "\\bsee myself (lead|to lead)\\b",
+          "explanation_pt": "Depois de \"see myself\" o verbo vai com \"-ing\": \"leading\".",
+          "correction_en": "I see myself leading a team."
+        }
+      ]
+    },
+    {
+      "id": "b1-02-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga por que você saiu: queria crescer na carreira.",
+      "listen": "What made you decide to leave your previous job?",
+      "accepted": [
+        "I wanted to grow in my career",
+        "Because I wanted to grow in my career",
+        "I wanted more opportunities to grow",
+        "I was looking for new challenges",
+        "I wanted to grow professionally",
+        "I left because I wanted to grow in my career"
+      ],
+      "commonErrors": [
+        {
+          "id": "grow-up-career",
+          "match": "\\bgrow up\\b",
+          "explanation_pt": "\"Grow up\" é crescer como pessoa (virar adulto). Na carreira, diga só \"grow\".",
+          "correction_en": "I wanted to grow in my career."
+        },
+        {
+          "id": "quit-because-boss",
+          "match": "\\bmy boss was (bad|terrible|horrible)\\b",
+          "explanation_pt": "Em entrevista, evite falar mal do chefe antigo. Foque no que você busca: \"I wanted to grow\".",
+          "correction_en": "I wanted to grow in my career."
+        }
+      ]
+    },
+    {
+      "id": "b1-02-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e diga que pode começar daqui a duas semanas.",
+      "listen": "When would you be able to start?",
+      "accepted": [
+        "I could start in two weeks",
+        "I can start in two weeks",
+        "In two weeks",
+        "I'd be able to start in two weeks",
+        "I could start in two weeks' time",
+        "I'm available in two weeks"
+      ],
+      "commonErrors": [
+        {
+          "id": "after-two-weeks",
+          "match": "\\b(after|inside|within) two weeks\\b",
+          "explanation_pt": "\"Daqui a duas semanas\" é \"in two weeks\".",
+          "correction_en": "I could start in two weeks."
+        },
+        {
+          "id": "can-to-start",
+          "match": "\\bcan to start\\b|\\bcould to start\\b",
+          "explanation_pt": "Depois de \"can\" e \"could\" não vem \"to\": \"I can start\".",
+          "correction_en": "I can start in two weeks."
+        }
+      ]
+    },
+    {
+      "id": "b1-02-prac-18",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda que sim: pergunte sobre as oportunidades de treinamento.",
+      "listen": "Do you have any questions for us?",
+      "accepted": [
+        "Yes. What training opportunities do you offer",
+        "Yes, what kind of training do you offer",
+        "Yes, are there any training opportunities",
+        "Yes. Do you offer any training",
+        "Yes, I'd like to know about training opportunities",
+        "Yes, what training opportunities are there"
+      ],
+      "commonErrors": [
+        {
+          "id": "no-questions",
+          "match": "^no( i do not| thank you)?$",
+          "explanation_pt": "Dizer que não tem perguntas passa falta de interesse. Faça uma pergunta sobre a vaga.",
+          "correction_en": "Yes. What training opportunities do you offer?"
+        },
+        {
+          "id": "trainings-plural",
+          "match": "\\btrainings\\b",
+          "explanation_pt": "\"Training\" é incontável: \"training opportunities\", sem \"s\".",
+          "correction_en": "Yes. What training opportunities do you offer?"
+        }
+      ]
+    },
+    {
+      "id": "b1-02-prac-19",
+      "kind": "dialogue",
+      "instruction_pt": "Você está numa entrevista de emprego. Responda ao entrevistador.",
+      "scene_pt": "Entrevista para uma vaga de analista numa empresa internacional.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Thanks for coming in today. Could you start by telling me about your current role?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que trabalha como analista de dados há três anos.",
+          "accepted": [
+            "I've been working as a data analyst for three years",
+            "I've worked as a data analyst for three years",
+            "I'm a data analyst, and I've been in this role for three years",
+            "I have been a data analyst for three years",
+            "I've been a data analyst for three years"
+          ],
+          "commonErrors": [
+            {
+              "id": "work-for-three",
+              "match": "^i (work|am working) as\\b.*\\bfor three years\\b",
+              "explanation_pt": "Com \"for three years\" (até hoje), use o present perfect: \"I've been working\".",
+              "correction_en": "I've been working as a data analyst for three years."
+            },
+            {
+              "id": "since-three-years",
+              "match": "\\bsince three years\\b|\\bthere is three years\\b",
+              "explanation_pt": "Com um período (três anos) use \"for\", e não \"since\".",
+              "correction_en": "I've been working as a data analyst for three years."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "And what are you responsible for?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que é responsável pelos relatórios mensais.",
+          "accepted": [
+            "I'm responsible for the monthly reports",
+            "I'm in charge of the monthly reports",
+            "I am responsible for the monthly reports",
+            "I'm responsible for monthly reports",
+            "I'm in charge of monthly reports"
+          ],
+          "commonErrors": [
+            {
+              "id": "responsible-of",
+              "match": "\\bresponsible (of|by)\\b",
+              "explanation_pt": "\"Responsável por\" é \"responsible for\".",
+              "correction_en": "I'm responsible for the monthly reports."
+            },
+            {
+              "id": "in-charge-for",
+              "match": "\\bin charge (for|by)\\b",
+              "explanation_pt": "A expressão é \"in charge of\".",
+              "correction_en": "I'm in charge of the monthly reports."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Great. What would you say is your biggest weakness?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que às vezes tem dificuldade para delegar, mas que está melhorando.",
+          "accepted": [
+            "Sometimes I find it hard to delegate, but I'm getting better",
+            "Sometimes I find it difficult to delegate, but I'm improving",
+            "I sometimes find it hard to delegate, but I'm getting better at it",
+            "Sometimes I have trouble delegating, but I'm getting better",
+            "Sometimes it's hard for me to delegate, but I'm improving"
+          ],
+          "commonErrors": [
+            {
+              "id": "have-difficulty-to",
+              "match": "\\b(difficulty|trouble) to delegate\\b",
+              "explanation_pt": "Depois de \"have difficulty\" ou \"have trouble\" use \"-ing\": \"delegating\".",
+              "correction_en": "Sometimes I have trouble delegating, but I'm getting better."
+            },
+            {
+              "id": "getting-better-in",
+              "match": "\\bi am (being )?better\\b",
+              "explanation_pt": "\"I'm better\" é \"já estou melhor\". \"Estou melhorando\" é \"I'm getting better\" ou \"I'm improving\".",
+              "correction_en": "Sometimes I find it hard to delegate, but I'm getting better."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "That's fair. Why do you want to work here?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que admira os projetos da empresa e quer um novo desafio.",
+          "accepted": [
+            "I admire your company's projects and I want a new challenge",
+            "I really admire your projects, and I'm looking for a new challenge",
+            "I admire the company's projects and I'd like a new challenge",
+            "I admire your projects and I want a new challenge",
+            "Because I admire your projects and I'm looking for a new challenge"
+          ],
+          "commonErrors": [
+            {
+              "id": "new-defy",
+              "match": "\\bdefy\\b|\\bdare\\b",
+              "explanation_pt": "\"Desafio\" é \"challenge\".",
+              "correction_en": "I admire your projects and I'm looking for a new challenge."
+            },
+            {
+              "id": "projects-of-company",
+              "match": "\\bprojects of (the|your) company\\b",
+              "explanation_pt": "O natural é usar o possessivo: \"the company's projects\" ou \"your projects\".",
+              "correction_en": "I admire the company's projects and I want a new challenge."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-02-prac-20",
+      "kind": "free_speak",
+      "instruction_pt": "Responda como numa entrevista de verdade.",
+      "prompt_en": "Tell me about a difficult situation at work and how you dealt with it.",
+      "guidelines_pt": [
+        "Conte a situação no passado simples: \"Last year, we had a problem with...\".",
+        "Diga o que você fez: \"I decided to...\".",
+        "Termine com o resultado: \"In the end...\"."
+      ]
+    },
+    {
+      "id": "b1-02-prac-21",
+      "kind": "choice",
+      "instruction_pt": "Qual resposta é melhor para \"What are your strengths?\"",
+      "options": [
+        "I'm reliable and I learn quickly.",
+        "I don't have weaknesses.",
+        "I need the money."
+      ],
+      "answer": 0,
+      "explanation_pt": "Fale de qualidades concretas, como \"reliable\" (confiável) e \"I learn quickly\"."
+    },
+    {
+      "id": "b1-02-prac-22",
+      "kind": "choice",
+      "instruction_pt": "Complete: \"I've been working here ___ three years.\"",
+      "options": ["since", "for", "during"],
+      "answer": 1,
+      "explanation_pt": "Com um período de tempo use \"for\". \"Since\" é para o ponto de início (\"since 2021\")."
+    },
+    {
+      "id": "b1-02-prac-23",
+      "kind": "fill",
+      "instruction_pt": "Complete com a preposição: \"I'm applying ___ the position of sales manager.\"",
+      "sentence": "I'm applying ___ the position of sales manager.",
+      "accepted": ["for"],
+      "commonErrors": [
+        {
+          "id": "apply-to-position",
+          "match": "^(to|at)$",
+          "explanation_pt": "Candidatar-se a uma vaga é \"apply for\". \"Apply to\" é para a empresa ou instituição.",
+          "correction_en": "I'm applying for the position of sales manager."
+        }
+      ]
+    },
+    {
+      "id": "b1-02-prac-24",
+      "kind": "order",
+      "instruction_pt": "Coloque as palavras na ordem certa.",
+      "accepted": ["Why are you interested in this role?"]
+    }
   ]
 }
