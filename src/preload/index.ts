@@ -8,7 +8,8 @@ const api: AppApi = {
   createProfile: (name) => ipcRenderer.invoke('createProfile', name),
   saveProgress: (progress) => ipcRenderer.invoke('saveProgress', progress),
   ensureMic: () => ipcRenderer.invoke('ensureMic'),
-  transcribe: (wav, expected) => ipcRenderer.invoke('transcribe', wav, expected)
+  transcribe: (wav, expected) => ipcRenderer.invoke('transcribe', wav, expected),
+  evaluateFreeSpeak: (input) => ipcRenderer.invoke('evaluateFreeSpeak', input)
 }
 
 if (process.contextIsolated) {

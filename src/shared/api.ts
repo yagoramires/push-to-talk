@@ -16,6 +16,11 @@ export type TranscribeResult =
   | { ok: true; text: string; pronunciation?: PronunciationResult }
   | { ok: false; reason: 'no-model' | 'failed'; message: string }
 
+export type FreeSpeakInput = { prompt_en: string; guidelines_pt: string[]; transcript: string }
+export type FreeSpeakEval =
+  | { ok: true; correct: boolean; feedback_pt: string; corrected_en: string }
+  | { ok: false; reason: 'no-model' | 'failed' | 'timeout'; message: string }
+
 export interface AppApi {
   loadCourse(): Promise<Course>
   loadState(): Promise<LoadResult>
@@ -23,6 +28,7 @@ export interface AppApi {
   saveProgress(progress: ProfileProgress): Promise<void>
   ensureMic(): Promise<boolean>
   transcribe(wav: Uint8Array, expected?: string): Promise<TranscribeResult>
+  evaluateFreeSpeak(input: FreeSpeakInput): Promise<FreeSpeakEval>
 }
 
 export type Tier = 'light' | 'medium' | 'strong'

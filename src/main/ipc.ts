@@ -7,6 +7,8 @@ import { decodeWav } from '../shared/wav'
 import { loadCourse } from './content/load-course'
 import { configureModels, createTranscriber } from './ai/stt'
 import { createPronunciationScorer } from './ai/pronunciation'
+import { createFreeSpeakEvaluator } from './ai/freeSpeak'
+import { LLM_BY_TIER } from './ai/tiers'
 import { createStore } from './store'
 
 export function registerIpc(): void {
@@ -18,6 +20,10 @@ export function registerIpc(): void {
   configureModels(join(app.getPath('userData'), 'models'), false)
   const transcriber = createTranscriber()
   const pronunciation = createPronunciationScorer()
+  // shortcut: fixed medium tier until Task 5 provides the current tier.
+  const freeSpeak = createFreeSpeakEvaluator(
+    join(app.getPath('userData'), 'models', LLM_BY_TIER.medium.file)
+  )
   let state: AppState | null = null
   const current = async (): Promise<AppState> => (state ??= (await store.load()).state)
 
@@ -67,7 +73,8 @@ export function registerIpc(): void {
         console.warn('pronunciation failed', e) // guidance only: never fails the transcription
         return r
       }
-    }
+    },
+    evaluateFreeSpeak: (input) => freeSpeak.evaluate(input)
   }
 
   for (const name of Object.keys(handlers) as (keyof AppApi)[]) {
