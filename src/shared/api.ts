@@ -29,6 +29,22 @@ export interface AppApi {
   ensureMic(): Promise<boolean>
   transcribe(wav: Uint8Array, expected?: string): Promise<TranscribeResult>
   evaluateFreeSpeak(input: FreeSpeakInput): Promise<FreeSpeakEval>
+  aiStatus(): Promise<AiStatus>
+  setupAi(tier?: Tier): Promise<AiStatus>
+  onAiProgress(cb: (p: AiProgress) => void): () => void
+}
+
+export type AiStatus = {
+  tier: Tier | null
+  hardware: Hardware | null
+  rtf: number | null
+  ready: { stt: boolean; pronunciation: boolean; llm: boolean }
+  pronunciationEnabled: boolean
+}
+export type AiProgress = {
+  phase: 'stt' | 'pronunciation' | 'benchmark' | 'llm' | 'done' | 'error'
+  percent: number
+  message: string
 }
 
 export type Tier = 'light' | 'medium' | 'strong'

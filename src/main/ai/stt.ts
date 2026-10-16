@@ -28,8 +28,9 @@ export function cleanTranscript(text: string): string {
 }
 
 /** transformers.js writes <cacheDir>/<repo>/<file>; the q8 decoder is the last file it needs. */
-const modelCached = (): boolean =>
-  existsSync(join(cacheDir, STT_MODEL, 'onnx/decoder_model_merged_quantized.onnx'))
+export const sttModelFile = (dir: string): string =>
+  join(dir, STT_MODEL, 'onnx/decoder_model_merged_quantized.onnx')
+const modelCached = (): boolean => existsSync(sttModelFile(cacheDir))
 
 type Asr = (audio: Float32Array) => Promise<{ text: string } | { text: string }[]>
 type Loaded = { run: Asr; dispose(): Promise<void> }

@@ -1,5 +1,5 @@
 import { existsSync } from 'node:fs'
-import { readFile, writeFile } from 'node:fs/promises'
+import { readFile, rename, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import type { PronunciationResult } from '../../shared/api'
 import { normalize } from '../../shared/matcher'
@@ -15,6 +15,18 @@ const MIN_SECONDS = 0.5
 const modelFile = (cacheDir: string): string =>
   join(cacheDir, PRON_MODEL, 'onnx/model_quantized.onnx')
 const vocabFile = (cacheDir: string): string => join(cacheDir, PRON_MODEL, 'vocab.json')
+export const pronunciationModelReady = (cacheDir: string): boolean =>
+  existsSync(modelFile(cacheDir)) && existsSync(vocabFile(cacheDir))
+
+/** transformers.js never fetches vocab.json (no tokenizer.json in this repo), so we do it ourselves. */
+export async function fetchVocab(cacheDir: string): Promise<void> {
+  const vf = vocabFile(cacheDir)
+  if (existsSync(vf)) return
+  const res = await fetch(`https://huggingface.co/${PRON_MODEL}/resolve/main/vocab.json`)
+  if (!res.ok) throw new Error(`vocab.json: HTTP ${res.status}`)
+  await writeFile(`${vf}.part`, await res.text())
+  await rename(`${vf}.part`, vf) // a half-written vocab.json must never look ready
+}
 
 type Loaded = {
   heard(samples: Float32Array): Promise<string[]>
@@ -31,14 +43,11 @@ async function load(): Promise<Loaded> {
   const model = await AutoModelForCTC.from_pretrained(PRON_MODEL, { dtype: 'q8' })
   const extractor = await Wav2Vec2FeatureExtractor.from_pretrained(PRON_MODEL)
 
-  // transformers.js never fetches vocab.json (no tokenizer.json in this repo), so we do it ourselves.
-  const vf = vocabFile(cacheDir)
-  if (!existsSync(vf)) {
-    const res = await fetch(`https://huggingface.co/${PRON_MODEL}/resolve/main/vocab.json`)
-    if (!res.ok) throw new Error(`vocab.json: HTTP ${res.status}`)
-    await writeFile(vf, await res.text())
-  }
-  const tokenToId = JSON.parse(await readFile(vf, 'utf8')) as Record<string, number>
+  await fetchVocab(cacheDir)
+  const tokenToId = JSON.parse(await readFile(vocabFile(cacheDir), 'utf8')) as Record<
+    string,
+    number
+  >
   const idToToken: string[] = []
   for (const [t, id] of Object.entries(tokenToId)) idToToken[id] = t
   const blankId = tokenToId['<pad>'] ?? 0
@@ -69,7 +78,7 @@ export function createPronunciationScorer(): {
     async score(samples, expectedText) {
       if (samples.length < MIN_SECONDS * SAMPLE_RATE) return null
       const { cacheDir, allowRemote } = modelsConfig()
-      if (!allowRemote && !(existsSync(modelFile(cacheDir)) && existsSync(vocabFile(cacheDir)))) {
+      if (!allowRemote && !pronunciationModelReady(cacheDir)) {
         throw new Error(`Modelo de pronúncia não encontrado em ${cacheDir}`)
       }
       // A failed load is retried on the next call.
