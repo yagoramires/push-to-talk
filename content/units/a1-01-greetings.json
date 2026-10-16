@@ -1,0 +1,401 @@
+{
+  "id": "a1-01-greetings",
+  "level": "A1",
+  "order": 1,
+  "title_pt": "Cumprimentos e apresentações",
+  "title_en": "Greetings and introductions",
+  "objective_pt": "Cumprimentar, se despedir, dizer o seu nome e de onde você é, e perguntar \"How are you?\".",
+  "blocks": [
+    {
+      "id": "a1-01-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Soltar a voz com os cumprimentos mais básicos e ver o que o aluno já sabe.",
+        "prompts": ["Hello! How are you today?", "What time of day is it now?"],
+        "watchFor": [
+          "Pronunciar o \"h\" de \"hello\" como \"r\" (\"rello\"); o \"h\" inglês é um sopro suave.",
+          "Dizer \"how is you\" em vez de \"how are you\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-01-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita em voz alta.",
+          "prompt": "Hello! How are you?",
+          "accepted": ["Hello! How are you?", "Hello, how are you?", "Hi, how are you?"],
+          "commonErrors": [
+            {
+              "id": "how-is-you",
+              "match": "\\bhow is you\\b",
+              "explanation_pt": "Com \"you\" usamos \"are\": \"How are you?\". \"Is\" é só para he, she e it.",
+              "correction_en": "How are you?"
+            }
+          ]
+        },
+        {
+          "id": "a1-01-warm-2",
+          "kind": "choice",
+          "instruction_pt": "Qual cumprimento usamos de manhã?",
+          "options": ["Good morning", "Good night", "Good afternoon"],
+          "answer": 0,
+          "explanation_pt": "\"Good morning\" é o cumprimento da manhã. \"Good afternoon\" é da tarde."
+        },
+        {
+          "id": "a1-01-warm-3",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Olá, tudo bem?\"",
+          "accepted": [
+            "Hello, how are you?",
+            "Hi, how are you?",
+            "Hello, how are you doing?",
+            "Hi, how are you doing?",
+            "Hi, how's it going?"
+          ],
+          "commonErrors": [
+            {
+              "id": "how-is-you",
+              "match": "\\bhow is you\\b",
+              "explanation_pt": "Com \"you\" usamos \"are\": \"How are you?\". \"Is\" é só para he, she e it.",
+              "correction_en": "How are you?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-01-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Aprender cinco expressões de cumprimento e despedida que o aluno vai usar todo dia.",
+        "prompts": [
+          "When do you say \"goodbye\"?",
+          "How do you thank a friend?",
+          "What do you say when you meet someone new?"
+        ],
+        "watchFor": [
+          "Pronunciar \"thank\" como \"tank\"; a língua vai entre os dentes.",
+          "Esquecer o \"to\" em \"nice to meet you\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-01-vocab-1",
+          "kind": "vocab",
+          "word_en": "hello",
+          "meaning_pt": "olá",
+          "example_en": "Hello, Ana!"
+        },
+        {
+          "id": "a1-01-vocab-2",
+          "kind": "vocab",
+          "word_en": "thank you",
+          "meaning_pt": "obrigado, obrigada",
+          "example_en": "Thank you very much."
+        },
+        {
+          "id": "a1-01-vocab-3",
+          "kind": "vocab",
+          "word_en": "nice to meet you",
+          "meaning_pt": "prazer em conhecer você",
+          "example_en": "Nice to meet you, Carlos."
+        },
+        {
+          "id": "a1-01-vocab-4",
+          "kind": "match",
+          "instruction_pt": "Ligue cada expressão em inglês ao seu significado.",
+          "pairs": [
+            { "en": "Good morning", "pt": "Bom dia" },
+            { "en": "Good night", "pt": "Boa noite (ao se despedir)" },
+            { "en": "See you later", "pt": "Até mais tarde" },
+            { "en": "Goodbye", "pt": "Tchau" }
+          ]
+        },
+        {
+          "id": "a1-01-vocab-5",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Obrigado.\"",
+          "accepted": ["Thank you", "Thanks", "Thank you very much", "Thanks a lot"],
+          "commonErrors": [
+            {
+              "id": "tank-you",
+              "match": "\\b(tank|sank|fank) (you|u)\\b",
+              "explanation_pt": "O som \"th\" não existe no português: coloque a ponta da língua entre os dentes e solte o ar, como em \"thank\".",
+              "correction_en": "Thank you."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-01-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Treinar o \"th\" de \"thank you\" e o som longo de \"ee\" em \"meet\".",
+        "prompts": [
+          "Can you say \"three\" and \"tree\"? What is different?",
+          "Say \"meet\" slowly. Is the vowel long?"
+        ],
+        "watchFor": [
+          "Trocar \"th\" por \"t\" ou \"f\".",
+          "Encurtar o \"ee\" de \"meet\" até soar como \"mit\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-01-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita. Língua entre os dentes no \"th\".",
+          "prompt": "Thank you very much.",
+          "accepted": ["Thank you very much", "Thank you very much."],
+          "commonErrors": [
+            {
+              "id": "tank-you",
+              "match": "\\b(tank|sank|fank) (you|u)\\b",
+              "explanation_pt": "O som \"th\" não existe no português: coloque a ponta da língua entre os dentes e solte o ar, como em \"thank\".",
+              "correction_en": "Thank you."
+            }
+          ]
+        },
+        {
+          "id": "a1-01-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repita. Alongue o \"ee\" de \"meet\".",
+          "prompt": "Nice to meet you.",
+          "accepted": ["Nice to meet you", "Nice to meet you."],
+          "commonErrors": [
+            {
+              "id": "nice-to-met-you",
+              "match": "\\bnice to (met|mit|meat) you\\b",
+              "explanation_pt": "A palavra é \"meet\" (conhecer), com o \"ee\" longo. \"Met\" é o passado e tem o \"e\" curto.",
+              "correction_en": "Nice to meet you."
+            }
+          ]
+        },
+        {
+          "id": "a1-01-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Qual palavra tem o mesmo som final de \"see\"?",
+          "options": ["me", "may", "my"],
+          "answer": 0,
+          "explanation_pt": "\"See\" e \"me\" terminam no som longo \"ee\". \"May\" termina em \"ei\" e \"my\" em \"ai\"."
+        }
+      ]
+    },
+    {
+      "id": "a1-01-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Entender cumprimentos curtos falados e responder sem traduzir.",
+        "prompts": [
+          "How do you answer \"How are you?\"",
+          "What do you say after \"Nice to meet you\"?"
+        ],
+        "watchFor": [
+          "Responder \"How are you?\" com o próprio nome.",
+          "Dizer \"nice to meet you also\" em vez de \"too\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-01-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Ouça e escolha o que você entendeu.",
+          "listen": "Good evening. My name is Ana.",
+          "options": ["Ana says good morning.", "Ana says good evening.", "Ana says goodbye."],
+          "answer": 1,
+          "explanation_pt": "Ela disse \"Good evening\", o cumprimento da noite."
+        },
+        {
+          "id": "a1-01-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça a pergunta e responda dizendo que você está bem.",
+          "listen": "How are you?",
+          "accepted": [
+            "I'm fine",
+            "I am fine",
+            "I'm fine, thank you",
+            "I am fine, thank you",
+            "I'm fine, thanks",
+            "I'm good",
+            "I am good",
+            "I'm great",
+            "I'm okay",
+            "Fine, thanks",
+            "Good, thank you"
+          ],
+          "commonErrors": [
+            {
+              "id": "me-fine",
+              "match": "^(me|i) fine\\b",
+              "explanation_pt": "Falta o verbo \"to be\": em inglês dizemos \"I am fine\" (ou \"I'm fine\").",
+              "correction_en": "I'm fine, thank you."
+            }
+          ]
+        },
+        {
+          "id": "a1-01-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça e responda ao \"prazer em conhecer você\".",
+          "listen": "Nice to meet you.",
+          "accepted": [
+            "Nice to meet you too",
+            "Nice to meet you, too",
+            "Nice to meet you too.",
+            "Pleased to meet you too",
+            "Me too",
+            "You too"
+          ],
+          "commonErrors": [
+            {
+              "id": "meet-you-also",
+              "match": "\\bmeet you (also|equally)\\b",
+              "explanation_pt": "O \"igualmente\" do português vira \"too\" no fim da frase: \"Nice to meet you too\".",
+              "correction_en": "Nice to meet you too."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-01-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Se apresentar com frases completas: nome, país e uma pergunta de volta.",
+        "prompts": [
+          "What's your name?",
+          "Where are you from?",
+          "Nice to meet you! How are you today?"
+        ],
+        "watchFor": [
+          "Dizer \"I call me\" (tradução de \"eu me chamo\"); em inglês é \"My name is\".",
+          "Dizer \"I am of Brazil\" em vez de \"I am from Brazil\".",
+          "Esquecer o verbo: \"I from Brazil\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-01-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Meu nome é Carlos.\"",
+          "accepted": ["My name is Carlos", "I'm Carlos", "I am Carlos", "My name's Carlos"],
+          "commonErrors": [
+            {
+              "id": "i-call-me",
+              "match": "\\bi call me\\b",
+              "explanation_pt": "\"Eu me chamo\" não se traduz palavra por palavra. Em inglês: \"My name is...\" ou \"I'm...\".",
+              "correction_en": "My name is Carlos."
+            },
+            {
+              "id": "my-name-be",
+              "match": "\\bmy name (am|are)\\b",
+              "explanation_pt": "Com \"my name\" usamos \"is\": \"My name is Carlos\".",
+              "correction_en": "My name is Carlos."
+            }
+          ]
+        },
+        {
+          "id": "a1-01-conv-2",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu sou do Brasil.\"",
+          "accepted": [
+            "I'm from Brazil",
+            "I am from Brazil",
+            "I come from Brazil",
+            "I'm Brazilian",
+            "I am Brazilian"
+          ],
+          "commonErrors": [
+            {
+              "id": "am-of",
+              "match": "\\bi am of\\b",
+              "explanation_pt": "Para dizer de onde você é, use \"from\", e não \"of\": \"I am from Brazil\".",
+              "correction_en": "I'm from Brazil."
+            },
+            {
+              "id": "missing-be",
+              "match": "^i from\\b",
+              "explanation_pt": "Falta o verbo \"to be\": \"I am from Brazil\" (ou \"I'm from Brazil\").",
+              "correction_en": "I'm from Brazil."
+            }
+          ]
+        },
+        {
+          "id": "a1-01-conv-3",
+          "kind": "order",
+          "instruction_pt": "Coloque as palavras na ordem certa para formar a pergunta.",
+          "accepted": ["Where are you from"]
+        },
+        {
+          "id": "a1-01-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Apresente-se em inglês, como se tivesse acabado de conhecer alguém.",
+          "prompt_en": "Hi! I'm Sam. Nice to meet you. What's your name, and where are you from?",
+          "guidelines_pt": [
+            "Cumprimente e diga o seu nome: \"Hello, my name is...\".",
+            "Diga de onde você é: \"I'm from...\".",
+            "Termine perguntando \"And you?\" ou \"How are you?\"."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-01-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Revisar as expressões da unidade e fechar com uma despedida natural.",
+        "prompts": ["How do you say goodbye to a friend?", "What do you say to a new person?"],
+        "watchFor": [
+          "Usar \"how is\" com \"you\".",
+          "Confundir \"Good morning\" com \"Good night\" na despedida."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-01-rev-1",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Bom dia.\"",
+          "accepted": ["Good morning", "Morning"],
+          "commonErrors": []
+        },
+        {
+          "id": "a1-01-rev-2",
+          "kind": "fill",
+          "instruction_pt": "Complete a pergunta.",
+          "sentence": "How ___ you?",
+          "accepted": ["are"],
+          "commonErrors": [
+            {
+              "id": "how-is-you",
+              "match": "^(is|do|does)$",
+              "explanation_pt": "Com \"you\" o verbo é \"are\": \"How are you?\".",
+              "correction_en": "How are you?"
+            }
+          ]
+        },
+        {
+          "id": "a1-01-rev-3",
+          "kind": "choice",
+          "instruction_pt": "Como você se despede de alguém à noite?",
+          "options": ["Good night", "Good morning", "Hello"],
+          "answer": 0,
+          "explanation_pt": "\"Good night\" é usado para se despedir à noite. \"Hello\" é para cumprimentar."
+        },
+        {
+          "id": "a1-01-rev-4",
+          "kind": "repeat",
+          "instruction_pt": "Para terminar, repita a despedida.",
+          "prompt": "See you later!",
+          "accepted": ["See you later", "See you later!", "See you"],
+          "commonErrors": []
+        }
+      ]
+    }
+  ]
+}

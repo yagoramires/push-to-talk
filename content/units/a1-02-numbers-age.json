@@ -1,0 +1,349 @@
+{
+  "id": "a1-02-numbers-age",
+  "level": "A1",
+  "order": 2,
+  "title_pt": "Números e idade",
+  "title_en": "Numbers and age",
+  "objective_pt": "Contar de 1 a 100, diferenciar números parecidos (13 e 30) e dizer e perguntar a idade.",
+  "blocks": [
+    {
+      "id": "a1-02-warmup",
+      "kind": "warmup",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Aquecer contando de 1 a 10 e reconhecer os números mais simples.",
+        "prompts": ["Can you count to ten?", "What is your favorite number?"],
+        "watchFor": [
+          "Pronunciar \"three\" como \"tree\" ou \"free\".",
+          "Pronunciar \"one\" como \"on\"; o som é \"uan\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-02-warm-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita contando de 1 a 5.",
+          "prompt": "One, two, three, four, five.",
+          "accepted": ["One, two, three, four, five", "1, 2, 3, 4, 5"],
+          "commonErrors": []
+        },
+        {
+          "id": "a1-02-warm-2",
+          "kind": "repeat",
+          "instruction_pt": "Agora repita de 6 a 10.",
+          "prompt": "Six, seven, eight, nine, ten.",
+          "accepted": ["Six, seven, eight, nine, ten", "6, 7, 8, 9, 10"],
+          "commonErrors": []
+        },
+        {
+          "id": "a1-02-warm-3",
+          "kind": "choice",
+          "instruction_pt": "Qual número é \"seven\"?",
+          "options": ["6", "7", "8"],
+          "answer": 1,
+          "explanation_pt": "\"Seven\" é sete. \"Six\" é seis e \"eight\" é oito."
+        }
+      ]
+    },
+    {
+      "id": "a1-02-vocabulary",
+      "kind": "vocabulary",
+      "minutes": 5,
+      "teacher": {
+        "goal_pt": "Aprender as dezenas (20, 30, 40, 50) e a expressão \"years old\".",
+        "prompts": [
+          "How do you say 20 in English?",
+          "Can you count by tens: ten, twenty, thirty...?",
+          "What is a number you see every day?"
+        ],
+        "watchFor": [
+          "Pronunciar \"twenty\" sem o \"w\" (\"tenti\"); o som é \"tuenti\".",
+          "Inverter a ordem: \"one twenty\" em vez de \"twenty-one\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-02-vocab-1",
+          "kind": "vocab",
+          "word_en": "twenty",
+          "meaning_pt": "vinte",
+          "example_en": "I have twenty books."
+        },
+        {
+          "id": "a1-02-vocab-2",
+          "kind": "vocab",
+          "word_en": "thirty",
+          "meaning_pt": "trinta",
+          "example_en": "My brother is thirty."
+        },
+        {
+          "id": "a1-02-vocab-3",
+          "kind": "vocab",
+          "word_en": "years old",
+          "meaning_pt": "anos de idade",
+          "example_en": "She is ten years old."
+        },
+        {
+          "id": "a1-02-vocab-4",
+          "kind": "match",
+          "instruction_pt": "Ligue cada número em inglês ao seu equivalente em português.",
+          "pairs": [
+            { "en": "fifteen", "pt": "quinze" },
+            { "en": "twenty", "pt": "vinte" },
+            { "en": "thirty", "pt": "trinta" },
+            { "en": "forty", "pt": "quarenta" },
+            { "en": "fifty", "pt": "cinquenta" }
+          ]
+        },
+        {
+          "id": "a1-02-vocab-5",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"vinte\".",
+          "accepted": ["Twenty", "20"],
+          "commonErrors": []
+        }
+      ]
+    },
+    {
+      "id": "a1-02-pronunciation",
+      "kind": "pronunciation",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Diferenciar os pares de números que mais confundem: 13/30 e 15/50.",
+        "prompts": [
+          "Which one is bigger: thirteen or thirty?",
+          "Say \"fifteen\" and \"fifty\". Can you hear the difference?"
+        ],
+        "watchFor": [
+          "Acentuar a primeira sílaba nos números em \"-teen\"; neles a sílaba forte é a última (thirTEEN).",
+          "Pronunciar o \"ty\" final longo demais; em \"thirty\" ele é curto e fraco."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-02-pron-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita. Em \"-teen\", a última sílaba é forte e longa.",
+          "prompt": "Thirteen, fourteen, fifteen.",
+          "accepted": ["Thirteen, fourteen, fifteen", "13, 14, 15"],
+          "commonErrors": []
+        },
+        {
+          "id": "a1-02-pron-2",
+          "kind": "repeat",
+          "instruction_pt": "Repita. Em \"-ty\", a primeira sílaba é a forte.",
+          "prompt": "Thirty, forty, fifty.",
+          "accepted": ["Thirty, forty, fifty", "30, 40, 50"],
+          "commonErrors": []
+        },
+        {
+          "id": "a1-02-pron-3",
+          "kind": "choice",
+          "instruction_pt": "Em qual número a última sílaba é forte e longa?",
+          "options": ["thirteen", "thirty"],
+          "answer": 0,
+          "explanation_pt": "Em \"thirteen\" a força está no final (thirTEEN). Em \"thirty\" ela está no começo (THIRty)."
+        }
+      ]
+    },
+    {
+      "id": "a1-02-listening",
+      "kind": "listening",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Reconhecer números falados e responder a perguntas simples sobre idade e contas.",
+        "prompts": ["How old are you?", "How old is your best friend?"],
+        "watchFor": [
+          "Confundir os pares 13/30, 15/50 e 14/40 ao ouvir.",
+          "Responder a idade sem o verbo \"to be\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-02-listen-1",
+          "kind": "choice",
+          "instruction_pt": "Ouça e escolha a idade que a pessoa disse.",
+          "listen": "I am twenty-two years old.",
+          "options": ["12", "22", "20"],
+          "answer": 1,
+          "explanation_pt": "Ela disse \"twenty-two\", que é 22."
+        },
+        {
+          "id": "a1-02-listen-2",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça a pergunta e responda dizendo que você tem 30 anos.",
+          "listen": "How old are you?",
+          "accepted": [
+            "I'm 30",
+            "I am 30",
+            "I'm thirty",
+            "I am thirty",
+            "I'm 30 years old",
+            "I am 30 years old",
+            "I'm thirty years old",
+            "I am thirty years old"
+          ],
+          "commonErrors": [
+            {
+              "id": "have-years",
+              "match": "\\bi have \\w+( \\w+)? years\\b",
+              "explanation_pt": "Para idade, o inglês usa o verbo \"to be\": \"I am 30\", e não \"I have 30 years\".",
+              "correction_en": "I'm 30 years old."
+            }
+          ]
+        },
+        {
+          "id": "a1-02-listen-3",
+          "kind": "listen_answer",
+          "instruction_pt": "Ouça a conta e diga o resultado em inglês.",
+          "listen": "What is seven plus three?",
+          "accepted": ["Ten", "10", "It's ten", "It is ten", "Seven plus three is ten"],
+          "commonErrors": []
+        }
+      ]
+    },
+    {
+      "id": "a1-02-conversation",
+      "kind": "conversation",
+      "minutes": 6,
+      "teacher": {
+        "goal_pt": "Dizer e perguntar a idade com naturalidade, usando \"to be\".",
+        "prompts": [
+          "How old are you?",
+          "How old is your mother, your father, or your best friend?",
+          "Do you have brothers or sisters? How old are they?"
+        ],
+        "watchFor": [
+          "Dizer \"I have 25 years\" (tradução de \"eu tenho 25 anos\").",
+          "Perguntar \"How many years do you have?\" em vez de \"How old are you?\".",
+          "Usar \"has\" para idade: \"she has twenty years\"."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-02-age-translate",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Eu tenho 25 anos.\"",
+          "accepted": [
+            "I am twenty-five years old",
+            "I'm twenty-five years old",
+            "I'm twenty-five",
+            "I am twenty-five",
+            "I'm 25",
+            "I'm 25 years old",
+            "I am 25",
+            "I am 25 years old"
+          ],
+          "commonErrors": [
+            {
+              "id": "have-years",
+              "match": "\\bi have \\w+( \\w+)? years\\b",
+              "explanation_pt": "Para idade, o inglês usa o verbo \"to be\": \"I am 25\", e não \"I have 25 years\".",
+              "correction_en": "I'm 25 years old."
+            }
+          ]
+        },
+        {
+          "id": "a1-02-conv-1",
+          "kind": "translate",
+          "instruction_pt": "Pergunte a idade de alguém: \"Quantos anos você tem?\"",
+          "accepted": ["How old are you", "How old are you?", "How old are you now"],
+          "commonErrors": [
+            {
+              "id": "how-many-years",
+              "match": "\\bhow many years\\b",
+              "explanation_pt": "Em inglês a pergunta da idade é \"How old are you?\", e não \"How many years do you have?\".",
+              "correction_en": "How old are you?"
+            }
+          ]
+        },
+        {
+          "id": "a1-02-conv-2",
+          "kind": "order",
+          "instruction_pt": "Coloque as palavras na ordem certa.",
+          "accepted": ["She is thirty years old"]
+        },
+        {
+          "id": "a1-02-conv-free",
+          "kind": "free_speak",
+          "instruction_pt": "Fale sobre a sua idade e a de uma pessoa da sua família.",
+          "prompt_en": "How old are you? And how old is someone in your family?",
+          "guidelines_pt": [
+            "Diga a sua idade: \"I'm ... years old\".",
+            "Diga a idade de outra pessoa: \"My mother is ...\" ou \"My brother is ...\".",
+            "Pergunte de volta: \"And you? How old are you?\"."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-02-review",
+      "kind": "review",
+      "minutes": 4,
+      "teacher": {
+        "goal_pt": "Fixar a estrutura \"to be + número\" para idade, em primeira e terceira pessoa.",
+        "prompts": ["How old are you?", "Tell me one number from today's lesson."],
+        "watchFor": [
+          "Usar \"have\" ou \"has\" no lugar de \"am\", \"is\" ou \"are\".",
+          "Trocar 13 por 30 ao falar."
+        ]
+      },
+      "exercises": [
+        {
+          "id": "a1-02-rev-1",
+          "kind": "repeat",
+          "instruction_pt": "Repita a frase.",
+          "prompt": "I am twenty years old.",
+          "accepted": ["I am twenty years old", "I'm twenty years old", "I'm 20 years old"],
+          "commonErrors": []
+        },
+        {
+          "id": "a1-02-rev-2",
+          "kind": "translate",
+          "instruction_pt": "Diga em inglês: \"Ele tem 15 anos.\"",
+          "accepted": [
+            "He is fifteen years old",
+            "He's fifteen years old",
+            "He is fifteen",
+            "He's fifteen",
+            "He's 15",
+            "He is 15",
+            "He's 15 years old",
+            "He is 15 years old"
+          ],
+          "commonErrors": [
+            {
+              "id": "has-years",
+              "match": "\\bhe has \\w+( \\w+)? years\\b",
+              "explanation_pt": "Para idade, use \"to be\" também com \"he\": \"He is 15\", e não \"He has 15 years\".",
+              "correction_en": "He's 15 years old."
+            }
+          ]
+        },
+        {
+          "id": "a1-02-rev-3",
+          "kind": "choice",
+          "instruction_pt": "Qual frase está correta?",
+          "options": ["I have twenty years.", "I am twenty years old.", "I am have twenty years."],
+          "answer": 1,
+          "explanation_pt": "Idade usa \"to be\": \"I am twenty years old\". O português \"ter\" não vira \"have\" aqui."
+        },
+        {
+          "id": "a1-02-rev-4",
+          "kind": "fill",
+          "instruction_pt": "Complete a frase.",
+          "sentence": "I ___ thirty years old.",
+          "accepted": ["am"],
+          "commonErrors": [
+            {
+              "id": "have-years",
+              "match": "^(have|has)$",
+              "explanation_pt": "Para idade, o inglês usa o verbo \"to be\": \"I am thirty years old\".",
+              "correction_en": "I am thirty years old."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
