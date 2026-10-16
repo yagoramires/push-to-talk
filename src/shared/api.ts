@@ -10,8 +10,7 @@ export type AppState = {
 /** recoveredFrom: caminho do backup do arquivo corrompido */
 export type LoadResult = { state: AppState; recoveredFrom?: string }
 export type TranscribeResult =
-  | { ok: true; text: string }
-  | { ok: false; reason: 'no-binary' | 'no-model' | 'failed'; message: string }
+  { ok: true; text: string } | { ok: false; reason: 'no-model' | 'failed'; message: string }
 
 export interface AppApi {
   loadCourse(): Promise<Course>

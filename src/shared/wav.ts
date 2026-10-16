@@ -25,3 +25,27 @@ export function encodeWav(samples: Float32Array, sampleRate: number): Uint8Array
   })
   return out
 }
+
+/** Inverse of encodeWav: PCM16 mono only (what the recorder produces). */
+export function decodeWav(bytes: Uint8Array): { samples: Float32Array; sampleRate: number } {
+  const v = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength)
+  const tag = (off: number): string => String.fromCharCode(...bytes.slice(off, off + 4))
+  if (bytes.length < 44 || tag(0) !== 'RIFF' || tag(8) !== 'WAVE')
+    throw new Error('Not a RIFF/WAVE file')
+  if (v.getUint16(20, true) !== 1 || v.getUint16(34, true) !== 16 || v.getUint16(22, true) !== 1) {
+    throw new Error('Unsupported WAV: expected PCM16 mono')
+  }
+  // walk chunks: ffmpeg-made files carry a LIST chunk before "data"
+  let off = 12
+  while (off + 8 <= bytes.length && tag(off) !== 'data')
+    off += 8 + v.getUint32(off + 4, true) + (v.getUint32(off + 4, true) & 1)
+  if (off + 8 > bytes.length) throw new Error('Unsupported WAV: no data chunk')
+  const start = off + 8
+  const n = Math.min(v.getUint32(off + 4, true), bytes.length - start) >> 1
+  const samples = new Float32Array(n)
+  for (let i = 0; i < n; i++) {
+    const s = v.getInt16(start + i * 2, true)
+    samples[i] = s < 0 ? s / 0x8000 : s / 0x7fff
+  }
+  return { samples, sampleRate: v.getUint32(24, true) }
+}

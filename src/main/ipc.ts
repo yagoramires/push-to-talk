@@ -1,12 +1,11 @@
 import { randomUUID } from 'node:crypto'
-import { rm, writeFile } from 'node:fs/promises'
-import { homedir, tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { app, ipcMain, systemPreferences } from 'electron'
 import type { AppApi, AppState } from '../shared/api'
 import type { ProfileProgress } from '../shared/progress'
+import { decodeWav } from '../shared/wav'
 import { loadCourse } from './content/load-course'
-import { createWhisperTranscriber } from './speech/whisper'
+import { configureModels, createTranscriber } from './ai/stt'
 import { createStore } from './store'
 
 export function registerIpc(): void {
@@ -14,11 +13,9 @@ export function registerIpc(): void {
   const contentDir = app.isPackaged
     ? join(process.resourcesPath, 'content')
     : join(app.getAppPath(), 'content')
-  // shortcut: dev-Mac defaults only; Plan 2 replaces this with managed models.
-  const whisper = createWhisperTranscriber({
-    bin: process.env.WHISPER_BIN ?? 'whisper-cli',
-    model: process.env.WHISPER_MODEL ?? join(homedir(), '.cache/whisper/ggml-small.bin')
-  })
+  // shortcut: no download yet (Task 5); dev users pre-populate via INGLES_DOWNLOAD_MODELS=1 npm test.
+  configureModels(join(app.getPath('userData'), 'models'), false)
+  const transcriber = createTranscriber()
   let state: AppState | null = null
   const current = async (): Promise<AppState> => (state ??= (await store.load()).state)
 
@@ -52,12 +49,10 @@ export function registerIpc(): void {
         : true
     },
     async transcribe(wav: Uint8Array) {
-      const path = join(tmpdir(), `ingles-${randomUUID()}.wav`)
-      await writeFile(path, wav)
       try {
-        return await whisper.transcribe(path)
-      } finally {
-        await rm(path, { force: true })
+        return await transcriber.transcribe(decodeWav(wav).samples)
+      } catch (e) {
+        return { ok: false, reason: 'failed', message: String(e) }
       }
     }
   }

@@ -12,4 +12,10 @@ npm test
 
 ## Transcrição
 
-Em desenvolvimento, a transcrição de voz precisa do `whisper-cli` instalado e do modelo `~/.cache/whisper/ggml-small.bin`. Para usar outros caminhos, defina as variáveis de ambiente `WHISPER_BIN` e `WHISPER_MODEL`.
+A transcrição roda localmente com `@huggingface/transformers` (Whisper base.en, q8). O app procura o modelo em `<userData>/models` (sem baixar nada por enquanto; o download gerenciado vem no Plano 2, Task 5). Para desenvolver, baixe o modelo uma vez (~77 MB) com:
+
+```bash
+INGLES_DOWNLOAD_MODELS=1 npm test
+```
+
+Isso salva o modelo em `~/.cache/ingles-models`. Copie a pasta `onnx-community/` dali para `<userData>/models/` para o app encontrá-lo. Sem o modelo, o app mostra a falha de transcrição e oferece a marcação manual.
