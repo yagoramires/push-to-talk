@@ -32,7 +32,8 @@ export default function SetupScreen({ status, onClose }: Props): React.JSX.Eleme
     lastPhase.current = null
     setProgress({ phase: 'stt', percent: 0, message: 'Preparando…' })
     try {
-      const s = await window.api.setupAi(tier)
+      // No explicit pick: main chooses after the benchmark, so a fast PC can still get "médio".
+      const s = await window.api.setupAi(picking ? tier : undefined)
       // Failures arrive as an 'error' progress event (sent before setupAi resolves).
       if (lastPhase.current === 'done') onClose(s)
     } catch (e) {
