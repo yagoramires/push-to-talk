@@ -109,11 +109,26 @@
           "kind": "match",
           "instruction_pt": "Match each expression to its meaning.",
           "pairs": [
-            { "en": "bottom line", "pt": "limite, o mínimo aceitável" },
-            { "en": "terms", "pt": "condições" },
-            { "en": "to turn down", "pt": "recusar" },
-            { "en": "upfront", "pt": "adiantado, à vista" },
-            { "en": "to close a deal", "pt": "fechar um negócio" }
+            {
+              "en": "bottom line",
+              "pt": "limite, o mínimo aceitável"
+            },
+            {
+              "en": "terms",
+              "pt": "condições"
+            },
+            {
+              "en": "to turn down",
+              "pt": "recusar"
+            },
+            {
+              "en": "upfront",
+              "pt": "adiantado, à vista"
+            },
+            {
+              "en": "to close a deal",
+              "pt": "fechar um negócio"
+            }
           ]
         },
         {
@@ -383,10 +398,129 @@
           ]
         },
         {
-          "id": "b2-03-conv-3",
-          "kind": "order",
-          "instruction_pt": "Put the words in order to make a counteroffer.",
-          "accepted": ["What if we split the difference"]
+          "id": "b2-03-conv-dialogue",
+          "kind": "dialogue",
+          "instruction_pt": "Role-play. Negotiate the terms of a project with a client.",
+          "scene_pt": "A client wants your team to finish a website in four weeks. You need six.",
+          "turns": [
+            {
+              "speaker": "partner",
+              "text": "We really need the website live in four weeks. Can you do it?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga que, infelizmente, precisam de seis semanas.",
+              "accepted": [
+                "Unfortunately, we need six weeks",
+                "I'm afraid we need six weeks",
+                "Unfortunately, we'll need six weeks",
+                "I'm afraid we'll need six weeks",
+                "I'm sorry, but we need six weeks",
+                "Unfortunately we need at least six weeks",
+                "I'm afraid it will take six weeks"
+              ],
+              "commonErrors": [
+                {
+                  "id": "infelizmente",
+                  "match": "\\bunfortunatly|\\binfelizmente\\b",
+                  "explanation_pt": "Escreva e diga \"unfortunately\", com o \"e\" no meio: un-FOR-tu-nate-ly.",
+                  "correction_en": "Unfortunately, we need six weeks."
+                },
+                {
+                  "id": "need-of",
+                  "match": "\\bneed of six\\b",
+                  "explanation_pt": "\"Need\" não leva \"of\" antes do objeto.",
+                  "correction_en": "We need six weeks."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Six weeks is too long for us. Is there anything we can do?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Proponha: se eles cortarem a loja online, vocês terminam em quatro semanas.",
+              "accepted": [
+                "If you drop the online store, we can finish in four weeks",
+                "If you remove the online store, we could finish in four weeks",
+                "If you leave out the online store, we can finish in four weeks",
+                "If we skip the online store, we can finish in four weeks",
+                "If you cut the online store, we can finish in four weeks",
+                "If you take out the online store, we could do it in four weeks",
+                "We could finish in four weeks if you drop the online store"
+              ],
+              "commonErrors": [
+                {
+                  "id": "if-will",
+                  "match": "\\bif you will (drop|remove|cut|leave|take)\\b",
+                  "explanation_pt": "Depois de \"if\" use o presente: \"if you drop\".",
+                  "correction_en": "If you drop the online store, we can finish in four weeks."
+                },
+                {
+                  "id": "online-shop-order",
+                  "match": "\\bstore online\\b",
+                  "explanation_pt": "Adjetivo antes: \"online store\".",
+                  "correction_en": "If you drop the online store, we can finish in four weeks."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Hmm, the store is important. What if we add the store a month later?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga que isso funciona para vocês.",
+              "accepted": [
+                "That works for us",
+                "That would work for us",
+                "That sounds good to us",
+                "That's fine with us",
+                "We can do that",
+                "Yes, that works for us",
+                "That could work for us"
+              ],
+              "commonErrors": [
+                {
+                  "id": "function",
+                  "match": "\\bfunctions? for us\\b",
+                  "explanation_pt": "\"Funcionar\" (dar certo) é \"work\": \"That works for us\".",
+                  "correction_en": "That works for us."
+                },
+                {
+                  "id": "works-to-us",
+                  "match": "\\bworks? to us\\b",
+                  "explanation_pt": "Use \"for\": \"That works for us\".",
+                  "correction_en": "That works for us."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Great. So four weeks for the site and the store next month. Do we have a deal?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Confirme que sim.",
+              "accepted": [
+                "Yes, we have a deal",
+                "Yes, it's a deal",
+                "It's a deal",
+                "Deal",
+                "You've got a deal",
+                "Yes, we've got a deal"
+              ],
+              "commonErrors": [
+                {
+                  "id": "is-deal",
+                  "match": "^(yes )?is a deal\\b",
+                  "explanation_pt": "Falta o sujeito: \"It's a deal\".",
+                  "correction_en": "It's a deal."
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "b2-03-conv-free",
@@ -477,6 +611,599 @@
           "accepted": ["Great. I think we have a deal.", "Great, I think we've got a deal."],
           "commonErrors": []
         }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "id": "b2-03-prac-1",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "If you can pay upfront, we could offer a five percent discount.",
+      "accepted": [
+        "If you can pay upfront, we could offer a five percent discount.",
+        "If you can pay up front, we could offer a five percent discount."
+      ],
+      "commonErrors": [
+        {
+          "id": "if-will",
+          "match": "\\bif you will (order|pay|sign|buy|agree|commit)\\b",
+          "explanation_pt": "Na condição com \"if\" não se usa \"will\": \"If you order more, we can...\"",
+          "correction_en": "If you order more, we can lower the price."
+        }
+      ]
+    },
+    {
+      "id": "b2-03-prac-2",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "I'm afraid that's a bit more than we were expecting to pay.",
+      "accepted": ["I'm afraid that's a bit more than we were expecting to pay."],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-03-prac-3",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "Let's try to meet halfway on this.",
+      "accepted": [
+        "Let's try to meet halfway on this.",
+        "Let's try to meet each other halfway on this."
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-03-prac-4",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "We'd be willing to sign a two-year contract.",
+      "accepted": ["We'd be willing to sign a two-year contract."],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-03-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "That sounds reasonable. I think we have a deal.",
+      "accepted": [
+        "That sounds reasonable. I think we have a deal.",
+        "That sounds fair. I think we have a deal."
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-03-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repeat. Your voice goes up at the end.",
+      "prompt": "What if we split the shipping costs?",
+      "accepted": [
+        "What if we split the shipping costs?",
+        "What if we split the cost of shipping?"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-03-prac-7",
+      "kind": "vocab",
+      "word_en": "to compromise",
+      "meaning_pt": "ceder, chegar a um meio-termo",
+      "example_en": "Both sides had to compromise to close the deal."
+    },
+    {
+      "id": "b2-03-prac-8",
+      "kind": "vocab",
+      "word_en": "bottom line",
+      "meaning_pt": "o limite, o mínimo aceitável",
+      "example_en": "Fifty thousand is our bottom line. We can't go any lower."
+    },
+    {
+      "id": "b2-03-prac-9",
+      "kind": "vocab",
+      "word_en": "to throw in",
+      "meaning_pt": "incluir de brinde",
+      "example_en": "If you sign today, we'll throw in free installation."
+    },
+    {
+      "id": "b2-03-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Se vocês aumentarem o pedido, nós podemos baixar o preço.\"",
+      "accepted": [
+        "If you increase the order, we can lower the price",
+        "If you increase your order, we can lower the price",
+        "If you increase the order, we could lower the price",
+        "If you increase your order, we could lower the price",
+        "If you increase the order, we can reduce the price",
+        "If you order more, we can lower the price",
+        "If you order more, we could lower the price",
+        "If you increase the order, we can bring the price down"
+      ],
+      "commonErrors": [
+        {
+          "id": "if-will-increase",
+          "match": "\\bif you will (increase|order)\\b",
+          "explanation_pt": "Depois de \"if\" (condição) use o presente: \"If you increase...\", não \"will\".",
+          "correction_en": "If you increase the order, we can lower the price."
+        },
+        {
+          "id": "down-the-price",
+          "match": "\\b(down|low) the price\\b",
+          "explanation_pt": "\"Baixar o preço\" é \"lower the price\" ou \"bring the price down\".",
+          "correction_en": "We can lower the price."
+        }
+      ]
+    },
+    {
+      "id": "b2-03-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Essa é nossa oferta final.\"",
+      "accepted": [
+        "This is our final offer",
+        "That's our final offer",
+        "This is our last offer",
+        "That's our last offer",
+        "This is our best and final offer"
+      ],
+      "commonErrors": [
+        {
+          "id": "final-offer-order",
+          "match": "\\boffer final\\b",
+          "explanation_pt": "O adjetivo vem antes do substantivo: \"final offer\".",
+          "correction_en": "This is our final offer."
+        }
+      ]
+    },
+    {
+      "id": "b2-03-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Nós não podemos aceitar essas condições.\"",
+      "accepted": [
+        "We can't accept these conditions",
+        "We can't accept these terms",
+        "We can't agree to these terms",
+        "We can't agree to these conditions",
+        "We're not able to accept these terms",
+        "We are unable to accept these terms"
+      ],
+      "commonErrors": [
+        {
+          "id": "can-to",
+          "match": "\\bcannot to\\b",
+          "explanation_pt": "Depois de \"can't\" o verbo vem sem \"to\".",
+          "correction_en": "We can't accept these terms."
+        },
+        {
+          "id": "these-condition",
+          "match": "\\bthese (condition|term)\\b",
+          "explanation_pt": "\"These\" pede plural: \"these conditions\", \"these terms\".",
+          "correction_en": "We can't accept these terms."
+        }
+      ]
+    },
+    {
+      "id": "b2-03-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Talvez a gente possa dividir a diferença.\"",
+      "accepted": [
+        "Maybe we could split the difference",
+        "Maybe we can split the difference",
+        "Perhaps we could split the difference",
+        "Why don't we split the difference?",
+        "How about we split the difference?",
+        "We could split the difference"
+      ],
+      "commonErrors": [
+        {
+          "id": "divide-difference",
+          "match": "\\bdivide the difference\\b",
+          "explanation_pt": "A expressão é \"split the difference\".",
+          "correction_en": "Maybe we could split the difference."
+        },
+        {
+          "id": "can-to",
+          "match": "\\b(could|can) to split\\b",
+          "explanation_pt": "Depois de \"could/can\" o verbo vem sem \"to\".",
+          "correction_en": "Maybe we could split the difference."
+        }
+      ]
+    },
+    {
+      "id": "b2-03-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Podemos incluir o frete de graça se vocês fecharem hoje.\"",
+      "accepted": [
+        "We can include free shipping if you sign today",
+        "We can throw in free shipping if you sign today",
+        "We could include free shipping if you sign today",
+        "We could throw in free shipping if you sign today",
+        "We can include free shipping if you close the deal today",
+        "We can throw in free delivery if you sign today",
+        "We can include free delivery if you sign today",
+        "We can offer free shipping if you sign today"
+      ],
+      "commonErrors": [
+        {
+          "id": "freight",
+          "match": "\\bfreight\\b",
+          "explanation_pt": "\"Frete\" para cliente é \"shipping\" ou \"delivery\". \"Freight\" é carga pesada, transporte de mercadorias.",
+          "correction_en": "We can include free shipping if you sign today."
+        },
+        {
+          "id": "if-you-will-sign",
+          "match": "\\bif you will (sign|close)\\b",
+          "explanation_pt": "Depois de \"if\" use o presente: \"if you sign today\".",
+          "correction_en": "We can throw in free shipping if you sign today."
+        }
+      ]
+    },
+    {
+      "id": "b2-03-prac-15",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Precisamos pensar e voltamos a falar com vocês amanhã.\"",
+      "accepted": [
+        "We need to think about it and we'll get back to you tomorrow",
+        "We need to think it over and we'll get back to you tomorrow",
+        "We need to think about it. We'll get back to you tomorrow",
+        "We need some time to think. We'll get back to you tomorrow",
+        "We need to think about it and get back to you tomorrow",
+        "We'll think about it and get back to you tomorrow",
+        "We need to think it over. We'll get back to you tomorrow"
+      ],
+      "commonErrors": [
+        {
+          "id": "return-to-you",
+          "match": "\\b(return|come back) to you\\b",
+          "explanation_pt": "\"Voltar a falar com você\" é \"get back to you\".",
+          "correction_en": "We'll get back to you tomorrow."
+        },
+        {
+          "id": "think-in-it",
+          "match": "\\bthink (in|on) it\\b",
+          "explanation_pt": "\"Pensar sobre algo\" é \"think about it\" ou \"think it over\".",
+          "correction_en": "We need to think about it."
+        }
+      ]
+    },
+    {
+      "id": "b2-03-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and make a counteroffer: twelve dollars per unit.",
+      "listen": "Our price is fifteen dollars per unit. Does that work for you?",
+      "accepted": [
+        "That's a bit high. Could you do twelve dollars per unit?",
+        "That's a bit high. How about twelve dollars per unit?",
+        "We were thinking more like twelve dollars per unit",
+        "Could you do twelve dollars per unit?",
+        "How about twelve dollars per unit?",
+        "What about twelve dollars per unit?",
+        "That's too high for us. Could you go down to twelve?",
+        "We could do twelve dollars per unit",
+        "Would you accept twelve dollars per unit?"
+      ],
+      "commonErrors": [
+        {
+          "id": "dollar-singular",
+          "match": "\\btwelve dollar per\\b",
+          "explanation_pt": "Com número maior que um, \"dollars\" vai no plural.",
+          "correction_en": "Could you do twelve dollars per unit?"
+        },
+        {
+          "id": "for-unit",
+          "match": "\\btwelve dollars (for|by) unit\\b",
+          "explanation_pt": "\"Por unidade\" é \"per unit\" ou \"a unit\".",
+          "correction_en": "How about twelve dollars per unit?"
+        }
+      ]
+    },
+    {
+      "id": "b2-03-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and accept the deal.",
+      "listen": "Okay, twelve fifty per unit and free shipping. Final offer.",
+      "accepted": [
+        "It's a deal",
+        "Okay, it's a deal",
+        "Deal",
+        "You've got a deal",
+        "Okay, we have a deal",
+        "That works for us. It's a deal",
+        "Fine, it's a deal",
+        "Okay, we accept",
+        "Great, we can accept that"
+      ],
+      "commonErrors": [
+        {
+          "id": "is-deal",
+          "match": "^(ok |okay )?is a deal\\b",
+          "explanation_pt": "Falta o sujeito: \"It's a deal\".",
+          "correction_en": "It's a deal."
+        },
+        {
+          "id": "closed",
+          "match": "^(ok |okay )?closed\\b",
+          "explanation_pt": "\"Fechado!\" é \"It's a deal!\" ou \"Deal!\". \"Closed\" soa como \"a loja fechou\".",
+          "correction_en": "It's a deal."
+        }
+      ]
+    },
+    {
+      "id": "b2-03-prac-18",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and say no politely. Give a reason.",
+      "listen": "Can you deliver everything by next Monday?",
+      "accepted": [
+        "I'm afraid that's not possible. We need at least two weeks",
+        "I'm afraid we can't. We need at least two weeks",
+        "Unfortunately that's not possible. We need at least two weeks",
+        "I'm sorry, but we can't. We need at least two weeks",
+        "I'm afraid not. We need at least two weeks",
+        "Unfortunately not. We need at least two weeks",
+        "I'm afraid that won't be possible. We need at least two weeks"
+      ],
+      "commonErrors": [
+        {
+          "id": "no-is-possible",
+          "match": "\\bno is possible\\b",
+          "explanation_pt": "\"Não é possível\" é \"it's not possible\" ou \"that's not possible\".",
+          "correction_en": "I'm afraid that's not possible."
+        },
+        {
+          "id": "minimum-two",
+          "match": "\\bin minimum two\\b",
+          "explanation_pt": "\"No mínimo\" é \"at least\".",
+          "correction_en": "We need at least two weeks."
+        }
+      ]
+    },
+    {
+      "id": "b2-03-prac-19",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and ask for a discount for a bigger order.",
+      "listen": "So, how many units are you thinking of ordering?",
+      "accepted": [
+        "About five hundred. Would you give us a discount for that?",
+        "Around five hundred. Can you offer a discount?",
+        "About five hundred, if you can give us a discount",
+        "Maybe five hundred. Is there a discount for that amount?",
+        "About five hundred. Could we get a discount?",
+        "Around five hundred units. Would you offer a discount?",
+        "About five hundred. What kind of discount can you offer?"
+      ],
+      "commonErrors": [
+        {
+          "id": "give-us-discount-of",
+          "match": "\\bmake (us )?a discount\\b",
+          "explanation_pt": "Desconto se \"give\" ou \"offer\", não \"make\".",
+          "correction_en": "Could you give us a discount?"
+        }
+      ]
+    },
+    {
+      "id": "b2-03-prac-20",
+      "kind": "choice",
+      "instruction_pt": "The supplier says: \"That's our bottom line.\" What does it mean?",
+      "options": [
+        "They won't go any lower",
+        "They want to stop talking",
+        "They are offering a big discount"
+      ],
+      "answer": 0,
+      "explanation_pt": "\"Bottom line\" é o limite mínimo aceitável: dali eles não descem."
+    },
+    {
+      "id": "b2-03-prac-21",
+      "kind": "choice",
+      "instruction_pt": "Which is the most diplomatic way to reject an offer?",
+      "options": [
+        "I'm afraid that doesn't quite work for us.",
+        "No, this is a bad offer.",
+        "We refuse it."
+      ],
+      "answer": 0,
+      "explanation_pt": "\"I'm afraid\" e \"not quite\" suavizam a recusa. É o tom esperado numa negociação."
+    },
+    {
+      "id": "b2-03-prac-22",
+      "kind": "fill",
+      "instruction_pt": "Complete the sentence.",
+      "sentence": "If you sign a longer contract, we ___ offer a better rate.",
+      "accepted": ["could", "can", "would", "will", "might"],
+      "commonErrors": [
+        {
+          "id": "could-to",
+          "match": "^(to|would to|could to)$",
+          "explanation_pt": "Depois do \"if\", a outra parte usa um modal: \"we could/can offer\".",
+          "correction_en": "If you sign a longer contract, we could offer a better rate."
+        }
+      ]
+    },
+    {
+      "id": "b2-03-prac-23",
+      "kind": "fill",
+      "instruction_pt": "Complete the sentence.",
+      "sentence": "Let's meet each other ___ on the price.",
+      "accepted": ["halfway"],
+      "commonErrors": [
+        {
+          "id": "half",
+          "match": "^(half|middle|in the middle)$",
+          "explanation_pt": "A expressão fixa é \"meet halfway\".",
+          "correction_en": "Let's meet each other halfway on the price."
+        }
+      ]
+    },
+    {
+      "id": "b2-03-prac-24",
+      "kind": "order",
+      "instruction_pt": "Put the words in order.",
+      "accepted": ["We'd be happy to throw in free installation"]
+    },
+    {
+      "id": "b2-03-prac-25",
+      "kind": "match",
+      "instruction_pt": "Match each expression to its meaning.",
+      "pairs": [
+        {
+          "en": "bottom line",
+          "pt": "limite mínimo"
+        },
+        {
+          "en": "to throw in",
+          "pt": "incluir de brinde"
+        },
+        {
+          "en": "counteroffer",
+          "pt": "contraproposta"
+        },
+        {
+          "en": "to meet halfway",
+          "pt": "chegar a um meio-termo"
+        },
+        {
+          "en": "upfront",
+          "pt": "adiantado"
+        }
+      ]
+    },
+    {
+      "id": "b2-03-prac-26",
+      "kind": "dialogue",
+      "instruction_pt": "Role-play. Negotiate a price with a supplier.",
+      "scene_pt": "You buy coffee for your company. You call the supplier to renew the contract. Your budget is tight.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Hi, thanks for calling. So, about the renewal: the new price is two thousand a month."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que é bem mais do que vocês pagam hoje.",
+          "accepted": [
+            "That's a lot more than we pay now",
+            "That's much more than we're paying now",
+            "That's quite a bit more than we pay now",
+            "That's a lot more than what we pay now",
+            "That's much more than we pay at the moment",
+            "That's a lot more than we're paying at the moment"
+          ],
+          "commonErrors": [
+            {
+              "id": "more-what",
+              "match": "\\bmore (of|what) we pay\\b",
+              "explanation_pt": "\"Mais do que\" é \"more than\".",
+              "correction_en": "That's a lot more than we pay now."
+            },
+            {
+              "id": "much-more-of",
+              "match": "\\bmuch more of\\b",
+              "explanation_pt": "Comparação usa \"than\": \"much more than\".",
+              "correction_en": "That's much more than we pay now."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "I understand, but our costs have gone up. What did you have in mind?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Proponha mil e oitocentos se vocês assinarem por dois anos.",
+          "accepted": [
+            "We could pay eighteen hundred if we sign for two years",
+            "We could do eighteen hundred if we sign for two years",
+            "How about eighteen hundred if we sign for two years?",
+            "What about one thousand eight hundred if we sign for two years?",
+            "How about one thousand eight hundred if we sign for two years?",
+            "We'd pay eighteen hundred if we signed for two years",
+            "If we sign for two years, could you do eighteen hundred?",
+            "If we sign for two years, would you accept eighteen hundred?"
+          ],
+          "commonErrors": [
+            {
+              "id": "if-will-sign",
+              "match": "\\bif we will sign\\b",
+              "explanation_pt": "Depois de \"if\" use o presente: \"if we sign\".",
+              "correction_en": "How about eighteen hundred if we sign for two years?"
+            },
+            {
+              "id": "by-two-years",
+              "match": "\\bsign (by|during) two years\\b",
+              "explanation_pt": "Duração de contrato: \"sign for two years\".",
+              "correction_en": "How about eighteen hundred if we sign for two years?"
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Hmm, eighteen hundred is too low. Could we meet halfway at nineteen hundred?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Aceite, mas peça a entrega de graça.",
+          "accepted": [
+            "Okay, if you include free delivery",
+            "Fine, as long as delivery is free",
+            "Okay, but only if you throw in free delivery",
+            "We can accept that if delivery is included",
+            "Okay, nineteen hundred with free delivery",
+            "Deal, if you include free delivery",
+            "That works if you include free delivery"
+          ],
+          "commonErrors": [
+            {
+              "id": "delivery-gratis",
+              "match": "\\b(gratis|of free)\\b",
+              "explanation_pt": "\"De graça\" é \"free\" ou \"for free\".",
+              "correction_en": "Okay, if you include free delivery."
+            },
+            {
+              "id": "if-will-include",
+              "match": "\\bif you will include\\b",
+              "explanation_pt": "Depois de \"if\" use o presente: \"if you include\".",
+              "correction_en": "Okay, if you include free delivery."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Free delivery it is. So, nineteen hundred a month, two years, delivery included?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Confirme que fechou e diga que manda o contrato hoje.",
+          "accepted": [
+            "It's a deal. I'll send you the contract today",
+            "Deal. I'll send the contract today",
+            "Yes, it's a deal. I'll send over the contract today",
+            "That's right, it's a deal. I'll send the contract today",
+            "Yes, we have a deal. I'll send you the contract today",
+            "It's a deal. I'll send it over today"
+          ],
+          "commonErrors": [
+            {
+              "id": "is-deal",
+              "match": "^(yes )?is a deal\\b",
+              "explanation_pt": "Falta o sujeito: \"It's a deal\".",
+              "correction_en": "It's a deal."
+            },
+            {
+              "id": "contract-to-you",
+              "match": "\\bsend to you the contract\\b",
+              "explanation_pt": "A ordem natural é \"send you the contract\" ou \"send the contract to you\".",
+              "correction_en": "I'll send you the contract today."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-03-prac-27",
+      "kind": "free_speak",
+      "instruction_pt": "Negotiate something from your daily life.",
+      "prompt_en": "You want a raise, a better price or more time for a project. How would you negotiate it?",
+      "guidelines_pt": [
+        "Make your request: \"I was hoping we could...\"",
+        "Offer something in return: \"If you can..., I could...\"",
+        "Close politely: \"Does that sound fair?\""
       ]
     }
   ]

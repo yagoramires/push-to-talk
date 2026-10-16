@@ -488,5 +488,590 @@
         }
       ]
     }
+  ],
+  "practice": [
+    {
+      "id": "b2-02-prac-1",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "Today I'd like to talk to you about our new pricing model.",
+      "accepted": ["Today I'd like to talk to you about our new pricing model."],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-02-prac-2",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "Let's move on to the next slide.",
+      "accepted": ["Let's move on to the next slide."],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-02-prac-3",
+      "kind": "repeat",
+      "instruction_pt": "Repeat. Say \"rose\" with a long \"o\".",
+      "prompt": "As you can see from this chart, sales rose sharply in March.",
+      "accepted": [
+        "As you can see from this chart, sales rose sharply in March.",
+        "As you can see in this chart, sales rose sharply in March."
+      ],
+      "commonErrors": [
+        {
+          "id": "raised",
+          "match": "\\bsales raised\\b",
+          "explanation_pt": "\"Raise\" precisa de objeto (raise prices). Sem objeto, \"subir\" é \"rise\", passado \"rose\".",
+          "correction_en": "Sales rose sharply in March."
+        }
+      ]
+    },
+    {
+      "id": "b2-02-prac-4",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "That's a great question. Let me come back to it at the end.",
+      "accepted": [
+        "That's a great question. Let me come back to it at the end.",
+        "That is a great question. Let me get back to it at the end."
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-02-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "To sum up, we've grown, but costs are growing faster.",
+      "accepted": [
+        "To sum up, we've grown, but costs are growing faster.",
+        "To sum up, we have grown, but our costs are growing faster."
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-02-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repeat. Link the words: levelled-off.",
+      "prompt": "After a strong start, the numbers levelled off in the summer.",
+      "accepted": [
+        "After a strong start, the numbers levelled off in the summer.",
+        "After a strong start, the numbers leveled off in the summer."
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-02-prac-7",
+      "kind": "vocab",
+      "word_en": "to highlight",
+      "meaning_pt": "destacar",
+      "example_en": "I'd like to highlight three key points."
+    },
+    {
+      "id": "b2-02-prac-8",
+      "kind": "vocab",
+      "word_en": "a steady increase",
+      "meaning_pt": "um aumento constante",
+      "example_en": "There has been a steady increase in online orders."
+    },
+    {
+      "id": "b2-02-prac-9",
+      "kind": "vocab",
+      "word_en": "to drop",
+      "meaning_pt": "cair",
+      "example_en": "Customer complaints dropped by fifteen percent last quarter."
+    },
+    {
+      "id": "b2-02-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Vou dividir minha apresentação em três partes.\"",
+      "accepted": [
+        "I'm going to divide my presentation into three parts",
+        "I'll divide my presentation into three parts",
+        "I've divided my presentation into three parts",
+        "I'm going to split my presentation into three parts",
+        "I'll split my presentation into three parts",
+        "My presentation is divided into three parts",
+        "My presentation has three parts",
+        "I'm going to break my presentation into three parts"
+      ],
+      "commonErrors": [
+        {
+          "id": "divide-in",
+          "match": "\\b(divide|split|break) my presentation in\\b",
+          "explanation_pt": "Dividir em partes: \"divide into\" (com \"into\"), não \"in\".",
+          "correction_en": "I'm going to divide my presentation into three parts."
+        },
+        {
+          "id": "apresentation",
+          "match": "\\bapresentation\\b",
+          "explanation_pt": "Em inglês é \"presentation\", sem o \"a\" do começo.",
+          "correction_en": "I'm going to divide my presentation into three parts."
+        }
+      ]
+    },
+    {
+      "id": "b2-02-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"As vendas caíram 10% no último trimestre.\"",
+      "accepted": [
+        "Sales fell by ten percent last quarter",
+        "Sales dropped by ten percent last quarter",
+        "Sales fell ten percent last quarter",
+        "Sales dropped ten percent last quarter",
+        "Sales went down by ten percent last quarter",
+        "Sales went down ten percent last quarter",
+        "Sales decreased by ten percent last quarter",
+        "Sales fell by ten percent in the last quarter",
+        "Sales dropped by ten percent in the last quarter",
+        "Sales declined by ten percent last quarter"
+      ],
+      "commonErrors": [
+        {
+          "id": "falled",
+          "match": "\\b(falled|felt)\\b",
+          "explanation_pt": "O passado de \"fall\" é \"fell\". \"Felt\" é passado de \"feel\" (sentir).",
+          "correction_en": "Sales fell by ten percent last quarter."
+        },
+        {
+          "id": "in-last-trimester",
+          "match": "\\btrimester\\b",
+          "explanation_pt": "\"Trimestre\" de empresa é \"quarter\". \"Trimester\" é usado para gravidez ou período escolar.",
+          "correction_en": "Sales fell by ten percent last quarter."
+        }
+      ]
+    },
+    {
+      "id": "b2-02-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Passando para o próximo ponto, vamos falar do orçamento.\"",
+      "accepted": [
+        "Moving on to the next point, let's talk about the budget",
+        "Moving on to the next point, let's look at the budget",
+        "Moving on, let's talk about the budget",
+        "Moving on to my next point, let's talk about the budget",
+        "Now, moving on to the next point, let's talk about the budget",
+        "Moving on to the next point, I'll talk about the budget",
+        "Let's move on to the next point, the budget"
+      ],
+      "commonErrors": [
+        {
+          "id": "passing-to",
+          "match": "\\bpassing (to|for)\\b",
+          "explanation_pt": "\"Passando para...\" numa apresentação é \"moving on to...\". \"Passing\" é tradução literal.",
+          "correction_en": "Moving on to the next point, let's talk about the budget."
+        },
+        {
+          "id": "orcament",
+          "match": "\\borcament",
+          "explanation_pt": "\"Orçamento\" é \"budget\".",
+          "correction_en": "Let's talk about the budget."
+        }
+      ]
+    },
+    {
+      "id": "b2-02-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Esse gráfico mostra nossos resultados dos últimos cinco anos.\"",
+      "accepted": [
+        "This chart shows our results over the last five years",
+        "This chart shows our results for the last five years",
+        "This chart shows our results from the last five years",
+        "This graph shows our results over the last five years",
+        "This graph shows our results for the last five years",
+        "This chart shows our results over the past five years",
+        "This graph shows our results over the past five years",
+        "This chart shows our results in the last five years"
+      ],
+      "commonErrors": [
+        {
+          "id": "graphic",
+          "match": "\\bgraphic\\b",
+          "explanation_pt": "\"Gráfico\" de dados é \"chart\" ou \"graph\". \"Graphic\" é uma imagem, uma arte.",
+          "correction_en": "This chart shows our results over the last five years."
+        },
+        {
+          "id": "show-without-s",
+          "match": "\\bthis (chart|graph) show\\b",
+          "explanation_pt": "\"This chart\" é terceira pessoa: \"shows\".",
+          "correction_en": "This chart shows our results over the last five years."
+        }
+      ]
+    },
+    {
+      "id": "b2-02-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Alguém tem alguma pergunta?\"",
+      "accepted": [
+        "Does anyone have any questions?",
+        "Does anybody have any questions?",
+        "Has anyone got any questions?",
+        "Any questions?",
+        "Are there any questions?",
+        "Does anyone have a question?",
+        "Do you have any questions?"
+      ],
+      "commonErrors": [
+        {
+          "id": "someone-has",
+          "match": "\\b(someone|somebody|anyone) has (any|a|some) question",
+          "explanation_pt": "Na pergunta use \"does\": \"Does anyone have any questions?\"",
+          "correction_en": "Does anyone have any questions?"
+        }
+      ]
+    },
+    {
+      "id": "b2-02-prac-15",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Em resumo, o projeto está dentro do prazo e do orçamento.\"",
+      "accepted": [
+        "To sum up, the project is on time and on budget",
+        "To sum up, the project is on schedule and on budget",
+        "In short, the project is on time and on budget",
+        "To summarize, the project is on time and on budget",
+        "To summarise, the project is on time and on budget",
+        "In summary, the project is on time and on budget",
+        "To sum up, the project is on time and within budget",
+        "In short, the project is on schedule and within budget"
+      ],
+      "commonErrors": [
+        {
+          "id": "in-resume",
+          "match": "\\b(in resume|resuming)\\b",
+          "explanation_pt": "\"Resume\" em inglês é currículo ou retomar. \"Em resumo\" é \"to sum up\" ou \"in short\".",
+          "correction_en": "To sum up, the project is on time and on budget."
+        },
+        {
+          "id": "inside-the-deadline",
+          "match": "\\binside the (deadline|prize|prazo)\\b",
+          "explanation_pt": "\"Dentro do prazo\" é \"on time\" ou \"on schedule\".",
+          "correction_en": "The project is on time and on budget."
+        }
+      ]
+    },
+    {
+      "id": "b2-02-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and say that you will answer at the end.",
+      "listen": "Sorry to interrupt, but where does this data come from?",
+      "accepted": [
+        "Good question. I'll come back to it at the end",
+        "Good question. I'll get back to that at the end",
+        "Great question. Can I answer it at the end?",
+        "Good question. I'll answer that at the end",
+        "Great question. I'll come to that at the end",
+        "That's a good question. I'll answer it at the end",
+        "Could I come back to that at the end?",
+        "I'll cover that at the end, if that's okay"
+      ],
+      "commonErrors": [
+        {
+          "id": "in-the-end",
+          "match": "\\bin the end\\b",
+          "explanation_pt": "\"In the end\" é \"no fim das contas\". \"No final (da apresentação)\" é \"at the end\".",
+          "correction_en": "Good question. I'll come back to it at the end."
+        }
+      ]
+    },
+    {
+      "id": "b2-02-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and describe the trend: sales went up a lot.",
+      "listen": "So, what happened to sales after the new campaign?",
+      "accepted": [
+        "Sales rose sharply",
+        "They rose sharply",
+        "They went up a lot",
+        "Sales went up a lot",
+        "Sales increased sharply",
+        "They increased sharply",
+        "Sales went up sharply",
+        "They went up sharply",
+        "Sales rose a lot",
+        "They rose a lot",
+        "They increased a lot"
+      ],
+      "commonErrors": [
+        {
+          "id": "raised",
+          "match": "\\b(sales|they) raised\\b",
+          "explanation_pt": "Sem objeto, \"subir\" é \"rise\", passado \"rose\". \"Raise\" pede objeto: \"we raised prices\".",
+          "correction_en": "Sales rose sharply."
+        },
+        {
+          "id": "rised",
+          "match": "\\brised\\b",
+          "explanation_pt": "\"Rise\" é irregular: o passado é \"rose\".",
+          "correction_en": "Sales rose sharply."
+        }
+      ]
+    },
+    {
+      "id": "b2-02-prac-18",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and say that the numbers stayed stable.",
+      "listen": "And what about the second half of the year?",
+      "accepted": [
+        "The numbers levelled off",
+        "The numbers leveled off",
+        "They levelled off",
+        "They leveled off",
+        "They stayed stable",
+        "The numbers stayed stable",
+        "They remained stable",
+        "The numbers remained stable",
+        "They stayed the same",
+        "Things levelled off",
+        "Things leveled off"
+      ],
+      "commonErrors": [
+        {
+          "id": "stayed-stables",
+          "match": "\\bstables\\b",
+          "explanation_pt": "Adjetivo em inglês não vai para o plural: \"stable\", nunca \"stables\".",
+          "correction_en": "They stayed stable."
+        }
+      ]
+    },
+    {
+      "id": "b2-02-prac-19",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and say what your talk is about.",
+      "listen": "Before you start, can you tell us what your presentation is about?",
+      "accepted": [
+        "It's about our new marketing strategy",
+        "My presentation is about our new marketing strategy",
+        "Today I'm going to talk about our new marketing strategy",
+        "I'm going to talk about our new marketing strategy",
+        "I'll be talking about our new marketing strategy",
+        "It's about the new marketing strategy",
+        "I'm going to present our new marketing strategy"
+      ],
+      "commonErrors": [
+        {
+          "id": "talk-about-of",
+          "match": "\\btalk (about )?of\\b",
+          "explanation_pt": "Falar sobre algo: \"talk about\", sem \"of\".",
+          "correction_en": "I'm going to talk about our new marketing strategy."
+        },
+        {
+          "id": "speak-about-to",
+          "match": "\\bis about of\\b",
+          "explanation_pt": "Use \"is about\", sem \"of\".",
+          "correction_en": "It's about our new marketing strategy."
+        }
+      ]
+    },
+    {
+      "id": "b2-02-prac-20",
+      "kind": "choice",
+      "instruction_pt": "Which phrase is best to change topic in a presentation?",
+      "options": ["Moving on to...", "Passing to...", "Changing the subject of..."],
+      "answer": 0,
+      "explanation_pt": "\"Moving on to...\" é o conectivo padrão para passar ao próximo ponto."
+    },
+    {
+      "id": "b2-02-prac-21",
+      "kind": "choice",
+      "instruction_pt": "\"The figures levelled off.\" What happened?",
+      "options": ["They stopped changing much", "They went up quickly", "They dropped to zero"],
+      "answer": 0,
+      "explanation_pt": "\"Level off\" é estabilizar depois de subir ou cair."
+    },
+    {
+      "id": "b2-02-prac-22",
+      "kind": "fill",
+      "instruction_pt": "Complete the sentence.",
+      "sentence": "Sales rose ___ 20% compared to last year.",
+      "accepted": ["by"],
+      "commonErrors": [
+        {
+          "id": "rose-in",
+          "match": "^(in|with|of|on)$",
+          "explanation_pt": "Para a quantidade da mudança usamos \"by\": \"rose by 20%\".",
+          "correction_en": "Sales rose by 20%."
+        }
+      ]
+    },
+    {
+      "id": "b2-02-prac-23",
+      "kind": "fill",
+      "instruction_pt": "Complete the sentence.",
+      "sentence": "I'd like to ___ three key points before we finish.",
+      "accepted": ["highlight", "stress", "emphasize", "emphasise", "underline"],
+      "commonErrors": [
+        {
+          "id": "detach",
+          "match": "^(detach|distaque|destach)$",
+          "explanation_pt": "\"Destacar\" um ponto é \"highlight\" ou \"stress\". \"Detach\" é soltar, separar.",
+          "correction_en": "I'd like to highlight three key points."
+        }
+      ]
+    },
+    {
+      "id": "b2-02-prac-24",
+      "kind": "order",
+      "instruction_pt": "Put the words in order to open a talk.",
+      "accepted": ["Let me give you a quick overview of the plan"]
+    },
+    {
+      "id": "b2-02-prac-25",
+      "kind": "match",
+      "instruction_pt": "Match each expression to its meaning.",
+      "pairs": [
+        {
+          "en": "to rise sharply",
+          "pt": "subir muito"
+        },
+        {
+          "en": "to level off",
+          "pt": "estabilizar"
+        },
+        {
+          "en": "to drop",
+          "pt": "cair"
+        },
+        {
+          "en": "a steady increase",
+          "pt": "um aumento constante"
+        },
+        {
+          "en": "to sum up",
+          "pt": "resumir"
+        }
+      ]
+    },
+    {
+      "id": "b2-02-prac-26",
+      "kind": "dialogue",
+      "instruction_pt": "Role-play. Answer questions after your presentation.",
+      "scene_pt": "You just presented quarterly results to the directors. Now there is a Q&A session.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Thanks for that. Could you go back to the slide with the sales chart?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que claro e pergunte se é este aqui.",
+          "accepted": [
+            "Sure. Is it this one?",
+            "Of course. Is this the one?",
+            "Sure. This one?",
+            "Of course. Is it this one?",
+            "Sure, is this the one you mean?",
+            "Of course. This one here?"
+          ],
+          "commonErrors": [
+            {
+              "id": "is-this-one-question",
+              "match": "\\bit is this one\\b$",
+              "explanation_pt": "Na pergunta, o verbo vem antes: \"Is it this one?\"",
+              "correction_en": "Is it this one?"
+            },
+            {
+              "id": "clear",
+              "match": "^clear\\b",
+              "explanation_pt": "\"Claro\" como resposta é \"sure\" ou \"of course\". \"Clear\" é \"nítido\".",
+              "correction_en": "Sure. Is it this one?"
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Yes. Why did sales drop so much in April?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Explique que um dos principais clientes cancelou o contrato.",
+          "accepted": [
+            "Because one of our main clients cancelled their contract",
+            "Because one of our main clients canceled their contract",
+            "One of our main clients cancelled their contract",
+            "One of our main clients canceled their contract",
+            "Because one of our biggest clients cancelled their contract",
+            "One of our biggest clients cancelled the contract",
+            "Mainly because one of our key clients cancelled their contract",
+            "Because one of our main customers cancelled their contract"
+          ],
+          "commonErrors": [
+            {
+              "id": "one-of-client",
+              "match": "\\bone of our (main |biggest |key )?(client|customer)\\b(?!s)",
+              "explanation_pt": "Depois de \"one of\" o substantivo vai para o plural: \"one of our main clients\".",
+              "correction_en": "One of our main clients cancelled their contract."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "I see. And do you expect them to come back?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que provavelmente não, mas que vocês já têm dois clientes novos.",
+          "accepted": [
+            "Probably not, but we already have two new clients",
+            "Probably not, but we've already got two new clients",
+            "Probably not, but we already have two new customers",
+            "Probably not, but we've already signed two new clients",
+            "I don't think so, but we already have two new clients"
+          ],
+          "commonErrors": [
+            {
+              "id": "probably-no",
+              "match": "^probably no\\b",
+              "explanation_pt": "\"Provavelmente não\" é \"probably not\", não \"probably no\".",
+              "correction_en": "Probably not, but we already have two new clients."
+            },
+            {
+              "id": "clients-news",
+              "match": "\\bnews clients\\b",
+              "explanation_pt": "Adjetivo não tem plural: \"new clients\".",
+              "correction_en": "We already have two new clients."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "That's good to hear. One last thing: when will we see results from the new campaign?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que espera ver resultados no próximo trimestre.",
+          "accepted": [
+            "I expect to see results next quarter",
+            "We expect to see results next quarter",
+            "I hope to see results next quarter",
+            "We should see results next quarter",
+            "We should start seeing results next quarter",
+            "I think we'll see results next quarter",
+            "We expect to see results in the next quarter"
+          ],
+          "commonErrors": [
+            {
+              "id": "wait-results",
+              "match": "\\bwait (to see )?results\\b",
+              "explanation_pt": "\"Esperar\" no sentido de prever é \"expect\". \"Wait\" é aguardar.",
+              "correction_en": "I expect to see results next quarter."
+            },
+            {
+              "id": "trimester",
+              "match": "\\btrimester\\b",
+              "explanation_pt": "Trimestre de empresa é \"quarter\".",
+              "correction_en": "I expect to see results next quarter."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-02-prac-27",
+      "kind": "free_speak",
+      "instruction_pt": "Describe a trend from your work or life, like you would in a presentation.",
+      "prompt_en": "Can you describe something that has changed a lot over the last few years, using numbers if you can?",
+      "guidelines_pt": [
+        "Introduce it: \"I'd like to talk about...\"",
+        "Describe the trend: \"It rose sharply / dropped / levelled off...\"",
+        "Finish with: \"To sum up...\""
+      ]
+    }
   ]
 }

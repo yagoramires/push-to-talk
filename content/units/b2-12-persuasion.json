@@ -506,5 +506,580 @@
         }
       ]
     }
+  ],
+  "practice": [
+    {
+      "id": "b2-12-prac-1",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "Think about it: in the long run, it'll save us a lot of money.",
+      "accepted": ["Think about it: in the long run, it'll save us a lot of money."],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-12-prac-2",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "I know it sounds expensive, but it'll pay off within a year.",
+      "accepted": ["I know it sounds expensive, but it'll pay off within a year."],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-12-prac-3",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "It's a win-win situation for everyone.",
+      "accepted": ["It's a win-win situation for everyone.", "It's a win-win for everyone."],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-12-prac-4",
+      "kind": "repeat",
+      "instruction_pt": "Repeat. Your voice goes down at the end.",
+      "prompt": "What have we got to lose?",
+      "accepted": ["What have we got to lose?", "What do we have to lose?"],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-12-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "I understand your concerns, but let me explain why this works.",
+      "accepted": [
+        "I understand your concerns, but let me explain why this works.",
+        "I understand your concern, but let me explain why this works."
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-12-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "Imagine how much time we could save every week.",
+      "accepted": [
+        "Imagine how much time we could save every week.",
+        "Just imagine how much time we could save every week."
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-12-prac-7",
+      "kind": "vocab",
+      "word_en": "to be worth it",
+      "meaning_pt": "valer a pena",
+      "example_en": "It's a lot of work, but it's totally worth it."
+    },
+    {
+      "id": "b2-12-prac-8",
+      "kind": "vocab",
+      "word_en": "to give it a try",
+      "meaning_pt": "tentar, experimentar",
+      "example_en": "Why don't we give it a try for one month?"
+    },
+    {
+      "id": "b2-12-prac-9",
+      "kind": "vocab",
+      "word_en": "to convince",
+      "meaning_pt": "convencer",
+      "example_en": "She finally convinced her parents to let her travel alone."
+    },
+    {
+      "id": "b2-12-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Foi muito trabalho, mas valeu muito a pena.\"",
+      "accepted": [
+        "It was a lot of work, but it was totally worth it",
+        "It was a lot of work, but it was really worth it",
+        "It was a lot of work, but it was definitely worth it",
+        "It was hard work, but it was totally worth it",
+        "It was a lot of work, but it was so worth it",
+        "It took a lot of work, but it was really worth it"
+      ],
+      "commonErrors": [
+        {
+          "id": "worth-the-pain",
+          "match": "\\bworth the (pain|penalty|feather)\\b",
+          "explanation_pt": "\"Valer a pena\" não se traduz palavra por palavra. Use \"it was worth it\".",
+          "correction_en": "It was a lot of work, but it was totally worth it."
+        },
+        {
+          "id": "valued",
+          "match": "\\bit valued\\b",
+          "explanation_pt": "\"Valeu a pena\" é \"it was worth it\".",
+          "correction_en": "It was a lot of work, but it was totally worth it."
+        }
+      ]
+    },
+    {
+      "id": "b2-12-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Esse investimento vai compensar a longo prazo.\"",
+      "accepted": [
+        "This investment will pay off in the long run",
+        "This investment'll pay off in the long run",
+        "This investment will pay off in the long term",
+        "In the long run, this investment will pay off",
+        "This investment is going to pay off in the long run",
+        "This investment will be worth it in the long run"
+      ],
+      "commonErrors": [
+        {
+          "id": "long-term-run",
+          "match": "\\bin the long (term run|time)\\b",
+          "explanation_pt": "\"A longo prazo\" é \"in the long run\" ou \"in the long term\".",
+          "correction_en": "It will pay off in the long run."
+        },
+        {
+          "id": "compensate",
+          "match": "\\bcompensate\\b",
+          "explanation_pt": "\"Compensar\" (valer a pena) é \"pay off\" ou \"be worth it\". \"Compensate\" é indenizar.",
+          "correction_en": "This investment will pay off in the long run."
+        }
+      ]
+    },
+    {
+      "id": "b2-12-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Por que a gente não testa por um mês?\"",
+      "accepted": [
+        "Why don't we try it for a month?",
+        "Why don't we test it for a month?",
+        "Why don't we give it a try for a month?",
+        "Why don't we try it for one month?",
+        "How about trying it for a month?",
+        "Why don't we give it a go for a month?",
+        "Why not try it for a month?"
+      ],
+      "commonErrors": [
+        {
+          "id": "by-a-month",
+          "match": "\\b(by|during) (a|one) month\\b",
+          "explanation_pt": "Duração: \"for a month\".",
+          "correction_en": "Why don't we try it for a month?"
+        },
+        {
+          "id": "why-we-dont",
+          "match": "\\bwhy we (do not|dont)\\b",
+          "explanation_pt": "Na pergunta, o auxiliar vem antes: \"Why don't we...?\"",
+          "correction_en": "Why don't we try it for a month?"
+        }
+      ]
+    },
+    {
+      "id": "b2-12-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Todo mundo sai ganhando.\"",
+      "accepted": [
+        "It's a win-win",
+        "It's a win-win situation",
+        "Everyone wins",
+        "Everybody wins",
+        "It's good for everyone",
+        "Everybody comes out ahead"
+      ],
+      "commonErrors": [
+        {
+          "id": "all-world",
+          "match": "\\ball (the )?world\\b",
+          "explanation_pt": "\"Todo mundo\" é \"everyone\" ou \"everybody\". \"All the world\" é o mundo inteiro.",
+          "correction_en": "Everyone wins."
+        },
+        {
+          "id": "everyone-win",
+          "match": "\\beveryone win\\b$",
+          "explanation_pt": "\"Everyone\" é singular: \"everyone wins\".",
+          "correction_en": "Everyone wins."
+        }
+      ]
+    },
+    {
+      "id": "b2-12-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Eu entendo sua preocupação, mas os números mostram o contrário.\"",
+      "accepted": [
+        "I understand your concern, but the numbers show the opposite",
+        "I understand your concern, but the figures show the opposite",
+        "I understand your concern, but the data shows the opposite",
+        "I see your concern, but the numbers show the opposite",
+        "I understand your concern, but the numbers say otherwise",
+        "I understand your concerns, but the numbers show the opposite",
+        "I get your concern, but the numbers show otherwise"
+      ],
+      "commonErrors": [
+        {
+          "id": "preoccupation",
+          "match": "\\bpreoccupation\\b",
+          "explanation_pt": "\"Preocupação\" é \"concern\" ou \"worry\". \"Preoccupation\" é obsessão.",
+          "correction_en": "I understand your concern."
+        },
+        {
+          "id": "the-contrary",
+          "match": "\\bshow the contrary\\b",
+          "explanation_pt": "O natural é \"show the opposite\" ou \"say otherwise\".",
+          "correction_en": "The numbers show the opposite."
+        }
+      ]
+    },
+    {
+      "id": "b2-12-prac-15",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Se a gente não mudar agora, vamos perder clientes.\"",
+      "accepted": [
+        "If we don't change now, we'll lose customers",
+        "If we don't change now, we're going to lose customers",
+        "If we don't change now, we'll lose clients",
+        "If we don't make changes now, we'll lose customers",
+        "Unless we change now, we'll lose customers"
+      ],
+      "commonErrors": [
+        {
+          "id": "if-will-not",
+          "match": "\\bif we will not\\b",
+          "explanation_pt": "Depois de \"if\" use o presente: \"if we don't change\".",
+          "correction_en": "If we don't change now, we'll lose customers."
+        },
+        {
+          "id": "loose",
+          "match": "\\bloose\\b",
+          "explanation_pt": "\"Perder\" é \"lose\" (com um \"o\"). \"Loose\" é frouxo.",
+          "correction_en": "We'll lose customers."
+        }
+      ]
+    },
+    {
+      "id": "b2-12-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and answer the objection. Mention the long run.",
+      "listen": "But the new software is so expensive!",
+      "accepted": [
+        "I know, but it'll pay off in the long run",
+        "It is, but in the long run it'll save us money",
+        "True, but it'll pay for itself in the long run",
+        "I know it's expensive, but in the long run it's worth it",
+        "Yes, but in the long run we'll save money",
+        "It's expensive now, but it'll pay off in the long term"
+      ],
+      "commonErrors": [
+        {
+          "id": "long-term-run",
+          "match": "\\bin the long (term run|time)\\b",
+          "explanation_pt": "\"A longo prazo\" é \"in the long run\" ou \"in the long term\".",
+          "correction_en": "It will pay off in the long run."
+        },
+        {
+          "id": "economize",
+          "match": "\\beconomi[sz]e\\b",
+          "explanation_pt": "\"Economizar\" é \"save\".",
+          "correction_en": "In the long run it'll save us money."
+        }
+      ]
+    },
+    {
+      "id": "b2-12-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and suggest a trial. Use \"give it a try\".",
+      "listen": "I'm not sure the team will like the new schedule.",
+      "accepted": [
+        "Why don't we give it a try for a few weeks?",
+        "Let's give it a try and see what happens",
+        "We could give it a try for a month",
+        "Why not give it a try first?",
+        "Let's just give it a try",
+        "How about giving it a try for two weeks?"
+      ],
+      "commonErrors": [
+        {
+          "id": "give-a-try-it",
+          "match": "\\bgive a try (to )?it\\b",
+          "explanation_pt": "A ordem é \"give it a try\".",
+          "correction_en": "Why don't we give it a try?"
+        },
+        {
+          "id": "make-a-try",
+          "match": "\\bmake a (try|tentative)\\b",
+          "explanation_pt": "\"Tentar\" é \"give it a try\" ou \"try\".",
+          "correction_en": "Let's give it a try."
+        }
+      ]
+    },
+    {
+      "id": "b2-12-prac-18",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and close your argument with a question.",
+      "listen": "Okay, I see the benefits, but I'm still a bit worried.",
+      "accepted": [
+        "I understand. But what have we got to lose?",
+        "I get it, but what do we have to lose?",
+        "What have we got to lose?",
+        "What do we have to lose?",
+        "Fair enough. But what's the worst that could happen?",
+        "I understand, but what's the worst that can happen?"
+      ],
+      "commonErrors": [
+        {
+          "id": "what-we-have",
+          "match": "\\bwhat we have to lose\\b",
+          "explanation_pt": "Na pergunta use o auxiliar: \"What do we have to lose?\" ou \"What have we got to lose?\"",
+          "correction_en": "What have we got to lose?"
+        },
+        {
+          "id": "loose",
+          "match": "\\bloose\\b",
+          "explanation_pt": "\"Perder\" é \"lose\", não \"loose\".",
+          "correction_en": "What have we got to lose?"
+        }
+      ]
+    },
+    {
+      "id": "b2-12-prac-19",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and explain why it is a win-win.",
+      "listen": "So why would the clients agree to this?",
+      "accepted": [
+        "Because it's a win-win. They pay less and we sell more",
+        "It's a win-win: they save money and we get more sales",
+        "Because they save money and we keep the client. It's a win-win",
+        "Because both sides benefit. It's a win-win",
+        "It's a win-win situation. Everyone benefits"
+      ],
+      "commonErrors": [
+        {
+          "id": "everyone-gain",
+          "match": "\\b(both|everyone) (gain|gains)\\b",
+          "explanation_pt": "\"Ganhar\" (sair ganhando) aqui é \"benefit\" ou \"win\".",
+          "correction_en": "Both sides benefit."
+        },
+        {
+          "id": "win-win-the",
+          "match": "\\bis win win\\b",
+          "explanation_pt": "Use o artigo: \"it's a win-win\".",
+          "correction_en": "It's a win-win."
+        }
+      ]
+    },
+    {
+      "id": "b2-12-prac-20",
+      "kind": "choice",
+      "instruction_pt": "Which sentence is most persuasive?",
+      "options": [
+        "Imagine how much easier our work would be.",
+        "You must do this.",
+        "This is the only option, obviously."
+      ],
+      "answer": 0,
+      "explanation_pt": "Fazer a pessoa imaginar o benefício convence mais do que ordens ou \"obviously\"."
+    },
+    {
+      "id": "b2-12-prac-21",
+      "kind": "choice",
+      "instruction_pt": "\"It'll pay off.\" What does it mean?",
+      "options": [
+        "It will bring good results later",
+        "We will pay the bill",
+        "It will be cancelled"
+      ],
+      "answer": 0,
+      "explanation_pt": "\"Pay off\" é dar resultado, compensar o esforço ou o investimento."
+    },
+    {
+      "id": "b2-12-prac-22",
+      "kind": "fill",
+      "instruction_pt": "Complete the sentence.",
+      "sentence": "Trust me, it's ___ the effort.",
+      "accepted": ["worth"],
+      "commonErrors": [
+        {
+          "id": "value",
+          "match": "^(value|worthy|worth of)$",
+          "explanation_pt": "\"Vale o esforço\" é \"worth the effort\".",
+          "correction_en": "It's worth the effort."
+        }
+      ]
+    },
+    {
+      "id": "b2-12-prac-23",
+      "kind": "fill",
+      "instruction_pt": "Complete the sentence.",
+      "sentence": "All that hard work will pay ___ in the end.",
+      "accepted": ["off"],
+      "commonErrors": [
+        {
+          "id": "pay-out",
+          "match": "^(out|up|back|on)$",
+          "explanation_pt": "\"Pay off\" é dar resultado.",
+          "correction_en": "All that hard work will pay off."
+        }
+      ]
+    },
+    {
+      "id": "b2-12-prac-24",
+      "kind": "order",
+      "instruction_pt": "Put the words in order.",
+      "accepted": ["Let's give it a try for a month and see"]
+    },
+    {
+      "id": "b2-12-prac-25",
+      "kind": "match",
+      "instruction_pt": "Match each expression to its meaning.",
+      "pairs": [
+        {
+          "en": "in the long run",
+          "pt": "a longo prazo"
+        },
+        {
+          "en": "to pay off",
+          "pt": "compensar, dar resultado"
+        },
+        {
+          "en": "win-win",
+          "pt": "bom para os dois lados"
+        },
+        {
+          "en": "to be worth it",
+          "pt": "valer a pena"
+        },
+        {
+          "en": "to give it a try",
+          "pt": "experimentar"
+        }
+      ]
+    },
+    {
+      "id": "b2-12-prac-26",
+      "kind": "dialogue",
+      "instruction_pt": "Role-play. Convince your manager.",
+      "scene_pt": "You want your team to work from home on Fridays. You talk to your manager, Karen.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "So, you wanted to talk about working from home on Fridays?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que sim e que acha que isso aumentaria a produtividade.",
+          "accepted": [
+            "Yes, I think it would increase productivity",
+            "Yes. I think it would make us more productive",
+            "Yes, I believe it would improve productivity",
+            "Yes, I think it would boost our productivity",
+            "Yes, I think we would be more productive",
+            "Yes. I really think it would increase productivity"
+          ],
+          "commonErrors": [
+            {
+              "id": "augment",
+              "match": "\\baugment\\b",
+              "explanation_pt": "\"Aumentar\" é \"increase\" ou \"boost\". \"Augment\" é muito formal.",
+              "correction_en": "I think it would increase productivity."
+            },
+            {
+              "id": "productivity-will-would",
+              "match": "\\bit will increase\\b",
+              "explanation_pt": "Para algo hipotético use \"would\": \"it would increase\".",
+              "correction_en": "I think it would increase productivity."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Hmm. My worry is that people won't actually work."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que entende a preocupação, mas que poderiam medir os resultados.",
+          "accepted": [
+            "I understand your concern, but we could measure the results",
+            "I understand the concern, but we could track the results",
+            "I see your point, but we could measure our results",
+            "I get your worry, but we could measure the results",
+            "I understand, but we could check the results every week",
+            "That's a fair concern, but we could track our results"
+          ],
+          "commonErrors": [
+            {
+              "id": "preoccupation",
+              "match": "\\bpreoccupation\\b",
+              "explanation_pt": "\"Preocupação\" é \"concern\" ou \"worry\".",
+              "correction_en": "I understand your concern."
+            },
+            {
+              "id": "measure-the-results-could-to",
+              "match": "\\bcould to\\b",
+              "explanation_pt": "Depois de \"could\" o verbo vem sem \"to\".",
+              "correction_en": "We could measure the results."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "That's true. But what about meetings with clients on Fridays?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que podem fazer por vídeo e que os clientes até preferem.",
+          "accepted": [
+            "We can do them by video, and the clients even prefer it",
+            "We could do them online, and clients actually prefer it",
+            "We can have them on video, and the clients actually prefer that",
+            "We can do video calls. Clients actually prefer them",
+            "They can be online. Many clients prefer that anyway"
+          ],
+          "commonErrors": [
+            {
+              "id": "for-video",
+              "match": "\\b(for|in) video\\b",
+              "explanation_pt": "\"Por vídeo\" é \"by video\", \"on video\" ou \"online\".",
+              "correction_en": "We can do them by video."
+            },
+            {
+              "id": "until-prefer",
+              "match": "\\buntil prefer\\b",
+              "explanation_pt": "\"Até\" (mesmo) é \"even\" ou \"actually\", não \"until\".",
+              "correction_en": "Clients even prefer it."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Okay, you're making a good case. I'm still not completely sure, though."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Sugira testar por um mês e feche com \"O que temos a perder?\".",
+          "accepted": [
+            "Why don't we try it for a month? What have we got to lose?",
+            "Let's try it for a month. What have we got to lose?",
+            "Why don't we give it a try for a month? What do we have to lose?",
+            "Let's give it a try for one month. What have we got to lose?",
+            "How about a one-month trial? What do we have to lose?"
+          ],
+          "commonErrors": [
+            {
+              "id": "what-we-have",
+              "match": "\\bwhat we have to lose\\b",
+              "explanation_pt": "Na pergunta use o auxiliar: \"What do we have to lose?\"",
+              "correction_en": "What have we got to lose?"
+            },
+            {
+              "id": "during-a-month",
+              "match": "\\b(during|by) (a|one) month\\b",
+              "explanation_pt": "Duração: \"for a month\".",
+              "correction_en": "Why don't we try it for a month?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-12-prac-27",
+      "kind": "free_speak",
+      "instruction_pt": "Persuade someone to try something new.",
+      "prompt_en": "Convince me to start a new habit: maybe exercising, reading more or learning to cook.",
+      "guidelines_pt": [
+        "Show the benefits: \"Imagine how much better you'd feel...\"",
+        "Answer an objection: \"I know it takes time, but in the long run...\"",
+        "Close with a question: \"What have you got to lose?\""
+      ]
+    }
   ]
 }

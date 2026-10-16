@@ -505,5 +505,589 @@
         }
       ]
     }
+  ],
+  "practice": [
+    {
+      "id": "b2-07-prac-1",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "On the one hand, social media keeps us connected. On the other hand, it can be addictive.",
+      "accepted": [
+        "On the one hand, social media keeps us connected. On the other hand, it can be addictive."
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-07-prac-2",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "I agree with you to some extent, but it's more complicated than that.",
+      "accepted": [
+        "I agree with you to some extent, but it's more complicated than that.",
+        "I agree with you to a certain extent, but it's more complicated than that."
+      ],
+      "commonErrors": [
+        {
+          "id": "am-agree",
+          "match": "\\bi am (not )?agree\\b",
+          "explanation_pt": "\"Agree\" é verbo: \"I agree\" / \"I don't agree\".",
+          "correction_en": "I agree to some extent."
+        }
+      ]
+    },
+    {
+      "id": "b2-07-prac-3",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "The main downside of remote work is feeling isolated.",
+      "accepted": [
+        "The main downside of remote work is feeling isolated.",
+        "The biggest downside of remote work is feeling isolated."
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-07-prac-4",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "It's hard to say. It depends on the situation.",
+      "accepted": [
+        "It's hard to say. It depends on the situation.",
+        "It's hard to say. It really depends on the situation."
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-07-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "Big cities offer more opportunities, but life there is much more expensive.",
+      "accepted": ["Big cities offer more opportunities, but life there is much more expensive."],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-07-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repeat. Stress \"entirely\".",
+      "prompt": "I'm not entirely convinced that banning phones in schools would work.",
+      "accepted": [
+        "I'm not entirely convinced that banning phones in schools would work.",
+        "I'm not completely convinced that banning phones in schools would work."
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-07-prac-7",
+      "kind": "vocab",
+      "word_en": "to be in favour of",
+      "meaning_pt": "ser a favor de",
+      "example_en": "I'm in favour of a four-day working week."
+    },
+    {
+      "id": "b2-07-prac-8",
+      "kind": "vocab",
+      "word_en": "to have a point",
+      "meaning_pt": "ter razão em parte",
+      "example_en": "You have a point, but I still think it's risky."
+    },
+    {
+      "id": "b2-07-prac-9",
+      "kind": "vocab",
+      "word_en": "the cost of living",
+      "meaning_pt": "o custo de vida",
+      "example_en": "The cost of living in São Paulo has gone up a lot."
+    },
+    {
+      "id": "b2-07-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Por um lado, trabalhar de casa economiza tempo.\"",
+      "accepted": [
+        "On the one hand, working from home saves time",
+        "On one hand, working from home saves time",
+        "On the one hand, working from home saves you time",
+        "On the one hand, remote work saves time",
+        "On the one hand, working remotely saves time"
+      ],
+      "commonErrors": [
+        {
+          "id": "for-one-side",
+          "match": "\\b(for|by) one side\\b",
+          "explanation_pt": "\"Por um lado\" é \"on the one hand\".",
+          "correction_en": "On the one hand, working from home saves time."
+        },
+        {
+          "id": "work-from-home-economize",
+          "match": "\\beconomi[sz]es? time\\b",
+          "explanation_pt": "\"Economizar tempo/dinheiro\" é \"save time/money\".",
+          "correction_en": "Working from home saves time."
+        }
+      ]
+    },
+    {
+      "id": "b2-07-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Eu concordo até certo ponto.\"",
+      "accepted": [
+        "I agree to some extent",
+        "I agree to a certain extent",
+        "I agree up to a point",
+        "To some extent, I agree",
+        "I partly agree"
+      ],
+      "commonErrors": [
+        {
+          "id": "am-agree",
+          "match": "\\bi am (not )?agree\\b",
+          "explanation_pt": "\"Agree\" é verbo: \"I agree\" / \"I don't agree\".",
+          "correction_en": "I agree to some extent."
+        },
+        {
+          "id": "until-certain-point",
+          "match": "\\buntil (a )?certain point\\b",
+          "explanation_pt": "\"Até certo ponto\" é \"to some extent\" ou \"up to a point\".",
+          "correction_en": "I agree to some extent."
+        }
+      ]
+    },
+    {
+      "id": "b2-07-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"A maior desvantagem é o custo de vida.\"",
+      "accepted": [
+        "The biggest downside is the cost of living",
+        "The main downside is the cost of living",
+        "The biggest disadvantage is the cost of living",
+        "The main disadvantage is the cost of living",
+        "The biggest drawback is the cost of living",
+        "The main drawback is the cost of living"
+      ],
+      "commonErrors": [
+        {
+          "id": "cost-of-life",
+          "match": "\\bcost of life\\b",
+          "explanation_pt": "\"Custo de vida\" é \"cost of living\".",
+          "correction_en": "The biggest downside is the cost of living."
+        },
+        {
+          "id": "most-big",
+          "match": "\\bmost big\\b",
+          "explanation_pt": "\"Maior\" (superlativo) é \"biggest\".",
+          "correction_en": "The biggest downside is the cost of living."
+        }
+      ]
+    },
+    {
+      "id": "b2-07-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Depende de como as pessoas usam as redes sociais.\"",
+      "accepted": [
+        "It depends on how people use social media",
+        "It depends on the way people use social media",
+        "That depends on how people use social media",
+        "It all depends on how people use social media",
+        "It depends on how people use social networks"
+      ],
+      "commonErrors": [
+        {
+          "id": "depends-of",
+          "match": "\\bdepends? of\\b",
+          "explanation_pt": "\"Depender de\" é \"depend on\", não \"of\".",
+          "correction_en": "It depends on how people use social media."
+        },
+        {
+          "id": "social-medias",
+          "match": "\\bsocial medias\\b",
+          "explanation_pt": "\"Social media\" não vai para o plural.",
+          "correction_en": "It depends on how people use social media."
+        }
+      ]
+    },
+    {
+      "id": "b2-07-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Eu sou a favor de mais ciclovias na cidade.\"",
+      "accepted": [
+        "I'm in favour of more bike lanes in the city",
+        "I'm in favor of more bike lanes in the city",
+        "I'm in favour of more cycle lanes in the city",
+        "I'm in favor of having more bike lanes in the city",
+        "I support more bike lanes in the city",
+        "I'm all for more bike lanes in the city"
+      ],
+      "commonErrors": [
+        {
+          "id": "favour-to",
+          "match": "\\bin favou?r to\\b",
+          "explanation_pt": "\"A favor de\" é \"in favour of\", com \"of\".",
+          "correction_en": "I'm in favour of more bike lanes in the city."
+        },
+        {
+          "id": "am-favour",
+          "match": "\\bi am favou?r\\b",
+          "explanation_pt": "Falta o \"in\": \"I'm in favour of\".",
+          "correction_en": "I'm in favour of more bike lanes in the city."
+        }
+      ]
+    },
+    {
+      "id": "b2-07-prac-15",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Você tem razão em parte, mas eu vejo de outra forma.\"",
+      "accepted": [
+        "You have a point, but I see it differently",
+        "You've got a point, but I see it differently",
+        "You're partly right, but I see it differently",
+        "You have a point, but I see it another way",
+        "You're right to some extent, but I see it differently",
+        "You have a point, but I see things differently"
+      ],
+      "commonErrors": [
+        {
+          "id": "you-have-reason",
+          "match": "\\byou have (a )?reason\\b",
+          "explanation_pt": "\"Ter razão\" é \"be right\" ou \"have a point\". \"Have reason\" é tradução literal.",
+          "correction_en": "You have a point, but I see it differently."
+        },
+        {
+          "id": "other-form",
+          "match": "\\b(in )?other form\\b",
+          "explanation_pt": "\"De outra forma\" é \"differently\" ou \"another way\".",
+          "correction_en": "I see it differently."
+        }
+      ]
+    },
+    {
+      "id": "b2-07-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and give a balanced opinion. Say one good thing and one bad thing.",
+      "listen": "What do you think about working from home?",
+      "accepted": [
+        "On the one hand, it saves time. On the other hand, it can be lonely",
+        "It saves time, but it can feel isolating",
+        "I like it because it saves time, but I miss my colleagues",
+        "It's great for saving time, but the downside is feeling isolated",
+        "It has advantages, like saving time, but you can feel lonely",
+        "I think it saves time, but on the other hand it can be lonely"
+      ],
+      "commonErrors": [
+        {
+          "id": "in-other-hand",
+          "match": "\\b(in|at) the other hand\\b",
+          "explanation_pt": "A expressão é \"on the other hand\".",
+          "correction_en": "On the other hand, it can be lonely."
+        },
+        {
+          "id": "economize",
+          "match": "\\beconomi[sz]es? time\\b",
+          "explanation_pt": "\"Economizar tempo\" é \"save time\".",
+          "correction_en": "It saves time."
+        }
+      ]
+    },
+    {
+      "id": "b2-07-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and partly agree.",
+      "listen": "Social media is ruining young people. It should be banned for teenagers.",
+      "accepted": [
+        "I agree to some extent, but banning it is too extreme",
+        "I partly agree, but I don't think banning it is the answer",
+        "You have a point, but a ban wouldn't work",
+        "I agree up to a point, but I don't think we should ban it",
+        "To some extent, yes, but banning it seems too much",
+        "I see your point, but I'm not sure a ban would work"
+      ],
+      "commonErrors": [
+        {
+          "id": "am-agree",
+          "match": "\\bi am (not )?agree\\b",
+          "explanation_pt": "\"Agree\" é verbo: \"I agree\" / \"I don't agree\".",
+          "correction_en": "I agree to some extent."
+        },
+        {
+          "id": "prohibit",
+          "match": "\\bprohibit it is\\b",
+          "explanation_pt": "Como sujeito, use -ing: \"banning it is...\".",
+          "correction_en": "Banning it is too extreme."
+        }
+      ]
+    },
+    {
+      "id": "b2-07-prac-18",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and say it depends.",
+      "listen": "Is it better to live in a big city or in a small town?",
+      "accepted": [
+        "It depends on what you're looking for",
+        "It depends on your lifestyle",
+        "It depends. Big cities have more jobs, but small towns are calmer",
+        "It depends on the person",
+        "It really depends on your priorities",
+        "That depends on your situation"
+      ],
+      "commonErrors": [
+        {
+          "id": "depends-of",
+          "match": "\\bdepends? of\\b",
+          "explanation_pt": "\"Depend on\", não \"of\".",
+          "correction_en": "It depends on the person."
+        },
+        {
+          "id": "depend-without-it",
+          "match": "^depends\\b",
+          "explanation_pt": "Diga com o sujeito: \"It depends\".",
+          "correction_en": "It depends on the person."
+        }
+      ]
+    },
+    {
+      "id": "b2-07-prac-19",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and disagree politely.",
+      "listen": "Honestly, I think everyone should work from the office five days a week.",
+      "accepted": [
+        "I'm not so sure about that",
+        "I see your point, but I don't really agree",
+        "I'm afraid I don't agree",
+        "I'm not sure I agree. Flexibility is important",
+        "I see it differently. Some people work better at home",
+        "I'm not entirely convinced. Many people are more productive at home",
+        "I respectfully disagree"
+      ],
+      "commonErrors": [
+        {
+          "id": "am-agree",
+          "match": "\\bi am (not )?agree\\b",
+          "explanation_pt": "\"Agree\" é verbo: \"I agree\" / \"I don't agree\".",
+          "correction_en": "I agree to some extent."
+        },
+        {
+          "id": "not-agree-with-you-no",
+          "match": "\\bi no agree\\b",
+          "explanation_pt": "Negativa: \"I don't agree\" ou \"I disagree\".",
+          "correction_en": "I don't really agree."
+        }
+      ]
+    },
+    {
+      "id": "b2-07-prac-20",
+      "kind": "choice",
+      "instruction_pt": "Which phrase softens an opinion?",
+      "options": ["I tend to think that...", "Obviously...", "Everybody knows that..."],
+      "answer": 0,
+      "explanation_pt": "\"I tend to think\" deixa a opinião menos absoluta. \"Obviously\" e \"everybody knows\" soam arrogantes numa discussão."
+    },
+    {
+      "id": "b2-07-prac-21",
+      "kind": "choice",
+      "instruction_pt": "\"You have a point.\" What does it mean?",
+      "options": [
+        "What you say is partly true",
+        "You are completely wrong",
+        "Please get to the point"
+      ],
+      "answer": 0,
+      "explanation_pt": "\"You have a point\" reconhece que o outro tem razão em parte."
+    },
+    {
+      "id": "b2-07-prac-22",
+      "kind": "fill",
+      "instruction_pt": "Complete the sentence.",
+      "sentence": "It depends ___ how you use it.",
+      "accepted": ["on", "upon"],
+      "commonErrors": [
+        {
+          "id": "depends-of",
+          "match": "^(of|from|in)$",
+          "explanation_pt": "\"Depend on\" é a preposição certa.",
+          "correction_en": "It depends on how you use it."
+        }
+      ]
+    },
+    {
+      "id": "b2-07-prac-23",
+      "kind": "fill",
+      "instruction_pt": "Complete the sentence.",
+      "sentence": "I'm in favour ___ a shorter working week.",
+      "accepted": ["of"],
+      "commonErrors": [
+        {
+          "id": "favour-to",
+          "match": "^(to|for|from)$",
+          "explanation_pt": "A expressão é \"in favour of\".",
+          "correction_en": "I'm in favour of a shorter working week."
+        }
+      ]
+    },
+    {
+      "id": "b2-07-prac-24",
+      "kind": "order",
+      "instruction_pt": "Put the words in order.",
+      "accepted": ["There are pros and cons to living in a big city"]
+    },
+    {
+      "id": "b2-07-prac-25",
+      "kind": "match",
+      "instruction_pt": "Match each expression to its meaning.",
+      "pairs": [
+        {
+          "en": "on the other hand",
+          "pt": "por outro lado"
+        },
+        {
+          "en": "downside",
+          "pt": "desvantagem"
+        },
+        {
+          "en": "to some extent",
+          "pt": "até certo ponto"
+        },
+        {
+          "en": "to have a point",
+          "pt": "ter razão em parte"
+        },
+        {
+          "en": "the cost of living",
+          "pt": "o custo de vida"
+        }
+      ]
+    },
+    {
+      "id": "b2-07-prac-26",
+      "kind": "dialogue",
+      "instruction_pt": "Role-play. Discuss a social topic with a friend.",
+      "scene_pt": "You are having coffee with your friend Tom. He thinks apps like Uber and iFood are bad for workers.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "I really think delivery apps are terrible for workers. They have no rights at all."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que concorda até certo ponto.",
+          "accepted": [
+            "I agree to some extent",
+            "I agree up to a point",
+            "I agree to a certain extent",
+            "You have a point, to some extent",
+            "To some extent, I agree",
+            "I partly agree with you"
+          ],
+          "commonErrors": [
+            {
+              "id": "am-agree",
+              "match": "\\bi am (not )?agree\\b",
+              "explanation_pt": "\"Agree\" é verbo: \"I agree\" / \"I don't agree\".",
+              "correction_en": "I agree to some extent."
+            },
+            {
+              "id": "until-certain-point",
+              "match": "\\buntil (a )?certain point\\b",
+              "explanation_pt": "\"Até certo ponto\" é \"to some extent\".",
+              "correction_en": "I agree to some extent."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Only to some extent? What do you mean?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que, por outro lado, elas criam muitos empregos.",
+          "accepted": [
+            "On the other hand, they create a lot of jobs",
+            "On the other hand, they create lots of jobs",
+            "Well, on the other hand, they create a lot of jobs",
+            "On the other hand, they give a lot of people jobs",
+            "On the other hand, they've created a lot of jobs"
+          ],
+          "commonErrors": [
+            {
+              "id": "in-other-hand",
+              "match": "\\b(in|at|by) the other hand\\b",
+              "explanation_pt": "A expressão é \"on the other hand\".",
+              "correction_en": "On the other hand, they create a lot of jobs."
+            },
+            {
+              "id": "much-jobs",
+              "match": "\\bmuch jobs\\b",
+              "explanation_pt": "\"Jobs\" é contável: \"a lot of jobs\" ou \"many jobs\".",
+              "correction_en": "They create a lot of jobs."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Sure, but they're not good jobs. People work twelve hours a day."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que ele tem razão, e que o maior problema é a falta de proteção.",
+          "accepted": [
+            "You have a point. The biggest problem is the lack of protection",
+            "You've got a point. The main problem is the lack of protection",
+            "That's true. The biggest problem is the lack of protection",
+            "You're right. The main issue is the lack of protection",
+            "You have a point. The biggest issue is that they have no protection"
+          ],
+          "commonErrors": [
+            {
+              "id": "you-have-reason",
+              "match": "\\byou have (a )?reason\\b",
+              "explanation_pt": "\"Ter razão\" é \"be right\" ou \"have a point\".",
+              "correction_en": "You have a point."
+            },
+            {
+              "id": "lack-of-protection-missing",
+              "match": "\\bthe missing of\\b",
+              "explanation_pt": "\"Falta de\" é \"lack of\".",
+              "correction_en": "The biggest problem is the lack of protection."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Exactly. So what do you think should happen?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Sugira que o governo deveria criar regras melhores.",
+          "accepted": [
+            "I think the government should create better rules",
+            "The government should make better rules",
+            "I think the government should introduce better regulations",
+            "In my opinion, the government should create better rules",
+            "I think there should be better rules",
+            "The government should create better laws for them"
+          ],
+          "commonErrors": [
+            {
+              "id": "in-my-opinion-i-think",
+              "match": "\\bin my opinion i think\\b",
+              "explanation_pt": "\"In my opinion\" e \"I think\" dizem a mesma coisa. Use um só.",
+              "correction_en": "In my opinion, ..."
+            },
+            {
+              "id": "should-to",
+              "match": "\\bshould to\\b",
+              "explanation_pt": "Depois de \"should\" o verbo vem sem \"to\".",
+              "correction_en": "The government should create better rules."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-07-prac-27",
+      "kind": "free_speak",
+      "instruction_pt": "Give your opinion on a social topic.",
+      "prompt_en": "Choose one: social media, remote work or life in big cities. What do you think about it?",
+      "guidelines_pt": [
+        "Give both sides: \"On the one hand... On the other hand...\"",
+        "Soften your opinion: \"I tend to think...\" / \"To some extent...\"",
+        "Conclude: \"All in all, I think...\""
+      ]
+    }
   ]
 }

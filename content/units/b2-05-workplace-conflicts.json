@@ -117,11 +117,26 @@
           "kind": "match",
           "instruction_pt": "Match each expression to its meaning.",
           "pairs": [
-            { "en": "to clash", "pt": "bater de frente, entrar em conflito" },
-            { "en": "common ground", "pt": "um ponto em comum" },
-            { "en": "to blame", "pt": "culpar" },
-            { "en": "to calm down", "pt": "se acalmar" },
-            { "en": "to step on someone's toes", "pt": "se meter no espaço de alguém" }
+            {
+              "en": "to clash",
+              "pt": "bater de frente, entrar em conflito"
+            },
+            {
+              "en": "common ground",
+              "pt": "um ponto em comum"
+            },
+            {
+              "en": "to blame",
+              "pt": "culpar"
+            },
+            {
+              "en": "to calm down",
+              "pt": "se acalmar"
+            },
+            {
+              "en": "to step on someone's toes",
+              "pt": "se meter no espaço de alguém"
+            }
           ]
         },
         {
@@ -385,10 +400,132 @@
           ]
         },
         {
-          "id": "b2-05-conv-3",
-          "kind": "order",
-          "instruction_pt": "Put the words in order to find common ground.",
-          "accepted": ["I think we both want the same thing here"]
+          "id": "b2-05-conv-dialogue",
+          "kind": "dialogue",
+          "instruction_pt": "Role-play. Solve a conflict with a teammate.",
+          "scene_pt": "Your teammate Priya is upset because you changed her slides without asking.",
+          "turns": [
+            {
+              "speaker": "partner",
+              "text": "Did you change my slides last night? I didn't even know."
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Confirme e peça desculpas por não ter perguntado antes.",
+              "accepted": [
+                "Yes, I did. I'm sorry I didn't ask you first",
+                "Yes. Sorry, I should have asked you first",
+                "I did, yes. I'm sorry I didn't check with you first",
+                "Yes, I did, and I'm sorry I didn't ask you before",
+                "Yes. I'm sorry, I should have asked first",
+                "I did. Sorry for not asking you first"
+              ],
+              "commonErrors": [
+                {
+                  "id": "sorry-for-not-ask",
+                  "match": "\\bsorry for not ask\\b",
+                  "explanation_pt": "Depois de \"for\" use -ing: \"sorry for not asking\".",
+                  "correction_en": "I'm sorry I didn't ask you first."
+                },
+                {
+                  "id": "ask-you-before-q",
+                  "match": "\\bi did not asked\\b",
+                  "explanation_pt": "Depois de \"didn't\" o verbo vem na forma base: \"didn't ask\".",
+                  "correction_en": "I'm sorry I didn't ask you first."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "I worked really hard on those. It felt like you didn't trust me."
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga que não foi a intenção e que confia no trabalho dela.",
+              "accepted": [
+                "That wasn't my intention. I trust your work",
+                "That wasn't my intention at all. I really trust your work",
+                "I didn't mean it like that. I trust your work",
+                "That's not what I meant. I trust your work",
+                "It wasn't my intention. I trust your work completely",
+                "I didn't mean that at all. I trust your work"
+              ],
+              "commonErrors": [
+                {
+                  "id": "trust-in-your",
+                  "match": "\\btrust in your work\\b",
+                  "explanation_pt": "Para trabalho de alguém, o natural é \"trust your work\", sem \"in\".",
+                  "correction_en": "I trust your work."
+                },
+                {
+                  "id": "intention-was-not",
+                  "match": "\\bwas not my intencion\\b",
+                  "explanation_pt": "Em inglês é \"intention\", com \"t\".",
+                  "correction_en": "That wasn't my intention."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Okay. So why did you change them?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Explique que o cliente pediu números mais recentes.",
+              "accepted": [
+                "The client asked for more recent numbers",
+                "The client asked for more recent figures",
+                "Because the client asked for more recent numbers",
+                "The client asked for more up-to-date numbers",
+                "The client wanted more recent figures",
+                "Because the client wanted more recent data"
+              ],
+              "commonErrors": [
+                {
+                  "id": "asked-more",
+                  "match": "\\basked more recent\\b",
+                  "explanation_pt": "\"Pedir algo\" é \"ask for\": \"asked for more recent numbers\".",
+                  "correction_en": "The client asked for more recent numbers."
+                },
+                {
+                  "id": "most-recent-more",
+                  "match": "\\bmore recents\\b",
+                  "explanation_pt": "Adjetivo não tem plural: \"recent\".",
+                  "correction_en": "The client asked for more recent numbers."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "I see. Next time, could you just send me a message?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Prometa que vai fazer isso.",
+              "accepted": [
+                "Of course, I will",
+                "Sure, I'll do that",
+                "Definitely. I'll message you first next time",
+                "Of course. I'll send you a message next time",
+                "I promise I will",
+                "Sure, I promise I'll message you first"
+              ],
+              "commonErrors": [
+                {
+                  "id": "i-go-do",
+                  "match": "\\bi go do\\b",
+                  "explanation_pt": "Para futuro use \"I'll\" ou \"I'm going to\".",
+                  "correction_en": "Sure, I'll do that."
+                },
+                {
+                  "id": "promise-to-you",
+                  "match": "\\bpromise to you\\b",
+                  "explanation_pt": "\"Prometo\" é só \"I promise\".",
+                  "correction_en": "I promise I will."
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "b2-05-conv-free",
@@ -483,6 +620,560 @@
           ],
           "commonErrors": []
         }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "id": "b2-05-prac-1",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "I think there's been a bit of a misunderstanding.",
+      "accepted": [
+        "I think there's been a bit of a misunderstanding.",
+        "I think there has been a small misunderstanding."
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-05-prac-2",
+      "kind": "repeat",
+      "instruction_pt": "Repeat. Keep a calm, friendly tone.",
+      "prompt": "I can see where you're coming from, but I see it differently.",
+      "accepted": [
+        "I can see where you're coming from, but I see it differently.",
+        "I can see where you're coming from, but I see things differently."
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-05-prac-3",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "I felt a little left out when I wasn't invited to the meeting.",
+      "accepted": ["I felt a little left out when I wasn't invited to the meeting."],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-05-prac-4",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "Can we talk about what happened yesterday?",
+      "accepted": [
+        "Can we talk about what happened yesterday?",
+        "Could we talk about what happened yesterday?"
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-05-prac-5",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "Let's try to sort this out between us.",
+      "accepted": [
+        "Let's try to sort this out between us.",
+        "Let's try to sort this out together."
+      ],
+      "commonErrors": []
+    },
+    {
+      "id": "b2-05-prac-6",
+      "kind": "repeat",
+      "instruction_pt": "Repeat out loud.",
+      "prompt": "I didn't mean to upset you.",
+      "accepted": ["I didn't mean to upset you.", "I didn't mean to upset you at all."],
+      "commonErrors": [
+        {
+          "id": "mean-upset-ing",
+          "match": "\\bmean upsetting\\b",
+          "explanation_pt": "\"Não tive a intenção de\" é \"I didn't mean to\" + verbo.",
+          "correction_en": "I didn't mean to upset you."
+        }
+      ]
+    },
+    {
+      "id": "b2-05-prac-7",
+      "kind": "vocab",
+      "word_en": "to clear the air",
+      "meaning_pt": "esclarecer as coisas, acabar com o clima ruim",
+      "example_en": "We had a quick chat to clear the air after the argument."
+    },
+    {
+      "id": "b2-05-prac-8",
+      "kind": "vocab",
+      "word_en": "to get on with someone",
+      "meaning_pt": "se dar bem com alguém",
+      "example_en": "I get on well with most of my colleagues."
+    },
+    {
+      "id": "b2-05-prac-9",
+      "kind": "vocab",
+      "word_en": "to step on someone's toes",
+      "meaning_pt": "invadir a área de alguém, ofender",
+      "example_en": "I don't want to step on anyone's toes, but this is my project."
+    },
+    {
+      "id": "b2-05-prac-10",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Acho que ele levou para o lado pessoal.\"",
+      "accepted": [
+        "I think he took it personally",
+        "I think he took that personally",
+        "I think he took it a bit personally",
+        "I think he's taken it personally",
+        "I think he took what I said personally"
+      ],
+      "commonErrors": [
+        {
+          "id": "take-personal",
+          "match": "\\btake (it|this|that) (personal|personally of)\\b",
+          "explanation_pt": "A expressão é \"take it personally\", com o advérbio (-ly).",
+          "correction_en": "Please don't take it personally."
+        },
+        {
+          "id": "took-personal-side",
+          "match": "\\bpersonal side\\b",
+          "explanation_pt": "\"Levar para o lado pessoal\" é \"take it personally\". Não traduza \"lado\".",
+          "correction_en": "I think he took it personally."
+        }
+      ]
+    },
+    {
+      "id": "b2-05-prac-11",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Eu entendo seu ponto de vista, mas não concordo.\"",
+      "accepted": [
+        "I understand your point of view, but I don't agree",
+        "I understand your point of view, but I disagree",
+        "I see your point, but I don't agree",
+        "I see your point, but I disagree",
+        "I understand your point, but I don't agree",
+        "I can see your point of view, but I don't agree",
+        "I get your point, but I don't agree",
+        "I see where you're coming from, but I don't agree"
+      ],
+      "commonErrors": [
+        {
+          "id": "am-not-agree",
+          "match": "\\bi am not agree\\b",
+          "explanation_pt": "\"Agree\" é verbo: \"I don't agree\" ou \"I disagree\".",
+          "correction_en": "I see your point, but I don't agree."
+        },
+        {
+          "id": "point-of-see",
+          "match": "\\bpoint of (see|vision)\\b",
+          "explanation_pt": "\"Ponto de vista\" é \"point of view\".",
+          "correction_en": "I understand your point of view."
+        }
+      ]
+    },
+    {
+      "id": "b2-05-prac-12",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Eu me senti um pouco frustrado com o prazo.\"",
+      "accepted": [
+        "I felt a bit frustrated with the deadline",
+        "I felt a little frustrated with the deadline",
+        "I felt a bit frustrated about the deadline",
+        "I felt a little frustrated about the deadline",
+        "I was a bit frustrated with the deadline",
+        "I was a little frustrated about the deadline",
+        "I felt a bit frustrated by the deadline"
+      ],
+      "commonErrors": [
+        {
+          "id": "felt-me",
+          "match": "\\bi felt me\\b",
+          "explanation_pt": "\"Sentir-se\" é só \"feel\": \"I felt frustrated\", sem \"me\".",
+          "correction_en": "I felt a bit frustrated with the deadline."
+        },
+        {
+          "id": "prize",
+          "match": "\\bprize\\b",
+          "explanation_pt": "\"Prazo\" é \"deadline\". \"Prize\" é prêmio.",
+          "correction_en": "I felt a bit frustrated with the deadline."
+        }
+      ]
+    },
+    {
+      "id": "b2-05-prac-13",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Vamos resolver isso antes que fique pior.\"",
+      "accepted": [
+        "Let's sort this out before it gets worse",
+        "Let's sort it out before it gets worse",
+        "Let's solve this before it gets worse",
+        "Let's fix this before it gets worse",
+        "Let's deal with this before it gets worse",
+        "Let's work this out before it gets worse",
+        "Let's resolve this before it gets worse"
+      ],
+      "commonErrors": [
+        {
+          "id": "get-worse-will",
+          "match": "\\bbefore it will get\\b",
+          "explanation_pt": "Depois de \"before\" use o presente: \"before it gets worse\".",
+          "correction_en": "Let's sort this out before it gets worse."
+        },
+        {
+          "id": "more-bad",
+          "match": "\\bmore bad\\b",
+          "explanation_pt": "\"Pior\" é \"worse\".",
+          "correction_en": "Let's sort this out before it gets worse."
+        }
+      ]
+    },
+    {
+      "id": "b2-05-prac-14",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Acho que houve um mal-entendido sobre quem faria o relatório.\"",
+      "accepted": [
+        "I think there was a misunderstanding about who would do the report",
+        "I think there was a misunderstanding about who would write the report",
+        "I think there's been a misunderstanding about who would do the report",
+        "I think there was a misunderstanding about who was doing the report",
+        "I think there was a misunderstanding about who was going to do the report"
+      ],
+      "commonErrors": [
+        {
+          "id": "had-a-misunderstanding",
+          "match": "\\bit had a misunderstanding\\b",
+          "explanation_pt": "\"Houve\" é \"there was\", não \"it had\".",
+          "correction_en": "I think there was a misunderstanding."
+        },
+        {
+          "id": "bad-understanding",
+          "match": "\\bbad understanding\\b",
+          "explanation_pt": "\"Mal-entendido\" é \"misunderstanding\".",
+          "correction_en": "I think there was a misunderstanding."
+        }
+      ]
+    },
+    {
+      "id": "b2-05-prac-15",
+      "kind": "translate",
+      "instruction_pt": "Say it in English: \"Eu me dou bem com todo mundo da equipe.\"",
+      "accepted": [
+        "I get on well with everyone on the team",
+        "I get along well with everyone on the team",
+        "I get on with everyone on the team",
+        "I get along with everyone on the team",
+        "I get on well with everyone in the team",
+        "I get along with everybody on the team",
+        "I get on well with everybody in my team"
+      ],
+      "commonErrors": [
+        {
+          "id": "give-me-well",
+          "match": "\\bi (give me|give myself) well\\b",
+          "explanation_pt": "\"Dar-se bem\" com alguém é \"get on (well) with\" ou \"get along with\".",
+          "correction_en": "I get on well with everyone on the team."
+        }
+      ]
+    },
+    {
+      "id": "b2-05-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and react calmly. Say you see their point.",
+      "listen": "Honestly, I feel like I'm doing all the work on this project.",
+      "accepted": [
+        "I can see why you feel that way",
+        "I understand how you feel",
+        "I see your point",
+        "I can see where you're coming from",
+        "I understand. Let's talk about how to share the work",
+        "I hear you. Let's see how we can divide the tasks",
+        "I see what you mean"
+      ],
+      "commonErrors": [
+        {
+          "id": "understand-you-feel",
+          "match": "\\bi understand what you feel\\b",
+          "explanation_pt": "O natural é \"I understand how you feel\".",
+          "correction_en": "I understand how you feel."
+        },
+        {
+          "id": "see-your-point-of",
+          "match": "\\bi see your point of\\b$",
+          "explanation_pt": "Diga \"I see your point\" ou \"I see your point of view\".",
+          "correction_en": "I see your point."
+        }
+      ]
+    },
+    {
+      "id": "b2-05-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and apologize. Say you did not mean it.",
+      "listen": "You know, what you said in the meeting really hurt my feelings.",
+      "accepted": [
+        "I'm sorry, I didn't mean it like that",
+        "I'm really sorry. I didn't mean to hurt your feelings",
+        "I'm sorry, I didn't mean to upset you",
+        "Sorry, that's not what I meant",
+        "I'm so sorry. I didn't mean it that way",
+        "I apologize. I didn't mean to hurt you"
+      ],
+      "commonErrors": [
+        {
+          "id": "didnt-want-say",
+          "match": "\\bi did not want to say\\b",
+          "explanation_pt": "\"Não quis dizer isso\" no sentido de intenção é \"I didn't mean it\". \"Want to say\" é tradução literal.",
+          "correction_en": "I'm sorry, I didn't mean it like that."
+        },
+        {
+          "id": "meant-to-hurt-ing",
+          "match": "\\bmean hurting\\b",
+          "explanation_pt": "Use \"didn't mean to\" + verbo.",
+          "correction_en": "I didn't mean to hurt your feelings."
+        }
+      ]
+    },
+    {
+      "id": "b2-05-prac-18",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and suggest a solution.",
+      "listen": "We keep arguing about who does what. What do you suggest?",
+      "accepted": [
+        "Why don't we write down who is responsible for each task?",
+        "Maybe we could make a list of who does each task",
+        "How about we split the tasks and write them down?",
+        "I suggest we divide the tasks clearly",
+        "Let's agree on who does what and write it down",
+        "What if we had a short meeting every week to divide the tasks?",
+        "Why don't we divide the tasks more clearly?"
+      ],
+      "commonErrors": [
+        {
+          "id": "suggest-to",
+          "match": "\\bi suggest (to divide|to write|to make)\\b",
+          "explanation_pt": "Depois de \"suggest\" use \"we\" + verbo ou -ing: \"I suggest we divide...\".",
+          "correction_en": "I suggest we divide the tasks clearly."
+        }
+      ]
+    },
+    {
+      "id": "b2-05-prac-19",
+      "kind": "listen_answer",
+      "instruction_pt": "Listen and say that you will talk to your manager.",
+      "listen": "If this keeps happening, I don't know what to do.",
+      "accepted": [
+        "Maybe we should talk to our manager",
+        "I think we should talk to our manager",
+        "I'll talk to our manager about it",
+        "Let's talk to our manager about it",
+        "We could talk to our manager",
+        "Why don't we talk to our manager?"
+      ],
+      "commonErrors": [
+        {
+          "id": "talk-with-to",
+          "match": "\\btalk with to\\b",
+          "explanation_pt": "Use \"talk to\" ou \"talk with\", não os dois.",
+          "correction_en": "We should talk to our manager."
+        },
+        {
+          "id": "chief",
+          "match": "\\bchief\\b",
+          "explanation_pt": "\"Chefe\" no trabalho é \"manager\" ou \"boss\". \"Chief\" é usado em cargos como \"chief executive\".",
+          "correction_en": "Let's talk to our manager."
+        }
+      ]
+    },
+    {
+      "id": "b2-05-prac-20",
+      "kind": "choice",
+      "instruction_pt": "Which sentence is the most diplomatic?",
+      "options": [
+        "I feel the deadline was a bit tight.",
+        "You gave us an impossible deadline.",
+        "Your deadline was stupid."
+      ],
+      "answer": 0,
+      "explanation_pt": "Falar de como você se sente (\"I feel...\") e suavizar (\"a bit\") evita soar como acusação."
+    },
+    {
+      "id": "b2-05-prac-21",
+      "kind": "choice",
+      "instruction_pt": "\"Let's clear the air.\" What does it mean?",
+      "options": [
+        "Let's talk openly to end the bad feeling",
+        "Let's open the window",
+        "Let's forget the problem without talking"
+      ],
+      "answer": 0,
+      "explanation_pt": "\"Clear the air\" é conversar abertamente para acabar com o clima ruim."
+    },
+    {
+      "id": "b2-05-prac-22",
+      "kind": "fill",
+      "instruction_pt": "Complete the sentence.",
+      "sentence": "I didn't mean ___ upset you.",
+      "accepted": ["to"],
+      "commonErrors": [
+        {
+          "id": "mean-for",
+          "match": "^(for|of|that)$",
+          "explanation_pt": "A estrutura é \"mean to\" + verbo.",
+          "correction_en": "I didn't mean to upset you."
+        }
+      ]
+    },
+    {
+      "id": "b2-05-prac-23",
+      "kind": "fill",
+      "instruction_pt": "Complete the sentence.",
+      "sentence": "Let's sort this ___ before Friday.",
+      "accepted": ["out"],
+      "commonErrors": [
+        {
+          "id": "sort-up",
+          "match": "^(up|off|on|in)$",
+          "explanation_pt": "\"Sort out\" é resolver um problema.",
+          "correction_en": "Let's sort this out before Friday."
+        }
+      ]
+    },
+    {
+      "id": "b2-05-prac-24",
+      "kind": "order",
+      "instruction_pt": "Put the words in order.",
+      "accepted": ["I don't want to step on anyone's toes"]
+    },
+    {
+      "id": "b2-05-prac-25",
+      "kind": "dialogue",
+      "instruction_pt": "Role-play. Talk to a colleague about a problem.",
+      "scene_pt": "Your colleague Sam presented your idea to the boss as if it were his. You want to talk to him calmly.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Hey, you wanted to talk to me?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que sim e pergunte se ele tem um minuto.",
+          "accepted": [
+            "Yes. Do you have a minute?",
+            "Yeah. Have you got a minute?",
+            "Yes. Have you got a sec?",
+            "Yes. Do you have a moment?"
+          ],
+          "commonErrors": [
+            {
+              "id": "has-a-minute",
+              "match": "\\byou has\\b",
+              "explanation_pt": "Com \"you\" o verbo é \"have\": \"Do you have a minute?\"",
+              "correction_en": "Do you have a minute?"
+            },
+            {
+              "id": "you-have-a-minute-q",
+              "match": "^yes you have a minute\\b",
+              "explanation_pt": "Na pergunta use \"Do you have...?\" ou \"Have you got...?\"",
+              "correction_en": "Yes. Do you have a minute?"
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Sure. What's up?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que se sentiu um pouco chateado na reunião de ontem.",
+          "accepted": [
+            "I felt a bit upset at yesterday's meeting",
+            "I felt a little upset in yesterday's meeting",
+            "I was a bit upset at yesterday's meeting",
+            "I felt a bit upset after yesterday's meeting",
+            "I felt a bit upset at the meeting yesterday",
+            "I was a little upset in the meeting yesterday"
+          ],
+          "commonErrors": [
+            {
+              "id": "felt-me",
+              "match": "\\bi felt me\\b",
+              "explanation_pt": "\"Sentir-se\" é só \"feel\": \"I felt upset\".",
+              "correction_en": "I felt a bit upset at yesterday's meeting."
+            },
+            {
+              "id": "chateado-boring",
+              "match": "\\b(felt|was) (a bit |a little )?(boring|bored)\\b",
+              "explanation_pt": "\"Chateado\" (magoado) é \"upset\". \"Bored\" é entediado e \"boring\" é chato.",
+              "correction_en": "I felt a bit upset at yesterday's meeting."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Oh. Why? What happened?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Explique, sem acusar, que a ideia que ele apresentou era sua.",
+          "accepted": [
+            "The idea you presented was actually mine",
+            "The idea you presented was mine",
+            "I think the idea you presented was actually mine",
+            "The idea you shared was actually mine",
+            "Well, the idea you presented was originally mine",
+            "The idea you presented came from me"
+          ],
+          "commonErrors": [
+            {
+              "id": "was-my",
+              "match": "\\bwas (actually |originally )?my\\b$",
+              "explanation_pt": "No fim da frase use o pronome possessivo \"mine\": \"was mine\".",
+              "correction_en": "The idea you presented was actually mine."
+            },
+            {
+              "id": "you-stole",
+              "match": "\\b(stole|steal|robbed)\\b",
+              "explanation_pt": "Isso soa como acusação. Fale do fato: \"The idea you presented was mine\".",
+              "correction_en": "The idea you presented was actually mine."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Oh no, I'm really sorry. I didn't realise. I should have mentioned your name."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Agradeça e proponha apresentar as próximas ideias juntos.",
+          "accepted": [
+            "Thanks. Why don't we present the next ideas together?",
+            "Thank you. Maybe we could present the next ideas together",
+            "Thanks. How about presenting the next ideas together?",
+            "Thanks for saying that. Let's present the next ideas together",
+            "Thanks. Next time, let's present our ideas together",
+            "Thank you. What if we presented the next ideas together?"
+          ],
+          "commonErrors": [
+            {
+              "id": "thanks-for-say",
+              "match": "\\bthanks for say\\b",
+              "explanation_pt": "Depois de \"thanks for\" o verbo vai com -ing: \"thanks for saying\".",
+              "correction_en": "Thanks for saying that."
+            },
+            {
+              "id": "presents-together",
+              "match": "\\bpresent together the\\b",
+              "explanation_pt": "A ordem natural é \"present the next ideas together\".",
+              "correction_en": "Let's present the next ideas together."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-05-prac-26",
+      "kind": "free_speak",
+      "instruction_pt": "Talk about a conflict you solved at work or school.",
+      "prompt_en": "Can you tell me about a disagreement you had with someone and how you sorted it out?",
+      "guidelines_pt": [
+        "Describe the situation: \"There was a misunderstanding about...\"",
+        "Say how you felt without blaming: \"I felt that...\"",
+        "Explain the solution: \"In the end, we agreed to...\""
       ]
     }
   ]
