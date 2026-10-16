@@ -116,11 +116,26 @@
           "kind": "match",
           "instruction_pt": "Ligue cada palavra ao seu significado.",
           "pairs": [
-            { "en": "bathroom", "pt": "banheiro" },
-            { "en": "chair", "pt": "cadeira" },
-            { "en": "bed", "pt": "cama" },
-            { "en": "table", "pt": "mesa" },
-            { "en": "closet", "pt": "armário de roupas" }
+            {
+              "en": "bathroom",
+              "pt": "banheiro"
+            },
+            {
+              "en": "chair",
+              "pt": "cadeira"
+            },
+            {
+              "en": "bed",
+              "pt": "cama"
+            },
+            {
+              "en": "table",
+              "pt": "mesa"
+            },
+            {
+              "en": "closet",
+              "pt": "armário de roupas"
+            }
           ]
         },
         {
@@ -445,6 +460,544 @@
           "prompt": "Welcome to my home!",
           "accepted": ["Welcome to my home", "Welcome to my house"],
           "commonErrors": []
+        }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "id": "a1-07-prac-1",
+      "kind": "dialogue",
+      "instruction_pt": "Converse: ouça cada fala e responda em inglês.",
+      "scene_pt": "Você está mostrando seu apartamento novo para um amigo por vídeo.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Wow, is this your new apartment? Is it big?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que não, que é pequeno, mas é bonito.",
+          "accepted": [
+            "No, it's small, but it's nice",
+            "No, it's small but nice",
+            "No, it is small, but it is nice",
+            "It's small, but it's nice",
+            "No, it's small, but it's beautiful",
+            "No, it's small but it's cute"
+          ],
+          "commonErrors": [
+            {
+              "id": "is-small",
+              "match": "^(no )?is small\\b",
+              "explanation_pt": "Falta o sujeito: \"It's small\".",
+              "correction_en": "No, it's small, but it's nice."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "How many bedrooms are there?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que tem um quarto.",
+          "accepted": [
+            "There's one bedroom",
+            "There is one bedroom",
+            "There's just one bedroom",
+            "Just one",
+            "One bedroom",
+            "Only one bedroom",
+            "It has one bedroom",
+            "One"
+          ],
+          "commonErrors": [
+            {
+              "id": "have-there-is",
+              "match": "^(has|have) (a|an|one|two|three|four|no)\\b",
+              "explanation_pt": "\"Tem\" no sentido de \"existe\" é \"there is\" (singular) ou \"there are\" (plural).",
+              "correction_en": "There's one bedroom."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "And is there a balcony?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que sim, tem uma varanda pequena.",
+          "accepted": [
+            "Yes, there's a small balcony",
+            "Yes, there is a small balcony",
+            "Yes, there is. It is small",
+            "Yes, there is. It's small",
+            "Yes, a small one",
+            "Yes, it has a small balcony",
+            "Yes, there is a little balcony"
+          ],
+          "commonErrors": [
+            {
+              "id": "balcony-small",
+              "match": "\\bbalcony small\\b",
+              "explanation_pt": "O adjetivo vem antes: \"a small balcony\".",
+              "correction_en": "Yes, there's a small balcony."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Nice! Where's your desk?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que está no quarto, ao lado da janela.",
+          "accepted": [
+            "It's in the bedroom, next to the window",
+            "It is in the bedroom, next to the window",
+            "In the bedroom, next to the window",
+            "It's in my bedroom, next to the window",
+            "My desk is in the bedroom, next to the window",
+            "It's next to the window in the bedroom"
+          ],
+          "commonErrors": [
+            {
+              "id": "beside-of",
+              "match": "\\bnext of\\b|\\bbeside of\\b",
+              "explanation_pt": "\"Ao lado de\" é \"next to\", sem \"of\".",
+              "correction_en": "It's in the bedroom, next to the window."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-07-prac-2",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Tem um sofá na sala.\"",
+      "accepted": [
+        "There's a sofa in the living room",
+        "There is a sofa in the living room",
+        "There's a couch in the living room",
+        "There is a couch in the living room"
+      ],
+      "commonErrors": [
+        {
+          "id": "have-there-is",
+          "match": "^(has|have) (a|an|one|two|three|four|no)\\b",
+          "explanation_pt": "\"Tem\" no sentido de \"existe\" é \"there is\" (singular) ou \"there are\" (plural).",
+          "correction_en": "There's a sofa in the living room."
+        },
+        {
+          "id": "in-the-room",
+          "match": "\\bin the room$",
+          "explanation_pt": "\"Sala (de estar)\" é \"living room\".",
+          "correction_en": "There's a sofa in the living room."
+        }
+      ]
+    },
+    {
+      "id": "a1-07-prac-3",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Tem duas camas no quarto.\"",
+      "accepted": ["There are two beds in the bedroom", "There are two beds in the room"],
+      "commonErrors": [
+        {
+          "id": "there-is-plural",
+          "match": "\\bthere is (two|three|four|five|many)\\b",
+          "explanation_pt": "Com plural use \"there are\": \"There are two...\".",
+          "correction_en": "There are two beds in the bedroom."
+        },
+        {
+          "id": "have-there-is",
+          "match": "^(has|have) (a|an|one|two|three|four|no)\\b",
+          "explanation_pt": "\"Tem\" no sentido de \"existe\" é \"there is\" (singular) ou \"there are\" (plural).",
+          "correction_en": "There are two beds in the bedroom."
+        }
+      ]
+    },
+    {
+      "id": "a1-07-prac-4",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"A geladeira fica na cozinha.\"",
+      "accepted": [
+        "The fridge is in the kitchen",
+        "The refrigerator is in the kitchen",
+        "The fridge's in the kitchen"
+      ],
+      "commonErrors": [
+        {
+          "id": "stay-in",
+          "match": "\\bstays in\\b",
+          "explanation_pt": "\"Ficar\" (localização) é \"to be\": \"The fridge is in the kitchen\".",
+          "correction_en": "The fridge is in the kitchen."
+        },
+        {
+          "id": "geladeira-freezer",
+          "match": "^the freezer\\b",
+          "explanation_pt": "\"Geladeira\" é \"fridge\" (ou \"refrigerator\").",
+          "correction_en": "The fridge is in the kitchen."
+        }
+      ]
+    },
+    {
+      "id": "a1-07-prac-5",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Meu gato está embaixo da mesa.\"",
+      "accepted": [
+        "My cat is under the table",
+        "My cat's under the table",
+        "My cat is below the table"
+      ],
+      "commonErrors": [
+        {
+          "id": "down-of",
+          "match": "\\b(down|below) of\\b",
+          "explanation_pt": "\"Embaixo de\" é \"under\".",
+          "correction_en": "My cat is under the table."
+        },
+        {
+          "id": "cat-under-no-is",
+          "match": "^my cat under\\b",
+          "explanation_pt": "Falta o verbo: \"My cat is under the table\".",
+          "correction_en": "My cat is under the table."
+        }
+      ]
+    },
+    {
+      "id": "a1-07-prac-6",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Não tem banheira no banheiro.\"",
+      "accepted": [
+        "There's no bathtub in the bathroom",
+        "There is no bathtub in the bathroom",
+        "There isn't a bathtub in the bathroom",
+        "There is not a bathtub in the bathroom",
+        "There's no bath in the bathroom",
+        "There isn't a bath in the bathroom"
+      ],
+      "commonErrors": [
+        {
+          "id": "dont-have-bath",
+          "match": "^(it )?(do not|does not) (have|has)\\b",
+          "explanation_pt": "Para \"não tem\" (não existe), use \"there isn't\" ou \"there's no\".",
+          "correction_en": "There isn't a bathtub in the bathroom."
+        }
+      ]
+    },
+    {
+      "id": "a1-07-prac-7",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Tem uma lavanderia no seu prédio?\"",
+      "accepted": [
+        "Is there a laundry room in your building?",
+        "Is there a laundry in your building?",
+        "Does your building have a laundry room?",
+        "Is there a laundromat in your building?"
+      ],
+      "commonErrors": [
+        {
+          "id": "have-q",
+          "match": "^(have|has) a\\b",
+          "explanation_pt": "Para perguntar se \"tem\" (existe), use \"Is there...?\".",
+          "correction_en": "Is there a laundry room in your building?"
+        },
+        {
+          "id": "there-is-q",
+          "match": "^there is\\b",
+          "explanation_pt": "Na pergunta o \"is\" vem antes: \"Is there...?\".",
+          "correction_en": "Is there a laundry room in your building?"
+        }
+      ]
+    },
+    {
+      "id": "a1-07-prac-8",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu moro no terceiro andar.\"",
+      "accepted": ["I live on the third floor", "I'm on the third floor"],
+      "commonErrors": [
+        {
+          "id": "in-the-floor",
+          "match": "\\bin the third floor\\b",
+          "explanation_pt": "Andar usa \"on\": \"on the third floor\".",
+          "correction_en": "I live on the third floor."
+        },
+        {
+          "id": "three-floor",
+          "match": "\\bthree floor\\b",
+          "explanation_pt": "Para andar use o ordinal: \"third floor\".",
+          "correction_en": "I live on the third floor."
+        }
+      ]
+    },
+    {
+      "id": "a1-07-prac-9",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "The bathroom is next to my bedroom.",
+      "accepted": ["The bathroom is next to my bedroom"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-07-prac-10",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "There's a big window in the kitchen.",
+      "accepted": ["There's a big window in the kitchen"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-07-prac-11",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "My clothes are in the closet.",
+      "accepted": ["My clothes are in the closet"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-07-prac-12",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "We have a garden with a lot of flowers.",
+      "accepted": ["We have a garden with a lot of flowers"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-07-prac-13",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "The lamp is between the bed and the desk.",
+      "accepted": ["The lamp is between the bed and the desk"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-07-prac-14",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: você mora num apartamento.",
+      "listen": "Do you live in a house or an apartment?",
+      "accepted": [
+        "In an apartment",
+        "I live in an apartment",
+        "An apartment",
+        "I live in a flat",
+        "In a flat",
+        "A flat",
+        "Apartment"
+      ],
+      "commonErrors": [
+        {
+          "id": "in-a-apartment",
+          "match": "\\ba apartment\\b",
+          "explanation_pt": "Antes de som de vogal use \"an\": \"an apartment\".",
+          "correction_en": "I live in an apartment."
+        },
+        {
+          "id": "i-live-apartment",
+          "match": "^i live apartment$",
+          "explanation_pt": "Falta \"in an\": \"I live in an apartment\".",
+          "correction_en": "I live in an apartment."
+        }
+      ]
+    },
+    {
+      "id": "a1-07-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: tem dois banheiros.",
+      "listen": "How many bathrooms are there in your house?",
+      "accepted": [
+        "Two",
+        "There are two",
+        "There are two bathrooms",
+        "Two bathrooms",
+        "My house has two bathrooms",
+        "It has two bathrooms"
+      ],
+      "commonErrors": [
+        {
+          "id": "there-is-plural",
+          "match": "\\bthere is (two|three|four|five|many)\\b",
+          "explanation_pt": "Com plural use \"there are\": \"There are two...\".",
+          "correction_en": "There are two bathrooms."
+        },
+        {
+          "id": "have-two",
+          "match": "^have two\\b",
+          "explanation_pt": "\"Tem\" (existe) é \"there are\": \"There are two\".",
+          "correction_en": "There are two bathrooms."
+        }
+      ]
+    },
+    {
+      "id": "a1-07-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: as chaves estão em cima da cama.",
+      "listen": "Where are my keys?",
+      "accepted": [
+        "They're on the bed",
+        "They are on the bed",
+        "On the bed",
+        "Your keys are on the bed",
+        "They're on your bed",
+        "On your bed"
+      ],
+      "commonErrors": [
+        {
+          "id": "in-the-bed",
+          "match": "\\bin the bed\\b",
+          "explanation_pt": "\"Em cima da\" cama é \"on the bed\". \"In the bed\" é dentro, debaixo das cobertas.",
+          "correction_en": "They're on the bed."
+        },
+        {
+          "id": "it-is-on",
+          "match": "^it is on\\b",
+          "explanation_pt": "\"Keys\" é plural: \"They're on the bed\".",
+          "correction_en": "They're on the bed."
+        }
+      ]
+    },
+    {
+      "id": "a1-07-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: seu cômodo favorito é a cozinha.",
+      "listen": "What's your favorite room in your home?",
+      "accepted": [
+        "The kitchen",
+        "It's the kitchen",
+        "It is the kitchen",
+        "My favorite room is the kitchen",
+        "Kitchen",
+        "I love the kitchen",
+        "It's my kitchen"
+      ],
+      "commonErrors": [
+        {
+          "id": "kitchen-chicken",
+          "match": "\\bchicken\\b",
+          "explanation_pt": "Cuidado: \"kitchen\" é cozinha; \"chicken\" é frango.",
+          "correction_en": "It's the kitchen."
+        }
+      ]
+    },
+    {
+      "id": "a1-07-prac-18",
+      "kind": "vocab",
+      "word_en": "fridge",
+      "meaning_pt": "geladeira",
+      "example_en": "There is milk in the fridge."
+    },
+    {
+      "id": "a1-07-prac-19",
+      "kind": "vocab",
+      "word_en": "next to",
+      "meaning_pt": "ao lado de",
+      "example_en": "The bathroom is next to the kitchen."
+    },
+    {
+      "id": "a1-07-prac-20",
+      "kind": "vocab",
+      "word_en": "under",
+      "meaning_pt": "embaixo de",
+      "example_en": "The shoes are under the bed."
+    },
+    {
+      "id": "a1-07-prac-21",
+      "kind": "free_speak",
+      "instruction_pt": "Descreva o seu quarto.",
+      "prompt_en": "Tell me about your bedroom. What is in it?",
+      "guidelines_pt": [
+        "Use \"There is...\" e \"There are...\"",
+        "Diga onde ficam as coisas: \"on\", \"under\", \"next to\"",
+        "Diga se é grande ou pequeno"
+      ]
+    },
+    {
+      "id": "a1-07-prac-22",
+      "kind": "choice",
+      "instruction_pt": "Qual frase está certa?",
+      "options": [
+        "Have two chairs in the kitchen.",
+        "There are two chairs in the kitchen.",
+        "There is two chairs in the kitchen."
+      ],
+      "answer": 1,
+      "explanation_pt": "Para \"tem\" (existe) no plural, use \"there are\"."
+    },
+    {
+      "id": "a1-07-prac-23",
+      "kind": "choice",
+      "instruction_pt": "Ouça e escolha onde está o gato.",
+      "listen": "The cat is under the sofa again!",
+      "options": ["embaixo do sofá", "em cima do sofá", "ao lado do sofá"],
+      "answer": 0,
+      "explanation_pt": "\"Under the sofa\" é embaixo do sofá."
+    },
+    {
+      "id": "a1-07-prac-24",
+      "kind": "fill",
+      "instruction_pt": "Complete com \"is\" ou \"are\".",
+      "sentence": "There ___ a mirror in the bathroom.",
+      "accepted": ["is"],
+      "commonErrors": [
+        {
+          "id": "are",
+          "match": "^are$",
+          "explanation_pt": "\"A mirror\" é singular: \"there is\".",
+          "correction_en": "is"
+        },
+        {
+          "id": "have",
+          "match": "^(have|has)$",
+          "explanation_pt": "Para existir, use \"there is\".",
+          "correction_en": "is"
+        }
+      ]
+    },
+    {
+      "id": "a1-07-prac-25",
+      "kind": "fill",
+      "instruction_pt": "Complete com a preposição certa.",
+      "sentence": "The picture is ___ the wall.",
+      "accepted": ["on"],
+      "commonErrors": [
+        {
+          "id": "in",
+          "match": "^in$",
+          "explanation_pt": "Na parede é \"on the wall\".",
+          "correction_en": "on"
+        }
+      ]
+    },
+    {
+      "id": "a1-07-prac-26",
+      "kind": "order",
+      "instruction_pt": "Coloque as palavras na ordem certa para formar a frase.",
+      "accepted": ["There is a big mirror in the bathroom"]
+    },
+    {
+      "id": "a1-07-prac-27",
+      "kind": "match",
+      "instruction_pt": "Ligue cada palavra ao seu significado.",
+      "pairs": [
+        {
+          "en": "fridge",
+          "pt": "geladeira"
+        },
+        {
+          "en": "stove",
+          "pt": "fogão"
+        },
+        {
+          "en": "mirror",
+          "pt": "espelho"
+        },
+        {
+          "en": "window",
+          "pt": "janela"
+        },
+        {
+          "en": "stairs",
+          "pt": "escada"
         }
       ]
     }

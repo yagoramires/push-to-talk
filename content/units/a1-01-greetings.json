@@ -461,5 +461,566 @@
         }
       ]
     }
+  ],
+  "practice": [
+    {
+      "id": "a1-01-prac-1",
+      "kind": "dialogue",
+      "instruction_pt": "Converse: ouça cada fala e responda em inglês.",
+      "scene_pt": "Você chega a um curso de inglês e conhece uma colega.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Hi! I'm Emma. What's your name?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga seu nome (use \"Lucas\").",
+          "accepted": [
+            "I'm Lucas",
+            "I am Lucas",
+            "My name is Lucas",
+            "My name's Lucas",
+            "Lucas",
+            "Hi, I'm Lucas",
+            "Hi, my name is Lucas",
+            "Hello, I'm Lucas"
+          ],
+          "commonErrors": [
+            {
+              "id": "my-name-are",
+              "match": "\\bmy name are\\b",
+              "explanation_pt": "Com \"my name\" (singular) o verbo é \"is\": \"My name is...\".",
+              "correction_en": "My name is Lucas."
+            },
+            {
+              "id": "me-name",
+              "match": "\\bme name\\b",
+              "explanation_pt": "\"Meu\" é \"my\", não \"me\".",
+              "correction_en": "My name is Lucas."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Nice to meet you, Lucas. Where are you from?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que você é do Brasil, de Recife.",
+          "accepted": [
+            "I'm from Brazil, from Recife",
+            "I'm from Recife, Brazil",
+            "I am from Recife, Brazil",
+            "I'm from Recife in Brazil",
+            "I am from Brazil, from Recife",
+            "I'm from Recife",
+            "I am from Recife",
+            "From Recife, Brazil",
+            "I'm Brazilian, from Recife"
+          ],
+          "commonErrors": [
+            {
+              "id": "i-from",
+              "match": "^i from\\b",
+              "explanation_pt": "Falta o verbo: \"I'm from...\", e não \"I from...\".",
+              "correction_en": "I'm from Recife, Brazil."
+            },
+            {
+              "id": "is-of",
+              "match": "\\b(am|is|are) of\\b",
+              "explanation_pt": "\"Ser de\" um lugar é \"to be from\", e não \"of\": \"I'm from Recife\".",
+              "correction_en": "I'm from Recife, Brazil."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Oh, cool! I'm from Canada. How are you today?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que está bem e pergunte como ela está.",
+          "accepted": [
+            "I'm fine, thanks. And you?",
+            "I'm fine, thank you. And you?",
+            "I'm good, thanks. And you?",
+            "I am fine, thank you. And you?",
+            "I'm good, thank you. How are you?",
+            "Fine, thanks. And you?",
+            "I'm fine, thanks. How about you?",
+            "I'm well, thanks. And you?",
+            "Good, thanks. And you?",
+            "I'm fine. And you?"
+          ],
+          "commonErrors": [
+            {
+              "id": "im-fine-and-you-yours",
+              "match": "\\band yours\\b",
+              "explanation_pt": "Para devolver a pergunta, diga \"And you?\".",
+              "correction_en": "I'm fine, thanks. And you?"
+            },
+            {
+              "id": "i-fine",
+              "match": "^i fine\\b",
+              "explanation_pt": "Falta o verbo: \"I'm fine\", e não \"I fine\".",
+              "correction_en": "I'm fine, thanks. And you?"
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "I'm great, thanks. See you in class!"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Despeça-se: \"Até mais!\"",
+          "accepted": [
+            "See you later!",
+            "See you!",
+            "See you soon!",
+            "Bye! See you later!",
+            "Bye!",
+            "Goodbye!",
+            "See you in class!",
+            "Bye, see you!"
+          ],
+          "commonErrors": [
+            {
+              "id": "until-more",
+              "match": "\\buntil more\\b",
+              "explanation_pt": "\"Até mais\" não se traduz palavra por palavra. Diga \"See you later!\".",
+              "correction_en": "See you later!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-01-prac-2",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Bom dia! Meu nome é Ana.\"",
+      "accepted": [
+        "Good morning! My name is Ana",
+        "Good morning! My name's Ana",
+        "Good morning! I'm Ana",
+        "Good morning! I am Ana"
+      ],
+      "commonErrors": [
+        {
+          "id": "my-name-are",
+          "match": "\\bmy name are\\b",
+          "explanation_pt": "Com \"my name\" (singular) o verbo é \"is\": \"My name is...\".",
+          "correction_en": "Good morning! My name is Ana."
+        },
+        {
+          "id": "good-day",
+          "match": "^good day\\b",
+          "explanation_pt": "\"Bom dia\" é \"Good morning\" (até o meio-dia).",
+          "correction_en": "Good morning! My name is Ana."
+        }
+      ]
+    },
+    {
+      "id": "a1-01-prac-3",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Boa tarde! Como vai?\"",
+      "accepted": [
+        "Good afternoon! How are you?",
+        "Good afternoon! How are you doing?",
+        "Good afternoon! How's it going?",
+        "Good afternoon! How do you do?"
+      ],
+      "commonErrors": [
+        {
+          "id": "how-go",
+          "match": "\\bhow (go|you go)\\b",
+          "explanation_pt": "\"Como vai?\" é \"How are you?\". \"Go\" sozinho não funciona aqui.",
+          "correction_en": "Good afternoon! How are you?"
+        },
+        {
+          "id": "good-late",
+          "match": "^good late\\b",
+          "explanation_pt": "\"Boa tarde\" é \"Good afternoon\".",
+          "correction_en": "Good afternoon! How are you?"
+        }
+      ]
+    },
+    {
+      "id": "a1-01-prac-4",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu sou de São Paulo.\"",
+      "accepted": [
+        "I'm from São Paulo",
+        "I am from São Paulo",
+        "I'm from Sao Paulo",
+        "I am from Sao Paulo",
+        "I come from São Paulo",
+        "I come from Sao Paulo"
+      ],
+      "commonErrors": [
+        {
+          "id": "i-from",
+          "match": "^i from\\b",
+          "explanation_pt": "Falta o verbo: \"I'm from...\", e não \"I from...\".",
+          "correction_en": "I'm from São Paulo."
+        },
+        {
+          "id": "is-of",
+          "match": "\\b(am|is|are) of\\b",
+          "explanation_pt": "\"Ser de\" um lugar é \"to be from\", e não \"of\": \"I'm from Recife\".",
+          "correction_en": "I'm from São Paulo."
+        }
+      ]
+    },
+    {
+      "id": "a1-01-prac-5",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"De onde você é?\"",
+      "accepted": [
+        "Where are you from?",
+        "Where do you come from?",
+        "Where are you from originally?"
+      ],
+      "commonErrors": [
+        {
+          "id": "of-where",
+          "match": "^(of|from) where\\b",
+          "explanation_pt": "Em inglês a preposição vai no fim: \"Where are you from?\".",
+          "correction_en": "Where are you from?"
+        },
+        {
+          "id": "where-you-are",
+          "match": "^where you are\\b",
+          "explanation_pt": "Na pergunta, o verbo vem antes do sujeito: \"Where are you from?\".",
+          "correction_en": "Where are you from?"
+        }
+      ]
+    },
+    {
+      "id": "a1-01-prac-6",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Prazer em te conhecer também.\"",
+      "accepted": [
+        "Nice to meet you too",
+        "Nice meeting you too",
+        "Pleased to meet you too",
+        "Good to meet you too",
+        "You too",
+        "Likewise"
+      ],
+      "commonErrors": [
+        {
+          "id": "pleasure-know",
+          "match": "\\b(pleasure|know) you\\b",
+          "explanation_pt": "\"Conhecer\" uma pessoa pela primeira vez é \"meet\", não \"know\".",
+          "correction_en": "Nice to meet you too."
+        }
+      ]
+    },
+    {
+      "id": "a1-01-prac-7",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Ela é a Júlia. Ela é do Rio.\"",
+      "accepted": [
+        "She's Julia. She's from Rio",
+        "She is Julia. She is from Rio",
+        "This is Julia. She's from Rio",
+        "This is Julia. She is from Rio",
+        "Her name is Julia. She's from Rio",
+        "Her name is Julia. She is from Rio"
+      ],
+      "commonErrors": [
+        {
+          "id": "is-from-no-she",
+          "match": "\\bjulia is of\\b|^is julia\\b",
+          "explanation_pt": "Em inglês a frase precisa de sujeito: \"She's Julia\".",
+          "correction_en": "She's Julia. She's from Rio."
+        },
+        {
+          "id": "is-of",
+          "match": "\\b(am|is|are) of\\b",
+          "explanation_pt": "\"Ser de\" um lugar é \"to be from\", e não \"of\": \"I'm from Recife\".",
+          "correction_en": "She's Julia. She's from Rio."
+        }
+      ]
+    },
+    {
+      "id": "a1-01-prac-8",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Boa noite! Até amanhã.\"",
+      "accepted": ["Good night! See you tomorrow", "Good evening! See you tomorrow"],
+      "commonErrors": [
+        {
+          "id": "until-tomorrow",
+          "match": "\\buntil tomorrow\\b",
+          "explanation_pt": "\"Até amanhã\" é \"See you tomorrow\".",
+          "correction_en": "Good night! See you tomorrow."
+        }
+      ]
+    },
+    {
+      "id": "a1-01-prac-9",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "Hi! I'm Paulo. I'm from Brazil.",
+      "accepted": ["Hi! I'm Paulo. I'm from Brazil"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-01-prac-10",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "Good afternoon, everyone!",
+      "accepted": ["Good afternoon, everyone"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-01-prac-11",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "Nice to meet you, Emma. I'm Lucas.",
+      "accepted": ["Nice to meet you, Emma. I'm Lucas"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-01-prac-12",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "Bye! Have a nice day!",
+      "accepted": ["Bye! Have a nice day"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-01-prac-13",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "I'm very well, thank you. How about you?",
+      "accepted": ["I'm very well, thank you. How about you"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-01-prac-14",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: diga seu nome (use \"Bia\").",
+      "listen": "Hello! What's your name?",
+      "accepted": [
+        "I'm Bia",
+        "I am Bia",
+        "My name is Bia",
+        "My name's Bia",
+        "Bia",
+        "Hi, I'm Bia",
+        "Hello, I'm Bia",
+        "Hello, my name is Bia",
+        "Hi, my name is Bia"
+      ],
+      "commonErrors": [
+        {
+          "id": "my-name-are",
+          "match": "\\bmy name are\\b",
+          "explanation_pt": "Com \"my name\" (singular) o verbo é \"is\": \"My name is...\".",
+          "correction_en": "My name is Bia."
+        },
+        {
+          "id": "me-name",
+          "match": "\\bme name\\b",
+          "explanation_pt": "\"Meu\" é \"my\", não \"me\".",
+          "correction_en": "My name is Bia."
+        }
+      ]
+    },
+    {
+      "id": "a1-01-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: você é do Brasil.",
+      "listen": "Where are you from, Bia?",
+      "accepted": [
+        "I'm from Brazil",
+        "I am from Brazil",
+        "From Brazil",
+        "Brazil",
+        "I'm Brazilian",
+        "I am Brazilian",
+        "I come from Brazil"
+      ],
+      "commonErrors": [
+        {
+          "id": "i-from",
+          "match": "^i from\\b",
+          "explanation_pt": "Falta o verbo: \"I'm from...\", e não \"I from...\".",
+          "correction_en": "I'm from Brazil."
+        },
+        {
+          "id": "is-of",
+          "match": "\\b(am|is|are) of\\b",
+          "explanation_pt": "\"Ser de\" um lugar é \"to be from\", e não \"of\": \"I'm from Recife\".",
+          "correction_en": "I'm from Brazil."
+        }
+      ]
+    },
+    {
+      "id": "a1-01-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda que você está ótimo.",
+      "listen": "Hey! How's it going today?",
+      "accepted": [
+        "I'm great, thanks",
+        "I'm great, thank you",
+        "I am great, thanks",
+        "Great, thanks",
+        "Great",
+        "I'm great",
+        "Great, thanks! And you?",
+        "I'm great, thanks. And you?",
+        "Very good, thanks",
+        "I'm very well, thanks"
+      ],
+      "commonErrors": [
+        {
+          "id": "i-great",
+          "match": "^i (great|fine|good)\\b",
+          "explanation_pt": "Falta o verbo: \"I'm great\", e não \"I great\".",
+          "correction_en": "I'm great, thanks."
+        }
+      ]
+    },
+    {
+      "id": "a1-01-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça a apresentação e responda de forma educada.",
+      "listen": "This is my friend, Tom.",
+      "accepted": [
+        "Nice to meet you, Tom",
+        "Hi Tom, nice to meet you",
+        "Hello Tom! Nice to meet you",
+        "Hi, Tom!",
+        "Hello, Tom",
+        "Pleased to meet you, Tom",
+        "Nice to meet you",
+        "Hi Tom, how are you?",
+        "Hi Tom! I'm Lucas"
+      ],
+      "commonErrors": [
+        {
+          "id": "know-you",
+          "match": "\\bknow you\\b",
+          "explanation_pt": "Ao conhecer alguém pela primeira vez, use \"meet\": \"Nice to meet you\".",
+          "correction_en": "Nice to meet you, Tom."
+        }
+      ]
+    },
+    {
+      "id": "a1-01-prac-18",
+      "kind": "vocab",
+      "word_en": "good afternoon",
+      "meaning_pt": "boa tarde",
+      "example_en": "Good afternoon! Welcome to the class."
+    },
+    {
+      "id": "a1-01-prac-19",
+      "kind": "vocab",
+      "word_en": "see you tomorrow",
+      "meaning_pt": "até amanhã",
+      "example_en": "Bye, Ana! See you tomorrow."
+    },
+    {
+      "id": "a1-01-prac-20",
+      "kind": "vocab",
+      "word_en": "Where are you from?",
+      "meaning_pt": "De onde você é?",
+      "example_en": "Where are you from? I'm from Chile."
+    },
+    {
+      "id": "a1-01-prac-21",
+      "kind": "free_speak",
+      "instruction_pt": "Apresente-se para um novo colega de trabalho.",
+      "prompt_en": "Hi, I'm Kate. I'm new here. Tell me about you!",
+      "guidelines_pt": [
+        "Cumprimente (\"Hi\", \"Hello\")",
+        "Diga seu nome e de onde você é",
+        "Pergunte algo de volta: \"And you?\""
+      ]
+    },
+    {
+      "id": "a1-01-prac-22",
+      "kind": "choice",
+      "instruction_pt": "Qual é a resposta certa para \"How are you?\"?",
+      "options": ["I'm fine, thanks.", "I'm Ana.", "I'm from Brazil."],
+      "answer": 0,
+      "explanation_pt": "\"How are you?\" pergunta como você está, então responda \"I'm fine, thanks.\""
+    },
+    {
+      "id": "a1-01-prac-23",
+      "kind": "choice",
+      "instruction_pt": "Ouça e escolha o que a pessoa diz.",
+      "listen": "Good afternoon, Mr. Smith.",
+      "options": ["Good night", "Good morning", "Good afternoon"],
+      "answer": 2,
+      "explanation_pt": "\"Good afternoon\" é o cumprimento da tarde."
+    },
+    {
+      "id": "a1-01-prac-24",
+      "kind": "fill",
+      "instruction_pt": "Complete com a palavra certa.",
+      "sentence": "Hi! I'm Sara. I'm ___ Chile.",
+      "accepted": ["from"],
+      "commonErrors": [
+        {
+          "id": "of",
+          "match": "^of$",
+          "explanation_pt": "\"Ser de\" um lugar é \"from\", não \"of\".",
+          "correction_en": "from"
+        }
+      ]
+    },
+    {
+      "id": "a1-01-prac-25",
+      "kind": "fill",
+      "instruction_pt": "Complete com a palavra certa.",
+      "sentence": "___ name is Pedro.",
+      "accepted": ["My", "His", "Your"],
+      "commonErrors": [
+        {
+          "id": "me",
+          "match": "^me$",
+          "explanation_pt": "\"Meu\" é \"my\", não \"me\".",
+          "correction_en": "My"
+        }
+      ]
+    },
+    {
+      "id": "a1-01-prac-26",
+      "kind": "order",
+      "instruction_pt": "Coloque as palavras na ordem certa para formar a frase.",
+      "accepted": ["Nice to meet you too"]
+    },
+    {
+      "id": "a1-01-prac-27",
+      "kind": "match",
+      "instruction_pt": "Ligue cada palavra ao seu significado.",
+      "pairs": [
+        {
+          "en": "good afternoon",
+          "pt": "boa tarde"
+        },
+        {
+          "en": "see you tomorrow",
+          "pt": "até amanhã"
+        },
+        {
+          "en": "welcome",
+          "pt": "bem-vindo"
+        },
+        {
+          "en": "I'm fine",
+          "pt": "estou bem"
+        },
+        {
+          "en": "bye",
+          "pt": "tchau"
+        }
+      ]
+    }
   ]
 }

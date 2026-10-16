@@ -109,11 +109,26 @@
           "kind": "match",
           "instruction_pt": "Ligue cada palavra ao seu significado.",
           "pairs": [
-            { "en": "cloudy", "pt": "nublado" },
-            { "en": "windy", "pt": "ventando" },
-            { "en": "winter", "pt": "inverno" },
-            { "en": "spring", "pt": "primavera" },
-            { "en": "fall", "pt": "outono" }
+            {
+              "en": "cloudy",
+              "pt": "nublado"
+            },
+            {
+              "en": "windy",
+              "pt": "ventando"
+            },
+            {
+              "en": "winter",
+              "pt": "inverno"
+            },
+            {
+              "en": "spring",
+              "pt": "primavera"
+            },
+            {
+              "en": "fall",
+              "pt": "outono"
+            }
           ]
         },
         {
@@ -448,6 +463,568 @@
           "prompt": "Nice weather today, isn't it?",
           "accepted": ["Nice weather today, isn't it?", "Nice weather, isn't it?"],
           "commonErrors": []
+        }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "id": "a1-11-prac-1",
+      "kind": "dialogue",
+      "instruction_pt": "Converse: ouça cada fala e responda em inglês.",
+      "scene_pt": "Uma amiga dos Estados Unidos te liga por vídeo.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Hi! It's snowing here in Chicago. What's the weather like in Brazil?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que está quente e ensolarado.",
+          "accepted": [
+            "It's hot and sunny",
+            "It is hot and sunny",
+            "It's sunny and hot",
+            "Here it's hot and sunny",
+            "It's very hot and sunny",
+            "It's hot and sunny here"
+          ],
+          "commonErrors": [
+            {
+              "id": "makes-weather",
+              "match": "\\b(makes?|do|does) (cold|hot|sun|heat|warm)\\b",
+              "explanation_pt": "Para o tempo use \"It's\": \"It's cold\", e não \"makes cold\" (faz frio).",
+              "correction_en": "It's hot and sunny."
+            },
+            {
+              "id": "no-it",
+              "match": "^(is|are) (cold|hot|sunny|raining|cloudy|windy|warm|snowing|very|a)\\b",
+              "explanation_pt": "O inglês precisa do sujeito \"it\": \"It's cold\".",
+              "correction_en": "It's hot and sunny."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Lucky you! How hot is it?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que está 32 graus.",
+          "accepted": [
+            "It's 32 degrees",
+            "It is 32 degrees",
+            "32 degrees",
+            "It's about 32 degrees",
+            "About 32 degrees",
+            "It's thirty-two degrees"
+          ],
+          "commonErrors": [
+            {
+              "id": "makes-weather",
+              "match": "\\b(makes?|do|does) (cold|hot|sun|heat|warm)\\b",
+              "explanation_pt": "Para o tempo use \"It's\": \"It's cold\", e não \"makes cold\" (faz frio).",
+              "correction_en": "It's 32 degrees."
+            },
+            {
+              "id": "make-degrees",
+              "match": "\\bmakes? (thirty|[a-z]+ )?degrees\\b|\\bmakes thirty\\b",
+              "explanation_pt": "Temperatura: \"It's 32 degrees\", e não \"makes\".",
+              "correction_en": "It's 32 degrees."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Wow! Do you like hot weather?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que sim, adora o verão.",
+          "accepted": [
+            "Yes, I love summer",
+            "Yes, I do. I love summer",
+            "Yes! I love the summer",
+            "Yes, I love hot weather",
+            "I love summer",
+            "Yes, summer is my favorite season"
+          ],
+          "commonErrors": [
+            {
+              "id": "i-love-the-heat-calor",
+              "match": "\\bi love (the )?heat\\b",
+              "explanation_pt": "Para gostar do tempo quente, diga \"I love hot weather\" ou \"I love summer\".",
+              "correction_en": "Yes, I love summer."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Well, I'm cold! What about tomorrow?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que amanhã vai chover.",
+          "accepted": [
+            "Tomorrow it's going to rain",
+            "It's going to rain tomorrow",
+            "It will rain tomorrow",
+            "Tomorrow it will rain",
+            "It's going to be rainy tomorrow",
+            "Rain, I think"
+          ],
+          "commonErrors": [
+            {
+              "id": "go-to-rain",
+              "match": "\\bgoes? to rain\\b",
+              "explanation_pt": "Futuro: \"It's going to rain\" ou \"It will rain\".",
+              "correction_en": "It's going to rain tomorrow."
+            },
+            {
+              "id": "will-to",
+              "match": "\\bwill to\\b",
+              "explanation_pt": "Depois de \"will\" não use \"to\".",
+              "correction_en": "It will rain tomorrow."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-11-prac-2",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Hoje está calor.\"",
+      "accepted": [
+        "It's hot today",
+        "It is hot today",
+        "Today it's hot",
+        "Today is hot",
+        "It's really hot today",
+        "It's warm today"
+      ],
+      "commonErrors": [
+        {
+          "id": "makes-weather",
+          "match": "\\b(makes?|do|does) (cold|hot|sun|heat|warm)\\b",
+          "explanation_pt": "Para o tempo use \"It's\": \"It's cold\", e não \"makes cold\" (faz frio).",
+          "correction_en": "It's hot today."
+        },
+        {
+          "id": "no-it",
+          "match": "^(is|are) (cold|hot|sunny|raining|cloudy|windy|warm|snowing|very|a)\\b",
+          "explanation_pt": "O inglês precisa do sujeito \"it\": \"It's cold\".",
+          "correction_en": "It's hot today."
+        }
+      ]
+    },
+    {
+      "id": "a1-11-prac-3",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Está nublado.\"",
+      "accepted": ["It's cloudy", "It is cloudy", "It's a cloudy day"],
+      "commonErrors": [
+        {
+          "id": "no-it",
+          "match": "^(is|are) (cold|hot|sunny|raining|cloudy|windy|warm|snowing|very|a)\\b",
+          "explanation_pt": "O inglês precisa do sujeito \"it\": \"It's cold\".",
+          "correction_en": "It's cloudy."
+        },
+        {
+          "id": "nubled",
+          "match": "\\bcloud$",
+          "explanation_pt": "O adjetivo é \"cloudy\": \"It's cloudy\".",
+          "correction_en": "It's cloudy."
+        }
+      ]
+    },
+    {
+      "id": "a1-11-prac-4",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Está ventando muito.\"",
+      "accepted": [
+        "It's very windy",
+        "It is very windy",
+        "It's really windy",
+        "It's so windy",
+        "It is really windy"
+      ],
+      "commonErrors": [
+        {
+          "id": "no-it",
+          "match": "^(is|are) (cold|hot|sunny|raining|cloudy|windy|warm|snowing|very|a)\\b",
+          "explanation_pt": "O inglês precisa do sujeito \"it\": \"It's cold\".",
+          "correction_en": "It's very windy."
+        },
+        {
+          "id": "making-wind",
+          "match": "\\b(making|has|have) (a lot of )?wind\\b",
+          "explanation_pt": "Diga \"It's very windy\".",
+          "correction_en": "It's very windy."
+        }
+      ]
+    },
+    {
+      "id": "a1-11-prac-5",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Faz frio no inverno.\"",
+      "accepted": [
+        "It's cold in winter",
+        "It is cold in winter",
+        "It's cold in the winter",
+        "In winter it is cold",
+        "In winter it's cold",
+        "It is cold in the winter",
+        "Winter is cold"
+      ],
+      "commonErrors": [
+        {
+          "id": "makes-weather",
+          "match": "\\b(makes?|do|does) (cold|hot|sun|heat|warm)\\b",
+          "explanation_pt": "Para o tempo use \"It's\": \"It's cold\", e não \"makes cold\" (faz frio).",
+          "correction_en": "It's cold in winter."
+        },
+        {
+          "id": "no-it",
+          "match": "^(is|are) (cold|hot|sunny|raining|cloudy|windy|warm|snowing|very|a)\\b",
+          "explanation_pt": "O inglês precisa do sujeito \"it\": \"It's cold\".",
+          "correction_en": "It's cold in winter."
+        }
+      ]
+    },
+    {
+      "id": "a1-11-prac-6",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Está nevando em Nova York.\"",
+      "accepted": ["It's snowing in New York", "It is snowing in New York"],
+      "commonErrors": [
+        {
+          "id": "no-it",
+          "match": "^(is|are) (cold|hot|sunny|raining|cloudy|windy|warm|snowing|very|a)\\b",
+          "explanation_pt": "O inglês precisa do sujeito \"it\": \"It's cold\".",
+          "correction_en": "It's snowing in New York."
+        },
+        {
+          "id": "snow-no-ing",
+          "match": "\\bit snows in new york$",
+          "explanation_pt": "Agora, neste momento: \"It's snowing\".",
+          "correction_en": "It's snowing in New York."
+        }
+      ]
+    },
+    {
+      "id": "a1-11-prac-7",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Leve um guarda-chuva!\"",
+      "accepted": [
+        "Take an umbrella!",
+        "Take your umbrella!",
+        "Bring an umbrella!",
+        "Bring your umbrella!",
+        "Don't forget your umbrella!",
+        "Take an umbrella with you!"
+      ],
+      "commonErrors": [
+        {
+          "id": "a-umbrella",
+          "match": "\\ba umbrella\\b",
+          "explanation_pt": "Antes de som de vogal use \"an\": \"an umbrella\".",
+          "correction_en": "Take an umbrella!"
+        },
+        {
+          "id": "guard-rain",
+          "match": "\\bguard rain\\b",
+          "explanation_pt": "Guarda-chuva é \"umbrella\".",
+          "correction_en": "Take an umbrella!"
+        }
+      ]
+    },
+    {
+      "id": "a1-11-prac-8",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Que dia lindo! Vamos à praia.\"",
+      "accepted": [
+        "What a beautiful day! Let's go to the beach",
+        "What a beautiful day! Let us go to the beach",
+        "What a nice day! Let's go to the beach",
+        "What a lovely day! Let's go to the beach",
+        "It's a beautiful day! Let's go to the beach"
+      ],
+      "commonErrors": [
+        {
+          "id": "what-beautiful-day",
+          "match": "^what (beautiful|nice|lovely) day\\b",
+          "explanation_pt": "Exclamação com substantivo singular: \"What a beautiful day!\".",
+          "correction_en": "What a beautiful day! Let's go to the beach."
+        },
+        {
+          "id": "go-to-beach",
+          "match": "\\bgo to beach\\b",
+          "explanation_pt": "Use \"the\": \"go to the beach\".",
+          "correction_en": "Let's go to the beach."
+        }
+      ]
+    },
+    {
+      "id": "a1-11-prac-9",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "In Brazil, summer is from December to March.",
+      "accepted": ["In Brazil, summer is from December to March"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-11-prac-10",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "It's very hot in Rio in January.",
+      "accepted": ["It's very hot in Rio in January"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-11-prac-11",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "It's foggy this morning. Drive carefully!",
+      "accepted": ["It's foggy this morning. Drive carefully"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-11-prac-12",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "I love rainy days. I stay home and read.",
+      "accepted": ["I love rainy days. I stay home and read"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-11-prac-13",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "The weather is great in the spring.",
+      "accepted": ["The weather is great in the spring"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-11-prac-14",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: está chovendo.",
+      "listen": "How's the weather there today?",
+      "accepted": [
+        "It's raining",
+        "It is raining",
+        "It's rainy",
+        "It's raining a lot",
+        "It's raining here",
+        "Rainy",
+        "It's raining today"
+      ],
+      "commonErrors": [
+        {
+          "id": "no-it",
+          "match": "^(is|are) (cold|hot|sunny|raining|cloudy|windy|warm|snowing|very|a)\\b",
+          "explanation_pt": "O inglês precisa do sujeito \"it\": \"It's cold\".",
+          "correction_en": "It's raining."
+        },
+        {
+          "id": "has-rain",
+          "match": "\\b(has|have|making) rain\\b",
+          "explanation_pt": "\"Está chovendo\" é \"It's raining\".",
+          "correction_en": "It's raining."
+        }
+      ]
+    },
+    {
+      "id": "a1-11-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: sua estação favorita é o outono.",
+      "listen": "Which season do you like best?",
+      "accepted": [
+        "Fall",
+        "Autumn",
+        "I like fall",
+        "I like autumn",
+        "I like fall best",
+        "I like autumn best",
+        "Fall is my favorite",
+        "My favorite season is fall",
+        "My favorite season is autumn",
+        "I love fall"
+      ],
+      "commonErrors": [
+        {
+          "id": "the-fall",
+          "match": "\\bi like the autumn best\\b|\\bi like the fall\\b",
+          "explanation_pt": "Sem \"the\" antes da estação: \"I like fall\".",
+          "correction_en": "I like fall best."
+        }
+      ]
+    },
+    {
+      "id": "a1-11-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: está uns 18 graus.",
+      "listen": "What's the temperature now?",
+      "accepted": [
+        "It's about 18 degrees",
+        "It's 18 degrees",
+        "It is 18 degrees",
+        "About 18 degrees",
+        "18 degrees",
+        "It's around 18 degrees",
+        "It's eighteen degrees"
+      ],
+      "commonErrors": [
+        {
+          "id": "makes-weather",
+          "match": "\\b(makes?|do|does) (cold|hot|sun|heat|warm)\\b",
+          "explanation_pt": "Para o tempo use \"It's\": \"It's cold\", e não \"makes cold\" (faz frio).",
+          "correction_en": "It's about 18 degrees."
+        },
+        {
+          "id": "no-it",
+          "match": "^(is|are) (cold|hot|sunny|raining|cloudy|windy|warm|snowing|very|a)\\b",
+          "explanation_pt": "O inglês precisa do sujeito \"it\": \"It's cold\".",
+          "correction_en": "It's about 18 degrees."
+        }
+      ]
+    },
+    {
+      "id": "a1-11-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: não, vai fazer sol.",
+      "listen": "Is it going to rain tomorrow?",
+      "accepted": [
+        "No, it's going to be sunny",
+        "No, it isn't. It's going to be sunny",
+        "No, it will be sunny",
+        "No, it's not. It will be sunny",
+        "No. It is going to be sunny",
+        "No, sunny"
+      ],
+      "commonErrors": [
+        {
+          "id": "has-sun",
+          "match": "\\b(has|have|there is) (sun|rain|wind)\\b",
+          "explanation_pt": "\"Tem sol\" vira \"It's sunny\". Para chuva: \"It's raining\".",
+          "correction_en": "No, it's going to be sunny."
+        },
+        {
+          "id": "make-sun",
+          "match": "\\bmakes? sun\\b",
+          "explanation_pt": "\"Fazer sol\" é \"to be sunny\".",
+          "correction_en": "No, it's going to be sunny."
+        }
+      ]
+    },
+    {
+      "id": "a1-11-prac-18",
+      "kind": "vocab",
+      "word_en": "snow",
+      "meaning_pt": "neve; nevar",
+      "example_en": "It snows in the mountains in winter."
+    },
+    {
+      "id": "a1-11-prac-19",
+      "kind": "vocab",
+      "word_en": "umbrella",
+      "meaning_pt": "guarda-chuva",
+      "example_en": "It's raining. Where is my umbrella?"
+    },
+    {
+      "id": "a1-11-prac-20",
+      "kind": "vocab",
+      "word_en": "degrees",
+      "meaning_pt": "graus",
+      "example_en": "It's twenty degrees and sunny."
+    },
+    {
+      "id": "a1-11-prac-21",
+      "kind": "free_speak",
+      "instruction_pt": "Fale do clima da sua cidade.",
+      "prompt_en": "What's the weather like where you live? Is it different in summer and in winter?",
+      "guidelines_pt": [
+        "Use \"It's...\" (hot, cold, sunny, rainy)",
+        "Fale de pelo menos duas estações",
+        "Diga qual estação você prefere e por quê"
+      ]
+    },
+    {
+      "id": "a1-11-prac-22",
+      "kind": "choice",
+      "instruction_pt": "Como se diz \"Faz frio\"?",
+      "options": ["Makes cold.", "It's cold.", "Is cold."],
+      "answer": 1,
+      "explanation_pt": "Para o tempo, use sempre \"It's\": \"It's cold\"."
+    },
+    {
+      "id": "a1-11-prac-23",
+      "kind": "choice",
+      "instruction_pt": "Ouça e escolha como vai estar o tempo.",
+      "listen": "It's going to snow tonight.",
+      "options": ["ensolarado", "chuvoso", "nevando"],
+      "answer": 2,
+      "explanation_pt": "\"Snow\" é neve."
+    },
+    {
+      "id": "a1-11-prac-24",
+      "kind": "fill",
+      "instruction_pt": "Complete com a palavra certa.",
+      "sentence": "It's ___. Take your sunglasses!",
+      "accepted": ["sunny", "hot"],
+      "commonErrors": [
+        {
+          "id": "sun",
+          "match": "^sun$",
+          "explanation_pt": "O adjetivo é \"sunny\".",
+          "correction_en": "sunny"
+        }
+      ]
+    },
+    {
+      "id": "a1-11-prac-25",
+      "kind": "fill",
+      "instruction_pt": "Complete com a preposição certa.",
+      "sentence": "It's very cold ___ July in the south of Brazil.",
+      "accepted": ["in"],
+      "commonErrors": [
+        {
+          "id": "on",
+          "match": "^(on|at)$",
+          "explanation_pt": "Com meses use \"in\": \"in July\".",
+          "correction_en": "in"
+        }
+      ]
+    },
+    {
+      "id": "a1-11-prac-26",
+      "kind": "order",
+      "instruction_pt": "Coloque as palavras na ordem certa para formar a frase.",
+      "accepted": ["It's going to rain this afternoon"]
+    },
+    {
+      "id": "a1-11-prac-27",
+      "kind": "match",
+      "instruction_pt": "Ligue cada palavra ao seu significado.",
+      "pairs": [
+        {
+          "en": "snow",
+          "pt": "neve"
+        },
+        {
+          "en": "fog",
+          "pt": "neblina"
+        },
+        {
+          "en": "storm",
+          "pt": "tempestade"
+        },
+        {
+          "en": "hot",
+          "pt": "quente"
+        },
+        {
+          "en": "cool",
+          "pt": "fresco"
         }
       ]
     }

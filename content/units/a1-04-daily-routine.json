@@ -465,5 +465,584 @@
         }
       ]
     }
+  ],
+  "practice": [
+    {
+      "id": "a1-04-prac-1",
+      "kind": "dialogue",
+      "instruction_pt": "Converse: ouça cada fala e responda em inglês.",
+      "scene_pt": "Um colega de trabalho pergunta como é a sua rotina.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "You're always early! What time do you wake up?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que acorda às 6 horas.",
+          "accepted": [
+            "I wake up at six",
+            "I wake up at 6",
+            "I wake up at six o'clock",
+            "At six",
+            "At six o'clock",
+            "I get up at six",
+            "I usually wake up at six",
+            "Usually at six"
+          ],
+          "commonErrors": [
+            {
+              "id": "i-with-s",
+              "match": "\\bi (gets|goes|works|has|wakes|takes|watches|starts|finishes|leaves)\\b",
+              "explanation_pt": "Com \"I\" o verbo fica sem \"s\": \"I get up\", \"I go\".",
+              "correction_en": "I wake up at six."
+            },
+            {
+              "id": "in-six",
+              "match": "\\b(in|on) six\\b",
+              "explanation_pt": "Para horas use \"at\": \"at six\".",
+              "correction_en": "I wake up at six."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Wow. And what do you do before work?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que toma banho e toma café da manhã.",
+          "accepted": [
+            "I take a shower and I have breakfast",
+            "I take a shower and have breakfast",
+            "I have a shower and I have breakfast",
+            "I take a shower and eat breakfast",
+            "I shower and have breakfast",
+            "I take a shower, then I have breakfast"
+          ],
+          "commonErrors": [
+            {
+              "id": "take-coffee",
+              "match": "\\btake (breakfast|coffee in the morning)\\b",
+              "explanation_pt": "\"Tomar café da manhã\" é \"have breakfast\".",
+              "correction_en": "I take a shower and I have breakfast."
+            },
+            {
+              "id": "take-a-bath-shower",
+              "match": "\\btake a bath and\\b",
+              "explanation_pt": "\"Tomar banho\" no chuveiro é \"take a shower\".",
+              "correction_en": "I take a shower and I have breakfast."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "How do you get to work?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que vai de metrô.",
+          "accepted": [
+            "I go by subway",
+            "I go to work by subway",
+            "By subway",
+            "I take the subway",
+            "I go by metro",
+            "By metro",
+            "I take the metro",
+            "I go to work by metro"
+          ],
+          "commonErrors": [
+            {
+              "id": "with-subway",
+              "match": "\\b(with|in) the (subway|metro)\\b",
+              "explanation_pt": "Meio de transporte usa \"by\": \"by subway\". Ou \"I take the subway\".",
+              "correction_en": "I go by subway."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "And what time do you finish work?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que termina às 5 e chega em casa às 6.",
+          "accepted": [
+            "I finish at five and I get home at six",
+            "I finish work at five and get home at six",
+            "At five, and I get home at six",
+            "I finish at five and get home at six",
+            "I finish at 5 and I get home at 6",
+            "I finish work at five and I get home at six"
+          ],
+          "commonErrors": [
+            {
+              "id": "i-with-s",
+              "match": "\\bi (gets|goes|works|has|wakes|takes|watches|starts|finishes|leaves)\\b",
+              "explanation_pt": "Com \"I\" o verbo fica sem \"s\": \"I get up\", \"I go\".",
+              "correction_en": "I finish at five and I get home at six."
+            },
+            {
+              "id": "arrive-home",
+              "match": "\\barrive (at|in|to) home\\b",
+              "explanation_pt": "Com \"home\" não use preposição: \"I get home\" ou \"I arrive home\".",
+              "correction_en": "I get home at six."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-04-prac-2",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu acordo às 7 horas.\"",
+      "accepted": [
+        "I wake up at seven",
+        "I wake up at 7",
+        "I wake up at seven o'clock",
+        "I get up at seven",
+        "I get up at seven o'clock",
+        "I wake up at 7 am"
+      ],
+      "commonErrors": [
+        {
+          "id": "i-with-s",
+          "match": "\\bi (gets|goes|works|has|wakes|takes|watches|starts|finishes|leaves)\\b",
+          "explanation_pt": "Com \"I\" o verbo fica sem \"s\": \"I get up\", \"I go\".",
+          "correction_en": "I wake up at seven."
+        },
+        {
+          "id": "wake-at-hours",
+          "match": "\\bat seven hours\\b",
+          "explanation_pt": "Hora certa: \"at seven\" ou \"at seven o'clock\", sem \"hours\".",
+          "correction_en": "I wake up at seven."
+        }
+      ]
+    },
+    {
+      "id": "a1-04-prac-3",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Ela vai para o trabalho de ônibus.\"",
+      "accepted": [
+        "She goes to work by bus",
+        "She takes the bus to work",
+        "She goes to work on the bus",
+        "She gets to work by bus"
+      ],
+      "commonErrors": [
+        {
+          "id": "no-s-3rd",
+          "match": "\\bshe (get|go|work|have|wake|take|watch|start|finish|leave)\\b",
+          "explanation_pt": "Com he, she e it (ou um nome) o verbo do presente ganha \"s\": \"she works\", \"he goes\", \"she has\".",
+          "correction_en": "She goes to work by bus."
+        },
+        {
+          "id": "with-bus",
+          "match": "\\b(of|with) bus\\b",
+          "explanation_pt": "Meio de transporte usa \"by\": \"by bus\".",
+          "correction_en": "She goes to work by bus."
+        }
+      ]
+    },
+    {
+      "id": "a1-04-prac-4",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu almoço ao meio-dia.\"",
+      "accepted": [
+        "I have lunch at noon",
+        "I have lunch at midday",
+        "I have lunch at twelve",
+        "I have lunch at twelve o'clock",
+        "I eat lunch at noon",
+        "I eat lunch at twelve"
+      ],
+      "commonErrors": [
+        {
+          "id": "i-lunch",
+          "match": "^i lunch\\b",
+          "explanation_pt": "\"Almoçar\" é \"have lunch\".",
+          "correction_en": "I have lunch at noon."
+        },
+        {
+          "id": "i-with-s",
+          "match": "\\bi (gets|goes|works|has|wakes|takes|watches|starts|finishes|leaves)\\b",
+          "explanation_pt": "Com \"I\" o verbo fica sem \"s\": \"I get up\", \"I go\".",
+          "correction_en": "I have lunch at noon."
+        }
+      ]
+    },
+    {
+      "id": "a1-04-prac-5",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Meu marido não toma café da manhã.\"",
+      "accepted": [
+        "My husband doesn't have breakfast",
+        "My husband does not have breakfast",
+        "My husband doesn't eat breakfast",
+        "My husband never has breakfast",
+        "My husband skips breakfast"
+      ],
+      "commonErrors": [
+        {
+          "id": "husband-dont",
+          "match": "\\bhusband (do not|dont)\\b",
+          "explanation_pt": "Com \"my husband\" (he), a negativa é \"doesn't\".",
+          "correction_en": "My husband doesn't have breakfast."
+        },
+        {
+          "id": "doesnt-has",
+          "match": "\\bdoes not has\\b",
+          "explanation_pt": "Depois de \"doesn't\", o verbo volta para \"have\".",
+          "correction_en": "My husband doesn't have breakfast."
+        }
+      ]
+    },
+    {
+      "id": "a1-04-prac-6",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu estudo inglês à noite.\"",
+      "accepted": [
+        "I study English at night",
+        "I study English in the evening",
+        "At night I study English",
+        "In the evening I study English"
+      ],
+      "commonErrors": [
+        {
+          "id": "in-the-night",
+          "match": "\\bin the night\\b",
+          "explanation_pt": "\"À noite\" é \"at night\" (ou \"in the evening\").",
+          "correction_en": "I study English at night."
+        },
+        {
+          "id": "i-with-s",
+          "match": "\\bi (gets|goes|works|has|wakes|takes|watches|starts|finishes|leaves)\\b",
+          "explanation_pt": "Com \"I\" o verbo fica sem \"s\": \"I get up\", \"I go\".",
+          "correction_en": "I study English at night."
+        }
+      ]
+    },
+    {
+      "id": "a1-04-prac-7",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"A que horas ele vai dormir?\"",
+      "accepted": [
+        "What time does he go to bed?",
+        "When does he go to bed?",
+        "What time does he go to sleep?",
+        "When does he go to sleep?"
+      ],
+      "commonErrors": [
+        {
+          "id": "does-goes",
+          "match": "\\bdoes he goes\\b",
+          "explanation_pt": "Depois de \"does\", o verbo fica sem \"s\": \"does he go\".",
+          "correction_en": "What time does he go to bed?"
+        },
+        {
+          "id": "what-time-he",
+          "match": "^what time he\\b",
+          "explanation_pt": "Na pergunta precisa do \"does\": \"What time does he go...?\".",
+          "correction_en": "What time does he go to bed?"
+        }
+      ]
+    },
+    {
+      "id": "a1-04-prac-8",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Nos fins de semana eu acordo tarde.\"",
+      "accepted": [
+        "On weekends I wake up late",
+        "I wake up late on weekends",
+        "On the weekend I wake up late",
+        "I wake up late on the weekend",
+        "On weekends I get up late",
+        "I get up late on weekends",
+        "At the weekend I get up late"
+      ],
+      "commonErrors": [
+        {
+          "id": "in-weekends",
+          "match": "\\bin (the )?weekends?\\b",
+          "explanation_pt": "Para fim de semana use \"on weekends\" (ou \"on the weekend\").",
+          "correction_en": "On weekends I wake up late."
+        },
+        {
+          "id": "wake-up-later",
+          "match": "\\bwake up early late\\b",
+          "explanation_pt": "Use só \"late\".",
+          "correction_en": "I wake up late."
+        }
+      ]
+    },
+    {
+      "id": "a1-04-prac-9",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "I brush my teeth and I get dressed.",
+      "accepted": ["I brush my teeth and I get dressed"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-04-prac-10",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "My son goes to school at seven thirty.",
+      "accepted": ["My son goes to school at seven thirty"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-04-prac-11",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "She cooks dinner in the evening.",
+      "accepted": ["She cooks dinner in the evening"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-04-prac-12",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "On Sundays I get up late.",
+      "accepted": ["On Sundays I get up late"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-04-prac-13",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "He finishes work at five and goes to the gym.",
+      "accepted": ["He finishes work at five and goes to the gym"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-04-prac-14",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: você toma café da manhã às 7.",
+      "listen": "What time do you have breakfast?",
+      "accepted": [
+        "At seven",
+        "At seven o'clock",
+        "I have breakfast at seven",
+        "I have breakfast at seven o'clock",
+        "At 7",
+        "I have breakfast at 7",
+        "Around seven",
+        "I eat breakfast at seven"
+      ],
+      "commonErrors": [
+        {
+          "id": "in-seven",
+          "match": "\\b(in|on) seven\\b",
+          "explanation_pt": "Para horas use \"at\": \"at seven\".",
+          "correction_en": "At seven."
+        },
+        {
+          "id": "i-with-s",
+          "match": "\\bi (gets|goes|works|has|wakes|takes|watches|starts|finishes|leaves)\\b",
+          "explanation_pt": "Com \"I\" o verbo fica sem \"s\": \"I get up\", \"I go\".",
+          "correction_en": "I have breakfast at seven."
+        }
+      ]
+    },
+    {
+      "id": "a1-04-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: você trabalha de segunda a sexta.",
+      "listen": "Do you work on weekends?",
+      "accepted": [
+        "No, I don't",
+        "No, I do not",
+        "No. I work from Monday to Friday",
+        "No, I work Monday to Friday",
+        "No, I don't. I work from Monday to Friday",
+        "No, only Monday to Friday",
+        "No, just from Monday to Friday",
+        "No"
+      ],
+      "commonErrors": [
+        {
+          "id": "no-i-not",
+          "match": "^no i not\\b",
+          "explanation_pt": "Resposta curta negativa: \"No, I don't\".",
+          "correction_en": "No, I don't."
+        }
+      ]
+    },
+    {
+      "id": "a1-04-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: você vai a pé.",
+      "listen": "How do you get to school?",
+      "accepted": [
+        "I walk",
+        "On foot",
+        "I go on foot",
+        "I walk to school",
+        "I go to school on foot",
+        "Walking",
+        "I go walking"
+      ],
+      "commonErrors": [
+        {
+          "id": "by-foot-feet",
+          "match": "\\bby feet\\b",
+          "explanation_pt": "\"A pé\" é \"on foot\" ou simplesmente \"I walk\".",
+          "correction_en": "I walk to school."
+        },
+        {
+          "id": "i-with-s",
+          "match": "\\bi (gets|goes|works|has|wakes|takes|watches|starts|finishes|leaves)\\b",
+          "explanation_pt": "Com \"I\" o verbo fica sem \"s\": \"I get up\", \"I go\".",
+          "correction_en": "I walk to school."
+        }
+      ]
+    },
+    {
+      "id": "a1-04-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: sua irmã acorda às 5.",
+      "listen": "What time does your sister get up?",
+      "accepted": [
+        "She gets up at five",
+        "At five",
+        "She gets up at 5",
+        "At five o'clock",
+        "She gets up at five o'clock",
+        "My sister gets up at five",
+        "She wakes up at five"
+      ],
+      "commonErrors": [
+        {
+          "id": "no-s-3rd",
+          "match": "\\bshe (get|go|work|have|wake|take|watch|start|finish|leave)\\b",
+          "explanation_pt": "Com he, she e it (ou um nome) o verbo do presente ganha \"s\": \"she works\", \"he goes\", \"she has\".",
+          "correction_en": "She gets up at five."
+        },
+        {
+          "id": "he-for-sister",
+          "match": "^he\\b",
+          "explanation_pt": "Para irmã, use \"she\".",
+          "correction_en": "She gets up at five."
+        }
+      ]
+    },
+    {
+      "id": "a1-04-prac-18",
+      "kind": "vocab",
+      "word_en": "get dressed",
+      "meaning_pt": "se vestir",
+      "example_en": "I get dressed after breakfast."
+    },
+    {
+      "id": "a1-04-prac-19",
+      "kind": "vocab",
+      "word_en": "brush my teeth",
+      "meaning_pt": "escovar os dentes",
+      "example_en": "I brush my teeth three times a day."
+    },
+    {
+      "id": "a1-04-prac-20",
+      "kind": "vocab",
+      "word_en": "every day",
+      "meaning_pt": "todo dia",
+      "example_en": "She goes to the gym every day."
+    },
+    {
+      "id": "a1-04-prac-21",
+      "kind": "free_speak",
+      "instruction_pt": "Conte a rotina de uma pessoa da sua casa.",
+      "prompt_en": "Tell me about a typical day for someone in your home. What does he or she do?",
+      "guidelines_pt": [
+        "Use he/she com o verbo + \"s\" (gets, goes, works)",
+        "Diga pelo menos três horários com \"at\"",
+        "Use \"in the morning\", \"in the afternoon\", \"at night\""
+      ]
+    },
+    {
+      "id": "a1-04-prac-22",
+      "kind": "choice",
+      "instruction_pt": "Qual frase está certa?",
+      "options": [
+        "She go to work at eight.",
+        "She goes to work at eight.",
+        "She going to work at eight."
+      ],
+      "answer": 1,
+      "explanation_pt": "Com she, he e it o verbo ganha \"s\" no presente: \"she goes\"."
+    },
+    {
+      "id": "a1-04-prac-23",
+      "kind": "choice",
+      "instruction_pt": "Ouça e escolha: a que horas ele almoça?",
+      "listen": "Mark has lunch at one and finishes work at six.",
+      "options": ["12h", "13h", "14h"],
+      "answer": 1,
+      "explanation_pt": "Ele diz \"at one\": uma hora da tarde."
+    },
+    {
+      "id": "a1-04-prac-24",
+      "kind": "fill",
+      "instruction_pt": "Complete com o verbo certo.",
+      "sentence": "My father ___ up at five every day.",
+      "accepted": ["gets", "wakes"],
+      "commonErrors": [
+        {
+          "id": "get",
+          "match": "^(get|wake)$",
+          "explanation_pt": "Com \"my father\" (he), o verbo ganha \"s\": \"gets\".",
+          "correction_en": "gets"
+        }
+      ]
+    },
+    {
+      "id": "a1-04-prac-25",
+      "kind": "fill",
+      "instruction_pt": "Complete com a preposição certa.",
+      "sentence": "I go to bed late ___ night.",
+      "accepted": ["at"],
+      "commonErrors": [
+        {
+          "id": "in",
+          "match": "^in$",
+          "explanation_pt": "\"À noite\" é \"at night\".",
+          "correction_en": "at"
+        }
+      ]
+    },
+    {
+      "id": "a1-04-prac-26",
+      "kind": "order",
+      "instruction_pt": "Coloque as palavras na ordem certa para formar a frase.",
+      "accepted": ["She has dinner at eight"]
+    },
+    {
+      "id": "a1-04-prac-27",
+      "kind": "match",
+      "instruction_pt": "Ligue cada palavra ao seu significado.",
+      "pairs": [
+        {
+          "en": "get dressed",
+          "pt": "se vestir"
+        },
+        {
+          "en": "leave home",
+          "pt": "sair de casa"
+        },
+        {
+          "en": "cook dinner",
+          "pt": "fazer o jantar"
+        },
+        {
+          "en": "go to the gym",
+          "pt": "ir à academia"
+        },
+        {
+          "en": "study",
+          "pt": "estudar"
+        }
+      ]
+    }
   ]
 }

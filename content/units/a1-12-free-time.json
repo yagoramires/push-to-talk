@@ -490,5 +490,551 @@
         }
       ]
     }
+  ],
+  "practice": [
+    {
+      "id": "a1-12-prac-1",
+      "kind": "dialogue",
+      "instruction_pt": "Converse: ouça cada fala e responda em inglês.",
+      "scene_pt": "Um colega de trabalho conversa com você na sexta-feira à tarde.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Finally, Friday! What do you usually do on weekends?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que normalmente sai com os amigos.",
+          "accepted": [
+            "I usually hang out with my friends",
+            "I usually go out with my friends",
+            "Usually I hang out with friends",
+            "I usually hang out with friends",
+            "I usually go out with friends",
+            "I usually spend time with my friends"
+          ],
+          "commonErrors": [
+            {
+              "id": "freq-after",
+              "match": "\\bi (go|play|watch|cook|read) (always|never|sometimes|usually|often)\\b",
+              "explanation_pt": "A palavra de frequência vem antes do verbo: \"I always go\".",
+              "correction_en": "I usually hang out with my friends."
+            },
+            {
+              "id": "exit-with",
+              "match": "\\bexit with\\b",
+              "explanation_pt": "\"Sair com\" amigos é \"go out with\" ou \"hang out with\".",
+              "correction_en": "I usually hang out with my friends."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Cool. Do you play any sports?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que joga vôlei aos sábados.",
+          "accepted": [
+            "Yes, I play volleyball on Saturdays",
+            "I play volleyball on Saturdays",
+            "Yes, volleyball on Saturdays",
+            "Yes, I do. I play volleyball on Saturdays",
+            "Yes, I play volleyball on Saturday",
+            "I play volleyball every Saturday"
+          ],
+          "commonErrors": [
+            {
+              "id": "practice-sport",
+              "match": "\\bpractice (soccer|football|tennis|volleyball|basketball)\\b",
+              "explanation_pt": "Para esportes com bola, use \"play\": \"play soccer\".",
+              "correction_en": "I play volleyball on Saturdays."
+            },
+            {
+              "id": "in-saturdays",
+              "match": "\\b(in|at) saturdays?\\b",
+              "explanation_pt": "Com dias da semana use \"on\": \"on Saturdays\".",
+              "correction_en": "I play volleyball on Saturdays."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Nice! I like running. Do you want to go running with me on Sunday?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Aceite e pergunte a que horas.",
+          "accepted": [
+            "Sure! What time?",
+            "Yes, I would love to. What time?",
+            "I'd love to! What time?",
+            "Yes! What time?",
+            "OK! What time?",
+            "Great idea! What time?",
+            "Sounds good. What time?"
+          ],
+          "commonErrors": [
+            {
+              "id": "what-hours",
+              "match": "\\bwhat hours\\b",
+              "explanation_pt": "\"Que horas?\" é \"What time?\".",
+              "correction_en": "Sure! What time?"
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "How about eight in the morning?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que é cedo, mas tudo bem.",
+          "accepted": [
+            "It's early, but OK",
+            "That's early, but OK",
+            "It is early, but that is fine",
+            "It's early, but it's OK",
+            "Early! But OK",
+            "That's early, but fine"
+          ],
+          "commonErrors": [
+            {
+              "id": "is-early",
+              "match": "^is early\\b",
+              "explanation_pt": "Falta o sujeito: \"It's early\".",
+              "correction_en": "It's early, but OK."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-12-prac-2",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu adoro ler.\"",
+      "accepted": [
+        "I love reading",
+        "I love to read",
+        "I really like reading",
+        "I really like to read"
+      ],
+      "commonErrors": [
+        {
+          "id": "like-base",
+          "match": "\\b(like|love|hate|likes|loves) (read|watch|play|swim|dance|cook|run|listen|go|travel|draw|sing)\\b",
+          "explanation_pt": "Depois de \"like/love\" use o verbo com \"-ing\" (ou \"to\"): \"I like reading\".",
+          "correction_en": "I love reading."
+        },
+        {
+          "id": "love-lecture",
+          "match": "\\blecture\\b",
+          "explanation_pt": "\"Ler\" é \"read\"; \"lecture\" é palestra.",
+          "correction_en": "I love reading."
+        }
+      ]
+    },
+    {
+      "id": "a1-12-prac-3",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Ela nunca vai à academia.\"",
+      "accepted": [
+        "She never goes to the gym",
+        "She does not go to the gym",
+        "She doesn't go to the gym",
+        "She doesn't ever go to the gym"
+      ],
+      "commonErrors": [
+        {
+          "id": "she-never-go",
+          "match": "\\bshe never go\\b",
+          "explanation_pt": "Com \"she\", o verbo ganha \"s\": \"she never goes\".",
+          "correction_en": "She never goes to the gym."
+        },
+        {
+          "id": "academy",
+          "match": "\\bacademy\\b",
+          "explanation_pt": "Academia de ginástica é \"gym\".",
+          "correction_en": "She never goes to the gym."
+        }
+      ]
+    },
+    {
+      "id": "a1-12-prac-4",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Nós jogamos futebol às quartas.\"",
+      "accepted": [
+        "We play soccer on Wednesdays",
+        "We play football on Wednesdays",
+        "We play soccer on Wednesday",
+        "We play football on Wednesday",
+        "We play soccer every Wednesday",
+        "On Wednesdays we play soccer"
+      ],
+      "commonErrors": [
+        {
+          "id": "practice-sport",
+          "match": "\\bpractice (soccer|football|tennis|volleyball|basketball)\\b",
+          "explanation_pt": "Para esportes com bola, use \"play\": \"play soccer\".",
+          "correction_en": "We play soccer on Wednesdays."
+        },
+        {
+          "id": "in-wednesday",
+          "match": "\\b(in|at) wednesdays?\\b",
+          "explanation_pt": "Com dias use \"on\".",
+          "correction_en": "We play soccer on Wednesdays."
+        }
+      ]
+    },
+    {
+      "id": "a1-12-prac-5",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Com que frequência você vai ao cinema?\"",
+      "accepted": [
+        "How often do you go to the movies?",
+        "How often do you go to the cinema?",
+        "How often do you go to the movie theater?"
+      ],
+      "commonErrors": [
+        {
+          "id": "with-what-frequency",
+          "match": "\\bwith what frequency\\b|\\bwhat frequency\\b",
+          "explanation_pt": "\"Com que frequência\" é \"How often\".",
+          "correction_en": "How often do you go to the movies?"
+        },
+        {
+          "id": "how-often-you-go",
+          "match": "^how often you go\\b",
+          "explanation_pt": "Na pergunta precisa de \"do\": \"How often do you go...?\".",
+          "correction_en": "How often do you go to the movies?"
+        }
+      ]
+    },
+    {
+      "id": "a1-12-prac-6",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu às vezes toco violão à noite.\"",
+      "accepted": [
+        "I sometimes play the guitar at night",
+        "Sometimes I play the guitar at night",
+        "I sometimes play guitar at night",
+        "Sometimes I play guitar at night",
+        "I sometimes play the guitar in the evening",
+        "Sometimes I play the guitar in the evening"
+      ],
+      "commonErrors": [
+        {
+          "id": "freq-after",
+          "match": "\\bi (go|play|watch|cook|read) (always|never|sometimes|usually|often)\\b",
+          "explanation_pt": "A palavra de frequência vem antes do verbo: \"I always go\".",
+          "correction_en": "I sometimes play the guitar at night."
+        },
+        {
+          "id": "touch-guitar",
+          "match": "\\btouch\\b",
+          "explanation_pt": "\"Tocar\" instrumento é \"play\": \"play the guitar\".",
+          "correction_en": "I sometimes play the guitar at night."
+        }
+      ]
+    },
+    {
+      "id": "a1-12-prac-7",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Meu irmão gosta de jogar videogame.\"",
+      "accepted": [
+        "My brother likes playing video games",
+        "My brother likes to play video games",
+        "My brother loves playing video games",
+        "My brother likes video games"
+      ],
+      "commonErrors": [
+        {
+          "id": "like-base",
+          "match": "\\b(like|love|hate|likes|loves) (read|watch|play|swim|dance|cook|run|listen|go|travel|draw|sing)\\b",
+          "explanation_pt": "Depois de \"like/love\" use o verbo com \"-ing\" (ou \"to\"): \"I like reading\".",
+          "correction_en": "My brother likes playing video games."
+        },
+        {
+          "id": "brother-like",
+          "match": "\\bbrother like\\b",
+          "explanation_pt": "Com \"my brother\" (he), o verbo ganha \"s\": \"likes\".",
+          "correction_en": "My brother likes playing video games."
+        }
+      ]
+    },
+    {
+      "id": "a1-12-prac-8",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Você quer ir ao parque amanhã?\"",
+      "accepted": [
+        "Do you want to go to the park tomorrow?",
+        "Would you like to go to the park tomorrow?",
+        "Do you wanna go to the park tomorrow?",
+        "Want to go to the park tomorrow?",
+        "Shall we go to the park tomorrow?"
+      ],
+      "commonErrors": [
+        {
+          "id": "you-want-q",
+          "match": "^you want\\b",
+          "explanation_pt": "Na pergunta use \"Do\": \"Do you want to...?\".",
+          "correction_en": "Do you want to go to the park tomorrow?"
+        },
+        {
+          "id": "want-go",
+          "match": "\\bwant go\\b",
+          "explanation_pt": "Depois de \"want\" use \"to\": \"want to go\".",
+          "correction_en": "Do you want to go to the park tomorrow?"
+        }
+      ]
+    },
+    {
+      "id": "a1-12-prac-9",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "I often go hiking with my family.",
+      "accepted": ["I often go hiking with my family"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-12-prac-10",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "We watch a movie every Friday night.",
+      "accepted": ["We watch a movie every Friday night"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-12-prac-11",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "My dad loves fishing on Sundays.",
+      "accepted": ["My dad loves fishing on Sundays"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-12-prac-12",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "I don't like dancing, but I love singing.",
+      "accepted": ["I don't like dancing, but I love singing"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-12-prac-13",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "How often do you play video games?",
+      "accepted": ["How often do you play video games"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-12-prac-14",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: você gosta de cozinhar e ler.",
+      "listen": "What do you like doing in your free time?",
+      "accepted": [
+        "I like cooking and reading",
+        "I like to cook and read",
+        "I love cooking and reading",
+        "Cooking and reading",
+        "I enjoy cooking and reading",
+        "I like reading and cooking",
+        "In my free time I like cooking and reading"
+      ],
+      "commonErrors": [
+        {
+          "id": "like-base",
+          "match": "\\b(like|love|hate|likes|loves) (read|watch|play|swim|dance|cook|run|listen|go|travel|draw|sing)\\b",
+          "explanation_pt": "Depois de \"like/love\" use o verbo com \"-ing\" (ou \"to\"): \"I like reading\".",
+          "correction_en": "I like cooking and reading."
+        }
+      ]
+    },
+    {
+      "id": "a1-12-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: você vai à academia três vezes por semana.",
+      "listen": "How often do you work out?",
+      "accepted": [
+        "Three times a week",
+        "I work out three times a week",
+        "I go to the gym three times a week",
+        "Three times per week",
+        "About three times a week",
+        "Usually three times a week"
+      ],
+      "commonErrors": [
+        {
+          "id": "three-times-for-week",
+          "match": "\\bthree times (for|by|in) (a |the )?week\\b",
+          "explanation_pt": "\"Por semana\" é \"a week\": \"three times a week\".",
+          "correction_en": "Three times a week."
+        }
+      ]
+    },
+    {
+      "id": "a1-12-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: sim, você adoraria.",
+      "listen": "Do you want to come to my party on Saturday?",
+      "accepted": [
+        "Yes, I'd love to",
+        "Yes, I would love to",
+        "I'd love to!",
+        "Yes, sure!",
+        "Sure, I would love to",
+        "Yes, thank you! I would love to",
+        "Yes! Thanks for the invite"
+      ],
+      "commonErrors": [
+        {
+          "id": "i-would-love-no-to",
+          "match": "\\bi would love$",
+          "explanation_pt": "Para aceitar convite: \"I'd love to\".",
+          "correction_en": "Yes, I'd love to."
+        }
+      ]
+    },
+    {
+      "id": "a1-12-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: não, você nunca vê futebol na TV.",
+      "listen": "Do you watch soccer on TV?",
+      "accepted": [
+        "No, I never watch soccer",
+        "No, never",
+        "No, I don't",
+        "No, I never watch it",
+        "No, I don't watch soccer",
+        "Never"
+      ],
+      "commonErrors": [
+        {
+          "id": "never-dont",
+          "match": "\\bnever do not\\b|\\bdo not never\\b",
+          "explanation_pt": "Em inglês não se usa negativa dupla: \"I never watch\" ou \"I don't watch\".",
+          "correction_en": "No, I never watch soccer."
+        }
+      ]
+    },
+    {
+      "id": "a1-12-prac-18",
+      "kind": "vocab",
+      "word_en": "hiking",
+      "meaning_pt": "fazer trilha",
+      "example_en": "We go hiking in the mountains."
+    },
+    {
+      "id": "a1-12-prac-19",
+      "kind": "vocab",
+      "word_en": "often",
+      "meaning_pt": "com frequência",
+      "example_en": "I often read before bed."
+    },
+    {
+      "id": "a1-12-prac-20",
+      "kind": "vocab",
+      "word_en": "board games",
+      "meaning_pt": "jogos de tabuleiro",
+      "example_en": "On Sundays we play board games."
+    },
+    {
+      "id": "a1-12-prac-21",
+      "kind": "free_speak",
+      "instruction_pt": "Convide alguém para fazer algo no fim de semana.",
+      "prompt_en": "I'm free this weekend. Any ideas? What can we do together?",
+      "guidelines_pt": [
+        "Use \"Do you want to...?\" ou \"Let's...\"",
+        "Diga o dia e a hora",
+        "Fale de uma atividade que você gosta"
+      ]
+    },
+    {
+      "id": "a1-12-prac-22",
+      "kind": "choice",
+      "instruction_pt": "Qual frase está certa?",
+      "options": ["I like swim.", "I like swimming.", "I like of swimming."],
+      "answer": 1,
+      "explanation_pt": "Depois de \"like\" use o verbo com \"-ing\": \"I like swimming\"."
+    },
+    {
+      "id": "a1-12-prac-23",
+      "kind": "choice",
+      "instruction_pt": "Ouça e escolha com que frequência ela dança.",
+      "listen": "Lucy always goes dancing on Friday nights.",
+      "options": ["sempre", "às vezes", "nunca"],
+      "answer": 0,
+      "explanation_pt": "\"Always\" é sempre."
+    },
+    {
+      "id": "a1-12-prac-24",
+      "kind": "fill",
+      "instruction_pt": "Complete com o verbo certo.",
+      "sentence": "I love ___ the piano.",
+      "accepted": ["playing"],
+      "commonErrors": [
+        {
+          "id": "touching",
+          "match": "^touching$",
+          "explanation_pt": "\"Tocar\" instrumento é \"play\".",
+          "correction_en": "playing"
+        },
+        {
+          "id": "play",
+          "match": "^play$",
+          "explanation_pt": "Depois de \"love\" use \"-ing\": \"playing\".",
+          "correction_en": "playing"
+        }
+      ]
+    },
+    {
+      "id": "a1-12-prac-25",
+      "kind": "fill",
+      "instruction_pt": "Complete com a palavra de frequência.",
+      "sentence": "I ___ go to the beach. I don't like it.",
+      "accepted": ["never", "rarely", "seldom"],
+      "commonErrors": [
+        {
+          "id": "always",
+          "match": "^(always|usually|often)$",
+          "explanation_pt": "Se você não gosta, o sentido pede \"never\".",
+          "correction_en": "never"
+        }
+      ]
+    },
+    {
+      "id": "a1-12-prac-26",
+      "kind": "order",
+      "instruction_pt": "Coloque as palavras na ordem certa para formar a frase.",
+      "accepted": ["We always play cards on Sunday afternoon"]
+    },
+    {
+      "id": "a1-12-prac-27",
+      "kind": "match",
+      "instruction_pt": "Ligue cada palavra ao seu significado.",
+      "pairs": [
+        {
+          "en": "hiking",
+          "pt": "fazer trilha"
+        },
+        {
+          "en": "fishing",
+          "pt": "pescar"
+        },
+        {
+          "en": "painting",
+          "pt": "pintar"
+        },
+        {
+          "en": "board games",
+          "pt": "jogos de tabuleiro"
+        },
+        {
+          "en": "often",
+          "pt": "com frequência"
+        }
+      ]
+    }
   ]
 }

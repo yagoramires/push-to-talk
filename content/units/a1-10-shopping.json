@@ -369,10 +369,124 @@
           ]
         },
         {
-          "id": "a1-10-conv-3",
-          "kind": "order",
-          "instruction_pt": "Coloque as palavras na ordem certa para formar a pergunta.",
-          "accepted": ["Where is the fitting room"]
+          "id": "a1-10-conv-dialogue",
+          "kind": "dialogue",
+          "instruction_pt": "Converse: ouça cada fala e responda em inglês.",
+          "scene_pt": "Você está numa loja de roupas procurando um suéter.",
+          "turns": [
+            {
+              "speaker": "partner",
+              "text": "Hi there! Are you looking for anything special?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga que procura um suéter.",
+              "accepted": [
+                "Yes, I'm looking for a sweater",
+                "Yes, I am looking for a sweater",
+                "I'm looking for a sweater",
+                "A sweater, please",
+                "Yes, a sweater",
+                "Yes, I need a sweater",
+                "Yes. Do you have sweaters?"
+              ],
+              "commonErrors": [
+                {
+                  "id": "search-for",
+                  "match": "\\bsearching\\b",
+                  "explanation_pt": "\"Procurar\" numa loja é \"look for\": \"I'm looking for...\".",
+                  "correction_en": "I'm looking for a sweater."
+                },
+                {
+                  "id": "look-for-no-for",
+                  "match": "\\blooking a\\b",
+                  "explanation_pt": "Use \"looking for\": \"I'm looking for a sweater\".",
+                  "correction_en": "I'm looking for a sweater."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "We have these. What size are you?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga que usa médio.",
+              "accepted": [
+                "I'm a medium",
+                "Medium, please",
+                "Medium",
+                "I am a medium",
+                "A medium, please",
+                "Size medium",
+                "I wear a medium",
+                "I'm medium"
+              ],
+              "commonErrors": [
+                {
+                  "id": "my-size-is-m",
+                  "match": "\\bmiddle\\b|\\bmedium size m\\b",
+                  "explanation_pt": "Tamanho médio é \"medium\".",
+                  "correction_en": "I'm a medium."
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Here you go. The fitting room is over there."
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Depois de provar, diga que ficou grande e peça um menor.",
+              "accepted": [
+                "It's too big. Do you have a smaller one?",
+                "It's too big. Do you have a small?",
+                "It is too big. Do you have a small one?",
+                "It's a bit big. Can I have a smaller one?",
+                "It's too big. Can I try a small?",
+                "Too big. Do you have it in small?",
+                "It's too big. Do you have this in small?"
+              ],
+              "commonErrors": [
+                {
+                  "id": "very-big",
+                  "match": "\\bis very big\\b",
+                  "explanation_pt": "Quando é \"demais\" (não serve), use \"too\": \"It's too big\".",
+                  "correction_en": "It's too big."
+                },
+                {
+                  "id": "more-small",
+                  "match": "\\bmore small\\b",
+                  "explanation_pt": "\"Menor\" é \"smaller\".",
+                  "correction_en": "Do you have a smaller one?"
+                }
+              ]
+            },
+            {
+              "speaker": "partner",
+              "text": "Sure, here you are. How is it?"
+            },
+            {
+              "speaker": "you",
+              "cue_pt": "Diga que está perfeito e que vai levar.",
+              "accepted": [
+                "It's perfect. I'll take it",
+                "It is perfect. I will take it",
+                "Perfect! I'll take it",
+                "It's perfect! I'll buy it",
+                "It fits! I'll take it",
+                "Perfect. I'll take this one"
+              ],
+              "commonErrors": [
+                {
+                  "id": "i-take",
+                  "match": "^(it is )?perfect i take it$",
+                  "explanation_pt": "Para decidir na hora, use \"I'll take it\".",
+                  "correction_en": "It's perfect. I'll take it."
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "a1-10-conv-free",
@@ -462,6 +576,566 @@
             "Thanks, can I have the receipt please"
           ],
           "commonErrors": []
+        }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "id": "a1-10-prac-1",
+      "kind": "dialogue",
+      "instruction_pt": "Converse: ouça cada fala e responda em inglês.",
+      "scene_pt": "Você está comprando tênis numa loja de esportes.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Hello! Can I help you with anything?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que sim e que quer ver aqueles tênis brancos.",
+          "accepted": [
+            "Yes, can I see those white sneakers?",
+            "Yes, please. Can I see those white sneakers?",
+            "Can I see those white sneakers, please?",
+            "Yes, I'd like to see those white sneakers",
+            "Yes, those white sneakers, please",
+            "Yes, can I see those white trainers?",
+            "I would like to see those white sneakers"
+          ],
+          "commonErrors": [
+            {
+              "id": "this-plural",
+              "match": "\\b(this|that) (shoes|sneakers|jeans|pants|socks|boots|glasses)\\b",
+              "explanation_pt": "Com plural use \"these\" (estes) ou \"those\" (aqueles).",
+              "correction_en": "Can I see those white sneakers?"
+            },
+            {
+              "id": "sneakers-white",
+              "match": "\\bsneakers white\\b",
+              "explanation_pt": "A cor vem antes: \"white sneakers\".",
+              "correction_en": "Can I see those white sneakers?"
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Sure. What size do you wear?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que usa 40.",
+          "accepted": [
+            "Size 40",
+            "I'm a 40",
+            "I wear size 40",
+            "Forty",
+            "I am a size 40",
+            "40, please",
+            "Size forty, please",
+            "I wear a 40"
+          ],
+          "commonErrors": [
+            {
+              "id": "number-40",
+              "match": "^number\\b|\\bmy number is\\b",
+              "explanation_pt": "Para calçado use \"size\": \"Size 40\".",
+              "correction_en": "Size 40."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Here you are. Do you want to try them on?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que sim e pergunte quanto custam.",
+          "accepted": [
+            "Yes, please. How much are they?",
+            "Yes. How much are they?",
+            "Yes, thanks. How much are they?",
+            "Yes, please. How much do they cost?",
+            "Sure. How much are they?",
+            "Yes, please. What is the price?"
+          ],
+          "commonErrors": [
+            {
+              "id": "how-many-price",
+              "match": "^how many\\b",
+              "explanation_pt": "Preço é \"How much...?\". \"How many\" é para contar coisas.",
+              "correction_en": "How much are they?"
+            },
+            {
+              "id": "how-much-is-they",
+              "match": "\\bhow much is they\\b",
+              "explanation_pt": "Com \"they\" (os tênis), use \"are\": \"How much are they?\".",
+              "correction_en": "How much are they?"
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "They're eighty dollars, but they're on sale today for sixty."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que é um bom preço e que vai levar.",
+          "accepted": [
+            "That's a good price. I'll take them",
+            "Great price! I will take them",
+            "That's cheap! I'll take them",
+            "Good price. I'll take them",
+            "That's a good deal. I'll take them",
+            "Nice! I'll take them"
+          ],
+          "commonErrors": [
+            {
+              "id": "take-it-plural",
+              "match": "\\btake it$",
+              "explanation_pt": "\"Sneakers\" é plural: \"I'll take them\".",
+              "correction_en": "I'll take them."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Great! Cash or card?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que vai pagar com cartão.",
+          "accepted": [
+            "Card, please",
+            "By card, please",
+            "I'll pay by card",
+            "Card",
+            "With card, please",
+            "I will pay by card",
+            "Credit card, please",
+            "Debit card, please"
+          ],
+          "commonErrors": [
+            {
+              "id": "in-card",
+              "match": "\\b(in|on) card\\b",
+              "explanation_pt": "\"Com cartão\" é \"by card\".",
+              "correction_en": "By card, please."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-10-prac-2",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Quanto custam estes sapatos?\"",
+      "accepted": [
+        "How much are these shoes?",
+        "How much do these shoes cost?",
+        "What is the price of these shoes?",
+        "What's the price of these shoes?"
+      ],
+      "commonErrors": [
+        {
+          "id": "how-many-price",
+          "match": "^how many\\b",
+          "explanation_pt": "Preço é \"How much...?\". \"How many\" é para contar coisas.",
+          "correction_en": "How much are these shoes?"
+        },
+        {
+          "id": "this-plural",
+          "match": "\\b(this|that) (shoes|sneakers|jeans|pants|socks|boots|glasses)\\b",
+          "explanation_pt": "Com plural use \"these\" (estes) ou \"those\" (aqueles).",
+          "correction_en": "How much are these shoes?"
+        }
+      ]
+    },
+    {
+      "id": "a1-10-prac-3",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu posso provar este vestido?\"",
+      "accepted": [
+        "Can I try on this dress?",
+        "Can I try this dress on?",
+        "Could I try on this dress?",
+        "Could I try this dress on?",
+        "May I try on this dress?",
+        "May I try this dress on?"
+      ],
+      "commonErrors": [
+        {
+          "id": "prove",
+          "match": "\\bprove\\b",
+          "explanation_pt": "\"Provar\" roupa é \"try on\". \"Prove\" é comprovar.",
+          "correction_en": "Can I try on this dress?"
+        },
+        {
+          "id": "can-i-to",
+          "match": "\\bcan i to\\b",
+          "explanation_pt": "Depois de \"can\" não use \"to\": \"Can I try...\".",
+          "correction_en": "Can I try on this dress?"
+        }
+      ]
+    },
+    {
+      "id": "a1-10-prac-4",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"É muito caro.\"",
+      "accepted": [
+        "It's too expensive",
+        "It's very expensive",
+        "It is too expensive",
+        "It is very expensive",
+        "That's too expensive",
+        "That's very expensive",
+        "It's really expensive"
+      ],
+      "commonErrors": [
+        {
+          "id": "much-expensive",
+          "match": "\\bmuch expensive\\b",
+          "explanation_pt": "Antes de adjetivo use \"very\" ou \"too\", não \"much\".",
+          "correction_en": "It's too expensive."
+        },
+        {
+          "id": "is-expensive-no-it",
+          "match": "^is (too |very )?expensive\\b",
+          "explanation_pt": "Falta o sujeito: \"It's expensive\".",
+          "correction_en": "It's too expensive."
+        }
+      ]
+    },
+    {
+      "id": "a1-10-prac-5",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Vocês têm essa camisa em azul?\"",
+      "accepted": [
+        "Do you have this shirt in blue?",
+        "Do you have this shirt in blue, please?",
+        "Have you got this shirt in blue?",
+        "Do you have this one in blue?",
+        "Is this shirt available in blue?"
+      ],
+      "commonErrors": [
+        {
+          "id": "you-have-q",
+          "match": "^you have\\b",
+          "explanation_pt": "Na pergunta use \"Do\": \"Do you have...?\".",
+          "correction_en": "Do you have this shirt in blue?"
+        },
+        {
+          "id": "of-blue",
+          "match": "\\b(of|on) blue\\b",
+          "explanation_pt": "\"Em azul\" é \"in blue\".",
+          "correction_en": "Do you have this shirt in blue?"
+        }
+      ]
+    },
+    {
+      "id": "a1-10-prac-6",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Onde fica o caixa?\"",
+      "accepted": [
+        "Where is the checkout?",
+        "Where's the checkout?",
+        "Where is the cashier?",
+        "Where's the cashier?",
+        "Where do I pay?",
+        "Where can I pay?",
+        "Where's the register?",
+        "Where is the cash register?"
+      ],
+      "commonErrors": [
+        {
+          "id": "where-box",
+          "match": "\\bthe box\\b",
+          "explanation_pt": "\"Caixa\" da loja é \"checkout\" ou \"cashier\". \"Box\" é caixa de papelão.",
+          "correction_en": "Where is the checkout?"
+        }
+      ]
+    },
+    {
+      "id": "a1-10-prac-7",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Só estou olhando, obrigado.\"",
+      "accepted": [
+        "I'm just looking, thanks",
+        "I am just looking, thank you",
+        "Just looking, thanks",
+        "I'm just looking, thank you",
+        "Just looking, thank you",
+        "I'm only looking, thanks"
+      ],
+      "commonErrors": [
+        {
+          "id": "i-only-look",
+          "match": "^i (only |just )?look\\b",
+          "explanation_pt": "Para \"estou olhando\" (agora), use \"I'm just looking\".",
+          "correction_en": "I'm just looking, thanks."
+        }
+      ]
+    },
+    {
+      "id": "a1-10-prac-8",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Vou levar os dois.\"",
+      "accepted": [
+        "I'll take both",
+        "I will take both",
+        "I'll take both of them",
+        "I'll take the two",
+        "I'll take them both",
+        "I'm going to take both"
+      ],
+      "commonErrors": [
+        {
+          "id": "i-take-both",
+          "match": "^i take\\b",
+          "explanation_pt": "Para decidir na hora, use \"I'll take...\".",
+          "correction_en": "I'll take both."
+        }
+      ]
+    },
+    {
+      "id": "a1-10-prac-9",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "Excuse me, where can I find the jeans?",
+      "accepted": ["Excuse me, where can I find the jeans"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-10-prac-10",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "These boots are cheap, but they are too small.",
+      "accepted": ["These boots are cheap, but they are too small"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-10-prac-11",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "Do you have this in a bigger size?",
+      "accepted": ["Do you have this in a bigger size"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-10-prac-12",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "Can I pay by card?",
+      "accepted": ["Can I pay by card"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-10-prac-13",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "Sorry, I'm just looking.",
+      "accepted": ["Sorry, I'm just looking"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-10-prac-14",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: você quer o tamanho grande.",
+      "listen": "What size do you need?",
+      "accepted": [
+        "Large, please",
+        "Large",
+        "A large, please",
+        "I'm a large",
+        "I need a large",
+        "Size large",
+        "I need large"
+      ],
+      "commonErrors": [
+        {
+          "id": "big-size",
+          "match": "^big\\b",
+          "explanation_pt": "Tamanho G é \"large\".",
+          "correction_en": "Large, please."
+        }
+      ]
+    },
+    {
+      "id": "a1-10-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: sim, ficou bom.",
+      "listen": "How does it fit?",
+      "accepted": [
+        "It fits well",
+        "It's perfect",
+        "It fits perfectly",
+        "It is perfect",
+        "Good, it fits",
+        "It's good, thanks",
+        "It fits great"
+      ],
+      "commonErrors": [
+        {
+          "id": "stay-good",
+          "match": "\\bstays?\\b",
+          "explanation_pt": "\"Ficar bem\" (tamanho) é \"fit\": \"It fits well\".",
+          "correction_en": "It fits well."
+        }
+      ]
+    },
+    {
+      "id": "a1-10-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: não, você só está olhando.",
+      "listen": "Can I help you find anything?",
+      "accepted": [
+        "No, thanks. I'm just looking",
+        "No, thank you. I'm just looking",
+        "I'm just looking, thanks",
+        "No, thanks",
+        "No, I'm OK, thanks",
+        "Just looking, thanks"
+      ],
+      "commonErrors": [
+        {
+          "id": "i-only-look",
+          "match": "\\bi (only |just )?look\\b",
+          "explanation_pt": "Use \"I'm just looking\" para \"só estou olhando\".",
+          "correction_en": "I'm just looking, thanks."
+        }
+      ]
+    },
+    {
+      "id": "a1-10-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: você quer uma sacola, sim.",
+      "listen": "Do you need a bag?",
+      "accepted": [
+        "Yes, please",
+        "Yes, thank you",
+        "Yes, I do",
+        "Yes, please. Thanks",
+        "Yes, a bag, please",
+        "Yes"
+      ],
+      "commonErrors": [
+        {
+          "id": "yes-i-need",
+          "match": "^yes i need$",
+          "explanation_pt": "Resposta curta educada: \"Yes, please\" ou \"Yes, I do\".",
+          "correction_en": "Yes, please."
+        }
+      ]
+    },
+    {
+      "id": "a1-10-prac-18",
+      "kind": "vocab",
+      "word_en": "cheap",
+      "meaning_pt": "barato",
+      "example_en": "This bag is cheap: only ten dollars."
+    },
+    {
+      "id": "a1-10-prac-19",
+      "kind": "vocab",
+      "word_en": "size",
+      "meaning_pt": "tamanho",
+      "example_en": "What size are these shoes?"
+    },
+    {
+      "id": "a1-10-prac-20",
+      "kind": "vocab",
+      "word_en": "receipt",
+      "meaning_pt": "recibo, nota",
+      "example_en": "Here's your receipt."
+    },
+    {
+      "id": "a1-10-prac-21",
+      "kind": "free_speak",
+      "instruction_pt": "Conte sobre uma compra recente.",
+      "prompt_en": "What do you like to buy? Tell me about your last time at a store.",
+      "guidelines_pt": [
+        "Diga o que comprou (roupa, sapato...)",
+        "Fale do preço: \"It was cheap / expensive\"",
+        "Use \"I like...\" e \"I don't like...\""
+      ]
+    },
+    {
+      "id": "a1-10-prac-22",
+      "kind": "choice",
+      "instruction_pt": "Qual pergunta está certa para o preço?",
+      "options": ["How many is it?", "How much is it?", "How cost is it?"],
+      "answer": 1,
+      "explanation_pt": "Para preço use \"How much is it?\"."
+    },
+    {
+      "id": "a1-10-prac-23",
+      "kind": "choice",
+      "instruction_pt": "Ouça e escolha o preço.",
+      "listen": "The bag is fifty dollars.",
+      "options": ["$15", "$50", "$55"],
+      "answer": 1,
+      "explanation_pt": "\"Fifty\" é 50; \"fifteen\" é 15."
+    },
+    {
+      "id": "a1-10-prac-24",
+      "kind": "fill",
+      "instruction_pt": "Complete com \"this\" ou \"these\".",
+      "sentence": "I love ___ socks!",
+      "accepted": ["these", "those"],
+      "commonErrors": [
+        {
+          "id": "this",
+          "match": "^(this|that)$",
+          "explanation_pt": "\"Socks\" é plural: \"these\" ou \"those\".",
+          "correction_en": "these"
+        }
+      ]
+    },
+    {
+      "id": "a1-10-prac-25",
+      "kind": "fill",
+      "instruction_pt": "Complete com a palavra certa.",
+      "sentence": "Can I try ___ these jeans?",
+      "accepted": ["on"],
+      "commonErrors": [
+        {
+          "id": "in",
+          "match": "^(in|it)$",
+          "explanation_pt": "\"Provar\" roupa é \"try on\".",
+          "correction_en": "on"
+        }
+      ]
+    },
+    {
+      "id": "a1-10-prac-26",
+      "kind": "order",
+      "instruction_pt": "Coloque as palavras na ordem certa para formar a frase.",
+      "accepted": ["Do you have these shoes in black"]
+    },
+    {
+      "id": "a1-10-prac-27",
+      "kind": "match",
+      "instruction_pt": "Ligue cada palavra ao seu significado.",
+      "pairs": [
+        {
+          "en": "cheap",
+          "pt": "barato"
+        },
+        {
+          "en": "expensive",
+          "pt": "caro"
+        },
+        {
+          "en": "size",
+          "pt": "tamanho"
+        },
+        {
+          "en": "bag",
+          "pt": "sacola"
+        },
+        {
+          "en": "price",
+          "pt": "preço"
         }
       ]
     }

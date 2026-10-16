@@ -436,5 +436,517 @@
         }
       ]
     }
+  ],
+  "practice": [
+    {
+      "id": "a1-05-prac-1",
+      "kind": "dialogue",
+      "instruction_pt": "Converse: ouça cada fala e responda em inglês.",
+      "scene_pt": "Você está jantando na casa de uma amiga americana.",
+      "turns": [
+        {
+          "speaker": "partner",
+          "text": "Dinner is ready! Do you like chicken?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que sim, adora frango.",
+          "accepted": [
+            "Yes, I love chicken",
+            "Yes, I do. I love chicken",
+            "Yes, I love it",
+            "I love chicken",
+            "Yes, I really like chicken",
+            "Yes, I do. I love it"
+          ],
+          "commonErrors": [
+            {
+              "id": "like-of",
+              "match": "\\blikes? of\\b",
+              "explanation_pt": "\"Gostar de\" é só \"like\", sem \"of\": \"I like fruit\".",
+              "correction_en": "Yes, I love chicken."
+            },
+            {
+              "id": "yes-i-like",
+              "match": "^yes i like$",
+              "explanation_pt": "Complete a frase: \"Yes, I like it\" ou \"Yes, I do\".",
+              "correction_en": "Yes, I love it."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Great. Do you want some salad too?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que sim, por favor, e que adora legumes e verduras.",
+          "accepted": [
+            "Yes, please. I love vegetables",
+            "Yes, please! I love salad",
+            "Yes, please. I love salad and vegetables",
+            "Yes, please. I really like vegetables"
+          ],
+          "commonErrors": [
+            {
+              "id": "vegetable-sing",
+              "match": "\\blove vegetable$",
+              "explanation_pt": "No geral, use o plural: \"I love vegetables\".",
+              "correction_en": "Yes, please. I love vegetables."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "And what do you want to drink? Water, juice or wine?"
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que quer um suco, por favor.",
+          "accepted": [
+            "Juice, please",
+            "A juice, please",
+            "I'd like some juice, please",
+            "I would like juice, please",
+            "Some juice, please",
+            "I'd like a juice, please",
+            "Juice for me, please",
+            "Can I have some juice, please?"
+          ],
+          "commonErrors": [
+            {
+              "id": "i-want-a-juice-rude",
+              "match": "^i want juice$",
+              "explanation_pt": "\"I want juice\" soa seco. Diga \"Juice, please\" ou \"I'd like some juice, please\".",
+              "correction_en": "I'd like some juice, please."
+            }
+          ]
+        },
+        {
+          "speaker": "partner",
+          "text": "Here you go. Do you eat dessert? I have chocolate cake."
+        },
+        {
+          "speaker": "you",
+          "cue_pt": "Diga que sim, mas só um pedaço pequeno.",
+          "accepted": [
+            "Yes, but just a small piece",
+            "Yes, but only a small piece",
+            "Yes, please. Just a small piece",
+            "Yes, a small piece, please",
+            "Just a small piece, please",
+            "Yes, but a small piece, please"
+          ],
+          "commonErrors": [
+            {
+              "id": "little-piece",
+              "match": "\\blittle piece\\b",
+              "explanation_pt": "\"Pedacinho\" fica melhor \"small piece\".",
+              "correction_en": "Yes, but just a small piece."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-05-prac-2",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu gosto de frutas.\"",
+      "accepted": ["I like fruit", "I like fruits", "I love fruit", "I really like fruit"],
+      "commonErrors": [
+        {
+          "id": "like-of",
+          "match": "\\blikes? of\\b",
+          "explanation_pt": "\"Gostar de\" é só \"like\", sem \"of\": \"I like fruit\".",
+          "correction_en": "I like fruit."
+        },
+        {
+          "id": "i-am-like",
+          "match": "\\bi am like\\b",
+          "explanation_pt": "Não use \"am\" com \"like\": \"I like fruit\".",
+          "correction_en": "I like fruit."
+        }
+      ]
+    },
+    {
+      "id": "a1-05-prac-3",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu não bebo café.\"",
+      "accepted": ["I don't drink coffee", "I do not drink coffee", "I never drink coffee"],
+      "commonErrors": [
+        {
+          "id": "i-no-like",
+          "match": "\\bi (no|not) (like|eat|drink)\\b",
+          "explanation_pt": "A negativa usa \"don't\": \"I don't like...\".",
+          "correction_en": "I don't drink coffee."
+        },
+        {
+          "id": "dont-take-coffee",
+          "match": "\\btake coffee\\b",
+          "explanation_pt": "\"Beber/tomar café\" é \"drink coffee\".",
+          "correction_en": "I don't drink coffee."
+        }
+      ]
+    },
+    {
+      "id": "a1-05-prac-4",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Ela adora chocolate.\"",
+      "accepted": [
+        "She loves chocolate",
+        "She really loves chocolate",
+        "She really likes chocolate"
+      ],
+      "commonErrors": [
+        {
+          "id": "she-love",
+          "match": "\\bshe (love|like)\\b",
+          "explanation_pt": "Com she, o verbo ganha \"s\": \"She loves\".",
+          "correction_en": "She loves chocolate."
+        },
+        {
+          "id": "like-of",
+          "match": "\\blikes? of\\b",
+          "explanation_pt": "\"Gostar de\" é só \"like\", sem \"of\": \"I like fruit\".",
+          "correction_en": "She loves chocolate."
+        }
+      ]
+    },
+    {
+      "id": "a1-05-prac-5",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Você gosta de peixe?\"",
+      "accepted": ["Do you like fish?", "Do you eat fish?", "Do you like eating fish?"],
+      "commonErrors": [
+        {
+          "id": "you-like-q",
+          "match": "^you like fish$",
+          "explanation_pt": "Na pergunta use \"Do\": \"Do you like fish?\".",
+          "correction_en": "Do you like fish?"
+        },
+        {
+          "id": "like-of",
+          "match": "\\blikes? of\\b",
+          "explanation_pt": "\"Gostar de\" é só \"like\", sem \"of\": \"I like fruit\".",
+          "correction_en": "Do you like fish?"
+        }
+      ]
+    },
+    {
+      "id": "a1-05-prac-6",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Meu pai não come ovos.\"",
+      "accepted": [
+        "My father doesn't eat eggs",
+        "My father does not eat eggs",
+        "My dad doesn't eat eggs",
+        "My dad does not eat eggs",
+        "My father never eats eggs"
+      ],
+      "commonErrors": [
+        {
+          "id": "father-dont",
+          "match": "\\b(father|dad) (do not|dont)\\b",
+          "explanation_pt": "Com \"my father\" (he), a negativa é \"doesn't\".",
+          "correction_en": "My father doesn't eat eggs."
+        },
+        {
+          "id": "doesnt-eats",
+          "match": "\\bdoes not eats\\b",
+          "explanation_pt": "Depois de \"doesn't\", o verbo fica sem \"s\": \"doesn't eat\".",
+          "correction_en": "My father doesn't eat eggs."
+        }
+      ]
+    },
+    {
+      "id": "a1-05-prac-7",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"No café da manhã eu como pão e queijo.\"",
+      "accepted": [
+        "For breakfast I eat bread and cheese",
+        "For breakfast I have bread and cheese",
+        "I have bread and cheese for breakfast",
+        "I eat bread and cheese for breakfast",
+        "At breakfast I eat bread and cheese",
+        "I have bread and cheese at breakfast"
+      ],
+      "commonErrors": [
+        {
+          "id": "in-breakfast",
+          "match": "^in (the )?breakfast\\b",
+          "explanation_pt": "\"No café da manhã\" é \"for breakfast\" ou \"at breakfast\".",
+          "correction_en": "For breakfast I eat bread and cheese."
+        }
+      ]
+    },
+    {
+      "id": "a1-05-prac-8",
+      "kind": "translate",
+      "instruction_pt": "Diga em inglês: \"Eu bebo muita água.\"",
+      "accepted": [
+        "I drink a lot of water",
+        "I drink lots of water",
+        "I drink much water",
+        "I drink plenty of water"
+      ],
+      "commonErrors": [
+        {
+          "id": "many-water",
+          "match": "\\bmany water\\b",
+          "explanation_pt": "\"Water\" não se conta: use \"a lot of water\", não \"many water\".",
+          "correction_en": "I drink a lot of water."
+        }
+      ]
+    },
+    {
+      "id": "a1-05-prac-9",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "I eat rice, beans and salad every day.",
+      "accepted": ["I eat rice, beans and salad every day"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-05-prac-10",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "My favorite fruit is mango.",
+      "accepted": ["My favorite fruit is mango"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-05-prac-11",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "We don't drink soda at home.",
+      "accepted": ["We don't drink soda at home"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-05-prac-12",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "He likes cheese, but he hates tomatoes.",
+      "accepted": ["He likes cheese, but he hates tomatoes"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-05-prac-13",
+      "kind": "repeat",
+      "instruction_pt": "Repita em voz alta.",
+      "prompt": "Do you want some orange juice?",
+      "accepted": ["Do you want some orange juice"],
+      "commonErrors": []
+    },
+    {
+      "id": "a1-05-prac-14",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: sim, você gosta de chá.",
+      "listen": "Do you like tea?",
+      "accepted": [
+        "Yes, I do",
+        "Yes, I like tea",
+        "Yes, I love tea",
+        "Yes, I do. I like tea",
+        "Yes",
+        "Yes, I like it",
+        "Yes, I love it",
+        "I like tea"
+      ],
+      "commonErrors": [
+        {
+          "id": "yes-i-like",
+          "match": "^yes i like$",
+          "explanation_pt": "Resposta curta: \"Yes, I do\". Ou complete: \"Yes, I like it\".",
+          "correction_en": "Yes, I do."
+        }
+      ]
+    },
+    {
+      "id": "a1-05-prac-15",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: você bebe café e come pão no café da manhã.",
+      "listen": "What do you have for breakfast?",
+      "accepted": [
+        "Coffee and bread",
+        "I have coffee and bread",
+        "I drink coffee and eat bread",
+        "Bread and coffee",
+        "I have bread and coffee",
+        "I usually have coffee and bread",
+        "I eat bread and drink coffee"
+      ],
+      "commonErrors": [
+        {
+          "id": "take-coffee",
+          "match": "\\btake coffee\\b",
+          "explanation_pt": "\"Tomar café\" é \"drink/have coffee\".",
+          "correction_en": "I have coffee and bread."
+        }
+      ]
+    },
+    {
+      "id": "a1-05-prac-16",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: não, você não come carne.",
+      "listen": "Do you eat meat?",
+      "accepted": [
+        "No, I don't",
+        "No, I do not",
+        "No, I don't eat meat",
+        "No, I'm vegetarian",
+        "No, I am vegetarian",
+        "No",
+        "No, never"
+      ],
+      "commonErrors": [
+        {
+          "id": "no-i-not",
+          "match": "^no i not\\b",
+          "explanation_pt": "Resposta curta negativa: \"No, I don't\".",
+          "correction_en": "No, I don't."
+        }
+      ]
+    },
+    {
+      "id": "a1-05-prac-17",
+      "kind": "listen_answer",
+      "instruction_pt": "Ouça e responda: a sua bebida favorita é suco de laranja.",
+      "listen": "What's your favorite drink?",
+      "accepted": [
+        "Orange juice",
+        "It's orange juice",
+        "It is orange juice",
+        "My favorite drink is orange juice",
+        "I love orange juice",
+        "Orange juice. I love it"
+      ],
+      "commonErrors": [
+        {
+          "id": "juice-of-orange",
+          "match": "\\bjuice of orange\\b",
+          "explanation_pt": "Em inglês o tipo vem antes: \"orange juice\".",
+          "correction_en": "Orange juice."
+        }
+      ]
+    },
+    {
+      "id": "a1-05-prac-18",
+      "kind": "vocab",
+      "word_en": "cheese",
+      "meaning_pt": "queijo",
+      "example_en": "I love cheese bread."
+    },
+    {
+      "id": "a1-05-prac-19",
+      "kind": "vocab",
+      "word_en": "juice",
+      "meaning_pt": "suco",
+      "example_en": "Can I have an apple juice?"
+    },
+    {
+      "id": "a1-05-prac-20",
+      "kind": "vocab",
+      "word_en": "breakfast",
+      "meaning_pt": "café da manhã",
+      "example_en": "Breakfast is my favorite meal."
+    },
+    {
+      "id": "a1-05-prac-21",
+      "kind": "free_speak",
+      "instruction_pt": "Fale do que você come em um dia normal.",
+      "prompt_en": "What do you usually eat and drink in a normal day?",
+      "guidelines_pt": [
+        "Use \"for breakfast\", \"for lunch\", \"for dinner\"",
+        "Use \"I like\", \"I love\" e \"I don't like\"",
+        "Fale de pelo menos uma bebida"
+      ]
+    },
+    {
+      "id": "a1-05-prac-22",
+      "kind": "choice",
+      "instruction_pt": "Como se diz \"Eu não gosto de leite\"?",
+      "options": ["I no like milk.", "I don't like milk.", "I not like milk."],
+      "answer": 1,
+      "explanation_pt": "A negativa do presente usa \"don't\": \"I don't like milk\"."
+    },
+    {
+      "id": "a1-05-prac-23",
+      "kind": "choice",
+      "instruction_pt": "Ouça e escolha o que ela não come.",
+      "listen": "I eat fish and rice, but I don't eat meat.",
+      "options": ["peixe", "carne", "arroz"],
+      "answer": 1,
+      "explanation_pt": "Ela diz \"I don't eat meat\": ela não come carne."
+    },
+    {
+      "id": "a1-05-prac-24",
+      "kind": "fill",
+      "instruction_pt": "Complete com o verbo certo.",
+      "sentence": "My son ___ apples.",
+      "accepted": ["likes", "loves", "eats"],
+      "commonErrors": [
+        {
+          "id": "like",
+          "match": "^(like|love|eat)$",
+          "explanation_pt": "Com \"my son\" (he), o verbo ganha \"s\": \"likes\".",
+          "correction_en": "likes"
+        }
+      ]
+    },
+    {
+      "id": "a1-05-prac-25",
+      "kind": "fill",
+      "instruction_pt": "Complete com o auxiliar certo.",
+      "sentence": "___ you like spicy food?",
+      "accepted": ["Do"],
+      "commonErrors": [
+        {
+          "id": "does",
+          "match": "^does$",
+          "explanation_pt": "Com \"you\", a pergunta usa \"Do\".",
+          "correction_en": "Do"
+        },
+        {
+          "id": "are",
+          "match": "^are$",
+          "explanation_pt": "Para perguntar com \"like\", use \"Do\": \"Do you like...?\".",
+          "correction_en": "Do"
+        }
+      ]
+    },
+    {
+      "id": "a1-05-prac-26",
+      "kind": "order",
+      "instruction_pt": "Coloque as palavras na ordem certa para formar a frase.",
+      "accepted": ["I drink tea in the afternoon"]
+    },
+    {
+      "id": "a1-05-prac-27",
+      "kind": "match",
+      "instruction_pt": "Ligue cada palavra ao seu significado.",
+      "pairs": [
+        {
+          "en": "cheese",
+          "pt": "queijo"
+        },
+        {
+          "en": "juice",
+          "pt": "suco"
+        },
+        {
+          "en": "water",
+          "pt": "água"
+        },
+        {
+          "en": "apple",
+          "pt": "maçã"
+        },
+        {
+          "en": "potato",
+          "pt": "batata"
+        }
+      ]
+    }
   ]
 }
