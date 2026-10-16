@@ -47,3 +47,19 @@ test('empty heard phonemes → score 0', () => {
   expect(r.score).toBe(0)
   expect(r.words.every((w) => !w.ok && w.heard === '')).toBe(true)
 })
+
+test('substitution inside an equivalence class keeps the word ok', () => {
+  const words = [{ word: 'water', phones: ['w', 'ɔː', 't', 'ɚ'] }]
+  const r = scoreWords(words, ['w', 'ɑ', 'ɾ', 'ɚ'])
+  expect(r.score).toBe(100)
+  expect(r.words[0]).toMatchObject({ ok: true, heard: 'wɑɾɚ' })
+})
+
+test('θ→f is still an error (real Brazilian substitution)', () => {
+  const r = scoreWords([{ word: 'thin', phones: ['θ', 'ɪ', 'n'] }], ['f', 'i', 'n'])
+  expect(r.words[0].ok).toBe(false)
+})
+
+test('equivalence is per class, not transitive (t~ɾ, d~ɾ, but t≁d)', () => {
+  expect(scoreWords([{ word: 'x', phones: ['t'] }], ['d']).score).toBe(0)
+})
