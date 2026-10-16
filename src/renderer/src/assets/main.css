@@ -673,6 +673,12 @@ input[type='checkbox'] {
   margin-right: 0.4rem;
 }
 
+/* Words said right stand out from the misses, so a wrong answer doesn't read as all wrong. */
+.diff-ok {
+  color: var(--correct-ink);
+  font-weight: 600;
+}
+
 .diff-missing {
   color: var(--error-ink);
   text-decoration: underline wavy;

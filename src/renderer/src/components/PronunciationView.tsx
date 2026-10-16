@@ -22,7 +22,7 @@ export default function PronunciationView({
       {toPractice > 0 && (
         <p className="diff" lang="en">
           {result.words.map((w, i) => (
-            <span key={i} className={w.ok ? undefined : 'pron-practice'}>
+            <span key={i} className={w.ok ? 'diff-ok' : 'pron-practice'}>
               {w.word}
               {!w.ok && <small lang="pt-BR"> (treinar)</small>}
             </span>
