@@ -21,8 +21,9 @@ export type GoalPlan = {
 }
 
 // × 7 ÷ (30 × months) is "÷ weeks" kept in integers, so 700 stays 700 and not 700.0000001.
-const perDay = (hours: number, months: number, daysPerWeek: number): number =>
-  Math.ceil((hours * 60 * 7) / (30 * months * daysPerWeek) / 5) * 5
+/** days = calendar days left until the deadline; a passed deadline counts as 1 day. */
+const perDay = (hours: number, days: number, daysPerWeek: number): number =>
+  Math.ceil((hours * 60 * 7) / (Math.max(days, 1) * daysPerWeek) / 5) * 5
 
 export function planGoal(o: {
   level: Level
@@ -30,17 +31,19 @@ export function planGoal(o: {
   months: Goal['months']
   daysPerWeek: Goal['daysPerWeek']
   studiedMinutes: number
+  /** Days left until createdAt + months; defaults to the whole deadline (a goal being created). */
+  daysLeft?: number
 }): GoalPlan {
   const current = LEVELS.indexOf(o.level)
   if (LEVELS.indexOf(o.target) < current)
     return { hoursLeft: 0, minutesPerDay: 0, feasibility: 'alcancada', suggestedMonths: null }
   const done = current > 0 ? LEVEL_HOURS[LEVELS[current - 1]] : 0
   const hoursLeft = Math.max(0, LEVEL_HOURS[o.target] - done - o.studiedMinutes / 60)
-  const minutesPerDay = perDay(hoursLeft, o.months, o.daysPerWeek)
+  const minutesPerDay = perDay(hoursLeft, o.daysLeft ?? 30 * o.months, o.daysPerWeek)
   const feasibility = minutesPerDay <= 60 ? 'ok' : minutesPerDay <= 120 ? 'puxado' : 'irreal'
   const suggestedMonths =
     feasibility === 'irreal'
-      ? (GOAL_MONTHS.find((m) => perDay(hoursLeft, m, o.daysPerWeek) <= 60) ?? null)
+      ? (GOAL_MONTHS.find((m) => perDay(hoursLeft, 30 * m, o.daysPerWeek) <= 60) ?? null)
       : null
   return { hoursLeft, minutesPerDay, feasibility, suggestedMonths }
 }
@@ -82,3 +85,9 @@ export function projectedFinish(hoursLeft: number, avgPerDay14: number, now: Dat
 /** Minutes studied since the goal was created (all sessions, exams and placement included). */
 export const minutesSince = (sessions: SessionRecord[], createdAt: string): number =>
   sessions.filter((s) => s.at >= createdAt).reduce((sum, s) => sum + s.minutes, 0)
+
+/** Calendar days from now until the goal's deadline (createdAt + months × 30 days); can be <= 0. */
+export function goalDaysLeft(goal: Pick<Goal, 'createdAt' | 'months'>, now: Date): number {
+  const end = Date.parse(goal.createdAt) + goal.months * 30 * 86_400_000
+  return Math.ceil((end - now.getTime()) / 86_400_000)
+}

@@ -1,5 +1,11 @@
 import { describe, expect, test } from 'vitest'
-import { LEVEL_HOURS, planGoal, projectedFinish, studyStats } from '../../src/shared/goal'
+import {
+  LEVEL_HOURS,
+  goalDaysLeft,
+  planGoal,
+  projectedFinish,
+  studyStats
+} from '../../src/shared/goal'
 import type { SessionRecord } from '../../src/shared/progress'
 
 const base = { level: 'A2', target: 'B1', months: 6, daysPerWeek: 6, studiedMinutes: 0 } as const
@@ -99,5 +105,25 @@ describe('projectedFinish', () => {
   test('null without a pace; otherwise now + the days needed', () => {
     expect(projectedFinish(100, 0, now)).toBeNull()
     expect(projectedFinish(10, 60, now)?.getDate()).toBe(26)
+  })
+})
+
+describe('goal adapts to the days left', () => {
+  const base = { level: 'A2', target: 'B1', months: 6, daysPerWeek: 6, studiedMinutes: 0 } as const
+  test('halfway through a 6-month goal with nothing studied, the daily target rises', () => {
+    expect(planGoal({ ...base, daysLeft: 90 })).toMatchObject({
+      minutesPerDay: 235,
+      feasibility: 'irreal'
+    })
+  })
+  test('more time left means more slack', () => {
+    expect(planGoal({ ...base, daysLeft: 360 }).minutesPerDay).toBe(60)
+  })
+  test('a passed deadline counts as one day, never divides by zero', () => {
+    expect(Number.isFinite(planGoal({ ...base, daysLeft: -5 }).minutesPerDay)).toBe(true)
+  })
+  test('goalDaysLeft counts from createdAt + months × 30 days', () => {
+    const goal = { createdAt: '2026-01-01T00:00:00Z', months: 1 as const }
+    expect(goalDaysLeft(goal, new Date('2026-01-21T00:00:00Z'))).toBe(10)
   })
 })

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import type { Profile } from '../../../shared/api'
 import { examDue } from '../../../shared/assessment'
 import { LEVELS, type Course, type Level } from '../../../shared/content'
-import { minutesSince, planGoal, studyStats } from '../../../shared/goal'
+import { goalDaysLeft, minutesSince, planGoal, studyStats } from '../../../shared/goal'
 import type { Mode, ProfileProgress } from '../../../shared/progress'
 import { DURATIONS, type Duration } from '../../../shared/session'
 import TodayGoal from '../components/TodayGoal'
@@ -44,7 +44,8 @@ export default function HomeScreen({
       target: goal.target,
       months: goal.months,
       daysPerWeek: goal.daysPerWeek,
-      studiedMinutes: minutesSince(progress.sessions, goal.createdAt)
+      studiedMinutes: minutesSince(progress.sessions, goal.createdAt),
+      daysLeft: goalDaysLeft(goal, now)
     })
   // The duration closest to what is left for today, capped at 60 min.
   const want = plan && Math.min(Math.max(plan.minutesPerDay - stats.todayMinutes, 0), 60)
