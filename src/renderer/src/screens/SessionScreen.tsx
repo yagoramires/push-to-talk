@@ -36,7 +36,7 @@ export default function SessionScreen({
   // The plan is fixed at the start; progress keeps changing as answers come in.
   const [plan] = useState(() => buildSession(course, progress, minutes))
   const [items] = useState(() => flattenPlan(course, plan))
-  const [startedAt] = useState(() => Date.now())
+  const [startedAt, setStartedAt] = useState(() => Date.now())
   const [now, setNow] = useState(startedAt)
   const [index, setIndex] = useState(0)
   const [blocksDone, setBlocksDone] = useState<string[]>([])
@@ -120,7 +120,16 @@ export default function SessionScreen({
       </header>
 
       {!recapSeen && recap ? (
-        <SoloRecap recap={recap} onStart={() => setRecapSeen(true)} />
+        <SoloRecap
+          recap={recap}
+          onStart={() => {
+            // The clock starts when the lesson does, not while the recap is read.
+            const t = Date.now()
+            setStartedAt(t)
+            setNow(t)
+            setRecapSeen(true)
+          }}
+        />
       ) : item ? (
         <>
           <ExerciseView key={index} exercise={item.exercise} mode={mode} onFinal={handleFinal} />

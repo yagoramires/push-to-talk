@@ -62,12 +62,17 @@ export default function ResultView({
           <button
             type="button"
             className="btn btn-correct"
-            autoFocus
+            autoFocus={final === 'correct'}
             onClick={() => onFinal('correct')}
           >
             ✓ Professor: certo
           </button>
-          <button type="button" className="btn btn-error" onClick={() => onFinal('error')}>
+          <button
+            type="button"
+            className="btn btn-error"
+            autoFocus={final === 'error'}
+            onClick={() => onFinal('error')}
+          >
             ✗ Professor: errado
           </button>
         </div>

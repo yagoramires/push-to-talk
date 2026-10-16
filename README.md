@@ -1,34 +1,15 @@
-# ingles-scaffold
+# Inglês
 
-An Electron application with React and TypeScript
+App desktop (Electron + React + TypeScript) de aulas de inglês para brasileiros, com prática de fala em modo solo e em modo guiado com professor.
 
-## Recommended IDE Setup
-
-- [VSCode](https://code.visualstudio.com/) + [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) + [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-
-## Project Setup
-
-### Install
+## Como rodar
 
 ```bash
-$ npm install
+npm install
+npm run dev
+npm test
 ```
 
-### Development
+## Transcrição
 
-```bash
-$ npm run dev
-```
-
-### Build
-
-```bash
-# For windows
-$ npm run build:win
-
-# For macOS
-$ npm run build:mac
-
-# For Linux
-$ npm run build:linux
-```
+Em desenvolvimento, a transcrição de voz precisa do `whisper-cli` instalado e do modelo `~/.cache/whisper/ggml-small.bin`. Para usar outros caminhos, defina as variáveis de ambiente `WHISPER_BIN` e `WHISPER_MODEL`.

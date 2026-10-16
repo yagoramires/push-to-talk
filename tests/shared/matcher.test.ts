@@ -33,6 +33,7 @@ test('normalize: case, curly apostrophes, contractions, numbers 0-999, punctuati
   expect(normalize('I AM twenty-five,  years old.')).toBe('i am twenty five years old')
   expect(normalize('It’s 100')).toBe('it is one hundred')
   expect(normalize("You can't, I won't")).toBe('you cannot i will not')
+  expect(normalize("You've, we'll, she'd, haven't")).toBe('you have we will she would have not')
   expect(normalize('342')).toBe('three hundred forty two')
   expect(normalize('   ')).toBe('')
 })
