@@ -11,6 +11,7 @@ type Props = {
 
 /** First-run AI setup, and tier change from "Configurações da IA" when a tier already exists. */
 export default function SetupScreen({ status, onClose }: Props): React.JSX.Element {
+  const android = window.api.platform === 'android'
   const changing = status.tier !== null
   const recommended = status.recommended ?? 'light'
   const [tier, setTier] = useState<Tier>(status.tier ?? recommended)
@@ -146,7 +147,7 @@ export default function SetupScreen({ status, onClose }: Props): React.JSX.Eleme
               {progress?.phase === 'error' ? 'Tentar de novo' : 'Baixar e preparar'} (
               {formatSize(downloadBytes(tier))})
             </button>
-            {!picking && (
+            {!picking && !android && (
               <button type="button" className="btn btn-secondary" onClick={() => setPicking(true)}>
                 Escolher outro pacote
               </button>
@@ -159,7 +160,7 @@ export default function SetupScreen({ status, onClose }: Props): React.JSX.Eleme
               className="btn btn-secondary"
               onClick={() => void window.api.openLogs()}
             >
-              Abrir pasta de logs
+              {android ? 'Enviar logs' : 'Abrir pasta de logs'}
             </button>
           </div>
           <p>
@@ -174,15 +175,17 @@ export default function SetupScreen({ status, onClose }: Props): React.JSX.Eleme
             </label>
           </p>
           <div className="actions">
-            <button
-              type="button"
-              className="btn btn-secondary"
-              onClick={() =>
-                void window.api.openSamples().catch((e) => console.warn('openSamples failed', e))
-              }
-            >
-              Abrir amostras
-            </button>
+            {!android && (
+              <button
+                type="button"
+                className="btn btn-secondary"
+                onClick={() =>
+                  void window.api.openSamples().catch((e) => console.warn('openSamples failed', e))
+                }
+              >
+                Abrir amostras
+              </button>
+            )}
             <button type="button" className="btn btn-secondary" onClick={deleteSamples}>
               Apagar amostras
             </button>

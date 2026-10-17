@@ -192,3 +192,22 @@ describe('skillSummary', () => {
     ])
   })
 })
+
+describe('describeHardware on Android', () => {
+  const hw = {
+    platform: 'android',
+    arch: 'arm64',
+    totalMemGB: 8,
+    cpuModel: 'Snapdragon',
+    cores: 8,
+    hasDiscreteGpu: false
+  }
+  test('has no discrete GPU line', () => {
+    expect(describeHardware(hw).join('\n')).not.toContain('Placa de vídeo dedicada')
+  })
+  test('win32 keeps it', () => {
+    expect(describeHardware({ ...hw, platform: 'win32' }).join('\n')).toContain(
+      'Placa de vídeo dedicada'
+    )
+  })
+})

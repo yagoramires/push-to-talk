@@ -6,6 +6,7 @@ export const AudioIndexContext = createContext<Record<string, string>>({})
 /** System voice: the fallback when a text has no bundled audio. */
 export function speak(text: string): void {
   const synth = window.speechSynthesis
+  if (!synth) return // the Android WebView has no speech synthesis
   synth.cancel()
   const utterance = new SpeechSynthesisUtterance(text)
   utterance.lang = 'en-US'

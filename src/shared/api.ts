@@ -23,6 +23,9 @@ export type FreeSpeakEval =
   | { ok: false; reason: 'no-model' | 'failed' | 'timeout'; message: string }
 
 export interface AppApi {
+  readonly platform: 'desktop' | 'android'
+  /** Playable URL of a course mp3; desktop: `course-audio://audio/<file>` */
+  audioUrl(file: string): string
   loadCourse(): Promise<Course>
   loadState(): Promise<LoadResult>
   createProfile(name: string): Promise<Profile>

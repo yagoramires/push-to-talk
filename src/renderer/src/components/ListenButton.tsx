@@ -10,8 +10,8 @@ export default function ListenButton({ text }: { text: string }): React.JSX.Elem
   function listen(): void {
     const file = Object.hasOwn(audio, text) ? audio[text] : undefined
     if (!file) return speak(text)
-    window.speechSynthesis.cancel()
-    player.src = `course-audio://audio/${file}`
+    window.speechSynthesis?.cancel()
+    player.src = window.api.audioUrl(file)
     player.play().catch(() => speak(text))
   }
   return (

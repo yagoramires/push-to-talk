@@ -3,6 +3,8 @@ import { electronAPI } from '@electron-toolkit/preload'
 import type { AiProgress, AppApi } from '../shared/api'
 
 const api: AppApi = {
+  platform: 'desktop',
+  audioUrl: (file) => `course-audio://audio/${file}`,
   loadCourse: () => ipcRenderer.invoke('loadCourse'),
   loadState: () => ipcRenderer.invoke('loadState'),
   createProfile: (name) => ipcRenderer.invoke('createProfile', name),

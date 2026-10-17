@@ -131,11 +131,14 @@ export const TIER_LABELS: Record<Tier, string> = { light: 'Leve', medium: 'Médi
 
 /** Detected hardware as short Portuguese lines for the setup screen. */
 export function describeHardware(hw: Hardware): string[] {
-  return [
+  const lines = [
     `Processador: ${hw.cpuModel} (${hw.cores} núcleos)`,
-    `Memória: ${hw.totalMemGB} GB de RAM`,
-    `Placa de vídeo dedicada: ${hw.hasDiscreteGpu ? 'sim' : 'não'}`
+    `Memória: ${hw.totalMemGB} GB de RAM`
   ]
+  if (hw.platform !== 'android') {
+    lines.push(`Placa de vídeo dedicada: ${hw.hasDiscreteGpu ? 'sim' : 'não'}`)
+  }
+  return lines
 }
 
 /** Decimal units, like the sizes Hugging Face shows: "1,7 GB", "395 MB". */

@@ -51,7 +51,7 @@ export function registerIpc(logPath: string): void {
   let state: AppState | null = null
   const current = async (): Promise<AppState> => (state ??= (await store.load()).state)
 
-  const handlers: Omit<AppApi, 'setupAi' | 'onAiProgress'> = {
+  const handlers: Omit<AppApi, 'setupAi' | 'onAiProgress' | 'platform' | 'audioUrl'> = {
     loadCourse: () => loadCourse(contentDir),
     async loadState() {
       const r = await store.load()
