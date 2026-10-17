@@ -2,7 +2,7 @@ import { readdirSync, readFileSync, existsSync } from 'node:fs'
 import { describe, expect, it, vi } from 'vitest'
 import { createMobileApi } from '../../src/mobile/api'
 
-const track = () => ({ stop: vi.fn() })
+const track = (): { stop: ReturnType<typeof vi.fn> } => ({ stop: vi.fn() })
 const stream = (t: ReturnType<typeof track>): MediaStream =>
   ({ getTracks: () => [t] }) as unknown as MediaStream
 
