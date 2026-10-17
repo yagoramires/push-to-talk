@@ -4,7 +4,7 @@ Para quem vai testar o app num celular Android de verdade. Siga os passos na ord
 
 Antes de começar, anote o modelo do celular e quanto de memória (RAM) ele tem: ______________________
 
-Use Wi-Fi e deixe o celular carregando: o primeiro uso baixa cerca de 1,4 GB.
+Use Wi-Fi e deixe o celular carregando: o primeiro uso baixa cerca de 1,7 GB.
 
 ---
 
@@ -41,7 +41,7 @@ Abra o app. Quando o Android pedir permissão para gravar áudio, toque em **"Pe
 
 Conecte ao Wi-Fi. Na tela "Preparar a IA", anote o pacote recomendado e o hardware mostrado. Toque em **"Baixar e preparar"** e marque quanto tempo leva até terminar. **Mantenha o app aberto durante todo o download**: se ele fechar, o download dos modelos recomeça do zero.
 
-Os modelos que podem ser baixados (cerca de 1,4 GB no total):
+Os modelos que podem ser baixados (cerca de 1,7 GB no total):
 
 - Whisper base, 77 MB (sempre).
 - Pronúncia, 318 MB (se o celular for rápido o bastante).
