@@ -8,7 +8,13 @@ export type AiRequest =
   | { type: 'benchmark'; samples: Float32Array; sampleRate: number }
   | { type: 'dispose' }
 
-type Reply = { id: number; value?: unknown; error?: string; progress?: number }
+type Reply = {
+  id: number
+  value?: unknown
+  error?: string
+  progress?: number
+  log?: { level: 'info' | 'warn' | 'error'; args: string[] }
+}
 
 export type AiClient = {
   has(repo: string): Promise<boolean>
@@ -32,6 +38,8 @@ export function createAiClient(): AiClient {
     if (!worker) {
       worker = new Worker(new URL('./ai.worker.ts', import.meta.url), { type: 'module' })
       worker.onmessage = (e: MessageEvent<Reply>) => {
+        // console here is copied to main.log by initMobileLog
+        if (e.data.log) return console[e.data.log.level]('worker', ...e.data.log.args)
         const p = pending.get(e.data.id)
         if (!p) return
         if (e.data.progress !== undefined) return p.progress?.(e.data.progress)

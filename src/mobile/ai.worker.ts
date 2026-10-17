@@ -7,6 +7,20 @@ import { ctcGreedyDecode, scoreWords, tokenizeIpa } from '../shared/ai/phonemes'
 import { normalize } from '../shared/matcher'
 import { PRON_MODEL, STT_BASE } from '../shared/models'
 import type { AiRequest } from './ai-client'
+import { medianRtf } from './tier'
+
+const scope = self as unknown as DedicatedWorkerGlobalScope
+// main.log lives on the main thread: forward worker logs there (strings and stacks only).
+// Never log transcripts or audio in this file.
+for (const level of ['info', 'warn', 'error'] as const) {
+  const original = console[level].bind(console)
+  console[level] = (...args: unknown[]) => {
+    original(...args)
+    const show = (a: unknown): string =>
+      a instanceof Error ? (a.stack ?? a.message) : typeof a === 'string' ? a : String(a)
+    scope.postMessage({ log: { level, args: args.map(show) } })
+  }
+}
 
 env.allowLocalModels = false
 env.useBrowserCache = true
@@ -132,12 +146,17 @@ async function handle(m: AiRequest, progress: (p: number) => void): Promise<unkn
     case 'score':
       return score(m.samples, m.expected)
     case 'benchmark': {
-      // Same as the desktop: one warm-up run (loads the model), then the measured one.
+      // One warm-up run (loads the model), then the median of 3: the clip is short and noisy.
       const l = await stt()
       await l.run(m.samples)
-      const t0 = performance.now()
-      await l.run(m.samples)
-      return (performance.now() - t0) / 1000 / (m.samples.length / m.sampleRate)
+      const times: number[] = []
+      for (let i = 0; i < 3; i++) {
+        const t0 = performance.now()
+        await l.run(m.samples)
+        times.push((performance.now() - t0) / 1000)
+      }
+      console.info('benchmark runs (s)', times.map((t) => t.toFixed(2)).join(' '))
+      return medianRtf(times, m.samples.length / m.sampleRate)
     }
     case 'dispose': {
       const w = await whisper?.catch(() => null)
@@ -148,7 +167,6 @@ async function handle(m: AiRequest, progress: (p: number) => void): Promise<unkn
   }
 }
 
-const scope = self as unknown as DedicatedWorkerGlobalScope
 scope.onmessage = async (e: MessageEvent<AiRequest & { id: number }>) => {
   const { id } = e.data
   try {
