@@ -3,7 +3,8 @@ import { homedir, tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { expect, test } from 'vitest'
 import { LLM_BY_TIER } from '../../src/main/ai/tiers'
-import { buildPrompt, createFreeSpeakEvaluator, parseEval } from '../../src/main/ai/freeSpeak'
+import { createFreeSpeakEvaluator } from '../../src/main/ai/freeSpeak'
+import { buildPrompt, parseEval } from '../../src/shared/ai/freeSpeak'
 
 const input = {
   prompt_en: 'What do you do on weekends?',

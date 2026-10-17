@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest'
-import { ctcGreedyDecode, scoreWords, tokenizeIpa } from '../../src/main/ai/phonemes'
+import { ctcGreedyDecode, scoreWords, tokenizeIpa } from '../../src/shared/ai/phonemes'
 
 test('ctcGreedyDecode collapses repeats and drops the blank', () => {
   const idToToken = ['<pad>', 'h', 'ɛ', 'l']

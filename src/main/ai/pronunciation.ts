@@ -3,11 +3,11 @@ import { readFile, rename, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import type { PronunciationResult } from '../../shared/api'
 import { normalize } from '../../shared/matcher'
-import { ctcGreedyDecode, scoreWords, tokenizeIpa } from './phonemes'
+import { ctcGreedyDecode, scoreWords, tokenizeIpa } from '../../shared/ai/phonemes'
 import { modelsConfig } from './stt'
 import { PRON_MODEL } from './tiers'
 
-export { WORD_OK_PER } from './phonemes'
+export { WORD_OK_PER } from '../../shared/ai/phonemes'
 
 const SAMPLE_RATE = 16000
 const MIN_SECONDS = 0.5

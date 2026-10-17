@@ -1,4 +1,4 @@
-import type { PronunciationResult } from '../../shared/api'
+import type { PronunciationResult } from '../api'
 
 /** Word is ok when its phoneme error rate is at most this. */
 export const WORD_OK_PER = 0.34

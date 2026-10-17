@@ -1,20 +1,7 @@
 import { readFile, rename, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import type { AppState, LoadResult } from '../shared/api'
-
-const empty = (): AppState => ({ version: 1, profiles: [], progress: {} })
-
-function isState(v: unknown): v is AppState {
-  const s = v as AppState | null
-  return (
-    typeof s === 'object' &&
-    s !== null &&
-    s.version === 1 &&
-    Array.isArray(s.profiles) &&
-    typeof s.progress === 'object' &&
-    s.progress !== null
-  )
-}
+import { emptyState, isState } from '../shared/state'
 
 export function createStore(dir: string): {
   load(): Promise<LoadResult>
@@ -29,7 +16,7 @@ export function createStore(dir: string): {
       try {
         raw = await readFile(file, 'utf8')
       } catch (e) {
-        if ((e as NodeJS.ErrnoException).code === 'ENOENT') return { state: empty() }
+        if ((e as NodeJS.ErrnoException).code === 'ENOENT') return { state: emptyState() }
         throw e
       }
       try {
@@ -40,7 +27,7 @@ export function createStore(dir: string): {
       }
       const backup = join(dir, `state.corrupt-${Date.now()}.json`)
       await rename(file, backup)
-      return { state: empty(), recoveredFrom: backup }
+      return { state: emptyState(), recoveredFrom: backup }
     },
     // Writes are chained so they never overlap; a failed write doesn't poison the queue.
     save(state) {

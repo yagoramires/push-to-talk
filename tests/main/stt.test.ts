@@ -3,12 +3,8 @@ import { homedir, tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { describe, expect, test } from 'vitest'
 import { STT_BY_TIER, STT_MODEL } from '../../src/main/ai/tiers'
-import {
-  cleanTranscript,
-  configureModels,
-  createTranscriber,
-  sttModelFile
-} from '../../src/main/ai/stt'
+import { configureModels, createTranscriber, sttModelFile } from '../../src/main/ai/stt'
+import { cleanTranscript } from '../../src/shared/ai/whisper'
 import { checkAnswer } from '../../src/shared/matcher'
 import { decodeWav } from '../../src/shared/wav'
 
