@@ -1,8 +1,11 @@
-import type { AiProgress, AiStatus, AppApi, AppState } from '../shared/api'
+import type { AiProgress, AiStatus, AppApi, AppState, UpdateInfo } from '../shared/api'
 import type { ProfileProgress } from '../shared/progress'
 import { parseCourse } from '../shared/course-source'
 import { toGB } from '../shared/models'
+import { checkRelease } from '../shared/update'
 import { decodeWav } from '../shared/wav'
+import { App } from '@capacitor/app'
+import { Browser } from '@capacitor/browser'
 import { Share } from '@capacitor/share'
 import { FileTransfer } from '@capacitor/file-transfer'
 import { createAiClient, type AiClient } from './ai-client'
@@ -20,6 +23,8 @@ type Deps = {
   llm: NativeLlm
   detect: MobileSetupDeps['detect']
   gguf: MobileSetupDeps['gguf']
+  /** versionName of the installed APK */
+  appVersion: () => Promise<string>
 }
 
 export function createMobileApi(deps: Partial<Deps> = {}): AppApi {
@@ -64,6 +69,9 @@ export function createMobileApi(deps: Partial<Deps> = {}): AppApi {
   const status = (): Promise<AiStatus> => (aiStatus ??= setup.status())
   let setupRun: Promise<AiStatus> | null = null
   const listeners = new Set<(p: AiProgress) => void>()
+  const appVersion = deps.appVersion ?? (async () => (await App.getInfo()).version)
+  let apkUrl = ''
+  let update: Promise<UpdateInfo | null> | null = null
 
   return {
     platform: 'android',
@@ -167,7 +175,24 @@ export function createMobileApi(deps: Partial<Deps> = {}): AppApi {
     setSaveSamples: samples.setSaveSamples,
     saveSample: samples.save,
     openSamples: async () => {},
-    deleteSamples: samples.remove
+    deleteSamples: samples.remove,
+    // Checked once per launch, on first ask; offline or any error means no banner.
+    getUpdate: () =>
+      (update ??= (async () => {
+        const r = await checkRelease(doFetch, await appVersion(), '-android.apk')
+        if (!r) return null
+        apkUrl = r.url
+        return { version: r.version, action: 'download' as const }
+      })().catch((e) => {
+        console.warn('update check failed', String(e))
+        return null
+      })),
+    // getUpdate already waits for the check: nothing arrives later on Android.
+    onUpdate: () => () => {},
+    // The browser downloads the APK; tapping it installs over this one (same signing key).
+    async installUpdate() {
+      if (apkUrl) await Browser.open({ url: apkUrl })
+    }
   }
 }
 

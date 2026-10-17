@@ -7,6 +7,7 @@ import { registerAudioProtocol } from './audio-protocol'
 import { registerIpc } from './ipc'
 import { initLog } from './log'
 import { resourcePaths, selfCheck } from './self-check'
+import { checkForUpdates } from './update'
 
 function createWindow(): void {
   // Create the browser window.
@@ -94,6 +95,7 @@ app.whenReady().then(async () => {
   registerIpc(logPath)
 
   createWindow()
+  checkForUpdates()
 
   app.on('activate', function () {
     // On macOS it's common to re-create a window in the app when the

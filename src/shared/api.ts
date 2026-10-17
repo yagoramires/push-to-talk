@@ -45,7 +45,14 @@ export interface AppApi {
   saveSample(sample: Sample): Promise<void>
   openSamples(): Promise<void>
   deleteSamples(): Promise<void>
+  /** The newer version known right now, or null (none, still checking, offline). */
+  getUpdate(): Promise<UpdateInfo | null>
+  onUpdate(cb: (u: UpdateInfo) => void): () => void
+  /** restart: quits and installs (Windows); download: opens the installer in the browser. */
+  installUpdate(): Promise<void>
 }
+
+export type UpdateInfo = { version: string; action: 'restart' | 'download' }
 
 export type Settings = { saveSamples: boolean }
 /** One spoken answer with its final verdict, saved to improve recognition. */

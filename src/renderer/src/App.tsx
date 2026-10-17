@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import type { AiStatus, Profile } from '../../shared/api'
+import type { AiStatus, Profile, UpdateInfo } from '../../shared/api'
 import { availableLevels, type Course, type Level } from '../../shared/content'
 import {
   migrateProgress,
@@ -44,6 +44,8 @@ export default function App(): React.JSX.Element {
   const [profileId, setProfileId] = useState<string | null>(null)
   const [screen, setScreen] = useState<Screen>({ name: 'profiles' })
   const [ai, setAi] = useState<AiStatus | null>(null)
+  const [update, setUpdate] = useState<UpdateInfo | null>(null)
+  const [updateDismissed, setUpdateDismissed] = useState(false)
 
   // A new screen starts at the top, not where the last one was scrolled.
   useEffect(() => window.scrollTo(0, 0), [screen])
@@ -70,6 +72,15 @@ export default function App(): React.JSX.Element {
       },
       (e: Error) => setLoadError(e.message)
     )
+  }, [])
+
+  useEffect(() => {
+    const off = window.api.onUpdate(setUpdate)
+    window.api.getUpdate().then(
+      (u) => u && setUpdate(u),
+      (e) => console.warn('update check failed', e)
+    )
+    return off
   }, [])
 
   /** Updates memory and disk together; a failed save is shown, and the next save retries everything. */
@@ -131,6 +142,8 @@ export default function App(): React.JSX.Element {
   }
 
   let body: React.JSX.Element
+  // The update banner shows only between lessons: on the profiles and home screens.
+  let between = false
   if (screen.name === 'setup' && ai)
     body = (
       <SetupScreen
@@ -161,7 +174,8 @@ export default function App(): React.JSX.Element {
         onQuit={() => setScreen({ name: 'profiles' })}
       />
     )
-  else if (!profile || !current || screen.name === 'profiles')
+  else if (!profile || !current || screen.name === 'profiles') {
+    between = true
     body = (
       <ProfilesScreen
         profiles={profiles}
@@ -171,7 +185,7 @@ export default function App(): React.JSX.Element {
         onPlacement={course.placement && createForPlacement}
       />
     )
-  else if (screen.name === 'session')
+  } else if (screen.name === 'session')
     body = (
       <SessionScreen
         mode={screen.mode}
@@ -227,7 +241,8 @@ export default function App(): React.JSX.Element {
         onHome={() => setScreen({ name: 'home' })}
       />
     )
-  else
+  else {
+    between = true
     body = (
       <HomeScreen
         profile={profile}
@@ -257,9 +272,31 @@ export default function App(): React.JSX.Element {
         }
       />
     )
+  }
 
   return (
     <>
+      {update && between && !updateDismissed && (
+        <div className="notice notice-warn banner" role="status">
+          Nova versão {update.version} disponível.
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={() =>
+              void window.api.installUpdate().catch((e) => console.warn('update failed', e))
+            }
+          >
+            {update.action === 'restart' ? 'Reiniciar e atualizar' : 'Baixar'}
+          </button>
+          <button
+            type="button"
+            className="btn btn-secondary"
+            onClick={() => setUpdateDismissed(true)}
+          >
+            Agora não
+          </button>
+        </div>
+      )}
       {recoveredFrom && !['session', 'exam', 'placement'].includes(screen.name) && (
         <div className="notice notice-warn banner" role="alert">
           O arquivo de progresso estava corrompido e não pôde ser lido. Guardei uma cópia dele em{' '}

@@ -1,7 +1,7 @@
 import { readdirSync, readFileSync, existsSync } from 'node:fs'
 import { describe, expect, it, vi } from 'vitest'
 import { createMobileApi } from '../../src/mobile/api'
-import type { PronunciationResult } from '../../src/shared/api'
+import type { AppApi, PronunciationResult } from '../../src/shared/api'
 import type { ProfileProgress } from '../../src/shared/progress'
 import { encodeWav } from '../../src/shared/wav'
 import { memFs } from './memfs'
@@ -99,5 +99,40 @@ describe('transcribe', () => {
     const { api, ai } = await ready(false)
     await api.transcribe(wav, 'Hello')
     expect(ai.score).not.toHaveBeenCalled()
+  })
+})
+
+describe('getUpdate', () => {
+  const latest = {
+    tag_name: 'v1.2.0',
+    html_url: 'https://github.com/yagoramires/push-to-talk/releases/tag/v1.2.0',
+    assets: [{ name: 'Push-to-Talk-1.2.0-android.apk', browser_download_url: 'https://x/a.apk' }]
+  }
+  const api = (fetch: typeof globalThis.fetch, version = '1.1.0'): AppApi =>
+    createMobileApi({ fetch, appVersion: async () => version })
+  const ok = (async () => new Response(JSON.stringify(latest))) as unknown as typeof fetch
+
+  it('offers the download of a newer release', async () => {
+    expect(await api(ok).getUpdate()).toEqual({ version: '1.2.0', action: 'download' })
+  })
+
+  it('is null on the same version', async () => {
+    expect(await api(ok, '1.2.0').getUpdate()).toBeNull()
+  })
+
+  it('is null offline, without throwing', async () => {
+    const offline = (() => Promise.reject(new TypeError('Failed to fetch'))) as typeof fetch
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {})
+    expect(await api(offline).getUpdate()).toBeNull()
+    expect(warn).toHaveBeenCalledWith('update check failed', expect.any(String))
+    warn.mockRestore()
+  })
+
+  it('asks GitHub only once per launch', async () => {
+    const f = vi.fn(ok)
+    const a = api(f as unknown as typeof fetch)
+    await a.getUpdate()
+    await a.getUpdate()
+    expect(f).toHaveBeenCalledTimes(1)
   })
 })

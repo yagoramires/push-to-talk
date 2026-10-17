@@ -60,3 +60,8 @@ mac:
 dmg:
   artifactName: Push-to-Talk-${version}-mac-arm64.${ext}
 npmRebuild: false
+# electron-updater reads latest.yml from the GitHub release; CI uploads it (scripts keep --publish never).
+publish:
+  provider: github
+  owner: yagoramires
+  repo: push-to-talk

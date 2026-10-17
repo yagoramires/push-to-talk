@@ -15,6 +15,10 @@ import { LLM_BY_TIER, STT_BY_TIER } from './ai/tiers'
 import { resourcePaths } from './self-check'
 import { createSamples } from './samples'
 import { createStore } from './store'
+import { getUpdate, installUpdate } from './update'
+
+// Not over the generic invoke loop below: events, and what preload answers itself.
+type Handlers = Omit<AppApi, 'setupAi' | 'onAiProgress' | 'onUpdate' | 'platform' | 'audioUrl'>
 
 export function registerIpc(logPath: string): void {
   const store = createStore(app.getPath('userData'))
@@ -51,7 +55,7 @@ export function registerIpc(logPath: string): void {
   let state: AppState | null = null
   const current = async (): Promise<AppState> => (state ??= (await store.load()).state)
 
-  const handlers: Omit<AppApi, 'setupAi' | 'onAiProgress' | 'platform' | 'audioUrl'> = {
+  const handlers: Handlers = {
     loadCourse: () => loadCourse(contentDir),
     async loadState() {
       const r = await store.load()
@@ -124,7 +128,9 @@ export function registerIpc(logPath: string): void {
       const err = await shell.openPath(samples.dir)
       if (err) throw new Error(err)
     },
-    deleteSamples: () => samples.remove()
+    deleteSamples: () => samples.remove(),
+    getUpdate,
+    installUpdate
   }
 
   for (const name of Object.keys(handlers) as (keyof typeof handlers)[]) {

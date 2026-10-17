@@ -1,6 +1,6 @@
 import { contextBridge, ipcRenderer, type IpcRendererEvent } from 'electron'
 import { electronAPI } from '@electron-toolkit/preload'
-import type { AiProgress, AppApi } from '../shared/api'
+import type { AiProgress, AppApi, UpdateInfo } from '../shared/api'
 
 const api: AppApi = {
   platform: 'desktop',
@@ -20,6 +20,13 @@ const api: AppApi = {
   saveSample: (sample) => ipcRenderer.invoke('saveSample', sample),
   openSamples: () => ipcRenderer.invoke('openSamples'),
   deleteSamples: () => ipcRenderer.invoke('deleteSamples'),
+  getUpdate: () => ipcRenderer.invoke('getUpdate'),
+  installUpdate: () => ipcRenderer.invoke('installUpdate'),
+  onUpdate(cb) {
+    const listener = (_e: IpcRendererEvent, u: UpdateInfo): void => cb(u)
+    ipcRenderer.on('update', listener)
+    return () => void ipcRenderer.off('update', listener)
+  },
   onAiProgress(cb) {
     const listener = (_e: IpcRendererEvent, p: AiProgress): void => cb(p)
     ipcRenderer.on('ai-progress', listener)

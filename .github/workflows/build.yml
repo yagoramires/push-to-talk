@@ -46,10 +46,18 @@ jobs:
       - name: Installer size
         shell: bash
         run: ls -lh ${{ env.INSTALLER }}
+      # electron-updater on Windows reads latest.yml and the blockmap next to the exe in the release
+      - name: Update files (Windows)
+        if: runner.os == 'Windows'
+        shell: bash
+        run: ls -l dist/latest.yml dist/*.exe.blockmap
       - uses: actions/upload-artifact@v4
         with:
           name: installer-${{ runner.os }}
-          path: ${{ env.INSTALLER }}
+          path: |
+            ${{ env.INSTALLER }}
+            dist/latest.yml
+            dist/*.exe.blockmap
           if-no-files-found: error
 
   android:
@@ -116,5 +124,7 @@ jobs:
           draft: true
           files: |
             installers/*.exe
+            installers/*.exe.blockmap
+            installers/latest.yml
             installers/*.dmg
             installers/*.apk
