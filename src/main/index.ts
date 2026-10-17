@@ -40,6 +40,8 @@ function createWindow(): void {
   }
 }
 
+// The app used to be "Inglês": keep that data folder so profiles, progress and AI models survive the rename.
+app.setPath('userData', join(app.getPath('appData'), 'Inglês'))
 const logPath = initLog(join(app.getPath('userData'), 'logs'))
 console.info(
   `start v${app.getVersion()} electron ${process.versions.electron} ${process.platform}-${process.arch}`,

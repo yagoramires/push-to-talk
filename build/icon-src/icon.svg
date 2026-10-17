@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#232845"/>
+      <stop offset="1" stop-color="#12152a"/>
+    </linearGradient>
+    <linearGradient id="ink" gradientUnits="userSpaceOnUse" x1="200" y1="300" x2="1000" y2="800">
+      <stop offset="0" stop-color="#b3a6ff"/>
+      <stop offset="1" stop-color="#7d63ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="1024" rx="230" fill="url(#bg)"/>
+  <!-- "ptt", rounded strokes like the app's Fredoka; centered on the canvas -->
+  <g fill="none" stroke="url(#ink)" stroke-width="92" stroke-linecap="round" stroke-linejoin="round" transform="translate(512 512) scale(0.8) translate(-605 -550)">
+    <path d="M250 420 V770"/>
+    <circle cx="362" cy="532" r="112"/>
+    <path d="M590 330 V560 Q590 644 676 644"/>
+    <path d="M530 430 H690"/>
+    <path d="M860 330 V560 Q860 644 946 644"/>
+    <path d="M800 430 H960"/>
+  </g>
+</svg>

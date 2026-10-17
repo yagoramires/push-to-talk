@@ -13,7 +13,7 @@ Use Wi-Fi e deixe o celular carregando: o primeiro uso baixa cerca de 1,7 GB.
 O APK vem do GitHub, de um destes dois lugares:
 
 - **Actions:** o artifact `installer-Android`, gerado a cada push na `main`.
-- **Releases:** o arquivo `Ingles-<versão>-android.apk`.
+- **Releases:** o arquivo `Push-to-Talk-<versão>-android.apk`.
 
 **Esperado:** o arquivo `.apk` aparece em Downloads no celular.
 
@@ -23,7 +23,7 @@ O APK vem do GitHub, de um destes dois lugares:
 
 Toque no `.apk`. O Android pede para permitir **"instalar apps de fontes desconhecidas"** para o navegador ou gerenciador de arquivos que você usou: permita e volte para a instalação.
 
-**Esperado:** o app "Inglês" é instalado e aparece na lista de apps.
+**Esperado:** o app "Push to Talk" é instalado e aparece na lista de apps.
 
 **O que aconteceu:**
 
@@ -91,7 +91,7 @@ No meio de uma aula, aperte o botão (ou gesto) de **voltar** do Android.
 
 ## 8. Negar o microfone
 
-Em **Configurações do Android → Apps → Inglês → Permissões → Microfone**, escolha **"Não permitir"**. Abra o app e tente gravar num exercício.
+Em **Configurações do Android → Apps → Push to Talk → Permissões → Microfone**, escolha **"Não permitir"**. Abra o app e tente gravar num exercício.
 
 **Esperado:** o app avisa que precisa do microfone, sem travar. Depois volte a permitir o microfone.
 
@@ -99,7 +99,7 @@ Em **Configurações do Android → Apps → Inglês → Permissões → Microfo
 
 ## 9. Fechar o app no meio do download
 
-Para este passo, desinstale o app e instale de novo (ou limpe os dados em Configurações do Android → Apps → Inglês → Armazenamento). Na tela "Preparar a IA", toque em **"Baixar e preparar"**, espere uns 30 segundos e feche o app à força (deslize para fechar nos apps recentes). Abra de novo.
+Para este passo, desinstale o app e instale de novo (ou limpe os dados em Configurações do Android → Apps → Push to Talk → Armazenamento). Na tela "Preparar a IA", toque em **"Baixar e preparar"**, espere uns 30 segundos e feche o app à força (deslize para fechar nos apps recentes). Abra de novo.
 
 **Esperado:** o app volta à tela "Preparar a IA" e o download recomeça do zero, sem travar nem dar erro.
 

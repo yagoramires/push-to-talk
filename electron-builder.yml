@@ -1,8 +1,6 @@
 appId: br.ingles.app
-# ASCII on purpose: with "ê" the macOS helper apps ("Inglês Helper") make Electron crash on launch.
-# People still see "Inglês" (CFBundleDisplayName, NSIS shortcut, package.json name). Electron derives
-# the helper path from CFBundleName, so that one must stay ASCII too.
-productName: Ingles
+# ASCII on purpose: an accented name ("Inglês Helper") made the macOS helper apps crash Electron on launch.
+productName: Push to Talk
 directories:
   buildResources: build
 files:
@@ -31,7 +29,7 @@ asarUnpack:
   - node_modules/sharp/**
   - node_modules/@img/**
 win:
-  executableName: Ingles
+  executableName: PushToTalk
   target:
     - target: nsis
       arch: x64
@@ -39,11 +37,11 @@ win:
     - '!node_modules/onnxruntime-node/bin/napi-v6/{darwin,linux}/**'
     - '!node_modules/@node-llama-cpp/*cuda*/**'
 nsis:
-  artifactName: Ingles-${version}-setup.${ext}
+  artifactName: Push-to-Talk-${version}-setup.${ext}
   oneClick: false
   allowToChangeInstallationDirectory: true
-  shortcutName: Inglês
-  uninstallDisplayName: Inglês
+  shortcutName: Push to Talk
+  uninstallDisplayName: Push to Talk
   createDesktopShortcut: always
 mac:
   target:
@@ -56,9 +54,9 @@ mac:
   entitlements: build/entitlements.mac.plist
   entitlementsInherit: build/entitlements.mac.plist
   extendInfo:
-    CFBundleDisplayName: Inglês
+    CFBundleDisplayName: Push to Talk
     NSMicrophoneUsageDescription: O app usa o microfone para ouvir e corrigir a sua fala. Nada do que você fala sai do computador.
   notarize: false
 dmg:
-  artifactName: Ingles-${version}-mac-arm64.${ext}
+  artifactName: Push-to-Talk-${version}-mac-arm64.${ext}
 npmRebuild: false

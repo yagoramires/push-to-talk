@@ -1,4 +1,4 @@
-# Inglês
+# Push to Talk
 
 App desktop (Electron + React + TypeScript) de aulas de inglês para brasileiros, com prática de fala em modo solo e em modo guiado com professor.
 
@@ -28,10 +28,10 @@ O app sai como DMG para Mac (Apple Silicon) e instalador NSIS para Windows (x64)
 
 ```bash
 npm run build:mac
-dist/mac-arm64/Ingles.app/Contents/MacOS/Ingles --self-check
+"dist/mac-arm64/Push to Talk.app/Contents/MacOS/Push to Talk" --self-check
 ```
 
-O DMG fica em `dist/Ingles-<versão>-mac-arm64.dmg`. Na primeira abertura, o macOS bloqueia o app não assinado: clique com o botão direito no app → "Abrir" → "Abrir mesmo assim".
+O DMG fica em `dist/Push-to-Talk-<versão>-mac-arm64.dmg`. Na primeira abertura, o macOS bloqueia o app não assinado: clique com o botão direito no app → "Abrir" → "Abrir mesmo assim".
 
 **Windows, pelo GitHub Actions** (`.github/workflows/build.yml` gera os dois instaladores e roda o `--self-check` em cada um):
 
@@ -47,7 +47,7 @@ Para testar no Windows, siga o roteiro em [docs/teste-windows.md](docs/teste-win
 
 ## Android
 
-O APK (`Ingles-<versão>-android.apk`, só arm64) sai do mesmo workflow: baixe o artifact `installer-Android` ou, numa release, o `.apk` do rascunho. Para instalar, abra o arquivo no celular e permita "Instalar apps de fontes desconhecidas" quando o Android pedir.
+O APK (`Push-to-Talk-<versão>-android.apk`, só arm64) sai do mesmo workflow: baixe o artifact `installer-Android` ou, numa release, o `.apk` do rascunho. Para instalar, abra o arquivo no celular e permita "Instalar apps de fontes desconhecidas" quando o Android pedir.
 
 A IA de conversa só liga em celulares com pelo menos 6 GB de RAM; nos outros, o resto do app funciona normalmente.
 

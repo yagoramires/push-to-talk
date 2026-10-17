@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">Inglês</string>
-    <string name="title_activity_main">Inglês</string>
+    <string name="app_name">Push to Talk</string>
+    <string name="title_activity_main">Push to Talk</string>
     <string name="package_name">io.github.yagoramires.ingles</string>
     <string name="custom_url_scheme">io.github.yagoramires.ingles</string>
 </resources>

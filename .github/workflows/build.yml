@@ -37,11 +37,11 @@ jobs:
         shell: pwsh
         # piping makes PowerShell wait for the GUI-subsystem exe and show its stdout
         run: |
-          & "dist/win-unpacked/Ingles.exe" --self-check | Out-Host
+          & "dist/win-unpacked/PushToTalk.exe" --self-check | Out-Host
           if ($LASTEXITCODE -ne 0) { exit 1 }
       - name: Self-check (Mac)
         if: runner.os == 'macOS'
-        run: dist/mac-arm64/Ingles.app/Contents/MacOS/Ingles --self-check
+        run: "dist/mac-arm64/Push to Talk.app/Contents/MacOS/Push to Talk" --self-check
 
       - name: Installer size
         shell: bash
@@ -92,7 +92,7 @@ jobs:
         run: |
           VERSION=$(node -p "require('./package.json').version")
           mkdir -p dist
-          cp android/app/build/outputs/apk/release/app-release.apk "dist/Ingles-$VERSION-android.apk"
+          cp android/app/build/outputs/apk/release/app-release.apk "dist/Push-to-Talk-$VERSION-android.apk"
           ls -lh dist/*.apk
       - uses: actions/upload-artifact@v4
         with:

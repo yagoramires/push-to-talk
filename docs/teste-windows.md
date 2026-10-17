@@ -8,7 +8,7 @@ Antes de começar, anote o nome do seu usuário do Windows (aparece em `C:\Users
 
 ## 1. Baixar o instalador
 
-Baixe o arquivo `Ingles-<versão>-setup.exe` pelo link que você recebeu.
+Baixe o arquivo `Push-to-Talk-<versão>-setup.exe` pelo link que você recebeu.
 
 **Esperado:** o arquivo aparece na pasta Downloads.
 
@@ -24,7 +24,7 @@ Dê dois cliques no `.exe`. Como o app não tem assinatura digital, o Windows mo
 
 ## 3. Instalar e abrir
 
-Siga o instalador (pode deixar as opções como estão). No fim, feche o instalador e abra o app pelo atalho **"Inglês"** da área de trabalho.
+Siga o instalador (pode deixar as opções como estão). No fim, feche o instalador e abra o app pelo atalho **"Push to Talk"** da área de trabalho.
 
 **Esperado:** o app abre na tela "Preparar a IA".
 
@@ -112,10 +112,10 @@ A pasta de dados do app (perfis, progresso e modelos de IA) fica em `%APPDATA%\I
 
 Se pedirem, rode a verificação do app instalado:
 
-1. Clique com o botão direito no atalho "Inglês" da área de trabalho → **"Abrir local do arquivo"**. Anote o caminho da pasta (normalmente `C:\Users\<nome>\AppData\Local\Programs\Ingles` ou, se instalou para todos os usuários, `C:\Program Files\Ingles`).
+1. Clique com o botão direito no atalho "Push to Talk" da área de trabalho → **"Abrir local do arquivo"**. Anote o caminho da pasta (normalmente `C:\Users\<nome>\AppData\Local\Programs\Push to Talk` ou, se instalou para todos os usuários, `C:\Program Files\Push to Talk`).
 2. Abra o **PowerShell** (menu Iniciar → digite "PowerShell").
 3. Rode o comando abaixo, trocando o caminho pelo que você anotou, e mande um print do resultado:
 
 ```powershell
-& "C:\Users\<nome>\AppData\Local\Programs\Ingles\Ingles.exe" --self-check | Out-Host
+& "C:\Users\<nome>\AppData\Local\Programs\Push to Talk\PushToTalk.exe" --self-check | Out-Host
 ```

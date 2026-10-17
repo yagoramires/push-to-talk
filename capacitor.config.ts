@@ -2,7 +2,7 @@ import type { CapacitorConfig } from '@capacitor/cli'
 
 const config: CapacitorConfig = {
   appId: 'io.github.yagoramires.ingles',
-  appName: 'Inglês',
+  appName: 'Push to Talk',
   webDir: 'out/mobile'
 }
 

@@ -37,7 +37,7 @@ export default function ProfilesScreen({
 
   return (
     <main className="screen">
-      <h1>Inglês</h1>
+      <h1>Push to Talk</h1>
       {profiles.length > 0 && (
         <section className="panel">
           <h2>Quem vai praticar?</h2>
