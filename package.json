@@ -1,6 +1,6 @@
 {
   "name": "ingles",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "App desktop para aulas de inglês com prática de fala, para brasileiros",
   "main": "./out/main/index.js",
   "author": "Yago Ramires",
