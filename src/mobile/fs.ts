@@ -44,8 +44,14 @@ export function createCapacitorFs(): TextFs {
       })
     },
     async append(path, data) {
-      await mkdirOf(path)
-      await Filesystem.appendFile({ path, directory, data, encoding: Encoding.UTF8 })
+      const opts = { path, directory, data, encoding: Encoding.UTF8 }
+      // mkdir first only when needed: the plugin console.errors every failure, and the log copies console.
+      try {
+        await Filesystem.appendFile(opts)
+      } catch {
+        await mkdirOf(path)
+        await Filesystem.appendFile(opts)
+      }
     },
     async writeBytes(path, data) {
       await Filesystem.writeFile({ path, directory, data: toBase64(data), recursive: true })
