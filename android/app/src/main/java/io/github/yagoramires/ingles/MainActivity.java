@@ -1,4 +1,4 @@
-package com.yagoramires.ingles;
+package io.github.yagoramires.ingles;
 
 import com.getcapacitor.BridgeActivity;
 

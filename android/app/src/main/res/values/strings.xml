@@ -2,6 +2,6 @@
 <resources>
     <string name="app_name">Inglês</string>
     <string name="title_activity_main">Inglês</string>
-    <string name="package_name">com.yagoramires.ingles</string>
-    <string name="custom_url_scheme">com.yagoramires.ingles</string>
+    <string name="package_name">io.github.yagoramires.ingles</string>
+    <string name="custom_url_scheme">io.github.yagoramires.ingles</string>
 </resources>
