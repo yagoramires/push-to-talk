@@ -28,3 +28,7 @@ export const downloadBytes = (tier: Tier): number =>
   (STT_BY_TIER[tier] === STT_BASE ? 0 : STT_SMALL_BYTES) +
   PRON_BYTES +
   LLM_BY_TIER[tier].bytes
+
+export function pronunciationEnabled(rtf: number | null): boolean {
+  return rtf === null || rtf <= 1.0
+}

@@ -1,7 +1,10 @@
-import type { AiStatus, AppApi } from '../shared/api'
+import type { AiStatus, AppApi, AppState } from '../shared/api'
+import type { ProfileProgress } from '../shared/progress'
 import { parseCourse } from '../shared/course-source'
-import { emptyState } from '../shared/state'
-import type { TextFs } from './fs'
+import { Share } from '@capacitor/share'
+import { createCapacitorFs, type TextFs } from './fs'
+import { createMobileSamples } from './samples'
+import { createMobileStore } from './store'
 
 type Deps = {
   fs: TextFs
@@ -18,9 +21,14 @@ const noAi: AiStatus = {
   pronunciationEnabled: false
 }
 
-// Tasks 5 and 6 fill in state, speech and AI; for now those are empty answers.
+// Task 6 fills in speech and AI; for now those are empty answers.
 export function createMobileApi(deps: Partial<Deps> = {}): AppApi {
   const doFetch = deps.fetch ?? ((...a: Parameters<typeof fetch>) => fetch(...a))
+  const fs = deps.fs ?? createCapacitorFs()
+  const store = createMobileStore(fs)
+  const samples = createMobileSamples(fs)
+  let state: AppState | null = null
+  const current = async (): Promise<AppState> => (state ??= (await store.load()).state)
   const getUserMedia = deps.getUserMedia ?? ((c) => navigator.mediaDevices.getUserMedia(c))
 
   return {
@@ -37,13 +45,31 @@ export function createMobileApi(deps: Partial<Deps> = {}): AppApi {
         }
       })
     },
-    loadState: async () => ({ state: emptyState() }),
-    createProfile: async (name) => ({
-      id: crypto.randomUUID(),
-      name,
-      createdAt: new Date().toISOString()
-    }),
-    saveProgress: async () => {},
+    async loadState() {
+      const r = await store.load()
+      state = r.state
+      return r
+    },
+    async createProfile(name) {
+      const trimmed = name.trim()
+      if (!trimmed) throw new Error('Nome do perfil não pode ser vazio')
+      const s = await current()
+      const profile = {
+        id: crypto.randomUUID(),
+        name: trimmed,
+        createdAt: new Date().toISOString()
+      }
+      s.profiles.push(profile)
+      await store.save(s)
+      return profile
+    },
+    async saveProgress(progress: ProfileProgress) {
+      const s = await current()
+      if (!s.profiles.some((p) => p.id === progress.profileId))
+        throw new Error(`Perfil desconhecido: ${progress.profileId}`)
+      s.progress[progress.profileId] = progress
+      await store.save(s)
+    },
     async ensureMic() {
       try {
         const stream = await getUserMedia({ audio: true })
@@ -62,11 +88,14 @@ export function createMobileApi(deps: Partial<Deps> = {}): AppApi {
     aiStatus: async () => noAi,
     setupAi: async () => noAi,
     onAiProgress: () => () => {},
-    openLogs: async () => {},
-    getSettings: async () => ({ saveSamples: false }),
-    setSaveSamples: async () => {},
-    saveSample: async () => {},
+    async openLogs() {
+      if ((await fs.size('logs/main.log')) === undefined) return
+      await Share.share({ files: [await fs.uri('logs/main.log')] })
+    },
+    getSettings: samples.getSettings,
+    setSaveSamples: samples.setSaveSamples,
+    saveSample: samples.save,
     openSamples: async () => {},
-    deleteSamples: async () => {}
+    deleteSamples: samples.remove
   }
 }

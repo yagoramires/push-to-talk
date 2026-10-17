@@ -1,5 +1,9 @@
 import { App } from '@capacitor/app'
 import { createMobileApi } from './api'
+import { createCapacitorFs } from './fs'
+import { initMobileLog } from './log'
+
+initMobileLog(createCapacitorFs())
 
 window.api = createMobileApi()
 

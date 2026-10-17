@@ -838,3 +838,32 @@ input[type='checkbox'] {
   left: auto;
   right: 2.25rem;
 }
+
+/* Phone width: let headers wrap and give the cards less padding. Desktop is untouched. */
+@media (max-width: 600px) {
+  .screen {
+    padding: 1.25rem 1rem 3rem;
+  }
+
+  .panel {
+    padding: 1.1rem 1.1rem;
+  }
+
+  .exercise {
+    padding: 1.25rem 1.1rem;
+  }
+
+  .row,
+  .session-bar {
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .session-bar > :first-child {
+    flex: 1 1 100%;
+  }
+
+  .session-bar strong {
+    overflow-wrap: anywhere;
+  }
+}

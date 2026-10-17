@@ -4,6 +4,7 @@ export {
   LLM_BY_TIER,
   STT_BY_TIER,
   STT_BASE as STT_MODEL,
+  pronunciationEnabled,
   type ModelFile
 } from '../../shared/models'
 
@@ -20,8 +21,4 @@ export function chooseTier(hw: Hardware, rtf: number | null): Tier {
   if (hw.totalMemGB < 12) return 'light'
   if (hw.totalMemGB >= 16 && ((rtf ?? 1) <= 0.6 || hw.hasDiscreteGpu)) return 'medium'
   return 'light'
-}
-
-export function pronunciationEnabled(rtf: number | null): boolean {
-  return rtf === null || rtf <= 1.0
 }
