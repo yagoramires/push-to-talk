@@ -80,10 +80,10 @@ export default function RecordButton({
       const r = await window.api.transcribe(wav, expected, hint)
       setStatus('idle')
       if (r.ok) onTranscript(r.text, r.pronunciation, wav)
-      else onFailure(`A transcrição não está disponível (${r.message}).`)
+      else onFailure(`A transcrição não está disponível (${r.message.replace(/\.$/, '')}).`)
     } catch (e) {
       setStatus('idle')
-      onFailure(`A transcrição não está disponível (${(e as Error).message}).`)
+      onFailure(`A transcrição não está disponível (${(e as Error).message.replace(/\.$/, '')}).`)
     }
   }
 

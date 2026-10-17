@@ -68,7 +68,12 @@ export default function ProfilesScreen({
         >
           <label>
             Nome
-            <input value={name} onChange={(e) => setName(e.target.value)} autoFocus />
+            <input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              // The keyboard would cover the list of existing profiles.
+              autoFocus={profiles.length === 0}
+            />
           </label>
           {onPlacement && !manual && (
             <div className="actions">

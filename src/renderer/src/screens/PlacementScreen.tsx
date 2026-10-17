@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {
   currentPlacementItems,
   finishPlacementLevel,
@@ -28,6 +28,7 @@ export default function PlacementScreen({
   const [state, setState] = useState(startPlacement)
   const [startedAt] = useState(() => Date.now())
   const [index, setIndex] = useState(0)
+  useEffect(() => window.scrollTo(0, 0), [index])
   const [levelAnswers, setLevelAnswers] = useState<{ skill: Skill; correct: boolean }[]>([])
 
   if (state.done && state.result) {

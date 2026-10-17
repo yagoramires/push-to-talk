@@ -3,6 +3,7 @@ import type { Mode } from '../../../shared/progress'
 import { toFinalVerdict, type CheckResult, type FinalVerdict } from '../../../shared/matcher'
 import PronunciationView from './PronunciationView'
 import Icon from './Icon'
+import { scrollIntoView } from './scrollIntoView'
 
 const LABELS = {
   correct: 'Correto!',
@@ -38,7 +39,7 @@ export default function ResultView({
   const err = exam ? undefined : result.matchedError
   const details = !exam
   return (
-    <section className={`result result-${result.verdict}`} aria-live="polite">
+    <section ref={scrollIntoView} className={`result result-${result.verdict}`} aria-live="polite">
       <p className="result-verdict">{LABELS[result.verdict]}</p>
       {transcript && (
         <p>

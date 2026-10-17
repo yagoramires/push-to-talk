@@ -43,6 +43,7 @@ export default function ExamScreen({
   const [startedAt] = useState(() => Date.now())
   const [now, setNow] = useState(startedAt)
   const [index, setIndex] = useState(0)
+  useEffect(() => window.scrollTo(0, 0), [index])
   const [answers, setAnswers] = useState<Answer[]>([])
 
   useEffect(() => {

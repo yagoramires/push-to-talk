@@ -46,6 +46,7 @@ export default function SessionScreen({
   const [startedAt, setStartedAt] = useState(() => Date.now())
   const [now, setNow] = useState(startedAt)
   const [index, setIndex] = useState(0)
+  useEffect(() => window.scrollTo(0, 0), [index])
   const [blocksDone, setBlocksDone] = useState<string[]>([])
   const [errors, setErrors] = useState(0)
   // Computed once: the recap is about the time before this lesson.

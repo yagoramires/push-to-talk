@@ -45,6 +45,9 @@ export default function App(): React.JSX.Element {
   const [screen, setScreen] = useState<Screen>({ name: 'profiles' })
   const [ai, setAi] = useState<AiStatus | null>(null)
 
+  // A new screen starts at the top, not where the last one was scrolled.
+  useEffect(() => window.scrollTo(0, 0), [screen])
+
   useEffect(() => {
     Promise.all([
       window.api.loadCourse(),

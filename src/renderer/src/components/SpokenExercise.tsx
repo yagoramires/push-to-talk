@@ -13,6 +13,7 @@ import type { Mode } from '../../../shared/progress'
 import RecordButton from './RecordButton'
 import ResultView from './ResultView'
 import Icon from './Icon'
+import { scrollIntoView } from './scrollIntoView'
 
 type OnFinal = (v: FinalVerdict, transcript: string) => void
 
@@ -114,7 +115,7 @@ export function SpokenAnswer({
     )
   if (state.kind === 'failed')
     return (
-      <div className="notice notice-warn" role="alert">
+      <div ref={scrollIntoView} className="notice notice-warn" role="alert">
         <p>{state.message}</p>
         <p>Você pode marcar sozinho se acertou e seguir com a sessão.</p>
         {!exam && <Expected accepted={check.accepted} />}
@@ -226,7 +227,11 @@ export function FreeSpeakAnswer({
   if (state.kind === 'evaluated') {
     const { transcript, ev } = state
     return (
-      <section className={`result result-${ev.correct ? 'correct' : 'error'}`} aria-live="polite">
+      <section
+        ref={scrollIntoView}
+        className={`result result-${ev.correct ? 'correct' : 'error'}`}
+        aria-live="polite"
+      >
         <p className="result-verdict">{ev.correct ? 'Correto!' : 'Ainda não.'}</p>
         <p>
           <span className="muted">Você disse: </span>
