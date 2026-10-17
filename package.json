@@ -18,9 +18,16 @@
     "build:win": "npm run build && electron-builder --win --publish never",
     "build:mac": "npm run build && electron-builder --mac --publish never",
     "test": "vitest run",
-    "audio": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/generate-audio.mjs"
+    "audio": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/generate-audio.mjs",
+    "build:mobile": "vite build -c vite.mobile.config.ts && node scripts/copy-mobile-assets.mjs",
+    "build:android": "npm run build:mobile && cap sync android && cd android && ./gradlew assembleRelease",
+    "android:dev": "npm run build:mobile && cap run android"
   },
   "dependencies": {
+    "@capacitor/android": "8.5.3",
+    "@capacitor/app": "8.1.2",
+    "@capacitor/core": "8.5.3",
+    "@capacitor/filesystem": "8.1.5",
     "@electron-toolkit/preload": "^3.0.2",
     "@electron-toolkit/utils": "^4.0.0",
     "@huggingface/transformers": "^4.3.1",
@@ -29,6 +36,7 @@
     "zod": "^4.6.7"
   },
   "devDependencies": {
+    "@capacitor/cli": "8.5.3",
     "@electron-toolkit/eslint-config-prettier": "^3.0.1",
     "@electron-toolkit/eslint-config-ts": "^4.0.0",
     "@electron-toolkit/tsconfig": "^2.0.0",

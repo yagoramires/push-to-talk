@@ -7,3 +7,5 @@ out
 *.log*
 *.log
 *.tsbuildinfo
+android/app/build
+android/.gradle
