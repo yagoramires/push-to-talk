@@ -4,31 +4,30 @@
       <stop offset="0" stop-color="#232845"/>
       <stop offset="1" stop-color="#12152a"/>
     </linearGradient>
-    <linearGradient id="ink" gradientUnits="userSpaceOnUse" x1="200" y1="300" x2="1000" y2="800">
+    <linearGradient id="ink" gradientUnits="userSpaceOnUse" x1="150" y1="250" x2="1140" y2="750">
       <stop offset="0" stop-color="#b3a6ff"/>
       <stop offset="1" stop-color="#7d63ff"/>
     </linearGradient>
   </defs>
   <rect width="1024" height="1024" rx="230" fill="url(#bg)"/>
-  <g transform="translate(512 512) scale(0.7) translate(-605 -470)">
-    <!-- "ptt", rounded strokes like the app's Fredoka -->
+  <g transform="translate(512 512) scale(0.72) translate(-625 -430)">
+    <!-- "Ptt", rounded strokes like the app's Fredoka -->
     <g fill="none" stroke="url(#ink)" stroke-width="92" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M250 420 V770"/>
-      <circle cx="362" cy="532" r="112"/>
-      <path d="M590 330 V560 Q590 644 676 644"/>
-      <path d="M530 430 H690"/>
-      <path d="M860 330 V560 Q860 644 946 644"/>
-      <path d="M800 430 H960"/>
+      <path d="M250 644 V330 H330 A110 110 0 0 1 330 550 H250"/>
+      <path d="M740 330 V560 Q740 644 826 644"/>
+      <path d="M680 430 H840"/>
+      <path d="M1000 330 V560 Q1000 644 1086 644"/>
+      <path d="M940 430 H1100"/>
     </g>
-    <!-- headset around the letters, in the app's "correct" green -->
-    <g fill="none" stroke="#1fa971" stroke-width="50" stroke-linecap="round">
-      <path d="M115 480 C115 10 1095 10 1095 480"/>
-      <path d="M1095 640 Q1095 810 960 810"/>
+    <!-- the P wears the headset, in the app's "correct" green -->
+    <g fill="none" stroke="#1fa971" stroke-width="44" stroke-linecap="round">
+      <path d="M140 410 C140 90 590 90 590 410"/>
+      <path d="M590 520 Q590 630 470 630"/>
     </g>
     <g fill="#1fa971">
-      <rect x="65" y="460" width="100" height="200" rx="50"/>
-      <rect x="1045" y="460" width="100" height="200" rx="50"/>
-      <rect x="890" y="782" width="90" height="56" rx="28"/>
+      <rect x="100" y="380" width="70" height="140" rx="35"/>
+      <rect x="555" y="380" width="70" height="140" rx="35"/>
+      <rect x="400" y="607" width="76" height="46" rx="23"/>
     </g>
   </g>
 </svg>
