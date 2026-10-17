@@ -70,6 +70,10 @@ jobs:
           java-version: 21
       - run: npm ci
       - run: npm test
+      # Gradle installs the NDK and CMake that android/app/build.gradle pins, but only with the licences accepted
+      - name: Android SDK licences
+        run: yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null || true
+
       - name: Keystore
         run: |
           if [ -z "$KEYSTORE_B64" ]; then
