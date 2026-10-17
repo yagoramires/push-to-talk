@@ -2,6 +2,7 @@ import { readdirSync, readFileSync, existsSync } from 'node:fs'
 import { describe, expect, it, vi } from 'vitest'
 import { createMobileApi } from '../../src/mobile/api'
 import type { PronunciationResult } from '../../src/shared/api'
+import type { ProfileProgress } from '../../src/shared/progress'
 import { encodeWav } from '../../src/shared/wav'
 import { memFs } from './memfs'
 
@@ -35,6 +36,23 @@ describe('loadCourse', () => {
     }) as unknown as typeof fetch
     const course = await createMobileApi({ fetch: fakeFetch }).loadCourse()
     expect(course.units).toHaveLength(60)
+  })
+})
+
+describe('copies at the boundary like IPC', () => {
+  it('a later createProfile or saveProgress does not mutate what loadState returned', async () => {
+    const api = createMobileApi({ fs: memFs() })
+    const { state } = await api.loadState()
+    const profile = await api.createProfile('Tati')
+    expect(state.profiles).toEqual([])
+    const progress = { profileId: profile.id, level: 'A1' } as unknown as ProfileProgress
+    await api.saveProgress(progress)
+    ;(profile as { name: string }).name = 'mutated'
+    progress.level = 'B2'
+    const again = (await api.loadState()).state
+    expect(state.progress).toEqual({})
+    expect(again.profiles[0].name).toBe('Tati')
+    expect(again.progress[profile.id].level).toBe('A1')
   })
 })
 

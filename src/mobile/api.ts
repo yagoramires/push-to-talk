@@ -82,7 +82,8 @@ export function createMobileApi(deps: Partial<Deps> = {}): AppApi {
     async loadState() {
       const r = await store.load()
       state = r.state
-      return r
+      // Copy like IPC does, so callers cannot mutate the cached state.
+      return { ...r, state: structuredClone(r.state) }
     },
     async createProfile(name) {
       const trimmed = name.trim()
@@ -95,13 +96,13 @@ export function createMobileApi(deps: Partial<Deps> = {}): AppApi {
       }
       s.profiles.push(profile)
       await store.save(s)
-      return profile
+      return structuredClone(profile)
     },
     async saveProgress(progress: ProfileProgress) {
       const s = await current()
       if (!s.profiles.some((p) => p.id === progress.profileId))
         throw new Error(`Perfil desconhecido: ${progress.profileId}`)
-      s.progress[progress.profileId] = progress
+      s.progress[progress.profileId] = structuredClone(progress)
       await store.save(s)
     },
     async ensureMic() {
