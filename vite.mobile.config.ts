@@ -7,6 +7,8 @@ export default defineConfig({
   base: './',
   resolve: { alias: { '@renderer': resolve('src/renderer/src') } },
   plugins: [react()],
+  // the AI worker code-splits (dynamic imports), which iife workers cannot do
+  worker: { format: 'es' },
   build: {
     outDir: resolve('out/mobile'),
     emptyOutDir: true,

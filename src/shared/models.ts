@@ -18,6 +18,11 @@ export const STT_BY_TIER: Record<Tier, string> = {
   medium: STT_SMALL,
   strong: STT_SMALL
 }
+export const PRON_MODEL = 'onnx-community/wav2vec2-lv-60-espeak-cv-ft-ONNX'
+
+/** RAM reportada vem ~0.1-0.4 GB abaixo do nominal (reserva da iGPU/firmware): arredonda para o GB inteiro */
+export const toGB = (bytes: number): number => Math.round(bytes / 1024 ** 3)
+
 const STT_BYTES = 77 * MB
 const STT_SMALL_BYTES = 252 * MB // q8 encoder + merged decoder + tokenizer
 const PRON_BYTES = 318 * MB

@@ -5,13 +5,10 @@ export {
   STT_BY_TIER,
   STT_BASE as STT_MODEL,
   pronunciationEnabled,
+  PRON_MODEL,
+  toGB,
   type ModelFile
 } from '../../shared/models'
-
-export const PRON_MODEL = 'onnx-community/wav2vec2-lv-60-espeak-cv-ft-ONNX'
-
-/** RAM reportada vem ~0.1-0.4 GB abaixo do nominal (reserva da iGPU/firmware): arredonda para o GB inteiro */
-export const toGB = (bytes: number): number => Math.round(bytes / 1024 ** 3)
 
 /** rtf null = sem benchmark ainda, tratado como 1.0 */
 export function chooseTier(hw: Hardware, rtf: number | null): Tier {

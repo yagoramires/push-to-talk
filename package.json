@@ -27,6 +27,7 @@
     "@capacitor/android": "8.5.3",
     "@capacitor/app": "8.1.2",
     "@capacitor/core": "8.5.3",
+    "@capacitor/file-transfer": "2.0.6",
     "@capacitor/filesystem": "8.1.5",
     "@capacitor/share": "8.0.3",
     "@electron-toolkit/preload": "^3.0.2",

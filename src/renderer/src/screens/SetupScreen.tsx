@@ -12,10 +12,11 @@ type Props = {
 /** First-run AI setup, and tier change from "Configurações da IA" when a tier already exists. */
 export default function SetupScreen({ status, onClose }: Props): React.JSX.Element {
   const android = window.api.platform === 'android'
+  const device = android ? 'celular' : 'computador'
   const changing = status.tier !== null
   const recommended = status.recommended ?? 'light'
   const [tier, setTier] = useState<Tier>(status.tier ?? recommended)
-  const [picking, setPicking] = useState(changing)
+  const [picking, setPicking] = useState(changing && !android) // one package on Android
   const [progress, setProgress] = useState<AiProgress | null>(null)
 
   const lastPhase = useRef<AiProgress['phase'] | null>(null)
@@ -75,12 +76,12 @@ export default function SetupScreen({ status, onClose }: Props): React.JSX.Eleme
       <h1>{changing ? 'Configurações da IA' : 'Preparar a IA'}</h1>
       <section className="panel">
         <p>
-          A IA corrige sua fala e suas respostas livres no próprio computador, sem internet. Ela
+          A IA corrige sua fala e suas respostas livres no próprio {device}, sem internet. Ela
           precisa ser baixada uma vez.
         </p>
         {status.hardware && (
           <>
-            <h2>Seu computador</h2>
+            <h2>Seu {device}</h2>
             <ul>
               {describeHardware(status.hardware).map((l) => (
                 <li key={l}>{l}</li>
@@ -170,8 +171,8 @@ export default function SetupScreen({ status, onClose }: Props): React.JSX.Eleme
                 checked={saveSamples}
                 onChange={(e) => toggleSamples(e.target.checked)}
               />{' '}
-              Guardar o que eu falo (áudio e texto) para melhorar o reconhecimento — fica só neste
-              computador
+              Guardar o que eu falo (áudio e texto) para melhorar o reconhecimento — fica só neste{' '}
+              {device}
             </label>
           </p>
           <div className="actions">
