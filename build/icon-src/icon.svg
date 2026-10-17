@@ -10,13 +10,25 @@
     </linearGradient>
   </defs>
   <rect width="1024" height="1024" rx="230" fill="url(#bg)"/>
-  <!-- "ptt", rounded strokes like the app's Fredoka; centered on the canvas -->
-  <g fill="none" stroke="url(#ink)" stroke-width="92" stroke-linecap="round" stroke-linejoin="round" transform="translate(512 512) scale(0.8) translate(-605 -550)">
-    <path d="M250 420 V770"/>
-    <circle cx="362" cy="532" r="112"/>
-    <path d="M590 330 V560 Q590 644 676 644"/>
-    <path d="M530 430 H690"/>
-    <path d="M860 330 V560 Q860 644 946 644"/>
-    <path d="M800 430 H960"/>
+  <g transform="translate(512 512) scale(0.7) translate(-605 -470)">
+    <!-- "ptt", rounded strokes like the app's Fredoka -->
+    <g fill="none" stroke="url(#ink)" stroke-width="92" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M250 420 V770"/>
+      <circle cx="362" cy="532" r="112"/>
+      <path d="M590 330 V560 Q590 644 676 644"/>
+      <path d="M530 430 H690"/>
+      <path d="M860 330 V560 Q860 644 946 644"/>
+      <path d="M800 430 H960"/>
+    </g>
+    <!-- headset around the letters, in the app's "correct" green -->
+    <g fill="none" stroke="#1fa971" stroke-width="50" stroke-linecap="round">
+      <path d="M115 480 C115 10 1095 10 1095 480"/>
+      <path d="M1095 640 Q1095 810 960 810"/>
+    </g>
+    <g fill="#1fa971">
+      <rect x="65" y="460" width="100" height="200" rx="50"/>
+      <rect x="1045" y="460" width="100" height="200" rx="50"/>
+      <rect x="890" y="782" width="90" height="56" rx="28"/>
+    </g>
   </g>
 </svg>

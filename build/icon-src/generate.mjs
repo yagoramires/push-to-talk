@@ -1,4 +1,5 @@
-// Regenerates every app icon from build/icon-src/icon.svg (the full icon: rounded square + "pt_").
+/* eslint-disable @typescript-eslint/explicit-function-return-type -- plain build script, no types */
+// Regenerates every app icon from build/icon-src/icon.svg (the full icon: rounded square + "ptt" with a headset).
 // Run from the repo root: node build/icon-src/generate.mjs
 import { execFileSync } from 'node:child_process'
 import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
