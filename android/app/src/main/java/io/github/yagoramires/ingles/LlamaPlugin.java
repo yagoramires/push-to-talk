@@ -50,7 +50,7 @@ public class LlamaPlugin extends Plugin {
         worker.execute(() -> {
             long t0 = System.nanoTime();
             byte[] out = nativeComplete(prompt, grammar, maxTokens, temp, seed);
-            if (out == null) { call.reject("model not loaded or grammar parse failed"); return; }
+            if (out == null) { call.reject("model not loaded, grammar parse failed or prompt decode failed"); return; }
             String text = new String(out, StandardCharsets.UTF_8);
             double ms = (System.nanoTime() - t0) / 1e6;
             int n = nativeLastTokens();

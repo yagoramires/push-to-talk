@@ -49,7 +49,7 @@ Java_io_github_yagoramires_ingles_LlamaPlugin_nativeLoad(JNIEnv *env, jclass, js
     if (!g_model) return env->NewStringUTF("llama_model_load_from_file failed");
     auto cp = llama_context_default_params();
     cp.n_ctx = nCtx;
-    cp.n_batch = 512;
+    cp.n_batch = nCtx; // one decode must fit the whole prompt; llama.cpp splits it into ubatches
     int threads = std::max(1, std::min(4, (int) std::thread::hardware_concurrency()));
     cp.n_threads = threads;
     cp.n_threads_batch = threads;
@@ -72,6 +72,7 @@ Java_io_github_yagoramires_ingles_LlamaPlugin_nativeComplete(JNIEnv *env, jclass
     std::vector<llama_token> toks(prompt.size() + 16);
     int n = llama_tokenize(vocab, prompt.c_str(), (int) prompt.size(), toks.data(), (int) toks.size(), true, true);
     toks.resize(std::max(n, 0));
+    if (toks.empty() || (int) toks.size() + maxTokens > (int) llama_n_ctx(g_ctx)) return nullptr; // prompt does not fit the context
 
     llama_memory_clear(llama_get_memory(g_ctx), true);
     auto chain = llama_sampler_chain_init(llama_sampler_chain_default_params());
@@ -87,7 +88,11 @@ Java_io_github_yagoramires_ingles_LlamaPlugin_nativeComplete(JNIEnv *env, jclass
     }
 
     std::string out;
-    if (llama_decode(g_ctx, llama_batch_get_one(toks.data(), (int) toks.size())) == 0) {
+    if (llama_decode(g_ctx, llama_batch_get_one(toks.data(), (int) toks.size())) != 0) {
+        llama_sampler_free(chain);
+        return nullptr;
+    }
+    {
         for (int i = 0; i < maxTokens && !g_stop; i++) {
             llama_token t = llama_sampler_sample(chain, g_ctx, -1);
             if (llama_vocab_is_eog(vocab, t)) break;
