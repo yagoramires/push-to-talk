@@ -90,6 +90,7 @@ describe('studyStats', () => {
       todayMinutes: 0,
       weekMinutes: 0,
       avgPerDay14: 0,
+      activeDays14: 0,
       streakDays: 0
     })
   })
@@ -98,6 +99,13 @@ describe('studyStats', () => {
     const stats = studyStats([s(at(13, 9), 10), s(at(14, 9), 10), s(at(15, 9), 10)], now)
     expect(stats.streakDays).toBe(3)
     expect(stats.todayMinutes).toBe(0)
+  })
+})
+
+describe('studyStats activeDays14', () => {
+  test('counts distinct days in the last 14, ignoring older ones', () => {
+    const sessions = [s(at(16, 9), 5), s(at(16, 10), 5), s(at(15, 9), 5), s(at(2, 9), 5)]
+    expect(studyStats(sessions, now).activeDays14).toBe(2)
   })
 })
 

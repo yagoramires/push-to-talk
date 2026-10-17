@@ -36,7 +36,9 @@ export default function TodayGoal({ goal, plan, stats, now, onEdit }: Props): Re
       </section>
     )
   const week = plan.minutesPerDay * goal.daysPerWeek
-  const finish = projectedFinish(plan.hoursLeft, stats.avgPerDay14, now)
+  // Fewer than 3 active days make the pace meaningless (1 minute on day one projects year 2486).
+  const finish =
+    stats.activeDays14 >= 3 ? projectedFinish(plan.hoursLeft, stats.avgPerDay14, now) : null
   return (
     <section className="panel" aria-labelledby="goal-label">
       <h2 id="goal-label">Meta: {goal.target}</h2>
@@ -47,7 +49,7 @@ export default function TodayGoal({ goal, plan, stats, now, onEdit }: Props): Re
         <p>Faça duas sessões hoje.</p>
       )}
       <p className="muted">
-        Sequência: {stats.streakDays} {stats.streakDays === 1 ? 'dia' : 'dias'} seguidos
+        Sequência: {stats.streakDays} {stats.streakDays === 1 ? 'dia seguido' : 'dias seguidos'}
       </p>
       <p className="muted">
         {finish

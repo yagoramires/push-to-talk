@@ -55,13 +55,20 @@ const dayStart = (d: Date, offset = 0): Date =>
 export function studyStats(
   sessions: SessionRecord[],
   now: Date
-): { todayMinutes: number; weekMinutes: number; avgPerDay14: number; streakDays: number } {
+): {
+  todayMinutes: number
+  weekMinutes: number
+  avgPerDay14: number
+  activeDays14: number
+  streakDays: number
+} {
   const ends = sessions.map((s) => ({
     end: new Date(Date.parse(s.at) + s.minutes * 60000),
     minutes: s.minutes
   }))
   const since = (from: Date): number =>
     ends.filter((e) => e.end >= from).reduce((sum, e) => sum + e.minutes, 0)
+  const from14 = dayStart(now, -13)
   const days = new Set(ends.map((e) => e.end.toDateString()))
   let day = dayStart(now, days.has(now.toDateString()) ? 0 : -1)
   let streakDays = 0
@@ -73,6 +80,8 @@ export function studyStats(
     todayMinutes: since(dayStart(now)),
     weekMinutes: since(dayStart(now, -((now.getDay() + 6) % 7))),
     avgPerDay14: since(dayStart(now, -13)) / 14,
+    activeDays14: new Set(ends.filter((e) => e.end >= from14).map((e) => e.end.toDateString()))
+      .size,
     streakDays
   }
 }
