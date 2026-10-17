@@ -44,3 +44,11 @@ Também dá para rodar o workflow na mão ("Actions" → "build" → "Run workfl
 Cada push no `main` roda só o build do Windows (testes, instalador e `--self-check`), para pegar cedo o que quebra lá; o `.exe` fica nos artefatos da execução. O Mac só entra com tag ou na mão, porque o minuto de máquina Mac custa 10x no GitHub.
 
 Para testar no Windows, siga o roteiro em [docs/teste-windows.md](docs/teste-windows.md).
+
+## Android
+
+O APK (`Ingles-<versão>-android.apk`, só arm64) sai do mesmo workflow: baixe o artifact `installer-Android` ou, numa release, o `.apk` do rascunho. Para instalar, abra o arquivo no celular e permita "Instalar apps de fontes desconhecidas" quando o Android pedir.
+
+A IA de conversa só liga em celulares com pelo menos 6 GB de RAM; nos outros, o resto do app funciona normalmente.
+
+Local: `npm run build:android` gera `android/app/build/outputs/apk/release/app-release.apk`. Sem as variáveis `ANDROID_KEYSTORE_PATH`, `ANDROID_KEYSTORE_PASSWORD`, `ANDROID_KEY_ALIAS` e `ANDROID_KEY_PASSWORD`, o APK sai com a chave de debug (serve para testar, não para distribuir). No CI elas vêm dos secrets `ANDROID_KEYSTORE_B64`, `ANDROID_KEYSTORE_PASSWORD`, `ANDROID_KEY_ALIAS` e `ANDROID_KEY_PASSWORD`; guarde um backup da `.jks`, sem ela nenhuma atualização instala por cima.
