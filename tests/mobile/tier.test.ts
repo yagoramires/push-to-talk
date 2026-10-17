@@ -15,7 +15,9 @@ test.each([
   [8, 1.2, { pronunciation: false, llm: true }],
   [4, 0.5, { pronunciation: true, llm: false }],
   [8, 0.9, { pronunciation: true, llm: true }],
-  [6, 1.6, { pronunciation: false, llm: false }]
+  [6, 1.6, { pronunciation: false, llm: false }],
+  [6, 1.5, { pronunciation: false, llm: true }],
+  [8, 1.6, { pronunciation: false, llm: false }]
 ])('%i GB, rtf %f', (gb, rtf, want) => {
   expect(chooseMobileSetup(hw(gb), rtf)).toEqual(want)
 })
