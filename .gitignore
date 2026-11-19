@@ -9,3 +9,11 @@ out
 *.tsbuildinfo
 android/app/build
 android/.gradle
+
+/AGENTS.md
+/docs/
+/.docs/
+/documentation/
+superpowers/
+/specs/
+/specifications/
